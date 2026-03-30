@@ -198,15 +198,4 @@
             </p>
         </field>
     </record>
-
-    <record id="fsm_person_form_employee" model="ir.ui.view">
-        <field name="name">fsm.person.form.employee</field>
-        <field name="model">fsm.person</field>
-        <field name="inherit_id" ref="fieldservice.fsm_person_form_view"/>
-        <field name="arch" type="xml">
-            <field name="partner_id" position="after">
-                <field name="employee_id"/>
-            </field>
-        </field>
-    </record>
 </odoo>
