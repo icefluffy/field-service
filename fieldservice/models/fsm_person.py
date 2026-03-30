@@ -25,7 +25,7 @@ class FSMPerson(models.Model):
     territory_ids = fields.Many2many("res.territory", string="Territories")
     active = fields.Boolean(default=True)
     active_partner = fields.Boolean(
-        related="partner_id.active", readonly=True, string="Partner is Active"
+        related="partner_id.active", readonly=False, string="Partner is Active"
     )
 
     def toggle_active(self):
