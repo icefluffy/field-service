@@ -69,8 +69,8 @@
                     <field
                         name="active_partner"
                         required="0"
-                        readonly="1"
-                        invisible="1"
+                        readonly="0"
+                        invisible="0"
                     />
                     <div
                         class="alert alert-info text-center o_form_header"
