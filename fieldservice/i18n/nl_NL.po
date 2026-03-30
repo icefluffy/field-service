@@ -340,7 +340,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid ""
 "Auto-populate the preferred workers of a location based on the territory"
-msgstr ""
+msgstr "Populeer automatisch de voorkeurs buitendienst medewerkers gebaseerd op het territorium"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__autopost_bills
@@ -2051,7 +2051,7 @@ msgstr ""
 #. module: fieldservice
 #: model:res.groups,name:fieldservice.group_fsm_category
 msgid "Manage Field Service Worker Categories"
-msgstr ""
+msgstr "Beheer categorieën buitendienstmedewerkers"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
@@ -2147,12 +2147,12 @@ msgstr ""
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Manage different categories of Field Service workers"
-msgstr ""
+msgstr "Beheer verschillende categorieën buitendienstmedewerkers"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Manage different teams of Field Service workers"
-msgstr ""
+msgstr "Beheer verschillende teams buitendienstmedewerkers"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
@@ -2179,7 +2179,7 @@ msgstr ""
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Manage routes of your workers"
-msgstr ""
+msgstr "Beheer routes voor uw buitendienstmedewerkers"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__module_fieldservice_size
@@ -2744,7 +2744,7 @@ msgstr ""
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
 msgid "Preferred Workers"
-msgstr ""
+msgstr "Voorkeur buitendienstmedewerkers"
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__property_outbound_payment_method_line_id
@@ -3049,7 +3049,7 @@ msgstr "Locaties zoeken op basis van hun volledige hiërarchiename"
 msgid ""
 "Select whether you want to convert this record to a Field\n"
 "                    Service Worker or Location."
-msgstr ""
+msgstr "Selecteer of je dit record wil omvormen tot een buitendienstmedewerkers of locatie"
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__invoice_warn
@@ -3710,27 +3710,27 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_search_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_person_search_view
 msgid "Worker"
-msgstr ""
+msgstr "Medewerker"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__person_phone
 msgid "Worker Phone"
-msgstr ""
+msgstr "Telefoon Medewerker"
 
 #. module: fieldservice
 #: model:fsm.stage,name:fieldservice.worker_stage_1
 msgid "Worker Stage 1"
-msgstr ""
+msgstr "Medewerker Stage 1"
 
 #. module: fieldservice
 #: model:fsm.stage,name:fieldservice.worker_stage_2
 msgid "Worker Stage 2"
-msgstr ""
+msgstr "Medewerker Stage 2"
 
 #. module: fieldservice
 #: model:fsm.stage,name:fieldservice.worker_stage_3
 msgid "Worker Stage 3"
-msgstr ""
+msgstr "Medewerker Stage 3"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__person_ids
@@ -3738,60 +3738,60 @@ msgstr ""
 #: model:ir.ui.menu,name:fieldservice.menu_fsm_person
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Workers"
-msgstr "Werkers"
+msgstr "Medewerkers"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__calendar_id
 msgid "Working Schedule"
-msgstr ""
+msgstr "Werk Schema"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_stage_form_view
 msgid ""
 "You can add a description to help your coworkers understand the meaning and "
 "purpose of the stage."
-msgstr ""
+msgstr "Je kan een beschrijving toevoegen zodat uw medewerkers beter de betekenis en het doel van de Stage begrijpen"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_person_form
 msgid "You can archive the contact"
-msgstr ""
+msgstr "Je kan het contact archiveren"
 
 #. module: fieldservice
 #. odoo-python
 #: code:addons/fieldservice/models/fsm_order.py:0
 msgid "You cannot delete this order."
-msgstr ""
+msgstr "Je kan dit order niet verwijderen"
 
 #. module: fieldservice
 #: model:ir.model.constraint,message:fieldservice.constraint_fsm_person_calendar_filter_user_id_fsm_person_id_unique
 msgid "You cannot have the same worker twice."
-msgstr ""
+msgstr "Je kan niet twee maal hetzelfde order hebben."
 
 #. module: fieldservice
 #. odoo-python
 #: code:addons/fieldservice/models/fsm_order.py:0
 msgid "You must create an FSM order stage first."
-msgstr ""
+msgstr "Je moet eerst een buitendienst stage aanmaken."
 
 #. module: fieldservice
 #. odoo-python
 #: code:addons/fieldservice/models/fsm_order.py:0
 msgid "You must create an FSM team first."
-msgstr ""
+msgstr "Je moet eerst een buitendienst team aanmaken"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_person_form
 msgid "ZIP"
-msgstr ""
+msgstr "postcode"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__zip
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__zip
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__zip
 msgid "Zip"
-msgstr ""
+msgstr "Postcode"
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__days_sales_outstanding
