@@ -18,4 +18,5 @@ from . import (
     fsm_order,
     fsm_order_type,
     fsm_person_calendar_filter,
+    fsm_person_hr,
 )
