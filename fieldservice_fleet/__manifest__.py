@@ -10,7 +10,7 @@
     "author": "Brian McMaster, "
     "Open Source Integrators, "
     "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": ["fieldservice_vehicle", "fleet"],
     "data": [
         "security/ir.model.access.csv",
