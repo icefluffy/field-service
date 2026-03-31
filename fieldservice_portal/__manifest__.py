@@ -10,7 +10,7 @@
     ],
     "author": "PyTech SRL, Odoo Community Association (OCA)",
     "maintainers": ["aleuffre", "renda-dev"],
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "category": "Field Service",
     "license": "AGPL-3",
     "data": [

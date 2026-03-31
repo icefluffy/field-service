@@ -7,7 +7,7 @@
     "license": "AGPL-3",
     "author": "Camptocamp, Odoo Community Association (OCA)",
     "category": "Project",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": [
         # odoo
         "hr_timesheet",

@@ -14,7 +14,7 @@
         # OCA/field-service
         "fieldservice_equipment_stock",
     ],
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "data": [
         # Views
         "views/fsm_equipment.xml",

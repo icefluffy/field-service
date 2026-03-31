@@ -14,7 +14,7 @@
         "fieldservice_agreement",
         "fieldservice_sale_recurring",
     ],
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "data": [
         "views/fsm_recurring.xml",
     ],

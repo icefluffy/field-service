@@ -9,7 +9,7 @@
     "category": "Field Service",
     "license": "AGPL-3",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": ["fieldservice"],
     "data": [
         "data/ir_sequence.xml",

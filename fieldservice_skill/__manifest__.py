@@ -8,7 +8,7 @@
     "category": "Field Service",
     "license": "AGPL-3",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": ["hr_skills", "fieldservice"],
     "data": [
         "security/ir.model.access.csv",

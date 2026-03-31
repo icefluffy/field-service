@@ -7,7 +7,7 @@
     "summary": "Provides models for defining blackout days, stress days, "
     "and delivery time ranges for FSM availability management.",
     "category": "Field Service",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "author": "APSL-Nagarro, Odoo Community Association (OCA)",
     "maintainers": ["ppyczko"],
     "license": "AGPL-3",

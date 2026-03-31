@@ -6,7 +6,7 @@
     "version": "18.0.1.0.1",
     "summary": "Display key service information on Field Service Kanban cards.",
     "category": "Field Service",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "author": "APSL-Nagarro, Odoo Community Association (OCA)",
     "maintainers": ["ppyczko"],
     "license": "AGPL-3",

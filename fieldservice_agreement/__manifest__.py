@@ -5,7 +5,7 @@
     "name": "Field Service - Agreements",
     "summary": "Manage Field Service agreements and contracts",
     "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "category": "Field Service",
     "license": "AGPL-3",
     "version": "18.0.2.0.1",

@@ -6,7 +6,7 @@
     "summary": "Sell field services.",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": [
         "fieldservice",
         "sale_management",

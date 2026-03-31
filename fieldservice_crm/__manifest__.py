@@ -7,7 +7,7 @@
     "summary": "Create Field Service orders from the CRM",
     "category": "Field Service",
     "author": "Patrick Wilson, Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": ["fieldservice", "crm"],
     "data": [
         "views/crm_lead.xml",

@@ -7,7 +7,7 @@
     "version": "18.0.1.1.0",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": ["fieldservice", "account"],
     "data": [
         "security/ir.model.access.csv",

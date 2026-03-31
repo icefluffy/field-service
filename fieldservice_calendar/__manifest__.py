@@ -4,7 +4,7 @@
     "name": "Field Service - Calendar",
     "summary": "Add calendar to FSM Orders",
     "author": "Akretion, Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "category": "Field Service",
     "license": "AGPL-3",
     "version": "18.0.1.0.0",

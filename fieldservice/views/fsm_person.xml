@@ -90,7 +90,7 @@
                         <field name="partner_id" required="0" readonly="0" />
                         </div>
                     </div>
-                    <label for="name" class="oe_edit_only" />
+                    <label for="name" class="oe_edit_only" />cat 
                     <h1>
                         <field name="name" required="True" />
                         <field name="active" invisible="1" />
