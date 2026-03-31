@@ -1135,7 +1135,7 @@ msgstr "Medewerker"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employee_ids
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee_ids
 msgid "Employees"
-msgstr "Medewerkers"
+msgstr "MedeWerkers"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employees_count
