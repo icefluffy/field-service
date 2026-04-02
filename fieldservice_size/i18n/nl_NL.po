@@ -109,12 +109,12 @@ msgstr "Naam"
 #. odoo-python
 #: code:addons/fieldservice_size/models/fsm_size.py:0
 msgid "Only one default order size per type is allowed."
-msgstr "Slechts één standaard ordergrootte per type is toegestaan."
+msgstr "Slechts Ã©Ã©n standaard ordergrootte per type is toegestaan."
 
 #. module: fieldservice_size
 #: model:ir.model.constraint,message:fieldservice_size.constraint_fsm_location_size_one_size_per_location
 msgid "Only one size of same type allowed per location"
-msgstr "Slechts één grootte van hetzelfde type is toegestaan per locatie"
+msgstr "Slechts Ã©Ã©n grootte van hetzelfde type is toegestaan per locatie"
 
 #. module: fieldservice_size
 #: model:ir.model.fields,field_description:fieldservice_size.field_fsm_order__size_value

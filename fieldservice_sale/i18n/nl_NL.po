@@ -38,12 +38,12 @@ msgstr ""
 #. module: fieldservice_sale
 #: model:ir.model.fields.selection,name:fieldservice_sale.selection__product_template__field_service_tracking__sale
 msgid "Create one FSM order per sale order"
-msgstr "…Èn buitendienstorder per verkooporder aanmaken"
+msgstr "een buitendienstorder per verkooporder aanmaken"
 
 #. module: fieldservice_sale
 #: model:ir.model.fields.selection,name:fieldservice_sale.selection__product_template__field_service_tracking__line
 msgid "Create one FSM order per sale order line"
-msgstr "…Èn buitendienstorder per verkoopregel aanmaken"
+msgstr "een buitendienstorder per verkoopregel aanmaken"
 
 #. module: fieldservice_sale
 #: model:ir.model.fields,help:fieldservice_sale.field_product_product__field_service_tracking
@@ -57,8 +57,8 @@ msgid ""
 msgstr ""
 "Bepaalt wat er gebeurt bij bevestiging van de verkooporder:\n"
 "                - Geen: niets extra, standaard gedrag.\n"
-"                - Per verkooporder: Er wordt ÈÈn buitendienstorder aangemaakt voor de verkoop.\n"
-"                - Per verkoopregel: Er wordt ÈÈn buitendienstorder per verkoopregel\n"
+"                - Per verkooporder: Er wordt een buitendienstorder aangemaakt voor de verkoop.\n"
+"                - Per verkoopregel: Er wordt een buitendienstorder per verkoopregel\n"
 "                aangemaakt."
 
 #. module: fieldservice_sale
