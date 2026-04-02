@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_vehicle
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-03-19 14:00+0100\n"
+"Last-Translator: IceFluffy\n"
+"Language-Team: Dutch (Belgium)\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: fieldservice_vehicle
+#: model_terms:ir.actions.act_window,help:fieldservice_vehicle.action_fsm_vehicle
+msgid "Add a Field Service Vehicle here."
+msgstr "Voeg hier een buitendienstvoertuig toe."
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__person_id
+msgid "Assigned Driver"
+msgstr "Toegewezen chauffeur"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_person__vehicle_id
+msgid "Default Vehicle"
+msgstr "Standaard voertuig"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: fieldservice_vehicle
+#: model:ir.model,name:fieldservice_vehicle.model_fsm_order
+msgid "Field Service Order"
+msgstr "Buitendienstorder"
+
+#. module: fieldservice_vehicle
+#: model:ir.model,name:fieldservice_vehicle.model_fsm_vehicle
+msgid "Field Service Vehicle"
+msgstr "Buitendienstvoertuig"
+
+#. module: fieldservice_vehicle
+#: model:ir.actions.act_window,name:fieldservice_vehicle.action_fsm_vehicle
+msgid "Field Service Vehicles"
+msgstr "Buitendienstvoertuigen"
+
+#. module: fieldservice_vehicle
+#: model:ir.model,name:fieldservice_vehicle.model_fsm_person
+msgid "Field Service Worker"
+msgstr "Buitendienstmedewerker"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_vehicle
+#: model:res.groups,name:fieldservice_vehicle.group_fsm_vehicle
+msgid "Manage Vehicles"
+msgstr "Voertuigen beheren"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_vehicle__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.fields,field_description:fieldservice_vehicle.field_fsm_order__vehicle_id
+msgid "Vehicle"
+msgstr "Voertuig"
+
+#. module: fieldservice_vehicle
+#: model:ir.model.constraint,message:fieldservice_vehicle.constraint_fsm_vehicle_name_uniq
+msgid "Vehicle name already exists!"
+msgstr "Voertuignaam bestaat al!"
+
+#. module: fieldservice_vehicle
+#: model:ir.actions.act_window,name:fieldservice_vehicle.action_fsm_report_vehicle
+#: model:ir.ui.menu,name:fieldservice_vehicle.menu_fsm_report_vehicle
+#: model:ir.ui.menu,name:fieldservice_vehicle.menu_fsm_vehicle
+#: model_terms:ir.ui.view,arch_db:fieldservice_vehicle.fsm_vehicle_graph_view
+#: model_terms:ir.ui.view,arch_db:fieldservice_vehicle.fsm_vehicle_pivot_view
+msgid "Vehicles"
+msgstr "Voertuigen"
+
+#. module: fieldservice_vehicle
+#: model_terms:ir.actions.act_window,help:fieldservice_vehicle.action_fsm_report_vehicle
+msgid "Vehicles Report"
+msgstr "Voertuigenrapport"

@@ -1,0 +1,178 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_size
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-03-19 14:00+0100\n"
+"Last-Translator: IceFluffy\n"
+"Language-Team: Dutch (Belgium)\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: fieldservice_size
+#: model_terms:ir.actions.act_window,help:fieldservice_size.action_fsm_size
+msgid "Configure a Field Service Size here."
+msgstr "Configureer hier een buitendienstgrootte."
+
+#. module: fieldservice_size
+#: model:ir.model.fields,help:fieldservice_size.field_fsm_order__size_uom_category
+msgid ""
+"Conversion between Units of Measure can only occur if they belong to the "
+"same category. The conversion will be made based on the ratios."
+msgstr ""
+"Omrekening tussen maateenheden is alleen mogelijk als ze tot dezelfde "
+"categorie behoren. De omrekening wordt uitgevoerd op basis van de verhoudingen."
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__create_uid
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__create_date
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__display_name
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: fieldservice_size
+#: model:ir.model,name:fieldservice_size.model_fsm_location
+msgid "Field Service Location"
+msgstr "Buitendienstlocatie"
+
+#. module: fieldservice_size
+#: model:ir.model,name:fieldservice_size.model_fsm_order
+msgid "Field Service Order"
+msgstr "Buitendienstorder"
+
+#. module: fieldservice_size
+#: model:ir.model,name:fieldservice_size.model_fsm_size
+msgid "Field Service Size"
+msgstr "Buitendienstgrootte"
+
+#. module: fieldservice_size
+#: model:ir.actions.act_window,name:fieldservice_size.action_fsm_size
+msgid "Field Service Sizes"
+msgstr "Buitendienstgroottes"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__id
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__is_order_size
+msgid "Is the Order Size?"
+msgstr "Is dit de ordergrootte?"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__write_uid
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__write_date
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__location_id
+msgid "Location"
+msgstr "Locatie"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location__location_size_ids
+msgid "Location Sizes"
+msgstr "Locatiegroottes"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: fieldservice_size
+#. odoo-python
+#: code:addons/fieldservice_size/models/fsm_size.py:0
+msgid "Only one default order size per type is allowed."
+msgstr "Slechts één standaard ordergrootte per type is toegestaan."
+
+#. module: fieldservice_size
+#: model:ir.model.constraint,message:fieldservice_size.constraint_fsm_location_size_one_size_per_location
+msgid "Only one size of same type allowed per location"
+msgstr "Slechts één grootte van hetzelfde type is toegestaan per locatie"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_order__size_value
+msgid "Order Size"
+msgstr "Ordergrootte"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__type_id
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__type_id
+msgid "Order Type"
+msgstr "Ordertype"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__parent_id
+msgid "Parent Size"
+msgstr "Bovenliggende grootte"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__quantity
+msgid "Quantity"
+msgstr "Hoeveelheid"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__size_id
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_order__size_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_size.fsm_size_form_view
+msgid "Size"
+msgstr "Grootte"
+
+#. module: fieldservice_size
+#: model:ir.model,name:fieldservice_size.model_fsm_location_size
+msgid "Size for FSM Location"
+msgstr "Grootte voor buitendienstlocatie"
+
+#. module: fieldservice_size
+#: model:ir.model.constraint,message:fieldservice_size.constraint_fsm_size_name_uniq
+msgid "Size name already exists!"
+msgstr "Groottenaam bestaat al!"
+
+#. module: fieldservice_size
+#: model:ir.ui.menu,name:fieldservice_size.menu_fsm_size
+#: model_terms:ir.ui.view,arch_db:fieldservice_size.fsm_location_form_view_inherit_size
+msgid "Sizes"
+msgstr "Groottes"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,help:fieldservice_size.field_fsm_size__is_order_size
+msgid "The default size for orders of this type"
+msgstr "De standaard grootte voor orders van dit type"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_location_size__uom_id
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_order__size_uom
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_size__uom_id
+msgid "Unit of Measure"
+msgstr "Maateenheid"
+
+#. module: fieldservice_size
+#: model:ir.model.fields,field_description:fieldservice_size.field_fsm_order__size_uom_category
+msgid "Unit of Measure Category"
+msgstr "Categorie maateenheid"
