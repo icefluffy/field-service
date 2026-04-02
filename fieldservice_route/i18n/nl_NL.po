@@ -51,7 +51,7 @@ msgid "Closed"
 msgstr "Gesloten"
 
 #. module: fieldservice_route
-#: model_terms:ir.ui.view,arch_db:fieldservice_route.fsm_route_dayroute_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_route.fsm_route__form
 msgid "Complete order"
 msgstr "Order voltooien"
 
@@ -63,30 +63,30 @@ msgstr "Een routedag aanmaken."
 #. module: fieldservice_route
 #: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route__create_uid
 #: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route_day__create_uid
-#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route_dayroute__create_uid
+#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route___create_uid
 msgid "Created by"
 msgstr "Aangemaakt door"
 
 #. module: fieldservice_route
 #: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route__create_date
 #: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route_day__create_date
-#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route_dayroute__create_date
+#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route___create_date
 msgid "Created on"
 msgstr "Aangemaakt op"
 
 #. module: fieldservice_route
-#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route_dayroute__date
+#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route___date
 msgid "Date"
 msgstr "Datum"
 
 #. module: fieldservice_route
-#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_order__dayroute_id
-#: model_terms:ir.ui.view,arch_db:fieldservice_route.fsm_route_dayroute_form
+#: model:ir.model.fields,field_description:fieldservice_route.field_fsm_order___id
+#: model_terms:ir.ui.view,arch_db:fieldservice_route.fsm_route__form
 msgid "Day Route"
-msgstr "Dagroute"
+msgstr "Dagritje"
 
 #. module: fieldservice_route
-#: model:ir.actions.act_window,name:fieldservice_route.action_fsm_route_dayroute
+#: model:ir.actions.act_window,name:fieldservice_route.action_fsm_route_
 #: model:ir.actions.act_window,name:fieldservice_route.action_fsm_route_dayroute_dash
 #: model:ir.actions.act_window,name:fieldservice_route.action_fsm_route_dayroute_report
 #: model:ir.ui.menu,name:fieldservice_route.menu_fsm_dash_dayroute
@@ -96,11 +96,11 @@ msgstr "Dagroute"
 #: model_terms:ir.ui.view,arch_db:fieldservice_route.fsm_route_dayroute_graph_view
 #: model_terms:ir.ui.view,arch_db:fieldservice_route.fsm_route_dayroute_pivot_view
 msgid "Day Routes"
-msgstr "Dagroutes"
+msgstr "Dagritjes"
 
 #. module: fieldservice_route
 #: model_terms:ir.actions.act_window,help:fieldservice_route.action_fsm_route_dayroute_report
-msgid "Day Routes Report"
+msgid "s Report"
 msgstr "Rapport dagroutes"
 
 #. module: fieldservice_route
@@ -208,12 +208,12 @@ msgstr "Maximale orders"
 
 #. module: fieldservice_route
 #: model:ir.model.fields,help:fieldservice_route.field_fsm_route__max_order
-msgid "Maximum number of orders per day route."
+msgid "Maximum number of orders per ."
 msgstr "Maximum aantal orders per dagroute."
 
 #. module: fieldservice_route
 #: model:ir.model.fields,help:fieldservice_route.field_fsm_route_dayroute__max_order
-msgid "Maximum numbers of orders that can be added to this day route."
+msgid "Maximum numbers of orders that can be added to this ."
 msgstr "Maximum aantal orders dat aan deze dagroute kan worden toegevoegd."
 
 #. module: fieldservice_route

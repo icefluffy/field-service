@@ -947,7 +947,7 @@ msgstr "Handtekening klant"
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_customer
 #: model:ir.ui.menu,name:fieldservice.menu_fsm_customer
 msgid "Customers"
-msgstr "Klanten"
+msgstr "Klantjes"
 
 #. module: fieldservice
 #: model:ir.ui.menu,name:fieldservice.dashboard
