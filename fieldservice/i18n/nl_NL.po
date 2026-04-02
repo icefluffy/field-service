@@ -947,7 +947,7 @@ msgstr "Handtekening klant"
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_customer
 #: model:ir.ui.menu,name:fieldservice.menu_fsm_customer
 msgid "Customers"
-msgstr "Klantjes"
+msgstr "Klanten"
 
 #. module: fieldservice
 #: model:ir.ui.menu,name:fieldservice.dashboard
@@ -1215,7 +1215,7 @@ msgstr "FS Order #"
 #. module: fieldservice
 #: model:ir.model.fields.selection,name:fieldservice.selection__fsm_order_type__internal_type__fsm
 msgid "FSM"
-msgstr "Veld Dienst"
+msgstr "Buitendienst"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_search_view
@@ -1269,7 +1269,7 @@ msgstr "Buitendienstmedewerker"
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_partner_fields
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Field Service"
-msgstr "Dienst ten Velde"
+msgstr "Buitendienst"
 
 #. module: fieldservice
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_category
