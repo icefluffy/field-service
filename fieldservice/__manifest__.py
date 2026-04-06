@@ -36,6 +36,7 @@
         "views/fsm_team.xml",
         "views/menu.xml",
         "wizard/fsm_wizard.xml",
+        "views/fsm_location_mobile.xml",
     ],
     "demo": [
         "demo/fsm_demo.xml",
