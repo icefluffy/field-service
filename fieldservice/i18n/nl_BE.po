@@ -731,7 +731,7 @@ msgstr "Berekenen op basis van adres"
 #. module: fieldservice
 #: model:ir.model,name:fieldservice.model_res_config_settings
 msgid "Config Settings"
-msgstr "Instellingen"
+msgstr "Configuratie Instellingen"
 
 #. module: fieldservice
 #: model:ir.ui.menu,name:fieldservice.config
@@ -1135,7 +1135,7 @@ msgstr "Medewerker"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employee_ids
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee_ids
 msgid "Employees"
-msgstr "MedeWerkers"
+msgstr "Medewerkers"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employees_count
@@ -3127,7 +3127,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_config
 #: model:ir.ui.menu,name:fieldservice.settings
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__partner_share
@@ -3738,7 +3738,7 @@ msgstr ""
 #: model:ir.ui.menu,name:fieldservice.menu_fsm_person
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Workers"
-msgstr ""
+msgstr "Medewerkers"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__calendar_id
