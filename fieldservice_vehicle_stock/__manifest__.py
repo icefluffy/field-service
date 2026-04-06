@@ -11,6 +11,7 @@
     "Odoo Community Association (OCA)",
     "website": "https://github.com/icefluffy/field-service/",
     "depends": [
+        "stock",
         "fieldservice_vehicle",
         "fieldservice_stock",
     ],
