@@ -57,7 +57,7 @@
         </record>
 
         <!-- Route: Stock to Vehicle to Location -->
-        <record id="route_stock_to_vehicle_to_location" model='stock.location.route'>
+        <record id="route_stock_to_vehicle_to_location" model='stock.route'>
             <field name="name">Stock to Vehicle to Location</field>
             <field name="sequence">3</field>
             <field name="company_id" />
@@ -84,7 +84,7 @@
         </record>
 
         <!-- Route: Location Return Operations -->
-        <record id="route_location_return" model='stock.location.route'>
+        <record id="route_location_return" model='stock.route'>
             <field name="name">Location Return</field>
             <field name="sequence">3</field>
             <field name="company_id" />
