@@ -9,7 +9,7 @@
     <record id="stock_location_vehicle_storage" model="stock.location">
         <field name="name">Storage</field>
         <field name="usage">internal</field>
-        <field name="location_id" ref="stock_location_vehicle" />
+        <field name="location_dest_id" ref="stock_location_vehicle" />
         <field name="company_id" ref="base.main_company" />
     </record>
 
@@ -66,17 +66,17 @@
         <record id="procurement_rule_vehicle_to_location" model="stock.rule">
             <field name="name">Vehicle → Location</field>
             <field name="action">pull</field>
-            <field name="location_id" ref="stock.stock_location_customers" />
-            <field name="location_src_id" ref="stock_location_vehicle_storage" />
+            <field name="location_dest_id" ref="stock.stock_location_customers"/>
+            <field name="location_src_id" ref="stock_location_vehicle_storage"/>
             <field name="procure_method">make_to_order</field>
-            <field name="route_id" ref="route_stock_to_vehicle_to_location" />
-            <field name="picking_type_id" ref="picking_type_vehicle_to_location" />
+            <field name="route_id" ref="route_stock_to_vehicle_to_location"/>
+            <field name="picking_type_id" ref="picking_type_vehicle_to_location"/>
         </record>
 
         <record id="procurement_rule_output_to_vehicle" model="stock.rule">
             <field name="name">Warehouse → Vehicle</field>
             <field name="action">pull</field>
-            <field name="location_id" ref="stock_location_vehicle_storage" />
+            <field name="location_dest_id" ref="stock_location_vehicle_storage" />
             <field name="location_src_id" ref="stock.stock_location_stock" />
             <field name="procure_method">make_to_stock</field>
             <field name="route_id" ref="route_stock_to_vehicle_to_location" />
@@ -119,7 +119,7 @@
         <record id="procurement_rule_location_to_vehicle" model="stock.rule">
             <field name="name">Warehouse → Vehicle</field>
             <field name="action">pull</field>
-            <field name="location_id" ref="stock_location_vehicle" />
+            <field name="location_dest_id" ref="stock_location_vehicle" />
             <field name="location_src_id" ref="stock.stock_location_stock" />
             <field name="procure_method">make_to_stock</field>
             <field name="route_id" ref="route_location_return" />
@@ -150,7 +150,7 @@
             <field name="name">Vehicle → Warehouse</field>
             <field name="action">push</field>
             <field name="location_src_id" ref="stock_location_vehicle" />
-            <field name="location_id" ref="stock.stock_location_stock" />
+            <field name="location_dest_id" ref="stock.stock_location_stock" />
             <field name="auto">manual</field>
             <field name="picking_type_id" ref="picking_type_vehicle_to_input" />
             <field name="route_id" ref="route_location_return" />
