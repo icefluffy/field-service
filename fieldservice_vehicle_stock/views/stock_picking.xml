@@ -13,7 +13,7 @@
             </field>
         </field>
     </record>
-
+<!--
     <record id="fsm_vehicle_stock_picking_tree" model="ir.ui.view">
         <field name="name">stock.picking.fsm_vehicle_id.tree</field>
         <field name="model">stock.picking</field>
@@ -24,5 +24,5 @@
             </field>
         </field>
     </record>
-
+-->
 </odoo>
