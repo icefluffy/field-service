@@ -16,6 +16,7 @@ class FSMLocation(models.Model):
     _rec_names_search = ["complete_name"]
 
     direction = fields.Char()
+    mobile = fields.Char(string="Mobile")
     partner_id = fields.Many2one(
         "res.partner",
         string="Related Partner",
