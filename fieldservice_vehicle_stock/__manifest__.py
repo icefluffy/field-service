@@ -4,12 +4,12 @@
 {
     "name": "Field Service Vehicles - Stock",
     "summary": "Track inventory of Field Service vehicles",
-    "version": "15.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Field Service",
     "author": "Open Source Integrators, "
     "Brian McMaster, "
     "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service/",
     "depends": [
         "fieldservice_vehicle",
         "fieldservice_stock",
