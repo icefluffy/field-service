@@ -48,11 +48,11 @@
     <record model="ir.ui.view" id="fsm_equipment_type_list">
         <field name="model">fsm.equipment.type</field>
         <field name="arch" type="xml">
-            <tree string="Equipment Type">
+            <list string="Equipment Type">
                 <field name="name" />
                 <field name="code" />
                 <field name="description" optional="show" />
-            </tree>
+            </list>
         </field>
     </record>
 
