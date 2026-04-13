@@ -28,13 +28,15 @@ def pre_init_hook(env):
                 maintenance_team_id,
                 is_fsm_equipment,
                 effective_date,
-                active)
+                active,
+                equipment_assign_to)
             VALUES (
                 %s,
                 1,
                 True,
                 %s,
-                True);""",
+                True,
+                'other');""",
                 (equipment.get("name"), equipment.get("create_date")),
             )
 
