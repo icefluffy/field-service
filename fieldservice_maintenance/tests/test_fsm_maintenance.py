@@ -35,7 +35,7 @@ class TestFSMMaintenance(TransactionCase):
                 "type": self.env.ref(
                     "fieldservice_maintenance.fsm_order_type_maintenance"
                 ).id,
-                "equipment_id": fsm_equip_01.id,
+                "equipment_id": fsm_equip_01.ids,
             }
         )
 
@@ -46,7 +46,7 @@ class TestFSMMaintenance(TransactionCase):
         self.assertEqual(maint_req_01.name, fsm_order_01.name)
         self.assertEqual(
             maint_req_01.equipment_id,
-            fsm_order_01.equipment_id.maintenance_equipment_id,
+            fsm_order_01.equipment_id.maintenance_equipment_ids,
         )
         self.assertEqual(fsm_order_01.request_id, maint_req_01)
 
