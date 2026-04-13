@@ -3,12 +3,12 @@
 {
     "name": "Field Service Equipment Type",
     "summary": "Field Service Equipment Type",
-    "version": "14.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "Camptocamp, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Field Service",
     "depends": ["fieldservice"],
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service",
     "data": [
         "security/ir.model.access.csv",
         "views/fsm_equipment_type.xml",
