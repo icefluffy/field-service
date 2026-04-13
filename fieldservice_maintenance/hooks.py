@@ -1,6 +1,8 @@
 # Copyright (C) 2020 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+import json
+
 
 def pre_init_hook(env):
     # Compatible with both old (cr) and new (env) Odoo hook signatures
@@ -27,6 +29,13 @@ def pre_init_hook(env):
 
         # Create a new Maintenance equipment for each FSM equipment
         for equipment in equipments:
+            # name is jsonb in Odoo 18
+            name_json = json.dumps({"en_US": equipment.get("name", "")})
+            # effective_date must be a date, cast from create_date timestamp
+            effective_date = equipment.get("create_date")
+            if hasattr(effective_date, "date"):
+                effective_date = effective_date.date()
+
             cr.execute(
                 """INSERT INTO maintenance_equipment (
                 name,
@@ -42,7 +51,7 @@ def pre_init_hook(env):
                 %s,
                 True,
                 'other');""",
-                (equipment.get("name"), team_id, equipment.get("create_date")),
+                (name_json, team_id, effective_date),
             )
 
             # Set this new Maintenance equipment on the existing FSM equipment
