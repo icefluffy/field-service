@@ -9,7 +9,7 @@
             <xpath expr="//field[@name='equipment_id']" position="after">
                 <field
                     name="fsm_order_id"
-                    attrs="{'invisible': [('fsm_order_id', '=', False)]}"
+                    invisible="not fsm_order_id"
                 />
             </xpath>
         </field>
