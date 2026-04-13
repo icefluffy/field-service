@@ -15,8 +15,9 @@ class FSMOrder(models.Model):
         # create maintenance request
         order = super(FSMOrder, self).create(vals)
         if order.type.internal_type == "maintenance":
-            if order.equipment_id and not order.request_id:
-                equipment = order.equipment_id
+            # Odoo 18 uses equipment_ids (one2many) instead of equipment_id
+            equipment = order.equipment_ids[:1].equipment_id if order.equipment_ids else False
+            if equipment and not order.request_id:
                 maintenance_equipment_id = equipment.maintenance_equipment_id
                 if maintenance_equipment_id:
                     team_id = maintenance_equipment_id.maintenance_team_id.id
