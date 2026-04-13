@@ -1,17 +1,21 @@
 # Copyright (C) 2020, Brian McMaster
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from odoo import fields
 from odoo.tests import tagged
 from odoo.tests.common import TransactionCase
 
 
 @tagged("post_install", "-at_install")
 class TestFSMMaintenance(TransactionCase):
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.partner = cls.env["res.partner"].create({"name": "Partner"})
+        cls.partner = cls.env["res.partner"].create(
+            {
+                "name": "Partner",
+            }
+        )
         cls.fsm_loc = cls.env["fsm.location"].create(
             {"name": "Test Maintenance Location", "owner_id": cls.partner.id}
         )
@@ -27,31 +31,31 @@ class TestFSMMaintenance(TransactionCase):
         maint_equip_01 = fsm_equip_01.maintenance_equipment_id
         self.assertTrue(maint_equip_01)
 
-        # Create FSM Order of type maintenance and an equipment. This should
-        # create a maintenance request based on the FSM order
+        # Create FSM Order of type maintenance and an equipment.
+        # This should create a maintenance request based on the FSM order.
         fsm_order_01 = self.env["fsm.order"].create(
             {
                 "location_id": self.fsm_loc.id,
                 "type": self.env.ref(
                     "fieldservice_maintenance.fsm_order_type_maintenance"
                 ).id,
-                "equipment_id": fsm_equip_01.ids,
+                "equipment_ids": [(6, 0, [fsm_equip_01.id])],
             }
         )
 
-        # Verify Maintenance request was created for that equipment
+        # Verify maintenance request was created for that equipment
         maint_req_01 = self.env["maintenance.request"].search(
             [("fsm_order_id", "=", fsm_order_01.id)]
         )
         self.assertEqual(maint_req_01.name, fsm_order_01.name)
         self.assertEqual(
             maint_req_01.equipment_id,
-            fsm_order_01.equipment_id.maintenance_equipment_ids,
+            fsm_order_01.equipment_ids[:1].maintenance_equipment_id,
         )
         self.assertEqual(fsm_order_01.request_id, maint_req_01)
 
-        # Create a maintenance request for an FSM equipment. This should
-        # create an FSM order for that equipment.
+        # Create a maintenance request for an FSM equipment.
+        # This should create an FSM order for that equipment.
         maint_req_02 = self.env["maintenance.request"].create(
             {
                 "name": "Equip 01 Request for FSM",
@@ -65,7 +69,7 @@ class TestFSMMaintenance(TransactionCase):
         )
         self.assertEqual(fsm_order_02.description, maint_req_02.description)
         self.assertEqual(
-            fsm_order_02.equipment_id.maintenance_equipment_id,
+            fsm_order_02.equipment_ids[:1].maintenance_equipment_id,
             maint_req_02.equipment_id,
         )
         self.assertEqual(maint_req_02.fsm_order_id, fsm_order_02)
@@ -79,8 +83,7 @@ class TestFSMMaintenance(TransactionCase):
             }
         )
 
-        # Check that a notification regarding the missing location
-        # is shown to the user
+        # Check that a notification regarding its missing value is shown
         msg_notification = self.env["mail.message"].search(
             [
                 ("res_id", "=", request.id),
@@ -96,5 +99,6 @@ class TestFSMMaintenance(TransactionCase):
 
         # Deleting the FSM Equipment
         fsm_equip_01.unlink()
+
         # Verify the maintenance equipment is no longer an FSM equipment
         self.assertFalse(maint_equip_01.is_fsm_equipment)
