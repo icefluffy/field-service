@@ -3,23 +3,26 @@
 
 
 def pre_init_hook(env):
+    # Compatible with both old (cr) and new (env) Odoo hook signatures
+    cr = env.cr if hasattr(env, "cr") else env
+
     # Check for existing fsm equipments
-    env.cr.execute("SELECT * FROM fsm_equipment")
-    equipments = env.cr.dictfetchall()
+    cr.execute("SELECT * FROM fsm_equipment")
+    equipments = cr.dictfetchall()
     if equipments:
         # Add new columns to hold values
-        env.cr.execute(
+        cr.execute(
             """ALTER TABLE fsm_equipment
         ADD maintenance_equipment_id INT;"""
         )
-        env.cr.execute(
+        cr.execute(
             """ALTER TABLE maintenance_equipment
         ADD is_fsm_equipment BOOLEAN;"""
         )
 
         # Create a new Maintenance equipment for each FSM equipment
         for equipment in equipments:
-            env.cr.execute(
+            cr.execute(
                 """INSERT INTO maintenance_equipment (
                 name,
                 maintenance_team_id,
@@ -36,7 +39,7 @@ def pre_init_hook(env):
             )
 
             # Set this new Maintenance equipment on the existing FSM equipment
-            env.cr.execute(
+            cr.execute(
                 """UPDATE fsm_equipment
                 SET maintenance_equipment_id = (
                     SELECT id
