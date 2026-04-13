@@ -10,6 +10,11 @@ def pre_init_hook(env):
     cr.execute("SELECT * FROM fsm_equipment")
     equipments = cr.dictfetchall()
     if equipments:
+        # Get the first available maintenance team ID
+        cr.execute("SELECT id FROM maintenance_team ORDER BY id LIMIT 1")
+        team = cr.fetchone()
+        team_id = team[0] if team else None
+
         # Add new columns to hold values
         cr.execute(
             """ALTER TABLE fsm_equipment
@@ -32,12 +37,12 @@ def pre_init_hook(env):
                 equipment_assign_to)
             VALUES (
                 %s,
-                1,
+                %s,
                 True,
                 %s,
                 True,
                 'other');""",
-                (equipment.get("name"), equipment.get("create_date")),
+                (equipment.get("name"), team_id, equipment.get("create_date")),
             )
 
             # Set this new Maintenance equipment on the existing FSM equipment
