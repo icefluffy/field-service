@@ -45,7 +45,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="fsm_equipment_type_tree">
+    <record model="ir.ui.view" id="fsm_equipment_type_list">
         <field name="model">fsm.equipment.type</field>
         <field name="arch" type="xml">
             <tree string="Equipment Type">
@@ -59,7 +59,7 @@
     <record id="action_fsm_equipment_type" model="ir.actions.act_window">
         <field name="name">FSM Equipment Type</field>
         <field name="res_model">fsm.equipment.type</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
