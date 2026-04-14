@@ -73,15 +73,17 @@ class FSMRouteDayRoute(models.Model):
     )
 
     def _default_team_id(self):
-        teams = self.env["fsm.team"].search(
+        teams = self.env["fsm.team"].sudo().search(
             [("company_id", "in", (self.env.user.company_id.id, False))],
             order="sequence asc",
             limit=1,
         )
-        if teams:
-            return teams
-        else:
-            raise ValidationError(_("You must create a FSM team first."))
+        if not teams:
+            # Fallback: search without company filter
+            teams = self.env["fsm.team"].sudo().search(
+                [], order="sequence asc", limit=1
+            )
+        return teams  # Returns empty recordset if none found — no crash
 
     def _default_stage_id(self):
         return self.env["fsm.stage"].search(
