@@ -283,7 +283,7 @@ msgstr "Gearchiveerd"
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__location_id
 msgid "Assigned Location"
-msgstr "Toegewezen locatie"
+msgstr "Gebruikelijke locatie"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__person_id
@@ -2126,7 +2126,7 @@ msgstr ""
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__group_fsm_territory
 msgid "Manage Territory"
-msgstr ""
+msgstr "Beheer Regio"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__module_fieldservice_vehicle
@@ -3362,7 +3362,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_search_view
 msgid "Territory"
-msgstr ""
+msgstr "Regio"
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__country_code
