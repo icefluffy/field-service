@@ -23,7 +23,6 @@ class FSMCategory(models.Model):
 
     _sql_constraints = [("name_uniq", "unique (name)", "Category name already exists!")]
 
-    @api.depends('name', 'parent_id', 'parent_id.full_name')
     def _compute_full_name(self):
         for record in self:
             record.full_name = (
