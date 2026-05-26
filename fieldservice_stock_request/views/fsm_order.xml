@@ -11,7 +11,7 @@
                 <header>
                     <button
                         name="action_request_submit"
-                        attrs="{'invisible': [('request_stage', 'not in', ['draft'])]}"
+                        invisible="request_stage not in ['draft']"
                         type="object"
                         class="oe_highlight"
                         string="Submit"
@@ -19,13 +19,13 @@
                     <button
                         name="action_request_draft"
                         type="object"
-                        attrs="{'invisible': [('request_stage', 'not in', ['cancel'])]}"
+                        invisible="request_stage not in ['cancel']"
                         class="oe_highlight"
                         string="Set to Draft"
                     />
                     <button
                         name="action_request_cancel"
-                        attrs="{'invisible': [('request_stage', 'not in', ['draft','submitted','open'])]}"
+                        invisible="request_stage not in ['draft', 'submitted', 'open']"
                         type="object"
                         string="Cancel"
                     />
