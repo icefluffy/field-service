@@ -12,9 +12,6 @@
     "website": "https://github.com/icefluffy/field-service",
     "depends": [
         "fieldservice_stock",
-        "stock_request_direction",
-        "stock_request_picking_type",
-        "stock_request_submit",
     ],
     "data": [
         "security/ir.model.access.csv",
