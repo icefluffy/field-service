@@ -70,7 +70,7 @@
                         name="active_partner"
                         required="0"
                         readonly="0"
-                        invisible="0"
+                        invisible="1"
                     />
                     <div
                         class="alert alert-info text-center o_form_header"
@@ -89,8 +89,7 @@
                         <div>You can archive the contact
                         <field name="partner_id" required="0" readonly="0" />
                         </div>
-                    </div>
-                    <label for="name" class="oe_edit_only" />cat 
+                    </div> 
                     <h1>
                         <field name="name" required="True" />
                         <field name="active" invisible="1" />
