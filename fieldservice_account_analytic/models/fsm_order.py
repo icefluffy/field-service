@@ -22,7 +22,6 @@ class FSMOrder(models.Model):
     )
 
     def _compute_total_cost(self):
-        """To be overridden as needed from other modules"""
         for order in self:
             order.total_cost = 0.0
 
@@ -33,8 +32,8 @@ class FSMOrder(models.Model):
         )
 
     def write(self, vals):
-        res = super().write(vals)
-        for order in self:
-            if "customer_id" not in vals and not order.customer_id:
-                order.customer_id = order.location_id.customer_id.id
-        return res
+        if "customer_id" not in vals and vals.get("location_id"):
+            location = self.env["fsm.location"].browse(vals["location_id"])
+            if location.exists() and location.customer_id:
+                vals = dict(vals, customer_id=location.customer_id.id)
+        return super().write(vals)
