@@ -11,9 +11,8 @@
     "depends": [
         "fieldservice_account",
         "fieldservice_stock_request",
-        "account_invoice_report_hide_line",
     ],
-    "data": [],
+    "data": ["report/report_invoice.xml"],
     "installable": True,
     "license": "AGPL-3",
     "development_status": "Beta",

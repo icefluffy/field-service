@@ -1,0 +1,7 @@
+<odoo>
+    <template id="report_invoice_document_hide_line" inherit_id="account.report_invoice_document">
+        <xpath expr="//t[@t-foreach='invoice_lines']" position="attributes">
+            <attribute name="t-foreach">invoice_lines.filtered(lambda l: l.show_in_report)</attribute>
+        </xpath>
+    </template>
+</odoo>
