@@ -21,9 +21,8 @@ class AccountAnalyticLine(models.Model):
                 raise ValidationError(
                     _("No analytic account set " "on the order's Location.")
                 )
-        return super(AccountAnalyticLine, self).create(vals)
+        return super().create(vals)
 
     @api.onchange("product_id")
     def onchange_product_id(self):
-        if self.product_id:
-            self.name = self.product_id.name
+        self.name = self.product_id.name if self.product_id else False
