@@ -10,7 +10,7 @@
                 <group>
                     <field name="location_id" options="{'no_create': True}" />
                     <field name="line_ids">
-                        <tree editable="bottom">
+                        <list editable="bottom">
                             <field name="product_id" options="{'no_create': True}" />
                             <field
                                     name="product_uom_id"
@@ -22,7 +22,7 @@
                                     name="discount"
                                     groups="product.group_discount_per_so_line"
                                 />
-                        </tree>
+                        </list>
                     </field>
                 </group>
                 <footer>
