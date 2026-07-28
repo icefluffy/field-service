@@ -7,7 +7,7 @@
     "category": "Field Service",
     "summary": "Invoice inventory items delivered with Field Service orders",
     "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/field-service",
+    "website": "https://github.com/icefluffy/field-service",
     "depends": [
         "fieldservice_account",
         "fieldservice_stock_request",
