@@ -143,19 +143,25 @@ class FSMOrder(models.Model):
         for order in self:
             vals = order.prepare_bills()
             self.env["account.move"].sudo().create(vals)
+#
+#    def account_confirm(self):
+#        for order in self:
+#            if order.contractor_cost_ids:
+#                if order.person_id.partner_id.supplier_rank:
+#                    order.create_bills()
+#                    order.account_stage = "confirmed"
+#                else:
+#                    raise ValidationError(
+#                        _("The worker assigned to this order is not a supplier.")
+#                    )
+#            if order.employee_timesheet_ids:
+#                order.account_stage = "confirmed"
 
     def account_confirm(self):
         for order in self:
-            if order.contractor_cost_ids:
-                if order.person_id.partner_id.supplier_rank:
-                    order.create_bills()
-                    order.account_stage = "confirmed"
-                else:
-                    raise ValidationError(
-                        _("The worker assigned to this order is not a supplier.")
-                    )
-            if order.employee_timesheet_ids:
-                order.account_stage = "confirmed"
+            if order.contractor_cost_ids and order.person_id.partner_id.supplier_rank:
+                order.create_bills()
+            order.account_stage = "confirmed"
 
     def _get_partner_pricelist_price(self, pricelist, product, quantity, partner):
         if not pricelist:
