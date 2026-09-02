@@ -78,7 +78,7 @@ class FSMAccountAnalyticCase(TransactionCase):
 
         cls.default_account_revenue = cls.env["account.account"].search(
             [
-                ("company_id", "=", cls.env.company.id),
+                ("company_ids", "in", cls.env.company.id),
                 ("account_type", "=", "income"),
             ],
             limit=1,

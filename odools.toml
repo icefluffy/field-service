@@ -1,0 +1,16 @@
+[[config]]
+name = "default"
+odoo_path = "c:/Users/Seth/Projects/odoo-18"
+
+addons_paths = [
+    "${workspaceFolder}",
+    "c:/Users/Seth/Downloads/RSN/rail_consignmnent/zcs_rail_consignment",
+    "c:/Users/Seth/OneDrive/Documenten/RSN project follow up/GIT/field-service"
+
+]
+
+python_path = "c:/Users/Seth/Projects/odoo-18/.venv/Scripts/python.exe"
+
+diag_missing_imports = "only_odoo"
+auto_refresh_delay = 1000
+file_cache = true
