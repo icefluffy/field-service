@@ -5,7 +5,7 @@ from datetime import timedelta
 
 from odoo import fields
 from odoo.exceptions import ValidationError
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests.form import Form, TransactionCase
 
 
 class FSMIspFlowCase(TransactionCase):

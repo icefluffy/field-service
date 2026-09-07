@@ -9,6 +9,7 @@
     "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
     "website": "https://github.com/icefluffy/field-service",
     "depends": [
+        "fieldservice",
         "fieldservice_account",
         "fieldservice_stock_request",
     ],
