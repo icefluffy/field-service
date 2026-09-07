@@ -191,7 +191,7 @@
                             <field
                                 name="equipment_ids"
                                 options="{'no_create': True}"
-                                domain="[]"
+                                domain="[('current_location_id','=',location_id)]"
                             >
                                 <list>
                                     <field name="name" />
