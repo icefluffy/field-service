@@ -9,7 +9,8 @@ class AccountMoveLine(models.Model):
 
     @staticmethod
     def _fsm_order_ids_from_commands(commands):
-        fsm_order_ids = []
+        """Extract fsm.order IDs from M2M ORM commands."""
+        order_ids = []
 
         for command in commands or []:
             if not isinstance(command, (list, tuple)) or not command:
@@ -18,39 +19,52 @@ class AccountMoveLine(models.Model):
             command_type = command[0]
 
             if command_type == fields.Command.SET:
-                fsm_order_ids.extend(command[2] or [])
+                order_ids.extend(command[2] or [])
 
             elif command_type == fields.Command.LINK:
-                fsm_order_ids.append(command[1])
+                order_ids.append(command[1])
 
-        return list(dict.fromkeys(fsm_order_ids))
+        return list(dict.fromkeys(order_ids))
+
+    @staticmethod
+    def _get_wagon_serials(orders):
+        """Return unique wagon serials from selected FSM equipment."""
+        equipments = orders.mapped("equipment_ids")
+
+        # This deliberately uses product name. For a more robust implementation,
+        # replace this filter later by a fixed product ID or a product tag.
+        wagons = equipments.filtered(
+            lambda equipment: equipment.product_id
+            and equipment.product_id.display_name == "Generic Wagon"
+        )
+
+        serials = wagons.mapped("lot_id.name")
+        serials = [serial for serial in serials if isinstance(serial, str) and serial]
+
+        # Your equipment record name is also the wagon serial number.
+        if not serials:
+            serials = wagons.mapped("name")
+            serials = [
+                serial for serial in serials if isinstance(serial, str) and serial
+            ]
+
+        return list(dict.fromkeys(serials))
 
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            fsm_order_ids = self._fsm_order_ids_from_commands(
-                vals.get("fsm_order_ids")
-            )
-
-            if not fsm_order_ids:
+            # Do not affect invoice section or note lines.
+            if vals.get("display_type"):
                 continue
 
-            orders = self.env["fsm.order"].browse(fsm_order_ids).exists()
-            equipments = orders.mapped("equipment_ids")
-
-            wagons = equipments.filtered(
-                lambda equipment: equipment.product_id
-                and equipment.product_id.display_name == "Generic Wagon"
+            order_ids = self._fsm_order_ids_from_commands(
+                vals.get("fsm_order_ids", [])
             )
+            if not order_ids:
+                continue
 
-            serials = wagons.mapped("lot_id.name")
-            serials = [serial for serial in serials if serial]
-
-            if not serials:
-                serials = wagons.mapped("name")
-                serials = [serial for serial in serials if serial]
-
-            serials = list(dict.fromkeys(serials))
+            orders = self.env["fsm.order"].browse(order_ids).exists()
+            serials = self._get_wagon_serials(orders)
 
             if not serials:
                 continue
@@ -59,11 +73,20 @@ class AccountMoveLine(models.Model):
                 "- %s" % serial for serial in serials
             )
 
-            base_description = vals.get("name") or ""
+            # `name` is not guaranteed to be a text value during all creation
+            # paths. Do not invoke .rstrip() unless it is an actual string.
+            base_description = vals.get("name")
+            if not isinstance(base_description, str):
+                base_description = ""
+
             if wagon_text not in base_description:
-                vals["name"] = "%s\n%s" % (
-                    base_description.rstrip(),
-                    wagon_text,
-                ).strip()
+                vals["name"] = "\n".join(
+                    part
+                    for part in (
+                        base_description.rstrip(),
+                        wagon_text,
+                    )
+                    if part
+                )
 
         return super().create(vals_list)
