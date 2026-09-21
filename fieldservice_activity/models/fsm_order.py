@@ -11,53 +11,50 @@ class FSMOrder(models.Model):
     order_activity_ids = fields.One2many(
         "fsm.activity",
         "fsm_order_id",
-        "Order Activities",
-        compute="_compute_order_activity_ids",
-        store=True,
+        string="Order Activities",
     )
 
-    @api.depends("template_id")
-    def _compute_order_activity_ids(self):
-        for rec in self:
-            # Clear existing activities
-            if not rec.template_id:
+    def _load_template_activities(self):
+        for order in self:
+            if not order.template_id or order.order_activity_ids:
                 continue
 
-            activity_list = [(5, 0, 0)]
-            activity_list.extend(
+            order.order_activity_ids = [
                 (
                     0,
                     0,
                     {
-                        "name": temp_activity.name,
-                        "required": temp_activity.required,
-                        "ref": temp_activity.ref,
-                        "state": temp_activity.state,
+                        "name": template_activity.name,
+                        "required": template_activity.required,
+                        "ref": template_activity.ref,
+                        "state": template_activity.state,
                     },
                 )
-                for temp_activity in rec.template_id.temp_activity_ids
-            )
+                for template_activity in order.template_id.temp_activity_ids
+            ]
 
-            rec.order_activity_ids = activity_list
+    @api.onchange("template_id")
+    def _onchange_template_id_order_activities(self):
+        self._load_template_activities()
 
     @api.model_create_multi
-    def create(self, vals):
-        """Update Activities for FSM orders that are generate from SO"""
-        orders = super().create(vals)
+    def create(self, vals_list):
+        orders = super().create(vals_list)
         for order in orders:
             order._onchange_template_id()
+            order._load_template_activities()
         return orders
 
     def action_complete(self):
-        res = super().action_complete()
-        for activity in self.order_activity_ids:
-            if activity.required and activity.state == "todo":
+        for order in self:
+            pending_required_activities = order.order_activity_ids.filtered(
+                lambda activity: activity.required and activity.state == "todo"
+            )
+            if pending_required_activities:
                 raise ValidationError(
                     _(
-                        "You must complete activity '%s' before \
-                    completing this order."
+                        "You must complete activity '%s' before completing this order."
                     )
-                    % activity.name
+                    % pending_required_activities[0].name
                 )
-        self.activity_ids._action_done()
-        return res
+        return super().action_complete()
