@@ -9,12 +9,10 @@ class FSMActivity(models.Model):
     _description = "Field Service Activity"
 
     name = fields.Char(
-        required=True,
-        readonly=True,
+        required=True
     )
     required = fields.Boolean(
-        default=False,
-        readonly=True,
+        default=False
     )
     sequence = fields.Integer()
     completed = fields.Boolean(default=False)
