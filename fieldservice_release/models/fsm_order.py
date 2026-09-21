@@ -1,3 +1,6 @@
+# Copyright (C) 2026 Your Company
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 from odoo import fields, models
 
 
@@ -44,6 +47,9 @@ class FsmOrder(models.Model):
 
     def action_open_release_form(self):
         self.ensure_one()
+
+        if not self.release_id:
+            return False
 
         return {
             "type": "ir.actions.act_window",
