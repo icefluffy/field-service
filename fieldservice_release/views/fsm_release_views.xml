@@ -118,14 +118,6 @@
                             </group>
                         </page>
 
-
-                        <page name="remarks" string="Remarks">
-                            <field
-                                name="remarks"
-                                placeholder="Enter release-to-service remarks..."
-                            />
-                        </page>
-
                         <page name="equipment" string="Equipment">
                             <field
                                 name="equipment_line_ids"
@@ -138,6 +130,13 @@
                                     <field name="lot_id"/>
                                 </list>
                             </field>
+                        </page>
+
+                        <page name="remarks" string="Remarks">
+                            <field
+                                name="remarks"
+                                placeholder="Enter release-to-service remarks..."
+                            />
                         </page>
 
                     </notebook>
