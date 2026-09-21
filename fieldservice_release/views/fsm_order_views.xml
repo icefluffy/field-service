@@ -4,16 +4,29 @@
     <record id="fsm_order_form_view_release" model="ir.ui.view">
         <field name="name">fsm.order.form.release</field>
         <field name="model">fsm.order</field>
-
-        <!-- This view already contains the Accounting tab and account_stage. -->
-        <field name="inherit_id" ref="fieldservice_isp_account.fsm_order_form_isp_account"/>
+        <field name="inherit_id"
+               ref="fieldservice_isp_account.fsm_order_form_isp_account"/>
 
         <field name="arch" type="xml">
 
-            <!-- Put our new tab directly after the existing Accounting tab. -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_open_release_form"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-pencil-square-o"
+                    invisible="not release_id"
+                >
+                    <field
+                        name="release_count"
+                        widget="statinfo"
+                        string="Release Form"
+                    />
+                </button>
+            </xpath>
+
             <xpath expr="//page[@name='accounting']" position="after">
                 <page name="release_to_service" string="Release to Service">
-
                     <group>
                         <field name="release_remarks"
                                placeholder="Enter the remarks for the release form..."/>
@@ -24,11 +37,9 @@
                                readonly="1"
                                options="{'no_create': True, 'no_open': False}"/>
                     </group>
-
                 </page>
             </xpath>
 
-            <!-- Place our button immediately after Create Invoice. -->
             <xpath expr="//button[@name='account_create_invoice']" position="after">
                 <button
                     id="account_create_release_form"
