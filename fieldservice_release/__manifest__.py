@@ -5,13 +5,13 @@
     "name": "Field Service - Release to service",
     "summary": """Track analytic accounts on Field Service locations
                   and orders""",
-    "version": "18.0.1.1.2",
+    "version": "18.0.1.1.3",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "website": "https://github.com/icefluffy/field-service",
     "depends": [
-        "fieldservice_account",
         "fieldservice_isp_account",
+        "fieldservice_equipment_stock",
     ],
     "data": [
         "security/ir.model.access.csv",

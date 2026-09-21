@@ -1,3 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fsm_release_fsm_manager,fsm.release.fsm.manager,model_fsm_release,fieldservice.group_fsm_manager,1,1,1,1
 access_fsm_release_fsm_dispatcher,fsm.release.fsm.dispatcher,model_fsm_release,fieldservice.group_fsm_dispatcher,1,1,1,0
+access_fsm_release_equipment_fsm_manager,fsm.release.equipment.fsm.manager,model_fsm_release_equipment,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_release_equipment_fsm_dispatcher,fsm.release.equipment.fsm.dispatcher,model_fsm_release_equipment,fieldservice.group_fsm_dispatcher,1,1,1,0
+access_fsm_release_contractor_cost_fsm_manager,fsm.release.contractor.cost.fsm.manager,model_fsm_release_contractor_cost,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_release_contractor_cost_fsm_dispatcher,fsm.release.contractor.cost.fsm.dispatcher,model_fsm_release_contractor_cost,fieldservice.group_fsm_dispatcher,1,1,1,0
+access_fsm_release_timesheet_fsm_manager,fsm.release.timesheet.fsm.manager,model_fsm_release_timesheet,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_release_timesheet_fsm_dispatcher,fsm.release.timesheet.fsm.dispatcher,model_fsm_release_timesheet,fieldservice.group_fsm_dispatcher,1,1,1,0

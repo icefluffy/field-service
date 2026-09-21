@@ -39,9 +39,65 @@ class FsmRelease(models.Model):
         index=True,
     )
 
+    partner_id = fields.Many2one(
+        comodel_name="res.partner",
+        string="Customer",
+        readonly=True,
+    )
+
+    location_id = fields.Many2one(
+        comodel_name="fsm.location",
+        string="Service Location",
+        readonly=True,
+    )
+
     remarks = fields.Text(
         string="Release to Service Remarks",
     )
+
+    equipment_line_ids = fields.One2many(
+        comodel_name="fsm.release.equipment",
+        inverse_name="release_id",
+        string="Equipment",
+        readonly=True,
+        copy=False,
+    )
+
+    contractor_cost_line_ids = fields.One2many(
+        comodel_name="fsm.release.contractor.cost",
+        inverse_name="release_id",
+        string="Contractor Costs",
+        readonly=True,
+        copy=False,
+    )
+
+    timesheet_line_ids = fields.One2many(
+        comodel_name="fsm.release.timesheet",
+        inverse_name="release_id",
+        string="Employee Timesheets",
+        readonly=True,
+        copy=False,
+    )
+
+    contractor_total = fields.Float(
+        string="Contractor Cost Total",
+        compute="_compute_totals",
+    )
+
+    employee_time_total = fields.Float(
+        string="Total Employee Hours",
+        compute="_compute_totals",
+    )
+
+    def _compute_totals(self):
+        for release in self:
+            release.contractor_total = sum(
+                line.quantity * line.price_unit
+                for line in release.contractor_cost_line_ids
+            )
+            release.employee_time_total = sum(
+                release.timesheet_line_ids.mapped("unit_amount")
+            )
 
     def action_release(self):
         self.write({
@@ -57,3 +113,132 @@ class FsmRelease(models.Model):
         self.write({
             "state": "draft",
         })
+
+
+class FsmReleaseEquipment(models.Model):
+    _name = "fsm.release.equipment"
+    _description = "Field Service Release Form Equipment"
+    _order = "sequence, id"
+
+    release_id = fields.Many2one(
+        comodel_name="fsm.release",
+        string="Release Form",
+        required=True,
+        ondelete="cascade",
+    )
+
+    sequence = fields.Integer(
+        default=10,
+    )
+
+    equipment_id = fields.Many2one(
+        comodel_name="fsm.equipment",
+        string="Equipment",
+        readonly=True,
+    )
+
+    product_id = fields.Many2one(
+        comodel_name="product.product",
+        string="Product",
+        readonly=True,
+    )
+
+    lot_id = fields.Many2one(
+        comodel_name="stock.lot",
+        string="Serial Number",
+        readonly=True,
+    )
+
+
+class FsmReleaseContractorCost(models.Model):
+    _name = "fsm.release.contractor.cost"
+    _description = "Field Service Release Form Contractor Cost"
+    _order = "sequence, id"
+
+    release_id = fields.Many2one(
+        comodel_name="fsm.release",
+        string="Release Form",
+        required=True,
+        ondelete="cascade",
+    )
+
+    sequence = fields.Integer(
+        default=10,
+    )
+
+    product_id = fields.Many2one(
+        comodel_name="product.product",
+        string="Product",
+        readonly=True,
+    )
+
+    quantity = fields.Float(
+        string="Quantity",
+        readonly=True,
+    )
+
+    price_unit = fields.Float(
+        string="Unit Price",
+        readonly=True,
+    )
+
+    subtotal = fields.Float(
+        string="Subtotal",
+        compute="_compute_subtotal",
+    )
+
+    def _compute_subtotal(self):
+        for line in self:
+            line.subtotal = line.quantity * line.price_unit
+
+
+class FsmReleaseTimesheet(models.Model):
+    _name = "fsm.release.timesheet"
+    _description = "Field Service Release Form Timesheet"
+    _order = "date, id"
+
+    release_id = fields.Many2one(
+        comodel_name="fsm.release",
+        string="Release Form",
+        required=True,
+        ondelete="cascade",
+    )
+
+    date = fields.Date(
+        string="Date",
+        readonly=True,
+    )
+
+    employee_id = fields.Many2one(
+        comodel_name="hr.employee",
+        string="Employee",
+        readonly=True,
+    )
+
+    product_id = fields.Many2one(
+        comodel_name="product.product",
+        string="Time Type",
+        readonly=True,
+    )
+
+    description = fields.Char(
+        string="Description",
+        readonly=True,
+    )
+
+    unit_amount = fields.Float(
+        string="Duration",
+        readonly=True,
+    )
+
+    project_id = fields.Many2one(
+        comodel_name="account.analytic.account",
+        string="Project",
+        readonly=True,
+    )
+
+    task_id = fields.Many2one(
+        comodel_name="project.task",
+        string="Task",
+        readonly=True,
+    )

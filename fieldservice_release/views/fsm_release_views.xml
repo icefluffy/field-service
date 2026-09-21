@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- List view: useful later from a menu or directly from an order. -->
     <record id="fsm_release_list_view" model="ir.ui.view">
         <field name="name">fsm.release.list</field>
         <field name="model">fsm.release</field>
@@ -9,12 +8,13 @@
             <list string="Release Forms">
                 <field name="name"/>
                 <field name="fsm_order_id"/>
+                <field name="partner_id"/>
+                <field name="location_id"/>
                 <field name="state"/>
             </list>
         </field>
     </record>
 
-    <!-- Form view: the record created by Create Release Form opens here. -->
     <record id="fsm_release_form_view" model="ir.ui.view">
         <field name="name">fsm.release.form</field>
         <field name="model">fsm.release</field>
@@ -59,16 +59,86 @@
                     </div>
 
                     <group>
-                        <field name="fsm_order_id"/>
+                        <group>
+                            <field name="fsm_order_id"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="location_id"/>
+                        </group>
                     </group>
 
                     <notebook>
+
                         <page name="remarks" string="Remarks">
                             <field
                                 name="remarks"
                                 placeholder="Enter release-to-service remarks..."
                             />
                         </page>
+
+                        <page name="equipment" string="Equipment">
+                            <field
+                                name="equipment_line_ids"
+                                nolabel="1"
+                            >
+                                <list create="0" delete="0">
+                                    <field name="sequence" column_invisible="1"/>
+                                    <field name="equipment_id"/>
+                                    <field name="product_id"/>
+                                    <field name="lot_id"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page name="contractor_costs" string="Contractor Costs">
+                            <field
+                                name="contractor_cost_line_ids"
+                                nolabel="1"
+                            >
+                                <list create="0" delete="0">
+                                    <field name="sequence" column_invisible="1"/>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="price_unit"/>
+                                    <field name="subtotal"/>
+                                </list>
+                            </field>
+
+                            <group>
+                                <field name="contractor_total" readonly="1"/>
+                            </group>
+                        </page>
+
+                        <page name="employee_timesheets" string="Employee Timesheets">
+                            <field
+                                name="timesheet_line_ids"
+                                nolabel="1"
+                            >
+                                <list create="0" delete="0" default_order="date">
+                                    <field name="date"/>
+                                    <field name="employee_id"/>
+                                    <field name="product_id"/>
+                                    <field name="description"/>
+                                    <field
+                                        name="unit_amount"
+                                        string="Duration"
+                                        widget="float_time"
+                                    />
+                                    <field name="project_id"/>
+                                    <field name="task_id"/>
+                                </list>
+                            </field>
+
+                            <group>
+                                <field
+                                    name="employee_time_total"
+                                    readonly="1"
+                                    widget="float_time"
+                                />
+                            </group>
+                        </page>
+
                     </notebook>
                 </sheet>
 
