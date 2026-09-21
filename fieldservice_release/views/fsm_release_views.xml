@@ -23,6 +23,14 @@
 
                 <header>
                     <button
+                        name="%(action_report_fsm_release)d"
+                        string="Print Release Form"
+                        type="action"
+                        class="oe_highlight"
+                        icon="fa-print"
+                    />
+                    
+                    <button
                         name="action_release"
                         string="Release to Service"
                         type="object"

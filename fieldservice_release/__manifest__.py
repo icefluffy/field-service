@@ -15,6 +15,8 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "report/fsm_release_report.xml",
+        "report/fsm_release_report_templates.xml",
         "views/fsm_release_views.xml",
         "views/fsm_order_views.xml",
     ],

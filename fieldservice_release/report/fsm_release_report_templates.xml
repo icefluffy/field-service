@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_fsm_release_document">
+        <t t-call="web.html_container">
+
+            <t t-foreach="docs" t-as="release">
+                <t t-call="web.basic_layout">
+
+                    <style>
+                        .release-page {
+                            font-family: Arial, sans-serif;
+                            font-size: 10px;
+                            color: #111;
+                        }
+
+                        .release-header {
+                            border: 1px solid #777;
+                            padding: 7px;
+                            margin-bottom: 7px;
+                        }
+
+                        .release-title {
+                            font-size: 17px;
+                            font-weight: bold;
+                            text-align: center;
+                            margin-bottom: 6px;
+                        }
+
+                        .release-subtitle {
+                            font-size: 9px;
+                            text-align: center;
+                            color: #555;
+                        }
+
+                        .release-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-bottom: 7px;
+                        }
+
+                        .release-table td,
+                        .release-table th {
+                            border: 1px solid #777;
+                            padding: 4px;
+                            vertical-align: top;
+                        }
+
+                        .release-label {
+                            background: #e5e5e5;
+                            font-weight: bold;
+                            width: 23%;
+                        }
+
+                        .release-section {
+                            background: #d9d9d9;
+                            border: 1px solid #777;
+                            border-bottom: 0;
+                            font-weight: bold;
+                            padding: 5px;
+                            text-transform: uppercase;
+                        }
+
+                        .release-large-box {
+                            min-height: 70px;
+                        }
+
+                        .release-medium-box {
+                            min-height: 45px;
+                        }
+
+                        .release-small-box {
+                            min-height: 28px;
+                        }
+
+                        .release-signature {
+                            height: 55px;
+                        }
+
+                        .release-check {
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+
+                        .release-footer {
+                            margin-top: 8px;
+                            font-size: 8px;
+                            color: #555;
+                            text-align: center;
+                        }
+                    </style>
+
+                    <div class="page release-page">
+
+                        <!-- Header -->
+                        <div class="release-header">
+                            <div class="release-title">
+                                RELEASE TO SERVICE FORM
+                            </div>
+
+                            <div class="release-subtitle">
+                                Field Service Release / Maintenance Completion Document
+                            </div>
+
+                            <table class="release-table" style="margin-top: 8px; margin-bottom: 0;">
+                                <tr>
+                                    <td class="release-label">Release Form No.</td>
+                                    <td>
+                                        <span t-field="release.name"/>
+                                    </td>
+                                    <td class="release-label">Status</td>
+                                    <td>
+                                        <span t-field="release.state"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="release-label">Field Service Order</td>
+                                    <td>
+                                        <span t-field="release.fsm_order_id"/>
+                                    </td>
+                                    <td class="release-label">Date</td>
+                                    <td>
+                                        <span t-esc="context_timestamp(
+                                            datetime.datetime.now()
+                                        ).strftime('%d/%m/%Y')"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Customer/order information -->
+                        <div class="release-section">
+                            Customer and Service Information
+                        </div>
+
+                        <table class="release-table">
+                            <tr>
+                                <td class="release-label">Customer</td>
+                                <td>
+                                    <span t-field="release.partner_id"/>
+                                </td>
+                                <td class="release-label">Service Location</td>
+                                <td>
+                                    <span t-field="release.location_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="release-label">Customer Address</td>
+                                <td colspan="3">
+                                    <span t-field="release.partner_id"
+                                          t-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Equipment -->
+                        <div class="release-section">
+                            Equipment / Vehicle
+                        </div>
+
+                        <table class="release-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 8%;">No.</th>
+                                    <th style="width: 35%;">Equipment</th>
+                                    <th style="width: 35%;">Product</th>
+                                    <th style="width: 22%;">Serial Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-if="release.equipment_line_ids">
+                                    <t t-foreach="release.equipment_line_ids"
+                                       t-as="equipment_line">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="equipment_line_index + 1"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="equipment_line.equipment_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="equipment_line.product_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="equipment_line.lot_id"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                                <t t-else="">
+                                    <tr>
+                                        <td colspan="4">
+                                            No equipment recorded.
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <!-- Work performed -->
+                        <div class="release-section">
+                            Work Performed
+                        </div>
+
+                        <table class="release-table">
+                            <tr>
+                                <td class="release-large-box">
+                                    <t t-if="release.remarks">
+                                        <span t-field="release.remarks"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Contractor work -->
+                        <div class="release-section">
+                            Contractor Work and Replaced Components
+                        </div>
+
+                        <table class="release-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 8%;">No.</th>
+                                    <th>Product / Component</th>
+                                    <th style="width: 15%;">Quantity</th>
+                                    <th style="width: 18%;">Unit Price</th>
+                                    <th style="width: 18%;">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-if="release.contractor_cost_line_ids">
+                                    <t t-foreach="release.contractor_cost_line_ids"
+                                       t-as="cost_line">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="cost_line_index + 1"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="cost_line.product_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="cost_line.quantity"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="cost_line.price_unit"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="cost_line.subtotal"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                                <t t-else="">
+                                    <tr>
+                                        <td colspan="5">
+                                            No contractor-cost lines recorded.
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" style="text-align: right; font-weight: bold;">
+                                        Contractor Total
+                                    </td>
+                                    <td>
+                                        <span t-field="release.contractor_total"/>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <!-- Employee time -->
+                        <div class="release-section">
+                            Employee Timesheets
+                        </div>
+
+                        <table class="release-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 13%;">Date</th>
+                                    <th style="width: 23%;">Employee</th>
+                                    <th style="width: 25%;">Description</th>
+                                    <th style="width: 15%;">Duration</th>
+                                    <th>Project / Task</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-if="release.timesheet_line_ids">
+                                    <t t-foreach="release.timesheet_line_ids"
+                                       t-as="time_line">
+                                        <tr>
+                                            <td>
+                                                <span t-field="time_line.date"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="time_line.employee_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="time_line.description"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="time_line.unit_amount"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="time_line.project_id"/>
+                                                <t t-if="time_line.task_id">
+                                                    /
+                                                    <span t-field="time_line.task_id"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                                <t t-else="">
+                                    <tr>
+                                        <td colspan="5">
+                                            No employee-timesheet lines recorded.
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" style="text-align: right; font-weight: bold;">
+                                        Total Employee Hours
+                                    </td>
+                                    <td>
+                                        <span t-field="release.employee_time_total"/>
+                                    </td>
+                                    <td/>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <!-- Other information -->
+                        <div class="release-section">
+                            Other Information
+                        </div>
+
+                        <table class="release-table">
+                            <tr>
+                                <td class="release-medium-box">
+                                    <t t-if="release.fsm_order_id.resolution">
+                                        <span t-field="release.fsm_order_id.resolution"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Approval -->
+                        <div class="release-section">
+                            Release Approval
+                        </div>
+
+                        <table class="release-table">
+                            <tr>
+                                <td style="width: 50%;">
+                                    <span class="release-check">☐</span>
+                                    Equipment released to service
+                                </td>
+                                <td style="width: 50%;">
+                                    <span class="release-check">☐</span>
+                                    Customer informed
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="release-signature">
+                                    Released by:
+                                    <br/><br/>
+                                    Signature:
+                                </td>
+                                <td class="release-signature">
+                                    Customer acceptance:
+                                    <br/><br/>
+                                    Signature:
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="release-footer">
+                            Generated from Field Service Order
+                            <span t-field="release.fsm_order_id"/>
+                        </div>
+
+                    </div>
+
+                </t>
+            </t>
+
+        </t>
+    </template>
+
+</odoo>

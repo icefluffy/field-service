@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_fsm_release_a4" model="report.paperformat">
+        <field name="name">Field Service Release Form A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="action_report_fsm_release" model="ir.actions.report">
+        <field name="name">Release Form</field>
+        <field name="model">fsm.release</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fieldservice_release.report_fsm_release_document</field>
+        <field name="report_file">fieldservice_release.report_fsm_release_document</field>
+        <field name="paperformat_id" ref="fieldservice_release.paperformat_fsm_release_a4"/>
+        <field name="print_report_name">'Release Form - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_fsm_release"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>
