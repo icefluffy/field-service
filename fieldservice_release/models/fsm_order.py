@@ -20,15 +20,6 @@ class FsmOrder(models.Model):
         ondelete="set null",
     )
 
-    release_count = fields.Integer(
-        string="Release Forms",
-        compute="_compute_release_count",
-    )
-
-    def _compute_release_count(self):
-        for order in self:
-            order.release_count = 1 if order.release_id else 0
-
     def action_create_release_form(self):
         self.ensure_one()
 
