@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="fieldservice.fsm_order_form" />
         <field name="arch" type="xml">
             <xpath expr="//notebook/page[1]" position="after">
-                <page string="Activities">
+                <page string="Activities" name="activities_page">
                     <field name="order_activity_ids" nolabel="1">
                         <list editable="bottom">
                             <field name="sequence" widget="handle" />
@@ -14,8 +14,8 @@
                             <field name="required" readonly="state != 'todo'" />
                             <field name="ref" readonly="state != 'todo'" />
                             <field name="completed" column_invisible="1" />
-                            <field name="completed_on" />
-                            <field name="completed_by" />
+                            <field name="completed_on" readonly="1" />
+                            <field name="completed_by" readonly="1" />
                             <button
                                 name="action_done"
                                 string="Complete"
