@@ -5,7 +5,7 @@
     "name": "Field Service - Release to service",
     "summary": """Track analytic accounts on Field Service locations
                   and orders""",
-    "version": "18.0.1.1.4",
+    "version": "18.0.1.1.5",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "website": "https://github.com/icefluffy/field-service",
@@ -15,8 +15,12 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+
+        # The report action must be loaded before the release-form view,
+        # because the view's Print button refers to this XML ID.
         "report/fsm_release_report.xml",
         "report/fsm_release_report_templates.xml",
+
         "views/fsm_release_views.xml",
         "views/fsm_order_views.xml",
     ],
