@@ -15,7 +15,7 @@
                     </group>
                 </page>
             </notebook>
-            <field name="region_id" position="after">
+            <field name="region_id" position="before">
                 <field name="customer_id" context="{'location_id': location_id}" />
             </field>
             <field name="location_id" position="attributes">
