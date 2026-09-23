@@ -35,13 +35,13 @@
 
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.wagon_number"/>
+                                    <span t-field="o.equipment_line_ids"/>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <span t-field="o.fsm_order_id.name"/>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.fw_number"/>
+                                    <span t-field="o.fsm_order_id.company_id.name"/>
                                 </td>
                             </tr>
 
@@ -59,7 +59,7 @@
 
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.partner_id"/>
+                                    <span t-field="o.equipment_line_ids[0].equipment_id.managed_by_id"/>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <span t-field="o.customer_order_number"/>
