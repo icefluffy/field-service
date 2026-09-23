@@ -219,4 +219,5 @@ class FsmReleaseContractorCost(models.Model):
 
 class FsmReleaseTimesheet(models.Model):
     _name = "fsm.release.timesheet"
-    _description
+    _description = "Field Service Release Form Timesheet"
+    _order = "date, id"
