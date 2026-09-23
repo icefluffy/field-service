@@ -133,8 +133,20 @@ class FSMOrder(models.Model):
         default=lambda self: _("New"),
     )
 
+    contact_id = fields.Many2one(
+        "res.partner",
+        string="Contact",
+        ondelete="restrict",
+        index=True,
+        domain="[('is_company', '=', False)]",
+        help="Contact for this field service order, release form, and billing.",
+    )
+
     location_id = fields.Many2one(
-        "fsm.location", string="Location", index=True, required=True
+        "fsm.location",
+        string="Location",
+        index=True,
+        required=True,
     )
     location_directions = fields.Char(
         compute="_compute_location_directions",
