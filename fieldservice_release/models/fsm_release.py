@@ -124,6 +124,19 @@ class FsmRelease(models.Model):
                 release.timesheet_line_ids.mapped("unit_amount")
             )
 
+    def action_preview_release_form(self):
+        self.ensure_one()
+
+        return {
+            "type": "ir.actions.act_url",
+            "url": (
+                "/report/html/"
+                "fieldservice_release.report_fsm_release_document/"
+                f"{self.id}"
+            ),
+            "target": "new",
+        }
+
     def action_release(self):
         self.write({
             "state": "released",
