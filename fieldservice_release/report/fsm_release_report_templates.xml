@@ -35,11 +35,15 @@
 
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.equipment_line_ids[0].lot_id"/>
+                                    <t t-if="o.equipment_line_ids">
+                                        <span t-field="o.wagennummer_formatted"/>
+                                    </t>
                                 </td>
+
                                 <td style="border:1px solid #000; padding:4px;">
                                     <span t-field="o.fsm_order_id.name"/>
                                 </td>
+
                                 <td style="border:1px solid #000; padding:4px;">
                                     <span t-field="o.fsm_order_id.company_id.name"/>
                                 </td>

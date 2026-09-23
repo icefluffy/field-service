@@ -152,6 +152,31 @@ class FsmRelease(models.Model):
             "state": "draft",
         })
 
+    def _format_wagennummer(self, raw):
+        """
+        Convert a raw 13-digit wagon number like '218024583997'
+        into '21 80 2458 399-7'.
+        """
+        if not raw:
+            return raw
+        raw = str(raw).replace(" ", "").replace("-", "")
+        if len(raw) != 12:
+            # Fallback: return as-is if unexpected length
+            return raw
+        # 21 80 2458 399-7
+        return f"{raw[0:2]} {raw[2:4]} {raw[4:8]} {raw[8:11]}-{raw[11]}"
+
+    wagennummer_formatted = fields.Char(
+        string="Wagennummer (formatted)",
+        compute="_compute_wagennummer_formatted",
+        store=False,
+    )
+
+    def _compute_wagennummer_formatted(self):
+        for rec in self:
+            raw = rec.equipment_line_ids and rec.equipment_line_ids[0].lot_id or ""
+            rec.wagennummer_formatted = rec._format_wagennummer(raw)
+
 
 class FsmReleaseEquipment(models.Model):
     _name = "fsm.release.equipment"
