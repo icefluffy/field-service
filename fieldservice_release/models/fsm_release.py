@@ -51,8 +51,33 @@ class FsmRelease(models.Model):
         readonly=True,
     )
 
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        string="Company",
+        required=True,
+        readonly=True,
+        default=lambda self: self.env.company,
+    )
+
     remarks = fields.Text(
         string="Release to Service Remarks",
+    )
+
+    wagon_number = fields.Char(
+        string="Wagennummer",
+    )
+
+    fw_number = fields.Char(
+        string="FW. Nummer",
+    )
+
+    customer_order_number = fields.Char(
+        string="Kundenauftragsnummer",
+    )
+
+    actual_release_date = fields.Date(
+        string="Erstellt am",
+        default=fields.Date.context_today,
     )
 
     equipment_line_ids = fields.One2many(
@@ -194,51 +219,4 @@ class FsmReleaseContractorCost(models.Model):
 
 class FsmReleaseTimesheet(models.Model):
     _name = "fsm.release.timesheet"
-    _description = "Field Service Release Form Timesheet"
-    _order = "date, id"
-
-    release_id = fields.Many2one(
-        comodel_name="fsm.release",
-        string="Release Form",
-        required=True,
-        ondelete="cascade",
-    )
-
-    date = fields.Date(
-        string="Date",
-        readonly=True,
-    )
-
-    employee_id = fields.Many2one(
-        comodel_name="hr.employee",
-        string="Employee",
-        readonly=True,
-    )
-
-    product_id = fields.Many2one(
-        comodel_name="product.product",
-        string="Time Type",
-        readonly=True,
-    )
-
-    description = fields.Char(
-        string="Description",
-        readonly=True,
-    )
-
-    unit_amount = fields.Float(
-        string="Duration",
-        readonly=True,
-    )
-
-    project_id = fields.Many2one(
-        comodel_name="account.analytic.account",
-        string="Project",
-        readonly=True,
-    )
-
-    task_id = fields.Many2one(
-        comodel_name="project.task",
-        string="Task",
-        readonly=True,
-    )
+    _description

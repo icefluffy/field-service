@@ -17,31 +17,56 @@
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <tr style="background:#e6e6e6;">
                                 <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>Release Form No.</strong>
+                                    <strong>Wagennummer</strong>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px; width:25%;">
                                     <strong>Auftragsnummer:</strong>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>Status:</strong>
+                                    <strong>FW. Nummer:</strong>
                                 </td>
-                                <td rowspan="2"
+                                <td rowspan="4"
                                     style="border:1px solid #000; padding:4px; width:25%; text-align:center; vertical-align:middle;">
                                     <img t-if="o.fsm_order_id.company_id.logo"
-                                         t-att-src="image_data_uri(o.fsm_order_id.company_id.logo)"
-                                         style="max-width:140px;"/>
+                                        t-att-src="image_data_uri(o.fsm_order_id.company_id.logo)"
+                                        style="max-width:140px;"/>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.name"/>
+                                    <span t-field="o.wagon_number"/>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <span t-field="o.fsm_order_id.name"/>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.state"/>
+                                    <span t-field="o.fw_number"/>
+                                </td>
+                            </tr>
+
+                            <tr style="background:#e6e6e6;">
+                                <td style="border:1px solid #000; padding:4px; width:25%;">
+                                    <strong>HALTER / ECM:</strong>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;">
+                                    <strong>Kundenauftragsnummer:</strong>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;">
+                                    <strong>Erstellt am:</strong>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    <span t-field="o.partner_id"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    <span t-field="o.customer_order_number"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    <span t-field="o.actual_release_date"
+                                        t-options='{"widget": "date"}'/>
                                 </td>
                             </tr>
                         </table>

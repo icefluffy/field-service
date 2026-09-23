@@ -70,9 +70,13 @@
                         <group>
                             <field name="fsm_order_id"/>
                             <field name="partner_id"/>
+                            <field name="location_id"/>
                         </group>
                         <group>
-                            <field name="location_id"/>
+                            <field name="wagon_number"/>
+                            <field name="fw_number"/>
+                            <field name="customer_order_number"/>
+                            <field name="actual_release_date"/>
                         </group>
                     </group>
 
