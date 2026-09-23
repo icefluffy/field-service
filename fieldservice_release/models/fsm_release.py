@@ -174,7 +174,9 @@ class FsmRelease(models.Model):
 
     def _compute_wagennummer_formatted(self):
         for rec in self:
-            raw = rec.equipment_line_ids and rec.equipment_line_ids[0].lot_id or ""
+            raw = ""
+            if rec.equipment_line_ids and rec.equipment_line_ids[0].lot_id:
+                raw = rec.equipment_line_ids[0].lot_id.name or ""
             rec.wagennummer_formatted = rec._format_wagennummer(raw)
 
 
