@@ -363,7 +363,7 @@
                         <div style="border:1px solid #000; margin-bottom:6px;">
                             <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Zurückgestellte Arbeiten (einschließlich Begründung):</div>
                             <div style="padding:6px; min-height:70px;">
-                                <span t-field="o.x_postponed_work"/>
+                             <!--   <span t-field="o.x_postponed_work"/>  -->
                             </div>
                         </div>
 
@@ -371,7 +371,7 @@
                         <div style="border:1px solid #000; margin-bottom:6px;">
                             <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Ausgetauschte Komponenten:</div>
                             <div style="padding:6px; min-height:60px;">
-                                <span t-field="o.x_replaced_components"/>
+                              <!--  <span t-field="o.x_replaced_components"/> -->
                             </div>
                         </div>
 
