@@ -98,6 +98,18 @@
             <xpath expr="//field[@name='size_uom']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+<!-- hide types field -->
+            <xpath expr="//field[@name='type']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+<!-- move location and contac tto the left -->
+            <xpath expr="//field[@name='customer_id']" position="move">
+                <xpath expr="//field[@name='tag_ids']" position="after"/>
+            </xpath>
+            
+            <xpath expr="//field[@name='location_id']" position="move">
+                <xpath expr="//field[@name='customer_id']" position="after"/>
+            </xpath>
     
         </field>
     </record>
