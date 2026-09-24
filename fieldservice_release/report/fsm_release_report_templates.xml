@@ -475,8 +475,8 @@
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <tr>
                                 <td style="border:1px solid #000; padding:6px; min-height:45px; white-space:pre-wrap;">
-                                    <t t-if="o.fsm_order_id.resolution">
-                                        <span t-field="o.fsm_order_id.resolution"/>
+                                    <t t-if="o.remarks">
+                                        <span t-field="o.remarks"/>
                                     </t>
                                 </td>
                             </tr>
