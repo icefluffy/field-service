@@ -228,7 +228,9 @@
                                 </t>
                         </table>
 
-                        <!-- Contractor work / replaced components -->
+
+
+                        <!-- Contractor work / replaced components
                         <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
                             Contractor Work and Replaced Components
                         </div>
@@ -306,7 +308,7 @@
                             </tfoot>
                         </table>
 
-                        <!-- Employee timesheets, including Time Type -->
+                        <!-- Employee timesheets, including Time Type
                         <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
                             Employee Timesheets
                         </div>
@@ -375,6 +377,8 @@
                                 </tr>
                             </tfoot>
                         </table>
+						-->
+						
                         <!-- Postponed work = Zurückgestellte Arbeiten (einschließlich Begründung):-->
                         <div style="border:1px solid #000; margin-bottom:6px;">
                             <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Zurückgestellte Arbeiten (einschließlich Begründung):</div>
