@@ -1,7 +1,7 @@
 # Copyright (C) 2026 Your Company
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+from odoo import Command, _, api, fields, models
 from odoo.tools import html2plaintext
 
 class FsmOrder(models.Model):
