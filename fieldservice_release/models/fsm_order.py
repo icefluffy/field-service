@@ -85,7 +85,7 @@ class FsmOrder(models.Model):
             "partner_id": self._get_release_partner().id,
             "location_id": self.location_id.id,
             "company_id": self.company_id.id,
-            "remarks": self.release_remarks,
+            "remarks": self.resolution or self.release_remarks or "",
             "wagon_number": first_equipment.lot_id.name if first_equipment else False,
             "equipment_line_ids": self._prepare_release_equipment_lines(),
             "contractor_cost_line_ids": (
