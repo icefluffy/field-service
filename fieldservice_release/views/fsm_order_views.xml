@@ -102,14 +102,22 @@
             <xpath expr="//field[@name='type']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
-<!-- move location and contac tto the left -->
-            <xpath expr="//field[@name='customer_id']" position="move">
-                <xpath expr="//field[@name='tag_ids']" position="after"/>
+
+<!-- Hide the existing fields in the right-hand group -->
+            <xpath expr="//field[@name='customer_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
             </xpath>
             
-            <xpath expr="//field[@name='location_id']" position="move">
-                <xpath expr="//field[@name='customer_id']" position="after"/>
+            <xpath expr="//field[@name='location_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
             </xpath>
+            
+            <!-- Add them in the left-hand group, after Tags -->
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="customer_id"/>
+                <field name="location_id"/>
+            </xpath>
+
     
         </field>
     </record>
