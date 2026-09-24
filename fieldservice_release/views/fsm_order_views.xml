@@ -95,7 +95,7 @@
                 <attribute name="invisible">1</attribute>
             </xpath>
 
-            <xpath expr="//field[@name='size_uom_id']" position="attributes">
+            <xpath expr="//field[@name='size_uom']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
     
