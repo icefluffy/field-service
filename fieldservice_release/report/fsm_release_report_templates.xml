@@ -100,13 +100,13 @@
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <thead>
                                 <tr style="background:#f2f2f2;">
-                                    <th style="border:1px solid #000; padding:4px; width:20%;">Wagennummer Alt:</th>
-                                    <th style="border:1px solid #000; padding:4px; width:14%;">Eigengewicht</th>
-                                    <th style="border:1px solid #000; padding:4px; width:14%;"></th>
-                                    <th style="border:1px solid #000; padding:4px; width:13%;">Art:</th>
-                                    <th style="border:1px solid #000; padding:4px; width:13%;">Zyklus:</th>
-                                    <th style="border:1px solid #000; padding:4px; width:13%;">Datum:</th>
-                                    <th style="border:1px solid #000; padding:4px; width:13%;">Verlängerung:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:20%;">Wagennummer Alt:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;">Eigengewicht</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;"></th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Art:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Zyklus:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Datum:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Verlängerung:</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -114,26 +114,76 @@
                                     <t t-foreach="o.equipment_line_ids" t-as="equipment_line">
                                         <tr>
                                             <td style="border:1px solid #000; padding:4px;">
-                                                <span t-esc="equipment_line_index + 1"/>
+                                                Alt nummer, Waar halen?
                                             </td>
                                             <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="equipment_line.equipment_id"/>
+                                                gewicht, Waar halen?
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">
+                                                Revision
                                             </td>
                                             <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="equipment_line.product_id"/>
+                                                wat hier?
                                             </td>
                                             <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="equipment_line.lot_id"/>
+                                                wat? waar halen?
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                Datum? waar halen?
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                +3M?? wat?waar?
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">
+                                                Bremrevision
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px; font-weight:bold;">
+                                                BR0 wat hier?
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">
+                                                Frist
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px; font-weight:bold;">
+                                                
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                
+                                            </td>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                
                                             </td>
                                         </tr>
                                     </t>
-                                </t>
-                                <t t-else="">
-                                    <tr>
-                                        <td style="border:1px solid #000; padding:4px;" colspan="4">
-                                            No equipment recorded.
-                                        </td>
-                                    </tr>
                                 </t>
                             </tbody>
                         </table>
