@@ -590,7 +590,7 @@
                                     <span t-field="o.fsm_order_id.company_id.city"/>
                                     <br/>
 
-                                    <span t-field="o.fsm_order_id.person_id.name"/>
+                                    <span t-field="o.create_uid.partner_id.name"/>
                                     <i> (signed digitally)</i>
                                 </td>
 
