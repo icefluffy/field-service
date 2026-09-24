@@ -198,7 +198,7 @@
                                     <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
                                         <tr>
                                             <td>
-                                                <span t-field="cost_line.product_id"/> Qty: <span t-field="cost_line.quantity"/>
+                                                <span t-field="cost_line.product_id"/> <b>Qty:</b> <span t-field="cost_line.quantity"/>
                                             </td>
                                         </tr>
                                     </t>
