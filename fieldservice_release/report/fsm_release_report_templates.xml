@@ -194,6 +194,32 @@
                         </div>
 
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                        
+                            <!-- Completed FSM activities -->
+                            <t t-if="o.fsm_order_id.order_activity_ids.filtered(lambda activity: activity.state == 'done')">
+                                <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
+                                    <t t-if="activity.state == 'done'">
+                                        <tr>
+                                            <td style="border:1px solid #000; padding:4px;">
+                                                <t t-if="activity.ref">
+                                                    <strong><span t-field="activity.ref"/></strong>
+                                                    —
+                                                </t>
+                                                <span t-field="activity.name"/>
+                        
+                                                <t t-if="activity.completed_on">
+                                                    <span style="float:right; color:#555;">
+                                                        Completed:
+                                                        <span t-field="activity.completed_on"
+                                                              t-options='{"widget": "datetime"}'/>
+                                                    </span>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </t>
+                        
                                 <t t-if="o.contractor_cost_line_ids">
                                     <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
                                         <tr>
@@ -379,11 +405,41 @@
                         </table>
 -->
 					
-                        <!-- Postponed work = Zurückgestellte Arbeiten (einschließlich Begründung):-->
+                        <!-- Postponed / uncompleted FSM activities -->
                         <div style="border:1px solid #000; margin-bottom:6px;">
-                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Zurückgestellte Arbeiten (einschließlich Begründung):</div>
+                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">
+                                Zurückgestellte Arbeiten (einschließlich Begründung):
+                            </div>
+                        
                             <div style="padding:6px; min-height:70px;">
-                             <!--   <span t-field="o.x_postponed_work"/>  -->
+                                <t t-if="o.fsm_order_id.order_activity_ids.filtered(lambda activity: activity.state != 'done')">
+                                    <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
+                                        <t t-if="activity.state != 'done'">
+                                            <div style="margin-bottom:3px;">
+                                                <t t-if="activity.ref">
+                                                    <strong><span t-field="activity.ref"/></strong>
+                                                    —
+                                                </t>
+                        
+                                                <span t-field="activity.name"/>
+                        
+                                                <t t-if="activity.state == 'cancel'">
+                                                    <span style="color:#b00020;"> (Cancelled)</span>
+                                                </t>
+                        
+                                                <t t-if="activity.state == 'todo'">
+                                                    <span style="color:#555;"> (Not completed)</span>
+                                                </t>
+                                            </div>
+                                        </t>
+                                    </t>
+                                </t>
+                        
+                                <t t-else="">
+                                    <span style="color:#555;">
+                                        No postponed or uncompleted activities.
+                                    </span>
+                                </t>
                             </div>
                         </div>
 
