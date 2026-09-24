@@ -76,33 +76,22 @@
                         </table>
 
                         <!-- Customer and service information -->
-                        <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
-                            Customer and Service Information
-                        </div>
-
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <tr>
-                                <td style="border:1px solid #000; padding:4px; width:23%; background:#e5e5e5; font-weight:bold;">
-                                    Customer
+                                <td style="border:1px solid #000; padding:4px; width:60%; background:#e5e5e5; font-weight:bold;">
+                                    Mobile Instandsetzung durchgefürt am:
                                 </td>
-                                <td style="border:1px solid #000; padding:4px; width:27%;">
-                                    <span t-field="o.partner_id"/>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:23%; background:#e5e5e5; font-weight:bold;">
-                                    Service Location
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:27%;">
-                                    <span t-field="o.location_id"/>
+                                <td style="border:1px solid #000; padding:4px; width:40%; background:#e5e5e5; font-weight:bold;">
+                                    Durchgeführte Instandhaltungsstufe:
                                 </td>
                             </tr>
 
                             <tr>
-                                <td style="border:1px solid #000; padding:4px; background:#e5e5e5; font-weight:bold;">
-                                    Customer Address
+                                <td style="border:1px solid #000; padding:4px;">
+                                    Current Date?
                                 </td>
-                                <td style="border:1px solid #000; padding:4px;" colspan="3">
-                                    <span t-field="o.partner_id"
-                                          t-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'/>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    G3 of iets anders, en van waar te halen?
                                 </td>
                             </tr>
 
