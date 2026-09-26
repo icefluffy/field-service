@@ -28,9 +28,36 @@ class FSMEquipment(models.Model):
                 quants.location_id and quants.location_id.id or False
             )
 
-    @api.onchange("product_id")
-    def _onchange_product(self):
-        self.current_stock_location_id = False
+    @api.onchange("product_id", "lot_id")
+    def _onchange_equipment_serial_number(self):
+        for equipment in self:
+            if not equipment.product_id or not equipment.lot_id:
+                continue
+
+            product_name = (
+                equipment.product_id.name or ""
+            ).strip().casefold()
+            if product_name not in {
+                "generic wagon",
+                "generic container",
+                "generic locomotief",
+            }:
+                continue
+
+            serial = equipment.lot_id.name or ""
+
+            try:
+                if product_name == "generic container":
+                    equipment._check_container_number(serial)
+                else:
+                    equipment._check_rail_vehicle_number(serial)
+            except ValidationError as error:
+                return {
+                    "warning": {
+                        "title": _("Invalid Serial #"),
+                        "message": str(error),
+                    }
+                }
 
     @api.model_create_multi
     def create(self, vals_list):
