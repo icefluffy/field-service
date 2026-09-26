@@ -114,6 +114,68 @@ class FsmRelease(models.Model):
         compute="_compute_totals",
     )
 
+    # Repair report fields
+    wagon_number_old = fields.Char(
+        string="Wagennummer Alt",
+    )
+
+    own_weight = fields.Float(
+        string="Eigengewicht (kg)",
+    )
+
+    maintenance_level = fields.Char(
+        string="Durchgeführte Instandhaltungsstufe",
+    )
+
+    revision_cycle = fields.Char(
+        string="Zyklus (Revision)",
+    )
+
+    revision_date = fields.Date(
+        string="Datum (Revision)",
+    )
+
+    revision_extension = fields.Char(
+        string="Verlängerung (Revision)",
+    )
+
+    brake_type = fields.Char(
+        string="Bremsrevision",
+    )
+
+    brake_deadline = fields.Date(
+        string="Frist (Bremsrevision)",
+    )
+
+    work_performed = fields.Html(
+        string="Durchgeführte Instandsetzungsarbeiten",
+    )
+
+    postponed_work = fields.Html(
+        string="Zurückgestellte Arbeiten (einschließlich Begründung)",
+    )
+
+    replaced_components = fields.Html(
+        string="Ausgetauschte Komponenten",
+    )
+
+    other_information = fields.Html(
+        string="Sonstige Angaben (nach Vorgabe des Halters/ECM)",
+    )
+
+    repair_confirmed = fields.Boolean(
+        string="Instandsetzung bestätigt",
+    )
+
+    release_confirmed = fields.Boolean(
+        string="Betriebsfreigabe bestätigt",
+    )
+
+    issue_date = fields.Date(
+        string="Ausstellungsdatum",
+        default=fields.Date.context_today,
+    )
+    
     def _compute_totals(self):
         for release in self:
             release.contractor_total = sum(

@@ -28,7 +28,7 @@ msgstr "Voeg hier routes toe."
 #. module: fieldservice_route
 #: model:ir.model.fields,field_description:fieldservice_route.field_fsm_order__person_id
 msgid "Assigned To"
-msgstr "Toegewezen aan"
+msgstr "Toegewezen aan (release)"
 
 #. module: fieldservice_route
 #: model:ir.model.fields,field_description:fieldservice_route.field_fsm_route_dayroute__order_remaining

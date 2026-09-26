@@ -73,17 +73,59 @@
                         </h1>
                     </div>
 
+                    <!-- Release identification -->
                     <group>
                         <group>
                             <field name="fsm_order_id"/>
                             <field name="partner_id"/>
-                            <field name="location_id"/>
                         </group>
                         <group>
-                            <field name="wagon_number"/>
-                            <field name="fw_number"/>
-                            <field name="customer_order_number"/>
-                            <field name="actual_release_date"/>
+                            <field name="location_id"/>
+                        </group>
+                    </group>
+                    
+                    <!-- Repair report vehicle / revision information -->
+                    <group>
+                        <group string="Wagen">
+                            <field name="wagon_number_old"/>
+                            <field name="own_weight"/>
+                            <field name="maintenance_level"/>
+                        </group>
+                    
+                        <group string="Revision / Bremse">
+                            <field name="revision_cycle"/>
+                            <field name="revision_date"/>
+                            <field name="revision_extension"/>
+                            <field name="brake_type"/>
+                            <field name="brake_deadline"/>
+                        </group>
+                    </group>
+                    
+                    <!-- Repair-report text fields, directly on the main page -->
+                    <group string="Durchgeführte Instandsetzungsarbeiten">
+                        <field name="work_performed" nolabel="1"/>
+                    </group>
+                    
+                    <group string="Zurückgestellte Arbeiten">
+                        <field name="postponed_work" nolabel="1"/>
+                    </group>
+                    
+                    <group string="Ausgetauschte Komponenten">
+                        <field name="replaced_components" nolabel="1"/>
+                    </group>
+                    
+                    <group string="Sonstige Angaben">
+                        <field name="other_information" nolabel="1"/>
+                    </group>
+                    
+                    <group>
+                        <group string="Freigabebestätigung">
+                            <field name="repair_confirmed"/>
+                            <field name="release_confirmed"/>
+                        </group>
+                    
+                        <group string="Ausstellung">
+                            <field name="issue_date"/>
                         </group>
                     </group>
 

@@ -1,8 +1,8 @@
 # Copyright (C) 2026 Your Company
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import Command, fields, models
-
+from odoo import Command, _, api, fields, models
+from odoo.tools import html2plaintext
 
 class FsmOrder(models.Model):
     _inherit = "fsm.order"
@@ -85,7 +85,11 @@ class FsmOrder(models.Model):
             "partner_id": self._get_release_partner().id,
             "location_id": self.location_id.id,
             "company_id": self.company_id.id,
-            "remarks": self.release_remarks,
+            "remarks": (
+                html2plaintext(self.resolution).strip()
+                if self.resolution
+                else self.release_remarks or ""
+            ),
             "wagon_number": first_equipment.lot_id.name if first_equipment else False,
             "equipment_line_ids": self._prepare_release_equipment_lines(),
             "contractor_cost_line_ids": (

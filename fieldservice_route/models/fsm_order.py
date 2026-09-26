@@ -17,7 +17,7 @@ class FSMOrder(models.Model):
 
     person_id = fields.Many2one(
         comodel_name="fsm.person",
-        string="Assigned To",
+        string="Assigned To (released by)",
         index=True,
         compute="_compute_person_id",
         store=True,
