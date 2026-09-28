@@ -64,19 +64,19 @@ class FsmRelease(models.Model):
     )
 
     wagon_number = fields.Char(
-        string="Wagennummer",
+        string="Wagon Number",
     )
 
     fw_number = fields.Char(
-        string="FW. Nummer",
+        string="FW Number",
     )
 
     customer_order_number = fields.Char(
-        string="Kundenauftragsnummer",
+        string="Customer Order Number",
     )
 
     actual_release_date = fields.Date(
-        string="Erstellt am",
+        string="Created On",
         default=fields.Date.context_today,
     )
 
@@ -116,66 +116,67 @@ class FsmRelease(models.Model):
 
     # Repair report fields
     wagon_number_old = fields.Char(
-        string="Wagennummer Alt",
+        string="Previous Wagon Number",
     )
 
     own_weight = fields.Float(
-        string="Eigengewicht (kg)",
+        string="Tare Weight (kg)",
+        digits=(16, 0),
     )
 
     maintenance_level = fields.Char(
-        string="Durchgeführte Instandhaltungsstufe",
+        string="Maintenance Level Performed",
     )
 
     revision_cycle = fields.Char(
-        string="Zyklus (Revision)",
+        string="Revision Cycle",
     )
 
     revision_date = fields.Date(
-        string="Datum (Revision)",
+        string="Revision Date",
     )
 
     revision_extension = fields.Char(
-        string="Verlängerung (Revision)",
+        string="Revision Extension",
     )
 
     brake_type = fields.Char(
-        string="Bremsrevision",
+        string="Brake Revision",
     )
 
     brake_deadline = fields.Date(
-        string="Frist (Bremsrevision)",
+        string="Brake Revision Due Date",
     )
 
     work_performed = fields.Html(
-        string="Durchgeführte Instandsetzungsarbeiten",
+        string="Repair Work Performed",
     )
 
     postponed_work = fields.Html(
-        string="Zurückgestellte Arbeiten (einschließlich Begründung)",
+        string="Postponed Work (Including Reason)",
     )
 
     replaced_components = fields.Html(
-        string="Ausgetauschte Komponenten",
+        string="Replaced Components",
     )
 
     other_information = fields.Html(
-        string="Sonstige Angaben (nach Vorgabe des Halters/ECM)",
+        string="Other Information (as Specified by Keeper/ECM)",
     )
 
     repair_confirmed = fields.Boolean(
-        string="Instandsetzung bestätigt",
+        string="Repair Confirmed",
     )
 
     release_confirmed = fields.Boolean(
-        string="Betriebsfreigabe bestätigt",
+        string="Release for Operation Confirmed",
     )
 
     issue_date = fields.Date(
-        string="Ausstellungsdatum",
+        string="Issue Date",
         default=fields.Date.context_today,
     )
-    
+
     def _compute_totals(self):
         for release in self:
             release.contractor_total = sum(
@@ -216,7 +217,7 @@ class FsmRelease(models.Model):
 
     def _format_wagennummer(self, raw):
         """
-        Convert a raw 13-digit wagon number like '218024583997'
+        Convert a raw 12-digit wagon number like '218024583997'
         into '21 80 2458 399-7'.
         """
         if not raw:
@@ -229,7 +230,7 @@ class FsmRelease(models.Model):
         return f"{raw[0:2]} {raw[2:4]} {raw[4:8]} {raw[8:11]}-{raw[11]}"
 
     wagennummer_formatted = fields.Char(
-        string="Wagennummer (formatted)",
+        string="Wagon Number (Formatted)",
         compute="_compute_wagennummer_formatted",
         store=False,
     )
