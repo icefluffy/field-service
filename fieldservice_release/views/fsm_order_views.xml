@@ -113,7 +113,7 @@
             </xpath>
             
             <!-- Add them in the left-hand group, after Tags -->
-            <xpath expr="//field[@name='tag_ids']" position="before">
+            <xpath expr="//field[@name='template_id']" position="before">
                 <field name="customer_id"/>
                 <field name="location_id"/>
             </xpath>
