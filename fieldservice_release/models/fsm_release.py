@@ -1,6 +1,7 @@
 # Copyright (C) 2026 Your Company
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
+import json
+from urllib.parse import urlencode
 from odoo import fields, models
 
 
@@ -190,15 +191,19 @@ class FsmRelease(models.Model):
     def action_preview_release_form(self):
         self.ensure_one()
 
-        lang = self.env.user.lang or "en_US"
+        query = urlencode({
+            "context": json.dumps({
+                "lang": self.env.user.lang or "en_US",
+            }),
+            "force_context_lang": "1",
+        })
 
         return {
             "type": "ir.actions.act_url",
             "url": (
                 "/report/html/"
                 "fieldservice_release.report_fsm_release_document/"
-                f"{self.id}"
-                f"?context={{'lang': '{lang}'}}"
+                f"{self.id}?{query}"
             ),
             "target": "new",
         }
