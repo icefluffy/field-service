@@ -1,216 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <template id="report_fsm_release_document">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
-
-                    <div class="page"
-                         style="font-size:11px; font-family:Arial, sans-serif; color:#000;">
-
+                    <div class="page" style="font-size:11px; font-family:Arial, sans-serif; color:#000;">
                         <h2 style="text-decoration:underline; margin-bottom:10px;">
-                            Instandsetzungsbericht Mobile Instandsetzung
+                            Mobile Repair Report
                         </h2>
 
                         <!-- Top identification block -->
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <tr style="background:#e6e6e6;">
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>Wagennummer</strong>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>Auftragsnummer:</strong>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>FW. Nummer:</strong>
-                                </td>
-                                <td rowspan="4"
-                                    style="border:1px solid #000; padding:4px; width:25%; text-align:center; vertical-align:middle;">
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Wagon Number</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Order Number:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>FW Number:</strong></td>
+                                <td rowspan="4" style="border:1px solid #000; padding:4px; width:25%; text-align:center; vertical-align:middle;">
                                     <img t-if="o.fsm_order_id.company_id.logo"
-                                        t-att-src="image_data_uri(o.fsm_order_id.company_id.logo)"
-                                        style="max-width:140px;"/>
+                                         t-att-src="image_data_uri(o.fsm_order_id.company_id.logo)"
+                                         style="max-width:140px;"/>
                                 </td>
                             </tr>
-
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <t t-if="o.equipment_line_ids">
                                         <span t-field="o.wagennummer_formatted"/>
                                     </t>
                                 </td>
-
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.fsm_order_id.name"/>
-                                </td>
-
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.fsm_order_id.company_id.name"/>
-                                </td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.fsm_order_id.name"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.fsm_order_id.company_id.name"/></td>
                             </tr>
-
                             <tr style="background:#e6e6e6;">
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>HALTER / ECM:</strong>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>Kundenauftragsnummer:</strong>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <strong>Erstellt am:</strong>
-                                </td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Keeper / ECM:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Customer Order Number:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Created On:</strong></td>
                             </tr>
-
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.equipment_line_ids[0].equipment_id.managed_by_id"/>
+                                    <t t-if="o.equipment_line_ids and o.equipment_line_ids[0].equipment_id">
+                                        <span t-field="o.equipment_line_ids[0].equipment_id.managed_by_id"/>
+                                    </t>
                                 </td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.customer_order_number"/></td>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.customer_order_number"/>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.actual_release_date"
-                                        t-options='{"widget": "date"}'/>
+                                    <span t-field="o.actual_release_date" t-options='{"widget": "date"}'/>
                                 </td>
                             </tr>
                         </table>
 
-                        <!-- second table -->
+                        <!-- Work date and maintenance level -->
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <tr>
                                 <td style="border:1px solid #000; padding:4px; width:60%; background:#e5e5e5; font-weight:bold;">
-                                    Mobile Instandsetzung durchgefürt am:
+                                    Mobile Repair Performed On:
                                 </td>
                                 <td style="border:1px solid #000; padding:4px; width:40%; background:#e5e5e5; font-weight:bold;">
-                                    Durchgeführte Instandhaltungsstufe:
+                                    Maintenance Level Performed:
                                 </td>
                             </tr>
-
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    Current Date?
+                                    <!-- Source date not yet defined; leave blank rather than print a draft question. -->
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="o.maintenance_level">
-                                        <span t-field="o.maintenance_level"/>
-                                    </t>
-                                    <t t-else="">
-                                        G3 of iets anders, en van waar te halen?
-                                    </t>                                    
+                                    <t t-if="o.maintenance_level"><span t-field="o.maintenance_level"/></t>
                                 </td>
                             </tr>
                         </table>
 
-                        <!-- third table -->
+                        <!-- Wagon data, revision and brake inspection -->
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <thead>
                                 <tr style="background:#f2f2f2;">
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:20%;">Wagennummer Alt:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;">Eigengewicht</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:20%;">Previous Wagon Number:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;">Tare Weight</th>
                                     <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;"></th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Art:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Zyklus:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Datum:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Verlängerung:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Type:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Cycle:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Date:</th>
+                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Extension:</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Revision -->
                                 <tr>
                                     <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.wagon_number_old">
-                                            <span t-field="o.wagon_number_old"/>
-                                        </t>
-                                        <t t-else="">
-                                            Alt nummer, Waar halen?
-                                        </t>
+                                        <t t-if="o.wagon_number_old"><span t-field="o.wagon_number_old"/></t>
                                     </td>
-                            
                                     <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.own_weight">
-                                            <span t-field="o.own_weight"/> kg
-                                        </t>
-                                        <t t-else="">
-                                            gewicht, Waar halen?
-                                        </t>
+                                        <t t-if="o.own_weight"><span t-field="o.own_weight"/> kg</t>
                                     </td>
-                            
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">
-                                        Revision
-                                    </td>
-                            
+                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Revision</td>
+                                    <td style="border:1px solid #000; padding:4px;"></td>
                                     <td style="border:1px solid #000; padding:4px;">
-                                        wat hier?
+                                        <t t-if="o.revision_cycle"><span t-field="o.revision_cycle"/></t>
                                     </td>
-                            
-                                    <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.revision_cycle">
-                                            <span t-field="o.revision_cycle"/>
-                                        </t>
-                                        <t t-else="">
-                                            wat? waar halen?
-                                        </t>
-                                    </td>
-                            
                                     <td style="border:1px solid #000; padding:4px;">
                                         <t t-if="o.revision_date">
-                                            <span t-field="o.revision_date"
-                                                  t-options='{"widget": "date"}'/>
-                                        </t>
-                                        <t t-else="">
-                                            Datum? waar halen?
+                                            <span t-field="o.revision_date" t-options='{"widget": "date"}'/>
                                         </t>
                                     </td>
-                            
                                     <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.revision_extension">
-                                            <span t-field="o.revision_extension"/>
-                                        </t>
-                                        <t t-else="">
-                                            +3M?? wat?waar?
-                                        </t>
+                                        <t t-if="o.revision_extension"><span t-field="o.revision_extension"/></t>
                                     </td>
                                 </tr>
-                            
-                                <!-- Brake revision -->
                                 <tr>
                                     <td style="border:1px solid #000; padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px;"/>
-                            
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">
-                                        Bremrevision
-                                    </td>
-                            
+                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Brake Revision</td>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold;">
-                                        <t t-if="o.brake_type">
-                                            <span t-field="o.brake_type"/>
-                                        </t>
-                                        <t t-else="">
-                                            BR0 wat hier?
-                                        </t>
+                                        <t t-if="o.brake_type"><span t-field="o.brake_type"/></t>
                                     </td>
-                            
                                     <td style="border:1px solid #000; padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px;"/>
                                 </tr>
-                            
-                                <!-- Brake deadline -->
                                 <tr>
                                     <td style="border:1px solid #000; padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px;"/>
-                            
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">
-                                        Frist
-                                    </td>
-                            
+                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Due Date</td>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold;">
                                         <t t-if="o.brake_deadline">
-                                            <span t-field="o.brake_deadline"
-                                                  t-options='{"widget": "date"}'/>
+                                            <span t-field="o.brake_deadline" t-options='{"widget": "date"}'/>
                                         </t>
                                     </td>
-                            
                                     <td style="border:1px solid #000; padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px;"/>
@@ -220,318 +132,95 @@
 
                         <!-- Work performed -->
                         <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
-                            Durchgeführte Instandsetzungsarbeiten
+                            Repair Work Performed
                         </div>
-                        
                         <div style="border:1px solid #000; padding:6px; min-height:120px; margin-bottom:6px;">
-                        
-                            <!-- Manually entered work -->
                             <t t-if="o.work_performed">
-                                <div style="margin-bottom:6px;">
-                                    <span t-field="o.work_performed"/>
-                                </div>
+                                <div style="margin-bottom:6px;"><span t-field="o.work_performed"/></div>
                             </t>
-                        
-                            <!-- Completed FSM activities -->
                             <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
                                 <t t-if="activity.state == 'done'">
                                     <div style="margin-bottom:3px;">
-                                        <t t-if="activity.ref">
-                                            <strong><span t-field="activity.ref"/></strong>
-                                            —
-                                        </t>
-                        
+                                        <t t-if="activity.ref"><strong><span t-field="activity.ref"/></strong> — </t>
                                         <span t-field="activity.name"/>
-                        
-                                 <!--       <t t-if="activity.completed_on">
-                                            <span style="float:right; color:#555;">
-                                                Completed:
-                                                <span t-field="activity.completed_on"
-                                                      t-options='{"widget": "datetime"}'/>
-                                            </span>
-                                        </t> -->
                                     </div>
                                 </t>
                             </t>
-                        
-                            <!-- Contractor costs -->
                             <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
                                 <div style="display:block; clear:both; margin-bottom:3px;">
-                                    <span t-field="cost_line.product_id"/>
-                                    <span> — </span>
-                                    <strong>Qty:</strong>
-                                    <span t-field="cost_line.quantity"/>
+                                    <span t-field="cost_line.product_id"/> <span> — </span>
+                                    <strong>Qty:</strong> <span t-field="cost_line.quantity"/>
                                 </div>
                             </t>
-                        
-                            <!-- Timesheet work -->
                             <t t-foreach="o.timesheet_line_ids" t-as="time_line">
-                                <div style="margin-bottom:3px;">
-                                    <span t-field="time_line.product_id"/>
-                                </div>
+                                <div style="margin-bottom:3px;"><span t-field="time_line.product_id"/></div>
                             </t>
-                        
                         </div>
 
-
-
-                        <!-- Contractor work / replaced components
-                        <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
-                            Contractor Work and Replaced Components
-                        </div>
-
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
-                            <thead>
-                                <tr style="background:#f2f2f2;">
-                                    <th style="border:1px solid #000; padding:4px; width:8%;">No.</th>
-                                    <th style="border:1px solid #000; padding:4px;">Product / Component</th>
-                                    <th style="border:1px solid #000; padding:4px; width:15%;">Quantity</th>
-                                    <th style="border:1px solid #000; padding:4px; width:18%;">Unit Price</th>
-                                    <th style="border:1px solid #000; padding:4px; width:18%;">Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-if="o.contractor_cost_line_ids">
-                                    <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
-                                        <tr>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-esc="cost_line_index + 1"/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="cost_line.product_id"/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="cost_line.quantity"/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="cost_line.price_unit"/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="cost_line.subtotal"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-                                </t>
-                                <t t-else="">
-                                    <tr>
-                                        <td style="border:1px solid #000; padding:4px;" colspan="5">
-                                            No contractor-cost lines recorded.
-                                        </td>
-                                    </tr>
-                                </t>
-                                <t t-if="o.timesheet_line_ids">
-                                    <t t-foreach="o.timesheet_line_ids" t-as="time_line">
-                                        <tr>
-                                            <td>
-                                                <span t-field="time_line.date"
-                                                      t-options='{"widget": "date"}'/>
-                                            </td>
-                                            <td>
-                                                <span t-field="time_line.product_id"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-                                </t>
-                                <t t-else="">
-                                    <tr>
-                                        <td style="border:1px solid #000; padding:4px;" colspan="6">
-                                            No employee-timesheet lines recorded.
-                                        </td>
-                                    </tr>
-                                </t>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td style="border:1px solid #000; padding:4px; text-align:right; font-weight:bold;"
-                                        colspan="4">
-                                        Contractor Total
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold;">
-                                        <span t-field="o.contractor_total"/>
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </table> -->
-
-                        <!-- Employee timesheets, including Time Type -->
- <!--                   <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
-                            Employee Timesheets
-                        </div>
-
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
-                            <thead>
-                                <tr style="background:#f2f2f2;">
-                                    <th style="border:1px solid #000; padding:4px; width:12%;">Date</th>
-                                    <th style="border:1px solid #000; padding:4px; width:18%;">Employee</th>
-                                    <th style="border:1px solid #000; padding:4px; width:15%;">Time Type</th>
-                                    <th style="border:1px solid #000; padding:4px;">Description</th>
-                                    <th style="border:1px solid #000; padding:4px; width:12%;">Duration</th>
-                                    <th style="border:1px solid #000; padding:4px; width:15%;">Project / Task</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-if="o.timesheet_line_ids">
-                                    <t t-foreach="o.timesheet_line_ids" t-as="time_line">
-                                        <tr>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="time_line.date"
-                                                      t-options='{"widget": "date"}'/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="time_line.employee_id"/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="time_line.product_id"/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="time_line.description"/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="time_line.unit_amount"
-                                                      t-options='{"widget": "float_time"}'/>
-                                            </td>
-                                            <td style="border:1px solid #000; padding:4px;">
-                                                <span t-field="time_line.project_id"/>
-                                                <t t-if="time_line.task_id">
-                                                    /
-                                                    <span t-field="time_line.task_id"/>
-                                                </t>
-                                            </td>
-                                        </tr>
-                                    </t>
-                                </t>
-                                <t t-else="">
-                                    <tr>
-                                        <td style="border:1px solid #000; padding:4px;" colspan="6">
-                                            No employee-timesheet lines recorded.
-                                        </td>
-                                    </tr>
-                                </t>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td style="border:1px solid #000; padding:4px; text-align:right; font-weight:bold;"
-                                        colspan="4">
-                                        Total Employee Hours
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold;">
-                                        <span t-field="o.employee_time_total"
-                                              t-options='{"widget": "float_time"}'/>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                </tr>
-                            </tfoot>
-                        </table>
--->
-					
-                        <!-- Postponed / uncompleted FSM activities -->
+                        <!-- Postponed or uncompleted activities -->
                         <div style="border:1px solid #000; margin-bottom:6px;">
                             <div style="background:#e6e6e6; padding:4px; font-weight:bold;">
-                                Zurückgestellte Arbeiten (einschließlich Begründung):
+                                Postponed Work (Including Reason):
                             </div>
-                        
                             <div style="padding:6px; min-height:70px;">
                                 <t t-if="o.postponed_work">
-                                    <div style="margin-bottom:6px;">
-                                        <span t-field="o.postponed_work"/>
-                                    </div>
+                                    <div style="margin-bottom:6px;"><span t-field="o.postponed_work"/></div>
                                 </t>
-                                
                                 <t t-if="o.fsm_order_id.order_activity_ids.filtered(lambda activity: activity.state != 'done')">
                                     <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
                                         <t t-if="activity.state != 'done'">
                                             <div style="margin-bottom:3px;">
-                                                <t t-if="activity.ref">
-                                                    <strong><span t-field="activity.ref"/></strong>
-                                                    —
-                                                </t>
-                        
+                                                <t t-if="activity.ref"><strong><span t-field="activity.ref"/></strong> — </t>
                                                 <span t-field="activity.name"/>
-                        
-                                                <t t-if="activity.state == 'cancel'">
-                                                    <span style="color:#b00020;"> (Cancelled)</span>
-                                                </t>
-                        
-                                                <t t-if="activity.state == 'todo'">
-                                                    <span style="color:#555;"> (Not completed)</span>
-                                                </t>
+                                                <t t-if="activity.state == 'cancel'"><span style="color:#b00020;"> (Cancelled)</span></t>
+                                                <t t-if="activity.state == 'todo'"><span style="color:#555;"> (Not completed)</span></t>
                                             </div>
                                         </t>
                                     </t>
                                 </t>
-                        
-                                <t t-else="">
-                                    <span style="color:#555;">
-                                        No postponed or uncompleted activities.
-                                    </span>
-                                </t>
+                                <t t-else=""><span style="color:#555;">No postponed or uncompleted activities.</span></t>
                             </div>
                         </div>
 
-                        <!-- Replaced components = Ausgetauschte Komponenten:-->
+                        <!-- Replaced components -->
                         <div style="border:1px solid #000; margin-bottom:6px;">
-                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Ausgetauschte Komponenten:</div>
+                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Replaced Components:</div>
                             <div style="padding:6px; min-height:60px;">
                                 <t t-if="o.replaced_components">
-                                    <div style="margin-bottom:6px;">
-                                        <span t-field="o.replaced_components"/>
+                                    <div style="margin-bottom:6px;"><span t-field="o.replaced_components"/></div>
+                                </t>
+                                <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
+                                    <div style="display:block; clear:both; margin-bottom:3px;">
+                                        <span t-field="cost_line.product_id"/> <span> — </span>
+                                        <strong>Qty:</strong> <span t-field="cost_line.quantity"/>
                                     </div>
                                 </t>
-                                
-                                <t t-if="o.contractor_cost_line_ids">
-                                    <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
-                                        <div style="display:block; clear:both; margin-bottom:3px;">
-                                            <span t-field="cost_line.product_id"/>
-                                            <span> — </span>
-                                            <strong>Qty:</strong>
-                                            <span t-field="cost_line.quantity"/>
-                                        </div>
-                                    </t>
-                                </t>
-                                <t t-else="">
-                                    <tr>
-                                        <td style="border:1px solid #000; padding:4px;" colspan="5">
-                                        <!--    No contractor-cost lines recorded. -->
-                                        </td>
-                                    </tr>
-                                </t>
-                              <!--  <span t-field="o.x_replaced_components"/> -->
                             </div>
                         </div>
 
                         <!-- Other information -->
                         <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
-                            Sonstige Angaben (nach Vorgabe des Halters/ECM)
+                            Other Information (as Specified by Keeper/ECM)
                         </div>
-
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <tr>
                                 <td style="border:1px solid #000; padding:6px; min-height:45px; white-space:pre-wrap;">
-                                    <t t-if="o.remarks">
-                                        <span t-field="o.remarks"/>
-                                    </t>
-                                
-                                    <t t-if="o.remarks and o.other_information">
-                                        <br/>
-                                    </t>
-                                
-                                    <t t-if="o.other_information">
-                                        <span t-field="o.other_information"/>
-                                    </t>
+                                    <t t-if="o.remarks"><span t-field="o.remarks"/></t>
+                                    <t t-if="o.remarks and o.other_information"><br/></t>
+                                    <t t-if="o.other_information"><span t-field="o.other_information"/></t>
                                 </td>
                             </tr>
                         </table>
 
                         <!-- Release approval -->
                         <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
-                            Release confirmation / Freigabebestätigung
+                            Release Confirmation
                         </div>
-
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
                             <tr>
                                 <td style="border:1px solid #000; padding:4px; width:25%;">
                                     <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
-                                    <span t-else="" style="font-size:12px; font-weight:bold; align:top">☐</span>
+                                    <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
                                     Repair
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
@@ -542,86 +231,62 @@
                                 <td style="border:1px solid #000; padding:4px; width:25%;">
                                     <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
                                     <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
-                                    Release to service / Freigabe zur Instandsetzung
+                                    Release to Service
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    The additional check as per VPI-EMG 01, Annex 19, found no fault. 
-                                    We hereby certify that this wagon corresponds to the applicable laws and ordnances, 
-                                    the regulations of the keeper/ECM and the RID (if applicable).
+                                    The additional check as per VPI-EMG 01, Annex 19, found no fault.
+                                    We hereby certify that this wagon corresponds to the applicable laws and regulations,
+                                    the requirements of the keeper/ECM and the RID (if applicable).
                                 </td>
                             </tr>
                         </table>
 
-                        <!-- Signatory / company block -->
+                        <!-- Signatory and company details -->
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
                             <tr style="background:#e6e6e6;">
-                                <td style="border:1px solid #000; padding:4px; width:40%;">
-                                    <strong>Name (des verantwortlichen Mitarbeiters):</strong>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:20%;">
-                                    <strong>Telefonnummer:</strong>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:20%;">
-                                    <strong>Ausstellungsdatum:</strong>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px; width:20%;">
-                                    <strong>E-Mail:</strong>
-                                </td>
+                                <td style="border:1px solid #000; padding:4px; width:40%;"><strong>Name (of Responsible Employee):</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Phone Number:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Issue Date:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Email:</strong></td>
                             </tr>
-
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <div style="margin-left:20px;">
-                                        <span t-field="o.fsm_order_id.company_id.name"/>
-                                        <br/>
-
+                                        <span t-field="o.fsm_order_id.company_id.name"/><br/>
                                         <span t-field="o.fsm_order_id.company_id.street"/>
                                         <t t-if="o.fsm_order_id.company_id.street2">
-                                            <br/>
-                                            <span t-field="o.fsm_order_id.company_id.street2"/>
+                                            <br/><span t-field="o.fsm_order_id.company_id.street2"/>
                                         </t>
-                                        <br/>
-
-                                        <span t-field="o.fsm_order_id.company_id.zip"/>
+                                        <br/><span t-field="o.fsm_order_id.company_id.zip"/>
                                         <span t-field="o.fsm_order_id.company_id.city"/>
                                     </div>
                                     <span style="text-align:left;" t-field="o.create_uid.partner_id.name"/>
                                     <br/><i>(signed digitally)</i>
                                 </td>
-
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.fsm_order_id.company_id.phone"/>
-                                </td>
-
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.fsm_order_id.company_id.phone"/></td>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <t t-if="o.issue_date">
-                                        <span t-field="o.issue_date"
-                                              t-options='{"widget": "date"}'/>
+                                        <span t-field="o.issue_date" t-options='{"widget": "date"}'/>
                                     </t>
                                     <t t-else="">
-                                        <span t-field="o.create_date"
-                                              t-options='{"widget": "date"}'/>
+                                        <span t-field="o.create_date" t-options='{"widget": "date"}'/>
                                     </t>
                                 </td>
-
                                 <td style="border:1px solid #000; padding:4px;">
                                     <span t-field="o.fsm_order_id.company_id.email"/>
-                                    rsnoperations@rsn.be
+                                    [rsnoperations@rsn.be](mailto:rsnoperations@rsn.be)
                                 </td>
                             </tr>
                         </table>
 
                         <div style="margin-top:10px; font-size:9px; color:#555; text-align:center;">
-                            VPI-EMG 10 Anhang 2 | Stand: 01.12.2024 |
+                            VPI-EMG 10 Annex 2 | Version: 01.12.2024 |
                             Translation: 10/12/2024
                             <span t-field="o.fsm_order_id.name"/>
                         </div>
-
                     </div>
-
                 </t>
             </t>
         </t>
     </template>
-
 </odoo>
