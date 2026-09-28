@@ -571,18 +571,20 @@
 
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <span style="text-align:center;" t-field="o.fsm_order_id.company_id.name"/>
-                                    <br/>
-
-                                    <span style="text-align:center;" t-field="o.fsm_order_id.company_id.street"/>
-                                    <t t-if="o.fsm_order_id.company_id.street2">
+                                    <div style="margin-left:20px;">
+                                        <span t-field="o.fsm_order_id.company_id.name"/>
                                         <br/>
-                                        <span t-field="o.fsm_order_id.company_id.street2"/>
-                                    </t>
-                                    <br/>
 
-                                    <span style="text-align:center;" t-field="o.fsm_order_id.company_id.zip"/>
-                                    <span style="text-align:center;" t-field="o.fsm_order_id.company_id.city"/>
+                                        <span t-field="o.fsm_order_id.company_id.street"/>
+                                        <t t-if="o.fsm_order_id.company_id.street2">
+                                            <br/>
+                                            <span t-field="o.fsm_order_id.company_id.street2"/>
+                                        </t>
+                                        <br/>
+
+                                        <span t-field="o.fsm_order_id.company_id.zip"/>
+                                        <span t-field="o.fsm_order_id.company_id.city"/>
+                                    </div>
                                     <br/>
 
                                     <span style="text-align:left;" t-field="o.create_uid.partner_id.name"/>
