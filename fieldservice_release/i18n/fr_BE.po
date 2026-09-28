@@ -18,7 +18,7 @@ msgid "'Release Form - %s' % (object.name)"
 msgstr "'Formulaire de remise en service - %s' % (object.name)"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<br/><i>(signed digitally)</i>"
 msgstr "<br/><i>(signé numériquement)</i>"
 
@@ -28,22 +28,22 @@ msgid "<span class=\"o_stat_text\">Release Form</span>"
 msgstr "<span class=\"o_stat_text\">Formulaire de remise en service</span>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<span style=\"color:#555;\"> (Not completed)</span>"
 msgstr "<span style=\"color:#555;\"> (Non terminé)</span>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<span style=\"color:#555;\">No postponed or uncompleted activities.</span>"
 msgstr "<span style=\"color:#555;\">Aucune activité reportée ou non terminée.</span>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<span style=\"color:#b00020;\"> (Cancelled)</span>"
 msgstr "<span style=\"color:#b00020;\"> (Annulée)</span>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid ""
 "<span> — </span>\n"
 "                                        <strong>Qty:</strong>"
@@ -52,7 +52,7 @@ msgstr ""
 "                                        <strong>Qté :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid ""
 "<span> — </span>\n"
 "                                    <strong>Qty:</strong>"
@@ -61,58 +61,58 @@ msgstr ""
 "                                    <strong>Qté :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Created On:</strong>"
 msgstr "<strong>Établi le :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Customer Order Number:</strong>"
 msgstr "<strong>Numéro de commande client :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Email:</strong>"
 msgstr "<strong>E-mail :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>FW Number:</strong>"
 msgstr "<strong>Numéro FW :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Issue Date:</strong>"
 msgstr "<strong>Date d'émission :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Keeper / ECM:</strong>"
 msgstr "<strong>Détenteur / ECM :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Name (of Responsible Employee):</strong>"
 msgstr "<strong>Nom (du collaborateur responsable) :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Order Number:</strong>"
 msgstr "<strong>Numéro d'ordre :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Phone Number:</strong>"
 msgstr "<strong>Numéro de téléphone :</strong>"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "<strong>Wagon Number</strong>"
 msgstr "<strong>Numéro du wagon</strong>"
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__brake_type
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Brake Revision"
 msgstr "Révision des freins"
 
@@ -184,7 +184,7 @@ msgid "Customer Order Number"
 msgstr "Numéro de commande client"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Cycle:"
 msgstr "Cycle :"
 
@@ -194,7 +194,7 @@ msgid "Date"
 msgstr "Date"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Date:"
 msgstr "Date :"
 
@@ -217,7 +217,7 @@ msgid "Draft"
 msgstr "Brouillon"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Due Date"
 msgstr "Échéance"
 
@@ -256,7 +256,7 @@ msgid "Equipment"
 msgstr "Équipement"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Extension:"
 msgstr "Prolongation :"
 
@@ -331,17 +331,17 @@ msgid "Maintenance Level Performed"
 msgstr "Niveau de maintenance effectué"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Maintenance Level Performed:"
 msgstr "Niveau de maintenance effectué :"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Mobile Repair Performed On:"
 msgstr "Réparation mobile effectuée le :"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Mobile Repair Report"
 msgstr "Rapport de réparation mobile"
 
@@ -352,7 +352,7 @@ msgstr "Autres informations"
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__other_information
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Other Information (as Specified by Keeper/ECM)"
 msgstr "Autres informations (selon les prescriptions du détenteur/de l'ECM)"
 
@@ -367,7 +367,7 @@ msgid "Postponed Work (Including Reason)"
 msgstr "Travaux reportés (avec justification)"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Postponed Work (Including Reason):"
 msgstr "Travaux reportés (avec justification) :"
 
@@ -382,7 +382,7 @@ msgid "Previous Wagon Number"
 msgstr "Ancien numéro du wagon"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Previous Wagon Number:"
 msgstr "Ancien numéro du wagon :"
 
@@ -414,7 +414,7 @@ msgstr "Référence"
 
 #. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Release Confirmation"
 msgstr "Confirmation de remise en service"
 
@@ -442,7 +442,7 @@ msgstr "Remise en service confirmée"
 #. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_view_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Release to Service"
 msgstr "Remise en service"
 
@@ -463,7 +463,7 @@ msgid "Remarks"
 msgstr "Remarques"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Repair"
 msgstr "Réparation"
 
@@ -475,7 +475,7 @@ msgstr "Réparation confirmée"
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__work_performed
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Repair Work Performed"
 msgstr "Travaux de réparation effectués"
 
@@ -486,7 +486,7 @@ msgid "Replaced Components"
 msgstr "Composants remplacés"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Replaced Components:"
 msgstr "Composants remplacés :"
 
@@ -496,7 +496,7 @@ msgid "Reset to Draft"
 msgstr "Remettre en brouillon"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Revision"
 msgstr "Révision"
 
@@ -556,7 +556,7 @@ msgid "Subtotal"
 msgstr "Sous-total"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Tare Weight"
 msgstr "Tare"
 
@@ -571,7 +571,7 @@ msgid "Task"
 msgstr "Tâche"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid ""
 "The additional check as per VPI-EMG 01, Annex 19, found no fault.\n"
 "                                    We hereby certify that this wagon corresponds to the applicable laws and regulations,\n"
@@ -582,7 +582,7 @@ msgstr ""
 "                                    aux prescriptions du détenteur/de l'ECM et au RID (le cas échéant)."
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "The described work steps were performed correctly and completely."
 msgstr "Les étapes de travail décrites ont été effectuées correctement et intégralement."
 
@@ -597,7 +597,7 @@ msgid "Total Employee Hours"
 msgstr "Total des heures des employés"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "Type:"
 msgstr "Type :"
 
@@ -607,7 +607,7 @@ msgid "Unit Price"
 msgstr "Prix unitaire"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid ""
 "VPI-EMG 10 Annex 2 | Version: 01.12.2024 |\n"
 "                            Translation: 10/12/2024"
@@ -631,11 +631,11 @@ msgid "Wagon Number (Formatted)"
 msgstr "Numéro du wagon (formaté)"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "[rsnoperations@rsn.be](mailto:rsnoperations@rsn.be)"
 msgstr "[rsnoperations@rsn.be](mailto:rsnoperations@rsn.be)"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document_lang
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
 msgid "kg"
 msgstr "kg"
