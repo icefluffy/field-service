@@ -190,12 +190,15 @@ class FsmRelease(models.Model):
     def action_preview_release_form(self):
         self.ensure_one()
 
+        lang = self.env.user.lang or "en_US"
+
         return {
             "type": "ir.actions.act_url",
             "url": (
                 "/report/html/"
                 "fieldservice_release.report_fsm_release_document/"
                 f"{self.id}"
+                f"?context={{'lang': '{lang}'}}"
             ),
             "target": "new",
         }
