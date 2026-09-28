@@ -243,13 +243,13 @@
                         
                                         <span t-field="activity.name"/>
                         
-                                        <t t-if="activity.completed_on">
+                                 <!--       <t t-if="activity.completed_on">
                                             <span style="float:right; color:#555;">
                                                 Completed:
                                                 <span t-field="activity.completed_on"
                                                       t-options='{"widget": "datetime"}'/>
                                             </span>
-                                        </t>
+                                        </t> -->
                                     </div>
                                 </t>
                             </t>
