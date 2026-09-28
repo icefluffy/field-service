@@ -524,7 +524,7 @@
 
                         <!-- Release approval -->
                         <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold; text-transform:uppercase;">
-                            Release Approval
+                            Release confirmation / Freigabebestätigung
                         </div>
 
                         <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
@@ -532,27 +532,22 @@
                                 <td style="border:1px solid #000; padding:4px; width:50%;">
                                     <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
                                     <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
-                                    Equipment released to service
+                                    Repair
                                 </td>
+                                <td style="border:1px solid #000; padding:4px; height:55px;">
+                                    The described work steps were performed correctly and completely.
+                                </td>
+                            </tr>
+                            <tr>
                                 <td style="border:1px solid #000; padding:4px; width:50%;">
                                     <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
                                     <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
-                                    Customer informed
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px; height:55px;">
-                                    Released by:
-                                    <br/><br/>
-                                    <span t-field="o.fsm_order_id.person_id.name"/>
-                                    <br/><br/>
-                                    Signature:
+                                    Release to service / Freigabe zur Instandsetzung
                                 </td>
                                 <td style="border:1px solid #000; padding:4px; height:55px;">
-                                    Customer acceptance:
-                                    <br/><br/><br/>
-                                    Signature:
+                                    The additional check as per VPI-EMG 01, Annex 19, found no fault. 
+                                    We hereby certify that this wagon corresponds to the applicable laws and ordnances, 
+                                    the regulations of the keeper/ECM and the RID (if applicable).
                                 </td>
                             </tr>
                         </table>
