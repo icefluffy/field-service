@@ -585,9 +585,8 @@
                                     <span t-field="o.fsm_order_id.company_id.city"/>
                                     <br/>
 
-                                    <span style="text-align:left;" t-field="o.create_uid.partner_id.name">
+                                    <span style="text-align:left;" t-field="o.create_uid.partner_id.name"/>
                                     <br/><i>(signed digitally)</i>
-                                    </span>
                                 </td>
 
                                 <td style="border:1px solid #000; padding:4px;">
