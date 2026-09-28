@@ -60,7 +60,10 @@
                             </tr>
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <!-- Source date not yet defined; leave blank rather than print a draft question. -->
+                                    <t t-if="o.fsm_order_id.date_end">
+                                        <span t-field="o.fsm_order_id.date_end"
+                                            t-options='{"widget": "date"}'/>
+                                    </t>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <t t-if="o.maintenance_level"><span t-field="o.maintenance_level"/></t>
@@ -104,8 +107,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px;"/>
+                                    <td style="padding:4px;"/>
+                                    <td style="padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Brake Revision</td>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold;">
                                         <t t-if="o.brake_type"><span t-field="o.brake_type"/></t>
@@ -115,8 +118,8 @@
                                     <td style="border:1px solid #000; padding:4px;"/>
                                 </tr>
                                 <tr>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px;"/>
+                                    <td style="padding:4px;"/>
+                                    <td style="padding:4px;"/>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Due Date</td>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold;">
                                         <t t-if="o.brake_deadline">
