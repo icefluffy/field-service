@@ -1,0 +1,484 @@
+# Translation of Odoo Server.
+# Module: fieldservice_release
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
+"POT-Creation-Date: 2026-09-28 17:15+0000\n"
+"PO-Revision-Date: 2026-09-28 17:15+0000\n"
+"Language-Team: Dutch (Belgium)\n"
+"Language: nl_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_release
+#: model:ir.actions.report,print_report_name:fieldservice_release.action_report_fsm_release
+msgid "'Release Form - %s' % (object.name)"
+msgstr "'Vrijgaveformulier - %s' % (object.name)"
+
+#. module: fieldservice_release
+msgid "<br/><i>(signed digitally)</i>"
+msgstr "<br/><i>(digitaal ondertekend)</i>"
+
+#. module: fieldservice_release
+msgid "<span class=\"o_stat_text\">Release Form</span>"
+msgstr "<span class=\"o_stat_text\">Vrijgaveformulier</span>"
+
+#. module: fieldservice_release
+msgid "<span style=\"color:#555;\"> (Not completed)</span>"
+msgstr "<span style=\"color:#555;\"> (Niet voltooid)</span>"
+
+#. module: fieldservice_release
+msgid "<span style=\"color:#555;\">No postponed or uncompleted activities.</span>"
+msgstr "<span style=\"color:#555;\">Geen uitgestelde of onafgewerkte werkzaamheden.</span>"
+
+#. module: fieldservice_release
+msgid "<span style=\"color:#b00020;\"> (Cancelled)</span>"
+msgstr "<span style=\"color:#b00020;\"> (Geannuleerd)</span>"
+
+#. module: fieldservice_release
+msgid ""
+"<span> — </span>\n"
+"                                        <strong>Qty:</strong>"
+msgstr ""
+"<span> — </span>\n"
+"                                        <strong>Aantal:</strong>"
+
+#. module: fieldservice_release
+msgid ""
+"<span> — </span>\n"
+"                                    <strong>Qty:</strong>"
+msgstr ""
+"<span> — </span>\n"
+"                                    <strong>Aantal:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Created On:</strong>"
+msgstr "<strong>Opgemaakt op:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Customer Order Number:</strong>"
+msgstr "<strong>Klantopdrachtnummer:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Email:</strong>"
+msgstr "<strong>E-mail:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>FW Number:</strong>"
+msgstr "<strong>FW-nummer:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Issue Date:</strong>"
+msgstr "<strong>Uitgiftedatum:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Keeper / ECM:</strong>"
+msgstr "<strong>Houder / ECM:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Name (of Responsible Employee):</strong>"
+msgstr "<strong>Naam (van de verantwoordelijke medewerker):</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Order Number:</strong>"
+msgstr "<strong>Opdrachtnummer:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Phone Number:</strong>"
+msgstr "<strong>Telefoonnummer:</strong>"
+
+#. module: fieldservice_release
+msgid "<strong>Wagon Number</strong>"
+msgstr "<strong>Wagennummer</strong>"
+
+#. module: fieldservice_release
+msgid "Brake Revision"
+msgstr "Remrevisie"
+
+#. module: fieldservice_release
+msgid "Brake Revision Due Date"
+msgstr "Vervaldatum remrevisie"
+
+#. module: fieldservice_release
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: fieldservice_release
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+#. module: fieldservice_release
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: fieldservice_release
+msgid "Contractor Cost Total"
+msgstr "Totale aannemerskosten"
+
+#. module: fieldservice_release
+msgid "Contractor Costs"
+msgstr "Aannemerskosten"
+
+#. module: fieldservice_release
+msgid "Create Release Form"
+msgstr "Vrijgaveformulier aanmaken"
+
+#. module: fieldservice_release
+msgid "Created On"
+msgstr "Opgemaakt op"
+
+#. module: fieldservice_release
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_release
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_release
+msgid "Customer"
+msgstr "Klant"
+
+#. module: fieldservice_release
+msgid "Customer Order Number"
+msgstr "Klantopdrachtnummer"
+
+#. module: fieldservice_release
+msgid "Cycle:"
+msgstr "Cyclus:"
+
+#. module: fieldservice_release
+msgid "Date"
+msgstr "Datum"
+
+#. module: fieldservice_release
+msgid "Date:"
+msgstr "Datum:"
+
+#. module: fieldservice_release
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: fieldservice_release
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: fieldservice_release
+msgid "Draft"
+msgstr "Concept"
+
+#. module: fieldservice_release
+msgid "Due Date"
+msgstr "Vervaldatum"
+
+#. module: fieldservice_release
+msgid "Duration"
+msgstr "Duur"
+
+#. module: fieldservice_release
+msgid "Employee"
+msgstr "Medewerker"
+
+#. module: fieldservice_release
+msgid "Employee Timesheets"
+msgstr "Urenstaten medewerkers"
+
+#. module: fieldservice_release
+msgid "Enter release-to-service remarks..."
+msgstr "Voer opmerkingen over de vrijgave voor gebruik in..."
+
+#. module: fieldservice_release
+msgid "Enter the remarks for the release form..."
+msgstr "Voer de opmerkingen voor het vrijgaveformulier in..."
+
+#. module: fieldservice_release
+msgid "Equipment"
+msgstr "Materieel"
+
+#. module: fieldservice_release
+msgid "Extension:"
+msgstr "Verlenging:"
+
+#. module: fieldservice_release
+msgid "FW Number"
+msgstr "FW-nummer"
+
+#. module: fieldservice_release
+msgid "Field Service Order"
+msgstr "Buitendienstorder"
+
+#. module: fieldservice_release
+msgid "Field Service Release Form"
+msgstr "Vrijgaveformulier buitendienst"
+
+#. module: fieldservice_release
+msgid "Field Service Release Form Contractor Cost"
+msgstr "Aannemerskosten vrijgaveformulier buitendienst"
+
+#. module: fieldservice_release
+msgid "Field Service Release Form Equipment"
+msgstr "Materieel vrijgaveformulier buitendienst"
+
+#. module: fieldservice_release
+msgid "Field Service Release Form Timesheet"
+msgstr "Urenstaat vrijgaveformulier buitendienst"
+
+#. module: fieldservice_release
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_release
+msgid "Issue"
+msgstr "Uitgifte"
+
+#. module: fieldservice_release
+msgid "Issue Date"
+msgstr "Uitgiftedatum"
+
+#. module: fieldservice_release
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_release
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_release
+msgid "Maintenance Level Performed"
+msgstr "Uitgevoerd onderhoudsniveau"
+
+#. module: fieldservice_release
+msgid "Maintenance Level Performed:"
+msgstr "Uitgevoerd onderhoudsniveau:"
+
+#. module: fieldservice_release
+msgid "Mobile Repair Performed On:"
+msgstr "Mobiele herstelling uitgevoerd op:"
+
+#. module: fieldservice_release
+msgid "Mobile Repair Report"
+msgstr "Verslag mobiele herstelling"
+
+#. module: fieldservice_release
+msgid "Other Information"
+msgstr "Overige gegevens"
+
+#. module: fieldservice_release
+msgid "Other Information (as Specified by Keeper/ECM)"
+msgstr "Overige gegevens (volgens de voorschriften van de houder/ECM)"
+
+#. module: fieldservice_release
+msgid "Postponed Work"
+msgstr "Uitgestelde werkzaamheden"
+
+#. module: fieldservice_release
+msgid "Postponed Work (Including Reason)"
+msgstr "Uitgestelde werkzaamheden (met inbegrip van de reden)"
+
+#. module: fieldservice_release
+msgid "Postponed Work (Including Reason):"
+msgstr "Uitgestelde werkzaamheden (met inbegrip van de reden):"
+
+#. module: fieldservice_release
+msgid "Preview Release Form"
+msgstr "Voorbeeld vrijgaveformulier"
+
+#. module: fieldservice_release
+msgid "Previous Wagon Number"
+msgstr "Oud wagennummer"
+
+#. module: fieldservice_release
+msgid "Previous Wagon Number:"
+msgstr "Oud wagennummer:"
+
+#. module: fieldservice_release
+msgid "Print Release Form"
+msgstr "Vrijgaveformulier afdrukken"
+
+#. module: fieldservice_release
+msgid "Product"
+msgstr "Product"
+
+#. module: fieldservice_release
+msgid "Project"
+msgstr "Project"
+
+#. module: fieldservice_release
+msgid "Quantity"
+msgstr "Aantal"
+
+#. module: fieldservice_release
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: fieldservice_release
+msgid "Release Confirmation"
+msgstr "Vrijgavebevestiging"
+
+#. module: fieldservice_release
+msgid "Release Form"
+msgstr "Vrijgaveformulier"
+
+#. module: fieldservice_release
+msgid "Release Forms"
+msgstr "Vrijgaveformulieren"
+
+#. module: fieldservice_release
+msgid "Release for Operation Confirmed"
+msgstr "Vrijgave voor gebruik bevestigd"
+
+#. module: fieldservice_release
+msgid "Release to Service"
+msgstr "Vrijgave voor gebruik"
+
+#. module: fieldservice_release
+msgid "Release to Service Remarks"
+msgstr "Opmerkingen bij vrijgave voor gebruik"
+
+#. module: fieldservice_release
+msgid "Released"
+msgstr "Vrijgegeven"
+
+#. module: fieldservice_release
+msgid "Remarks"
+msgstr "Opmerkingen"
+
+#. module: fieldservice_release
+msgid "Repair"
+msgstr "Herstelling"
+
+#. module: fieldservice_release
+msgid "Repair Confirmed"
+msgstr "Herstelling bevestigd"
+
+#. module: fieldservice_release
+msgid "Repair Work Performed"
+msgstr "Uitgevoerde herstellingswerken"
+
+#. module: fieldservice_release
+msgid "Replaced Components"
+msgstr "Vervangen onderdelen"
+
+#. module: fieldservice_release
+msgid "Replaced Components:"
+msgstr "Vervangen onderdelen:"
+
+#. module: fieldservice_release
+msgid "Reset to Draft"
+msgstr "Terugzetten naar concept"
+
+#. module: fieldservice_release
+msgid "Revision"
+msgstr "Revisie"
+
+#. module: fieldservice_release
+msgid "Revision / Brakes"
+msgstr "Revisie / remmen"
+
+#. module: fieldservice_release
+msgid "Revision Cycle"
+msgstr "Revisiecyclus"
+
+#. module: fieldservice_release
+msgid "Revision Date"
+msgstr "Revisiedatum"
+
+#. module: fieldservice_release
+msgid "Revision Extension"
+msgstr "Verlenging van de revisie"
+
+#. module: fieldservice_release
+msgid "Sequence"
+msgstr "Volgorde"
+
+#. module: fieldservice_release
+msgid "Serial Number"
+msgstr "Serienummer"
+
+#. module: fieldservice_release
+msgid "Service Location"
+msgstr "Servicelocatie"
+
+#. module: fieldservice_release
+msgid "Smart Search"
+msgstr "Slim zoeken"
+
+#. module: fieldservice_release
+msgid "Status"
+msgstr "Status"
+
+#. module: fieldservice_release
+msgid "Subtotal"
+msgstr "Subtotaal"
+
+#. module: fieldservice_release
+msgid "Tare Weight"
+msgstr "Eigengewicht"
+
+#. module: fieldservice_release
+msgid "Tare Weight (kg)"
+msgstr "Eigengewicht (kg)"
+
+#. module: fieldservice_release
+msgid "Task"
+msgstr "Taak"
+
+#. module: fieldservice_release
+msgid ""
+"The additional check as per VPI-EMG 01, Annex 19, found no fault.\n"
+"                                    We hereby certify that this wagon corresponds to the applicable laws and regulations,\n"
+"                                    the requirements of the keeper/ECM and the RID (if applicable)."
+msgstr ""
+"Bij de aanvullende controle volgens VPI-EMG 01, bijlage 19, werden geen gebreken vastgesteld.\n"
+"                                    Hierbij bevestigen wij dat deze wagon voldoet aan de toepasselijke wet- en regelgeving,\n"
+"                                    de voorschriften van de houder/ECM en het RID (indien van toepassing)."
+
+#. module: fieldservice_release
+msgid "The described work steps were performed correctly and completely."
+msgstr "De beschreven werkzaamheden werden correct en volledig uitgevoerd."
+
+#. module: fieldservice_release
+msgid "Time Type"
+msgstr "Type tijdsbesteding"
+
+#. module: fieldservice_release
+msgid "Total Employee Hours"
+msgstr "Totaal aantal medewerkersuren"
+
+#. module: fieldservice_release
+msgid "Type:"
+msgstr "Type:"
+
+#. module: fieldservice_release
+msgid "Unit Price"
+msgstr "Eenheidsprijs"
+
+#. module: fieldservice_release
+msgid ""
+"VPI-EMG 10 Annex 2 | Version: 01.12.2024 |\n"
+"                            Translation: 10/12/2024"
+msgstr ""
+"VPI-EMG 10 bijlage 2 | Versie: 01.12.2024 |\n"
+"                            Vertaling: 10/12/2024"
+
+#. module: fieldservice_release
+msgid "Wagon"
+msgstr "Wagon"
+
+#. module: fieldservice_release
+msgid "Wagon Number"
+msgstr "Wagennummer"
+
+#. module: fieldservice_release
+msgid "Wagon Number (Formatted)"
+msgstr "Wagennummer (geformatteerd)"
+
+#. module: fieldservice_release
+msgid "[rsnoperations@rsn.be](mailto:rsnoperations@rsn.be)"
+msgstr "[rsnoperations@rsn.be](mailto:rsnoperations@rsn.be)"
+
+#. module: fieldservice_release
+msgid "kg"
+msgstr "kg"

@@ -1,0 +1,641 @@
+# Translation of Odoo Server.
+# Module: fieldservice_release
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
+"POT-Creation-Date: 2026-09-28 17:15+0000\n"
+"PO-Revision-Date: 2026-09-28 17:15+0000\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_release
+#: model:ir.actions.report,print_report_name:fieldservice_release.action_report_fsm_release
+msgid "'Release Form - %s' % (object.name)"
+msgstr "'Freigabeformular - %s' % (object.name)"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<br/><i>(signed digitally)</i>"
+msgstr "<br/><i>(digital unterzeichnet)</i>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_view_release
+msgid "<span class=\"o_stat_text\">Release Form</span>"
+msgstr "<span class=\"o_stat_text\">Freigabeformular</span>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<span style=\"color:#555;\"> (Not completed)</span>"
+msgstr "<span style=\"color:#555;\"> (Nicht abgeschlossen)</span>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<span style=\"color:#555;\">No postponed or uncompleted activities.</span>"
+msgstr "<span style=\"color:#555;\">Keine zurückgestellten oder nicht abgeschlossenen Arbeiten.</span>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<span style=\"color:#b00020;\"> (Cancelled)</span>"
+msgstr "<span style=\"color:#b00020;\"> (Abgebrochen)</span>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid ""
+"<span> — </span>\n"
+"                                        <strong>Qty:</strong>"
+msgstr ""
+"<span> — </span>\n"
+"                                        <strong>Menge:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid ""
+"<span> — </span>\n"
+"                                    <strong>Qty:</strong>"
+msgstr ""
+"<span> — </span>\n"
+"                                    <strong>Menge:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Created On:</strong>"
+msgstr "<strong>Erstellt am:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Customer Order Number:</strong>"
+msgstr "<strong>Kundenauftragsnummer:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Email:</strong>"
+msgstr "<strong>E-Mail:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>FW Number:</strong>"
+msgstr "<strong>FW-Nummer:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Issue Date:</strong>"
+msgstr "<strong>Ausstellungsdatum:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Keeper / ECM:</strong>"
+msgstr "<strong>Halter / ECM:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Name (of Responsible Employee):</strong>"
+msgstr "<strong>Name (des verantwortlichen Mitarbeiters):</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Order Number:</strong>"
+msgstr "<strong>Auftragsnummer:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Phone Number:</strong>"
+msgstr "<strong>Telefonnummer:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "<strong>Wagon Number</strong>"
+msgstr "<strong>Wagennummer</strong>"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__brake_type
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Brake Revision"
+msgstr "Bremsrevision"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__brake_deadline
+msgid "Brake Revision Due Date"
+msgstr "Frist (Bremsrevision)"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: fieldservice_release
+#: model:ir.model.fields.selection,name:fieldservice_release.selection__fsm_release__state__cancelled
+msgid "Cancelled"
+msgstr "Abgebrochen"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__contractor_total
+msgid "Contractor Cost Total"
+msgstr "Gesamtkosten der Auftragnehmer"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__contractor_cost_line_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Contractor Costs"
+msgstr "Auftragnehmerkosten"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_view_release
+msgid "Create Release Form"
+msgstr "Freigabeformular erstellen"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__actual_release_date
+msgid "Created On"
+msgstr "Erstellt am"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__create_uid
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__create_uid
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__create_uid
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__create_date
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__create_date
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__create_date
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__partner_id
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__customer_order_number
+msgid "Customer Order Number"
+msgstr "Kundenauftragsnummer"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Cycle:"
+msgstr "Zyklus:"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__date
+msgid "Date"
+msgstr "Datum"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Date:"
+msgstr "Datum:"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__description
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__display_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__display_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__display_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: fieldservice_release
+#: model:ir.model.fields.selection,name:fieldservice_release.selection__fsm_release__state__draft
+msgid "Draft"
+msgstr "Entwurf"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Due Date"
+msgstr "Frist"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__unit_amount
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Duration"
+msgstr "Dauer"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__employee_id
+msgid "Employee"
+msgstr "Mitarbeiter"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__timesheet_line_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Employee Timesheets"
+msgstr "Mitarbeiter-Stundenzettel"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Enter release-to-service remarks..."
+msgstr "Bemerkungen zur Betriebsfreigabe eingeben ..."
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_view_release
+msgid "Enter the remarks for the release form..."
+msgstr "Bemerkungen zum Freigabeformular eingeben ..."
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__equipment_line_ids
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__equipment_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Equipment"
+msgstr "Ausrüstung"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Extension:"
+msgstr "Verlängerung:"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__fw_number
+msgid "FW Number"
+msgstr "FW-Nummer"
+
+#. module: fieldservice_release
+#: model:ir.model,name:fieldservice_release.model_fsm_order
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__fsm_order_id
+msgid "Field Service Order"
+msgstr "Außendienstauftrag"
+
+#. module: fieldservice_release
+#: model:ir.model,name:fieldservice_release.model_fsm_release
+msgid "Field Service Release Form"
+msgstr "Außendienst-Freigabeformular"
+
+#. module: fieldservice_release
+#: model:ir.model,name:fieldservice_release.model_fsm_release_contractor_cost
+msgid "Field Service Release Form Contractor Cost"
+msgstr "Auftragnehmerkosten des Außendienst-Freigabeformulars"
+
+#. module: fieldservice_release
+#: model:ir.model,name:fieldservice_release.model_fsm_release_equipment
+msgid "Field Service Release Form Equipment"
+msgstr "Ausrüstung des Außendienst-Freigabeformulars"
+
+#. module: fieldservice_release
+#: model:ir.model,name:fieldservice_release.model_fsm_release_timesheet
+msgid "Field Service Release Form Timesheet"
+msgstr "Stundenzettel des Außendienst-Freigabeformulars"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__id
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__id
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__id
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Issue"
+msgstr "Ausstellung"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__issue_date
+msgid "Issue Date"
+msgstr "Ausstellungsdatum"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__write_uid
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__write_uid
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__write_uid
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__write_date
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__write_date
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__write_date
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__maintenance_level
+msgid "Maintenance Level Performed"
+msgstr "Durchgeführte Instandhaltungsstufe"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Maintenance Level Performed:"
+msgstr "Durchgeführte Instandhaltungsstufe:"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Mobile Repair Performed On:"
+msgstr "Mobile Instandsetzung durchgeführt am:"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Mobile Repair Report"
+msgstr "Instandsetzungsbericht Mobile Instandsetzung"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Other Information"
+msgstr "Sonstige Angaben"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__other_information
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Other Information (as Specified by Keeper/ECM)"
+msgstr "Sonstige Angaben (nach Vorgabe des Halters/ECM)"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Postponed Work"
+msgstr "Zurückgestellte Arbeiten"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__postponed_work
+msgid "Postponed Work (Including Reason)"
+msgstr "Zurückgestellte Arbeiten (einschließlich Begründung)"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Postponed Work (Including Reason):"
+msgstr "Zurückgestellte Arbeiten (einschließlich Begründung):"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Preview Release Form"
+msgstr "Freigabeformular in der Vorschau anzeigen"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__wagon_number_old
+msgid "Previous Wagon Number"
+msgstr "Alte Wagennummer"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Previous Wagon Number:"
+msgstr "Alte Wagennummer:"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Print Release Form"
+msgstr "Freigabeformular drucken"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__product_id
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__product_id
+msgid "Product"
+msgstr "Produkt"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__project_id
+msgid "Project"
+msgstr "Projekt"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__quantity
+msgid "Quantity"
+msgstr "Menge"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__name
+msgid "Reference"
+msgstr "Referenz"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Release Confirmation"
+msgstr "Freigabebestätigung"
+
+#. module: fieldservice_release
+#: model:ir.actions.report,name:fieldservice_release.action_report_fsm_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_id
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__release_id
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__release_id
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__release_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_view_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Release Form"
+msgstr "Freigabeformular"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_list_view
+msgid "Release Forms"
+msgstr "Freigabeformulare"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__release_confirmed
+msgid "Release for Operation Confirmed"
+msgstr "Betriebsfreigabe bestätigt"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_view_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Release to Service"
+msgstr "Betriebsfreigabe"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_remarks
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__remarks
+msgid "Release to Service Remarks"
+msgstr "Bemerkungen zur Betriebsfreigabe"
+
+#. module: fieldservice_release
+#: model:ir.model.fields.selection,name:fieldservice_release.selection__fsm_release__state__released
+msgid "Released"
+msgstr "Freigegeben"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Remarks"
+msgstr "Bemerkungen"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Repair"
+msgstr "Instandsetzung"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__repair_confirmed
+msgid "Repair Confirmed"
+msgstr "Instandsetzung bestätigt"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__work_performed
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Repair Work Performed"
+msgstr "Durchgeführte Instandsetzungsarbeiten"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__replaced_components
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Replaced Components"
+msgstr "Ausgetauschte Komponenten"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Replaced Components:"
+msgstr "Ausgetauschte Komponenten:"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Reset to Draft"
+msgstr "Auf Entwurf zurücksetzen"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Revision"
+msgstr "Revision"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Revision / Brakes"
+msgstr "Revision / Bremsen"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__revision_cycle
+msgid "Revision Cycle"
+msgstr "Zyklus (Revision)"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__revision_date
+msgid "Revision Date"
+msgstr "Datum (Revision)"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__revision_extension
+msgid "Revision Extension"
+msgstr "Verlängerung (Revision)"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__sequence
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__sequence
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__lot_id
+msgid "Serial Number"
+msgstr "Seriennummer"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__location_id
+msgid "Service Location"
+msgstr "Service-Standort"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__smart_search
+msgid "Smart Search"
+msgstr "Intelligente Suche"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__state
+msgid "Status"
+msgstr "Status"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__subtotal
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Tare Weight"
+msgstr "Eigengewicht"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__own_weight
+msgid "Tare Weight (kg)"
+msgstr "Eigengewicht (kg)"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__task_id
+msgid "Task"
+msgstr "Aufgabe"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid ""
+"The additional check as per VPI-EMG 01, Annex 19, found no fault.\n"
+"                                    We hereby certify that this wagon corresponds to the applicable laws and regulations,\n"
+"                                    the requirements of the keeper/ECM and the RID (if applicable)."
+msgstr ""
+"Bei der zusätzlichen Prüfung gemäß VPI-EMG 01, Anhang 19, wurden keine Mängel festgestellt.\n"
+"                                    Hiermit bestätigen wir, dass dieser Wagen den geltenden Gesetzen und Vorschriften,\n"
+"                                    den Vorgaben des Halters/ECM und dem RID (sofern zutreffend) entspricht."
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "The described work steps were performed correctly and completely."
+msgstr "Die beschriebenen Arbeitsschritte wurden ordnungsgemäß und vollständig durchgeführt."
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__product_id
+msgid "Time Type"
+msgstr "Zeitart"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__employee_time_total
+msgid "Total Employee Hours"
+msgstr "Mitarbeiterstunden gesamt"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "Type:"
+msgstr "Art:"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__price_unit
+msgid "Unit Price"
+msgstr "Einzelpreis"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid ""
+"VPI-EMG 10 Annex 2 | Version: 01.12.2024 |\n"
+"                            Translation: 10/12/2024"
+msgstr ""
+"VPI-EMG 10 Anhang 2 | Stand: 01.12.2024 |\n"
+"                            Übersetzung: 10/12/2024"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+msgid "Wagon"
+msgstr "Wagen"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__wagon_number
+msgid "Wagon Number"
+msgstr "Wagennummer"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__wagennummer_formatted
+msgid "Wagon Number (Formatted)"
+msgstr "Wagennummer (formatiert)"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "[rsnoperations@rsn.be](mailto:rsnoperations@rsn.be)"
+msgstr "[rsnoperations@rsn.be](mailto:rsnoperations@rsn.be)"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_document
+msgid "kg"
+msgstr "kg"
