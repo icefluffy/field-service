@@ -14,12 +14,6 @@ class FSMOrder(models.Model):
         string="Order Activities",
     )
 
-    billable_service_ids = fields.One2many(
-        "fsm.billable.service",
-        "fsm_order_id",
-        string="Billable Services",
-    )
-
     def _load_template_activities(self):
         for order in self:
             if not order.template_id or order.order_activity_ids:

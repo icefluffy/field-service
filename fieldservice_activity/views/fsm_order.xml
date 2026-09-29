@@ -48,28 +48,4 @@
             </xpath>
         </field>
     </record>
-        <record id="view_fsm_order_form_billable_services" model="ir.ui.view">
-        <field name="name">fsm.order.form.billable.services</field>
-        <field name="model">fsm.order</field>
-        <field
-            name="inherit_id"
-            ref="fieldservice_isp_account.fsm_order_form_isp_account"
-        />
-        <field name="arch" type="xml">
-            <xpath
-                expr="//page[@name='accounting']/group[@name='bill_to']"
-                position="after"
-            >
-                <group string="Billable Services">
-                    <field name="billable_service_ids" nolabel="1" colspan="2">
-                        <list create="0" delete="0">
-                            <field name="activity_id" />
-                            <field name="product_id" />
-                            <field name="quantity" />
-                        </list>
-                    </field>
-                </group>
-            </xpath>
-        </field>
-    </record>
 </odoo>
