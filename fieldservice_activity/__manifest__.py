@@ -5,12 +5,15 @@
     "name": "Field Service Activity",
     "summary": """Field Service Activities are a set of actions
      that need to be performed on a service order""",
-    "version": "18.0.1.0.3",
+    "version": "18.0.1.1.0",
     "category": "Field Service",
     "license": "AGPL-3",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "website": "https://github.com/icefluffy/field-service/",
-    "depends": ["fieldservice"],
+    "depends": [
+        "fieldservice",
+        "fieldservice_sale",
+        ],
     "data": [
         "views/fsm_order.xml",
         "views/fsm_template.xml",

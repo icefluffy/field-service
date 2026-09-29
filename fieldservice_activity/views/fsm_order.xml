@@ -13,6 +13,22 @@
                             <field name="name" readonly="state != 'todo'" />
                             <field name="required" readonly="state != 'todo'" />
                             <field name="ref" readonly="state != 'todo'" />
+                            <field
+                                name="product_id"
+                                string="Billable Service"
+                                domain="[('sale_ok', '=', True), ('type', '=', 'service')]"
+                                options="{'no_create': True, 'no_create_edit': True}"
+                                readonly="state != 'todo'"
+                            />
+                            <field
+                                name="quantity"
+                                readonly="state != 'todo'"
+                            />
+                            <field
+                                name="sale_line_id"
+                                readonly="1"
+                                optional="hide"
+                            />
                             <field name="completed" column_invisible="1" />
                             <field name="completed_on" readonly="1" />
                             <field name="completed_by" readonly="1" />
