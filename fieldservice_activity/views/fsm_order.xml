@@ -24,7 +24,7 @@
                                 name="quantity"
                                 readonly="state != 'todo'"
                             />
-                            <field name="billable_line_id" readonly="1" optional="hide" />
+                            <field name="timesheet_line_id" readonly="1" optional="hide" />
                             <field name="completed" column_invisible="1" />
                             <field name="completed_on" readonly="1" />
                             <field name="completed_by" readonly="1" />
