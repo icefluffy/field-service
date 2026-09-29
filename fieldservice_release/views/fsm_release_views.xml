@@ -160,4 +160,24 @@
             </form>
         </field>
     </record>
+    <record id="fsm_order_equipment_under_location" model="ir.ui.view">
+        <field name="name">fsm.order.equipment.under.location</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/sheet/group/group/field[@name='location_id']"
+                position="after">
+                <field name="equipment_ids"
+                    string="Equipment"
+                    widget="many2many_tags"
+                    options="{'no_create': True}"
+                    groups="fieldservice.group_fsm_equipment"/>
+            </xpath>
+
+            <xpath expr="//page[@name='equipements_page']"
+                position="replace"/>
+
+        </field>
+    </record>
 </odoo>
