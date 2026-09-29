@@ -39,6 +39,12 @@ class FSMActivity(models.Model):
         readonly=True,
         copy=False,
     )
+    billable_line_id = fields.Many2one(
+        "fsm.billable.service",
+        string="Billable Service Line",
+        readonly=True,
+        copy=False,
+)
 
     state = fields.Selection(
         [("todo", "To Do"), ("done", "Completed"), ("cancel", "Cancelled")],
@@ -52,11 +58,7 @@ class FSMActivity(models.Model):
             if activity.product_id and not activity.name:
                 activity.name = activity.product_id.display_name
 
-    def _get_sale_order(self):
-        self.ensure_one()
-        return self.fsm_order_id.sale_id or self.fsm_order_id.sale_line_id.order_id
 
-    def _create_sale_order_line(self):
         self.ensure_one()
 
         if not self.product_id or self.sale_line_id:
@@ -98,16 +100,40 @@ class FSMActivity(models.Model):
 
     def action_done(self):
         for activity in self:
-            activity._create_sale_order_line()
+            if activity.state != "todo":
+                continue
 
-        self.write(
-            {
+            if activity.product_id and not activity.billable_line_id:
+                if not activity.fsm_order_id:
+                    raise ValidationError(
+                        _("Save the Field Service Order before completing a billable activity.")
+                    )
+                if activity.quantity <= 0:
+                    raise ValidationError(
+                        _("The billable activity quantity must be greater than zero.")
+                    )
+                if activity.fsm_order_id.account_stage in ("confirmed", "invoiced", "no"):
+                    raise ValidationError(
+                        _(
+                            "Cannot add a billable activity after accounting has been "
+                            "confirmed. Reopen the accounting workflow first."
+                        )
+                    )
+
+                line = self.env["fsm.billable.service"].create({
+                    "fsm_order_id": activity.fsm_order_id.id,
+                    "activity_id": activity.id,
+                    "product_id": activity.product_id.id,
+                    "quantity": activity.quantity,
+                })
+                activity.billable_line_id = line.id
+
+            activity.write({
                 "completed": True,
                 "completed_on": fields.Datetime.now(),
                 "completed_by": self.env.user.id,
                 "state": "done",
-            }
-        )
+            })
 
     def action_cancel(self):
         self.write({"state": "cancel"})

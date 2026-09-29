@@ -13,6 +13,7 @@
     "depends": [
         "fieldservice",
         "fieldservice_sale",
+        "fieldservice_isp_account",
         ],
     "data": [
         "views/fsm_order.xml",
