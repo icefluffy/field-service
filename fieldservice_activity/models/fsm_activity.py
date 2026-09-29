@@ -58,46 +58,6 @@ class FSMActivity(models.Model):
             if activity.product_id and not activity.name:
                 activity.name = activity.product_id.display_name
 
-
-        self.ensure_one()
-
-        if not self.product_id or self.sale_line_id:
-            return
-
-        sale_order = self._get_sale_order()
-        if not sale_order:
-            raise ValidationError(
-                _(
-                    "Cannot complete billable activity '%(activity)s': "
-                    "the Field Service Order has no linked Sales Order."
-                )
-                % {"activity": self.name}
-            )
-
-        if sale_order.state in ("cancel", "done"):
-            raise ValidationError(
-                _(
-                    "Cannot add billable activity '%(activity)s': "
-                    "Sales Order %(order)s is closed."
-                )
-                % {
-                    "activity": self.name,
-                    "order": sale_order.name,
-                }
-            )
-
-        if self.quantity <= 0:
-            raise ValidationError(
-                _("The billable activity quantity must be greater than zero.")
-            )
-
-        sale_line = self.env["sale.order.line"].create({
-            "order_id": sale_order.id,
-            "product_id": self.product_id.id,
-            "product_uom_qty": self.quantity,
-        })
-        self.sale_line_id = sale_line.id
-
     def action_done(self):
         for activity in self:
             if activity.state != "todo":
