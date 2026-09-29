@@ -108,15 +108,9 @@ class FSMActivity(models.Model):
             )
         employee = self._get_assigned_employee()
 
-        if not employee.user_id:
-            raise ValidationError(
-                _("The employee linked to Assigned To needs a linked Odoo user.")
-            )
-
         vals = {
             "name": self.name or self.product_id.display_name,
             "date": fields.Date.context_today(self),
-            "user_id": employee.user_id.id,
             "employee_id": employee.id,
             "product_id": self.product_id.id,
             "unit_amount": self.quantity,
