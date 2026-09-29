@@ -107,10 +107,7 @@ class FSMActivity(models.Model):
                 _("Cannot add a billable activity after accounting has been confirmed.")
             )
         employee = self._get_assigned_employee()
-        if not order.project_id:
-            raise ValidationError(
-                _("Set a Project on the Field Service Order before recording employee time.")
-            )
+
         if not employee.user_id:
             raise ValidationError(
                 _("The employee linked to Assigned To needs a linked Odoo user.")
@@ -123,11 +120,9 @@ class FSMActivity(models.Model):
             "employee_id": employee.id,
             "product_id": self.product_id.id,
             "unit_amount": self.quantity,
-            "project_id": order.project_id.id,
             "fsm_order_id": order.id,
         }
-        if order.project_task_id:
-            vals["task_id"] = order.project_task_id.id
+
         if "company_id" in order._fields and order.company_id:
             vals["company_id"] = order.company_id.id
 
