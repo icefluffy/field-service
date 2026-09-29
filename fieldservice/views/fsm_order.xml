@@ -339,6 +339,11 @@
                 <separator />
                 <field
                     name="name"
+                    string="Search Orders and Equipment"
+                    filter_domain="['|', ('name', 'ilike', self), ('equipment_ids', 'any', [('name', 'ilike', self)])]"
+                />
+                <field
+                    name="name"
                     filter_domain="[('name', 'ilike', self)]"
                     string="FSM Order Name"
                 />
