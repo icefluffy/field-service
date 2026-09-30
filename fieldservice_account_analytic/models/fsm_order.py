@@ -9,7 +9,7 @@ class FSMOrder(models.Model):
 
     total_cost = fields.Float(compute="_compute_total_cost")
     bill_to = fields.Selection(
-        [("location", "Bill Location"), ("contact", "Bill Contact")],
+        [("contact", "Bill Contact")], ("location", "Bill Location"), 
         required=True,
         default="contact",
     )
