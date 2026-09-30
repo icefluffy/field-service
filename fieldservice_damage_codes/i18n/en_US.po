@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# Field Service Wagon Damage Codes
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__code
+msgid "Code"
+msgstr "Code"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__cd
+msgid "Number Sequence"
+msgstr "Number Sequence"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__description
+msgid "Description"
+msgstr "Description"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__vehicle_type
+msgid "Vehicle Type"
+msgstr "Vehicle Type"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields.selection,name:fieldservice_damage_codes.selection__fsm_code__vehicle_type__w
+msgid "Wagon"
+msgstr "Wagon"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields.selection,name:fieldservice_damage_codes.selection__fsm_code__vehicle_type__l
+msgid "Locomotive"
+msgstr "Locomotive"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_order__fsm_code_ids
+msgid "Damage Codes"
+msgstr "Damage Codes"
+
+#. module: fieldservice_damage_codes
+#: model:ir.actions.act_window,name:fieldservice_damage_codes.action_fsm_codes
+msgid "Damage Codes"
+msgstr "Damage Codes"
