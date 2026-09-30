@@ -11,7 +11,7 @@ class FSMOrder(models.Model):
     bill_to = fields.Selection(
         [("location", "Bill Location"), ("contact", "Bill Contact")],
         required=True,
-        default="location",
+        default="contact",
     )
     customer_id = fields.Many2one(
         "res.partner",
