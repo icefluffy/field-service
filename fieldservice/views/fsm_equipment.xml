@@ -99,21 +99,6 @@
                         <field name="name" />
                     </h1>
                     <group id="main">
-                        <group id="main-right">
-                            <field name="parent_id" />
-                            <field name="person_id" />
-                            <field name="location_id" />
-                            <field name="current_location_id" />
-                            <xpath expr="//field[@name='parent_id']" position="attributes">
-                                <attribute name="invisible">True</attribute>
-                            </xpath>
-                            <xpath expr="//field[@name='person_id']" position="attributes">
-                                <attribute name="invisible">True</attribute>
-                            </xpath>
-                            <xpath expr="//field[@name='location_id']" position="attributes">
-                                <attribute name="invisible">True</attribute>
-                            </xpath>
-                        </group>
                         <group id="main-left">
                             <field name="managed_by_id" />
                             <field name="owned_by_id" />
@@ -122,6 +107,12 @@
                                 options="{'no_create': True}"
                                 groups="base.group_multi_company"
                             />
+                        </group>
+                        <group id="main-right">
+                            <field name="parent_id" invisible="1" />
+                            <field name="person_id" invisible="1" />
+                            <field name="location_id" invisible="1" />
+                            <field name="current_location_id" />
                         </group>
                     </group>
                     <group id="secondary" />
