@@ -8,37 +8,6 @@ from odoo.exceptions import ValidationError
 class FSMOrder(models.Model):
     _inherit = "fsm.order"
 
-    equipment_id = fields.Many2one(
-        "fsm.equipment",
-        string="Equipment",
-        compute="_compute_single_equipment",
-        inverse="_inverse_single_equipment",
-        readonly=False,
-    )
-
-    @api.depends("equipment_ids")
-    def _compute_single_equipment(self):
-        for order in self:
-            order.equipment_id = (
-                order.equipment_ids
-                if len(order.equipment_ids) == 1
-                else False
-            )
-
-    def _inverse_single_equipment(self):
-        for order in self:
-            order.equipment_ids = [
-                (6, 0, [order.equipment_id.id] if order.equipment_id else [])
-            ]
-
-    @api.constrains("equipment_ids")
-    def _check_one_equipment(self):
-        for order in self:
-            if len(order.equipment_ids) > 1:
-                raise ValidationError(
-                    _("Select only one equipment per Field Service Order.")
-                )
-
     def action_confirm(self):
         return self.write(
             {"stage_id": self.env.ref("fieldservice_isp_flow.fsm_stage_confirmed").id}
