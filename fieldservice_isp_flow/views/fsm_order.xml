@@ -104,16 +104,4 @@
             </search>
         </field>
     </record>
-    <record id="fsm_order_form_single_equipment" model="ir.ui.view">
-        <field name="name">fsm.order.form.single.equipment</field>
-        <field name="model">fsm.order</field>
-        <field name="inherit_id" ref="fieldservice.fsm_order_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//page[@name='equipements_page']/field[@name='equipment_ids']"
-                   position="replace">
-                <field name="equipment_id"
-                       options="{'no_create': True, 'no_create_edit': True}" />
-            </xpath>
-        </field>
-    </record>
 </odoo>
