@@ -61,6 +61,24 @@ class FSMEquipment(models.Model):
         ("name_uniq", "unique (name)", "Equipment name already exists!")
     ]
 
+    @api.model
+    def default_get(self, fields_list):
+        values = super().default_get(fields_list)
+
+        if (
+            "product_id" in self._fields
+            and "product_id" in fields_list
+            and "default_product_id" not in self.env.context
+        ):
+            product = self.env["product.product"].search(
+                [("name", "=", "Generic Wagon")],
+                limit=1,
+            )
+            if product:
+                values["product_id"] = product.id
+
+        return values
+    
     @api.depends("location_id")
     def _compute_territory_id(self):
         for rec in self:
