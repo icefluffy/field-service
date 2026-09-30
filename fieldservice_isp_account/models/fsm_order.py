@@ -193,6 +193,9 @@ class FSMOrder(models.Model):
 
         invoice_vals = {
             "partner_id": partner.id,
+            "partner_shipping_id": (
+                self.location_id.partner_id.id if self.location_id else False
+            ),
             "move_type": "out_invoice",
             "journal_id": journal.id or False,
             "fiscal_position_id": fpos.id if fpos else False,
