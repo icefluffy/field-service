@@ -44,7 +44,7 @@ class FSMOrder(models.Model):
 
     fsm_code_ids = fields.Many2many(
         "fsm.code",
-        string="Codes",
+        string="Damage Codes",
     )
 
     @api.onchange("fsm_code_ids")
