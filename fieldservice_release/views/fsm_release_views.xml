@@ -171,7 +171,7 @@
                 <field name="equipment_ids"
                     string="Equipment"
                     widget="many2many_tags"
-                    options="{'no_create': True}"
+                    options="{'no_quick_create': True}"
                     groups="fieldservice.group_fsm_equipment"/>
             </xpath>
 
