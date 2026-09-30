@@ -45,6 +45,14 @@ class FSMOrder(models.Model):
             order._load_template_activities()
         return orders
 
+    @api.constrains("equipment_ids")
+    def _check_single_equipment(self):
+        for order in self:
+            if len(order.equipment_ids) > 1:
+                raise ValidationError(
+                    _("Only one equipment is allowed per Field Service Order.")
+                )
+    
     def action_complete(self):
         for order in self:
             pending_required_activities = order.order_activity_ids.filtered(

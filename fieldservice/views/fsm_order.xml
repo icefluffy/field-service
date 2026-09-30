@@ -190,7 +190,7 @@
                         >
                             <field
                                 name="equipment_ids"
-                                options="{'no_create': True}"
+                                options="{'create': True, 'link': True}"
                                 domain="[]"
                             >
                                 <list>

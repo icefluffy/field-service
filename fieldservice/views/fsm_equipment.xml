@@ -100,12 +100,6 @@
                     </h1>
                     <group id="main">
                         <group id="main-left">
-                            <field name="parent_id" />
-                            <field name="person_id" />
-                            <field name="location_id" />
-                            <field name="current_location_id" />
-                        </group>
-                        <group id="main-right">
                             <field name="managed_by_id" />
                             <field name="owned_by_id" />
                             <field
@@ -113,6 +107,12 @@
                                 options="{'no_create': True}"
                                 groups="base.group_multi_company"
                             />
+                        </group>
+                        <group id="main-right">
+                            <field name="parent_id" invisible="1" />
+                            <field name="person_id" invisible="1" />
+                            <field name="location_id" invisible="1" />
+                            <field name="current_location_id" />
                         </group>
                     </group>
                     <group id="secondary" />
