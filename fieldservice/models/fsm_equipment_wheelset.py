@@ -43,17 +43,16 @@ class FSMEquipmentWheelset(models.Model):
     new_input_date = fields.Date(
         string="New Input Date",
         default=fields.Date.context_today,
+        store=False,
     )
 
     def write(self, vals):
         if "new_input_date" in vals:
             for record in self:
-                if vals["new_input_date"] != record.new_input_date:
-                    record_vals = dict(vals)
-                    record_vals["last_input_date"] = record.new_input_date
-                    super(FSMEquipmentWheelset, record).write(record_vals)
-                else:
-                    super(FSMEquipmentWheelset, record).write(vals)
+                record_vals = dict(vals)
+                record_vals["last_input_date"] = vals["new_input_date"]
+                record_vals.pop("new_input_date", None)
+                super(FSMEquipmentWheelset, record).write(record_vals)
             return True
 
         return super().write(vals)
