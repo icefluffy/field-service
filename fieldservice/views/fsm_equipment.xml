@@ -133,7 +133,16 @@
                             </page>
 
                             <page string="Wheelsets">
-                                <field name="wheelset_ids" widget="wheelset_grid" nolabel="1" />
+                                <field name="wheelset_ids" widget="wheelset_grid" nolabel="1">
+                                    <list create="false" delete="false">
+                                        <field name="position"/>
+                                        <field name="serial_number"/>
+                                        <field name="wheelset_type"/>
+                                        <field name="ton"/>
+                                        <field name="y_b"/>
+                                        <field name="markings"/>
+                                    </list>
+                                </field>
                             </page>
 
                             <page string="Children">
