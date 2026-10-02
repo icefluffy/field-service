@@ -1,8 +1,8 @@
 {
     "name": "Field Service VTG Wheelsets",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "category": "Field Service",
-    "summary": "Show the selected equipment wheelsets for VTG orders",
+    "summary": "Test the existing wheelset grid on FSM orders",
     "depends": [
         "fieldservice",
     ],
