@@ -6,7 +6,18 @@
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//group[@name='resolution_grp']" position="inside">
-                <field name="wheelset_ids" widget="wheelset_grid" nolabel="1"/>
+                <field name="wheelset_ids" widget="wheelset_grid" nolabel="1">
+                    <list>
+                        <field name="position"/>
+                        <field name="serial_number"/>
+                        <field name="wheelset_type"/>
+                        <field name="ton"/>
+                        <field name="y_b"/>
+                        <field name="markings"/>
+                        <field name="last_input_date"/>
+                        <field name="new_input_date"/>
+                    </list>
+                </field>
             </xpath>
         </field>
     </record>
