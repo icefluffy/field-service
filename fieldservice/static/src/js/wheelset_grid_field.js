@@ -3,6 +3,7 @@
 import { Component } from "@odoo/owl";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
+import { deserializeDate } from "@web/core/l10n/dates";
 
 export class WheelsetGridField extends Component {
     static template = "fieldservice.WheelsetGridField";
@@ -105,7 +106,7 @@ export class WheelsetGridField extends Component {
             return;
         }
         const record = await this.getRecord(row);
-        await record.update({ input_date: date });
+        await record.update({ input_date: deserializeDate(date) });
     };
 }
 

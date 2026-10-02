@@ -121,7 +121,7 @@
                                 <field name="notes" nolabel="1" />
                             </page>
 
-                            <page string="Location" invisible="1">
+                            <page string="Location">
                                 <group>
                                     <group>
                                         <field name="territory_id" />
@@ -147,7 +147,7 @@
                                 </field>
                             </page>
 
-                            <page string="Children" invisible="1">
+                            <page string="Children">
                                 <field name="child_ids">
                                     <list>
                                         <field name="name" />
