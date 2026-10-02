@@ -58,6 +58,7 @@
                         <group>
                             <field name="fsm_order_id"/>
                             <field name="partner_id"/>
+                            <field name="o.equipment_line_ids"/>
                         </group>
                         <group>
                             <field name="location_id"/>
