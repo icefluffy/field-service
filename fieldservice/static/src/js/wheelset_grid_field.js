@@ -40,11 +40,22 @@ export class WheelsetGridField extends Component {
         if (!value) {
             return "";
         }
-        const parts = value.split("-");
-        if (parts.length !== 3) {
+        if (typeof value === "string") {
+            const parts = value.split("-");
+            if (parts.length === 3) {
+                return `${parts[2]}-${parts[1]}-${parts[0]}`;
+            }
             return value;
         }
-        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+        if (typeof value.toISODate === "function") {
+            const iso = value.toISODate();
+            const parts = iso.split("-");
+            return `${parts[2]}-${parts[1]}-${parts[0]}`;
+        }
+        if (typeof value.toFormat === "function") {
+            return value.toFormat("dd-MM-yyyy");
+        }
+        return String(value);
     }
 
     parseDate(value) {
@@ -73,7 +84,10 @@ export class WheelsetGridField extends Component {
             const relation = this.props.record.data[this.props.name];
             this.pending.set(row.position, (async () => {
                 const record = await relation.addNewRecord({ position: "bottom" });
-                await record.update({ position: row.position });
+                await record.update({
+                    position: row.position,
+                    input_date: this.today(),
+                });
                 return record;
             })());
         }
