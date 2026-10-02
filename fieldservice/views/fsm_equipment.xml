@@ -117,6 +117,21 @@
                     </group>
                     <group id="secondary" />
                         <notebook>
+                            <page string="Notes">
+                                <field name="notes" nolabel="1" />
+                            </page>
+
+                            <page string="Location">
+                                <group>
+                                    <group>
+                                        <field name="territory_id" />
+                                        <field name="branch_id" />
+                                        <field name="district_id" />
+                                        <field name="region_id" />
+                                    </group>
+                                </group>
+                            </page>
+
                             <page string="Wheelsets">
                                 <field name="wheelset_ids" widget="wheelset_grid" nolabel="1">
                                     <list create="false" delete="false">
@@ -126,26 +141,13 @@
                                         <field name="ton"/>
                                         <field name="y_b"/>
                                         <field name="markings"/>
+                                        <field name="previous_input_date"/>
+                                        <field name="input_date"/>
                                     </list>
                                 </field>
                             </page>
 
-                            <page string="Notes">
-                                <field name="notes" nolabel="1" />
-                            </page>
-
-                            <page string="Location"   invisible="1" >
-                                <group>
-                                    <group>
-                                        <field name="territory_id" invisible="1" />
-                                        <field name="branch_id" invisible="1" />
-                                        <field name="district_id" invisible="1" />
-                                        <field name="region_id" invisible="1" />
-                                    </group>
-                                </group>
-                            </page>
-
-                            <page string="Children"  invisible="1" >
+                            <page string="Children">
                                 <field name="child_ids">
                                     <list>
                                         <field name="name" />

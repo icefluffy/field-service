@@ -31,6 +31,42 @@ export class WheelsetGridField extends Component {
         return row.record?.data[field] ?? "";
     }
 
+    today() {
+        const date = new Date();
+        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+    }
+
+    displayDate(value) {
+        if (!value) {
+            return "";
+        }
+        const parts = value.split("-");
+        if (parts.length !== 3) {
+            return value;
+        }
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    }
+
+    parseDate(value) {
+        const parts = value.trim().split("-");
+        if (parts.length !== 3) {
+            return null;
+        }
+        const [day, month, year] = parts;
+        if (!/^\d{2}$/.test(day) || !/^\d{2}$/.test(month) || !/^\d{4}$/.test(year)) {
+            return null;
+        }
+        const date = new Date(Number(year), Number(month) - 1, Number(day));
+        if (
+            date.getFullYear() !== Number(year) ||
+            date.getMonth() !== Number(month) - 1 ||
+            date.getDate() !== Number(day)
+        ) {
+            return null;
+        }
+        return `${year}-${month}-${day}`;
+    }
+
     async getRecord(row) {
         if (row.record) return row.record;
         if (!this.pending.has(row.position)) {
@@ -47,6 +83,15 @@ export class WheelsetGridField extends Component {
     updateCell = async (row, field, value) => {
         const record = await this.getRecord(row);
         await record.update({ [field]: value });
+    };
+
+    updateDate = async (row, value) => {
+        const date = this.parseDate(value);
+        if (!date) {
+            return;
+        }
+        const record = await this.getRecord(row);
+        await record.update({ input_date: date });
     };
 }
 

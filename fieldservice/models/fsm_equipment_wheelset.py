@@ -35,6 +35,26 @@ class FSMEquipmentWheelset(models.Model):
 
     markings = fields.Char(string="Markings")
 
+    previous_input_date = fields.Date(
+        string="Previous input date",
+        readonly=True,
+    )
+
+    input_date = fields.Date(
+        string="Input date",
+        default=fields.Date.context_today,
+    )
+
+    def write(self, vals):
+        if "input_date" in vals:
+            for record in self:
+                record_vals = dict(vals)
+                if vals["input_date"] != record.input_date:
+                    record_vals["previous_input_date"] = record.input_date
+                super(FSMEquipmentWheelset, record).write(record_vals)
+            return True
+        return super().write(vals)
+
     _sql_constraints = [
         (
             "equipment_position_uniq",
