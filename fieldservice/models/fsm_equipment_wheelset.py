@@ -46,25 +46,14 @@ class FSMEquipmentWheelset(models.Model):
     )
 
     def write(self, vals):
-        old_input_dates = {
-            record.id: record.new_input_date
-            for record in self
-            if record.id
-        }
-
-        result = super().write(vals)
-
         if "new_input_date" in vals:
             for record in self:
-                old_input_date = old_input_dates.get(record.id)
-                if old_input_date and old_input_date != record.new_input_date:
-                    super(
-                        FSMEquipmentWheelset,
-                        record,
-                    ).write(
-                        {
-                            "last_input_date": old_input_date,
-                        }
-                    )
+                if vals["new_input_date"] != record.new_input_date:
+                    record_vals = dict(vals)
+                    record_vals["last_input_date"] = record.new_input_date
+                    super(FSMEquipmentWheelset, record).write(record_vals)
+                else:
+                    super(FSMEquipmentWheelset, record).write(vals)
+            return True
 
-        return result
+        return super().write(vals)
