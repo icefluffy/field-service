@@ -21,5 +21,7 @@ class FSMOrder(models.Model):
     @api.depends("equipment_ids")
     def _compute_wheelset_ids(self):
         for order in self:
-            equipment = order.equipment_ids[:1]
-            order.wheelset_ids = equipment.wheelset_ids if equipment else False
+            equipment_id = order.equipment_ids[:1].id
+            order.wheelset_ids = self.env["fsm.equipment.wheelset"].search([
+                ("equipment_id", "=", equipment_id),
+            ]) if equipment_id else False
