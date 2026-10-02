@@ -9,39 +9,68 @@ export class WheelsetGridField extends Component {
     static props = standardFieldProps;
 
     setup() {
-        this.drafts = useState({});
+        this.state = useState({
+            drafts: {},
+        });
     }
 
     get rows() {
         const relation = this.props.record.data[this.props.name];
         const records = relation?.records || [];
+
         const byPosition = new Map();
+
         for (const record of records) {
-            if (record.data.position) byPosition.set(record.data.position, record);
+            if (record.data.position) {
+                byPosition.set(record.data.position, record);
+            }
         }
+
         return Array.from({ length: 8 }, (_, index) => {
             const position = index + 1;
-            return { position, record: byPosition.get(position) || null };
+
+            return {
+                position,
+                record: byPosition.get(position) || null,
+            };
         });
     }
 
     value(row, field) {
-        if (row.record) return row.record.data[field] ?? "";
-        return this.drafts[row.position]?.[field] ?? "";
+        if (row.record) {
+            return row.record.data[field] ?? "";
+        }
+
+        return this.state.drafts[row.position]?.[field] ?? "";
     }
 
-    async updateCell(row, field, value) {
+    updateCell = async (row, field, value) => {
         if (row.record) {
-            await row.record.update({ [field]: value });
+            await row.record.update({
+                [field]: value,
+            });
             return;
         }
-        if (!this.drafts[row.position]) this.drafts[row.position] = {};
-        this.drafts[row.position][field] = value;
+
+        if (!this.state.drafts[row.position]) {
+            this.state.drafts[row.position] = {};
+        }
+
+        this.state.drafts[row.position][field] = value;
+
         await this.props.record.update({
-            [this.props.name]: [[0, 0, { position: row.position, ...this.drafts[row.position] }]],
+            [this.props.name]: [
+                [
+                    0,
+                    0,
+                    {
+                        position: row.position,
+                        ...this.state.drafts[row.position],
+                    },
+                ],
+            ],
         });
-        delete this.drafts[row.position];
-    }
+    };
 }
 
 registry.category("fields").add("wheelset_grid", {
