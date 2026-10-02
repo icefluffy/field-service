@@ -121,8 +121,8 @@
                                 <field name="notes" nolabel="1" />
                             </page>
 
-                            <page string="Location">
-                                <group  invisible="1" >
+                            <page string="Location"   invisible="1" >
+                                <group>
                                     <group>
                                         <field name="territory_id" invisible="1" />
                                         <field name="branch_id" invisible="1" />
