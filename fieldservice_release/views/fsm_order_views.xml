@@ -56,7 +56,7 @@
                     class="oe_highlight"
                     type="object"
                     groups="fieldservice.group_fsm_dispatcher"
-                    invisible="account_stage != 'confirmed' or release_id"
+                    invisible="release_id"
                 />
             </xpath>
 
