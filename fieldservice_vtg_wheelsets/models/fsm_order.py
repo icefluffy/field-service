@@ -26,10 +26,10 @@ class FSMOrder(models.Model):
         for order in self:
             order.wheelset_equipment_id = order.equipment_ids[:1]
 
-    @api.depends("contact_id", "contact_id.name", "equipment_ids")
+    @api.depends("customer_id", "customer_id.name", "equipment_ids")
     def _compute_show_vtg_wheelsets(self):
         for order in self:
-            contact_name = (order.contact_id.name or "").upper()
+            customer_name = (order.customer_id.name or "").upper()
             order.show_vtg_wheelsets = bool(
-                "VTG" in contact_name and order.equipment_ids[:1]
+                "VTG" in customer_name and order.equipment_ids[:1]
             )
