@@ -44,7 +44,7 @@ export class WheelsetGridField extends Component {
                 const record = await relation.addNewRecord({ position: "bottom" });
                 await record.update({
                     position: row.position,
-                    input_date: today(),
+                    new_input_date: today(),
                 });
                 return record;
             })());

@@ -11,8 +11,8 @@
                         <th>Ton</th>
                         <th>Y/B</th>
                         <th>*</th>
-                        <th>Previous input date</th>
-                        <th>Input date</th>
+                        <th>Last input date</th>
+                        <th>New input date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,9 +28,9 @@
                                 <t t-if="row.record">
                                     <DateTimeField
                                         record="row.record"
-                                        name="'previous_input_date'"
+                                        name="'last_input_date'"
                                         readonly="true"
-                                        id="'wheelset_previous_input_date_' + row.position"
+                                        id="'wheelset_last_input_date_' + row.position"
                                         condensed="true"
                                     />
                                 </t>
@@ -39,9 +39,9 @@
                                 <t t-if="row.record">
                                     <DateTimeField
                                         record="row.record"
-                                        name="'input_date'"
+                                        name="'new_input_date'"
                                         readonly="false"
-                                        id="'wheelset_input_date_' + row.position"
+                                        id="'wheelset_new_input_date_' + row.position"
                                         condensed="true"
                                     />
                                 </t>
