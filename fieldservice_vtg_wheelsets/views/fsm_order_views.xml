@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="fsm_order_form_vtg_wheelsets" model="ir.ui.view">
+        <field name="name">fsm.order.form.vtg.wheelsets</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='resolution_grp']" position="after">
+                <group
+                    string="Wheelsets"
+                    name="vtg_wheelsets_grp"
+                    invisible="not show_vtg_wheelsets"
+                >
+                    <field
+                        name="wheelset_ids"
+                        widget="wheelset_grid"
+                        nolabel="1"
+                    />
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='resolution']" position="before">
+                <field name="show_vtg_wheelsets" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
