@@ -3,7 +3,7 @@
     <record id="fsm_order_form_vtg_wheelsets" model="ir.ui.view">
         <field name="name">fsm.order.form.vtg.wheelsets</field>
         <field name="model">fsm.order</field>
-        <field name="inherit_id" ref="fieldservice.fsm_order_form_view"/>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//group[@name='resolution_grp']" position="after">
                 <group
