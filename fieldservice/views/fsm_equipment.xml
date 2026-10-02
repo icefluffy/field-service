@@ -135,8 +135,8 @@
                             <page string="Wheelsets">
                                 <field name="wheelset_ids" nolabel="1">
                                     <list create="false" delete="false" editable="bottom">
-                                        <field name="position" readonly="1" string="Positie" />
-                                        <field name="serial_number" string="Nummer" />
+                                        <field name="position" readonly="1" string="Position" />
+                                        <field name="serial_number" string="Serial Number" />
                                         <field name="wheelset_type" string="Type" />
                                         <field name="ton" string="Ton" />
                                         <field name="y_b" string="Y/B" />
