@@ -3,20 +3,71 @@
     <t t-name="fieldservice.WheelsetGridField">
         <div class="o_field_wheelset_grid">
             <table class="table table-sm table-bordered mb-0">
-                <thead><tr><th>Positie</th><th>Nummer</th><th>Type</th><th>Ton</th><th>Y/B</th><th>*</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Serial Number</th>
+                        <th>Type</th>
+                        <th>Ton</th>
+                        <th>Y/B</th>
+                        <th>*</th>
+                    </tr>
+                </thead>
+
                 <tbody>
                     <t t-foreach="rows" t-as="row" t-key="row.position">
                         <tr>
-                            <td><span t-esc="row.position" /></td>
-                            <td><input type="text" class="form-control form-control-sm" t-att-value="value(row, 'serial_number')" t-on-input="(ev) => updateCell(row, 'serial_number', ev.target.value)" /></td>
-                            <td><input type="text" class="form-control form-control-sm" t-att-value="value(row, 'wheelset_type')" t-on-input="(ev) => updateCell(row, 'wheelset_type', ev.target.value)" /></td>
-                            <td><input type="text" class="form-control form-control-sm" t-att-value="value(row, 'ton')" t-on-input="(ev) => updateCell(row, 'ton', ev.target.value)" /></td>
-                            <td><select class="form-select form-select-sm" t-att-value="value(row, 'y_b')" t-on-change="(ev) => updateCell(row, 'y_b', ev.target.value)">
-                                <option value=""> </option>
-                                <option value="y">Y</option>
-                                <option value="b">B</option>
-                            </select></td>
-                            <td><input type="text" class="form-control form-control-sm" t-att-value="value(row, 'markings')" t-on-input="(ev) => updateCell(row, 'markings', ev.target.value)" /></td>
+                            <td>
+                                <span t-esc="row.position"/>
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="form-control form-control-sm"
+                                    t-att-value="value(row, 'serial_number')"
+                                    t-on-input="(ev) => updateCell(row, 'serial_number', ev.target.value)"
+                                />
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="form-control form-control-sm"
+                                    t-att-value="value(row, 'wheelset_type')"
+                                    t-on-input="(ev) => updateCell(row, 'wheelset_type', ev.target.value)"
+                                />
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="form-control form-control-sm"
+                                    t-att-value="value(row, 'ton')"
+                                    t-on-input="(ev) => updateCell(row, 'ton', ev.target.value)"
+                                />
+                            </td>
+
+                            <td>
+                                <select
+                                    class="form-select form-select-sm"
+                                    t-att-value="value(row, 'y_b')"
+                                    t-on-change="(ev) => updateCell(row, 'y_b', ev.target.value)"
+                                >
+                                    <option value=""> </option>
+                                    <option value="y">Y</option>
+                                    <option value="b">B</option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="form-control form-control-sm"
+                                    t-att-value="value(row, 'markings')"
+                                    t-on-input="(ev) => updateCell(row, 'markings', ev.target.value)"
+                                />
+                            </td>
                         </tr>
                     </t>
                 </tbody>
