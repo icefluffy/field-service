@@ -21,4 +21,5 @@ class FSMOrder(models.Model):
     @api.depends("equipment_ids")
     def _compute_wheelset_ids(self):
         for order in self:
-            order.wheelset_ids = order.equipment_ids.mapped("wheelset_ids")
+            equipment = order.equipment_ids[:1]
+            order.wheelset_ids = equipment.wheelset_ids if equipment else False
