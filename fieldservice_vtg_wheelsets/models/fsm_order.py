@@ -18,7 +18,7 @@ class FSMOrder(models.Model):
         readonly=True,
     )
 
-    @api.depends("equipment_ids.wheelset_ids")
+    @api.depends("equipment_ids")
     def _compute_wheelset_ids(self):
         for order in self:
             order.wheelset_ids = order.equipment_ids.mapped("wheelset_ids")
