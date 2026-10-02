@@ -1154,27 +1154,27 @@ msgstr "Voer de oplossing voor de order in..."
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
 msgid "Equipment"
-msgstr "Apparatuur"
+msgstr "Materieel"
 
 #. module: fieldservice
 #: model:ir.model.constraint,message:fieldservice.constraint_fsm_equipment_name_uniq
 msgid "Equipment name already exists!"
-msgstr "Apparatuurnaam bestaat al!"
+msgstr "Materieel naam bestaat al!"
 
 #. module: fieldservice
 #: model:fsm.stage,name:fieldservice.equipment_stage_1
 msgid "Equipment-1"
-msgstr "Apparatuur-1"
+msgstr "Materieel-1"
 
 #. module: fieldservice
 #: model:fsm.stage,name:fieldservice.equipment_stage_2
 msgid "Equipment-2"
-msgstr "Apparatuur-2"
+msgstr "Materieel-2"
 
 #. module: fieldservice
 #: model:fsm.stage,name:fieldservice.equipment_stage_3
 msgid "Equipment-3"
-msgstr "Apparatuur-3"
+msgstr "Materieel-3"
 
 #. module: fieldservice
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_report_equipment
@@ -1188,12 +1188,12 @@ msgstr "Apparatuur-3"
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_form
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Equipments"
-msgstr "Apparatuur"
+msgstr "Materielen"
 
 #. module: fieldservice
 #: model_terms:ir.actions.act_window,help:fieldservice.action_fsm_report_equipment
 msgid "Equipments Report"
-msgstr "Apparatuurrapport"
+msgstr "Materieel rapport"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_form
@@ -1220,7 +1220,7 @@ msgstr "Buitendienst"
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_search_view
 msgid "FSM Equipment Name"
-msgstr "Naam buitendienstapparatuur"
+msgstr "Naam buitendienst materieel"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
@@ -1281,7 +1281,7 @@ msgstr "Buitendienstcategorie"
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_equipment
 #: model:ir.model,name:fieldservice.model_fsm_equipment
 msgid "Field Service Equipment"
-msgstr "Buitendienstapparatuur"
+msgstr "Buitendienstmaterieel"
 
 #. module: fieldservice
 #: model:ir.model,name:fieldservice.model_fsm_location
@@ -2016,12 +2016,12 @@ msgstr ""
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__group_fsm_equipment
 msgid "Manage Equipment"
-msgstr "Beheer Apparatuur"
+msgstr "Beheer Materieel"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Manage Equipments"
-msgstr "Beheer Apparaturen"
+msgstr "Beheer Materielen"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__module_fieldservice_activity
@@ -2031,7 +2031,7 @@ msgstr ""
 #. module: fieldservice
 #: model:res.groups,name:fieldservice.group_fsm_equipment
 msgid "Manage Field Service Equipment"
-msgstr ""
+msgstr "Beheer Buitendienst Materieel"
 
 #. module: fieldservice
 #: model:res.groups,name:fieldservice.group_fsm_template
