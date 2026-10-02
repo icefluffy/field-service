@@ -205,6 +205,7 @@ class FSMOrder(models.Model):
             "fiscal_position_id": fpos.id if fpos else False,
             "fsm_order_ids": [(4, self.id)],
             "company_id": self.env.company.id,
+            "ref": self.customer_reference or False,
         }
 
         invoice_line_vals = []
