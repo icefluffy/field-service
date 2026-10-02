@@ -16,7 +16,11 @@ ACCOUNT_STAGES = [
 
 class FSMOrder(models.Model):
     _inherit = "fsm.order"
-
+ 
+    customer_reference = fields.Char(
+        string="Customer Reference",
+        copy=True,
+    )    
     contractor_cost_ids = fields.One2many(
         comodel_name="fsm.order.cost",
         inverse_name="fsm_order_id",

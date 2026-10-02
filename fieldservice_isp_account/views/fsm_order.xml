@@ -4,6 +4,7 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice_account_analytic.fsm_order_form_analytic"/>
         <field name="arch" type="xml">
+        <field name="customer_reference" />
 
             <!-- Add form header buttons/statusbar -->
             <xpath expr="//form" position="inside">
@@ -20,7 +21,7 @@
                     <button
                         id="account_create_invoice"
                         name="account_create_invoice"
-                        string="Create Invoice"
+                        string="Create Invoice Concept"
                         class="oe_highlight"
                         type="object"
                         groups="account.group_account_invoice"

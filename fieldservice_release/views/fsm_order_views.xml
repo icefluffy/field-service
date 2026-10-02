@@ -116,6 +116,7 @@
             <xpath expr="//field[@name='template_id']" position="before">
                 <field name="customer_id"/>
                 <field name="location_id"/>
+                <field name="customer_reference" />
             </xpath>
 
     
