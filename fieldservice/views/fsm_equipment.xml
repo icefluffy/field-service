@@ -122,12 +122,12 @@
                             </page>
 
                             <page string="Location">
-                                <group>
+                                <group  invisible="1" >
                                     <group>
-                                        <field name="territory_id" />
-                                        <field name="branch_id" />
-                                        <field name="district_id" />
-                                        <field name="region_id" />
+                                        <field name="territory_id" invisible="1" />
+                                        <field name="branch_id" invisible="1" />
+                                        <field name="district_id" invisible="1" />
+                                        <field name="region_id" invisible="1" />
                                     </group>
                                 </group>
                             </page>
@@ -145,7 +145,7 @@
                                 </field>
                             </page>
 
-                            <page string="Children">
+                            <page string="Children"  invisible="1" >
                                 <field name="child_ids">
                                     <list>
                                         <field name="name" />
