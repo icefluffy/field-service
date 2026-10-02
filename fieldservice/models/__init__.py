@@ -15,6 +15,7 @@ from . import (
     fsm_location_person,
     res_partner,
     fsm_equipment,
+    fsm_equipment_wheelset,
     fsm_order,
     fsm_order_type,
     fsm_person_calendar_filter,

@@ -11,6 +11,8 @@ access_fsm_order_user,fsm.order.user,model_fsm_order,fieldservice.group_fsm_user
 access_fsm_order_dispatcher,fsm.order.dispatcher,model_fsm_order,fieldservice.group_fsm_dispatcher,1,1,1,1
 access_fsm_equipment_fsm_user,fsm.equipment.user,model_fsm_equipment,fieldservice.group_fsm_user_own,1,1,1,0
 access_fsm_equipment_fsm_manager,fsm.equipment.manager,model_fsm_equipment,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_equipment_wheelset_fsm_user,fsm.equipment.wheelset.user,model_fsm_equipment_wheelset,fieldservice.group_fsm_user_own,1,1,1,0
+access_fsm_equipment_wheelset_fsm_manager,fsm.equipment.wheelset.manager,model_fsm_equipment_wheelset,fieldservice.group_fsm_manager,1,1,1,1
 access_fsm_category_user,fsm.category.user,model_fsm_category,fieldservice.group_fsm_user_own,1,0,0,0
 access_fsm_category_manager,fsm.category.manager,model_fsm_category,fieldservice.group_fsm_manager,1,1,1,1
 access_fsm_template_user,fsm.template.user,model_fsm_template,fieldservice.group_fsm_user_own,1,0,0,0

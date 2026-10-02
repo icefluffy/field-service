@@ -116,30 +116,46 @@
                         </group>
                     </group>
                     <group id="secondary" />
-                    <notebook>
-                        <page string="Notes">
-                            <field name="notes" nolabel="1" />
-                        </page>
-                        <page string="Location">
-                            <group>
+                        <notebook>
+                            <page string="Notes">
+                                <field name="notes" nolabel="1" />
+                            </page>
+
+                            <page string="Location">
                                 <group>
-                                    <field name="territory_id" />
-                                    <field name="branch_id" />
-                                    <field name="district_id" />
-                                    <field name="region_id" />
+                                    <group>
+                                        <field name="territory_id" />
+                                        <field name="branch_id" />
+                                        <field name="district_id" />
+                                        <field name="region_id" />
+                                    </group>
                                 </group>
-                            </group>
-                        </page>
-                        <page string="Children">
-                            <field name="child_ids">
-                                <list>
-                                    <field name="name" />
-                                    <field name="person_id" />
-                                    <field name="location_id" />
-                                </list>
-                            </field>
-                        </page>
-                    </notebook>
+                            </page>
+
+                            <page string="Wheelsets"
+                                invisible="not product_id or product_id.name != 'Generic Wagon'">
+                                <field name="wheelset_ids" nolabel="1">
+                                    <list create="false" delete="false" editable="bottom">
+                                        <field name="position" readonly="1" string="Positie" />
+                                        <field name="serial_number" string="Nummer" />
+                                        <field name="wheelset_type" string="Type" />
+                                        <field name="ton" string="Ton" />
+                                        <field name="y_b" string="Y/B" />
+                                        <field name="markings" string="*" />
+                                    </list>
+                                </field>
+                            </page>
+
+                            <page string="Children">
+                                <field name="child_ids">
+                                    <list>
+                                        <field name="name" />
+                                        <field name="person_id" />
+                                        <field name="location_id" />
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
                 </sheet>
                 <chatter />
             </form>
