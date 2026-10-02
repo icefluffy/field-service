@@ -4,10 +4,21 @@ from odoo import fields, models
 class FSMOrder(models.Model):
     _inherit = "fsm.order"
 
-    wheelset_ids = fields.One2many(
-        "fsm.equipment.wheelset",
-        "equipment_id",
-        string="Wheelsets",
-        related="equipment_ids.wheelset_ids",
-        readonly=False,
+    # Kept temporarily so an older inherited database view can still
+    # validate during the module upgrade. Step 1 always shows the grid.
+    show_vtg_wheelsets = fields.Boolean(
+        string="Show VTG Wheelsets",
+        default=True,
     )
+
+    wheelset_ids = fields.Many2many(
+        "fsm.equipment.wheelset",
+        string="Wheelsets",
+        compute="_compute_wheelset_ids",
+        readonly=True,
+    )
+
+    @api.depends("equipment_ids.wheelset_ids")
+    def _compute_wheelset_ids(self):
+        for order in self:
+            order.wheelset_ids = order.equipment_ids.mapped("wheelset_ids")
