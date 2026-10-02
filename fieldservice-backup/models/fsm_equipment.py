@@ -103,3 +103,21 @@ class FSMEquipment(models.Model):
     def _compute_region_id(self):
         for rec in self:
             rec.region_id = rec.district_id.region_id
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        records = super().create(vals_list)
+
+        for record in records:
+            if (
+                "product_id" in record._fields
+                and record.product_id
+                and record.product_id.name == "Generic Wagon"
+            ):
+                record.wheelset_ids = [
+                    Command.create({"position": position})
+                    for position in range(1, 9)
+                ]
+
+        return records
+

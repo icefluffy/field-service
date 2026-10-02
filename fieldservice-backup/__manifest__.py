@@ -49,8 +49,6 @@
     "assets": {
         "web.assets_backend": [
             "fieldservice/static/src/scss/team_dashboard.scss",
-            "fieldservice/static/src/js/wheelset_grid_field.js",
-            "fieldservice/static/src/xml/wheelset_grid_field.xml",
         ]
     },
 }
