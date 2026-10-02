@@ -58,7 +58,6 @@
                         <group>
                             <field name="fsm_order_id"/>
                             <field name="partner_id"/>
-                            <field name="partner_contact_id"/>
                             <field name="wagennummer_formatted" string="Wagon"/>
                         </group>
                         <group>
