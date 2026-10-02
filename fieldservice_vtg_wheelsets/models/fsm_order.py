@@ -8,6 +8,7 @@ class FSMOrder(models.Model):
         "fsm.equipment",
         string="Wheelset Equipment",
         compute="_compute_wheelset_equipment_id",
+        store=True,
     )
 
     wheelset_ids = fields.One2many(
@@ -19,6 +20,7 @@ class FSMOrder(models.Model):
     show_vtg_wheelsets = fields.Boolean(
         string="Show VTG Wheelsets",
         compute="_compute_show_vtg_wheelsets",
+        store=True,
     )
 
     @api.depends("equipment_ids")
