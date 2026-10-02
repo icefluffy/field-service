@@ -4,7 +4,6 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice_account_analytic.fsm_order_form_analytic"/>
         <field name="arch" type="xml">
-        <field name="customer_reference" />
 
             <!-- Add form header buttons/statusbar -->
             <xpath expr="//form" position="inside">
@@ -38,6 +37,11 @@
                     <field name="account_stage" widget="statusbar"/>
                 </header>
             </xpath>
+            <!-- Add Customer Reference inside the existing Bill To group -->
+            <xpath expr="//page[@name='accounting']/group[@name='bill_to']" position="inside">
+                <field name="customer_reference" />
+            </xpath>
+
 
             <!-- Extend the existing Accounting tab -->
             <xpath expr="//page[@name='accounting']/group[@name='bill_to']" position="after">
