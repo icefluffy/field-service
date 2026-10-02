@@ -58,6 +58,7 @@
                         <group>
                             <field name="fsm_order_id"/>
                             <field name="partner_id"/>
+                            <field name="wagennummer_formatted" string="Wagon"/>
                         </group>
                         <group>
                             <field name="location_id"/>
@@ -66,8 +67,7 @@
 
                     <!-- Repair report vehicle / revision information -->
                     <group>
-                        <group>
-                            <field name="wagennummer_formatted" string="Wagon"/>
+                        <group string="Wagon information">
                             <field name="wagon_number_old"/>
                             <field name="own_weight"/>
                             <field name="maintenance_level"/>
