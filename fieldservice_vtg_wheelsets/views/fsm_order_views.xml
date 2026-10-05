@@ -9,8 +9,12 @@
                 <group string="Wheelsets">
                     <field name="wheelset_ids" nolabel="1">
                         <list create="0" edit="0" delete="0">
-                            <field name="name"/>
-                            <field name="equipment_id"/>
+                            <field name="position"/>
+                            <field name="serial_number"/>
+                            <field name="wheelset_type"/>
+                            <field name="ton"/>
+                            <field name="last_input_date"/>
+                            <field name="new_input_date"/>
                         </list>
                     </field>
 
