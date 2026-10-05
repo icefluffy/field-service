@@ -16,7 +16,6 @@
                                 <field name="ton"/>
                                 <field name="y_b"/>
                                 <field name="last_input_date"/>
-                                <field name="new_input_date"/>
                             </list>
                         </field>
         
