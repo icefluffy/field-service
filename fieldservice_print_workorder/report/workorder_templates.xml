@@ -3,14 +3,8 @@
     <template id="report_workorder_document">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="order">
-                <t t-call="web.external_layout">
-                    <div class="page">
-                        <h2>Work Order</h2>
-                        <p>
-                            Order:
-                            <span t-esc="order.name"/>
-                        </p>
-                    </div>
+                <t t-call="fieldservice_print_workorder.workorder_layout">
+                    <t t-set="customer" t-value="order._get_workorder_customer()"/>
                 </t>
             </t>
         </t>
