@@ -12,196 +12,271 @@
 
     <template id="workorder_layout">
         <t t-call="web.basic_layout">
-            <div class="page workorder-page">
+            <t t-set="raw" t-value="(order.equipment_ids[:1].lot_id.name or '').replace(' ', '').replace('-', '')"/>
+            <t t-set="wagon" t-value="(raw[0:2] + ' ' + raw[2:4] + ' ' + raw[4:8] + ' ' + raw[8:11] + ' ' + raw[11:]) if len(raw) == 12 else raw"/>
+            <t t-set="workers" t-value="', '.join((order.person_ids | order.person_id).mapped('name'))"/>
+
             <style>
-                .workorder-page { font-family: Arial, sans-serif; font-size: 10px; color: #111; }
-                .workorder-header { border-bottom: 2px solid #111; padding: 4px 0 6px; margin-bottom: 8px; font-size: 15px; overflow: hidden; }
-                .header-left { float: left; }
-                .header-right { float: right; font-size: 10px; }
-                table { width: 100%; border-collapse: collapse; }
-                .identification-table td, .technical-table td { border: 1px solid #777; padding: 5px; }
-                .label { font-weight: bold; background: #f1f1f1; white-space: nowrap; }
-                .large { font-size: 14px; font-weight: bold; }
-                .instruction { font-weight: bold; margin: 10px 0 4px; }
-                .task-table th, .task-table td { border-bottom: 1px solid #aaa; padding: 5px; height: 20px; }
-                .task-table th { background: #eee; text-align: left; }
-                .status-column { width: 25px; }
-                .quantity-column { width: 55px; text-align: center; }
-                .ok-column { width: 45px; text-align: center; }
-                .checkbox { border: 1px solid #555; width: 18px; height: 18px; }
-                .extra-work { margin-top: 10px; overflow: hidden; }
-                .vertical-label { float: left; width: 85px; font-weight: bold; }
-                .extra-work-box { margin-left: 90px; height: 145px; border: 1px solid #777; padding: 8px; }
-                .completion-table { margin-top: 10px; }
-                .completion-table td { padding: 5px; }
-                .completion-question { font-weight: bold; }
-                .remarks { margin-top: 8px; overflow: hidden; }
-                .remarks strong { float: left; width: 75px; }
-                .remarks-box { margin-left: 80px; border: 1px solid #777; height: 28px; padding: 5px; }
-                .technical-table { margin-top: 10px; }
-                .technical-info { border-top: 18px solid #aaa; min-height: 80px; margin-top: 8px; padding-top: 8px; }
-                .footer-line { border-top: 1px solid #111; padding-top: 5px; margin-top: 8px; overflow: hidden; }
-                .footer-line span:last-child { float: right; }
-                .company-footer { border-top: 1px solid #aaa; margin-top: 8px; padding-top: 8px; font-size: 9px; }
-                .company-logo img { max-height: 35px; max-width: 150px; }
+                .wo { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000; }
+                .wo table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+                .wo td { vertical-align: middle; padding: 2px 3px; }
+                .wo .title { font-size: 22px; font-weight: bold; }
+                .wo .lbl { font-weight: bold; font-size: 12px; white-space: nowrap; }
+                .wo .small { font-size: 8px; font-style: italic; }
+                .wo .box { border: 1px solid #000; height: 20px; padding: 1px 4px; font-size: 12px; }
+                .wo .box-thick { border: 2px solid #000; height: 22px; padding: 1px 4px; font-size: 14px; }
+                .wo .grey { background: #d9d9d9; }
+                .wo .rule { border-top: 3px solid #000; margin: 8px 0 6px 0; }
+                .wo .rule-thin { border-top: 1px solid #000; margin: 6px 0; }
+                .wo .legal { font-size: 8px; text-align: justify; line-height: 1.25; margin: 6px 0; }
+                .wo .cb { display: inline-block; width: 12px; height: 12px; border: 1px solid #000; background: #d9d9d9; vertical-align: middle; margin-right: 4px; }
+                .wo .ok-box { width: 20px; height: 20px; border: 1px solid #000; display: inline-block; }
+                .wo .right { text-align: right; }
+                .wo .center { text-align: center; }
+                .wo .extra-box { border: 1px solid #000; height: 330px; padding: 4px; font-size: 12px; }
+                .wo .activities { min-height: 40px; }
+                .wo .tech-bar { background: #d9d9d9; font-size: 8px; font-style: italic; font-weight: bold; padding: 2px 4px; }
             </style>
-                <div class="workorder-header">
-                    <div class="header-left">
-                        <strong>Work Order</strong>
-                    </div>
-                    <div class="header-right">
-                        <strong>Print date:</strong>
-                        <span t-esc="order.create_date.strftime('%d/%m/%Y') if order.create_date else ''"/>
-                    </div>
-                </div>
 
-                <table class="identification-table">
+            <div class="page wo">
+
+                <table>
                     <tr>
-                        <td class="label">Object no.:</td>
-                        <td class="value large">
-                            <span t-esc="order.equipment_ids[:1].lot_id.name or ''"/>
+                        <td style="width:35%"><span class="title">Werkorder</span></td>
+                        <td style="width:35%" class="center">
+                            <span class="lbl">Plandatum :</span>
+                            <span class="box grey" style="display:inline-block; width:110px; text-align:center;">
+                                <t t-if="order.scheduled_date_start">
+                                    <t t-esc="context_timestamp(order.scheduled_date_start).strftime('%d/%m/%Y')"/>
+                                </t>
+                            </span>
                         </td>
-                        <td class="label">KI-ID:</td>
-                        <td class="value"></td>
-                        <td class="label">SO:</td>
-                        <td class="value">
-                            <span t-esc="order.name or ''"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label">Codes:</td>
-                        <td class="value">
-                            <span t-esc="order.x_maintenance_level or ''"/>
-                        </td>
-                        <td class="label">FW:</td>
-                        <td class="value">
-                            <span t-esc="order.x_fw_number or ''"/>
-                        </td>
-                        <td class="label">Customer:</td>
-                        <td class="value">
-                            <span t-esc="customer.name if customer else ''"/>
-                        </td>
+                        <td style="width:30%"></td>
                     </tr>
                 </table>
 
-                <p class="instruction">
-                    Note the correct quantities. Change or add where necessary.
-                    Tick OK only if completed; otherwise leave blank.
-                </p>
-
-                <table class="task-table">
-
-                </table>
-
-                <div class="extra-work">
-                    <div class="vertical-label">
-                        Extra work<br/>
-                        and material:
-                    </div>
-                    <table>
-                    <div class="extra-work-box">
-                        <t t-if="order.description">
-                            <span t-field="order.description"/>
-                        </t>
-                    </div>
-                    </table>
-                </div>
-
-                <table class="completion-table">
+                <table style="margin-top:6px;">
                     <tr>
-                        <td class="completion-question">
-                            Fully repaired and required inspections completed?
+                        <td style="width:20%">
+                            <div class="lbl">Techniekers:</div>
+                            <div class="small">Volledige namen of geregistreerde afkorting</div>
                         </td>
-                        <td class="check-option">☐ YES</td>
-                        <td class="check-option">☐ NO</td>
-                        <td class="check-option">☐ NOT PERFORMED</td>
+                        <td style="width:80%"><div class="box grey"><t t-esc="workers"/></div></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td colspan="3">
-                            ☐ Work performed, but additional work remains;
-                            object is NOT ready
-                        </td>
+                        <td style="font-size:12px; font-style:italic;">De aan de linkerkant vermelde techieker controleert en tekent na uitvoering.</td>
                     </tr>
                 </table>
 
-                <div class="remarks">
-                    <strong>Remarks:</strong>
-                    <div class="remarks-box">
-                        <t t-if="order.resolution">
-                            <span t-field="order.resolution"/>
-                        </t>
-                    </div>
+                <table style="margin-top:4px;">
+                    <tr>
+                        <td style="width:28%" class="lbl">Handtekening na uitvoering :</td>
+                        <td style="width:30%"><div class="box-thick"></div></td>
+                        <td style="width:14%" class="lbl right">Uitvoerdatum :</td>
+                        <td style="width:28%"><div class="box-thick center">/ &#160;&#160;&#160; /</div></td>
+                    </tr>
+                </table>
+
+                <div class="legal">
+                    Een als OK aangeduide goederenwagon dient te voldoen aan de eisen conform de opdracht en minimaal, bij werken conform GCU, aan de eisen van de GCU bijlage 10 ofwel, bij werken conform VPI en in zover de gegevens bekend zijn, de VPI 01 bijlage 19 (voorhanden, volledig en herkenbaar zijn van opschriften, pictogrammen en waarschuwingsmerken ; visueel scheur- en vervormingsvrij zijn van onderstel en draaistel ; visueel scheur- en vervormingsvrij zijn van stoot- en trekinrichting ; conforme zekering as ; remonderdelen visueel scheur- en vervormingsvrij zijn ; treden, steunen, handgrepen, ladders en seindragers vast en visueel scheur- en vervormingsvrij ; sleephaak, kabeloog en beschermingsbeugel visueel scheur- en vervormingsvrij / onbeschadigd ; wielstellen visueel onbeschadigd ; remblokken niet naastlopend, niet gebroken , &gt;15 mm voor gietijzer, &gt;13 mm voor K/LL ; gesmeerd ; revisie geldig ; andere onderhoudskaders geldig).
                 </div>
 
-                <table class="technical-table">
+                <div class="rule"></div>
+
+                <table>
                     <tr>
-                        <td class="label">Keeper:</td>
-                        <td>
-                            <span t-esc="customer.name if customer else ''"/>
-                        </td>
-                        <td class="label">Revision frame:</td>
-                        <td>
-                            <span t-esc="order.x_revision_cycle or ''"/>
+                        <td style="width:10%"><div class="box-thick lbl" style="font-size:15px;">Plaats:</div></td>
+                        <td style="width:40%"><div class="box-thick"><t t-esc="order.location_id.name or ''"/></div></td>
+                        <td style="width:22%" class="right lbl">Start :</td>
+                        <td style="width:12%"><div class="box"></div></td>
+                        <td style="width:4%" class="right lbl">Einde :</td>
+                        <td style="width:12%"><div class="box"></div></td>
+                    </tr>
+                </table>
+                <table style="margin-top:2px;">
+                    <tr>
+                        <td style="width:10%" class="lbl"><i>Adres:</i></td>
+                        <td style="width:90%; font-size:12px;">
+                            <t t-esc="order.street or ''"/>
+                            <t t-if="order.city">, <t t-esc="order.city"/></t>
                         </td>
                     </tr>
                     <tr>
-                        <td class="label">UIC code:</td>
-                        <td>
-                            <span t-esc="order.x_wagon_number or ''"/>
-                        </td>
-                        <td class="label">Tare:</td>
-                        <td>
-                            <span t-esc="order.x_own_weight or ''"/>
-                            kg
-                        </td>
+                        <td class="lbl"><i>Opm:</i></td>
+                        <td><div class="box grey" style="height:28px;"></div></td>
+                    </tr>
+                </table>
+
+                <div class="rule"></div>
+
+                <table>
+                    <tr>
+                        <td style="width:9%"><div class="box lbl">SO-nr:</div></td>
+                        <td style="width:20%"><div class="box grey right"><t t-esc="order.x_customer_order_ref or ''"/></div></td>
+                        <td style="width:8%"><div class="box lbl">Klant:</div></td>
+                        <td style="width:38%"><div class="box"><t t-esc="customer.name if customer else ''"/></div></td>
+                        <td style="width:7%" class="right lbl">Lijn:</td>
+                        <td style="width:18%"><div class="box"></div></td>
+                    </tr>
+                </table>
+                <table style="margin-top:2px;">
+                    <tr>
+                        <td style="width:9%"><div class="box lbl">Opm:</div></td>
+                        <td style="width:91%"><div class="box grey"></div></td>
+                    </tr>
+                </table>
+
+                <div class="rule"></div>
+
+                <table>
+                    <tr>
+                        <td style="width:14%" class="lbl">Voorwerpnr:</td>
+                        <td style="width:34%"><div class="box-thick grey center" style="font-weight:bold; font-size:15px;"><t t-esc="wagon"/></div></td>
+                        <td style="width:8%" class="lbl">KI-ID:</td>
+                        <td style="width:14%"></td>
+                        <td style="width:6%" class="lbl">SO:</td>
+                        <td style="width:14%" class="lbl"><t t-esc="order.name"/></td>
+                        <td style="width:10%" class="small">VW:</td>
                     </tr>
                     <tr>
-                        <td class="label">Customer type:</td>
+                        <td class="lbl">Codes :</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="width:50%"><div class="box"></div></td>
+                                    <td style="width:50%"><div class="box"></div></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td><div class="box"></div></td>
                         <td></td>
-                        <td class="label">Start:</td>
-                        <td>
-                            <span t-esc="order.date_start or ''"/>
-                        </td>
-                        <td class="label">End:</td>
-                        <td>
-                            <span t-esc="order.date_end or ''"/>
+                        <td class="lbl">Cr.:</td>
+                        <td colspan="2"><t t-esc="order.create_uid.name or ''"/></td>
+                    </tr>
+                </table>
+
+                <table style="margin-top:6px;">
+                    <tr>
+                        <td style="width:85%"><i>Noteer de juiste aantallen. Wijzig / voeg toe waar nodig. Vakje OK aanvinken ALS uitgevoerd, anders BLANCO laten.</i></td>
+                        <td style="width:15%" class="right lbl">OK?</td>
+                    </tr>
+                </table>
+
+                <div class="activities">
+                    <!-- Activities from the activities tab will be added here later -->
+                </div>
+
+                <table style="margin-top:6px;">
+                    <tr>
+                        <td style="width:10%; vertical-align:top;" class="lbl">Extra<br/>werk<br/>en<br/>mat.:</td>
+                        <td style="width:90%">
+                            <div class="extra-box"><t t-if="order.description"><span t-field="order.description"/></t></div>
                         </td>
                     </tr>
                 </table>
 
-                <div class="technical-info">
-                    <strong>Technical info:</strong>
-                </div>
+                <table style="margin-top:8px;">
+                    <tr>
+                        <td style="width:45%" class="lbl">Volledig hersteld en voorziene controles uitgevoerd ?</td>
+                        <td style="width:15%" class="lbl"><span class="cb"></span>JA</td>
+                        <td style="width:15%" class="lbl"><span class="cb"></span>NEE</td>
+                        <td style="width:25%" class="lbl"><span class="cb"></span>NIET UITGEVOERD</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3" class="lbl"><span class="cb"></span>Werken uitgevoerd maar nog andere werken uit te voeren, voorwerp is NIET klaar</td>
+                    </tr>
+                </table>
 
-                <div class="footer-line">
-                    <span>
-                        Order:
-                        <t t-esc="order.name"/>
-                    </span>
-                    <span>
-                        Page 1 of 1
-                    </span>
-                </div>
+                <table style="margin-top:6px;">
+                    <tr>
+                        <td style="width:12%" class="lbl">Opmerking :</td>
+                        <td style="width:88%"><div class="box" style="height:24px;"><t t-if="order.resolution"><span t-field="order.resolution"/></t></div></td>
+                    </tr>
+                </table>
 
-                <div class="company-footer">
-                    <div class="company-logo">
-                        <img
-                            t-if="order.company_id.logo"
-                            t-att-src="image_data_uri(order.company_id.logo)"
-                        />
-                    </div>
-                    <div>
-                        <strong t-esc="order.company_id.name"/>
-                        <br/>
-                        <span t-esc="order.company_id.street or ''"/>
-                        <br/>
-                        <span t-esc="order.company_id.zip or ''"/>
-                        <span t-esc="order.company_id.city or ''"/>
-                        <br/>
-                        <span t-esc="order.company_id.phone or ''"/>
-                    </div>
-                </div>
+                <table style="margin-top:6px;">
+                    <tr>
+                        <td style="width:9%; font-size:8px; vertical-align:top;">Incl. landcode bv. F-</td>
+                        <td style="width:91%">
+                            <div style="border:1px solid #000; padding:4px;">
+                                <table>
+                                    <tr>
+                                        <td style="width:12%" class="lbl">Houder :</td>
+                                        <td style="width:34%">
+                                            <table><tr>
+                                                <td style="width:20%"><div class="box"></div></td>
+                                                <td style="width:5%">-</td>
+                                                <td style="width:75%"><div class="box"></div></td>
+                                            </tr></table>
+                                        </td>
+                                        <td style="width:14%" class="lbl right">Revisiekader:</td>
+                                        <td style="width:40%"><div class="box"><t t-esc="order.x_revision_cycle or ''"/> <t t-if="order.x_revision_date"><t t-esc="order.x_revision_date"/></t></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lbl">UIC-code :</td>
+                                        <td><div class="box"><t t-esc="order.x_wagon_number or ''"/></div></td>
+                                        <td class="lbl right">Tarra:</td>
+                                        <td>
+                                            <table><tr>
+                                                <td style="width:45%"><div class="box"><t t-if="order.x_own_weight"><t t-esc="int(order.x_own_weight)"/></t></div></td>
+                                                <td style="width:55%">&#160;kg</td>
+                                            </tr></table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lbl">Klanttype :</td>
+                                        <td><div class="box"></div></td>
+                                        <td class="lbl right">Start :</td>
+                                        <td>
+                                            <table><tr>
+                                                <td style="width:30%"><div class="box"></div></td>
+                                                <td style="width:30%" class="lbl right">Einde :</td>
+                                                <td style="width:40%"><div class="box"></div></td>
+                                            </tr></table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="tech-bar" style="margin-top:2px;">CONTROLEER data en PAS waar nodig AAN.</div>
+
+                <table style="margin-top:8px;">
+                    <tr>
+                        <td style="width:10%; vertical-align:top;" class="lbl">Tech<br/>Info:</td>
+                        <td style="width:90%; height:60px;"></td>
+                    </tr>
+                </table>
+
+                <table style="margin-top:10px;">
+                    <tr>
+                        <td style="width:33%">Print : <t t-esc="time.strftime('%d/%m/%Y')"/></td>
+                        <td style="width:45%">Print ID: <t t-esc="user.login"/>-<t t-esc="order.name"/>-<t t-esc="order.id"/></td>
+                        <td style="width:22%" class="right">Pagina 1 van 1</td>
+                    </tr>
+                </table>
+
+                <table style="margin-top:4px; font-size:9px;">
+                    <tr>
+                        <td style="width:14%; vertical-align:top;">
+                            <img t-if="order.company_id.logo" t-att-src="image_data_uri(order.company_id.logo)" style="max-height:35px; max-width:130px;"/>
+                        </td>
+                        <td style="width:30%; vertical-align:top;">
+                            <t t-esc="order.company_id.name"/><br/>
+                            <t t-esc="order.company_id.street or ''"/><br/>
+                            <t t-esc="order.company_id.zip or ''"/> <t t-esc="order.company_id.city or ''"/><br/>
+                            <t t-if="order.company_id.vat">BTW/TVA: <t t-esc="order.company_id.vat"/></t>
+                        </td>
+                        <td style="width:56%; vertical-align:top;">
+                            Plaats: <t t-esc="order.location_id.name or ''"/> &#160;&#160;&#160; Adres: <t t-esc="order.street or ''"/>, <t t-esc="order.city or ''"/><br/>
+                            OpmAdr:
+                        </td>
+                    </tr>
+                </table>
 
             </div>
         </t>
