@@ -5,7 +5,7 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='equipements_page']" position="inside">
+            <xpath expr="//field[@name='equipment_ids']" position="after">
                 <group string="Wheelsets">
                     <field name="wheelset_ids" nolabel="1">
                         <list create="0" edit="0" delete="0">
