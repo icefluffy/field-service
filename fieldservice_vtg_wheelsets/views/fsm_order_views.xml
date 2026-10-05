@@ -6,7 +6,11 @@
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook/page[1]" position="before">
-                <page name="wheelsets_overview" string="Wheelsets" invisible="not partner_id or 'VTG' not in partner_id.name">
+                <page
+                    name="wheelsets_overview"
+                    string="Wheelsets"
+                    invisible="not show_wheelsets_tab"
+                >
                     <group>
                         <field name="wheelset_ids" nolabel="1">
                             <list create="1" edit="1" delete="0">
@@ -18,7 +22,7 @@
                                 <field name="last_input_date"/>
                             </list>
                         </field>
-        
+
                         <button
                             name="action_open_equipment"
                             string="Input Wheelset"
