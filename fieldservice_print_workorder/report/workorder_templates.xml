@@ -13,7 +13,38 @@
     <template id="workorder_layout">
         <t t-call="web.basic_layout">
             <div class="page workorder-page">
-
+            <style>
+                .workorder-page { font-family: Arial, sans-serif; font-size: 10px; color: #111; }
+                .workorder-header { border-bottom: 2px solid #111; padding: 4px 0 6px; margin-bottom: 8px; font-size: 15px; overflow: hidden; }
+                .header-left { float: left; }
+                .header-right { float: right; font-size: 10px; }
+                table { width: 100%; border-collapse: collapse; }
+                .identification-table td, .technical-table td { border: 1px solid #777; padding: 5px; }
+                .label { font-weight: bold; background: #f1f1f1; white-space: nowrap; }
+                .large { font-size: 14px; font-weight: bold; }
+                .instruction { font-weight: bold; margin: 10px 0 4px; }
+                .task-table th, .task-table td { border-bottom: 1px solid #aaa; padding: 5px; height: 20px; }
+                .task-table th { background: #eee; text-align: left; }
+                .status-column { width: 25px; }
+                .quantity-column { width: 55px; text-align: center; }
+                .ok-column { width: 45px; text-align: center; }
+                .checkbox { border: 1px solid #555; width: 18px; height: 18px; }
+                .extra-work { margin-top: 10px; overflow: hidden; }
+                .vertical-label { float: left; width: 85px; font-weight: bold; }
+                .extra-work-box { margin-left: 90px; height: 145px; border: 1px solid #777; padding: 8px; }
+                .completion-table { margin-top: 10px; }
+                .completion-table td { padding: 5px; }
+                .completion-question { font-weight: bold; }
+                .remarks { margin-top: 8px; overflow: hidden; }
+                .remarks strong { float: left; width: 75px; }
+                .remarks-box { margin-left: 80px; border: 1px solid #777; height: 28px; padding: 5px; }
+                .technical-table { margin-top: 10px; }
+                .technical-info { border-top: 18px solid #aaa; min-height: 80px; margin-top: 8px; padding-top: 8px; }
+                .footer-line { border-top: 1px solid #111; padding-top: 5px; margin-top: 8px; overflow: hidden; }
+                .footer-line span:last-child { float: right; }
+                .company-footer { border-top: 1px solid #aaa; margin-top: 8px; padding-top: 8px; font-size: 9px; }
+                .company-logo img { max-height: 35px; max-width: 150px; }
+            </style>
                 <div class="workorder-header">
                     <div class="header-left">
                         <strong>Work Order</strong>
