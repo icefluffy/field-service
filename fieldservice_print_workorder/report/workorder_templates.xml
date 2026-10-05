@@ -59,69 +59,7 @@
                 </p>
 
                 <table class="task-table">
-                    <thead>
-                        <tr>
-                            <th class="status-column">W</th>
-                            <th>Description</th>
-                            <th class="quantity-column">Qty.</th>
-                            <th class="ok-column">OK?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>W</td>
-                            <td>Photos after completion of work</td>
-                            <td></td>
-                            <td class="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>W</td>
-                            <td>Lubricate buffers if necessary</td>
-                            <td></td>
-                            <td class="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>W</td>
-                            <td>Lubricate screw couplings if necessary</td>
-                            <td></td>
-                            <td class="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>W</td>
-                            <td>
-                                Code 6132 and 6174:
-                                damaged hand grip and outside profile
-                            </td>
-                            <td></td>
-                            <td class="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>W</td>
-                            <td>Photos</td>
-                            <td></td>
-                            <td class="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>W</td>
-                            <td>Wheels</td>
-                            <td></td>
-                            <td class="checkbox"></td>
-                        </tr>
 
-                        <t t-if="order.wheelset_ids">
-                            <t t-foreach="order.wheelset_ids" t-as="wheelset">
-                                <tr>
-                                    <td>W</td>
-                                    <td>
-                                        Wheelset
-                                        <span t-esc="wheelset.serial_number or ''"/>
-                                    </td>
-                                    <td>1</td>
-                                    <td class="checkbox"></td>
-                                </tr>
-                            </t>
-                        </t>
-                    </tbody>
                 </table>
 
                 <div class="extra-work">
@@ -129,11 +67,13 @@
                         Extra work<br/>
                         and material:
                     </div>
+                    <table>
                     <div class="extra-work-box">
                         <t t-if="order.description">
                             <span t-field="order.description"/>
                         </t>
                     </div>
+                    </table>
                 </div>
 
                 <table class="completion-table">
