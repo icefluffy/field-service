@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_release_list_view" model="ir.ui.view">
+        <field name="name">fsm.release.list</field>
+        <field name="model">fsm.release</field>
+        <field name="arch" type="xml">
+            <list string="Release Forms">
+                <field name="name"/>
+                <field name="fsm_order_id"/>
+                <field name="partner_id"/>
+                <field name="location_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="fsm_release_form_view" model="ir.ui.view">
+        <field name="name">fsm.release.form</field>
+        <field name="model">fsm.release</field>
+        <field name="arch" type="xml">
+            <form string="Release Form">
+                <header>
+                    <button name="action_preview_release_form"
+                            string="Preview Release Form"
+                            type="object"
+                            class="btn-secondary"
+                            icon="fa-eye"/>
+                    <button name="%(action_report_fsm_release)d"
+                            string="Print Release Form"
+                            type="action"
+                            class="oe_highlight"
+                            icon="fa-print"/>
+                    <button name="action_release"
+                            string="Release to Service"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="state != 'draft'"/>
+                    <button name="action_cancel"
+                            string="Cancel"
+                            type="object"
+                            invisible="state != 'draft'"/>
+                    <button name="action_reset_to_draft"
+                            string="Reset to Draft"
+                            type="object"
+                            invisible="state != 'cancelled'"/>
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="draft,released,cancelled"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+
+                    <!-- Release identification -->
+                    <group>
+                        <group>
+                            <field name="fsm_order_id"/>
+                            <field name="partner_id"/>
+                            <field name="wagennummer_formatted" string="Wagon"/>
+                        </group>
+                        <group>
+                            <field name="location_id"/>
+                        </group>
+                    </group>
+
+                    <!-- Repair report vehicle / revision information -->
+                    <group>
+                        <group string="Wagon information">
+                            <field name="wagon_number_old"/>
+                            <field name="own_weight"/>
+                            <field name="maintenance_level"/>
+                        </group>
+                        <group string="Revision / Brakes">
+                            <field name="revision_cycle"/>
+                            <field name="revision_date"/>
+                            <field name="revision_extension"/>
+                            <field name="brake_type"/>
+                            <field name="brake_deadline"/>
+                        </group>
+                    </group>
+
+                    <!-- Repair-report text fields, directly on the main page -->
+                    <group string="Repair Work Performed">
+                        <field name="work_performed" nolabel="1"/>
+                    </group>
+                    <group string="Postponed Work">
+                        <field name="postponed_work" nolabel="1"/>
+                    </group>
+                    <group string="Replaced Components">
+                        <field name="replaced_components" nolabel="1"/>
+                    </group>
+                    <group string="Other Information">
+                        <field name="other_information" nolabel="1"/>
+                    </group>
+                    <group>
+                        <group string="Release Confirmation">
+                            <field name="repair_confirmed"/>
+                            <field name="release_confirmed"/>
+                        </group>
+                        <group string="Issue">
+                            <field name="issue_date"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="contractor_costs" string="Contractor Costs">
+                            <field name="contractor_cost_line_ids" nolabel="1">
+                                <list create="0" delete="0">
+                                    <field name="sequence" column_invisible="1"/>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="price_unit"/>
+                                    <field name="subtotal"/>
+                                </list>
+                            </field>
+                            <group>
+                                <field name="contractor_total" readonly="1"/>
+                            </group>
+                        </page>
+
+                        <page name="employee_timesheets" string="Employee Timesheets">
+                            <field name="timesheet_line_ids" nolabel="1">
+                                <list create="0" delete="0" default_order="date">
+                                    <field name="date"/>
+                                    <field name="employee_id"/>
+                                    <field name="product_id"/>
+                                    <field name="description"/>
+                                    <field name="unit_amount"
+                                           string="Duration"
+                                           widget="float_time"/>
+                                    <field name="project_id"/>
+                                    <field name="task_id"/>
+                                </list>
+                            </field>
+                            <group>
+                                <field name="employee_time_total"
+                                       readonly="1"
+                                       widget="float_time"/>
+                            </group>
+                        </page>
+
+                        <page name="equipment" string="Equipment">
+                            <field name="equipment_line_ids" nolabel="1">
+                                <list create="0" delete="0">
+                                    <field name="sequence" column_invisible="1"/>
+                                    <field name="equipment_id"/>
+                                    <field name="product_id"/>
+                                    <field name="lot_id"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page name="remarks" string="Remarks">
+                            <field name="remarks"
+                                   placeholder="Enter release-to-service remarks..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="fsm_order_equipment_under_location" model="ir.ui.view">
+        <field name="name">fsm.order.equipment.under.location</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/sheet/group/group/field[@name='location_id']"
+                position="after">
+                <field name="equipment_ids"
+                    string="Equipment"
+                    widget="many2many_tags"
+                    options="{'no_quick_create': True}"
+                    groups="fieldservice.group_fsm_equipment"/>
+            </xpath>
+
+            <xpath expr="//page[@name='equipements_page']"
+                position="replace"/>
+
+        </field>
+    </record>
+</odoo>

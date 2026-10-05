@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_workorder_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="order">
+                <t t-call="fieldservice_print_workorder.workorder_layout">
+                    <t t-set="customer" t-value="order._get_workorder_customer()"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="workorder_layout">
+        <t t-call="web.basic_layout">
+            <div class="page workorder-page">
+
+                <div class="workorder-header">
+                    <div class="header-left">
+                        <strong>Work Order</strong>
+                    </div>
+                    <div class="header-right">
+                        <strong>Print date:</strong>
+                        <span t-esc="order.create_date.strftime('%d/%m/%Y') if order.create_date else ''"/>
+                    </div>
+                </div>
+
+                <table class="identification-table">
+                    <tr>
+                        <td class="label">Object no.:</td>
+                        <td class="value large">
+                            <span t-esc="order.equipment_ids[:1].lot_id.name or ''"/>
+                        </td>
+                        <td class="label">KI-ID:</td>
+                        <td class="value"></td>
+                        <td class="label">SO:</td>
+                        <td class="value">
+                            <span t-esc="order.name or ''"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Codes:</td>
+                        <td class="value">
+                            <span t-esc="order.x_maintenance_level or ''"/>
+                        </td>
+                        <td class="label">FW:</td>
+                        <td class="value">
+                            <span t-esc="order.x_fw_number or ''"/>
+                        </td>
+                        <td class="label">Customer:</td>
+                        <td class="value">
+                            <span t-esc="customer.name if customer else ''"/>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="instruction">
+                    Note the correct quantities. Change or add where necessary.
+                    Tick OK only if completed; otherwise leave blank.
+                </p>
+
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                            <th class="status-column">W</th>
+                            <th>Description</th>
+                            <th class="quantity-column">Qty.</th>
+                            <th class="ok-column">OK?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>W</td>
+                            <td>Photos after completion of work</td>
+                            <td></td>
+                            <td class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>W</td>
+                            <td>Lubricate buffers if necessary</td>
+                            <td></td>
+                            <td class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>W</td>
+                            <td>Lubricate screw couplings if necessary</td>
+                            <td></td>
+                            <td class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>W</td>
+                            <td>
+                                Code 6132 and 6174:
+                                damaged hand grip and outside profile
+                            </td>
+                            <td></td>
+                            <td class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>W</td>
+                            <td>Photos</td>
+                            <td></td>
+                            <td class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>W</td>
+                            <td>Wheels</td>
+                            <td></td>
+                            <td class="checkbox"></td>
+                        </tr>
+
+                        <t t-if="order.wheelset_ids">
+                            <t t-foreach="order.wheelset_ids" t-as="wheelset">
+                                <tr>
+                                    <td>W</td>
+                                    <td>
+                                        Wheelset
+                                        <span t-esc="wheelset.serial_number or ''"/>
+                                    </td>
+                                    <td>1</td>
+                                    <td class="checkbox"></td>
+                                </tr>
+                            </t>
+                        </t>
+                    </tbody>
+                </table>
+
+                <div class="extra-work">
+                    <div class="vertical-label">
+                        Extra work<br/>
+                        and material:
+                    </div>
+                    <div class="extra-work-box">
+                        <t t-if="order.description">
+                            <span t-field="order.description"/>
+                        </t>
+                    </div>
+                </div>
+
+                <table class="completion-table">
+                    <tr>
+                        <td class="completion-question">
+                            Fully repaired and required inspections completed?
+                        </td>
+                        <td class="check-option">☐ YES</td>
+                        <td class="check-option">☐ NO</td>
+                        <td class="check-option">☐ NOT PERFORMED</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+                            ☐ Work performed, but additional work remains;
+                            object is NOT ready
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="remarks">
+                    <strong>Remarks:</strong>
+                    <div class="remarks-box">
+                        <t t-if="order.resolution">
+                            <span t-field="order.resolution"/>
+                        </t>
+                    </div>
+                </div>
+
+                <table class="technical-table">
+                    <tr>
+                        <td class="label">Keeper:</td>
+                        <td>
+                            <span t-esc="customer.name if customer else ''"/>
+                        </td>
+                        <td class="label">Revision frame:</td>
+                        <td>
+                            <span t-esc="order.x_revision_cycle or ''"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">UIC code:</td>
+                        <td>
+                            <span t-esc="order.x_wagon_number or ''"/>
+                        </td>
+                        <td class="label">Tare:</td>
+                        <td>
+                            <span t-esc="order.x_own_weight or ''"/>
+                            kg
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Customer type:</td>
+                        <td></td>
+                        <td class="label">Start:</td>
+                        <td>
+                            <span t-esc="order.date_start or ''"/>
+                        </td>
+                        <td class="label">End:</td>
+                        <td>
+                            <span t-esc="order.date_end or ''"/>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="technical-info">
+                    <strong>Technical info:</strong>
+                </div>
+
+                <div class="footer-line">
+                    <span>
+                        Order:
+                        <t t-esc="order.name"/>
+                    </span>
+                    <span>
+                        Page 1 of 1
+                    </span>
+                </div>
+
+                <div class="company-footer">
+                    <div class="company-logo">
+                        <img
+                            t-if="order.company_id.logo"
+                            t-att-src="image_data_uri(order.company_id.logo)"
+                        />
+                    </div>
+                    <div>
+                        <strong t-esc="order.company_id.name"/>
+                        <br/>
+                        <span t-esc="order.company_id.street or ''"/>
+                        <br/>
+                        <span t-esc="order.company_id.zip or ''"/>
+                        <span t-esc="order.company_id.city or ''"/>
+                        <br/>
+                        <span t-esc="order.company_id.phone or ''"/>
+                    </div>
+                </div>
+
+            </div>
+        </t>
+    </template>
+</odoo>

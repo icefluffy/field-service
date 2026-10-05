@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_order_form_workorder_print" model="ir.ui.view">
+        <field name="name">fsm.order.form.workorder.print</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <button
+                    name="action_print_workorder"
+                    string="Print Work Order"
+                    type="object"
+                    class="oe_highlight"
+                />
+                <button
+                    name="action_preview_workorder"
+                    string="Print Preview"
+                    type="object"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
