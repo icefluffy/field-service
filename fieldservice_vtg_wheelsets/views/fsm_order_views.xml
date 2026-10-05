@@ -5,11 +5,11 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//notebook" position="inside">
+            <xpath expr="//notebook/page[1]" position="before">
                 <page name="wheelsets_overview" string="Wheelsets">
                     <group>
                         <field name="wheelset_ids" nolabel="1">
-                            <list create="0" edit="0" delete="0">
+                            <list create="0" edit="1" delete="0">
                                 <field name="position"/>
                                 <field name="serial_number"/>
                                 <field name="wheelset_type"/>
