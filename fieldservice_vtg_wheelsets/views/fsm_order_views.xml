@@ -5,27 +5,29 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='equipment_ids']" position="inside">
-                <group string="Wheelsets">
-                    <field name="wheelset_ids" nolabel="1">
-                        <list create="0" edit="0" delete="0">
-                            <field name="position"/>
-                            <field name="serial_number"/>
-                            <field name="wheelset_type"/>
-                            <field name="ton"/>
-                            <field name="last_input_date"/>
-                            <field name="new_input_date"/>
-                        </list>
-                    </field>
-
-                    <button
-                        name="action_open_equipment"
-                        string="Edit Equipment"
-                        type="object"
-                        class="oe_highlight"
-                        invisible="not equipment_ids"
-                    />
-                </group>
+            <xpath expr="//notebook" position="inside">
+                <page name="wheelsets_overview" string="Wheelsets">
+                    <group>
+                        <field name="wheelset_ids" nolabel="1">
+                            <list create="0" edit="0" delete="0">
+                                <field name="position"/>
+                                <field name="serial_number"/>
+                                <field name="wheelset_type"/>
+                                <field name="ton"/>
+                                <field name="last_input_date"/>
+                                <field name="new_input_date"/>
+                            </list>
+                        </field>
+        
+                        <button
+                            name="action_open_equipment"
+                            string="Edit Equipment"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not equipment_ids"
+                        />
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
