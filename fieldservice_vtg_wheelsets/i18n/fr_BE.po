@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * fieldservice_vtg_wheelsets
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 12:41+0000\n"
+"PO-Revision-Date: 2026-10-05 12:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: fieldservice_vtg_wheelsets
+#. odoo-python
+#: code:addons/fieldservice_vtg_wheelsets/models/fsm_order.py:0
+msgid "Equipment"
+msgstr "Équipement"
+
+#. module: fieldservice_vtg_wheelsets
+#: model:ir.model,name:fieldservice_vtg_wheelsets.model_fsm_order
+msgid "Field Service Order"
+msgstr "Ordre de service"
+
+#. module: fieldservice_vtg_wheelsets
+#: model_terms:ir.ui.view,arch_db:fieldservice_vtg_wheelsets.fsm_order_form_wheelsets
+msgid "Input Wheelset"
+msgstr "Encoder un essieu monté"
+
+#. module: fieldservice_vtg_wheelsets
+#. odoo-python
+#: code:addons/fieldservice_vtg_wheelsets/models/fsm_order.py:0
+msgid "Select an equipment on the FSM order before opening it."
+msgstr "Sélectionnez un équipement sur l’ordre de service avant de l’ouvrir."
+
+#. module: fieldservice_vtg_wheelsets
+#: model:ir.model.fields,field_description:fieldservice_vtg_wheelsets.field_fsm_order__smart_search
+msgid "Smart Search"
+msgstr "Recherche intelligente"
+
+#. module: fieldservice_vtg_wheelsets
+#: model:ir.model.fields,field_description:fieldservice_vtg_wheelsets.field_fsm_order__wheelset_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_vtg_wheelsets.fsm_order_form_wheelsets
+msgid "Wheelsets"
+msgstr "Essieux montés"
