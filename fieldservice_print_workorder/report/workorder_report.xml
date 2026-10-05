@@ -4,15 +4,9 @@
         <field name="name">Work Order</field>
         <field name="model">fsm.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">
-            fieldservice_print_workorder.report_workorder_document
-        </field>
-        <field name="report_file">
-            fieldservice_print_workorder.report_workorder_document
-        </field>
-        <field name="print_report_name">
-            "'Work Order - %s' % (object.name)"
-        </field>
+        <field name="report_name">fieldservice_print_workorder.report_workorder_document</field>
+        <field name="report_file">fieldservice_print_workorder.report_workorder_document</field>
+        <field name="print_report_name">'Work Order - %s' % (object.name)</field>
         <field name="binding_model_id" ref="fieldservice.model_fsm_order"/>
         <field name="binding_type">report</field>
     </record>
