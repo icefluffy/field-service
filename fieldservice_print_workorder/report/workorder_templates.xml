@@ -14,7 +14,7 @@
         <t t-call="web.basic_layout">
             <t t-set="raw" t-value="(order.equipment_ids[:1].lot_id.name or '').replace(' ', '').replace('-', '')"/>
             <t t-set="wagon" t-value="(raw[0:2] + ' ' + raw[2:4] + ' ' + raw[4:8] + ' ' + raw[8:11] + ' ' + raw[11:]) if len(raw) == 12 else raw"/>
-            <t t-set="workers" t-value="', '.join((order.person_ids | order.person_id).mapped('name'))"/>
+            <t t-set="workers" t-value="', '.join((order.person_id | order.person_ids).mapped('name'))"/>
 
             <style>
                 .wo { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000; }
