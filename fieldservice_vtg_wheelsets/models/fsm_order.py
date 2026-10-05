@@ -12,6 +12,13 @@ class FSMOrder(models.Model):
         readonly=True,
     )
 
+    show_wheelsets_tab = fields.Boolean(
+        string="Show Wheelsets Tab",
+        compute="_compute_show_wheelsets_tab",
+        readonly=True,
+        store=False,
+    )
+
     @api.depends("equipment_ids")
     def _compute_wheelset_ids(self):
         for order in self:
@@ -23,6 +30,14 @@ class FSMOrder(models.Model):
                 if equipment
                 else False
             )
+
+    @api.depends("customer_id", "customer_id.name")
+    def _compute_show_wheelsets_tab(self):
+        for order in self:
+            if order.customer_id and "VTG" in (order.customer_id.name or ""):
+                order.show_wheelsets_tab = True
+            else:
+                order.show_wheelsets_tab = False
 
     def action_open_equipment(self):
         self.ensure_one()
