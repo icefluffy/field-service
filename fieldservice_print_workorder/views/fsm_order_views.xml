@@ -7,15 +7,15 @@
         <field name="arch" type="xml">
             <xpath expr="//form/header" position="inside">
                 <button
+                    name="action_preview_workorder"
+                    string="Print Preview"
+                    type="object"
+                />
+                <button
                     name="action_print_workorder"
                     string="Print Work Order"
                     type="object"
                     class="oe_highlight"
-                />
-                <button
-                    name="action_preview_workorder"
-                    string="Print Preview"
-                    type="object"
                 />
             </xpath>
         </field>

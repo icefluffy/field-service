@@ -1,6 +1,6 @@
 {
     "name": "Field Service Work Order Print",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "category": "Field Service",
     "summary": "Printable work order and print preview for FSM orders",
     "depends": [
