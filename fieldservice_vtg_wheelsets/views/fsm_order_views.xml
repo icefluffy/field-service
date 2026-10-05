@@ -9,7 +9,7 @@
                 <page name="wheelsets_overview" string="Wheelsets">
                     <group>
                         <field name="wheelset_ids" nolabel="1">
-                            <list create="0" edit="1" delete="0">
+                            <list create="1" edit="1" delete="0">
                                 <field name="position"/>
                                 <field name="serial_number"/>
                                 <field name="wheelset_type"/>
