@@ -12,6 +12,13 @@ class FSMOrder(models.Model):
         readonly=True,
     )
 
+    # Maak customer_id expliciet beschikbaar als related field
+    customer_id = fields.Many2one(
+        related="location_id.customer_id",
+        string="Customer",
+        readonly=True,
+    )
+
     show_wheelsets_tab = fields.Boolean(
         string="Show Wheelsets Tab",
         compute="_compute_show_wheelsets_tab",
@@ -31,10 +38,10 @@ class FSMOrder(models.Model):
                 else False
             )
 
-    @api.depends("location_id", "location_id.name")
+    @api.depends("customer_id", "customer_id.name")
     def _compute_show_wheelsets_tab(self):
         for order in self:
-            if order.location_id and "VTG" in (order.location_id.name or ""):
+            if order.customer_id and "VTG" in (order.customer_id.name or ""):
                 order.show_wheelsets_tab = True
             else:
                 order.show_wheelsets_tab = False
