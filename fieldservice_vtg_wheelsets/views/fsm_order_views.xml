@@ -21,7 +21,7 @@
         
                         <button
                             name="action_open_equipment"
-                            string="Edit Equipment"
+                            string="Input Wheelset"
                             type="object"
                             class="oe_highlight"
                             invisible="not equipment_ids"
