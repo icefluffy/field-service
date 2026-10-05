@@ -30,7 +30,7 @@ class FSMOrder(models.Model):
                 "context": json.dumps(
                     {
                         "lang": self.env.user.lang or "en_US",
-                    }
+                }
                 ),
                 "force_context_lang": "1",
             }
