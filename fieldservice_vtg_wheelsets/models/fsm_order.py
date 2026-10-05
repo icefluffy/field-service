@@ -31,10 +31,10 @@ class FSMOrder(models.Model):
                 else False
             )
 
-    @api.depends("location_id", "location_id.customer_id", "location_id.customer_id.name")
+    @api.depends("location_id", "location_id.name")
     def _compute_show_wheelsets_tab(self):
         for order in self:
-            if order.location_id and order.location_id.customer_id and "VTG" in (order.location_id.customer_id.name or ""):
+            if order.location_id and "VTG" in (order.location_id.name or ""):
                 order.show_wheelsets_tab = True
             else:
                 order.show_wheelsets_tab = False
