@@ -1,15 +1,9 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 
 class FSMOrder(models.Model):
     _inherit = "fsm.order"
-
-    # Kept temporarily so an older inherited database view can still
-    # validate during the module upgrade. Step 1 always shows the grid.
-    show_vtg_wheelsets = fields.Boolean(
-        string="Show VTG Wheelsets",
-        default=True,
-    )
 
     wheelset_ids = fields.Many2many(
         "fsm.equipment.wheelset",
@@ -21,7 +15,29 @@ class FSMOrder(models.Model):
     @api.depends("equipment_ids")
     def _compute_wheelset_ids(self):
         for order in self:
-            equipment_id = order.equipment_ids[:1].id
-            order.wheelset_ids = self.env["fsm.equipment.wheelset"].search([
-                ("equipment_id", "=", equipment_id),
-            ]) if equipment_id else False
+            equipment = order.equipment_ids[:1]
+            order.wheelset_ids = (
+                self.env["fsm.equipment.wheelset"].search(
+                    [("equipment_id", "=", equipment.id)]
+                )
+                if equipment
+                else False
+            )
+
+    def action_open_equipment(self):
+        self.ensure_one()
+
+        equipment = self.equipment_ids[:1]
+        if not equipment:
+            raise UserError(
+                _("Select an equipment on the FSM order before opening it.")
+            )
+
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("Equipment"),
+            "res_model": "fsm.equipment",
+            "view_mode": "form",
+            "res_id": equipment.id,
+            "target": "current",
+        }
