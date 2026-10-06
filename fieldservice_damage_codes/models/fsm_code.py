@@ -3,27 +3,41 @@ from markupsafe import Markup, escape
 
 from odoo import api, fields, models
 
-CODE_CLASS = "o_fsm_code"
+BLOCK_TAGS = ("p", "div", "ul", "ol", "li", "h1", "h2", "h3", "h4", "table")
 
 
-class FSMCode(models.Model):
-    _name = "fsm.code"
-    _description = "FSM Defect Code"
-    _order = "code"
-    _rec_name = "cd"
+def _normalize(text):
+    return " ".join((text or "").split())
 
-    code = fields.Char(string="Code", required=True, index=True)
-    cd = fields.Char(string="Number Sequence", required=True)
-    description = fields.Text(string="Description", required=True)
-    vehicle_type = fields.Selection(
-        [("W", "Wagon"), ("L", "Locomotive")],
-        string="Vehicle Type",
-        required=True,
-    )
 
-    _sql_constraints = [
-        ("fsm_code_code_unique", "unique(code)", "The code must be unique."),
-    ]
+def _split_lines(description):
+    """Split description HTML into a list of line blocks (HTML strings)."""
+    root = html.fragment_fromstring(str(description or ""), create_parent="div")
+    lines = []
+    buf = str(escape(root.text)) if root.text else ""
+
+    for child in root:
+        if child.tag == "br" or child.tag in BLOCK_TAGS:
+            if buf.strip():
+                lines.append(f"<p>{buf}</p>")
+            buf = ""
+            if child.tag != "br":
+                lines.append(
+                    html.tostring(child, encoding="unicode", with_tail=False)
+                )
+        else:
+            buf += html.tostring(child, encoding="unicode", with_tail=False)
+        if child.tail:
+            buf += str(escape(child.tail))
+
+    if buf.strip():
+        lines.append(f"<p>{buf}</p>")
+    return lines
+
+
+def _line_text(line):
+    block = html.fragment_fromstring(line, create_parent="div")
+    return _normalize(block.text_content())
 
 
 class FSMOrder(models.Model):
@@ -33,44 +47,26 @@ class FSMOrder(models.Model):
 
     @api.onchange("fsm_code_ids")
     def _onchange_fsm_code_ids(self):
+        all_codes = self.env["fsm.code"].search([])
+
         for order in self:
             selected = order.fsm_code_ids.sorted("code")
-            selected_ids = set(selected.ids)
+            selected_texts = {_normalize(c.description) for c in selected}
+            removable_texts = {
+                _normalize(c.description) for c in all_codes
+            } - selected_texts
 
-            root = html.fragment_fromstring(
-                str(order.description or ""), create_parent="div"
-            )
+            lines = [
+                line
+                for line in _split_lines(order.description)
+                if _line_text(line) not in removable_texts
+            ]
 
-            present_ids = set()
-            for element in list(root):
-                classes = (element.get("class") or "").split()
-                code_id = None
-                for cls in classes:
-                    if cls.startswith(f"{CODE_CLASS}_"):
-                        code_id = int(cls.rsplit("_", 1)[1])
-                if code_id is None:
-                    continue
-                if code_id in selected_ids:
-                    present_ids.add(code_id)
-                else:
-                    if element.tail:
-                        prev = element.getprevious()
-                        if prev is not None:
-                            prev.tail = (prev.tail or "") + element.tail
-                        else:
-                            root.text = (root.text or "") + element.tail
-                    root.remove(element)
-
-            result = (root.text or "") + "".join(
-                html.tostring(child, encoding="unicode") for child in root
-            )
-
+            existing_texts = {_line_text(line) for line in lines}
             for code in selected:
-                if code.id in present_ids:
-                    continue
-                result += (
-                    f'<p class="{CODE_CLASS} {CODE_CLASS}_{code.id}">'
-                    f"{escape(code.description or '')}</p>"
-                )
+                text = _normalize(code.description)
+                if text and text not in existing_texts:
+                    lines.append(f"<p>{escape(code.description)}</p>")
+                    existing_texts.add(text)
 
-            order.description = Markup(result)
+            order.description = Markup("".join(lines))
