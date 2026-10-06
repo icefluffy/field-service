@@ -3,70 +3,161 @@ from markupsafe import Markup, escape
 
 from odoo import api, fields, models
 
+
 BLOCK_TAGS = ("p", "div", "ul", "ol", "li", "h1", "h2", "h3", "h4", "table")
 
 
 def _normalize(text):
+    """Compare text independently of extra spaces and line breaks."""
     return " ".join((text or "").split())
 
 
 def _split_lines(description):
-    """Split description HTML into a list of line blocks (HTML strings)."""
-    root = html.fragment_fromstring(str(description or ""), create_parent="div")
+    """Return the existing HTML description as individual HTML blocks."""
+    root = html.fragment_fromstring(
+        str(description or ""),
+        create_parent="div",
+    )
+
     lines = []
-    buf = str(escape(root.text)) if root.text else ""
+    buffer = str(escape(root.text)) if root.text else ""
 
     for child in root:
         if child.tag == "br" or child.tag in BLOCK_TAGS:
-            if buf.strip():
-                lines.append(f"<p>{buf}</p>")
-            buf = ""
+            if buffer.strip():
+                lines.append(f"<p>{buffer}</p>")
+            buffer = ""
+
             if child.tag != "br":
                 lines.append(
-                    html.tostring(child, encoding="unicode", with_tail=False)
+                    html.tostring(
+                        child,
+                        encoding="unicode",
+                        with_tail=False,
+                    )
                 )
         else:
-            buf += html.tostring(child, encoding="unicode", with_tail=False)
-        if child.tail:
-            buf += str(escape(child.tail))
+            buffer += html.tostring(
+                child,
+                encoding="unicode",
+                with_tail=False,
+            )
 
-    if buf.strip():
-        lines.append(f"<p>{buf}</p>")
+        if child.tail:
+            buffer += str(escape(child.tail))
+
+    if buffer.strip():
+        lines.append(f"<p>{buffer}</p>")
+
     return lines
 
 
 def _line_text(line):
-    block = html.fragment_fromstring(line, create_parent="div")
+    """Extract normalized plain text from one HTML block."""
+    block = html.fragment_fromstring(
+        line,
+        create_parent="div",
+    )
     return _normalize(block.text_content())
+
+
+class FSMCode(models.Model):
+    _name = "fsm.code"
+    _description = "FSM Defect Code"
+    _order = "code"
+    _rec_name = "cd"
+
+    code = fields.Char(
+        string="Code",
+        required=True,
+        index=True,
+    )
+    cd = fields.Char(
+        string="Number Sequence",
+        required=True,
+    )
+    description = fields.Text(
+        string="Description",
+        required=True,
+    )
+    vehicle_type = fields.Selection(
+        [
+            ("W", "Wagon"),
+            ("L", "Locomotive"),
+        ],
+        string="Vehicle Type",
+        required=True,
+    )
+
+    _sql_constraints = [
+        (
+            "fsm_code_code_unique",
+            "unique(code)",
+            "The code must be unique.",
+        ),
+    ]
 
 
 class FSMOrder(models.Model):
     _inherit = "fsm.order"
 
-    fsm_code_ids = fields.Many2many("fsm.code", string="Damage Codes")
+    fsm_code_ids = fields.Many2many(
+        "fsm.code",
+        string="Damage Codes",
+    )
 
     @api.onchange("fsm_code_ids")
     def _onchange_fsm_code_ids(self):
         all_codes = self.env["fsm.code"].search([])
 
         for order in self:
-            selected = order.fsm_code_ids.sorted("code")
-            selected_texts = {_normalize(c.description) for c in selected}
-            removable_texts = {
-                _normalize(c.description) for c in all_codes
+            selected_codes = order.fsm_code_ids.sorted("code")
+
+            selected_texts = {
+                _normalize(code.description)
+                for code in selected_codes
+                if code.description
+            }
+
+            unselected_code_texts = {
+                _normalize(code.description)
+                for code in all_codes
+                if code.description
             } - selected_texts
 
-            lines = [
+            existing_lines = _split_lines(order.description)
+
+            # Remove all descriptions belonging to damage codes
+            # that are no longer selected.
+            kept_lines = [
                 line
-                for line in _split_lines(order.description)
-                if _line_text(line) not in removable_texts
+                for line in existing_lines
+                if _line_text(line) not in unselected_code_texts
             ]
 
-            existing_texts = {_line_text(line) for line in lines}
-            for code in selected:
-                text = _normalize(code.description)
-                if text and text not in existing_texts:
-                    lines.append(f"<p>{escape(code.description)}</p>")
-                    existing_texts.add(text)
+            # Keep only one copy of each existing line.
+            unique_lines = []
+            existing_texts = set()
 
-            order.description = Markup("".join(lines))
+            for line in kept_lines:
+                text = _line_text(line)
+
+                if text in existing_texts:
+                    continue
+
+                unique_lines.append(line)
+                existing_texts.add(text)
+
+            # Add selected code descriptions only when not already present.
+            for code in selected_codes:
+                description_text = _normalize(code.description)
+
+                if not description_text or description_text in existing_texts:
+                    continue
+
+                unique_lines.append(
+                    f"<p>{escape(code.description)}</p>"
+                )
+                existing_texts.add(description_text)
+
+            order.description = Markup("".join(unique_lines))
