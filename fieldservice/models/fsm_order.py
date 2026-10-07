@@ -8,6 +8,7 @@ from markupsafe import Markup
 
 from odoo import Command, _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
+from odoo.tools import html2plaintext
 
 from . import fsm_stage
 
@@ -148,7 +149,7 @@ class FSMOrder(models.Model):
         index=True,
         required=True,
     )
-    location_directions = fields.Char(
+    location_directions = fields.Text(
         compute="_compute_location_directions",
         precompute=True,
         store=True,
@@ -313,7 +314,9 @@ class FSMOrder(models.Model):
     @api.depends("location_id")
     def _compute_location_directions(self):
         for rec in self:
-            rec.location_directions = rec.location_id.complete_direction
+            rec.location_directions = html2plaintext(
+                rec.location_id.complete_direction or ""
+            ).strip()
 
     @api.depends("template_id")
     def _compute_todo(self):

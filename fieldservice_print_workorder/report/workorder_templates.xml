@@ -124,14 +124,9 @@
                 <table style="margin-top:2px;">
                     <tr>
                         <td style="width:9%"><div class="box lbl">Remarks:</div></td>
-                        <td>
-                            <div class="box grey" style="height:28px;">
-                                <t t-if="order.location_directions">
-                                    <span t-field="order.location_directions"/>
-                                </t>
-                                <t t-else="">none</t>
-                            </div>
-                        </td>
+                        <div class="box grey" style="height:28px;">
+                            <t t-esc="order.location_directions or 'none'"/>
+                        </div>
                     </tr>
                 </table>
 
