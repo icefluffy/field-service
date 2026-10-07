@@ -124,7 +124,7 @@
                 <table style="margin-top:2px;">
                     <tr>
                         <td style="width:9%"><div class="box lbl">Remarks:</div></td>
-                        <td style="width:91%"><div class="box grey"><t t-esc="location_directions else 'none'"/></div></td>
+                        <td style="width:91%"><div class="box grey"><t t-esc="order.location_directions else 'none'"/></div></td>
                     </tr>
                 </table>
 
