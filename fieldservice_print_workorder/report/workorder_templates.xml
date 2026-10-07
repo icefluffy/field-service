@@ -165,9 +165,9 @@
 
                 <table style="margin-top:6px;">
                     <tr>
-                        <td style="width:10%; vertical-align:top;" class="lbl">Code<br/>descriptions:</td>
+                        <td style="width:8%; vertical-align:top;" class="lbl">Code<br/>descriptions:</td>
                         <td style="width:100%">
-                            <div class="extra-box"><t t-if="order.description"><span t-field="order.description"/></t></div>
+                            <div><t t-if="order.description"><span t-field="order.description"/></t></div>
                         </td>
                     </tr>
                 </table>
