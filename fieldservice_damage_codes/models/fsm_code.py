@@ -113,54 +113,61 @@ class FSMOrder(models.Model):
         for order in self:
             selected_codes = order.fsm_code_ids.sorted("code")
 
-            selected_texts = {
+            selected_descriptions = {
                 _normalize(code.description)
                 for code in selected_codes
                 if code.description
             }
 
-            unselected_code_texts = {
+            unselected_descriptions = {
                 _normalize(code.description)
                 for code in all_codes
                 if code.description
-            } - selected_texts
+            } - selected_descriptions
 
-            existing_lines = _split_lines(order.description)
+            root = html.fragment_fromstring(
+                str(order.description or ""),
+                create_parent="div",
+            )
 
-            # Remove all descriptions belonging to damage codes
-            # that are no longer selected.
-            kept_lines = [
-                line
-                for line in existing_lines
-                if _line_text(line) not in unselected_code_texts
-            ]
+            existing_descriptions = set()
 
-            # Keep only one copy of each existing line.
-            unique_lines = []
-            existing_texts = set()
+            # Remove blank paragraphs and descriptions of removed damage codes.
+            for element in list(root):
+                text = _normalize(element.text_content())
 
-            for line in kept_lines:
-                text = _line_text(line)
-
-                if text in existing_texts:
+                if not text:
+                    root.remove(element)
                     continue
 
-                unique_lines.append(line)
-                existing_texts.add(text)
+                if text in unselected_descriptions:
+                    root.remove(element)
+                    continue
 
-            # Add selected code descriptions only when not already present.
-            generated_descriptions = []
+                existing_descriptions.add(text)
 
+            # Add only descriptions of newly selected codes.
             for code in selected_codes:
                 clean_description = (code.description or "").strip()
                 description_text = _normalize(clean_description)
 
-                if not description_text or description_text in existing_texts:
+                if not description_text or description_text in existing_descriptions:
                     continue
 
-                unique_lines.append(
-                    str(escape(clean_description))
-                )
-                existing_texts.add(description_text)
+                paragraph = html.Element("div")
+                paragraph.set("class", "o-paragraph")
+                paragraph.text = clean_description
 
-            order.description = Markup("".join(unique_lines))
+                root.append(paragraph)
+                existing_descriptions.add(description_text)
+
+            order.description = Markup(
+                "".join(
+                    html.tostring(
+                        element,
+                        encoding="unicode",
+                        with_tail=False,
+                    )
+                    for element in root
+                )
+            )
