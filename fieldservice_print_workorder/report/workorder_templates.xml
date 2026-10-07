@@ -183,7 +183,7 @@
                             <tr>
                                 <!-- Small marker/number on the far left -->
                                 <td style="padding:2px 0; text-align:left;">
-                                    <span style="font-size:9px;">w</span>
+                                    <span style="font-size:9px;"></span>
                                 </td>
 
                                 <!-- Activity name: no column heading -->
@@ -222,7 +222,7 @@
                 <table style="margin-top:6px;">
                     <tr>
                         <td style="width:10%; vertical-align:top;" class="lbl">Extra<br/>work<br/>and<br/>mat.:</td>
-                        <td style="width:90%">
+                        <td style="width:100%">
                             <div class="extra-box"><t t-if="order.description"><span t-field="order.description"/></t></div>
                         </td>
                     </tr>
