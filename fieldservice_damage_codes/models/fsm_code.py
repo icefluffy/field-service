@@ -152,21 +152,15 @@ class FSMOrder(models.Model):
             generated_descriptions = []
 
             for code in selected_codes:
-                description_text = _normalize(code.description)
+                clean_description = (code.description or "").strip()
+                description_text = _normalize(clean_description)
 
                 if not description_text or description_text in existing_texts:
                     continue
 
-                generated_descriptions.append(
-                    str(escape((code.description or "").strip()))
+                unique_lines.append(
+                    str(escape(clean_description))
                 )
                 existing_texts.add(description_text)
 
-            if generated_descriptions:
-                unique_lines.append(
-                    '<span>'
-                    + "<br/>".join(generated_descriptions)
-                    + "</span>"
-                )
-
-            order.description = Markup("".join(unique_lines))
+            order.description = Markup("<br/>".join(unique_lines))
