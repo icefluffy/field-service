@@ -164,7 +164,7 @@ class FSMOrder(models.Model):
 
             if generated_descriptions:
                 unique_lines.append(
-                    '<span style="line-height:1.2;">'
+                    '<span>'
                     + "<br/>".join(generated_descriptions)
                     + "</span>"
                 )
