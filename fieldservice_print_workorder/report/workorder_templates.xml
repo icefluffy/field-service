@@ -19,6 +19,7 @@
             <style>
                 .wo { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000; }
                 .wo table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+                .wo .code-descriptions { border: 1px solid #000; min-height: 55px; padding: 4px; font-size: 11px; }
                 .wo td { vertical-align: middle; padding: 2px 3px; }
                 .wo .title { font-size: 22px; font-weight: bold; }
                 .wo .lbl { font-weight: bold; font-size: 12px; white-space: nowrap; }
@@ -165,9 +166,15 @@
 
                 <table style="margin-top:6px;">
                     <tr>
-                        <td style="width:8%; vertical-align:top;" class="lbl">Code<br/>descriptions:</td>
-                        <td style="width:100%">
-                            <div><t t-if="order.description"><span t-field="order.description"/></t></div>
+                        <td style="width:8%; vertical-align:top;" class="lbl">
+                            Code<br/>descriptions:
+                        </td>
+                        <td style="width:92%; padding-left:0;">
+                            <div class="code-descriptions">
+                                <t t-if="order.description">
+                                    <span t-field="order.description"/>
+                                </t>
+                            </div>
                         </td>
                     </tr>
                 </table>
