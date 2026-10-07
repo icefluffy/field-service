@@ -38,8 +38,8 @@
                             </tr>
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="o.equipment_line_ids and o.equipment_line_ids[0].equipment_id">
-                                        <span t-field="o.equipment_line_ids[0].equipment_id.managed_by_id"/>
+                                    <t t-if="o.equipment_line_ids and o.equipment_line_id.equipment_id">
+                                        <span t-field="o.equipment_line_id.equipment_id.managed_by_id"/>
                                     </t>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;"><span t-field="o.customer_order_number"/></td>

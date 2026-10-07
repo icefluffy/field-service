@@ -69,6 +69,8 @@ class FsmOrder(models.Model):
     def _prepare_release_equipment_lines(self):
         self.ensure_one()
 
+        equipments = self.equipment_id or self.equipment_ids
+
         return [
             Command.create({
                 "sequence": index * 10,
@@ -76,7 +78,7 @@ class FsmOrder(models.Model):
                 "product_id": equipment.product_id.id,
                 "lot_id": equipment.lot_id.id,
             })
-            for index, equipment in enumerate(self.equipment_ids, start=1)
+            for index, equipment in enumerate(equipments, start=1)
         ]
 
     def _prepare_release_contractor_cost_lines(self):
@@ -114,7 +116,7 @@ class FsmOrder(models.Model):
         if self.release_id:
             return self.action_open_release_form()
 
-        first_equipment = self.equipment_ids[:1]
+        first_equipment = self.equipment_id or self.equipment_ids[:1]
 
         release = self.env["fsm.release"].create({
             "name": f"Release - {self.name}",
