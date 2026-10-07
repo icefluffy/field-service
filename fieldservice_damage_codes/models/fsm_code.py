@@ -156,7 +156,7 @@ class FSMOrder(models.Model):
                     continue
 
                 unique_lines.append(
-                    f"<p>{escape(code.description)}</p>"
+                    f"{escape(code.description)}<br/>"
                 )
                 existing_texts.add(description_text)
 
