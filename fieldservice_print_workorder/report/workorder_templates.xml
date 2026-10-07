@@ -146,8 +146,8 @@
                                 <tr>
                                     <td style="width:50%">
                                         <div class="box">
-                                            <t t-foreach="order.fsm_code_ids.sorted()" t-as="damage_code">
-                                                <span t-esc="damage_code.code"/>
+                                            <t t-foreach="order.fsm_code_ids.sorted('code')" t-as="damage_code">
+                                                <span t-esc="damage_code.code or '-'"/>
                                                 <t t-if="not damage_code_last">, </t>
                                             </t>
                                         </div>
