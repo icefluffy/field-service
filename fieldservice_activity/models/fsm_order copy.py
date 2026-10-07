@@ -28,8 +28,6 @@ class FSMOrder(models.Model):
                         "required": template_activity.required,
                         "ref": template_activity.ref,
                         "state": template_activity.state,
-                        "product_id": template_activity.product_id.id,
-                        "quantity": template_activity.quantity,
                     },
                 )
                 for template_activity in order.template_id.temp_activity_ids
