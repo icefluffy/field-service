@@ -1,6 +1,64 @@
+from lxml import html
 from markupsafe import Markup, escape
 
 from odoo import api, fields, models
+
+
+BLOCK_TAGS = ("p", "div", "ul", "ol", "li", "h1", "h2", "h3", "h4", "table")
+
+
+def _normalize(text):
+    """Compare text independently of extra spaces and line breaks."""
+    return " ".join((text or "").split())
+
+
+def _split_lines(description):
+    """Return the existing HTML description as individual HTML blocks."""
+    root = html.fragment_fromstring(
+        str(description or ""),
+        create_parent="div",
+    )
+
+    lines = []
+    buffer = str(escape(root.text)) if root.text else ""
+
+    for child in root:
+        if child.tag == "br" or child.tag in BLOCK_TAGS:
+            if buffer.strip():
+                lines.append(f"<p>{buffer}</p>")
+            buffer = ""
+
+            if child.tag != "br":
+                lines.append(
+                    html.tostring(
+                        child,
+                        encoding="unicode",
+                        with_tail=False,
+                    )
+                )
+        else:
+            buffer += html.tostring(
+                child,
+                encoding="unicode",
+                with_tail=False,
+            )
+
+        if child.tail:
+            buffer += str(escape(child.tail))
+
+    if buffer.strip():
+        lines.append(f"<p>{buffer}</p>")
+
+    return lines
+
+
+def _line_text(line):
+    """Extract normalized plain text from one HTML block."""
+    block = html.fragment_fromstring(
+        line,
+        create_parent="div",
+    )
+    return _normalize(block.text_content())
 
 
 class FSMCode(models.Model):
@@ -39,6 +97,7 @@ class FSMCode(models.Model):
         ),
     ]
 
+
 class FSMOrder(models.Model):
     _inherit = "fsm.order"
 
@@ -49,8 +108,56 @@ class FSMOrder(models.Model):
 
     @api.onchange("fsm_code_ids")
     def _onchange_fsm_code_ids(self):
+        all_codes = self.env["fsm.code"].search([])
+
         for order in self:
-            order.description = Markup("<br/>").join(
-                escape(code.description or "")
-                for code in order.fsm_code_ids.sorted("code")
-            )
+            selected_codes = order.fsm_code_ids.sorted("code")
+
+            selected_texts = {
+                _normalize(code.description)
+                for code in selected_codes
+                if code.description
+            }
+
+            unselected_code_texts = {
+                _normalize(code.description)
+                for code in all_codes
+                if code.description
+            } - selected_texts
+
+            existing_lines = _split_lines(order.description)
+
+            # Remove all descriptions belonging to damage codes
+            # that are no longer selected.
+            kept_lines = [
+                line
+                for line in existing_lines
+                if _line_text(line) not in unselected_code_texts
+            ]
+
+            # Keep only one copy of each existing line.
+            unique_lines = []
+            existing_texts = set()
+
+            for line in kept_lines:
+                text = _line_text(line)
+
+                if text in existing_texts:
+                    continue
+
+                unique_lines.append(line)
+                existing_texts.add(text)
+
+            # Add selected code descriptions only when not already present.
+            for code in selected_codes:
+                description_text = _normalize(code.description)
+
+                if not description_text or description_text in existing_texts:
+                    continue
+
+                unique_lines.append(
+                    f"<p>{escape(code.description)}</p>"
+                )
+                existing_texts.add(description_text)
+
+            order.description = Markup("".join(unique_lines))
