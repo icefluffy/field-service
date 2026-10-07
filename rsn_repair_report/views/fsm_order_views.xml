@@ -1,0 +1,52 @@
+<odoo>
+    <record id="view_fsm_order_form_repair_report" model="ir.ui.view">
+        <field name="name">fsm.order.form.repair.report.inherit</field>
+        <field name="model">fsm.order</field>
+        <!-- Base form view id in OCA fieldservice 18.0 -->
+        <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Instandsetzungsbericht" name="repair_report">
+                    <group>
+                        <group string="Wagen">
+                            <field name="x_wagon_number"/>
+                            <field name="x_wagon_number_old"/>
+                            <field name="x_own_weight"/>
+                            <field name="x_fw_number"/>
+                            <field name="x_customer_order_ref"/>
+                            <field name="x_maintenance_level"/>
+                        </group>
+                        <group string="Revision / Bremse">
+                            <field name="x_revision_cycle"/>
+                            <field name="x_revision_date"/>
+                            <field name="x_revision_extension"/>
+                            <field name="x_brake_type"/>
+                            <field name="x_brake_deadline"/>
+                        </group>
+                    </group>
+                    <group string="Durchgeführte Instandsetzungsarbeiten">
+                        <field name="x_work_performed" nolabel="1"/>
+                    </group>
+                    <group string="Zurückgestellte Arbeiten">
+                        <field name="x_postponed_work" nolabel="1"/>
+                    </group>
+                    <group string="Ausgetauschte Komponenten">
+                        <field name="x_replaced_components" nolabel="1"/>
+                    </group>
+                    <group string="Sonstige Angaben">
+                        <field name="x_other_information" nolabel="1"/>
+                    </group>
+                    <group>
+                        <group string="Freigabebestätigung">
+                            <field name="x_repair_confirmed"/>
+                            <field name="x_release_confirmed"/>
+                        </group>
+                        <group string="Ausstellung">
+                            <field name="x_issue_date"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

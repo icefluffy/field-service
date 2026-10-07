@@ -89,9 +89,9 @@
                         <td style="width:10%"><div class="box-thick lbl" style="font-size:15px;">Location:</div></td>
                         <td style="width:40%"><div class="box-thick"><t t-esc="order.location_id.name or ''"/></div></td>
                         <td style="width:22%" class="right lbl">Start:</td>
-                        <td style="width:12%"><div class="box"></div></td>
+                        <td style="width:12%"><div class="box"><t t-esc="order.date_start or ''"/></div></td>
                         <td style="width:4%" class="right lbl">End:</td>
-                        <td style="width:12%"><div class="box"></div></td>
+                        <td style="width:12%"><div class="box"><t t-esc="order.date_end or ''"/></div></td>
                     </tr>
                 </table>
                 <table style="margin-top:2px;">
@@ -115,7 +115,7 @@
                         <td style="width:9%"><div class="box lbl">SO no.:</div></td>
                         <td style="width:20%"><div class="box grey right"><t t-esc="order.sale_id.client_order_ref or order.customer_reference or order.x_customer_order_ref or ''"/></div></td>
                         <td style="width:8%"><div class="box lbl">Customer:</div></td>
-                        <td style="width:38%"><div class="box"><t t-esc="customer.name if customer else ''"/></div></td>
+                        <td style="width:38%"><div class="box"><t t-esc="customer_id if customer else ''"/></div></td>
                         <td style="width:7%" class="right lbl">Line:</td>
                         <td style="width:18%"><div class="box"></div></td>
                     </tr>
