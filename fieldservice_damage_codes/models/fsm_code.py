@@ -163,4 +163,4 @@ class FSMOrder(models.Model):
                 )
                 existing_texts.add(description_text)
 
-            order.description = Markup("<br/>".join(unique_lines))
+            order.description = Markup("".join(unique_lines))
