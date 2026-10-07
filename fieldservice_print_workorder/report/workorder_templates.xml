@@ -172,6 +172,61 @@
 
                 <div class="activities">
                     <!-- Activities from the activities tab will be added here later -->
+                    <table style="margin-top:4px;">
+                        <thead>
+                            <tr>
+                                <td style="width:8%;" class="lbl center">No.</td>
+                                <td style="width:67%;" class="lbl">Activities to be executed</td>
+                                <td style="width:13%;" class="lbl center">Qty</td>
+                                <td style="width:12%;" class="lbl center">OK?</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="order.order_activity_ids.sorted('sequence')" t-as="activity">
+                                <tr>
+                                    <td class="center">
+                                        <t t-esc="activity_index + 1"/>
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="activity.name or ''"/>
+
+                                        <t t-if="activity.ref">
+                                            <span style="font-size:9px;">
+                                                — <t t-esc="activity.ref"/>
+                                            </span>
+                                        </t>
+
+                                        <t t-if="activity.product_id">
+                                            <span style="font-size:9px; font-style:italic;">
+                                                (<t t-esc="activity.product_id.display_name"/>)
+                                            </span>
+                                        </t>
+                                    </td>
+
+                                    <!-- Intentionally blank: technician writes quantity by hand. -->
+                                    <td>
+                                        <div class="box" style="height:18px;"></div>
+                                    </td>
+
+                                    <!-- Intentionally blank checkbox: technician ticks it by hand. -->
+                                    <td class="center">
+                                        <span class="ok-box"></span>
+                                    </td>
+                                </tr>
+                            </t>
+
+                            <!-- Leave handwriting space when the order has no activities. -->
+                            <t t-if="not order.order_activity_ids">
+                                <tr>
+                                    <td></td>
+                                    <td style="height:25px;"></td>
+                                    <td><div class="box" style="height:18px;"></div></td>
+                                    <td class="center"><span class="ok-box"></span></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
                 </div>
 
                 <table style="margin-top:6px;">
