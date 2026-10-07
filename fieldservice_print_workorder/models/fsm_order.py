@@ -2,6 +2,7 @@ import json
 from urllib.parse import urlencode
 
 from odoo import models
+from odoo.tools import html2plaintext
 
 
 class FSMOrder(models.Model):
@@ -14,6 +15,10 @@ class FSMOrder(models.Model):
             return self.customer_id
 
         return self.location_id.customer_id
+
+    def _get_workorder_location_directions(self):
+        self.ensure_one()
+        return html2plaintext(self.location_directions or "").strip()
 
     def action_print_workorder(self):
         self.ensure_one()
