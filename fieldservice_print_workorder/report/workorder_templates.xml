@@ -104,7 +104,7 @@
                     </tr>
                     <tr>
                         <td class="lbl"><i>Remarks:</i></td>
-                        <td><div class="box grey" style="height:28px;"><t t-esc="location_directions or ''"/></div></td>
+                        <td><div class="box grey" style="height:28px;"><t t-esc="order.location_directions or ''"/></div></td>
                     </tr>
                 </table>
 
