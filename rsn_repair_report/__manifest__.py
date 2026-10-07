@@ -9,6 +9,7 @@
     "depends": ["fieldservice"],
     "data": [
         "views/fsm_order_views.xml",
+        "views/hide_repair_report_view.xml",
         "report/repair_report_paperformat.xml",
         "report/repair_report_action.xml",
         "report/repair_report_template.xml",
