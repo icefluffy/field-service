@@ -144,7 +144,7 @@
                         <td>
                             <table>
                                 <tr>
-                                    <td style="width:50%">
+                                    <td style="width:90%">
                                         <div class="box">
                                             <t t-foreach="order.fsm_code_ids.sorted('code')" t-as="damage_code">
                                                 <span t-esc="damage_code.cd or '-'"/>
@@ -152,7 +152,7 @@
                                             </t>
                                         </div>
                                     </td>
-                                    <td style="width:50%"><div class="box"></div></td>
+                                    <td style="width:0%"><div class="box"></div></td>
                                 </tr>
                             </table>
                         </td>
