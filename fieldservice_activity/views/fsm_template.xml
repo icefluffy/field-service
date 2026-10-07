@@ -5,7 +5,7 @@
         <field name="model">fsm.template</field>
         <field name="inherit_id" ref="fieldservice.fsm_template_form_view" />
         <field name="arch" type="xml">
-            <xpath expr="//notebook/page[1]" position="after">
+            <xpath expr="//notebook/page[1]" position="before">
                 <page string="Activities">
                     <field name="temp_activity_ids" nolabel="1">
                         <list editable="bottom">
