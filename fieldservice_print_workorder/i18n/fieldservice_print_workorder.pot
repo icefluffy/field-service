@@ -1,0 +1,312 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_print_workorder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260119\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 16:18+0000\n"
+"PO-Revision-Date: 2026-10-07 16:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,print_report_name:fieldservice_print_workorder.action_report_workorder
+msgid "'Work Order - %s' % (object.name)"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<br/>\n"
+"                            Address remarks:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<i>Address:</i>"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<i>Note the correct quantities. Change / add where necessary. Tick OK ONLY "
+"if completed, otherwise leave BLANK.</i>"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<i>Remarks:</i>"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"cb\"/>NO"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"cb\"/>NOT PERFORMED"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<span class=\"cb\"/>Work performed but other work still to be carried out, "
+"object is NOT ready"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"cb\"/>YES"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"lbl\">Planned date:</span>"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"title\">Work Order</span>"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<span style=\"font-weight:bold;\">Qty:</span>\n"
+"                                    <span class=\"box\" style=\"display:inline-block; width:34px; height:17px; padding:0 2px; margin-left:3px;\"/>"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"A freight wagon marked as OK must comply with the requirements of the order "
+"and, as a minimum, for work according to GCU, with the requirements of GCU "
+"Annex 10, or, for work according to VPI and insofar as the data is known, "
+"with VPI 01 Annex 19 (present, complete and legible markings, pictograms and"
+" warning signs; underframe and bogie visually free of cracks and "
+"deformation; buffing and draw gear visually free of cracks and deformation; "
+"axle securing compliant; brake components visually free of cracks and "
+"deformation; steps, supports, handrails, ladders and signal holders secure "
+"and visually free of cracks and deformation; drag hook, cable eye and "
+"protective bracket visually free of cracks and deformation / undamaged; "
+"wheelsets visually undamaged; brake blocks not running alongside, not "
+"broken, &gt;15 mm for cast iron, &gt;13 mm for K/LL; lubricated; revision "
+"valid; other maintenance frameworks valid)."
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Address:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "CHECK data and ADJUST where necessary."
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Code<br/>descriptions:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Codes:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Completion date:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Cr.:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Customer type:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Customer:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "End:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Extra<br/>work<br/>and<br/>mat.:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model:ir.model,name:fieldservice_print_workorder.model_fsm_order
+msgid "Field Service Order"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Full names or registered abbreviation"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Fully repaired and required inspections carried out?"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Incl. country code e.g. F-"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "KI-ID:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Keeper:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Line:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Location:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "OK?"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Object no.:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Page 1 of 1"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Print ID:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Print Preview"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Print Work Order"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Print:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Remark:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Remarks:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Revision frame:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "SO no.:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "SO:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Signature after completion:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__smart_search
+msgid "Smart Search"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Start:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Tare:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Tech<br/>Info:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Technicians:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "The technician named on the left checks and signs after completion."
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "UIC code:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "VAT:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "VW:"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,name:fieldservice_print_workorder.action_report_workorder
+msgid "Work Order"
+msgstr ""
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "kg"
+msgstr ""

@@ -1,0 +1,335 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * fieldservice_print_workorder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260119\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 16:18+0000\n"
+"PO-Revision-Date: 2026-10-07 16:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: Dutch (Belgium)\n"
+"Language: nl_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,print_report_name:fieldservice_print_workorder.action_report_workorder
+msgid "'Work Order - %s' % (object.name)"
+msgstr "'Werkbon - %s' % (object.name)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<br/>\n"
+"                            Address remarks:"
+msgstr ""
+"<br/>\n"
+"                            Opmerkingen adres:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<i>Address:</i>"
+msgstr "<i>Adres:</i>"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<i>Note the correct quantities. Change / add where necessary. Tick OK ONLY "
+"if completed, otherwise leave BLANK.</i>"
+msgstr ""
+"<i>Noteer de juiste aantallen. Wijzig / voeg toe waar nodig. Vink OK ALLEEN "
+"aan indien uitgevoerd, laat anders LEEG.</i>"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<i>Remarks:</i>"
+msgstr "<i>Opmerkingen:</i>"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"cb\"/>NO"
+msgstr "<span class=\"cb\"/>NEE"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"cb\"/>NOT PERFORMED"
+msgstr "<span class=\"cb\"/>NIET UITGEVOERD"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<span class=\"cb\"/>Work performed but other work still to be carried out, "
+"object is NOT ready"
+msgstr ""
+"<span class=\"cb\"/>Werk uitgevoerd, maar er moeten nog andere werken "
+"worden uitgevoerd; object is NIET gereed"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"cb\"/>YES"
+msgstr "<span class=\"cb\"/>JA"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"lbl\">Planned date:</span>"
+msgstr "<span class=\"lbl\">Geplande datum:</span>"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "<span class=\"title\">Work Order</span>"
+msgstr "<span class=\"title\">Werkbon</span>"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"<span style=\"font-weight:bold;\">Qty:</span>\n"
+"                                    <span class=\"box\" style=\"display:inline-block; width:34px; height:17px; padding:0 2px; margin-left:3px;\"/>"
+msgstr ""
+"<span style=\"font-weight:bold;\">Aantal:</span>\n"
+"                                    <span class=\"box\" style=\"display:inline-block; width:34px; height:17px; padding:0 2px; margin-left:3px;\"/>"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid ""
+"A freight wagon marked as OK must comply with the requirements of the order "
+"and, as a minimum, for work according to GCU, with the requirements of GCU "
+"Annex 10, or, for work according to VPI and insofar as the data is known, "
+"with VPI 01 Annex 19 (present, complete and legible markings, pictograms and"
+" warning signs; underframe and bogie visually free of cracks and "
+"deformation; buffing and draw gear visually free of cracks and deformation; "
+"axle securing compliant; brake components visually free of cracks and "
+"deformation; steps, supports, handrails, ladders and signal holders secure "
+"and visually free of cracks and deformation; drag hook, cable eye and "
+"protective bracket visually free of cracks and deformation / undamaged; "
+"wheelsets visually undamaged; brake blocks not running alongside, not "
+"broken, &gt;15 mm for cast iron, &gt;13 mm for K/LL; lubricated; revision "
+"valid; other maintenance frameworks valid)."
+msgstr ""
+"Een als OK gemarkeerde goederenwagon moet voldoen aan de vereisten van de "
+"opdracht en, minimaal, voor werkzaamheden volgens de GCU aan de vereisten "
+"van GCU-bijlage 10, of voor werkzaamheden volgens de VPI en voor zover de "
+"gegevens bekend zijn, aan VPI 01 bijlage 19 (aanwezige, volledige en "
+"leesbare opschriften, pictogrammen en waarschuwingsborden; onderstel en "
+"draaistel visueel vrij van scheuren en vervormingen; trek- en stootwerk "
+"visueel vrij van scheuren en vervormingen; asbeveiliging conform; "
+"remonderdelen visueel vrij van scheuren en vervormingen; treden, steunen, "
+"leuningen, ladders en seinhouders stevig bevestigd en visueel vrij van "
+"scheuren en vervormingen; trekhaak, kabeloog en beschermbeugel visueel vrij "
+"van scheuren en vervormingen / onbeschadigd; wielstellen visueel "
+"onbeschadigd; remblokken lopen niet aan, niet gebroken, &gt;15 mm voor "
+"gietijzer, &gt;13 mm voor K/LL; gesmeerd; revisie geldig; andere "
+"onderhoudskaders geldig)."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Address:"
+msgstr "Adres:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "CHECK data and ADJUST where necessary."
+msgstr "CONTROLEER gegevens en PAS aan waar nodig."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Code<br/>descriptions:"
+msgstr "Code-<br/>omschrijvingen:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Codes:"
+msgstr "Codes:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Completion date:"
+msgstr "Datum voltooiing:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Cr.:"
+msgstr "Aang.:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Customer type:"
+msgstr "Klanttype:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Customer:"
+msgstr "Klant:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "End:"
+msgstr "Einde:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Extra<br/>work<br/>and<br/>mat.:"
+msgstr "Extra<br/>werk<br/>en<br/>mat.:"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model,name:fieldservice_print_workorder.model_fsm_order
+msgid "Field Service Order"
+msgstr "Veldserviceopdracht"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Full names or registered abbreviation"
+msgstr "Volledige namen of geregistreerde afkorting"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Fully repaired and required inspections carried out?"
+msgstr "Volledig hersteld en vereiste controles uitgevoerd?"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Incl. country code e.g. F-"
+msgstr "Incl. landcode, bv. F-"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "KI-ID:"
+msgstr "KI-ID:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Keeper:"
+msgstr "Houder:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Line:"
+msgstr "Lijn:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Location:"
+msgstr "Plaats:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "OK?"
+msgstr "OK?"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Object no.:"
+msgstr "Voorwerpnr.:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Page 1 of 1"
+msgstr "Pagina 1 van 1"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Print ID:"
+msgstr "Afdruk-ID:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Print Preview"
+msgstr "Afdrukvoorbeeld"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Print Work Order"
+msgstr "Werkbon afdrukken"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Print:"
+msgstr "Afdruk:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Remark:"
+msgstr "Opmerking:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Remarks:"
+msgstr "Opmerkingen:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Revision frame:"
+msgstr "Revisiekader:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "SO no.:"
+msgstr "SO-nr.:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "SO:"
+msgstr "SO:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Signature after completion:"
+msgstr "Handtekening na voltooiing:"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__smart_search
+msgid "Smart Search"
+msgstr "Slim zoeken"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Start:"
+msgstr "Start:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Tare:"
+msgstr "Tarra:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Tech<br/>Info:"
+msgstr "Tech.<br/>info:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "Technicians:"
+msgstr "Technici:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "The technician named on the left checks and signs after completion."
+msgstr "De links vermelde technicus controleert en ondertekent na voltooiing."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "UIC code:"
+msgstr "UIC-code:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "VAT:"
+msgstr "BTW:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "VW:"
+msgstr "VW:"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,name:fieldservice_print_workorder.action_report_workorder
+msgid "Work Order"
+msgstr "Werkbon"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
+msgid "kg"
+msgstr "kg"
