@@ -170,64 +170,54 @@
                     </tr>
                 </table>
 
-                <div class="activities">
-                    <!-- Activities from the activities tab will be added here later -->
-                    <table style="margin-top:4px;">
-                        <thead>
+                <table class="activities" style="width:100%; margin-top:4px; table-layout:fixed;">
+                    <colgroup>
+                        <col style="width:3%;"/>
+                        <col style="width:72%;"/>
+                        <col style="width:17%;"/>
+                        <col style="width:8%;"/>
+                    </colgroup>
+
+                    <tbody>
+                        <t t-foreach="order.order_activity_ids.sorted('sequence')" t-as="activity">
                             <tr>
-                                <td style="width:8%;" class="lbl center">No.</td>
-                                <td style="width:67%;" class="lbl">Activities to be executed</td>
-                                <td style="width:13%;" class="lbl center">Qty</td>
-                                <td style="width:12%;" class="lbl center">OK?</td>
+                                <!-- Small marker/number on the far left -->
+                                <td style="padding:2px 0; text-align:left;">
+                                    <span style="font-size:9px;">w</span>
+                                </td>
+
+                                <!-- Activity name: no column heading -->
+                                <td style="padding:2px 3px; font-size:12px;">
+                                    <t t-esc="activity.name or ''"/>
+
+                                    <t t-if="activity.ref">
+                                        <span style="font-size:9px;">
+                                            — <t t-esc="activity.ref"/>
+                                        </span>
+                                    </t>
+
+                                    <t t-if="activity.product_id">
+                                        <span style="font-size:9px; font-style:italic;">
+                                            (<t t-esc="activity.product_id.display_name"/>)
+                                        </span>
+                                    </t>
+                                </td>
+
+                                <!-- Qty label in front of the box -->
+                                <td style="padding:2px 3px; white-space:nowrap; font-size:11px;">
+                                    <span style="font-weight:bold;">Qty:</span>
+                                    <span class="box"
+                                        style="display:inline-block; width:34px; height:17px; padding:0 2px; margin-left:3px;"></span>
+                                </td>
+
+                                <!-- Only the checkbox, no extra OK heading -->
+                                <td style="padding:2px 0; text-align:right;">
+                                    <span class="ok-box"></span>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <t t-foreach="order.order_activity_ids.sorted('sequence')" t-as="activity">
-                                <tr>
-                                    <td class="center">
-                                        <t t-esc="activity_index + 1"/>
-                                    </td>
-
-                                    <td>
-                                        <t t-esc="activity.name or ''"/>
-
-                                        <t t-if="activity.ref">
-                                            <span style="font-size:9px;">
-                                                — <t t-esc="activity.ref"/>
-                                            </span>
-                                        </t>
-
-                                        <t t-if="activity.product_id">
-                                            <span style="font-size:9px; font-style:italic;">
-                                                (<t t-esc="activity.product_id.display_name"/>)
-                                            </span>
-                                        </t>
-                                    </td>
-
-                                    <!-- Intentionally blank: technician writes quantity by hand. -->
-                                    <td>
-                                        <div class="box" style="height:18px;"></div>
-                                    </td>
-
-                                    <!-- Intentionally blank checkbox: technician ticks it by hand. -->
-                                    <td class="center">
-                                        <span class="ok-box"></span>
-                                    </td>
-                                </tr>
-                            </t>
-
-                            <!-- Leave handwriting space when the order has no activities. -->
-                            <t t-if="not order.order_activity_ids">
-                                <tr>
-                                    <td></td>
-                                    <td style="height:25px;"></td>
-                                    <td><div class="box" style="height:18px;"></div></td>
-                                    <td class="center"><span class="ok-box"></span></td>
-                                </tr>
-                            </t>
-                        </tbody>
-                    </table>
-                </div>
+                        </t>
+                    </tbody>
+                </table>
 
                 <table style="margin-top:6px;">
                     <tr>
