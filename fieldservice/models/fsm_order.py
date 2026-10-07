@@ -277,6 +277,11 @@ class FSMOrder(models.Model):
         store=True,
         readonly=False,
     )
+    equipment_id = fields.Many2one(
+    "fsm.equipment",
+    string="Equipment",
+    ondelete="restrict",
+    )   
     type = fields.Many2one("fsm.order.type")
 
     internal_type = fields.Selection(related="type.internal_type")
@@ -454,6 +459,21 @@ class FSMOrder(models.Model):
                 self.type = self.template_id.type_id
             if self.template_id.team_id:
                 self.team_id = self.template_id.team_id
+
+    @api.onchange("equipment_id")
+    def _onchange_equipment_id_sync_equipment_ids(self):
+        for order in self:
+            order.equipment_ids = (
+                [Command.set([order.equipment_id.id])]
+                if order.equipment_id
+                else [Command.clear()]
+            )
+
+
+    @api.onchange("equipment_ids")
+    def _onchange_equipment_ids_sync_equipment_id(self):
+        for order in self:
+            order.equipment_id = order.equipment_ids[:1]
 
     def _get_location_directions(self, location_id):  # pragma: no cover
         # TODO(migration): Remove this method
