@@ -4,6 +4,7 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-set="o" t-value="o.with_context(lang=user.lang)"/>
+                <t t-set="equipment" t-value="o.fsm_order_id.equipment_id or o.equipment_line_ids[:1].equipment_id"/>
                 <t t-call="web.basic_layout">
                     <div class="page" style="font-size:11px; font-family:Arial, sans-serif; color:#000;">
                         <h2 style="text-decoration:underline; margin-bottom:10px;">
@@ -24,7 +25,7 @@
                             </tr>
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="o.equipment_line_ids">
+                                    <t t-if="equipment">
                                         <span t-field="o.wagennummer_formatted"/>
                                     </t>
                                 </td>
@@ -38,8 +39,8 @@
                             </tr>
                             <tr>
                                 <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="o.equipment_line_ids and o.equipment_line_id.equipment_id">
-                                        <span t-field="o.equipment_line_id.equipment_id.managed_by_id"/>
+                                    <t t-if="equipment and equipment.managed_by_id">
+                                        <span t-field="equipment.managed_by_id.name"/>
                                     </t>
                                 </td>
                                 <td style="border:1px solid #000; padding:4px;"><span t-field="o.customer_order_number"/></td>
