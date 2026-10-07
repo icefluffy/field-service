@@ -169,10 +169,22 @@
 
             <xpath expr="//form/sheet/group/group/field[@name='location_id']"
                 position="after">
-                <field name="equipment_ids"
+                <field
+                    name="equipment_ids"
                     string="Equipment"
+                    widget="many2many_tags"
                     options="{'no_quick_create': True}"
-                    groups="fieldservice.group_fsm_equipment"/>
+                    groups="fieldservice.group_fsm_equipment"
+                    invisible="1"
+                />
+
+                <field
+                    name="equipment_id"
+                    string="Equipment"
+                    readonly="1"
+                    options="{'no_create': True, 'no_create_edit': True}"
+                    groups="fieldservice.group_fsm_equipment"
+                />
             </xpath>
 
             <xpath expr="//page[@name='equipements_page']"
