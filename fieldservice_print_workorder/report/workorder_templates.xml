@@ -89,7 +89,7 @@
                         <td style="width:10%"><div class="box-thick lbl" style="font-size:15px;">Location:</div></td>
                         <td style="width:40%"><div class="box-thick"><t t-esc="order.location_id.name or ''"/></div></td>
                         <td style="width:22%" class="right lbl">Start:</td>
-                        <td style="width:12%"><div class="box"><t t-esc="order.date_start or ''"/></div></td>
+                        <td style="width:12%"><div class="box"><t t-esc="order.date_start or 'none'"/></div></td>
                         <td style="width:4%" class="right lbl">End:</td>
                         <td style="width:12%"><div class="box"><t t-esc="order.date_end or ''"/></div></td>
                     </tr>
