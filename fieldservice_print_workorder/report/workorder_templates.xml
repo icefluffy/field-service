@@ -152,7 +152,7 @@
                                             </t>
                                         </div>
                                     </td>
-                                    <td style="width:0%"><div class="box"></div></td>
+                                    <td style="width:0%" hidden="true"></td>
                                 </tr>
                             </table>
                         </td>
