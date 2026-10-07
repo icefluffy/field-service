@@ -274,9 +274,9 @@
                                         <td style="width:12%" class="lbl">Keeper:</td>
                                         <td style="width:34%">
                                             <table><tr>
-                                                <td style="width:20%"><div class="box"></div></td>
-                                                <td style="width:5%">-</td>
-                                                <td style="width:75%"><div class="box"></div></td>
+                                                <td style="width:23%"><div class="box"></div></td>
+                                                <td style="width:2%">-</td>
+                                                <td style="width:75%"><div class="box"><t t-esc="order.equipment_ids[:1].managed_by_id.name or ''"/></div></td>
                                             </tr></table>
                                         </td>
                                         <td style="width:14%" class="lbl right">Revision frame:</td>
