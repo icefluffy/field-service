@@ -165,6 +165,15 @@
 
                 <table style="margin-top:6px;">
                     <tr>
+                        <td style="width:10%; vertical-align:top;" class="lbl">Code<br/>descriptions:</td>
+                        <td style="width:100%">
+                            <div class="extra-box"><t t-if="order.description"><span t-field="order.description"/></t></div>
+                        </td>
+                    </tr>
+                </table>
+
+                <table style="margin-top:6px;">
+                    <tr>
                         <td style="width:85%"><i>Note the correct quantities. Change / add where necessary. Tick OK ONLY if completed, otherwise leave BLANK.</i></td>
                         <td style="width:15%" class="right lbl">OK?</td>
                     </tr>
@@ -221,9 +230,9 @@
 
                 <table style="margin-top:6px;">
                     <tr>
-                        <td style="width:10%; vertical-align:top;" class="lbl">Extra<br/>work<br/>and<br/>mat.:</td>
+                        <td style="width:5%; vertical-align:top;" class="lbl">Extra<br/>work<br/>and<br/>mat.:</td>
                         <td style="width:100%">
-                            <div class="extra-box"><t t-if="order.description"><span t-field="order.description"/></t></div>
+                            <div class="extra-box"></div>
                         </td>
                     </tr>
                 </table>
