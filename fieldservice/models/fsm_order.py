@@ -277,6 +277,7 @@ class FSMOrder(models.Model):
         store=True,
         readonly=False,
     )
+    
     equipment_id = fields.Many2one(
     "fsm.equipment",
     string="Equipment",
