@@ -144,7 +144,14 @@
                         <td>
                             <table>
                                 <tr>
-                                    <td style="width:50%"><div class="box"></div><t t-esc="order.fsm_code_ids.sorted(key=lambda x: x.name)"/></td>
+                                    <td style="width:50%">
+                                        <div class="box">
+                                            <t t-foreach="order.fsm_code_ids.sorted()" t-as="damage_code">
+                                                <span t-esc="damage_code.code"/>
+                                                <t t-if="not damage_code_last">, </t>
+                                            </t>
+                                        </div>
+                                    </td>
                                     <td style="width:50%"><div class="box"></div></td>
                                 </tr>
                             </table>
