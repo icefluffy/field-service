@@ -20,7 +20,7 @@ class FSMOrder(models.Model):
 
     # Maak customer_id expliciet beschikbaar als related field
     customer_id = fields.Many2one(
-        related="location_id.customer_id",
+        related="order.customer_id",
         string="Customer",
         readonly=True,
     )
@@ -40,14 +40,13 @@ class FSMOrder(models.Model):
 
     def _compute_show_wheelsets_tab(self):
         for order in self:
-            # Safely retrieve the related customer.
-            customer = getattr(order, "customer_id", False)
-    
+            # Gebruik getattr om customer_id veilig te benaderen
+            customer = getattr(order, 'customer_id', False)
             if customer and "VTG" in (customer.name or ""):
                 order.show_wheelsets_tab = True
             else:
                 order.show_wheelsets_tab = False
-
+                
     def action_open_equipment(self):
         self.ensure_one()
 
