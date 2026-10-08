@@ -31,10 +31,10 @@ class FSMOrder(models.Model):
                 else False
             )
 
-    @api.depends("customer_id")
+    @api.depends("contact_id")
     def _compute_show_wheelsets_tab(self):
         for order in self:
-            customer = order.customer_id
+            customer = order.contact_id
             order.show_wheelsets_tab = bool(
                 customer and "VTG" in (customer.name or "")
             )
