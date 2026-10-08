@@ -20,7 +20,7 @@ class FSMOrder(models.Model):
 
     # Maak customer_id expliciet beschikbaar als related field
     customer_id = fields.Many2one(
-        related="order.customer_id",
+        related="customer_id",
         string="Customer",
         readonly=True,
     )
