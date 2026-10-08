@@ -18,6 +18,13 @@ class FSMOrder(models.Model):
         readonly=True,
     )
 
+    # Maak customer_id expliciet beschikbaar als related field
+    customer_id = fields.Many2one(
+        related="location_id.customer_id",
+        string="Customer",
+        readonly=True,
+    )
+    
     @api.depends("equipment_id", "equipment_ids")
     def _compute_wheelset_ids(self):
         for order in self:
@@ -31,13 +38,15 @@ class FSMOrder(models.Model):
                 else False
             )
 
-    @api.depends("contact_id")
     def _compute_show_wheelsets_tab(self):
         for order in self:
-            customer = order.contact_id
-            order.show_wheelsets_tab = bool(
-                customer and "VTG" in (customer.name or "")
-            )
+            # Safely retrieve the related customer.
+            customer = getattr(order, "customer_id", False)
+    
+            if customer and "VTG" in (customer.name or ""):
+                order.show_wheelsets_tab = True
+            else:
+                order.show_wheelsets_tab = False
 
     def action_open_equipment(self):
         self.ensure_one()
