@@ -35,7 +35,6 @@ class FSMOrder(models.Model):
         for order in self:
             # Safe whether another addon provides customer_id or not.
             customer = getattr(order, "customer_id", False)
-
             order.show_wheelsets_tab = bool(
                 customer and "VTG" in (customer.name or "")
             )
