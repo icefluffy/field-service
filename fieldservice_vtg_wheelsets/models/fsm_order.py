@@ -18,18 +18,10 @@ class FSMOrder(models.Model):
         readonly=True,
     )
 
-    # Maak customer_id expliciet beschikbaar als related field
-    customer_id = fields.Many2one(
-        related="location_id.customer_id",
-        string="Customer",
-        readonly=True,
-    )
-    
-    @api.depends("equipment_id", "equipment_ids")
+    @api.depends("equipment_ids")
     def _compute_wheelset_ids(self):
         for order in self:
-            equipment = order.equipment_id or order.equipment_ids[:1]
-
+            equipment = order.equipment_ids[:1]
             order.wheelset_ids = (
                 self.env["fsm.equipment.wheelset"].search(
                     [("equipment_id", "=", equipment.id)]
@@ -46,12 +38,11 @@ class FSMOrder(models.Model):
                 order.show_wheelsets_tab = True
             else:
                 order.show_wheelsets_tab = False
-                
+
     def action_open_equipment(self):
         self.ensure_one()
 
-        equipment = self.equipment_id or self.equipment_ids[:1]
-
+        equipment = self.equipment_ids[:1]
         if not equipment:
             raise UserError(
                 _("Select an equipment on the FSM order before opening it.")
