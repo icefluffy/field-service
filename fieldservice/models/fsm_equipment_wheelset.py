@@ -38,6 +38,7 @@ class FSMEquipmentWheelset(models.Model):
     last_input_date = fields.Date(
         string="Last Input Date",
         readonly=True,
+        default=fields.Date.context_today,
     )
 
     new_input_date = fields.Date(
@@ -47,12 +48,15 @@ class FSMEquipmentWheelset(models.Model):
     )
 
     def write(self, vals):
-        if "new_input_date" in vals:
-            for record in self:
-                record_vals = dict(vals)
-                record_vals["last_input_date"] = vals["new_input_date"]
-                record_vals.pop("new_input_date", None)
-                super(FSMEquipmentWheelset, record).write(record_vals)
-            return True
-
+        vals = dict(vals)
+    
+        # New Input Date is not stored itself. Use its entered value when it was
+        # changed; otherwise use today's date whenever the wheelset is updated.
+        input_date = vals.pop("new_input_date", None)
+    
+        if input_date:
+            vals["last_input_date"] = input_date
+        elif vals:
+            vals["last_input_date"] = fields.Date.context_today(self)
+    
         return super().write(vals)
