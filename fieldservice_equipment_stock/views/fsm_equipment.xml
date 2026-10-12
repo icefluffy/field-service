@@ -13,7 +13,8 @@
                         context="{'default_product_id': product_id}"
                         required="1"
                     />
-                    <field name="current_stock_location_id" />
+                    <field name="lot_properties" nolabel="1" columns="2"/>
+                    <field name="current_stock_location_id" />                    
                 </group>
             </group>
         </field>

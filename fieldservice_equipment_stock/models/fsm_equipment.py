@@ -11,6 +11,12 @@ class FSMEquipment(models.Model):
 
     product_id = fields.Many2one("product.product", string="Product")
     lot_id = fields.Many2one("stock.lot", string="Serial #")
+    lot_properties = fields.Properties(
+        string="Lot Properties",
+        related="lot_id.lot_properties",
+        definition="product_id.lot_properties_definition",
+        readonly=True,
+    )
     current_stock_location_id = fields.Many2one(
         "stock.location",
         string="Current Inventory Location",
