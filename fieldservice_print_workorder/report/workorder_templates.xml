@@ -15,8 +15,8 @@
             <t t-set="raw" t-value="(order.equipment_id.lot_id.name or '').replace(' ', '').replace('-', '')"/>
             <t t-set="wagon" t-value="(raw[0:2] + ' ' + raw[2:4] + ' ' + raw[4:8] + ' ' + raw[8:11] + ' ' + raw[11:]) if len(raw) == 12 else raw"/>
             <t t-set="workers" t-value="', '.join((order.person_id | order.person_ids).mapped('name'))"/>
-            <t t-set="lot" t-value="order.equipment_id.lot_id if order.equipment_id else order.equipment_ids[:1].lot_id"/>
-            <pre><t t-set="lot_props" t-value="lot.lot_properties if lot else {}"/></pre>
+            <t t-set="equipment" t-value="order.equipment_id or order.equipment_ids[:1]"/>
+            <t t-set="lot_props" t-value="equipment.lot_properties or {} if equipment else {}"/>
 
             <style>
                 .wo { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000; }
@@ -286,7 +286,7 @@
                                     </tr>
                                     <tr>
                                         <td class="lbl">UIC code:</td>
-                                        <td><div class="box"><t t-esc="lot_props.get('uic_code', '')"/></div></td>
+                                        <td><div class="box"><pre t-esc="lot_props"/>and<t t-esc="lot_props.get('uic_code', '')"/></div></td>
                                         <td class="lbl right">Tare:</td>
                                         <td>
                                             <table><tr>
