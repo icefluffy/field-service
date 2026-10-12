@@ -143,6 +143,7 @@
                             <t t-if="o.work_performed">
                                 <div style="margin-bottom:6px;"><span t-field="o.work_performed"/></div>
                             </t>
+                            <!--
                             <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
                                 <t t-if="activity.state == 'done'">
                                     <div style="margin-bottom:3px;">
@@ -151,6 +152,7 @@
                                     </div>
                                 </t>
                             </t>
+                            -->
                             <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
                                 <div style="display:block; clear:both; margin-bottom:3px;">
                                     <span t-field="cost_line.product_id"/> <span> — </span>
