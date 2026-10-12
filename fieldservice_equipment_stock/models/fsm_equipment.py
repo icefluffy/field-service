@@ -15,7 +15,7 @@ class FSMEquipment(models.Model):
         string="Lot Properties",
         related="lot_id.lot_properties",
         definition="product_id.lot_properties_definition",
-        readonly=True,
+        readonly=False,
     )
     current_stock_location_id = fields.Many2one(
         "stock.location",
