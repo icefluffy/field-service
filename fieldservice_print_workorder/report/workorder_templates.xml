@@ -286,11 +286,11 @@
                                     </tr>
                                     <tr>
                                         <td class="lbl">UIC code:</td>
-                                        <td><div class="box"><pre t-esc="lot_props"/>and<t t-esc="lot_props.get('uic_code', '')"/></div></td>
+                                        <td><div class="box"><t t-esc="order.uic_code_print or ''"/></div></td>
                                         <td class="lbl right">Tare:</td>
                                         <td>
                                             <table><tr>
-                                                <td style="width:45%"><div class="box"><t t-esc="lot_props.get('tare', '')"/></div></td>
+                                                <td style="width:45%"><div class="box"><t t-esc="order.tare_print or ''"/></div></td>
                                                 <td style="width:55%">&#160;kg</td>
                                             </tr></table>
                                         </td>
