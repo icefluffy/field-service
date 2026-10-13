@@ -43,7 +43,7 @@
                                         <span t-field="equipment.managed_by_id.name"/>
                                     </t>
                                 </td>
-                                <td style="border:1px solid #000; padding:4px;"><span t-field=""order.sale_id.client_order_ref or order.customer_reference or order.x_customer_order_ref or ''"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="order.sale_id.client_order_ref or order.customer_reference or order.x_customer_order_ref or ''"/></td>
                                 <td style="border:1px solid #000; padding:4px;">
                                     <span t-field="o.actual_release_date" t-options='{"widget": "date"}'/>
                                 </td>
