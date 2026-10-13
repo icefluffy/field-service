@@ -129,6 +129,10 @@ class FsmRelease(models.Model):
         string="Maintenance Level Performed",
     )
 
+    revision_type = fields.Char(
+        string="Revision Type",
+    )
+
     revision_cycle = fields.Char(
         string="Revision Cycle",
     )
