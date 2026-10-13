@@ -16,6 +16,7 @@
         <t t-set="equipment" t-value="o.fsm_order_id.equipment_id or o.equipment_line_ids[:1].equipment_id"/>
         <t t-call="web.basic_layout">
                     <div class="page" style="font-size:11px; font-family:Arial, sans-serif; color:#000;">
+                        <div>DEBUG lang: <t t-out="lang"/> / <t t-out="o.env.lang"/></div>
                         <h2 style="text-decoration:underline; margin-bottom:10px;">
                             Mobile Repair Report
                         </h2>
