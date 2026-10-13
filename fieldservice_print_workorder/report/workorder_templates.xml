@@ -282,7 +282,7 @@
                                             </tr></table>
                                         </td>
                                         <td style="width:14%" class="lbl right">Revision frame:</td>
-                                        <td style="width:40%"><div class="box"><t t-esc="order.x_revision_cycle or ''"/> <t t-if="order.x_revision_date"><t t-esc="order.x_revision_date"/></t></div></td>
+                                        <td style="width:40%"><div class="box"><t t-esc="order.revision_frame_print or ''"/></div></td>
                                     </tr>
                                     <tr>
                                         <td class="lbl">UIC code:</td>
