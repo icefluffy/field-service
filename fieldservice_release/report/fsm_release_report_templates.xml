@@ -92,7 +92,7 @@
                                         <t t-if="o.wagon_number_old"><span t-field="o.wagon_number_old"/></t>
                                     </td>
                                     <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.own_weight"><span t-field="o.own_weight"/> kg</t>
+                                        <t t-if="o.fsm_order_id.tare_print"><t t-out="o.fsm_order_id.tare_print"/> kg</t>
                                     </td>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Revision</td>
                                     <td style="border:1px solid #000; padding:4px;"></td>
