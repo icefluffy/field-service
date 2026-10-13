@@ -197,7 +197,7 @@ class FsmRelease(models.Model):
 
         query = urlencode({
             "context": json.dumps({
-                "lang": self.partner_id.lang or self.env.user.lang or "en_US",
+                "lang": self.partner_id.lang or self.env.user.lang or "nl_BE",
             }),
             "force_context_lang": "1",
         })
