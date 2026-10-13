@@ -95,7 +95,9 @@
                                         <t t-out="o.fsm_order_id.tare_print or o.own_weight or ''"/>
                                     </td>
                                     <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Revision</td>
-                                    <td style="border:1px solid #000; padding:4px;"></td>
+                                    <td style="border:1px solid #000; padding:4px;">
+                                        <t t-if="o.revision_type"><span t-field="o.revision_type"/></t>
+                                    </td>
                                     <td style="border:1px solid #000; padding:4px;">
                                         <t t-if="o.revision_cycle"><span t-field="o.revision_cycle"/></t>
                                     </td>
