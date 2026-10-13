@@ -14,6 +14,9 @@ class FSMOrder(models.Model):
     tare_print = fields.Char(
         compute="_compute_equipment_property_values",
     )
+    revision_frame_print = fields.Char(
+        compute="_compute_equipment_property_values",
+    )
 
     @api.depends(
         "equipment_id",
@@ -44,7 +47,8 @@ class FSMOrder(models.Model):
 
             order.uic_code_print = str(values.get("uic code") or "")
             order.tare_print = str(values.get("tare") or "")
-
+            order.revision_frame_print = str(values.get("revision frame") or "")
+    
     def _get_workorder_customer(self):
         self.ensure_one()
 
