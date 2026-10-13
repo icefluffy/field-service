@@ -2,10 +2,19 @@
 <odoo>
     <template id="report_fsm_release_document">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <t t-set="o" t-value="o.with_context(lang=user.lang)"/>
-                <t t-set="equipment" t-value="o.fsm_order_id.equipment_id or o.equipment_line_ids[:1].equipment_id"/>
-                <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="lang" t-value="doc.partner_id.lang
+                    or doc.fsm_order_id.location_id.partner_id.lang
+                    or doc.env.user.lang"/>
+                <t t-call="fieldservice_release.report_fsm_release_page" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+    
+    <template id="report_fsm_release_page">
+        <t t-set="o" t-value="doc.with_context(lang=lang)"/>
+        <t t-set="equipment" t-value="o.fsm_order_id.equipment_id or o.equipment_line_ids[:1].equipment_id"/>
+        <t t-call="web.basic_layout">
                     <div class="page" style="font-size:11px; font-family:Arial, sans-serif; color:#000;">
                         <h2 style="text-decoration:underline; margin-bottom:10px;">
                             Mobile Repair Report
