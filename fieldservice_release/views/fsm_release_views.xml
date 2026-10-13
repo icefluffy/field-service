@@ -73,6 +73,7 @@
                             <field name="maintenance_level"/>
                         </group>
                         <group string="Revision / Brakes">
+                            <field name="revision_type"/>
                             <field name="revision_cycle"/>
                             <field name="revision_date"/>
                             <field name="revision_extension"/>
