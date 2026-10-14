@@ -176,7 +176,7 @@ def deploy():
             raise RuntimeError(f"Files for {name} changed after preparation. Pending list retained; review files before continuing.")
     print("Pending Git commit: " + pending["commit"])
     print("Modules: " + ", ".join(sorted(pending["modules"])))
-    if input("Has odoo18 restarted since these files were copied? [yes/no]: ").strip().lower() != "yes":
+    if input("Has odoo18 restarted since these files were copied? [yes/no]: ").strip().lower() not in {"y", "yes"}:
         print("Restart odoo18 first. Pending list retained.")
         return 1
     call = connect()
