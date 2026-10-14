@@ -1,13 +1,10 @@
 # Translation of Odoo Server.
-
-# This file contains the translation of the following modules:
-#	* fieldservice
-#
+# Module: fieldservice
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-10-14 16:28+0000\n"
+"PO-Revision-Date: 2026-10-14 16:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_BE\n"
@@ -15,1855 +12,1851 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Perplexity\n"
-
-msgid ""
-msgstr ""
 
 msgid "# Meetings"
-msgstr ""
+msgstr "# Vergaderingen"
 
 msgid "# Opportunities"
-msgstr ""
+msgstr "# Verkoopkansen"
 
 msgid "# Vendor Bills"
-msgstr ""
+msgstr "# Leveranciersfacturen"
 
 msgid "# of Owned Locations"
-msgstr ""
+msgstr "# Eigen locaties"
 
 msgid "'Service Order - %s' % (object.name)"
-msgstr ""
+msgstr "'Werkorder - %s' % (object.name)"
 
 msgid "<span>Reporting</span>"
-msgstr ""
+msgstr "<span>Rapportering</span>"
 
 msgid "<span>View</span>"
-msgstr ""
+msgstr "<span>Weergeven</span>"
 
 msgid "<strong>Assigned To:</strong>"
-msgstr ""
+msgstr "<strong>Toegewezen aan:</strong>"
 
 msgid "<strong>Date Completed:</strong>"
-msgstr ""
+msgstr "<strong>Datum voltooid:</strong>"
 
 msgid "<strong>ETA:</strong>"
-msgstr ""
+msgstr "<strong>Verwachte aankomsttijd:</strong>"
 
 msgid "<strong>The contact linked to this user is still active</strong>"
-msgstr ""
+msgstr "<strong>De contactpersoon die aan deze gebruiker is gekoppeld, is nog actief</strong>"
 
 msgid "A Field Service Location related to that partner already exists."
-msgstr ""
+msgstr "Er bestaat al een Buitendienstlocatie voor deze contactpersoon."
 
 msgid "A Field Service Worker related to that partner already exists."
-msgstr ""
+msgstr "Er bestaat al een Buitendienstmedewerker voor deze contactpersoon."
 
 msgid "Account Payable"
-msgstr ""
+msgstr "Crediteurenrekening"
 
 msgid "Account Receivable"
-msgstr ""
+msgstr "Debiteurenrekening"
 
 msgid "Action Needed"
-msgstr ""
+msgstr "Actie vereist"
 
 msgid "Active"
-msgstr ""
+msgstr "Actief"
 
 msgid "Active Lang Count"
-msgstr ""
+msgstr "Aantal actieve talen"
 
 msgid "Activities"
-msgstr ""
+msgstr "Activiteiten"
 
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoreren van uitzonderingsactiviteit"
 
 msgid "Activity State"
-msgstr ""
+msgstr "Activiteitsstatus"
 
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Pictogram activiteitstype"
 
 msgid "Actual End"
-msgstr ""
+msgstr "Werkelijk einde"
 
 msgid "Actual Start"
-msgstr ""
+msgstr "Werkelijke start"
 
 msgid "Actual duration"
-msgstr ""
+msgstr "Werkelijke duur"
 
 msgid "Actual duration in hours"
-msgstr ""
+msgstr "Werkelijke duur in uren"
 
 msgid "Add Field Service Workers here."
-msgstr ""
+msgstr "Voeg hier Buitendienstmedewerkers toe."
 
 msgid "Add a Field Service Equipment here."
-msgstr ""
+msgstr "Voeg hier Buitendienstapparatuur toe."
 
 msgid "Add a Field Service Worker Category here."
-msgstr ""
+msgstr "Voeg hier een categorie Buitendienstmedewerkers toe."
 
 msgid "Add a description for the order..."
-msgstr ""
+msgstr "Voeg een omschrijving voor de werkorder toe..."
 
 msgid "Add a description..."
-msgstr ""
+msgstr "Voeg een omschrijving toe..."
 
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 msgid "Address Type"
-msgstr ""
+msgstr "Adrestype"
 
-msgid ""
-msgstr ""
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Administratieve indelingen van een land, bijvoorbeeld deelstaat, departement of kanton."
 
 msgid "Agreements"
-msgstr ""
+msgstr "Overeenkomsten"
 
 msgid "Agreements Count"
-msgstr ""
+msgstr "Aantal overeenkomsten"
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "All Orders"
-msgstr ""
+msgstr "Alle werkorders"
 
-msgid ""
-msgstr ""
+msgid "All the emails and documents sent to this contact will be translated in this language."
+msgstr "Alle e-mails en documenten die naar deze contactpersoon worden verzonden, worden in deze taal vertaald."
 
 msgid "Allow Field Service Google Map"
-msgstr ""
+msgstr "Google Maps voor Buitendienst inschakelen"
 
 msgid "Allow Field Service Google Maps"
-msgstr ""
+msgstr "Google Maps voor Buitendienst inschakelen"
 
 msgid "Allow Field Service Web Timeline View"
-msgstr ""
+msgstr "Tijdlijnweergave voor Buitendienst inschakelen"
 
 msgid "Archived"
-msgstr ""
+msgstr "Gearchiveerd"
 
 msgid "Assigned Location"
-msgstr ""
+msgstr "Toegewezen locatie"
 
 msgid "Assigned Operator"
-msgstr ""
+msgstr "Toegewezen monteur"
 
 msgid "Assigned To"
-msgstr ""
+msgstr "Toegewezen aan"
 
 msgid "Attachment Count"
-msgstr ""
+msgstr "Aantal bijlagen"
 
 msgid "Auto-fill the equipments on the order"
-msgstr ""
+msgstr "Apparatuur automatisch invullen op de werkorder"
 
 msgid "Auto-fill the workers on the location"
-msgstr ""
+msgstr "Medewerkers automatisch invullen op de locatie"
 
 msgid "Auto-populate Equipments on Order based on Location"
-msgstr ""
+msgstr "Apparatuur automatisch toevoegen aan werkorder op basis van locatie"
 
 msgid "Auto-populate Workers on Location based on Territory"
-msgstr ""
+msgstr "Medewerkers automatisch toevoegen aan locatie op basis van gebied"
 
 msgid "Auto-populate equipments on Order based on the Location"
-msgstr ""
+msgstr "Apparatuur automatisch toevoegen aan werkorder op basis van de locatie"
 
 msgid "Auto-populate the equipments on the order based on the location content"
-msgstr ""
+msgstr "Apparatuur automatisch toevoegen aan de werkorder op basis van de inhoud van de locatie"
 
-msgid ""
-msgstr ""
+msgid "Auto-populate the preferred workers of a location based on the territory"
+msgstr "Voorkeursmedewerkers van een locatie automatisch toevoegen op basis van het gebied"
 
 msgid "Auto-post bills"
-msgstr ""
+msgstr "Facturen automatisch boeken"
 
-msgid ""
-msgstr ""
+msgid "Automatically creates a day route when an order is assigned and scheduled"
+msgstr "Maakt automatisch een dagroute aan wanneer een werkorder wordt toegewezen en gepland"
 
 msgid "Automatically post bills for this trusted partner"
-msgstr ""
+msgstr "Facturen voor deze vertrouwde contactpersoon automatisch boeken"
 
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 msgid "Avatar 1024"
-msgstr ""
+msgstr "Avatar 1024"
 
 msgid "Avatar 128"
-msgstr ""
+msgstr "Avatar 128"
 
 msgid "Avatar 256"
-msgstr ""
+msgstr "Avatar 256"
 
 msgid "Avatar 512"
-msgstr ""
+msgstr "Avatar 512"
 
 msgid "Bank"
-msgstr ""
+msgstr "Bank"
 
 msgid "Banks"
-msgstr ""
+msgstr "Banken"
 
 msgid "Barcode"
-msgstr ""
+msgstr "Streepjescode"
 
 msgid "Blacklist"
-msgstr ""
+msgstr "Zwarte lijst"
 
 msgid "Blacklisted Phone Is Mobile"
-msgstr ""
+msgstr "Geblokkeerd telefoonnummer is mobiel"
 
 msgid "Blacklisted Phone is Phone"
-msgstr ""
+msgstr "Geblokkeerd telefoonnummer is vast nummer"
 
 msgid "Bounce"
-msgstr ""
+msgstr "Bounce"
 
 msgid "Branch"
-msgstr ""
+msgstr "Vestiging"
 
 msgid "Branch Manager"
-msgstr ""
+msgstr "Vestigingsmanager"
 
 msgid "CRM"
-msgstr ""
+msgstr "CRM"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 msgid "Cancel Order"
-msgstr ""
+msgstr "Werkorder annuleren"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Geannuleerd"
 
-msgid ""
-msgstr ""
+msgid "Cannot create FSM Stage because it has the same Type and Sequence of an existing FSM Stage."
+msgstr "De Buitendienststatus kan niet worden aangemaakt omdat er al een status met hetzelfde type en dezelfde volgorde bestaat."
 
 msgid "Cannot move to completed from Kanban"
-msgstr ""
+msgstr "Kan niet vanuit Kanban naar voltooid worden verplaatst"
 
 msgid "Categories"
-msgstr ""
+msgstr "Categorieën"
 
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 msgid "Category name already exists!"
-msgstr ""
+msgstr "De categorienaam bestaat al!"
 
 msgid "Change Management"
-msgstr ""
+msgstr "Wijzigingsbeheer"
 
 msgid "Channels"
-msgstr ""
+msgstr "Kanalen"
 
 msgid "Check collected payments"
-msgstr ""
+msgstr "Ontvangen betalingen controleren"
 
 msgid "Check if the contact is a company, otherwise it is a person"
-msgstr ""
+msgstr "Vink aan als de contactpersoon een bedrijf is; anders is het een persoon"
 
 msgid "Check inventory"
-msgstr ""
+msgstr "Voorraad controleren"
 
 msgid "Check the amount collected by the worker during the route"
-msgstr ""
+msgstr "Controleer het door de medewerker tijdens de route ontvangen bedrag"
 
 msgid "Check the amount collected during the route"
-msgstr ""
+msgstr "Controleer het tijdens de route ontvangen bedrag"
 
 msgid "Check the inventory of the vehicle at the end of the route"
-msgstr ""
+msgstr "Controleer aan het einde van de route de voorraad in het voertuig"
 
 msgid "Check this box if this contact is an Employee."
-msgstr ""
+msgstr "Vink aan als deze contactpersoon een werknemer is."
 
 msgid "Children"
-msgstr ""
+msgstr "Onderliggende apparatuur"
 
 msgid "Children Locations"
-msgstr ""
+msgstr "Onderliggende locaties"
 
 msgid "Choose a team to be set on orders of this template"
-msgstr ""
+msgstr "Kies een team dat wordt ingesteld op werkorders van deze sjabloon"
 
 msgid "City"
-msgstr ""
+msgstr "Gemeente"
 
 msgid "Classify and analyze your orders"
-msgstr ""
+msgstr "Classificeer en analyseer uw werkorders"
 
 msgid "Color Code"
-msgstr ""
+msgstr "Kleurcode"
 
 msgid "Color Index"
-msgstr ""
+msgstr "Kleurindex"
 
 msgid "Color code should be Hex Code. Ex:-#FFFFFF"
-msgstr ""
+msgstr "De kleurcode moet een hexadecimale code zijn, bijvoorbeeld #FFFFFF"
 
 msgid "Commercial Entity"
-msgstr ""
+msgstr "Commerciële entiteit"
 
 msgid "Companies"
-msgstr ""
+msgstr "Bedrijven"
 
 msgid "Companies that refers to partner"
-msgstr ""
+msgstr "Bedrijven die naar deze contactpersoon verwijzen"
 
 msgid "Company"
-msgstr ""
+msgstr "Bedrijf"
 
 msgid "Company ID"
-msgstr ""
+msgstr "Bedrijfsnummer"
 
 msgid "Company ID Label"
-msgstr ""
+msgstr "Label bedrijfsnummer"
 
 msgid "Company Name"
-msgstr ""
+msgstr "Bedrijfsnaam"
 
 msgid "Company Name Entity"
-msgstr ""
+msgstr "Bedrijfsnaam entiteit"
 
 msgid "Company Type"
-msgstr ""
+msgstr "Bedrijfstype"
 
 msgid "Company related to this category"
-msgstr ""
+msgstr "Bedrijf gekoppeld aan deze categorie"
 
 msgid "Company related to this equipment"
-msgstr ""
+msgstr "Bedrijf gekoppeld aan deze apparatuur"
 
 msgid "Company related to this order"
-msgstr ""
+msgstr "Bedrijf gekoppeld aan deze werkorder"
 
 msgid "Company related to this tag"
-msgstr ""
+msgstr "Bedrijf gekoppeld aan deze tag"
 
 msgid "Company related to this team"
-msgstr ""
+msgstr "Bedrijf gekoppeld aan dit team"
 
 msgid "Company related to this template"
-msgstr ""
+msgstr "Bedrijf gekoppeld aan deze sjabloon"
 
 msgid "Complete"
-msgstr ""
+msgstr "Voltooien"
 
 msgid "Complete Address"
-msgstr ""
+msgstr "Volledig adres"
 
 msgid "Complete Direction"
-msgstr ""
+msgstr "Volledige routebeschrijving"
 
 msgid "Complete Name"
-msgstr ""
+msgstr "Volledige naam"
 
 msgid "Completed"
-msgstr ""
+msgstr "Voltooid"
 
 msgid "Compute Localization"
-msgstr ""
+msgstr "Locatie berekenen"
 
 msgid "Compute based on address"
-msgstr ""
+msgstr "Berekenen op basis van adres"
 
 msgid "Config Settings"
-msgstr ""
+msgstr "Configuratie-instellingen"
 
 msgid "Configuration"
-msgstr ""
+msgstr "Configuratie"
 
 msgid "Contact"
-msgstr ""
+msgstr "Contactpersoon"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Contactpersonen"
 
 msgid "Contacts Count"
-msgstr ""
+msgstr "Aantal contactpersonen"
 
 msgid "Convert"
-msgstr ""
+msgstr "Converteren"
 
 msgid "Convert to FSM Record"
-msgstr ""
+msgstr "Converteren naar Buitendienstrecord"
 
 msgid "Convert to a Field Service Worker or Location"
-msgstr ""
+msgstr "Converteren naar een Buitendienstmedewerker of locatie"
 
 msgid "Counter of the number of bounced emails for this contact"
-msgstr ""
+msgstr "Teller van het aantal bounced e-mails voor deze contactpersoon"
 
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 msgid "Country Code"
-msgstr ""
+msgstr "Landcode"
 
 msgid "Create FSM Orders from Opportunities"
-msgstr ""
+msgstr "Buitendienstwerkorders aanmaken vanuit verkoopkansen"
 
 msgid "Create a Customer."
-msgstr ""
+msgstr "Maak een klant aan."
 
 msgid "Create a Service Location"
-msgstr ""
+msgstr "Maak een servicelocatie aan"
 
 msgid "Create a Stage."
-msgstr ""
+msgstr "Maak een status aan."
 
 msgid "Create a new team"
-msgstr ""
+msgstr "Maak een nieuw team aan"
 
 msgid "Create a tag."
-msgstr ""
+msgstr "Maak een tag aan."
 
 msgid "Create an Order."
-msgstr ""
+msgstr "Maak een werkorder aan."
 
 msgid "Create an order template"
-msgstr ""
+msgstr "Maak een werkordersjabloon aan"
 
 msgid "Create multiple FSM Locations at once using Location Builder Wizard"
-msgstr ""
+msgstr "Maak meerdere Buitendienstlocaties tegelijk aan met de wizard Locatiebouwer"
 
 msgid "Create the linked locations of a worker."
-msgstr ""
+msgstr "Maak de gekoppelde locaties van een medewerker aan."
 
-msgid ""
-msgstr ""
+msgid "Create vendor bills and customer invoices when completing service orders."
+msgstr "Maak leveranciersfacturen en klantfacturen aan bij het voltooien van werkorders."
 
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 msgid "Credit Limit"
-msgstr ""
+msgstr "Kredietlimiet"
 
 msgid "Credit To Invoice"
-msgstr ""
+msgstr "Te factureren krediet"
 
 msgid "Credit limit specific to this partner."
-msgstr ""
+msgstr "Kredietlimiet specifiek voor deze contactpersoon."
 
 msgid "Currency"
-msgstr ""
+msgstr "Valuta"
 
 msgid "Current Date"
-msgstr ""
+msgstr "Huidige datum"
 
 msgid "Current Location"
-msgstr ""
+msgstr "Huidige locatie"
 
 msgid "Customer Location"
-msgstr ""
+msgstr "Klantlocatie"
 
 msgid "Customer Payment Terms"
-msgstr ""
+msgstr "Betalingsvoorwaarden klant"
 
 msgid "Customer Rank"
-msgstr ""
+msgstr "Klantclassificatie"
 
 msgid "Customer Signature"
-msgstr ""
+msgstr "Handtekening klant"
 
 msgid "Customers"
-msgstr ""
+msgstr "Klanten"
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 msgid "Days Sales Outstanding (DSO)"
-msgstr ""
+msgstr "Gemiddelde incassoperiode (DSO)"
 
 msgid "Default Team"
-msgstr ""
+msgstr "Standaardteam"
 
 msgid "Default duration in hours"
-msgstr ""
+msgstr "Standaardduur in uren"
 
 msgid "Default team assigned to orders in this location"
-msgstr ""
+msgstr "Standaardteam dat wordt toegewezen aan werkorders op deze locatie"
 
 msgid "Degree of trust you have in this debtor"
-msgstr ""
+msgstr "Mate van vertrouwen in deze debiteur"
 
 msgid "Deprecated Parent"
-msgstr ""
+msgstr "Verouderde bovenliggende locatie"
 
 msgid "Description"
-msgstr ""
+msgstr "Omschrijving"
 
 msgid "Direction"
-msgstr ""
+msgstr "Routebeschrijving"
 
 msgid "Directions"
-msgstr ""
+msgstr "Routebeschrijvingen"
 
 msgid "Dispatcher"
-msgstr ""
+msgstr "Dispatcher"
 
 msgid "Display Invoice Edi Format"
-msgstr ""
+msgstr "EDI-factuurformaat weergeven"
 
 msgid "Display Invoice Template Pdf Report"
-msgstr ""
+msgstr "PDF-factuursjabloonrapport weergeven"
 
 msgid "Display Name"
-msgstr ""
+msgstr "Weergavenaam"
 
 msgid "Display locations and orders on a map with Google Maps"
-msgstr ""
+msgstr "Locaties en werkorders op een kaart weergeven met Google Maps"
 
 msgid "Display locations and orders on a map with OpenStreetMap"
-msgstr ""
+msgstr "Locaties en werkorders op een kaart weergeven met OpenStreetMap"
 
 msgid "District"
-msgstr ""
+msgstr "District"
 
 msgid "District Manager"
-msgstr ""
+msgstr "Districtsmanager"
 
 msgid "Done"
-msgstr ""
+msgstr "Klaar"
 
 msgid "Due Within 30 Days"
-msgstr ""
+msgstr "Vervalt binnen 30 dagen"
 
 msgid "Due Within 7 Days"
-msgstr ""
+msgstr "Vervalt binnen 7 dagen"
 
 msgid "Duplicate Bank Partner"
-msgstr ""
+msgstr "Dubbele bankcontactpersoon"
 
 msgid "Duplicated Bank Account Partners Count"
-msgstr ""
+msgstr "Aantal contactpersonen met dubbele bankrekening"
 
 msgid "Duration"
-msgstr ""
+msgstr "Duur"
 
 msgid "Earliest Request Date"
-msgstr ""
+msgstr "Vroegste aanvraagdatum"
 
 msgid "Edit"
-msgstr ""
+msgstr "Bewerken"
 
-msgid ""
-msgstr ""
+msgid "Either customer (not a user), either shared user. Indicated the current partner is a customer without access or with a limited access created for sharing data."
+msgstr "Of klant (geen gebruiker), of gedeelde gebruiker. Geeft aan dat de huidige contactpersoon een klant is zonder toegang of met beperkte toegang, aangemaakt voor het delen van gegevens."
 
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Employee"
-msgstr ""
+msgstr "Werknemer"
 
 msgid "Employees"
-msgstr ""
+msgstr "Werknemers"
 
 msgid "Employees Count"
-msgstr ""
+msgstr "Aantal werknemers"
 
 msgid "Enter the resolution for the order..."
-msgstr ""
+msgstr "Voer de oplossing voor de werkorder in..."
 
 msgid "Equipment"
-msgstr ""
+msgstr "Apparatuur"
 
 msgid "Equipment name already exists!"
-msgstr ""
+msgstr "De naam van de apparatuur bestaat al!"
 
 msgid "Equipment-1"
-msgstr ""
+msgstr "Apparatuur-1"
 
 msgid "Equipment-2"
-msgstr ""
+msgstr "Apparatuur-2"
 
 msgid "Equipment-3"
-msgstr ""
+msgstr "Apparatuur-3"
 
 msgid "Equipments"
-msgstr ""
+msgstr "Apparatuur"
 
 msgid "Equipments Report"
-msgstr ""
+msgstr "Apparatuurrapport"
 
 msgid "Execution"
-msgstr ""
+msgstr "Uitvoering"
 
-msgid ""
-msgstr ""
+msgid "Explanation text to help users using the star and priority mechanism on stages or orders that are in this stage."
+msgstr "Uitleg om gebruikers te helpen bij het gebruik van de ster- en prioriteitsmechanismen voor statussen of werkorders in deze status."
 
 msgid "FS Order #"
-msgstr ""
+msgstr "Buitendienstwerkorder #"
 
 msgid "FSM"
-msgstr ""
+msgstr "Buitendienst"
 
 msgid "FSM Equipment Name"
-msgstr ""
+msgstr "Naam Buitendienstapparatuur"
 
 msgid "FSM Location Builder"
-msgstr ""
+msgstr "Buitendienstlocatiebouwer"
 
 msgid "FSM Locations"
-msgstr ""
+msgstr "Buitendienstlocaties"
 
 msgid "FSM Order Name"
-msgstr ""
+msgstr "Naam Buitendienstwerkorder"
 
 msgid "FSM Order Sign Wizard"
-msgstr ""
+msgstr "Wizard handtekening Buitendienstwerkorder"
 
 msgid "FSM Orders"
-msgstr ""
+msgstr "Buitendienstwerkorders"
 
 msgid "FSM Person Calendar Filter"
-msgstr ""
+msgstr "Agenda-filter Buitendienstmedewerker"
 
 msgid "FSM Record Conversion"
-msgstr ""
+msgstr "Conversie Buitendienstrecord"
 
 msgid "FSM Worker"
-msgstr ""
+msgstr "Buitendienstmedewerker"
 
 msgid "Field Service"
-msgstr ""
+msgstr "Buitendienst"
 
 msgid "Field Service Category"
-msgstr ""
+msgstr "Buitendienstcategorie"
 
 msgid "Field Service Equipment"
-msgstr ""
+msgstr "Buitendienstapparatuur"
 
 msgid "Field Service Location"
-msgstr ""
+msgstr "Buitendienstlocatie"
 
 msgid "Field Service Location Person Info"
-msgstr ""
+msgstr "Informatie Buitendienstlocatie-medewerker"
 
 msgid "Field Service Order"
-msgstr ""
+msgstr "Buitendienstwerkorder"
 
 msgid "Field Service Order Template"
-msgstr ""
+msgstr "Sjabloon Buitendienstwerkorder"
 
 msgid "Field Service Order Type"
-msgstr ""
+msgstr "Type Buitendienstwerkorder"
 
 msgid "Field Service Stage"
-msgstr ""
+msgstr "Buitendienststatus"
 
 msgid "Field Service Tag"
-msgstr ""
+msgstr "Buitendiensttag"
 
 msgid "Field Service Team"
-msgstr ""
+msgstr "Buitendienstteam"
 
 msgid "Field Service Worker"
-msgstr ""
+msgstr "Buitendienstmedewerker"
 
 msgid "Field Service Worker Category"
-msgstr ""
+msgstr "Categorie Buitendienstmedewerker"
 
 msgid "Field Service Workers"
-msgstr ""
+msgstr "Buitendienstmedewerkers"
 
-msgid ""
-msgstr ""
+msgid "Field used to store sanitized phone number. Helps speeding up searches and comparisons."
+msgstr "Veld voor het opslaan van een gestandaardiseerd telefoonnummer. Versnelt zoeken en vergelijken."
 
 msgid "Fiscal Country Codes"
-msgstr ""
+msgstr "Fiscale landcodes"
 
 msgid "Fiscal Position"
-msgstr ""
+msgstr "Fiscale positie"
 
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Ingeklapt in Kanban"
 
 msgid "Followers"
-msgstr ""
+msgstr "Volgers"
 
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Volgers (contactpersonen)"
 
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font Awesome-pictogram, bijvoorbeeld fa-tasks"
 
 msgid "Format email address \"Name <email@domain>\""
-msgstr ""
+msgstr "Opmaak e-mailadres \"Naam <e-mail@domein>\""
 
 msgid "Formatted Email"
-msgstr ""
+msgstr "Opgemaakte e-mail"
 
 msgid "Fsm Model Mixin"
-msgstr ""
+msgstr "Buitendienstmodel-mixin"
 
 msgid "Full Name"
-msgstr ""
+msgstr "Volledige naam"
 
 msgid "Future Orders"
-msgstr ""
+msgstr "Toekomstige werkorders"
 
 msgid "GLN"
-msgstr ""
+msgstr "GLN"
 
 msgid "General Notes"
-msgstr ""
+msgstr "Algemene opmerkingen"
 
 msgid "Geo Latitude"
-msgstr ""
+msgstr "Geografische breedtegraad"
 
 msgid "Geo Location"
-msgstr ""
+msgstr "Geolocatie"
 
 msgid "Geo Longitude"
-msgstr ""
+msgstr "Geografische lengtegraad"
 
 msgid "Geolocation"
-msgstr ""
+msgstr "Geolocatie"
 
 msgid "Geolocation Date"
-msgstr ""
+msgstr "Datum geolocatie"
 
 msgid "Global Location Number"
-msgstr ""
+msgstr "Globaal locatienummer"
 
 msgid "Group By"
-msgstr ""
+msgstr "Groeperen op"
 
 msgid "Has Message"
-msgstr ""
+msgstr "Heeft bericht"
 
 msgid "Hide"
-msgstr ""
+msgstr "Verbergen"
 
 msgid "High"
-msgstr ""
+msgstr "Hoog"
 
 msgid "Hours of Buffer for High Priority FS Orders"
-msgstr ""
+msgstr "Bufferuren voor Buitendienstwerkorders met hoge prioriteit"
 
 msgid "Hours of Buffer for Low Priority FS Orders"
-msgstr ""
+msgstr "Bufferuren voor Buitendienstwerkorders met lage prioriteit"
 
 msgid "Hours of Buffer for Lowest Priority FS Orders"
-msgstr ""
+msgstr "Bufferuren voor Buitendienstwerkorders met de laagste prioriteit"
 
 msgid "Hours of Buffer for Medium Priority FS Orders"
-msgstr ""
+msgstr "Bufferuren voor Buitendienstwerkorders met gemiddelde prioriteit"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "IM Status"
-msgstr ""
+msgstr "Chatstatus"
 
 msgid "Icon"
-msgstr ""
+msgstr "Pictogram"
 
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Pictogram om een uitzonderingsactiviteit aan te geven."
 
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Indien aangevinkt vereisen nieuwe berichten uw aandacht."
 
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Indien aangevinkt hebben sommige berichten een bezorgfout."
 
-msgid ""
-msgstr ""
+msgid "If the email address is on the blacklist, the contact won't receive mass mailing anymore, from any list"
+msgstr "Als het e-mailadres op de zwarte lijst staat, ontvangt de contactpersoon geen massale e-mail meer vanuit een lijst"
 
-msgid ""
-msgstr ""
+msgid "If the sanitized phone number is on the blacklist, the contact won't receive mass mailing sms anymore, from any list"
+msgstr "Als het gestandaardiseerde telefoonnummer op de zwarte lijst staat, ontvangt de contactpersoon geen massale sms meer vanuit een lijst"
 
 msgid "Ignore Abnormal Invoice Amount"
-msgstr ""
+msgstr "Afwijkend factuurbedrag negeren"
 
 msgid "Ignore Abnormal Invoice Date"
-msgstr ""
+msgstr "Afwijkende factuurdatum negeren"
 
 msgid "Image"
-msgstr ""
+msgstr "Afbeelding"
 
 msgid "Image 1024"
-msgstr ""
+msgstr "Afbeelding 1024"
 
 msgid "Image 128"
-msgstr ""
+msgstr "Afbeelding 128"
 
 msgid "Image 256"
-msgstr ""
+msgstr "Afbeelding 256"
 
 msgid "Image 512"
-msgstr ""
+msgstr "Afbeelding 512"
 
-msgid ""
-msgstr ""
+msgid "Indicates if a blacklisted sanitized phone number is a mobile number. Helps distinguish which number is blacklisted when there is both a mobile and phone field in a model."
+msgstr "Geeft aan of een op de zwarte lijst geplaatst gestandaardiseerd telefoonnummer een mobiel nummer is. Helpt onderscheid maken welk nummer is geblokkeerd wanneer een model zowel een mobiel- als telefoonveld heeft."
 
-msgid ""
-msgstr ""
+msgid "Indicates if a blacklisted sanitized phone number is a phone number. Helps distinguish which number is blacklisted when there is both a mobile and phone field in a model."
+msgstr "Geeft aan of een op de zwarte lijst geplaatst gestandaardiseerd telefoonnummer een vast nummer is. Helpt onderscheid maken welk nummer is geblokkeerd wanneer een model zowel een mobiel- als telefoonveld heeft."
 
 msgid "Industry"
-msgstr ""
+msgstr "Bedrijfstak"
 
 msgid "Inlined Complete Address"
-msgstr ""
+msgstr "Volledig adres op één regel"
 
 msgid "Instructions"
-msgstr ""
+msgstr "Instructies"
 
 msgid "Internal Type"
-msgstr ""
+msgstr "Intern type"
 
 msgid "Invoice"
-msgstr ""
+msgstr "Factuur"
 
 msgid "Invoice Edi Format Store"
-msgstr ""
+msgstr "Opslag EDI-factuurformaat"
 
 msgid "Invoice sending"
-msgstr ""
+msgstr "Factuurverzending"
 
 msgid "Invoice template"
-msgstr ""
+msgstr "Factuursjabloon"
 
 msgid "Invoice your FSM orders"
-msgstr ""
+msgstr "Buitendienstwerkorders factureren"
 
 msgid "Invoice your Service Orders"
-msgstr ""
+msgstr "Uw werkorders factureren"
 
 msgid "Invoices"
-msgstr ""
+msgstr "Facturen"
 
 msgid "Is Coa Installed"
-msgstr ""
+msgstr "Is grootboekschema geïnstalleerd"
 
 msgid "Is Follower"
-msgstr ""
+msgstr "Is volger"
 
 msgid "Is Public"
-msgstr ""
+msgstr "Is openbaar"
 
 msgid "Is a Company"
-msgstr ""
+msgstr "Is een bedrijf"
 
 msgid "Is a FS Location"
-msgstr ""
+msgstr "Is een Buitendienstlocatie"
 
 msgid "Is a FS Worker"
-msgstr ""
+msgstr "Is een Buitendienstmedewerker"
 
 msgid "Is a close stage"
-msgstr ""
+msgstr "Is een afsluitende status"
 
 msgid "Is a default stage"
-msgstr ""
+msgstr "Is een standaardstatus"
 
 msgid "Is closed"
-msgstr ""
+msgstr "Is gesloten"
 
 msgid "Job Position"
-msgstr ""
+msgstr "Functie"
 
 msgid "Journal Items"
-msgstr ""
+msgstr "Boekingsregels"
 
 msgid "Language"
-msgstr ""
+msgstr "Taal"
 
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 msgid "Last notification marked as read from base Calendar"
-msgstr ""
+msgstr "Laatste melding als gelezen gemarkeerd vanuit de basisagenda"
 
 msgid "Lat:"
-msgstr ""
+msgstr "Breedtegraad:"
 
 msgid "Latest Request Date"
-msgstr ""
+msgstr "Laatste aanvraagdatum"
 
 msgid "Link FSM orders to MRP Repair orders"
-msgstr ""
+msgstr "Buitendienstwerkorders koppelen aan MRP-reparatieorders"
 
 msgid "Link FSM orders to maintenance requests"
-msgstr ""
+msgstr "Buitendienstwerkorders koppelen aan onderhoudsaanvragen"
 
 msgid "Link FSM vehicles to Fleet vehicles"
-msgstr ""
+msgstr "Buitendienstvoertuigen koppelen aan wagenparkvoertuigen"
 
 msgid "Link Field Service vehicles with Fleet vehicles"
-msgstr ""
+msgstr "Buitendienstvoertuigen koppelen aan wagenparkvoertuigen"
 
 msgid "Link to Fleet Vehicles"
-msgstr ""
+msgstr "Koppelen aan wagenparkvoertuigen"
 
 msgid "Link your FSM orders to MRP repair orders"
-msgstr ""
+msgstr "Koppel uw Buitendienstwerkorders aan MRP-reparatieorders"
 
 msgid "Link your FSM orders to Projects and Project Tasks"
-msgstr ""
+msgstr "Koppel uw Buitendienstwerkorders aan projecten en projecttaken"
 
 msgid "Link your FSM orders to maintenance requests"
-msgstr ""
+msgstr "Koppel uw Buitendienstwerkorders aan onderhoudsaanvragen"
 
 msgid "Linked Locations"
-msgstr ""
+msgstr "Gekoppelde locaties"
 
 msgid "Location"
-msgstr ""
+msgstr "Locatie"
 
 msgid "Location Directions"
-msgstr ""
+msgstr "Routebeschrijving locatie"
 
 msgid "Location Notes"
-msgstr ""
+msgstr "Locatieopmerkingen"
 
 msgid "Location Persons"
-msgstr ""
+msgstr "Locatiemedewerkers"
 
 msgid "Location Phone"
-msgstr ""
+msgstr "Telefoonnummer locatie"
 
 msgid "Location Reports."
-msgstr ""
+msgstr "Locatierapporten."
 
 msgid "Location Worker"
-msgstr ""
+msgstr "Locatiemedewerker"
 
 msgid "Location Workers"
-msgstr ""
+msgstr "Locatiemedewerkers"
 
 msgid "Location-1"
-msgstr ""
+msgstr "Locatie-1"
 
 msgid "Location-2"
-msgstr ""
+msgstr "Locatie-2"
 
 msgid "Location-3"
-msgstr ""
+msgstr "Locatie-3"
 
 msgid "Locations"
-msgstr ""
+msgstr "Locaties"
 
 msgid "Long:"
-msgstr ""
+msgstr "Lengtegraad:"
 
 msgid "Low"
-msgstr ""
+msgstr "Laag"
 
 msgid "MRP Repair"
-msgstr ""
+msgstr "MRP-reparatie"
 
 msgid "Make sure to send the right worker with the appropriate skills"
-msgstr ""
+msgstr "Zorg ervoor dat u de juiste medewerker met de juiste vaardigheden stuurt"
 
 msgid "Manage Agreements"
-msgstr ""
+msgstr "Overeenkomsten beheren"
 
 msgid "Manage Categories"
-msgstr ""
+msgstr "Categorieën beheren"
 
 msgid "Manage Distribution"
-msgstr ""
+msgstr "Distributie beheren"
 
 msgid "Manage Equipment"
-msgstr ""
+msgstr "Apparatuur beheren"
 
 msgid "Manage Equipments"
-msgstr ""
+msgstr "Apparatuur beheren"
 
 msgid "Manage FSM Activities"
-msgstr ""
+msgstr "Buitendienstactiviteiten beheren"
 
 msgid "Manage Field Service Equipment"
-msgstr ""
+msgstr "Buitendienstapparatuur beheren"
 
 msgid "Manage Field Service Order Templates"
-msgstr ""
+msgstr "Sjablonen Buitendienstwerkorders beheren"
 
 msgid "Manage Field Service Tags"
-msgstr ""
+msgstr "Buitendiensttags beheren"
 
 msgid "Manage Field Service Teams"
-msgstr ""
+msgstr "Buitendienstteams beheren"
 
 msgid "Manage Field Service Worker Categories"
-msgstr ""
+msgstr "Categorieën Buitendienstmedewerkers beheren"
 
 msgid "Manage Inventory Logistics"
-msgstr ""
+msgstr "Voorraadlogistiek beheren"
 
 msgid "Manage Maintenance Requests"
-msgstr ""
+msgstr "Onderhoudsaanvragen beheren"
 
 msgid "Manage Order Activities"
-msgstr ""
+msgstr "Werkorderactiviteiten beheren"
 
 msgid "Manage Order Sizes"
-msgstr ""
+msgstr "Werkordergroottes beheren"
 
 msgid "Manage Order Sub-Statuses"
-msgstr ""
+msgstr "Substatussen van werkorders beheren"
 
 msgid "Manage Order Templates"
-msgstr ""
+msgstr "Werkordersjablonen beheren"
 
 msgid "Manage Recurring Orders"
-msgstr ""
+msgstr "Terugkerende werkorders beheren"
 
 msgid "Manage Skills"
-msgstr ""
+msgstr "Vaardigheden beheren"
 
 msgid "Manage Sub-Statuses"
-msgstr ""
+msgstr "Substatussen beheren"
 
 msgid "Manage Tags"
-msgstr ""
+msgstr "Tags beheren"
 
 msgid "Manage Teams"
-msgstr ""
+msgstr "Teams beheren"
 
 msgid "Manage Template"
-msgstr ""
+msgstr "Sjabloon beheren"
 
 msgid "Manage Territories"
-msgstr ""
+msgstr "Gebieden beheren"
 
 msgid "Manage Territory"
-msgstr ""
+msgstr "Gebied beheren"
 
 msgid "Manage Vehicles"
-msgstr ""
+msgstr "Voertuigen beheren"
 
 msgid "Manage activities"
-msgstr ""
+msgstr "Activiteiten beheren"
 
 msgid "Manage agreements and contracts"
-msgstr ""
+msgstr "Overeenkomsten en contracten beheren"
 
 msgid "Manage different categories of Field Service workers"
-msgstr ""
+msgstr "Verschillende categorieën Buitendienstmedewerkers beheren"
 
 msgid "Manage different teams of Field Service workers"
-msgstr ""
+msgstr "Verschillende teams Buitendienstmedewerkers beheren"
 
 msgid "Manage equipments at the service location"
-msgstr ""
+msgstr "Apparatuur op de servicelocatie beheren"
 
-msgid ""
-msgstr ""
+msgid "Manage materials and stock operations. Automatically activate Lots & Serial Numbers."
+msgstr "Materialen en voorraadbewerkingen beheren. Lots en serienummers automatisch activeren."
 
 msgid "Manage recurrence of field service orders"
-msgstr ""
+msgstr "Terugkeer van Buitendienstwerkorders beheren"
 
 msgid "Manage routes"
-msgstr ""
+msgstr "Routes beheren"
 
 msgid "Manage routes of your workers"
-msgstr ""
+msgstr "Routes van uw medewerkers beheren"
 
 msgid "Manage sizes for orders and locations"
-msgstr ""
+msgstr "Groottes voor werkorders en locaties beheren"
 
 msgid "Manage sub-status of orders"
-msgstr ""
+msgstr "Substatus van werkorders beheren"
 
 msgid "Manage subcontractors and their pricelists"
-msgstr ""
+msgstr "Onderaannemers en hun prijslijsten beheren"
 
 msgid "Manage subcontractors with pricelists"
-msgstr ""
+msgstr "Onderaannemers met prijslijsten beheren"
 
 msgid "Manage tags on service orders"
-msgstr ""
+msgstr "Tags op werkorders beheren"
 
 msgid "Manage templates"
-msgstr ""
+msgstr "Sjablonen beheren"
 
 msgid "Manage territories, branches, districts and regions"
-msgstr ""
+msgstr "Gebieden, vestigingen, districten en regio's beheren"
 
 msgid "Manage vehicles for Field Service operations"
-msgstr ""
+msgstr "Voertuigen voor Buitendienstactiviteiten beheren"
 
 msgid "Manage your distribution structure"
-msgstr ""
+msgstr "Uw distributiestructuur beheren"
 
 msgid "Managed By"
-msgstr ""
+msgstr "Beheerd door"
 
 msgid "Manager"
-msgstr ""
+msgstr "Manager"
 
 msgid "Mapping Tools"
-msgstr ""
+msgstr "Kaarttools"
 
 msgid "Master Data"
-msgstr ""
+msgstr "Stamgegevens"
 
 msgid "Me"
-msgstr ""
+msgstr "Ik"
 
 msgid "Meetings"
-msgstr ""
+msgstr "Vergaderingen"
 
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Fout bij berichtbezorging"
 
 msgid "Message for Invoice"
-msgstr ""
+msgstr "Bericht voor factuur"
 
 msgid "Message for Sales Order"
-msgstr ""
+msgstr "Bericht voor verkooporder"
 
 msgid "Message for Stock Picking"
-msgstr ""
+msgstr "Bericht voor voorraadverwerking"
 
 msgid "Messages"
-msgstr ""
+msgstr "Berichten"
 
 msgid "Mobile"
-msgstr ""
+msgstr "Mobiel"
 
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Mijn activiteitdeadline"
 
 msgid "My Orders"
-msgstr ""
+msgstr "Mijn werkorders"
 
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 msgid "Need Assigned"
-msgstr ""
+msgstr "Toewijzing nodig"
 
 msgid "Need Scheduled"
-msgstr ""
+msgstr "Planning nodig"
 
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Volgende agenda-activiteit"
 
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Deadline volgende activiteit"
 
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Samenvatting volgende activiteit"
 
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Type volgende activiteit"
 
 msgid "Next Stage"
-msgstr ""
+msgstr "Volgende status"
 
 msgid "Normal"
-msgstr ""
+msgstr "Normaal"
 
 msgid "Normalized Email"
-msgstr ""
+msgstr "Gestandaardiseerde e-mail"
 
 msgid "Notes"
-msgstr ""
+msgstr "Opmerkingen"
 
 msgid "Number of Actions"
-msgstr ""
+msgstr "Aantal acties"
 
 msgid "Number of errors"
-msgstr ""
+msgstr "Aantal fouten"
 
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Aantal berichten die actie vereisen"
 
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Aantal berichten met een bezorgfout"
 
 msgid "Office Hours"
-msgstr ""
+msgstr "Kantooruren"
 
 msgid "Operations"
-msgstr ""
+msgstr "Operaties"
 
 msgid "Opportunities"
-msgstr ""
+msgstr "Verkoopkansen"
 
 msgid "Opportunity Count"
-msgstr ""
+msgstr "Aantal verkoopkansen"
 
 msgid "Order"
-msgstr ""
+msgstr "Werkorder"
 
 msgid "Order Assigned"
-msgstr ""
+msgstr "Werkorder toegewezen"
 
 msgid "Order Cancelled"
-msgstr ""
+msgstr "Werkorder geannuleerd"
 
 msgid "Order Completed"
-msgstr ""
+msgstr "Werkorder voltooid"
 
 msgid "Order Confirmed"
-msgstr ""
+msgstr "Werkorder bevestigd"
 
 msgid "Order Created"
-msgstr ""
+msgstr "Werkorder aangemaakt"
 
 msgid "Order En Route"
-msgstr ""
+msgstr "Werkorder onderweg"
 
 msgid "Order Scheduled"
-msgstr ""
+msgstr "Werkorder gepland"
 
 msgid "Order Started"
-msgstr ""
+msgstr "Werkorder gestart"
 
 msgid "Order Team"
-msgstr ""
+msgstr "Werkorderteam"
 
 msgid "Order Templates"
-msgstr ""
+msgstr "Werkordersjablonen"
 
 msgid "Order Types"
-msgstr ""
+msgstr "Werkordertypes"
 
 msgid "Order assigned"
-msgstr ""
+msgstr "Werkorder toegewezen"
 
 msgid "Order cancelled"
-msgstr ""
+msgstr "Werkorder geannuleerd"
 
 msgid "Order completed"
-msgstr ""
+msgstr "Werkorder voltooid"
 
 msgid "Order confirmed"
-msgstr ""
+msgstr "Werkorder bevestigd"
 
 msgid "Order created"
-msgstr ""
+msgstr "Werkorder aangemaakt"
 
 msgid "Order en route"
-msgstr ""
+msgstr "Werkorder onderweg"
 
 msgid "Order scheduled"
-msgstr ""
+msgstr "Werkorder gepland"
 
 msgid "Order signed by %s"
-msgstr ""
+msgstr "Werkorder ondertekend door %s"
 
 msgid "Order started"
-msgstr ""
+msgstr "Werkorder gestart"
 
 msgid "Orders"
-msgstr ""
+msgstr "Werkorders"
 
 msgid "Orders Count"
-msgstr ""
+msgstr "Aantal werkorders"
 
 msgid "Orders Reports."
-msgstr ""
+msgstr "Werkorderrapporten."
 
 msgid "Orders to Assign"
-msgstr ""
+msgstr "Toe te wijzen werkorders"
 
 msgid "Orders to Schedule"
-msgstr ""
+msgstr "Te plannen werkorders"
 
 msgid "Others"
-msgstr ""
+msgstr "Overige"
 
 msgid "Owned By"
-msgstr ""
+msgstr "Eigendom van"
 
 msgid "Owned Locations"
-msgstr ""
+msgstr "Eigen locaties"
 
 msgid "Owner"
-msgstr ""
+msgstr "Eigenaar"
 
 msgid "Parent"
-msgstr ""
+msgstr "Bovenliggend"
 
 msgid "Parent Path"
-msgstr ""
+msgstr "Bovenliggend pad"
 
 msgid "Parent name"
-msgstr ""
+msgstr "Naam bovenliggend niveau"
 
 msgid "Partner Company Registry Placeholder"
-msgstr ""
+msgstr "Placeholder bedrijfsnummer contactpersoon"
 
 msgid "Partner Contracts"
-msgstr ""
+msgstr "Contracten contactpersoon"
 
 msgid "Partner Limit"
-msgstr ""
+msgstr "Limiet contactpersoon"
 
 msgid "Partner Vat Placeholder"
-msgstr ""
+msgstr "Placeholder btw-nummer contactpersoon"
 
 msgid "Partner is Active"
-msgstr ""
+msgstr "Contactpersoon is actief"
 
 msgid "Partner with same Company Registry"
-msgstr ""
+msgstr "Contactpersoon met hetzelfde bedrijfsnummer"
 
 msgid "Partner with same Tax ID"
-msgstr ""
+msgstr "Contactpersoon met hetzelfde fiscaal nummer"
 
 msgid "Payable Limit"
-msgstr ""
+msgstr "Crediteurenlimiet"
 
 msgid "Payment Token Count"
-msgstr ""
+msgstr "Aantal betaaltokens"
 
 msgid "Payment Tokens"
-msgstr ""
+msgstr "Betaaltokens"
 
 msgid "Person Checked"
-msgstr ""
+msgstr "Persoon gecontroleerd"
 
 msgid "Phone"
-msgstr ""
+msgstr "Telefoon"
 
 msgid "Phone Blacklisted"
-msgstr ""
+msgstr "Telefoonnummer op zwarte lijst"
 
 msgid "Phone/Mobile"
-msgstr ""
+msgstr "Telefoon/Mobiel"
 
 msgid "Planning"
-msgstr ""
+msgstr "Planning"
 
 msgid "Preferred Workers"
-msgstr ""
+msgstr "Voorkeursmedewerkers"
 
-msgid ""
-msgstr ""
+msgid "Preferred payment method when buying from this vendor. This will be set by default on all outgoing payments created for this vendor"
+msgstr "Voorkeursbetaalmethode bij aankopen bij deze leverancier. Deze wordt standaard ingesteld op alle uitgaande betalingen die voor deze leverancier worden aangemaakt"
 
-msgid ""
-msgstr ""
+msgid "Preferred payment method when selling to this customer. This will be set by default on all incoming payments created for this customer"
+msgstr "Voorkeursbetaalmethode bij verkopen aan deze klant. Deze wordt standaard ingesteld op alle inkomende betalingen die voor deze klant worden aangemaakt"
 
 msgid "Previous Stage"
-msgstr ""
+msgstr "Vorige status"
 
 msgid "Pricelist"
-msgstr ""
+msgstr "Prijslijst"
 
 msgid "Primary Assignment"
-msgstr ""
+msgstr "Primaire toewijzing"
 
 msgid "Primary Contact"
-msgstr ""
+msgstr "Primaire contactpersoon"
 
 msgid "Primary Service Location"
-msgstr ""
+msgstr "Primaire servicelocatie"
 
 msgid "Priority"
-msgstr ""
+msgstr "Prioriteit"
 
 msgid "Priority Management Explanation"
-msgstr ""
+msgstr "Uitleg prioriteitsbeheer"
 
 msgid "Projects and Tasks"
-msgstr ""
+msgstr "Projecten en taken"
 
 msgid "Property Inbound Payment Method Line"
-msgstr ""
+msgstr "Regel inkomende betaalmethode"
 
 msgid "Property Outbound Payment Method Line"
-msgstr ""
+msgstr "Regel uitgaande betaalmethode"
 
 msgid "Purchase Field Services"
-msgstr ""
+msgstr "Buitendienst inkopen"
 
 msgid "Ratings"
-msgstr ""
+msgstr "Beoordelingen"
 
 msgid "Record Type"
-msgstr ""
+msgstr "Recordtype"
 
 msgid "Reference"
-msgstr ""
+msgstr "Referentie"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Vernieuwen"
 
 msgid "Refresh Localization"
-msgstr ""
+msgstr "Locatiebepaling vernieuwen"
 
 msgid "Region"
-msgstr ""
+msgstr "Regio"
 
 msgid "Region Manager"
-msgstr ""
+msgstr "Regiomanager"
 
 msgid "Related Company"
-msgstr ""
+msgstr "Gerelateerd bedrijf"
 
 msgid "Related FS Location"
-msgstr ""
+msgstr "Gerelateerde Buitendienstlocatie"
 
 msgid "Related Owner"
-msgstr ""
+msgstr "Gerelateerde eigenaar"
 
 msgid "Related Partner"
-msgstr ""
+msgstr "Gerelateerde contactpersoon"
 
 msgid "Related employees based on their private address"
-msgstr ""
+msgstr "Gerelateerde werknemers op basis van hun privéadres"
 
 msgid "Reporting"
-msgstr ""
+msgstr "Rapportering"
 
 msgid "Request Workers"
-msgstr ""
+msgstr "Medewerkers aanvragen"
 
 msgid "Require Signature"
-msgstr ""
+msgstr "Handtekening vereisen"
 
 msgid "Requirements"
-msgstr ""
+msgstr "Vereisten"
 
 msgid "Resolution"
-msgstr ""
+msgstr "Oplossing"
 
 msgid "Resolution Notes"
-msgstr ""
+msgstr "Opmerkingen oplossing"
 
 msgid "Responsible User"
-msgstr ""
+msgstr "Verantwoordelijke gebruiker"
 
 msgid "Routes"
-msgstr ""
+msgstr "Routes"
 
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Fout bij sms-bezorging"
 
 msgid "Sale Order Count"
-msgstr ""
+msgstr "Aantal verkooporders"
 
 msgid "Sales Order"
-msgstr ""
+msgstr "Verkooporder"
 
 msgid "Sales Warnings"
-msgstr ""
+msgstr "Verkoopwaarschuwingen"
 
 msgid "Salesperson"
-msgstr ""
+msgstr "Verkoper"
 
 msgid "Sanitized Number"
-msgstr ""
+msgstr "Gestandaardiseerd nummer"
 
 msgid "Schedule Details"
-msgstr ""
+msgstr "Planningsdetails"
 
 msgid "Scheduled Duration"
-msgstr ""
+msgstr "Geplande duur"
 
 msgid "Scheduled End"
-msgstr ""
+msgstr "Gepland einde"
 
 msgid "Scheduled Start (ETA)"
-msgstr ""
+msgstr "Geplande start (ETA)"
 
 msgid "Scheduled duration of the work in hours"
-msgstr ""
+msgstr "Geplande duur van het werk in uren"
 
 msgid "Search FSM Location"
-msgstr ""
+msgstr "Buitendienstlocatie zoeken"
 
 msgid "Search FSM Teams"
-msgstr ""
+msgstr "Buitendienstteams zoeken"
 
 msgid "Search FSM Workers"
-msgstr ""
+msgstr "Buitendienstmedewerkers zoeken"
 
 msgid "Search Location By Hierarchy"
-msgstr ""
+msgstr "Locatie zoeken via hiërarchie"
 
 msgid "Search Location Worker"
-msgstr ""
+msgstr "Locatiemedewerker zoeken"
 
 msgid "Search Locations based on their full hierarchy name"
-msgstr ""
+msgstr "Locaties zoeken op basis van hun volledige hiërarchische naam"
 
-msgid ""
-msgstr ""
+msgid "Select whether you want to convert this record to a Field\n                    Service Worker or Location."
+msgstr "Kies of u dit record wilt converteren naar een\n                    Buitendienstmedewerker of locatie."
 
-msgid ""
-msgstr ""
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "Met de optie \"Waarschuwing\" ontvangt de gebruiker een melding met het bericht. Met \"Blokkerend bericht\" wordt een foutmelding gegenereerd en wordt de flow geblokkeerd. Het bericht moet in het volgende veld worden ingevuld."
 
 msgid "Self"
-msgstr ""
+msgstr "Zelf"
 
 msgid "Sell FSM orders"
-msgstr ""
+msgstr "Buitendienstwerkorders verkopen"
 
 msgid "Sell Field Service Orders"
-msgstr ""
+msgstr "Buitendienstwerkorders verkopen"
 
 msgid "Sell products that generate field service orders"
-msgstr ""
+msgstr "Producten verkopen die Buitendienstwerkorders genereren"
 
 msgid "Sequence"
-msgstr ""
+msgstr "Volgorde"
 
 msgid "Service Locations"
-msgstr ""
+msgstr "Servicelocaties"
 
 msgid "Service Order"
-msgstr ""
+msgstr "Werkorder"
 
 msgid "Service Orders"
-msgstr ""
+msgstr "Werkorders"
 
 msgid "Services in this stage are considered as closed."
-msgstr ""
+msgstr "Werkorders in deze status worden als gesloten beschouwd."
 
 msgid "Set a value greater than 0.0 to activate a credit limit check"
-msgstr ""
+msgstr "Stel een waarde groter dan 0,0 in om de controle van de kredietlimiet te activeren"
 
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 msgid "Share Partner"
-msgstr ""
+msgstr "Gedeelde contactpersoon"
 
 msgid "Show Credit Limit"
-msgstr ""
+msgstr "Kredietlimiet weergeven"
 
 msgid "Sign"
-msgstr ""
+msgstr "Ondertekenen"
 
 msgid "Signature"
-msgstr ""
+msgstr "Handtekening"
 
 msgid "Signed By"
-msgstr ""
+msgstr "Ondertekend door"
 
 msgid "Signed On"
-msgstr ""
+msgstr "Ondertekend op"
 
 msgid "Signup Token Type"
-msgstr ""
+msgstr "Type registratietoken"
 
 msgid "Specific Property Product Pricelist"
-msgstr ""
+msgstr "Specifieke productprijslijst"
 
 msgid "Stage"
-msgstr ""
+msgstr "Status"
 
 msgid "Stage Color"
-msgstr ""
+msgstr "Statuskleur"
 
 msgid "Stage Description and Tooltips"
-msgstr ""
+msgstr "Statusomschrijving en tooltips"
 
 msgid "Stage Name"
-msgstr ""
+msgstr "Statusnaam"
 
 msgid "Stages"
-msgstr ""
+msgstr "Statussen"
 
 msgid "Starred Message"
-msgstr ""
+msgstr "Bericht met ster"
 
 msgid "State"
-msgstr ""
+msgstr "Staat/provincie"
 
-msgid ""
-msgstr ""
+msgid "Status based on activities\nOverdue: Due date is already passed\nToday: Activity date is today\nPlanned: Future activities."
+msgstr "Status op basis van activiteiten\nTe laat: de vervaldatum is verstreken\nVandaag: de activiteitdatum is vandaag\nGepland: toekomstige activiteiten."
 
 msgid "Stock Picking"
-msgstr ""
+msgstr "Voorraadverwerking"
 
 msgid "Street"
-msgstr ""
+msgstr "Straat"
 
 msgid "Street 2..."
-msgstr ""
+msgstr "Straat 2..."
 
 msgid "Street..."
-msgstr ""
+msgstr "Straat..."
 
 msgid "Street2"
-msgstr ""
+msgstr "Straat 2"
 
 msgid "Sub Locations"
-msgstr ""
+msgstr "Onderliggende locaties"
 
 msgid "Sub-Locations"
-msgstr ""
+msgstr "Onderliggende locaties"
 
 msgid "Supplier Rank"
-msgstr ""
+msgstr "Leveranciersclassificatie"
 
 msgid "Tag name already exists!"
-msgstr ""
+msgstr "De tagnaam bestaat al!"
 
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 msgid "Tax ID"
-msgstr ""
+msgstr "Fiscaal nummer"
 
 msgid "Tax ID Label"
-msgstr ""
+msgstr "Label fiscaal nummer"
 
 msgid "Team"
-msgstr ""
+msgstr "Team"
 
 msgid "Team Name"
-msgstr ""
+msgstr "Teamnaam"
 
 msgid "Team name already exists!"
-msgstr ""
+msgstr "De teamnaam bestaat al!"
 
 msgid "Teams"
-msgstr ""
+msgstr "Teams"
 
 msgid "Template"
-msgstr ""
+msgstr "Sjabloon"
 
 msgid "Templates"
-msgstr ""
+msgstr "Sjablonen"
 
 msgid "Territories"
-msgstr ""
+msgstr "Gebieden"
 
 msgid "Territory"
-msgstr ""
+msgstr "Gebied"
 
-msgid ""
-msgstr ""
+msgid "The ISO country code in two chars. \nYou can use this field for quick search."
+msgstr "De ISO-landcode van twee tekens.\nU kunt dit veld gebruiken voor snel zoeken."
 
-msgid ""
-msgstr ""
+msgid "The Tax Identification Number. Values here will be validated based on the country format. You can use '/' to indicate that the partner is not subject to tax."
+msgstr "Het fiscaal identificatienummer. Waarden worden gevalideerd volgens het formaat van het land. Gebruik '/' om aan te geven dat de contactpersoon niet aan btw is onderworpen."
 
-msgid ""
-msgstr ""
+msgid "The fiscal position determines the taxes/accounts used for this contact."
+msgstr "De fiscale positie bepaalt de belastingen en rekeningen die voor deze contactpersoon worden gebruikt."
 
 msgid "The internal user in charge of this contact."
-msgstr ""
+msgstr "De interne gebruiker die verantwoordelijk is voor deze contactpersoon."
 
-msgid ""
-msgstr ""
+msgid "The registry number of the company. Use it if it is different from the Tax ID. It must be unique across all partners of a same country"
+msgstr "Het registratienummer van het bedrijf. Gebruik het als het afwijkt van het fiscaal nummer. Het moet uniek zijn voor alle contactpersonen in hetzelfde land"
 
-msgid ""
-msgstr ""
+msgid "The stock location used as destination when sending goods to this contact."
+msgstr "De voorraadlocatie die als bestemming wordt gebruikt wanneer goederen naar deze contactpersoon worden verzonden."
 
-msgid ""
-msgstr ""
+msgid "The stock location used as source when receiving goods from this contact."
+msgstr "De voorraadlocatie die als bron wordt gebruikt wanneer goederen van deze contactpersoon worden ontvangen."
 
 msgid "The worker is already linked to this location."
-msgstr ""
+msgstr "De medewerker is al gekoppeld aan deze locatie."
 
-msgid ""
-msgstr ""
+msgid "This account will be used instead of the default one as the payable account for the current partner"
+msgstr "Dit account wordt in plaats van het standaardaccount gebruikt als crediteurenrekening voor de huidige contactpersoon"
 
-msgid ""
-msgstr ""
+msgid "This account will be used instead of the default one as the receivable account for the current partner"
+msgstr "Dit account wordt in plaats van het standaardaccount gebruikt als debiteurenrekening voor de huidige contactpersoon"
 
-msgid ""
-msgstr ""
+msgid "This field is used to search on email address as the primary email field can contain more than strictly an email address."
+msgstr "Dit veld wordt gebruikt om op e-mailadres te zoeken, omdat het primaire e-mailveld meer kan bevatten dan uitsluitend een e-mailadres."
 
-msgid ""
-msgstr ""
+msgid "This payment term will be used instead of the default one for purchase orders and vendor bills"
+msgstr "Deze betalingsvoorwaarde wordt in plaats van de standaardvoorwaarde gebruikt voor inkooporders en leveranciersfacturen"
 
-msgid ""
-msgstr ""
+msgid "This payment term will be used instead of the default one for sales orders and customer invoices"
+msgstr "Deze betalingsvoorwaarde wordt in plaats van de standaardvoorwaarde gebruikt voor verkooporders en klantfacturen"
 
-msgid ""
-msgstr ""
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
+msgstr "Deze prijslijst wordt in plaats van de standaardprijslijst gebruikt voor verkopen aan de huidige contactpersoon"
 
-msgid ""
-msgstr ""
+msgid "This stage is folded in the kanban view when there are no record in that stage to display."
+msgstr "Deze status is ingeklapt in de Kanban-weergave wanneer er geen records in die status zijn om weer te geven."
 
 msgid "Timezone"
-msgstr ""
+msgstr "Tijdzone"
 
 msgid "Timezone offset"
-msgstr ""
+msgstr "Tijdzoneverschil"
 
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 msgid "To Assign"
-msgstr ""
+msgstr "Toe te wijzen"
 
 msgid "To Do"
-msgstr ""
+msgstr "Te doen"
 
 msgid "To Schedule"
-msgstr ""
+msgstr "Te plannen"
 
 msgid "Today Orders"
-msgstr ""
+msgstr "Werkorders van vandaag"
 
 msgid "Total Invoiced"
-msgstr ""
+msgstr "Totaal gefactureerd"
 
 msgid "Total Payable"
-msgstr ""
+msgstr "Totaal te betalen"
 
 msgid "Total Receivable"
-msgstr ""
+msgstr "Totaal te ontvangen"
 
 msgid "Total amount this customer owes you."
-msgstr ""
+msgstr "Totaalbedrag dat deze klant aan u verschuldigd is."
 
 msgid "Total amount you have to pay to this vendor."
-msgstr ""
+msgstr "Totaalbedrag dat u aan deze leverancier moet betalen."
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type uitzonderingsactiviteit op het record."
 
 msgid "Unassigned"
-msgstr ""
+msgstr "Niet toegewezen"
 
 msgid "Unscheduled"
-msgstr ""
+msgstr "Niet gepland"
 
 msgid "Updated on:"
-msgstr ""
+msgstr "Bijgewerkt op:"
 
 msgid "Urgent"
-msgstr ""
+msgstr "Dringend"
 
 msgid "Use FSM Location Builder"
-msgstr ""
+msgstr "Buitendienstlocatiebouwer gebruiken"
 
 msgid "Use GeoEngine"
-msgstr ""
+msgstr "GeoEngine gebruiken"
 
 msgid "Use GeoEngine with OpenStreetMap"
-msgstr ""
+msgstr "GeoEngine met OpenStreetMap gebruiken"
 
 msgid "Use Hex Code only Ex:-#FFFFFF"
-msgstr ""
+msgstr "Gebruik uitsluitend een hexadecimale code, bijvoorbeeld #FFFFFF"
 
 msgid "Use Odoo Logistics"
-msgstr ""
+msgstr "Odoo Logistiek gebruiken"
 
 msgid "Use a barcode to identify this contact."
-msgstr ""
+msgstr "Gebruik een streepjescode om deze contactpersoon te identificeren."
 
 msgid "Used a default stage"
-msgstr ""
+msgstr "Gebruikt een standaardstatus"
 
 msgid "Used to order stages. Lower is better."
-msgstr ""
+msgstr "Wordt gebruikt om statussen te sorteren. Lager is beter."
 
 msgid "Used to sort teams. Lower is better."
-msgstr ""
+msgstr "Wordt gebruikt om teams te sorteren. Lager is beter."
 
 msgid "User"
-msgstr ""
+msgstr "Gebruiker"
 
 msgid "User (only own documents)"
-msgstr ""
+msgstr "Gebruiker (alleen eigen documenten)"
 
 msgid "Users"
-msgstr ""
+msgstr "Gebruikers"
 
 msgid "Vehicles"
-msgstr ""
+msgstr "Voertuigen"
 
 msgid "Vendor Location"
-msgstr ""
+msgstr "Leverancierslocatie"
 
 msgid "Vendor Payment Terms"
-msgstr ""
+msgstr "Betalingsvoorwaarden leverancier"
 
 msgid "Website Link"
-msgstr ""
+msgstr "Websitelink"
 
 msgid "Website Messages"
-msgstr ""
+msgstr "Websiteberichten"
 
 msgid "Website communication history"
-msgstr ""
+msgstr "Communicatiegeschiedenis website"
 
-msgid ""
-msgstr ""
+msgid "When printing documents and exporting/importing data, time values are computed according to this timezone.\nIf the timezone is not set, UTC (Coordinated Universal Time) is used.\nAnywhere else, time values are computed according to the time offset of your web client."
+msgstr "Bij het afdrukken van documenten en het exporteren/importeren van gegevens worden tijden berekend volgens deze tijdzone.\nAls geen tijdzone is ingesteld, wordt UTC (Coordinated Universal Time) gebruikt.\nIn alle andere gevallen worden tijden berekend volgens het tijdverschil van uw webclient."
 
-msgid ""
-msgstr ""
+msgid "Whether to ask for a Customer Signature when the order is in this stage."
+msgstr "Of om een handtekening van de klant wordt gevraagd wanneer de werkorder zich in deze status bevindt."
 
 msgid "Worker"
-msgstr ""
+msgstr "Medewerker"
 
 msgid "Worker Phone"
-msgstr ""
+msgstr "Telefoonnummer medewerker"
 
 msgid "Worker Stage 1"
-msgstr ""
+msgstr "Medewerkerstatus 1"
 
 msgid "Worker Stage 2"
-msgstr ""
+msgstr "Medewerkerstatus 2"
 
 msgid "Worker Stage 3"
-msgstr ""
+msgstr "Medewerkerstatus 3"
 
 msgid "Workers"
-msgstr ""
+msgstr "Medewerkers"
 
 msgid "Working Schedule"
-msgstr ""
+msgstr "Werkrooster"
 
-msgid ""
-msgstr ""
+msgid "You can add a description to help your coworkers understand the meaning and purpose of the stage."
+msgstr "U kunt een omschrijving toevoegen om collega's te helpen de betekenis en het doel van de status te begrijpen."
 
 msgid "You can archive the contact"
-msgstr ""
+msgstr "U kunt de contactpersoon archiveren"
 
 msgid "You cannot delete this order."
-msgstr ""
+msgstr "U kunt deze werkorder niet verwijderen."
 
 msgid "You cannot have the same worker twice."
-msgstr ""
+msgstr "U kunt dezelfde medewerker niet twee keer toevoegen."
 
 msgid "You must create an FSM order stage first."
-msgstr ""
+msgstr "U moet eerst een Buitendienstwerkorderstatus aanmaken."
 
 msgid "You must create an FSM team first."
-msgstr ""
+msgstr "U moet eerst een Buitendienstteam aanmaken."
 
 msgid "ZIP"
-msgstr ""
+msgstr "Postcode"
 
 msgid "Zip"
-msgstr ""
+msgstr "Postcode"
 
-msgid ""
-msgstr ""
+msgid "[(Total Receivable/Total Revenue) * number of days since the first invoice] for this customer"
+msgstr "[(Totaal te ontvangen/Totale omzet) * aantal dagen sinds de eerste factuur] voor deze klant"
 
 msgid "eInvoice format"
-msgstr ""
+msgstr "E-factuurformaat"
 
 msgid "tag"
-msgstr ""
+msgstr "tag"
 
 msgid "template"
-msgstr ""
+msgstr "sjabloon"

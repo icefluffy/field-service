@@ -1,13 +1,10 @@
 # Translation of Odoo Server.
-
-# This file contains the translation of the following modules:
-#	* fieldservice
-#
+# Module: fieldservice
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-10-14 16:28+0000\n"
+"PO-Revision-Date: 2026-10-14 16:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_BE\n"
@@ -15,1855 +12,1851 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Perplexity\n"
-
-msgid ""
-msgstr ""
 
 msgid "# Meetings"
-msgstr ""
+msgstr "# Réunions"
 
 msgid "# Opportunities"
-msgstr ""
+msgstr "# Opportunités"
 
 msgid "# Vendor Bills"
-msgstr ""
+msgstr "# Factures fournisseur"
 
 msgid "# of Owned Locations"
-msgstr ""
+msgstr "# Lieux d’intervention possédés"
 
 msgid "'Service Order - %s' % (object.name)"
-msgstr ""
+msgstr "'Intervention - %s' % (object.name)"
 
 msgid "<span>Reporting</span>"
-msgstr ""
+msgstr "<span>Rapports</span>"
 
 msgid "<span>View</span>"
-msgstr ""
+msgstr "<span>Afficher</span>"
 
 msgid "<strong>Assigned To:</strong>"
-msgstr ""
+msgstr "<strong>Assigné à :</strong>"
 
 msgid "<strong>Date Completed:</strong>"
-msgstr ""
+msgstr "<strong>Date de clôture :</strong>"
 
 msgid "<strong>ETA:</strong>"
-msgstr ""
+msgstr "<strong>Heure d’arrivée prévue :</strong>"
 
 msgid "<strong>The contact linked to this user is still active</strong>"
-msgstr ""
+msgstr "<strong>Le contact lié à cet utilisateur est toujours actif</strong>"
 
 msgid "A Field Service Location related to that partner already exists."
-msgstr ""
+msgstr "Un lieu d’intervention lié à ce partenaire existe déjà."
 
 msgid "A Field Service Worker related to that partner already exists."
-msgstr ""
+msgstr "Un technicien lié à ce partenaire existe déjà."
 
 msgid "Account Payable"
-msgstr ""
+msgstr "Compte fournisseur"
 
 msgid "Account Receivable"
-msgstr ""
+msgstr "Compte client"
 
 msgid "Action Needed"
-msgstr ""
+msgstr "Action requise"
 
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 msgid "Active Lang Count"
-msgstr ""
+msgstr "Nombre de langues actives"
 
 msgid "Activities"
-msgstr ""
+msgstr "Activités"
 
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Décoration de l’activité exceptionnelle"
 
 msgid "Activity State"
-msgstr ""
+msgstr "État de l’activité"
 
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icône du type d’activité"
 
 msgid "Actual End"
-msgstr ""
+msgstr "Fin réelle"
 
 msgid "Actual Start"
-msgstr ""
+msgstr "Début réel"
 
 msgid "Actual duration"
-msgstr ""
+msgstr "Durée réelle"
 
 msgid "Actual duration in hours"
-msgstr ""
+msgstr "Durée réelle en heures"
 
 msgid "Add Field Service Workers here."
-msgstr ""
+msgstr "Ajoutez ici des techniciens de service sur site."
 
 msgid "Add a Field Service Equipment here."
-msgstr ""
+msgstr "Ajoutez ici un équipement de service sur site."
 
 msgid "Add a Field Service Worker Category here."
-msgstr ""
+msgstr "Ajoutez ici une catégorie de techniciens de service sur site."
 
 msgid "Add a description for the order..."
-msgstr ""
+msgstr "Ajoutez une description pour l’intervention..."
 
 msgid "Add a description..."
-msgstr ""
+msgstr "Ajoutez une description..."
 
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 msgid "Address Type"
-msgstr ""
+msgstr "Type d’adresse"
 
-msgid ""
-msgstr ""
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Divisions administratives d’un pays, par exemple État fédéré, département ou canton."
 
 msgid "Agreements"
-msgstr ""
+msgstr "Accords"
 
 msgid "Agreements Count"
-msgstr ""
+msgstr "Nombre d’accords"
 
 msgid "All"
-msgstr ""
+msgstr "Tous"
 
 msgid "All Orders"
-msgstr ""
+msgstr "Toutes les interventions"
 
-msgid ""
-msgstr ""
+msgid "All the emails and documents sent to this contact will be translated in this language."
+msgstr "Tous les e-mails et documents envoyés à ce contact seront traduits dans cette langue."
 
 msgid "Allow Field Service Google Map"
-msgstr ""
+msgstr "Activer Google Maps pour le service sur site"
 
 msgid "Allow Field Service Google Maps"
-msgstr ""
+msgstr "Activer Google Maps pour le service sur site"
 
 msgid "Allow Field Service Web Timeline View"
-msgstr ""
+msgstr "Activer la vue chronologique web pour le service sur site"
 
 msgid "Archived"
-msgstr ""
+msgstr "Archivé"
 
 msgid "Assigned Location"
-msgstr ""
+msgstr "Lieu d’intervention assigné"
 
 msgid "Assigned Operator"
-msgstr ""
+msgstr "Technicien assigné"
 
 msgid "Assigned To"
-msgstr ""
+msgstr "Assigné à"
 
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
 
 msgid "Auto-fill the equipments on the order"
-msgstr ""
+msgstr "Remplir automatiquement les équipements sur l’intervention"
 
 msgid "Auto-fill the workers on the location"
-msgstr ""
+msgstr "Remplir automatiquement les techniciens sur le lieu d’intervention"
 
 msgid "Auto-populate Equipments on Order based on Location"
-msgstr ""
+msgstr "Ajouter automatiquement les équipements à l’intervention selon le lieu"
 
 msgid "Auto-populate Workers on Location based on Territory"
-msgstr ""
+msgstr "Ajouter automatiquement les techniciens au lieu selon le territoire"
 
 msgid "Auto-populate equipments on Order based on the Location"
-msgstr ""
+msgstr "Ajouter automatiquement les équipements à l’intervention selon le lieu"
 
 msgid "Auto-populate the equipments on the order based on the location content"
-msgstr ""
+msgstr "Ajouter automatiquement les équipements à l’intervention selon le contenu du lieu"
 
-msgid ""
-msgstr ""
+msgid "Auto-populate the preferred workers of a location based on the territory"
+msgstr "Ajouter automatiquement les techniciens préférés d’un lieu selon le territoire"
 
 msgid "Auto-post bills"
-msgstr ""
+msgstr "Comptabiliser automatiquement les factures"
 
-msgid ""
-msgstr ""
+msgid "Automatically creates a day route when an order is assigned and scheduled"
+msgstr "Crée automatiquement une tournée journalière lorsqu’une intervention est assignée et planifiée"
 
 msgid "Automatically post bills for this trusted partner"
-msgstr ""
+msgstr "Comptabilise automatiquement les factures pour ce partenaire de confiance"
 
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 msgid "Avatar 1024"
-msgstr ""
+msgstr "Avatar 1024"
 
 msgid "Avatar 128"
-msgstr ""
+msgstr "Avatar 128"
 
 msgid "Avatar 256"
-msgstr ""
+msgstr "Avatar 256"
 
 msgid "Avatar 512"
-msgstr ""
+msgstr "Avatar 512"
 
 msgid "Bank"
-msgstr ""
+msgstr "Banque"
 
 msgid "Banks"
-msgstr ""
+msgstr "Banques"
 
 msgid "Barcode"
-msgstr ""
+msgstr "Code-barres"
 
 msgid "Blacklist"
-msgstr ""
+msgstr "Liste noire"
 
 msgid "Blacklisted Phone Is Mobile"
-msgstr ""
+msgstr "Le téléphone sur liste noire est un mobile"
 
 msgid "Blacklisted Phone is Phone"
-msgstr ""
+msgstr "Le téléphone sur liste noire est un fixe"
 
 msgid "Bounce"
-msgstr ""
+msgstr "Rebond"
 
 msgid "Branch"
-msgstr ""
+msgstr "Succursale"
 
 msgid "Branch Manager"
-msgstr ""
+msgstr "Responsable de succursale"
 
 msgid "CRM"
-msgstr ""
+msgstr "CRM"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 msgid "Cancel Order"
-msgstr ""
+msgstr "Annuler l’intervention"
 
 msgid "Cancelled"
-msgstr ""
+msgstr "Annulé"
 
-msgid ""
-msgstr ""
+msgid "Cannot create FSM Stage because it has the same Type and Sequence of an existing FSM Stage."
+msgstr "Impossible de créer l’étape de service sur site car une étape existante possède déjà le même type et la même séquence."
 
 msgid "Cannot move to completed from Kanban"
-msgstr ""
+msgstr "Impossible de passer à « Terminé » depuis la vue Kanban"
 
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
 msgid "Category name already exists!"
-msgstr ""
+msgstr "Le nom de catégorie existe déjà !"
 
 msgid "Change Management"
-msgstr ""
+msgstr "Gestion des changements"
 
 msgid "Channels"
-msgstr ""
+msgstr "Canaux"
 
 msgid "Check collected payments"
-msgstr ""
+msgstr "Vérifier les paiements encaissés"
 
 msgid "Check if the contact is a company, otherwise it is a person"
-msgstr ""
+msgstr "Cochez si le contact est une société ; sinon, il s’agit d’une personne"
 
 msgid "Check inventory"
-msgstr ""
+msgstr "Vérifier le stock"
 
 msgid "Check the amount collected by the worker during the route"
-msgstr ""
+msgstr "Vérifier le montant encaissé par le technicien pendant la tournée"
 
 msgid "Check the amount collected during the route"
-msgstr ""
+msgstr "Vérifier le montant encaissé pendant la tournée"
 
 msgid "Check the inventory of the vehicle at the end of the route"
-msgstr ""
+msgstr "Vérifier le stock du véhicule à la fin de la tournée"
 
 msgid "Check this box if this contact is an Employee."
-msgstr ""
+msgstr "Cochez cette case si ce contact est un employé."
 
 msgid "Children"
-msgstr ""
+msgstr "Équipements enfants"
 
 msgid "Children Locations"
-msgstr ""
+msgstr "Lieux enfants"
 
 msgid "Choose a team to be set on orders of this template"
-msgstr ""
+msgstr "Choisissez une équipe à appliquer aux interventions de ce modèle"
 
 msgid "City"
-msgstr ""
+msgstr "Ville"
 
 msgid "Classify and analyze your orders"
-msgstr ""
+msgstr "Classez et analysez vos interventions"
 
 msgid "Color Code"
-msgstr ""
+msgstr "Code couleur"
 
 msgid "Color Index"
-msgstr ""
+msgstr "Indice de couleur"
 
 msgid "Color code should be Hex Code. Ex:-#FFFFFF"
-msgstr ""
+msgstr "Le code couleur doit être un code hexadécimal, par exemple #FFFFFF"
 
 msgid "Commercial Entity"
-msgstr ""
+msgstr "Entité commerciale"
 
 msgid "Companies"
-msgstr ""
+msgstr "Sociétés"
 
 msgid "Companies that refers to partner"
-msgstr ""
+msgstr "Sociétés liées à ce partenaire"
 
 msgid "Company"
-msgstr ""
+msgstr "Société"
 
 msgid "Company ID"
-msgstr ""
+msgstr "Numéro d’entreprise"
 
 msgid "Company ID Label"
-msgstr ""
+msgstr "Libellé du numéro d’entreprise"
 
 msgid "Company Name"
-msgstr ""
+msgstr "Nom de la société"
 
 msgid "Company Name Entity"
-msgstr ""
+msgstr "Nom commercial de la société"
 
 msgid "Company Type"
-msgstr ""
+msgstr "Type de société"
 
 msgid "Company related to this category"
-msgstr ""
+msgstr "Société liée à cette catégorie"
 
 msgid "Company related to this equipment"
-msgstr ""
+msgstr "Société liée à cet équipement"
 
 msgid "Company related to this order"
-msgstr ""
+msgstr "Société liée à cette intervention"
 
 msgid "Company related to this tag"
-msgstr ""
+msgstr "Société liée à cette étiquette"
 
 msgid "Company related to this team"
-msgstr ""
+msgstr "Société liée à cette équipe"
 
 msgid "Company related to this template"
-msgstr ""
+msgstr "Société liée à ce modèle"
 
 msgid "Complete"
-msgstr ""
+msgstr "Terminer"
 
 msgid "Complete Address"
-msgstr ""
+msgstr "Adresse complète"
 
 msgid "Complete Direction"
-msgstr ""
+msgstr "Itinéraire complet"
 
 msgid "Complete Name"
-msgstr ""
+msgstr "Nom complet"
 
 msgid "Completed"
-msgstr ""
+msgstr "Terminé"
 
 msgid "Compute Localization"
-msgstr ""
+msgstr "Calculer la localisation"
 
 msgid "Compute based on address"
-msgstr ""
+msgstr "Calculer à partir de l’adresse"
 
 msgid "Config Settings"
-msgstr ""
+msgstr "Paramètres de configuration"
 
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Contacts"
 
 msgid "Contacts Count"
-msgstr ""
+msgstr "Nombre de contacts"
 
 msgid "Convert"
-msgstr ""
+msgstr "Convertir"
 
 msgid "Convert to FSM Record"
-msgstr ""
+msgstr "Convertir en enregistrement de service sur site"
 
 msgid "Convert to a Field Service Worker or Location"
-msgstr ""
+msgstr "Convertir en technicien ou en lieu d’intervention"
 
 msgid "Counter of the number of bounced emails for this contact"
-msgstr ""
+msgstr "Compteur du nombre d’e-mails en rebond pour ce contact"
 
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 msgid "Country Code"
-msgstr ""
+msgstr "Code pays"
 
 msgid "Create FSM Orders from Opportunities"
-msgstr ""
+msgstr "Créer des interventions à partir des opportunités"
 
 msgid "Create a Customer."
-msgstr ""
+msgstr "Créez un client."
 
 msgid "Create a Service Location"
-msgstr ""
+msgstr "Créez un lieu d’intervention"
 
 msgid "Create a Stage."
-msgstr ""
+msgstr "Créez une étape."
 
 msgid "Create a new team"
-msgstr ""
+msgstr "Créez une nouvelle équipe"
 
 msgid "Create a tag."
-msgstr ""
+msgstr "Créez une étiquette."
 
 msgid "Create an Order."
-msgstr ""
+msgstr "Créez une intervention."
 
 msgid "Create an order template"
-msgstr ""
+msgstr "Créez un modèle d’intervention"
 
 msgid "Create multiple FSM Locations at once using Location Builder Wizard"
-msgstr ""
+msgstr "Créez plusieurs lieux d’intervention à la fois avec l’assistant de création de lieux"
 
 msgid "Create the linked locations of a worker."
-msgstr ""
+msgstr "Créez les lieux liés à un technicien."
 
-msgid ""
-msgstr ""
+msgid "Create vendor bills and customer invoices when completing service orders."
+msgstr "Créez des factures fournisseur et des factures client lors de la clôture des interventions."
 
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 msgid "Credit Limit"
-msgstr ""
+msgstr "Limite de crédit"
 
 msgid "Credit To Invoice"
-msgstr ""
+msgstr "Crédit à facturer"
 
 msgid "Credit limit specific to this partner."
-msgstr ""
+msgstr "Limite de crédit spécifique à ce partenaire."
 
 msgid "Currency"
-msgstr ""
+msgstr "Devise"
 
 msgid "Current Date"
-msgstr ""
+msgstr "Date du jour"
 
 msgid "Current Location"
-msgstr ""
+msgstr "Lieu actuel"
 
 msgid "Customer Location"
-msgstr ""
+msgstr "Emplacement client"
 
 msgid "Customer Payment Terms"
-msgstr ""
+msgstr "Conditions de paiement client"
 
 msgid "Customer Rank"
-msgstr ""
+msgstr "Priorité client"
 
 msgid "Customer Signature"
-msgstr ""
+msgstr "Signature du client"
 
 msgid "Customers"
-msgstr ""
+msgstr "Clients"
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Tableau de bord"
 
 msgid "Days Sales Outstanding (DSO)"
-msgstr ""
+msgstr "Délai moyen de paiement client (DSO)"
 
 msgid "Default Team"
-msgstr ""
+msgstr "Équipe par défaut"
 
 msgid "Default duration in hours"
-msgstr ""
+msgstr "Durée par défaut en heures"
 
 msgid "Default team assigned to orders in this location"
-msgstr ""
+msgstr "Équipe par défaut assignée aux interventions de ce lieu"
 
 msgid "Degree of trust you have in this debtor"
-msgstr ""
+msgstr "Niveau de confiance accordé à ce débiteur"
 
 msgid "Deprecated Parent"
-msgstr ""
+msgstr "Parent obsolète"
 
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 msgid "Direction"
-msgstr ""
+msgstr "Itinéraire"
 
 msgid "Directions"
-msgstr ""
+msgstr "Itinéraires"
 
 msgid "Dispatcher"
-msgstr ""
+msgstr "Répartiteur"
 
 msgid "Display Invoice Edi Format"
-msgstr ""
+msgstr "Afficher le format EDI de facture"
 
 msgid "Display Invoice Template Pdf Report"
-msgstr ""
+msgstr "Afficher le rapport PDF du modèle de facture"
 
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 msgid "Display locations and orders on a map with Google Maps"
-msgstr ""
+msgstr "Afficher les lieux et les interventions sur une carte avec Google Maps"
 
 msgid "Display locations and orders on a map with OpenStreetMap"
-msgstr ""
+msgstr "Afficher les lieux et les interventions sur une carte avec OpenStreetMap"
 
 msgid "District"
-msgstr ""
+msgstr "District"
 
 msgid "District Manager"
-msgstr ""
+msgstr "Responsable de district"
 
 msgid "Done"
-msgstr ""
+msgstr "Terminé"
 
 msgid "Due Within 30 Days"
-msgstr ""
+msgstr "Échéance dans les 30 jours"
 
 msgid "Due Within 7 Days"
-msgstr ""
+msgstr "Échéance dans les 7 jours"
 
 msgid "Duplicate Bank Partner"
-msgstr ""
+msgstr "Partenaire bancaire en double"
 
 msgid "Duplicated Bank Account Partners Count"
-msgstr ""
+msgstr "Nombre de partenaires avec compte bancaire en double"
 
 msgid "Duration"
-msgstr ""
+msgstr "Durée"
 
 msgid "Earliest Request Date"
-msgstr ""
+msgstr "Date de demande la plus ancienne"
 
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
-msgid ""
-msgstr ""
+msgid "Either customer (not a user), either shared user. Indicated the current partner is a customer without access or with a limited access created for sharing data."
+msgstr "Soit un client (pas un utilisateur), soit un utilisateur partagé. Indique que le partenaire actuel est un client sans accès ou avec un accès limité, créé pour partager des données."
 
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Employee"
-msgstr ""
+msgstr "Employé"
 
 msgid "Employees"
-msgstr ""
+msgstr "Employés"
 
 msgid "Employees Count"
-msgstr ""
+msgstr "Nombre d’employés"
 
 msgid "Enter the resolution for the order..."
-msgstr ""
+msgstr "Saisissez la résolution de l’intervention..."
 
 msgid "Equipment"
-msgstr ""
+msgstr "Équipement"
 
 msgid "Equipment name already exists!"
-msgstr ""
+msgstr "Le nom de l’équipement existe déjà !"
 
 msgid "Equipment-1"
-msgstr ""
+msgstr "Équipement-1"
 
 msgid "Equipment-2"
-msgstr ""
+msgstr "Équipement-2"
 
 msgid "Equipment-3"
-msgstr ""
+msgstr "Équipement-3"
 
 msgid "Equipments"
-msgstr ""
+msgstr "Équipements"
 
 msgid "Equipments Report"
-msgstr ""
+msgstr "Rapport des équipements"
 
 msgid "Execution"
-msgstr ""
+msgstr "Exécution"
 
-msgid ""
-msgstr ""
+msgid "Explanation text to help users using the star and priority mechanism on stages or orders that are in this stage."
+msgstr "Texte explicatif aidant les utilisateurs à utiliser le mécanisme d’étoiles et de priorité pour les étapes ou interventions se trouvant dans cette étape."
 
 msgid "FS Order #"
-msgstr ""
+msgstr "N° d’intervention"
 
 msgid "FSM"
-msgstr ""
+msgstr "Service sur site"
 
 msgid "FSM Equipment Name"
-msgstr ""
+msgstr "Nom de l’équipement de service sur site"
 
 msgid "FSM Location Builder"
-msgstr ""
+msgstr "Créateur de lieux d’intervention"
 
 msgid "FSM Locations"
-msgstr ""
+msgstr "Lieux d’intervention"
 
 msgid "FSM Order Name"
-msgstr ""
+msgstr "Nom de l’intervention"
 
 msgid "FSM Order Sign Wizard"
-msgstr ""
+msgstr "Assistant de signature d’intervention"
 
 msgid "FSM Orders"
-msgstr ""
+msgstr "Interventions"
 
 msgid "FSM Person Calendar Filter"
-msgstr ""
+msgstr "Filtre d’agenda du technicien"
 
 msgid "FSM Record Conversion"
-msgstr ""
+msgstr "Conversion d’enregistrement de service sur site"
 
 msgid "FSM Worker"
-msgstr ""
+msgstr "Technicien de service sur site"
 
 msgid "Field Service"
-msgstr ""
+msgstr "Service sur site"
 
 msgid "Field Service Category"
-msgstr ""
+msgstr "Catégorie de service sur site"
 
 msgid "Field Service Equipment"
-msgstr ""
+msgstr "Équipement de service sur site"
 
 msgid "Field Service Location"
-msgstr ""
+msgstr "Lieu d’intervention"
 
 msgid "Field Service Location Person Info"
-msgstr ""
+msgstr "Information technicien-lié au lieu"
 
 msgid "Field Service Order"
-msgstr ""
+msgstr "Intervention"
 
 msgid "Field Service Order Template"
-msgstr ""
+msgstr "Modèle d’intervention"
 
 msgid "Field Service Order Type"
-msgstr ""
+msgstr "Type d’intervention"
 
 msgid "Field Service Stage"
-msgstr ""
+msgstr "Étape de service sur site"
 
 msgid "Field Service Tag"
-msgstr ""
+msgstr "Étiquette de service sur site"
 
 msgid "Field Service Team"
-msgstr ""
+msgstr "Équipe de service sur site"
 
 msgid "Field Service Worker"
-msgstr ""
+msgstr "Technicien de service sur site"
 
 msgid "Field Service Worker Category"
-msgstr ""
+msgstr "Catégorie de technicien"
 
 msgid "Field Service Workers"
-msgstr ""
+msgstr "Techniciens de service sur site"
 
-msgid ""
-msgstr ""
+msgid "Field used to store sanitized phone number. Helps speeding up searches and comparisons."
+msgstr "Champ permettant de stocker un numéro de téléphone normalisé. Accélère les recherches et comparaisons."
 
 msgid "Fiscal Country Codes"
-msgstr ""
+msgstr "Codes pays fiscaux"
 
 msgid "Fiscal Position"
-msgstr ""
+msgstr "Position fiscale"
 
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Repliée dans la vue Kanban"
 
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (contacts)"
 
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icône Font Awesome, par exemple fa-tasks"
 
 msgid "Format email address \"Name <email@domain>\""
-msgstr ""
+msgstr "Format de l’adresse e-mail : \"Nom <email@domaine>\""
 
 msgid "Formatted Email"
-msgstr ""
+msgstr "E-mail formaté"
 
 msgid "Fsm Model Mixin"
-msgstr ""
+msgstr "Mixin de modèle de service sur site"
 
 msgid "Full Name"
-msgstr ""
+msgstr "Nom complet"
 
 msgid "Future Orders"
-msgstr ""
+msgstr "Interventions à venir"
 
 msgid "GLN"
-msgstr ""
+msgstr "GLN"
 
 msgid "General Notes"
-msgstr ""
+msgstr "Remarques générales"
 
 msgid "Geo Latitude"
-msgstr ""
+msgstr "Latitude"
 
 msgid "Geo Location"
-msgstr ""
+msgstr "Géolocalisation"
 
 msgid "Geo Longitude"
-msgstr ""
+msgstr "Longitude"
 
 msgid "Geolocation"
-msgstr ""
+msgstr "Géolocalisation"
 
 msgid "Geolocation Date"
-msgstr ""
+msgstr "Date de géolocalisation"
 
 msgid "Global Location Number"
-msgstr ""
+msgstr "Numéro global de localisation"
 
 msgid "Group By"
-msgstr ""
+msgstr "Grouper par"
 
 msgid "Has Message"
-msgstr ""
+msgstr "A un message"
 
 msgid "Hide"
-msgstr ""
+msgstr "Masquer"
 
 msgid "High"
-msgstr ""
+msgstr "Haute"
 
 msgid "Hours of Buffer for High Priority FS Orders"
-msgstr ""
+msgstr "Heures de marge pour les interventions prioritaires"
 
 msgid "Hours of Buffer for Low Priority FS Orders"
-msgstr ""
+msgstr "Heures de marge pour les interventions de priorité basse"
 
 msgid "Hours of Buffer for Lowest Priority FS Orders"
-msgstr ""
+msgstr "Heures de marge pour les interventions de priorité la plus basse"
 
 msgid "Hours of Buffer for Medium Priority FS Orders"
-msgstr ""
+msgstr "Heures de marge pour les interventions de priorité moyenne"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "IM Status"
-msgstr ""
+msgstr "Statut de messagerie instantanée"
 
 msgid "Icon"
-msgstr ""
+msgstr "Icône"
 
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icône indiquant une activité exceptionnelle."
 
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si coché, les nouveaux messages nécessitent votre attention."
 
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si coché, certains messages présentent une erreur de livraison."
 
-msgid ""
-msgstr ""
+msgid "If the email address is on the blacklist, the contact won't receive mass mailing anymore, from any list"
+msgstr "Si l’adresse e-mail figure sur la liste noire, le contact ne recevra plus de mailing de masse, quelle que soit la liste"
 
-msgid ""
-msgstr ""
+msgid "If the sanitized phone number is on the blacklist, the contact won't receive mass mailing sms anymore, from any list"
+msgstr "Si le numéro de téléphone normalisé figure sur la liste noire, le contact ne recevra plus de SMS de mailing de masse, quelle que soit la liste"
 
 msgid "Ignore Abnormal Invoice Amount"
-msgstr ""
+msgstr "Ignorer un montant de facture anormal"
 
 msgid "Ignore Abnormal Invoice Date"
-msgstr ""
+msgstr "Ignorer une date de facture anormale"
 
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 msgid "Image 1024"
-msgstr ""
+msgstr "Image 1024"
 
 msgid "Image 128"
-msgstr ""
+msgstr "Image 128"
 
 msgid "Image 256"
-msgstr ""
+msgstr "Image 256"
 
 msgid "Image 512"
-msgstr ""
+msgstr "Image 512"
 
-msgid ""
-msgstr ""
+msgid "Indicates if a blacklisted sanitized phone number is a mobile number. Helps distinguish which number is blacklisted when there is both a mobile and phone field in a modèle."
+msgstr "Indique si un numéro normalisé figurant sur la liste noire est un numéro mobile. Permet de déterminer quel numéro est bloqué lorsqu’un modèle contient à la fois un champ mobile et un champ téléphone."
 
-msgid ""
-msgstr ""
+msgid "Indicates if a blacklisted sanitized phone number is a phone number. Helps distinguish which number is blacklisted when there is both a mobile and phone field in a modèle."
+msgstr "Indique si un numéro normalisé figurant sur la liste noire est un numéro fixe. Permet de déterminer quel numéro est bloqué lorsqu’un modèle contient à la fois un champ mobile et un champ téléphone."
 
 msgid "Industry"
-msgstr ""
+msgstr "Secteur d’activité"
 
 msgid "Inlined Complete Address"
-msgstr ""
+msgstr "Adresse complète sur une ligne"
 
 msgid "Instructions"
-msgstr ""
+msgstr "Instructions"
 
 msgid "Internal Type"
-msgstr ""
+msgstr "Type interne"
 
 msgid "Invoice"
-msgstr ""
+msgstr "Facture"
 
 msgid "Invoice Edi Format Store"
-msgstr ""
+msgstr "Stockage du format EDI de facture"
 
 msgid "Invoice sending"
-msgstr ""
+msgstr "Envoi de facture"
 
 msgid "Invoice template"
-msgstr ""
+msgstr "Modèle de facture"
 
 msgid "Invoice your FSM orders"
-msgstr ""
+msgstr "Facturez vos interventions"
 
 msgid "Invoice your Service Orders"
-msgstr ""
+msgstr "Facturez vos interventions"
 
 msgid "Invoices"
-msgstr ""
+msgstr "Factures"
 
 msgid "Is Coa Installed"
-msgstr ""
+msgstr "Plan comptable installé"
 
 msgid "Is Follower"
-msgstr ""
+msgstr "Est abonné"
 
 msgid "Is Public"
-msgstr ""
+msgstr "Est public"
 
 msgid "Is a Company"
-msgstr ""
+msgstr "Est une société"
 
 msgid "Is a FS Location"
-msgstr ""
+msgstr "Est un lieu d’intervention"
 
 msgid "Is a FS Worker"
-msgstr ""
+msgstr "Est un technicien"
 
 msgid "Is a close stage"
-msgstr ""
+msgstr "Est une étape de clôture"
 
 msgid "Is a default stage"
-msgstr ""
+msgstr "Est une étape par défaut"
 
 msgid "Is closed"
-msgstr ""
+msgstr "Est clôturé"
 
 msgid "Job Position"
-msgstr ""
+msgstr "Fonction"
 
 msgid "Journal Items"
-msgstr ""
+msgstr "Écritures comptables"
 
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière modification par"
 
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière modification le"
 
 msgid "Last notification marked as read from base Calendar"
-msgstr ""
+msgstr "Dernière notification marquée comme lue dans l’agenda de base"
 
 msgid "Lat:"
-msgstr ""
+msgstr "Lat. :"
 
 msgid "Latest Request Date"
-msgstr ""
+msgstr "Date de demande la plus récente"
 
 msgid "Link FSM orders to MRP Repair orders"
-msgstr ""
+msgstr "Lier les interventions aux ordres de réparation MRP"
 
 msgid "Link FSM orders to maintenance requests"
-msgstr ""
+msgstr "Lier les interventions aux demandes de maintenance"
 
 msgid "Link FSM vehicles to Fleet vehicles"
-msgstr ""
+msgstr "Lier les véhicules de service sur site aux véhicules de parc"
 
 msgid "Link Field Service vehicles with Fleet vehicles"
-msgstr ""
+msgstr "Lier les véhicules de service sur site aux véhicules de parc"
 
 msgid "Link to Fleet Vehicles"
-msgstr ""
+msgstr "Lier aux véhicules de parc"
 
 msgid "Link your FSM orders to MRP repair orders"
-msgstr ""
+msgstr "Liez vos interventions aux ordres de réparation MRP"
 
 msgid "Link your FSM orders to Projects and Project Tasks"
-msgstr ""
+msgstr "Liez vos interventions aux projets et tâches de projet"
 
 msgid "Link your FSM orders to maintenance requests"
-msgstr ""
+msgstr "Liez vos interventions aux demandes de maintenance"
 
 msgid "Linked Locations"
-msgstr ""
+msgstr "Lieux liés"
 
 msgid "Location"
-msgstr ""
+msgstr "Lieu d’intervention"
 
 msgid "Location Directions"
-msgstr ""
+msgstr "Itinéraire vers le lieu"
 
 msgid "Location Notes"
-msgstr ""
+msgstr "Remarques sur le lieu"
 
 msgid "Location Persons"
-msgstr ""
+msgstr "Techniciens du lieu"
 
 msgid "Location Phone"
-msgstr ""
+msgstr "Téléphone du lieu"
 
 msgid "Location Reports."
-msgstr ""
+msgstr "Rapports des lieux."
 
 msgid "Location Worker"
-msgstr ""
+msgstr "Technicien du lieu"
 
 msgid "Location Workers"
-msgstr ""
+msgstr "Techniciens du lieu"
 
 msgid "Location-1"
-msgstr ""
+msgstr "Lieu-1"
 
 msgid "Location-2"
-msgstr ""
+msgstr "Lieu-2"
 
 msgid "Location-3"
-msgstr ""
+msgstr "Lieu-3"
 
 msgid "Locations"
-msgstr ""
+msgstr "Lieux d’intervention"
 
 msgid "Long:"
-msgstr ""
+msgstr "Long. :"
 
 msgid "Low"
-msgstr ""
+msgstr "Basse"
 
 msgid "MRP Repair"
-msgstr ""
+msgstr "Réparation MRP"
 
 msgid "Make sure to send the right worker with the appropriate skills"
-msgstr ""
+msgstr "Veillez à envoyer le bon technicien, disposant des compétences appropriées"
 
 msgid "Manage Agreements"
-msgstr ""
+msgstr "Gérer les accords"
 
 msgid "Manage Categories"
-msgstr ""
+msgstr "Gérer les catégories"
 
 msgid "Manage Distribution"
-msgstr ""
+msgstr "Gérer la distribution"
 
 msgid "Manage Equipment"
-msgstr ""
+msgstr "Gérer les équipements"
 
 msgid "Manage Equipments"
-msgstr ""
+msgstr "Gérer les équipements"
 
 msgid "Manage FSM Activities"
-msgstr ""
+msgstr "Gérer les activités de service sur site"
 
 msgid "Manage Field Service Equipment"
-msgstr ""
+msgstr "Gérer les équipements de service sur site"
 
 msgid "Manage Field Service Order Templates"
-msgstr ""
+msgstr "Gérer les modèles d’intervention"
 
 msgid "Manage Field Service Tags"
-msgstr ""
+msgstr "Gérer les étiquettes de service sur site"
 
 msgid "Manage Field Service Teams"
-msgstr ""
+msgstr "Gérer les équipes de service sur site"
 
 msgid "Manage Field Service Worker Categories"
-msgstr ""
+msgstr "Gérer les catégories de techniciens"
 
 msgid "Manage Inventory Logistics"
-msgstr ""
+msgstr "Gérer la logistique de stock"
 
 msgid "Manage Maintenance Requests"
-msgstr ""
+msgstr "Gérer les demandes de maintenance"
 
 msgid "Manage Order Activities"
-msgstr ""
+msgstr "Gérer les activités des interventions"
 
 msgid "Manage Order Sizes"
-msgstr ""
+msgstr "Gérer les tailles d’intervention"
 
 msgid "Manage Order Sub-Statuses"
-msgstr ""
+msgstr "Gérer les sous-états des interventions"
 
 msgid "Manage Order Templates"
-msgstr ""
+msgstr "Gérer les modèles d’intervention"
 
 msgid "Manage Recurring Orders"
-msgstr ""
+msgstr "Gérer les interventions récurrentes"
 
 msgid "Manage Skills"
-msgstr ""
+msgstr "Gérer les compétences"
 
 msgid "Manage Sub-Statuses"
-msgstr ""
+msgstr "Gérer les sous-états"
 
 msgid "Manage Tags"
-msgstr ""
+msgstr "Gérer les étiquettes"
 
 msgid "Manage Teams"
-msgstr ""
+msgstr "Gérer les équipes"
 
 msgid "Manage Template"
-msgstr ""
+msgstr "Gérer le modèle"
 
 msgid "Manage Territories"
-msgstr ""
+msgstr "Gérer les territoires"
 
 msgid "Manage Territory"
-msgstr ""
+msgstr "Gérer le territoire"
 
 msgid "Manage Vehicles"
-msgstr ""
+msgstr "Gérer les véhicules"
 
 msgid "Manage activities"
-msgstr ""
+msgstr "Gérer les activités"
 
 msgid "Manage agreements and contracts"
-msgstr ""
+msgstr "Gérer les accords et contrats"
 
 msgid "Manage different categories of Field Service workers"
-msgstr ""
+msgstr "Gérer les différentes catégories de techniciens"
 
 msgid "Manage different teams of Field Service workers"
-msgstr ""
+msgstr "Gérer les différentes équipes de techniciens"
 
 msgid "Manage equipments at the service location"
-msgstr ""
+msgstr "Gérer les équipements présents sur le lieu d’intervention"
 
-msgid ""
-msgstr ""
+msgid "Manage materials and stock operations. Automatically activate Lots & Serial Numbers."
+msgstr "Gérez les matériaux et opérations de stock. Activez automatiquement les lots et numéros de série."
 
 msgid "Manage recurrence of field service orders"
-msgstr ""
+msgstr "Gérer la récurrence des interventions"
 
 msgid "Manage routes"
-msgstr ""
+msgstr "Gérer les tournées"
 
 msgid "Manage routes of your workers"
-msgstr ""
+msgstr "Gérer les tournées de vos techniciens"
 
 msgid "Manage sizes for orders and locations"
-msgstr ""
+msgstr "Gérer les tailles des interventions et des lieux"
 
 msgid "Manage sub-status of orders"
-msgstr ""
+msgstr "Gérer les sous-états des interventions"
 
 msgid "Manage subcontractors and their pricelists"
-msgstr ""
+msgstr "Gérer les sous-traitants et leurs tarifs"
 
 msgid "Manage subcontractors with pricelists"
-msgstr ""
+msgstr "Gérer les sous-traitants et leurs tarifs"
 
 msgid "Manage tags on service orders"
-msgstr ""
+msgstr "Gérer les étiquettes des interventions"
 
 msgid "Manage templates"
-msgstr ""
+msgstr "Gérer les modèles"
 
 msgid "Manage territories, branches, districts and regions"
-msgstr ""
+msgstr "Gérer les territoires, succursales, districts et régions"
 
 msgid "Manage vehicles for Field Service operations"
-msgstr ""
+msgstr "Gérer les véhicules pour les opérations de service sur site"
 
 msgid "Manage your distribution structure"
-msgstr ""
+msgstr "Gérez votre structure de distribution"
 
 msgid "Managed By"
-msgstr ""
+msgstr "Géré par"
 
 msgid "Manager"
-msgstr ""
+msgstr "Responsable"
 
 msgid "Mapping Tools"
-msgstr ""
+msgstr "Outils de cartographie"
 
 msgid "Master Data"
-msgstr ""
+msgstr "Données de base"
 
 msgid "Me"
-msgstr ""
+msgstr "Moi"
 
 msgid "Meetings"
-msgstr ""
+msgstr "Réunions"
 
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur de livraison du message"
 
 msgid "Message for Invoice"
-msgstr ""
+msgstr "Message pour la facture"
 
 msgid "Message for Sales Order"
-msgstr ""
+msgstr "Message pour la commande client"
 
 msgid "Message for Stock Picking"
-msgstr ""
+msgstr "Message pour le bon de livraison"
 
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 msgid "Mobile"
-msgstr ""
+msgstr "Mobile"
 
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Échéance de mon activité"
 
 msgid "My Orders"
-msgstr ""
+msgstr "Mes interventions"
 
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 msgid "Need Assigned"
-msgstr ""
+msgstr "À assigner"
 
 msgid "Need Scheduled"
-msgstr ""
+msgstr "À planifier"
 
 msgid "New"
-msgstr ""
+msgstr "Nouveau"
 
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Prochain événement d’agenda"
 
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Échéance de la prochaine activité"
 
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Résumé de la prochaine activité"
 
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Type de la prochaine activité"
 
 msgid "Next Stage"
-msgstr ""
+msgstr "Étape suivante"
 
 msgid "Normal"
-msgstr ""
+msgstr "Normale"
 
 msgid "Normalized Email"
-msgstr ""
+msgstr "E-mail normalisé"
 
 msgid "Notes"
-msgstr ""
+msgstr "Remarques"
 
 msgid "Number of Actions"
-msgstr ""
+msgstr "Nombre d’actions"
 
 msgid "Number of errors"
-msgstr ""
+msgstr "Nombre d’erreurs"
 
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Nombre de messages nécessitant une action"
 
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec erreur de livraison"
 
 msgid "Office Hours"
-msgstr ""
+msgstr "Heures d’ouverture"
 
 msgid "Operations"
-msgstr ""
+msgstr "Opérations"
 
 msgid "Opportunities"
-msgstr ""
+msgstr "Opportunités"
 
 msgid "Opportunity Count"
-msgstr ""
+msgstr "Nombre d’opportunités"
 
 msgid "Order"
-msgstr ""
+msgstr "Intervention"
 
 msgid "Order Assigned"
-msgstr ""
+msgstr "Intervention assignée"
 
 msgid "Order Cancelled"
-msgstr ""
+msgstr "Intervention annulée"
 
 msgid "Order Completed"
-msgstr ""
+msgstr "Intervention terminée"
 
 msgid "Order Confirmed"
-msgstr ""
+msgstr "Intervention confirmée"
 
 msgid "Order Created"
-msgstr ""
+msgstr "Intervention créée"
 
 msgid "Order En Route"
-msgstr ""
+msgstr "Intervention en route"
 
 msgid "Order Scheduled"
-msgstr ""
+msgstr "Intervention planifiée"
 
 msgid "Order Started"
-msgstr ""
+msgstr "Intervention démarrée"
 
 msgid "Order Team"
-msgstr ""
+msgstr "Équipe de l’intervention"
 
 msgid "Order Templates"
-msgstr ""
+msgstr "Modèles d’intervention"
 
 msgid "Order Types"
-msgstr ""
+msgstr "Types d’intervention"
 
 msgid "Order assigned"
-msgstr ""
+msgstr "Intervention assignée"
 
 msgid "Order cancelled"
-msgstr ""
+msgstr "Intervention annulée"
 
 msgid "Order completed"
-msgstr ""
+msgstr "Intervention terminée"
 
 msgid "Order confirmed"
-msgstr ""
+msgstr "Intervention confirmée"
 
 msgid "Order created"
-msgstr ""
+msgstr "Intervention créée"
 
 msgid "Order en route"
-msgstr ""
+msgstr "Intervention en route"
 
 msgid "Order scheduled"
-msgstr ""
+msgstr "Intervention planifiée"
 
 msgid "Order signed by %s"
-msgstr ""
+msgstr "Intervention signée par %s"
 
 msgid "Order started"
-msgstr ""
+msgstr "Intervention démarrée"
 
 msgid "Orders"
-msgstr ""
+msgstr "Interventions"
 
 msgid "Orders Count"
-msgstr ""
+msgstr "Nombre d’interventions"
 
 msgid "Orders Reports."
-msgstr ""
+msgstr "Rapports des interventions."
 
 msgid "Orders to Assign"
-msgstr ""
+msgstr "Interventions à assigner"
 
 msgid "Orders to Schedule"
-msgstr ""
+msgstr "Interventions à planifier"
 
 msgid "Others"
-msgstr ""
+msgstr "Autres"
 
 msgid "Owned By"
-msgstr ""
+msgstr "Possédé par"
 
 msgid "Owned Locations"
-msgstr ""
+msgstr "Lieux possédés"
 
 msgid "Owner"
-msgstr ""
+msgstr "Propriétaire"
 
 msgid "Parent"
-msgstr ""
+msgstr "Parent"
 
 msgid "Parent Path"
-msgstr ""
+msgstr "Chemin parent"
 
 msgid "Parent name"
-msgstr ""
+msgstr "Nom du parent"
 
 msgid "Partner Company Registry Placeholder"
-msgstr ""
+msgstr "Espace réservé au numéro d’entreprise du partenaire"
 
 msgid "Partner Contracts"
-msgstr ""
+msgstr "Contrats du partenaire"
 
 msgid "Partner Limit"
-msgstr ""
+msgstr "Limite du partenaire"
 
 msgid "Partner Vat Placeholder"
-msgstr ""
+msgstr "Espace réservé au numéro de TVA du partenaire"
 
 msgid "Partner is Active"
-msgstr ""
+msgstr "Le partenaire est actif"
 
 msgid "Partner with same Company Registry"
-msgstr ""
+msgstr "Partenaire avec le même numéro d’entreprise"
 
 msgid "Partner with same Tax ID"
-msgstr ""
+msgstr "Partenaire avec le même numéro fiscal"
 
 msgid "Payable Limit"
-msgstr ""
+msgstr "Limite fournisseur"
 
 msgid "Payment Token Count"
-msgstr ""
+msgstr "Nombre de moyens de paiement enregistrés"
 
 msgid "Payment Tokens"
-msgstr ""
+msgstr "Moyens de paiement enregistrés"
 
 msgid "Person Checked"
-msgstr ""
+msgstr "Personne vérifiée"
 
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 msgid "Phone Blacklisted"
-msgstr ""
+msgstr "Téléphone sur liste noire"
 
 msgid "Phone/Mobile"
-msgstr ""
+msgstr "Téléphone/Mobile"
 
 msgid "Planning"
-msgstr ""
+msgstr "Planification"
 
 msgid "Preferred Workers"
-msgstr ""
+msgstr "Techniciens préférés"
 
-msgid ""
-msgstr ""
+msgid "Preferred payment method when buying from this vendor. This will be set by default on all outgoing payments created for this vendor"
+msgstr "Mode de paiement préféré pour les achats auprès de ce fournisseur. Il sera défini par défaut sur tous les paiements sortants créés pour ce fournisseur"
 
-msgid ""
-msgstr ""
+msgid "Preferred payment method when selling to this customer. This will be set by default on all incoming payments created for this customer"
+msgstr "Mode de paiement préféré pour les ventes à ce client. Il sera défini par défaut sur tous les paiements entrants créés pour ce client"
 
 msgid "Previous Stage"
-msgstr ""
+msgstr "Étape précédente"
 
 msgid "Pricelist"
-msgstr ""
+msgstr "Tarif"
 
 msgid "Primary Assignment"
-msgstr ""
+msgstr "Affectation principale"
 
 msgid "Primary Contact"
-msgstr ""
+msgstr "Contact principal"
 
 msgid "Primary Service Location"
-msgstr ""
+msgstr "Lieu d’intervention principal"
 
 msgid "Priority"
-msgstr ""
+msgstr "Priorité"
 
 msgid "Priority Management Explanation"
-msgstr ""
+msgstr "Explication de la gestion des priorités"
 
 msgid "Projects and Tasks"
-msgstr ""
+msgstr "Projets et tâches"
 
 msgid "Property Inbound Payment Method Line"
-msgstr ""
+msgstr "Ligne de mode de paiement entrant"
 
 msgid "Property Outbound Payment Method Line"
-msgstr ""
+msgstr "Ligne de mode de paiement sortant"
 
 msgid "Purchase Field Services"
-msgstr ""
+msgstr "Acheter des services sur site"
 
 msgid "Ratings"
-msgstr ""
+msgstr "Évaluations"
 
 msgid "Record Type"
-msgstr ""
+msgstr "Type d’enregistrement"
 
 msgid "Reference"
-msgstr ""
+msgstr "Référence"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Actualiser"
 
 msgid "Refresh Localization"
-msgstr ""
+msgstr "Actualiser la localisation"
 
 msgid "Region"
-msgstr ""
+msgstr "Région"
 
 msgid "Region Manager"
-msgstr ""
+msgstr "Responsable de région"
 
 msgid "Related Company"
-msgstr ""
+msgstr "Société liée"
 
 msgid "Related FS Location"
-msgstr ""
+msgstr "Lieu d’intervention lié"
 
 msgid "Related Owner"
-msgstr ""
+msgstr "Propriétaire lié"
 
 msgid "Related Partner"
-msgstr ""
+msgstr "Partenaire lié"
 
 msgid "Related employees based on their private address"
-msgstr ""
+msgstr "Employés liés selon leur adresse privée"
 
 msgid "Reporting"
-msgstr ""
+msgstr "Rapports"
 
 msgid "Request Workers"
-msgstr ""
+msgstr "Demander des techniciens"
 
 msgid "Require Signature"
-msgstr ""
+msgstr "Exiger une signature"
 
 msgid "Requirements"
-msgstr ""
+msgstr "Exigences"
 
 msgid "Resolution"
-msgstr ""
+msgstr "Résolution"
 
 msgid "Resolution Notes"
-msgstr ""
+msgstr "Notes de résolution"
 
 msgid "Responsible User"
-msgstr ""
+msgstr "Utilisateur responsable"
 
 msgid "Routes"
-msgstr ""
+msgstr "Tournées"
 
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Erreur de livraison SMS"
 
 msgid "Sale Order Count"
-msgstr ""
+msgstr "Nombre de commandes client"
 
 msgid "Sales Order"
-msgstr ""
+msgstr "Commande client"
 
 msgid "Sales Warnings"
-msgstr ""
+msgstr "Avertissements de vente"
 
 msgid "Salesperson"
-msgstr ""
+msgstr "Commercial"
 
 msgid "Sanitized Number"
-msgstr ""
+msgstr "Numéro normalisé"
 
 msgid "Schedule Details"
-msgstr ""
+msgstr "Détails de planification"
 
 msgid "Scheduled Duration"
-msgstr ""
+msgstr "Durée planifiée"
 
 msgid "Scheduled End"
-msgstr ""
+msgstr "Fin planifiée"
 
 msgid "Scheduled Start (ETA)"
-msgstr ""
+msgstr "Début planifié (heure d’arrivée prévue)"
 
 msgid "Scheduled duration of the work in hours"
-msgstr ""
+msgstr "Durée planifiée du travail en heures"
 
 msgid "Search FSM Location"
-msgstr ""
+msgstr "Rechercher un lieu d’intervention"
 
 msgid "Search FSM Teams"
-msgstr ""
+msgstr "Rechercher des équipes de service sur site"
 
 msgid "Search FSM Workers"
-msgstr ""
+msgstr "Rechercher des techniciens"
 
 msgid "Search Location By Hierarchy"
-msgstr ""
+msgstr "Rechercher un lieu par hiérarchie"
 
 msgid "Search Location Worker"
-msgstr ""
+msgstr "Rechercher un technicien de lieu"
 
 msgid "Search Locations based on their full hierarchy name"
-msgstr ""
+msgstr "Rechercher les lieux selon leur nom hiérarchique complet"
 
-msgid ""
-msgstr ""
+msgid "Select whether you want to convert this record to a Field\n                    Service Worker or Location."
+msgstr "Indiquez si vous souhaitez convertir cet enregistrement en\n                    technicien ou en lieu d’intervention."
 
-msgid ""
-msgstr ""
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "L’option « Avertissement » notifie l’utilisateur avec le message. L’option « Message bloquant » génère une exception avec le message et bloque le flux. Le message doit être saisi dans le champ suivant."
 
 msgid "Self"
-msgstr ""
+msgstr "Moi-même"
 
 msgid "Sell FSM orders"
-msgstr ""
+msgstr "Vendre des interventions"
 
 msgid "Sell Field Service Orders"
-msgstr ""
+msgstr "Vendre des interventions"
 
 msgid "Sell products that generate field service orders"
-msgstr ""
+msgstr "Vendre des produits générant des interventions"
 
 msgid "Sequence"
-msgstr ""
+msgstr "Séquence"
 
 msgid "Service Locations"
-msgstr ""
+msgstr "Lieux d’intervention"
 
 msgid "Service Order"
-msgstr ""
+msgstr "Intervention"
 
 msgid "Service Orders"
-msgstr ""
+msgstr "Interventions"
 
 msgid "Services in this stage are considered as closed."
-msgstr ""
+msgstr "Les interventions dans cette étape sont considérées comme clôturées."
 
 msgid "Set a value greater than 0.0 to activate a credit limit check"
-msgstr ""
+msgstr "Définissez une valeur supérieure à 0,0 pour activer le contrôle de la limite de crédit"
 
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 msgid "Share Partner"
-msgstr ""
+msgstr "Partenaire partagé"
 
 msgid "Show Credit Limit"
-msgstr ""
+msgstr "Afficher la limite de crédit"
 
 msgid "Sign"
-msgstr ""
+msgstr "Signer"
 
 msgid "Signature"
-msgstr ""
+msgstr "Signature"
 
 msgid "Signed By"
-msgstr ""
+msgstr "Signé par"
 
 msgid "Signed On"
-msgstr ""
+msgstr "Signé le"
 
 msgid "Signup Token Type"
-msgstr ""
+msgstr "Type de jeton d’inscription"
 
 msgid "Specific Property Product Pricelist"
-msgstr ""
+msgstr "Tarif produit spécifique"
 
 msgid "Stage"
-msgstr ""
+msgstr "Étape"
 
 msgid "Stage Color"
-msgstr ""
+msgstr "Couleur de l’étape"
 
 msgid "Stage Description and Tooltips"
-msgstr ""
+msgstr "Description et info-bulles de l’étape"
 
 msgid "Stage Name"
-msgstr ""
+msgstr "Nom de l’étape"
 
 msgid "Stages"
-msgstr ""
+msgstr "Étapes"
 
 msgid "Starred Message"
-msgstr ""
+msgstr "Message favori"
 
 msgid "State"
-msgstr ""
+msgstr "État/Région"
 
-msgid ""
-msgstr ""
+msgid "Status based on activities\nOverdue: Due date is already passed\nToday: Activity date is today\nPlanned: Future activities."
+msgstr "Statut basé sur les activités\nEn retard : l’échéance est dépassée\nAujourd’hui : l’activité est prévue aujourd’hui\nPlanifié : activités futures."
 
 msgid "Stock Picking"
-msgstr ""
+msgstr "Bon de livraison"
 
 msgid "Street"
-msgstr ""
+msgstr "Rue"
 
 msgid "Street 2..."
-msgstr ""
+msgstr "Rue 2..."
 
 msgid "Street..."
-msgstr ""
+msgstr "Rue..."
 
 msgid "Street2"
-msgstr ""
+msgstr "Rue 2"
 
 msgid "Sub Locations"
-msgstr ""
+msgstr "Lieux enfants"
 
 msgid "Sub-Locations"
-msgstr ""
+msgstr "Lieux enfants"
 
 msgid "Supplier Rank"
-msgstr ""
+msgstr "Priorité fournisseur"
 
 msgid "Tag name already exists!"
-msgstr ""
+msgstr "Le nom de l’étiquette existe déjà !"
 
 msgid "Tags"
-msgstr ""
+msgstr "Étiquettes"
 
 msgid "Tax ID"
-msgstr ""
+msgstr "Numéro fiscal"
 
 msgid "Tax ID Label"
-msgstr ""
+msgstr "Libellé du numéro fiscal"
 
 msgid "Team"
-msgstr ""
+msgstr "Équipe"
 
 msgid "Team Name"
-msgstr ""
+msgstr "Nom de l’équipe"
 
 msgid "Team name already exists!"
-msgstr ""
+msgstr "Le nom de l’équipe existe déjà !"
 
 msgid "Teams"
-msgstr ""
+msgstr "Équipes"
 
 msgid "Template"
-msgstr ""
+msgstr "Modèle"
 
 msgid "Templates"
-msgstr ""
+msgstr "Modèles"
 
 msgid "Territories"
-msgstr ""
+msgstr "Territoires"
 
 msgid "Territory"
-msgstr ""
+msgstr "Territoire"
 
-msgid ""
-msgstr ""
+msgid "The ISO country code in two chars. \nYou can use this field for quick search."
+msgstr "Le code pays ISO sur deux caractères.\nVous pouvez utiliser ce champ pour une recherche rapide."
 
-msgid ""
-msgstr ""
+msgid "The Tax Identification Number. Values here will be validated based on the country format. You can use '/' to indicate that the partner is not subject to tax."
+msgstr "Le numéro d’identification fiscale. Les valeurs sont validées selon le format du pays. Utilisez « / » pour indiquer que le partenaire n’est pas assujetti à la taxe."
 
-msgid ""
-msgstr ""
+msgid "The fiscal position determines the taxes/accounts used for this contact."
+msgstr "La position fiscale détermine les taxes et comptes utilisés pour ce contact."
 
 msgid "The internal user in charge of this contact."
-msgstr ""
+msgstr "L’utilisateur interne responsable de ce contact."
 
-msgid ""
-msgstr ""
+msgid "The registry number of the company. Use it if it is different from the Tax ID. It must be unique across all partners of a same country"
+msgstr "Le numéro de registre de la société. Utilisez-le s’il diffère du numéro fiscal. Il doit être unique pour tous les partenaires d’un même pays"
 
-msgid ""
-msgstr ""
+msgid "The stock location used as destination when sending goods to this contact."
+msgstr "L’emplacement de stock utilisé comme destination lors de l’envoi de marchandises à ce contact."
 
-msgid ""
-msgstr ""
+msgid "The stock location used as source when receiving goods from this contact."
+msgstr "L’emplacement de stock utilisé comme source lors de la réception de marchandises de ce contact."
 
 msgid "The worker is already linked to this location."
-msgstr ""
+msgstr "Le technicien est déjà lié à ce lieu."
 
-msgid ""
-msgstr ""
+msgid "This account will be used instead of the default one as the payable account for the current partner"
+msgstr "Ce compte sera utilisé, à la place du compte par défaut, comme compte fournisseur pour le partenaire actuel"
 
-msgid ""
-msgstr ""
+msgid "This account will be used instead of the default one as the receivable account for the current partner"
+msgstr "Ce compte sera utilisé, à la place du compte par défaut, comme compte client pour le partenaire actuel"
 
-msgid ""
-msgstr ""
+msgid "This field is used to search on email address as the primary email field can contain more than strictly an email address."
+msgstr "Ce champ permet de rechercher par adresse e-mail, car le champ e-mail principal peut contenir davantage qu’une simple adresse e-mail."
 
-msgid ""
-msgstr ""
+msgid "This payment term will be used instead of the default one for purchase orders and vendor bills"
+msgstr "Ces conditions de paiement seront utilisées, à la place des conditions par défaut, pour les achats et factures fournisseur"
 
-msgid ""
-msgstr ""
+msgid "This payment term will be used instead of the default one for sales orders and customer invoices"
+msgstr "Ces conditions de paiement seront utilisées, à la place des conditions par défaut, pour les commandes client et factures client"
 
-msgid ""
-msgstr ""
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
+msgstr "Ce tarif sera utilisé, à la place du tarif par défaut, pour les ventes au partenaire actuel"
 
-msgid ""
-msgstr ""
+msgid "This stage is folded in the kanban view when there are no record in that stage to display."
+msgstr "Cette étape est repliée dans la vue Kanban lorsqu’aucun enregistrement ne doit y être affiché."
 
 msgid "Timezone"
-msgstr ""
+msgstr "Fuseau horaire"
 
 msgid "Timezone offset"
-msgstr ""
+msgstr "Décalage horaire"
 
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 msgid "To Assign"
-msgstr ""
+msgstr "À assigner"
 
 msgid "To Do"
-msgstr ""
+msgstr "À faire"
 
 msgid "To Schedule"
-msgstr ""
+msgstr "À planifier"
 
 msgid "Today Orders"
-msgstr ""
+msgstr "Interventions du jour"
 
 msgid "Total Invoiced"
-msgstr ""
+msgstr "Total facturé"
 
 msgid "Total Payable"
-msgstr ""
+msgstr "Total à payer"
 
 msgid "Total Receivable"
-msgstr ""
+msgstr "Total à recevoir"
 
 msgid "Total amount this customer owes you."
-msgstr ""
+msgstr "Montant total que ce client vous doit."
 
 msgid "Total amount you have to pay to this vendor."
-msgstr ""
+msgstr "Montant total que vous devez payer à ce fournisseur."
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type d’activité exceptionnelle sur l’enregistrement."
 
 msgid "Unassigned"
-msgstr ""
+msgstr "Non assignée"
 
 msgid "Unscheduled"
-msgstr ""
+msgstr "Non planifiée"
 
 msgid "Updated on:"
-msgstr ""
+msgstr "Mis à jour le :"
 
 msgid "Urgent"
-msgstr ""
+msgstr "Urgent"
 
 msgid "Use FSM Location Builder"
-msgstr ""
+msgstr "Utiliser le créateur de lieux d’intervention"
 
 msgid "Use GeoEngine"
-msgstr ""
+msgstr "Utiliser GeoEngine"
 
 msgid "Use GeoEngine with OpenStreetMap"
-msgstr ""
+msgstr "Utiliser GeoEngine avec OpenStreetMap"
 
 msgid "Use Hex Code only Ex:-#FFFFFF"
-msgstr ""
+msgstr "Utilisez uniquement un code hexadécimal, par exemple #FFFFFF"
 
 msgid "Use Odoo Logistics"
-msgstr ""
+msgstr "Utiliser la logistique Odoo"
 
 msgid "Use a barcode to identify this contact."
-msgstr ""
+msgstr "Utilisez un code-barres pour identifier ce contact."
 
 msgid "Used a default stage"
-msgstr ""
+msgstr "Utilise une étape par défaut"
 
 msgid "Used to order stages. Lower is better."
-msgstr ""
+msgstr "Permet de trier les étapes. Plus la valeur est basse, meilleure est la position."
 
 msgid "Used to sort teams. Lower is better."
-msgstr ""
+msgstr "Permet de trier les équipes. Plus la valeur est basse, meilleure est la position."
 
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 msgid "User (only own documents)"
-msgstr ""
+msgstr "Utilisateur (uniquement ses propres documents)"
 
 msgid "Users"
-msgstr ""
+msgstr "Utilisateurs"
 
 msgid "Vehicles"
-msgstr ""
+msgstr "Véhicules"
 
 msgid "Vendor Location"
-msgstr ""
+msgstr "Emplacement fournisseur"
 
 msgid "Vendor Payment Terms"
-msgstr ""
+msgstr "Conditions de paiement fournisseur"
 
 msgid "Website Link"
-msgstr ""
+msgstr "Lien vers le site web"
 
 msgid "Website Messages"
-msgstr ""
+msgstr "Messages du site web"
 
 msgid "Website communication history"
-msgstr ""
+msgstr "Historique des communications du site web"
 
-msgid ""
-msgstr ""
+msgid "When printing documents and exporting/importing data, time values are computed according to this timezone.\nIf the timezone is not set, UTC (Coordinated Universal Time) is used.\nAnywhere else, time values are computed according to the time offset of your web client."
+msgstr "Lors de l’impression de documents et de l’export/import de données, les heures sont calculées selon ce fuseau horaire.\nSi aucun fuseau horaire n’est défini, l’heure UTC est utilisée.\nAilleurs, les heures sont calculées selon le décalage horaire de votre client web."
 
-msgid ""
-msgstr ""
+msgid "Whether to ask for a Customer Signature when the order is in this stage."
+msgstr "Indique si une signature du client doit être demandée lorsque l’intervention se trouve dans cette étape."
 
 msgid "Worker"
-msgstr ""
+msgstr "Technicien"
 
 msgid "Worker Phone"
-msgstr ""
+msgstr "Téléphone du technicien"
 
 msgid "Worker Stage 1"
-msgstr ""
+msgstr "Étape technicien 1"
 
 msgid "Worker Stage 2"
-msgstr ""
+msgstr "Étape technicien 2"
 
 msgid "Worker Stage 3"
-msgstr ""
+msgstr "Étape technicien 3"
 
 msgid "Workers"
-msgstr ""
+msgstr "Techniciens"
 
 msgid "Working Schedule"
-msgstr ""
+msgstr "Horaire de travail"
 
-msgid ""
-msgstr ""
+msgid "You can add a description to help your coworkers understand the meaning and purpose of the stage."
+msgstr "Vous pouvez ajouter une description pour aider vos collègues à comprendre la signification et l’objectif de l’étape."
 
 msgid "You can archive the contact"
-msgstr ""
+msgstr "Vous pouvez archiver le contact"
 
 msgid "You cannot delete this order."
-msgstr ""
+msgstr "Vous ne pouvez pas supprimer cette intervention."
 
 msgid "You cannot have the same worker twice."
-msgstr ""
+msgstr "Vous ne pouvez pas ajouter deux fois le même technicien."
 
 msgid "You must create an FSM order stage first."
-msgstr ""
+msgstr "Vous devez d’abord créer une étape d’intervention."
 
 msgid "You must create an FSM team first."
-msgstr ""
+msgstr "Vous devez d’abord créer une équipe de service sur site."
 
 msgid "ZIP"
-msgstr ""
+msgstr "Code postal"
 
 msgid "Zip"
-msgstr ""
+msgstr "Code postal"
 
-msgid ""
-msgstr ""
+msgid "[(Total Receivable/Total Revenue) * number of days since the first invoice] for this customer"
+msgstr "[(Total à recevoir/Chiffre d’affaires total) × nombre de jours depuis la première facture] pour ce client"
 
 msgid "eInvoice format"
-msgstr ""
+msgstr "Format de facture électronique"
 
 msgid "tag"
-msgstr ""
+msgstr "étiquette"
 
 msgid "template"
-msgstr ""
+msgstr "modèle"
