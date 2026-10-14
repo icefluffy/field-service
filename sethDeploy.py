@@ -16,9 +16,11 @@ import sys
 import tempfile
 import xmlrpc.client
 
-URL = os.environ.get("ODOO_URL", "http://localhost:8069").rstrip("/")
-DB = os.environ.get("ODOO_DB", "RSN")
-USER = os.environ.get("ODOO_USER", "vanherck.s")
+URL = "http://localhost:8069"
+DB = "RSN"
+USER = "vanherck.s"
+PASSWORD = "P@ssword01+"
+
 REPOSITORY = "https://github.com/icefluffy/field-service.git"
 BRANCH = os.environ.get("FSM_BRANCH", "")
 ADDONS = Path("/mnt/extra-addons")
@@ -39,7 +41,7 @@ def save(path, value):
 
 
 def connect():
-    password = os.environ.get("ODOO_PASSWORD") or getpass.getpass(f"Odoo password for {USER}: ")
+    password = "P@ssword01+" or getpass.getpass(f"Odoo password for {USER}: ")
     common = xmlrpc.client.ServerProxy(URL + "/xmlrpc/2/common")
     uid = common.authenticate(DB, USER, password, {})
     if not uid:
