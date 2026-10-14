@@ -15,7 +15,7 @@ case "$status" in
         echo "Reconnect in Portainer, by clicking Disconnect button at top of page"
         echo "Then connect again. (you have already been disconnected by the restart...)"
         echo ""
-        echo "After reconnection, run: python3 /mnt/sethDeploy.py or sethDeploy.py"
+        echo "After reconnection, run: python3 /sethDeploy.py or /sethDeploy.py"
         sync
         kill -TERM 1
         ;;
