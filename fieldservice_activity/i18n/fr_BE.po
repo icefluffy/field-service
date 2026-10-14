@@ -1,100 +1,136 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* fieldservice_activity
+# * fieldservice_activity
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-07-21 10:19+0000\n"
-"Last-Translator: Daniel Reis <dgreis@sapo.pt>\n"
-"Language-Team: none\n"
-"Language: pt_PT\n"
+"POT-Creation-Date: 2026-10-14 18:02+0000\n"
+"PO-Revision-Date: 2026-10-14 18:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10\n"
+"Plural-Forms: \n"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__temp_activity_ids
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
 msgid "Activities"
-msgstr "Atividades"
+msgstr "Activités"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"Assign a worker to the Field Service Order before completing this activity."
+msgstr ""
+"Assignez un intervenant à l'ordre de service sur site avant de terminer "
+"cette activité."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Assigned To '%s' does not resolve to exactly one employee."
+msgstr ""
+"« %s » dans le champ « Assigné à » ne correspond pas à exactement un "
+"employé."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__product_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
+msgid "Billable Service"
+msgstr "Service facturable"
 
 #. module: fieldservice_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Annuler"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__cancel
 msgid "Cancelled"
-msgstr "Cancelada"
+msgstr "Annulé"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Cannot add a billable activity after accounting has been confirmed."
+msgstr ""
+"Impossible d'ajouter une activité facturable après la confirmation de la "
+"comptabilité."
 
 #. module: fieldservice_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
 msgid "Complete"
-msgstr "Completo"
+msgstr "Terminer"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed
 #: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__done
 msgid "Completed"
-msgstr "Completado"
+msgstr "Terminé"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed_by
 msgid "Completed By"
-msgstr "Completado Por"
+msgstr "Terminé par"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed_on
 msgid "Completed On"
-msgstr "Completado em"
+msgstr "Terminé le"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__create_uid
 msgid "Created by"
-msgstr "Criado por"
+msgstr "Créé par"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__create_date
 msgid "Created on"
-msgstr "Criado em"
+msgstr "Créé le"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__display_name
 msgid "Display Name"
-msgstr "Nome Apresentado"
+msgstr "Nom affiché"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__timesheet_line_id
+msgid "Employee Timesheet Line"
+msgstr "Ligne de feuille de temps de l'employé"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__fsm_order_id
 msgid "FSM Order"
-msgstr "Ordem FSM"
+msgstr "Ordre de service sur site"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__fsm_template_id
 msgid "FSM Template"
-msgstr "Modelo FSM"
+msgstr "Modèle de service sur site"
 
 #. module: fieldservice_activity
 #: model:ir.model,name:fieldservice_activity.model_fsm_activity
 msgid "Field Service Activity"
-msgstr "Atividade de Servi??o em Campo"
+msgstr "Activité de service sur site"
 
 #. module: fieldservice_activity
 #: model:ir.model,name:fieldservice_activity.model_fsm_order
 msgid "Field Service Order"
-msgstr "Ordem de Servi??o de Campo"
+msgstr "Ordre de service sur site"
 
 #. module: fieldservice_activity
 #: model:ir.model,name:fieldservice_activity.model_fsm_template
 msgid "Field Service Order Template"
-msgstr "Modelo de Ordem de Servi??o"
+msgstr "Modèle d'ordre de service sur site"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__id
@@ -104,61 +140,100 @@ msgstr "ID"
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__write_uid
 msgid "Last Updated by"
-msgstr "??ltima Atualiza????o por"
+msgstr "Dernière mise à jour par"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__write_date
 msgid "Last Updated on"
-msgstr "??ltima Atualiza????o em"
+msgstr "Dernière mise à jour le"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__name
 msgid "Name"
-msgstr "Nome"
+msgstr "Nom"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
+#: code:addons/fieldservice_activity/models/fsm_order.py:0
+msgid "Only one equipment is allowed per Field Service Order."
+msgstr ""
+"Un seul équipement est autorisé par ordre de service sur site."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__order_activity_ids
 msgid "Order Activities"
-msgstr ""
+msgstr "Activités de l'ordre"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__quantity
+msgid "Quantity"
+msgstr "Quantité"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__ref
 msgid "Reference"
-msgstr "Refer??ncia"
+msgstr "Référence"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__required
 msgid "Required"
+msgstr "Obligatoire"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sale_line_id
+msgid "Sales Order Line"
+msgstr "Ligne de commande client"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Save the Field Service Order before completing this activity."
 msgstr ""
+"Enregistrez l'ordre de service sur site avant de terminer cette activité."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sequence
 msgid "Sequence"
-msgstr "Sequ??ncia"
+msgstr "Séquence"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__smart_search
+msgid "Smart Search"
+msgstr "Recherche intelligente"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
 msgid "State"
-msgstr "Estado"
+msgstr "Statut"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The assigned worker has multiple linked employees; choose one explicitly."
+msgstr ""
+"L'intervenant assigné est lié à plusieurs employés ; choisissez-en "
+"explicitement un."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "The billable activity quantity must be greater than zero."
+msgstr ""
+"La quantité de l'activité facturable doit être supérieure à zéro."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__todo
 msgid "To Do"
-msgstr "A Fazer"
+msgstr "À faire"
 
 #. module: fieldservice_activity
 #. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
 #: code:addons/fieldservice_activity/models/fsm_order.py:0
-msgid ""
-"You must complete activity '%s' before                     completing this "
-"order."
-msgstr "Voc?? deve concluir a atividade '%s' antes de concluir este pedido."
-
-#~ msgid "Last Modified on"
-#~ msgstr "??ltima Modifica????o em"
-
-#~ msgid "Activites"
-#~ msgstr "Atividades"
-
-#~ msgid "Requireid"
-#~ msgstr "Requer ID"
+msgid "You must complete activity '%s' before completing this order."
+msgstr ""
+"Vous devez terminer l'activité « %s » avant de pouvoir terminer cet ordre."

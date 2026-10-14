@@ -4,8 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0\n"
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-14 18:02+0000\n"
+"PO-Revision-Date: 2026-10-14 18:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,6 +23,26 @@ msgid "Activities"
 msgstr ""
 
 #. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"Assign a worker to the Field Service Order before completing this activity."
+msgstr ""
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Assigned To '%s' does not resolve to exactly one employee."
+msgstr ""
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__product_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
+msgid "Billable Service"
+msgstr ""
+
+#. module: fieldservice_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
 msgid "Cancel"
@@ -29,6 +51,12 @@ msgstr ""
 #. module: fieldservice_activity
 #: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__cancel
 msgid "Cancelled"
+msgstr ""
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Cannot add a billable activity after accounting has been confirmed."
 msgstr ""
 
 #. module: fieldservice_activity
@@ -66,6 +94,11 @@ msgstr ""
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__timesheet_line_id
+msgid "Employee Timesheet Line"
 msgstr ""
 
 #. module: fieldservice_activity
@@ -114,8 +147,20 @@ msgid "Name"
 msgstr ""
 
 #. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
+#: code:addons/fieldservice_activity/models/fsm_order.py:0
+msgid "Only one equipment is allowed per Field Service Order."
+msgstr ""
+
+#. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__order_activity_ids
 msgid "Order Activities"
+msgstr ""
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__quantity
+msgid "Quantity"
 msgstr ""
 
 #. module: fieldservice_activity
@@ -129,13 +174,44 @@ msgid "Required"
 msgstr ""
 
 #. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sale_line_id
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Save the Field Service Order before completing this activity."
+msgstr ""
+
+#. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sequence
 msgid "Sequence"
 msgstr ""
 
 #. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__smart_search
+msgid "Smart Search"
+msgstr ""
+
+#. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
 msgid "State"
+msgstr ""
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The assigned worker has multiple linked employees; choose one explicitly."
+msgstr ""
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "The billable activity quantity must be greater than zero."
 msgstr ""
 
 #. module: fieldservice_activity
@@ -145,8 +221,7 @@ msgstr ""
 
 #. module: fieldservice_activity
 #. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
 #: code:addons/fieldservice_activity/models/fsm_order.py:0
-msgid ""
-"You must complete activity '%s' before                     completing this "
-"order."
+msgid "You must complete activity '%s' before completing this order."
 msgstr ""

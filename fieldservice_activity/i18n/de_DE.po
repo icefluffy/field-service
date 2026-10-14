@@ -1,100 +1,135 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* fieldservice_activity
+# * fieldservice_activity
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-03-27 19:13+0000\n"
-"Last-Translator: Nelson Ram??rez S??nchez <info@konos.cl>\n"
-"Language-Team: none\n"
-"Language: es_CL\n"
+"POT-Creation-Date: 2026-10-14 18:02+0000\n"
+"PO-Revision-Date: 2026-10-14 18:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"Plural-Forms: \n"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__temp_activity_ids
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
 msgid "Activities"
-msgstr "Actividades"
+msgstr "Aktivitäten"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"Assign a worker to the Field Service Order before completing this activity."
+msgstr ""
+"Weisen Sie dem Feldserviceauftrag einen Mitarbeiter zu, bevor Sie diese "
+"Aktivität abschließen."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Assigned To '%s' does not resolve to exactly one employee."
+msgstr ""
+"„%s“ im Feld „Zugewiesen an“ entspricht nicht genau einem Mitarbeiter."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__product_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
+msgid "Billable Service"
+msgstr "Abrechenbare Dienstleistung"
 
 #. module: fieldservice_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Abbrechen"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__cancel
 msgid "Cancelled"
-msgstr "Cancelada"
+msgstr "Abgebrochen"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Cannot add a billable activity after accounting has been confirmed."
+msgstr ""
+"Nach Bestätigung der Buchhaltung kann keine abrechenbare Aktivität mehr "
+"hinzugefügt werden."
 
 #. module: fieldservice_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
 #: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
 msgid "Complete"
-msgstr "Completada"
+msgstr "Abschließen"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed
 #: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__done
 msgid "Completed"
-msgstr "Completado"
+msgstr "Abgeschlossen"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed_by
 msgid "Completed By"
-msgstr "Completado Por"
+msgstr "Abgeschlossen von"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed_on
 msgid "Completed On"
-msgstr "Completado el"
+msgstr "Abgeschlossen am"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Erstellt von"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Erstellt am"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__display_name
 msgid "Display Name"
-msgstr "Nombre Mostrado"
+msgstr "Anzeigename"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__timesheet_line_id
+msgid "Employee Timesheet Line"
+msgstr "Mitarbeiter-Zeiterfassungsposition"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__fsm_order_id
 msgid "FSM Order"
-msgstr "Pedido FSM"
+msgstr "Feldserviceauftrag"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__fsm_template_id
 msgid "FSM Template"
-msgstr "Plantilla FSM"
+msgstr "Feldservicevorlage"
 
 #. module: fieldservice_activity
 #: model:ir.model,name:fieldservice_activity.model_fsm_activity
 msgid "Field Service Activity"
-msgstr "Actividad de Servicio de Campo"
+msgstr "Feldserviceaktivität"
 
 #. module: fieldservice_activity
 #: model:ir.model,name:fieldservice_activity.model_fsm_order
 msgid "Field Service Order"
-msgstr "Orden de Servicio de Campo"
+msgstr "Feldserviceauftrag"
 
 #. module: fieldservice_activity
 #: model:ir.model,name:fieldservice_activity.model_fsm_template
 msgid "Field Service Order Template"
-msgstr "Plantilla de Orden de Servicio de Campo"
+msgstr "Vorlage für Feldserviceaufträge"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__id
@@ -104,61 +139,100 @@ msgstr "ID"
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__write_uid
 msgid "Last Updated by"
-msgstr "??ltima modificaci??n por"
+msgstr "Zuletzt aktualisiert von"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__write_date
 msgid "Last Updated on"
-msgstr "??ltima actualizaci??n en"
+msgstr "Zuletzt aktualisiert am"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__name
 msgid "Name"
-msgstr "Nombre"
+msgstr "Name"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
+#: code:addons/fieldservice_activity/models/fsm_order.py:0
+msgid "Only one equipment is allowed per Field Service Order."
+msgstr "Pro Feldserviceauftrag ist nur eine Ausrüstung erlaubt."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__order_activity_ids
 msgid "Order Activities"
-msgstr ""
+msgstr "Auftragsaktivitäten"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__quantity
+msgid "Quantity"
+msgstr "Menge"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__ref
 msgid "Reference"
-msgstr "Referencia"
+msgstr "Referenz"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__required
 msgid "Required"
+msgstr "Erforderlich"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sale_line_id
+msgid "Sales Order Line"
+msgstr "Auftragsposition"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Save the Field Service Order before completing this activity."
 msgstr ""
+"Speichern Sie den Feldserviceauftrag, bevor Sie diese Aktivität abschließen."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sequence
 msgid "Sequence"
-msgstr "Secuencia"
+msgstr "Reihenfolge"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__smart_search
+msgid "Smart Search"
+msgstr "Intelligente Suche"
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
 msgid "State"
-msgstr "Estado"
+msgstr "Status"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The assigned worker has multiple linked employees; choose one explicitly."
+msgstr ""
+"Der zugewiesene Mitarbeiter ist mit mehreren Mitarbeitern verknüpft; wählen "
+"Sie explizit einen aus."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "The billable activity quantity must be greater than zero."
+msgstr ""
+"Die Menge der abrechenbaren Aktivität muss größer als null sein."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__todo
 msgid "To Do"
-msgstr "Por Hacer"
+msgstr "Zu erledigen"
 
 #. module: fieldservice_activity
 #. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
 #: code:addons/fieldservice_activity/models/fsm_order.py:0
-msgid ""
-"You must complete activity '%s' before                     completing this "
-"order."
-msgstr "Debe completar la actividad '%s' antes de completar este pedido."
-
-#~ msgid "Last Modified on"
-#~ msgstr "??ltima modificaci??n el"
-
-#~ msgid "Activites"
-#~ msgstr "Actividades"
-
-#~ msgid "Requireid"
-#~ msgstr "Requerido"
+msgid "You must complete activity '%s' before completing this order."
+msgstr ""
+"Sie müssen die Aktivität „%s“ abschließen, bevor Sie diesen Auftrag "
+"abschließen können."
