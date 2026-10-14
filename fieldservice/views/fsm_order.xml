@@ -134,7 +134,7 @@
                         </page>
                         <page string="Planning" name="planning_page">
                             <group>
-                                <group string="Requirements" name="requirements_grp" invisible="1">
+                                <group string="Requirements" name="requirements_grp">
                                     <field
                                         name="category_ids"
                                         widget="many2many_tags"
