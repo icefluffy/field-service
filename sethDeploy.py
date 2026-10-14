@@ -162,14 +162,6 @@ def prepare():
                 if old:
                     shutil.copytree(old, destination)
             raise
-        if PROJECT.exists():
-            if PROJECT.is_symlink():
-                print("Project checkout is a symlink; left unchanged.")
-            else:
-                shutil.rmtree(PROJECT)
-                shutil.copytree(checkout, PROJECT)
-        else:
-            shutil.copytree(checkout, PROJECT)
         print("\nPending: " + ", ".join(sorted(wanted)))
         print("Git commit: " + commit)
         print("Source backup: " + str(backup))
