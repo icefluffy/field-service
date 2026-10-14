@@ -111,6 +111,27 @@
                         />
                     </group>
                     <notebook>
+                        <page string="Instructions" name="instructions_page">
+                            <group string="Instructions" name="instructions_grp">
+                                <field
+                                    name="todo"
+                                    nolabel="1"
+                                    colspan="2"
+                                    widget="html"
+                                />
+                            </group>
+                            <group
+                                string="Location Directions"
+                                name="location_directions_grp"
+                            >
+                                <field
+                                    name="location_directions"
+                                    nolabel="1"
+                                    colspan="2"
+                                    widget="html"
+                                />
+                            </group>
+                        </page>
                         <page string="Planning" name="planning_page">
                             <group>
                                 <group string="Requirements" name="requirements_grp">
@@ -150,27 +171,6 @@
                                         <field name="calendar_id" />
                                     </list>
                                 </field>
-                            </group>
-                        </page>
-                        <page string="Instructions" name="instructions_page">
-                            <group string="Instructions" name="instructions_grp">
-                                <field
-                                    name="todo"
-                                    nolabel="1"
-                                    colspan="2"
-                                    widget="html"
-                                />
-                            </group>
-                            <group
-                                string="Location Directions"
-                                name="location_directions_grp"
-                            >
-                                <field
-                                    name="location_directions"
-                                    nolabel="1"
-                                    colspan="2"
-                                    widget="html"
-                                />
                             </group>
                         </page>
                         <page string="Execution" name="execution_page">
