@@ -15,7 +15,7 @@ class FSMOrder(models.Model):
     )
     customer_id = fields.Many2one(
         "res.partner",
-        string="Contract/Client",
+        string="Contact/Client",
         change_default=True,
         index="btree",
         tracking=True,
