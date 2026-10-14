@@ -4,11 +4,11 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice.fsm_order_form" />
         <field name="arch" type="xml">
-            <field name="location_id" position="after" hidden="1">
-                <field name="fsm_route_id" />
+            <field name="location_id" position="after">
+                <field name="fsm_route_id" hidden="1"/>
             </field>
-            <field name="scheduled_date_end" position="after" hidden="1">
-                <field name="dayroute_id" readonly="1" />
+            <field name="scheduled_date_end" position="after">
+                <field name="dayroute_id" readonly="1" hidden="1"/>
             </field>
         </field>
     </record>
