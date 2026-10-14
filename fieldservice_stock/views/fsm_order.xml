@@ -31,7 +31,7 @@
                     <field name="return_count" widget="statinfo" string="Returns" />
                 </button>
             </div>
-            <xpath expr="//notebook/page[4]" position="after">
+            <xpath expr="//notebook/page[3]" position="before">
                 <page string="Inventory" id="stock">
                     <group groups="stock.group_stock_user">
                         <group id="stock-left">
