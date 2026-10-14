@@ -83,10 +83,26 @@ def installed(call):
 def prepare():
     call = connect()
     live = installed(call)
+
     baseline = load(BASELINE, {"database": DB, "modules": {}})
     if baseline.get("database") != DB:
-        raise RuntimeError("Saved deployment state belongs to another database")
+        raise RuntimeError(
+            "Saved deployment state belongs to another database"
+        )
+
+    previous_pending = load(
+        PENDING,
+        {"database": DB, "modules": {}},
+    )
+    if previous_pending.get("database") != DB:
+        raise RuntimeError(
+            "Pending deployment belongs to another database"
+        )
+
+    unfinished = set(previous_pending.get("modules", {}))
+
     STATE.mkdir(parents=True, exist_ok=True)
+
     with tempfile.TemporaryDirectory(prefix="checkout-", dir=STATE) as temp:
         checkout = Path(temp) / "field-service"
         cmd = ["git", "clone", "--depth", "1"]
