@@ -134,12 +134,13 @@
                         </page>
                         <page string="Planning" name="planning_page">
                             <group>
-                                <group string="Requirements" name="requirements_grp">
+                                <group string="Requirements" name="requirements_grp" invisible="1">
                                     <field
                                         name="category_ids"
                                         widget="many2many_tags"
                                         options="{'color_field': 'color'}"
                                         groups="fieldservice.group_fsm_category"
+                                        invisible="1"
                                     />
                                     <field name="request_early" />
                                     <field name="request_late" />
