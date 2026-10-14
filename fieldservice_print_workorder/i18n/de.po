@@ -237,7 +237,7 @@ msgstr "Druck-ID:"
 #. module: fieldservice_print_workorder
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
 msgid "Print Preview"
-msgstr "Druckvorschau"
+msgstr "Druckvorschau Arbeitsauftrag"
 
 #. module: fieldservice_print_workorder
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print

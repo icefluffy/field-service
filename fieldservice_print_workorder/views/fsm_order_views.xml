@@ -8,7 +8,7 @@
             <xpath expr="//form/header" position="inside">
                 <button
                     name="action_preview_workorder"
-                    string="Print Preview"
+                    string="Print Preview Workorder"
                     type="object"
                 />
                 <button
