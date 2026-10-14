@@ -3580,8 +3580,8 @@ msgstr "Territoire"
 msgid ""
 "The ISO country code in two chars. \n"
 "You can use this field for quick search."
-msgstr "Le code pays ISO sur deux caractères.
-Vous pouvez utiliser ce champ pour une recherche rapide."
+msgstr "Le code pays ISO sur deux caractères. \n"
+"Vous pouvez utiliser ce champ pour une recherche rapide."
 
 
 #. module: fieldservice
