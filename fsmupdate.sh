@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Exit 10 means new files were staged and a restart is required.
 status=0
-python3 /mnt/sethDeploy.py --prepare || status=$?
+python3 /sethDeploy.py --prepare || status=$?
 
 case "$status" in
     0)

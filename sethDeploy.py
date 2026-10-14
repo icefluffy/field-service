@@ -100,16 +100,33 @@ def prepare():
         removed = sorted((set(baseline["modules"]) & set(live)) - set(source))
         if removed:
             raise RuntimeError("Previously deployed installed modules disappeared from GitHub; review manually: " + ", ".join(removed))
+        missing_unfinished = sorted(
+            (unfinished & set(live)) - set(source)
+        )
+        if missing_unfinished:
+            raise RuntimeError(
+                "Unfinished installed modules disappeared from GitHub: "
+                + ", ".join(missing_unfinished)
+            )
+
         wanted = {}
+
         for name in sorted(source):
             if name not in live:
                 print(f"SKIP uninstalled: {name}")
                 continue
+
             fingerprint = digest(source[name])
-            if baseline["modules"].get(name) == fingerprint:
+
+            if (
+                baseline["modules"].get(name) == fingerprint
+                and name not in unfinished
+            ):
                 print(f"SKIP unchanged: {name}")
                 continue
-            print(f"CHANGED: {name}")
+
+            reason = "RETRY" if name in unfinished else "CHANGED"
+            print(f"{reason}: {name}")
             wanted[name] = fingerprint
             
         # Refresh the full repository, including root-level files.
@@ -127,8 +144,12 @@ def prepare():
         if not wanted:
             print("No changed installed modules. No restart or upgrade needed.")
             return 0
-        backup = STATE / ("backup-" + commit[:12])
-        backup.mkdir(exist_ok=True)
+        backup = Path(
+            tempfile.mkdtemp(
+                prefix=f"backup-{commit[:12]}-",
+                dir=STATE,
+            )
+        )
         originals = []
         try:
             for name in sorted(wanted):
@@ -171,6 +192,11 @@ def deploy():
     pending = load(PENDING, {})
     if pending["database"] != DB:
         raise RuntimeError("Pending deployment belongs to another database")
+    previous_pending = load(PENDING, {"database": DB, "modules": {}})
+    if previous_pending.get("database") != DB:
+        raise RuntimeError("Pending deployment belongs to another database")
+
+    unfinished = set(previous_pending.get("modules", {}))
     for name, expected in pending["modules"].items():
         if digest(ADDONS / name) != expected:
             raise RuntimeError(f"Files for {name} changed after preparation. Pending list retained; review files before continuing.")
