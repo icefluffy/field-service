@@ -1,0 +1,1869 @@
+# Translation of Odoo Server.
+
+# This file contains the translation of the following modules:
+#	* fieldservice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-10-14 16:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Perplexity\n"
+
+msgid ""
+msgstr ""
+
+msgid "# Meetings"
+msgstr ""
+
+msgid "# Opportunities"
+msgstr ""
+
+msgid "# Vendor Bills"
+msgstr ""
+
+msgid "# of Owned Locations"
+msgstr ""
+
+msgid "'Service Order - %s' % (object.name)"
+msgstr ""
+
+msgid "<span>Reporting</span>"
+msgstr ""
+
+msgid "<span>View</span>"
+msgstr ""
+
+msgid "<strong>Assigned To:</strong>"
+msgstr ""
+
+msgid "<strong>Date Completed:</strong>"
+msgstr ""
+
+msgid "<strong>ETA:</strong>"
+msgstr ""
+
+msgid "<strong>The contact linked to this user is still active</strong>"
+msgstr ""
+
+msgid "A Field Service Location related to that partner already exists."
+msgstr ""
+
+msgid "A Field Service Worker related to that partner already exists."
+msgstr ""
+
+msgid "Account Payable"
+msgstr ""
+
+msgid "Account Receivable"
+msgstr ""
+
+msgid "Action Needed"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Active Lang Count"
+msgstr ""
+
+msgid "Activities"
+msgstr ""
+
+msgid "Activity Exception Decoration"
+msgstr ""
+
+msgid "Activity State"
+msgstr ""
+
+msgid "Activity Type Icon"
+msgstr ""
+
+msgid "Actual End"
+msgstr ""
+
+msgid "Actual Start"
+msgstr ""
+
+msgid "Actual duration"
+msgstr ""
+
+msgid "Actual duration in hours"
+msgstr ""
+
+msgid "Add Field Service Workers here."
+msgstr ""
+
+msgid "Add a Field Service Equipment here."
+msgstr ""
+
+msgid "Add a Field Service Worker Category here."
+msgstr ""
+
+msgid "Add a description for the order..."
+msgstr ""
+
+msgid "Add a description..."
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Address Type"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Agreements"
+msgstr ""
+
+msgid "Agreements Count"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "All Orders"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Allow Field Service Google Map"
+msgstr ""
+
+msgid "Allow Field Service Google Maps"
+msgstr ""
+
+msgid "Allow Field Service Web Timeline View"
+msgstr ""
+
+msgid "Archived"
+msgstr ""
+
+msgid "Assigned Location"
+msgstr ""
+
+msgid "Assigned Operator"
+msgstr ""
+
+msgid "Assigned To"
+msgstr ""
+
+msgid "Attachment Count"
+msgstr ""
+
+msgid "Auto-fill the equipments on the order"
+msgstr ""
+
+msgid "Auto-fill the workers on the location"
+msgstr ""
+
+msgid "Auto-populate Equipments on Order based on Location"
+msgstr ""
+
+msgid "Auto-populate Workers on Location based on Territory"
+msgstr ""
+
+msgid "Auto-populate equipments on Order based on the Location"
+msgstr ""
+
+msgid "Auto-populate the equipments on the order based on the location content"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Auto-post bills"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Automatically post bills for this trusted partner"
+msgstr ""
+
+msgid "Avatar"
+msgstr ""
+
+msgid "Avatar 1024"
+msgstr ""
+
+msgid "Avatar 128"
+msgstr ""
+
+msgid "Avatar 256"
+msgstr ""
+
+msgid "Avatar 512"
+msgstr ""
+
+msgid "Bank"
+msgstr ""
+
+msgid "Banks"
+msgstr ""
+
+msgid "Barcode"
+msgstr ""
+
+msgid "Blacklist"
+msgstr ""
+
+msgid "Blacklisted Phone Is Mobile"
+msgstr ""
+
+msgid "Blacklisted Phone is Phone"
+msgstr ""
+
+msgid "Bounce"
+msgstr ""
+
+msgid "Branch"
+msgstr ""
+
+msgid "Branch Manager"
+msgstr ""
+
+msgid "CRM"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel Order"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Cannot move to completed from Kanban"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Category name already exists!"
+msgstr ""
+
+msgid "Change Management"
+msgstr ""
+
+msgid "Channels"
+msgstr ""
+
+msgid "Check collected payments"
+msgstr ""
+
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr ""
+
+msgid "Check inventory"
+msgstr ""
+
+msgid "Check the amount collected by the worker during the route"
+msgstr ""
+
+msgid "Check the amount collected during the route"
+msgstr ""
+
+msgid "Check the inventory of the vehicle at the end of the route"
+msgstr ""
+
+msgid "Check this box if this contact is an Employee."
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Children Locations"
+msgstr ""
+
+msgid "Choose a team to be set on orders of this template"
+msgstr ""
+
+msgid "City"
+msgstr ""
+
+msgid "Classify and analyze your orders"
+msgstr ""
+
+msgid "Color Code"
+msgstr ""
+
+msgid "Color Index"
+msgstr ""
+
+msgid "Color code should be Hex Code. Ex:-#FFFFFF"
+msgstr ""
+
+msgid "Commercial Entity"
+msgstr ""
+
+msgid "Companies"
+msgstr ""
+
+msgid "Companies that refers to partner"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Company ID"
+msgstr ""
+
+msgid "Company ID Label"
+msgstr ""
+
+msgid "Company Name"
+msgstr ""
+
+msgid "Company Name Entity"
+msgstr ""
+
+msgid "Company Type"
+msgstr ""
+
+msgid "Company related to this category"
+msgstr ""
+
+msgid "Company related to this equipment"
+msgstr ""
+
+msgid "Company related to this order"
+msgstr ""
+
+msgid "Company related to this tag"
+msgstr ""
+
+msgid "Company related to this team"
+msgstr ""
+
+msgid "Company related to this template"
+msgstr ""
+
+msgid "Complete"
+msgstr ""
+
+msgid "Complete Address"
+msgstr ""
+
+msgid "Complete Direction"
+msgstr ""
+
+msgid "Complete Name"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Compute Localization"
+msgstr ""
+
+msgid "Compute based on address"
+msgstr ""
+
+msgid "Config Settings"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contacts"
+msgstr ""
+
+msgid "Contacts Count"
+msgstr ""
+
+msgid "Convert"
+msgstr ""
+
+msgid "Convert to FSM Record"
+msgstr ""
+
+msgid "Convert to a Field Service Worker or Location"
+msgstr ""
+
+msgid "Counter of the number of bounced emails for this contact"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "Country Code"
+msgstr ""
+
+msgid "Create FSM Orders from Opportunities"
+msgstr ""
+
+msgid "Create a Customer."
+msgstr ""
+
+msgid "Create a Service Location"
+msgstr ""
+
+msgid "Create a Stage."
+msgstr ""
+
+msgid "Create a new team"
+msgstr ""
+
+msgid "Create a tag."
+msgstr ""
+
+msgid "Create an Order."
+msgstr ""
+
+msgid "Create an order template"
+msgstr ""
+
+msgid "Create multiple FSM Locations at once using Location Builder Wizard"
+msgstr ""
+
+msgid "Create the linked locations of a worker."
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Created by"
+msgstr ""
+
+msgid "Created on"
+msgstr ""
+
+msgid "Credit Limit"
+msgstr ""
+
+msgid "Credit To Invoice"
+msgstr ""
+
+msgid "Credit limit specific to this partner."
+msgstr ""
+
+msgid "Currency"
+msgstr ""
+
+msgid "Current Date"
+msgstr ""
+
+msgid "Current Location"
+msgstr ""
+
+msgid "Customer Location"
+msgstr ""
+
+msgid "Customer Payment Terms"
+msgstr ""
+
+msgid "Customer Rank"
+msgstr ""
+
+msgid "Customer Signature"
+msgstr ""
+
+msgid "Customers"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Days Sales Outstanding (DSO)"
+msgstr ""
+
+msgid "Default Team"
+msgstr ""
+
+msgid "Default duration in hours"
+msgstr ""
+
+msgid "Default team assigned to orders in this location"
+msgstr ""
+
+msgid "Degree of trust you have in this debtor"
+msgstr ""
+
+msgid "Deprecated Parent"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Direction"
+msgstr ""
+
+msgid "Directions"
+msgstr ""
+
+msgid "Dispatcher"
+msgstr ""
+
+msgid "Display Invoice Edi Format"
+msgstr ""
+
+msgid "Display Invoice Template Pdf Report"
+msgstr ""
+
+msgid "Display Name"
+msgstr ""
+
+msgid "Display locations and orders on a map with Google Maps"
+msgstr ""
+
+msgid "Display locations and orders on a map with OpenStreetMap"
+msgstr ""
+
+msgid "District"
+msgstr ""
+
+msgid "District Manager"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Due Within 30 Days"
+msgstr ""
+
+msgid "Due Within 7 Days"
+msgstr ""
+
+msgid "Duplicate Bank Partner"
+msgstr ""
+
+msgid "Duplicated Bank Account Partners Count"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Earliest Request Date"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Employee"
+msgstr ""
+
+msgid "Employees"
+msgstr ""
+
+msgid "Employees Count"
+msgstr ""
+
+msgid "Enter the resolution for the order..."
+msgstr ""
+
+msgid "Equipment"
+msgstr ""
+
+msgid "Equipment name already exists!"
+msgstr ""
+
+msgid "Equipment-1"
+msgstr ""
+
+msgid "Equipment-2"
+msgstr ""
+
+msgid "Equipment-3"
+msgstr ""
+
+msgid "Equipments"
+msgstr ""
+
+msgid "Equipments Report"
+msgstr ""
+
+msgid "Execution"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "FS Order #"
+msgstr ""
+
+msgid "FSM"
+msgstr ""
+
+msgid "FSM Equipment Name"
+msgstr ""
+
+msgid "FSM Location Builder"
+msgstr ""
+
+msgid "FSM Locations"
+msgstr ""
+
+msgid "FSM Order Name"
+msgstr ""
+
+msgid "FSM Order Sign Wizard"
+msgstr ""
+
+msgid "FSM Orders"
+msgstr ""
+
+msgid "FSM Person Calendar Filter"
+msgstr ""
+
+msgid "FSM Record Conversion"
+msgstr ""
+
+msgid "FSM Worker"
+msgstr ""
+
+msgid "Field Service"
+msgstr ""
+
+msgid "Field Service Category"
+msgstr ""
+
+msgid "Field Service Equipment"
+msgstr ""
+
+msgid "Field Service Location"
+msgstr ""
+
+msgid "Field Service Location Person Info"
+msgstr ""
+
+msgid "Field Service Order"
+msgstr ""
+
+msgid "Field Service Order Template"
+msgstr ""
+
+msgid "Field Service Order Type"
+msgstr ""
+
+msgid "Field Service Stage"
+msgstr ""
+
+msgid "Field Service Tag"
+msgstr ""
+
+msgid "Field Service Team"
+msgstr ""
+
+msgid "Field Service Worker"
+msgstr ""
+
+msgid "Field Service Worker Category"
+msgstr ""
+
+msgid "Field Service Workers"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Fiscal Country Codes"
+msgstr ""
+
+msgid "Fiscal Position"
+msgstr ""
+
+msgid "Folded in Kanban"
+msgstr ""
+
+msgid "Followers"
+msgstr ""
+
+msgid "Followers (Partners)"
+msgstr ""
+
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+msgid "Format email address \"Name <email@domain>\""
+msgstr ""
+
+msgid "Formatted Email"
+msgstr ""
+
+msgid "Fsm Model Mixin"
+msgstr ""
+
+msgid "Full Name"
+msgstr ""
+
+msgid "Future Orders"
+msgstr ""
+
+msgid "GLN"
+msgstr ""
+
+msgid "General Notes"
+msgstr ""
+
+msgid "Geo Latitude"
+msgstr ""
+
+msgid "Geo Location"
+msgstr ""
+
+msgid "Geo Longitude"
+msgstr ""
+
+msgid "Geolocation"
+msgstr ""
+
+msgid "Geolocation Date"
+msgstr ""
+
+msgid "Global Location Number"
+msgstr ""
+
+msgid "Group By"
+msgstr ""
+
+msgid "Has Message"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "High"
+msgstr ""
+
+msgid "Hours of Buffer for High Priority FS Orders"
+msgstr ""
+
+msgid "Hours of Buffer for Low Priority FS Orders"
+msgstr ""
+
+msgid "Hours of Buffer for Lowest Priority FS Orders"
+msgstr ""
+
+msgid "Hours of Buffer for Medium Priority FS Orders"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "IM Status"
+msgstr ""
+
+msgid "Icon"
+msgstr ""
+
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Ignore Abnormal Invoice Amount"
+msgstr ""
+
+msgid "Ignore Abnormal Invoice Date"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Image 1024"
+msgstr ""
+
+msgid "Image 128"
+msgstr ""
+
+msgid "Image 256"
+msgstr ""
+
+msgid "Image 512"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Industry"
+msgstr ""
+
+msgid "Inlined Complete Address"
+msgstr ""
+
+msgid "Instructions"
+msgstr ""
+
+msgid "Internal Type"
+msgstr ""
+
+msgid "Invoice"
+msgstr ""
+
+msgid "Invoice Edi Format Store"
+msgstr ""
+
+msgid "Invoice sending"
+msgstr ""
+
+msgid "Invoice template"
+msgstr ""
+
+msgid "Invoice your FSM orders"
+msgstr ""
+
+msgid "Invoice your Service Orders"
+msgstr ""
+
+msgid "Invoices"
+msgstr ""
+
+msgid "Is Coa Installed"
+msgstr ""
+
+msgid "Is Follower"
+msgstr ""
+
+msgid "Is Public"
+msgstr ""
+
+msgid "Is a Company"
+msgstr ""
+
+msgid "Is a FS Location"
+msgstr ""
+
+msgid "Is a FS Worker"
+msgstr ""
+
+msgid "Is a close stage"
+msgstr ""
+
+msgid "Is a default stage"
+msgstr ""
+
+msgid "Is closed"
+msgstr ""
+
+msgid "Job Position"
+msgstr ""
+
+msgid "Journal Items"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Last Updated by"
+msgstr ""
+
+msgid "Last Updated on"
+msgstr ""
+
+msgid "Last notification marked as read from base Calendar"
+msgstr ""
+
+msgid "Lat:"
+msgstr ""
+
+msgid "Latest Request Date"
+msgstr ""
+
+msgid "Link FSM orders to MRP Repair orders"
+msgstr ""
+
+msgid "Link FSM orders to maintenance requests"
+msgstr ""
+
+msgid "Link FSM vehicles to Fleet vehicles"
+msgstr ""
+
+msgid "Link Field Service vehicles with Fleet vehicles"
+msgstr ""
+
+msgid "Link to Fleet Vehicles"
+msgstr ""
+
+msgid "Link your FSM orders to MRP repair orders"
+msgstr ""
+
+msgid "Link your FSM orders to Projects and Project Tasks"
+msgstr ""
+
+msgid "Link your FSM orders to maintenance requests"
+msgstr ""
+
+msgid "Linked Locations"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Location Directions"
+msgstr ""
+
+msgid "Location Notes"
+msgstr ""
+
+msgid "Location Persons"
+msgstr ""
+
+msgid "Location Phone"
+msgstr ""
+
+msgid "Location Reports."
+msgstr ""
+
+msgid "Location Worker"
+msgstr ""
+
+msgid "Location Workers"
+msgstr ""
+
+msgid "Location-1"
+msgstr ""
+
+msgid "Location-2"
+msgstr ""
+
+msgid "Location-3"
+msgstr ""
+
+msgid "Locations"
+msgstr ""
+
+msgid "Long:"
+msgstr ""
+
+msgid "Low"
+msgstr ""
+
+msgid "MRP Repair"
+msgstr ""
+
+msgid "Make sure to send the right worker with the appropriate skills"
+msgstr ""
+
+msgid "Manage Agreements"
+msgstr ""
+
+msgid "Manage Categories"
+msgstr ""
+
+msgid "Manage Distribution"
+msgstr ""
+
+msgid "Manage Equipment"
+msgstr ""
+
+msgid "Manage Equipments"
+msgstr ""
+
+msgid "Manage FSM Activities"
+msgstr ""
+
+msgid "Manage Field Service Equipment"
+msgstr ""
+
+msgid "Manage Field Service Order Templates"
+msgstr ""
+
+msgid "Manage Field Service Tags"
+msgstr ""
+
+msgid "Manage Field Service Teams"
+msgstr ""
+
+msgid "Manage Field Service Worker Categories"
+msgstr ""
+
+msgid "Manage Inventory Logistics"
+msgstr ""
+
+msgid "Manage Maintenance Requests"
+msgstr ""
+
+msgid "Manage Order Activities"
+msgstr ""
+
+msgid "Manage Order Sizes"
+msgstr ""
+
+msgid "Manage Order Sub-Statuses"
+msgstr ""
+
+msgid "Manage Order Templates"
+msgstr ""
+
+msgid "Manage Recurring Orders"
+msgstr ""
+
+msgid "Manage Skills"
+msgstr ""
+
+msgid "Manage Sub-Statuses"
+msgstr ""
+
+msgid "Manage Tags"
+msgstr ""
+
+msgid "Manage Teams"
+msgstr ""
+
+msgid "Manage Template"
+msgstr ""
+
+msgid "Manage Territories"
+msgstr ""
+
+msgid "Manage Territory"
+msgstr ""
+
+msgid "Manage Vehicles"
+msgstr ""
+
+msgid "Manage activities"
+msgstr ""
+
+msgid "Manage agreements and contracts"
+msgstr ""
+
+msgid "Manage different categories of Field Service workers"
+msgstr ""
+
+msgid "Manage different teams of Field Service workers"
+msgstr ""
+
+msgid "Manage equipments at the service location"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Manage recurrence of field service orders"
+msgstr ""
+
+msgid "Manage routes"
+msgstr ""
+
+msgid "Manage routes of your workers"
+msgstr ""
+
+msgid "Manage sizes for orders and locations"
+msgstr ""
+
+msgid "Manage sub-status of orders"
+msgstr ""
+
+msgid "Manage subcontractors and their pricelists"
+msgstr ""
+
+msgid "Manage subcontractors with pricelists"
+msgstr ""
+
+msgid "Manage tags on service orders"
+msgstr ""
+
+msgid "Manage templates"
+msgstr ""
+
+msgid "Manage territories, branches, districts and regions"
+msgstr ""
+
+msgid "Manage vehicles for Field Service operations"
+msgstr ""
+
+msgid "Manage your distribution structure"
+msgstr ""
+
+msgid "Managed By"
+msgstr ""
+
+msgid "Manager"
+msgstr ""
+
+msgid "Mapping Tools"
+msgstr ""
+
+msgid "Master Data"
+msgstr ""
+
+msgid "Me"
+msgstr ""
+
+msgid "Meetings"
+msgstr ""
+
+msgid "Message Delivery error"
+msgstr ""
+
+msgid "Message for Invoice"
+msgstr ""
+
+msgid "Message for Sales Order"
+msgstr ""
+
+msgid "Message for Stock Picking"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "Mobile"
+msgstr ""
+
+msgid "My Activity Deadline"
+msgstr ""
+
+msgid "My Orders"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Need Assigned"
+msgstr ""
+
+msgid "Need Scheduled"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+msgid "Next Activity Deadline"
+msgstr ""
+
+msgid "Next Activity Summary"
+msgstr ""
+
+msgid "Next Activity Type"
+msgstr ""
+
+msgid "Next Stage"
+msgstr ""
+
+msgid "Normal"
+msgstr ""
+
+msgid "Normalized Email"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Number of Actions"
+msgstr ""
+
+msgid "Number of errors"
+msgstr ""
+
+msgid "Number of messages requiring action"
+msgstr ""
+
+msgid "Number of messages with delivery error"
+msgstr ""
+
+msgid "Office Hours"
+msgstr ""
+
+msgid "Operations"
+msgstr ""
+
+msgid "Opportunities"
+msgstr ""
+
+msgid "Opportunity Count"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Order Assigned"
+msgstr ""
+
+msgid "Order Cancelled"
+msgstr ""
+
+msgid "Order Completed"
+msgstr ""
+
+msgid "Order Confirmed"
+msgstr ""
+
+msgid "Order Created"
+msgstr ""
+
+msgid "Order En Route"
+msgstr ""
+
+msgid "Order Scheduled"
+msgstr ""
+
+msgid "Order Started"
+msgstr ""
+
+msgid "Order Team"
+msgstr ""
+
+msgid "Order Templates"
+msgstr ""
+
+msgid "Order Types"
+msgstr ""
+
+msgid "Order assigned"
+msgstr ""
+
+msgid "Order cancelled"
+msgstr ""
+
+msgid "Order completed"
+msgstr ""
+
+msgid "Order confirmed"
+msgstr ""
+
+msgid "Order created"
+msgstr ""
+
+msgid "Order en route"
+msgstr ""
+
+msgid "Order scheduled"
+msgstr ""
+
+msgid "Order signed by %s"
+msgstr ""
+
+msgid "Order started"
+msgstr ""
+
+msgid "Orders"
+msgstr ""
+
+msgid "Orders Count"
+msgstr ""
+
+msgid "Orders Reports."
+msgstr ""
+
+msgid "Orders to Assign"
+msgstr ""
+
+msgid "Orders to Schedule"
+msgstr ""
+
+msgid "Others"
+msgstr ""
+
+msgid "Owned By"
+msgstr ""
+
+msgid "Owned Locations"
+msgstr ""
+
+msgid "Owner"
+msgstr ""
+
+msgid "Parent"
+msgstr ""
+
+msgid "Parent Path"
+msgstr ""
+
+msgid "Parent name"
+msgstr ""
+
+msgid "Partner Company Registry Placeholder"
+msgstr ""
+
+msgid "Partner Contracts"
+msgstr ""
+
+msgid "Partner Limit"
+msgstr ""
+
+msgid "Partner Vat Placeholder"
+msgstr ""
+
+msgid "Partner is Active"
+msgstr ""
+
+msgid "Partner with same Company Registry"
+msgstr ""
+
+msgid "Partner with same Tax ID"
+msgstr ""
+
+msgid "Payable Limit"
+msgstr ""
+
+msgid "Payment Token Count"
+msgstr ""
+
+msgid "Payment Tokens"
+msgstr ""
+
+msgid "Person Checked"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Phone Blacklisted"
+msgstr ""
+
+msgid "Phone/Mobile"
+msgstr ""
+
+msgid "Planning"
+msgstr ""
+
+msgid "Preferred Workers"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Previous Stage"
+msgstr ""
+
+msgid "Pricelist"
+msgstr ""
+
+msgid "Primary Assignment"
+msgstr ""
+
+msgid "Primary Contact"
+msgstr ""
+
+msgid "Primary Service Location"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Priority Management Explanation"
+msgstr ""
+
+msgid "Projects and Tasks"
+msgstr ""
+
+msgid "Property Inbound Payment Method Line"
+msgstr ""
+
+msgid "Property Outbound Payment Method Line"
+msgstr ""
+
+msgid "Purchase Field Services"
+msgstr ""
+
+msgid "Ratings"
+msgstr ""
+
+msgid "Record Type"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Refresh Localization"
+msgstr ""
+
+msgid "Region"
+msgstr ""
+
+msgid "Region Manager"
+msgstr ""
+
+msgid "Related Company"
+msgstr ""
+
+msgid "Related FS Location"
+msgstr ""
+
+msgid "Related Owner"
+msgstr ""
+
+msgid "Related Partner"
+msgstr ""
+
+msgid "Related employees based on their private address"
+msgstr ""
+
+msgid "Reporting"
+msgstr ""
+
+msgid "Request Workers"
+msgstr ""
+
+msgid "Require Signature"
+msgstr ""
+
+msgid "Requirements"
+msgstr ""
+
+msgid "Resolution"
+msgstr ""
+
+msgid "Resolution Notes"
+msgstr ""
+
+msgid "Responsible User"
+msgstr ""
+
+msgid "Routes"
+msgstr ""
+
+msgid "SMS Delivery error"
+msgstr ""
+
+msgid "Sale Order Count"
+msgstr ""
+
+msgid "Sales Order"
+msgstr ""
+
+msgid "Sales Warnings"
+msgstr ""
+
+msgid "Salesperson"
+msgstr ""
+
+msgid "Sanitized Number"
+msgstr ""
+
+msgid "Schedule Details"
+msgstr ""
+
+msgid "Scheduled Duration"
+msgstr ""
+
+msgid "Scheduled End"
+msgstr ""
+
+msgid "Scheduled Start (ETA)"
+msgstr ""
+
+msgid "Scheduled duration of the work in hours"
+msgstr ""
+
+msgid "Search FSM Location"
+msgstr ""
+
+msgid "Search FSM Teams"
+msgstr ""
+
+msgid "Search FSM Workers"
+msgstr ""
+
+msgid "Search Location By Hierarchy"
+msgstr ""
+
+msgid "Search Location Worker"
+msgstr ""
+
+msgid "Search Locations based on their full hierarchy name"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Self"
+msgstr ""
+
+msgid "Sell FSM orders"
+msgstr ""
+
+msgid "Sell Field Service Orders"
+msgstr ""
+
+msgid "Sell products that generate field service orders"
+msgstr ""
+
+msgid "Sequence"
+msgstr ""
+
+msgid "Service Locations"
+msgstr ""
+
+msgid "Service Order"
+msgstr ""
+
+msgid "Service Orders"
+msgstr ""
+
+msgid "Services in this stage are considered as closed."
+msgstr ""
+
+msgid "Set a value greater than 0.0 to activate a credit limit check"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Share Partner"
+msgstr ""
+
+msgid "Show Credit Limit"
+msgstr ""
+
+msgid "Sign"
+msgstr ""
+
+msgid "Signature"
+msgstr ""
+
+msgid "Signed By"
+msgstr ""
+
+msgid "Signed On"
+msgstr ""
+
+msgid "Signup Token Type"
+msgstr ""
+
+msgid "Specific Property Product Pricelist"
+msgstr ""
+
+msgid "Stage"
+msgstr ""
+
+msgid "Stage Color"
+msgstr ""
+
+msgid "Stage Description and Tooltips"
+msgstr ""
+
+msgid "Stage Name"
+msgstr ""
+
+msgid "Stages"
+msgstr ""
+
+msgid "Starred Message"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Stock Picking"
+msgstr ""
+
+msgid "Street"
+msgstr ""
+
+msgid "Street 2..."
+msgstr ""
+
+msgid "Street..."
+msgstr ""
+
+msgid "Street2"
+msgstr ""
+
+msgid "Sub Locations"
+msgstr ""
+
+msgid "Sub-Locations"
+msgstr ""
+
+msgid "Supplier Rank"
+msgstr ""
+
+msgid "Tag name already exists!"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Tax ID"
+msgstr ""
+
+msgid "Tax ID Label"
+msgstr ""
+
+msgid "Team"
+msgstr ""
+
+msgid "Team Name"
+msgstr ""
+
+msgid "Team name already exists!"
+msgstr ""
+
+msgid "Teams"
+msgstr ""
+
+msgid "Template"
+msgstr ""
+
+msgid "Templates"
+msgstr ""
+
+msgid "Territories"
+msgstr ""
+
+msgid "Territory"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "The internal user in charge of this contact."
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "The worker is already linked to this location."
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Timezone"
+msgstr ""
+
+msgid "Timezone offset"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To Assign"
+msgstr ""
+
+msgid "To Do"
+msgstr ""
+
+msgid "To Schedule"
+msgstr ""
+
+msgid "Today Orders"
+msgstr ""
+
+msgid "Total Invoiced"
+msgstr ""
+
+msgid "Total Payable"
+msgstr ""
+
+msgid "Total Receivable"
+msgstr ""
+
+msgid "Total amount this customer owes you."
+msgstr ""
+
+msgid "Total amount you have to pay to this vendor."
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Type of the exception activity on record."
+msgstr ""
+
+msgid "Unassigned"
+msgstr ""
+
+msgid "Unscheduled"
+msgstr ""
+
+msgid "Updated on:"
+msgstr ""
+
+msgid "Urgent"
+msgstr ""
+
+msgid "Use FSM Location Builder"
+msgstr ""
+
+msgid "Use GeoEngine"
+msgstr ""
+
+msgid "Use GeoEngine with OpenStreetMap"
+msgstr ""
+
+msgid "Use Hex Code only Ex:-#FFFFFF"
+msgstr ""
+
+msgid "Use Odoo Logistics"
+msgstr ""
+
+msgid "Use a barcode to identify this contact."
+msgstr ""
+
+msgid "Used a default stage"
+msgstr ""
+
+msgid "Used to order stages. Lower is better."
+msgstr ""
+
+msgid "Used to sort teams. Lower is better."
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "User (only own documents)"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Vehicles"
+msgstr ""
+
+msgid "Vendor Location"
+msgstr ""
+
+msgid "Vendor Payment Terms"
+msgstr ""
+
+msgid "Website Link"
+msgstr ""
+
+msgid "Website Messages"
+msgstr ""
+
+msgid "Website communication history"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "Worker"
+msgstr ""
+
+msgid "Worker Phone"
+msgstr ""
+
+msgid "Worker Stage 1"
+msgstr ""
+
+msgid "Worker Stage 2"
+msgstr ""
+
+msgid "Worker Stage 3"
+msgstr ""
+
+msgid "Workers"
+msgstr ""
+
+msgid "Working Schedule"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "You can archive the contact"
+msgstr ""
+
+msgid "You cannot delete this order."
+msgstr ""
+
+msgid "You cannot have the same worker twice."
+msgstr ""
+
+msgid "You must create an FSM order stage first."
+msgstr ""
+
+msgid "You must create an FSM team first."
+msgstr ""
+
+msgid "ZIP"
+msgstr ""
+
+msgid "Zip"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "eInvoice format"
+msgstr ""
+
+msgid "tag"
+msgstr ""
+
+msgid "template"
+msgstr ""
