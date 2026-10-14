@@ -136,7 +136,7 @@ class FSMOrder(models.Model):
 
     contact_id = fields.Many2one(
         "res.partner",
-        string="Contact/Client",
+        string="Contact",
         ondelete="restrict",
         index=True,
         domain="[('is_company', '=', False)]",
