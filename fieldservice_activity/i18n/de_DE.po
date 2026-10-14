@@ -153,7 +153,6 @@ msgstr "Name"
 
 #. module: fieldservice_activity
 #. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
 #: code:addons/fieldservice_activity/models/fsm_order.py:0
 msgid "Only one equipment is allowed per Field Service Order."
 msgstr "Pro Feldserviceauftrag ist nur eine Ausrüstung erlaubt."
@@ -230,7 +229,6 @@ msgstr "Zu erledigen"
 
 #. module: fieldservice_activity
 #. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
 #: code:addons/fieldservice_activity/models/fsm_order.py:0
 msgid "You must complete activity '%s' before completing this order."
 msgstr ""
