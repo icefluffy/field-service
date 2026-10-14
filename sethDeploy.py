@@ -81,11 +81,6 @@ def installed(call):
 
 
 def prepare():
-    if PENDING.exists():
-        names = sorted(load(PENDING, {})["modules"])
-        print("A deployment is already pending: " + ", ".join(names))
-        print("Restarting before continuing the pending deployment.")
-        return 10
     call = connect()
     live = installed(call)
     baseline = load(BASELINE, {"database": DB, "modules": {}})
