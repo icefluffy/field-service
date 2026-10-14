@@ -116,6 +116,7 @@ def prepare():
                 continue
             print(f"CHANGED: {name}")
             wanted[name] = fingerprint
+            
         # Refresh the full repository, including root-level files.
         if PROJECT.is_symlink():
             raise RuntimeError(
@@ -124,6 +125,10 @@ def prepare():
 
         if PROJECT.exists():
             shutil.rmtree(PROJECT)
+
+        shutil.copytree(checkout, PROJECT)
+        print(f"Full GitHub repository copied to {PROJECT}")
+
         if not wanted:
             print("No changed installed modules. No restart or upgrade needed.")
             return 0
