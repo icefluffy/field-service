@@ -4,7 +4,7 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice.fsm_order_form" />
         <field name="arch" type="xml">
-            <field name="location_id" position="after">
+            <field name="location_id" position="after" hidden="1">
                 <field name="fsm_route_id" />
             </field>
             <field name="scheduled_date_end" position="after">
