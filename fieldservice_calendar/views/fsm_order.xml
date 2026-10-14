@@ -4,7 +4,7 @@
         <field name="inherit_id" ref="fieldservice.fsm_order_form" />
         <field name="arch" type="xml">
             <field name="location_id" position="before">
-                <field name="calendar_event_id" />
+                <field name="calendar_event_id" invisible="1"/>
             </field>
         </field>
     </record>
