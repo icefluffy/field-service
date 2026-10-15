@@ -341,7 +341,7 @@ class FSMOrder(models.Model):
                 "&",
                 ("team_ids", "in", self.env.context["default_team_id"]),
             ] + search_domain
-        return stages.search(search_domain, order=order)
+        return stages.search(search_domain, order="sequence, id")
 
     @api.model_create_multi
     def create(self, vals_list):
