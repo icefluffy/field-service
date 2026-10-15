@@ -1,21 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="rsn_equipment_properties_open.PropertiesFieldAlwaysOpen"
-       t-inherit="web.PropertiesField"
-       t-inherit-mode="extension">
-
-        <xpath expr="//t[@t-set='isFolded']" position="attributes">
-            <attribute name="t-value">(props.record.resModel === 'fsm.equipment' and props.name === 'lot_properties') ? false : (propertiesListGroup.name and !unfoldedSeparators.includes(propertiesListGroup.name))</attribute>
-        </xpath>
-
-        <xpath expr="//t[@t-set='foldable']" position="attributes">
-            <attribute name="t-value">(props.record.resModel === 'fsm.equipment' and props.name === 'lot_properties') ? false : (propertiesListGroup.name and propertiesListGroup.title and propertiesListGroup.title.length)</attribute>
-        </xpath>
-
-        <xpath expr="//div[@t-on-click='() => this.onSeparatorClick(propertiesListGroup.name)']"
-               position="attributes">
-            <attribute name="t-on-click">() => { if (!(props.record.resModel === 'fsm.equipment' and props.name === 'lot_properties')) { this.onSeparatorClick(propertiesListGroup.name); } }</attribute>
-        </xpath>
-
-    </t>
-</templates>
