@@ -173,7 +173,7 @@
                 <field
                     name="equipment_id"
                     string="Equipment"
-                    options="{'no_create': True, 'no_create_edit': True}"
+                    options="{'no_create': False, 'no_create_edit': False, 'no_quick_create': True}"
                     groups="fieldservice.group_fsm_equipment"
                 />
             </xpath>
