@@ -20,11 +20,6 @@
         "views/stock_picking_type.xml",
         "views/stock_lot.xml",
     ],
-    "assets": {
-        "web.assets_backend": [
-            "fieldservice_equipment_stock/static/src/xml/properties_field.xml",
-        ],
-    },
     "license": "AGPL-3",
     "development_status": "Beta",
     "maintainers": [
