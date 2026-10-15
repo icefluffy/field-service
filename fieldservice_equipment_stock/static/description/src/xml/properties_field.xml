@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="rsn_equipment_properties_open.PropertiesField"
+    <t t-name="rsn_equipment_properties_open.PropertiesFieldAlwaysOpen"
        t-inherit="web.PropertiesField"
        t-inherit-mode="extension">
 
