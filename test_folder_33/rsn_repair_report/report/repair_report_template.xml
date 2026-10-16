@@ -1,0 +1,182 @@
+<odoo>
+    <template id="report_instandsetzung_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-size:11px; font-family: Arial, sans-serif; color:#000;">
+
+                        <h2 style="text-decoration:underline; margin-bottom:10px;">
+                            Instandsetzungsbericht Mobile Instandsetzung
+                        </h2>
+
+                        <!-- Top identification block -->
+                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                            <tr style="background:#e6e6e6;">
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Wagennummer:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Auftragsnummer:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>FW. Nummer:</strong></td>
+                                <td rowspan="4" style="border:1px solid #000; padding:4px; width:25%; text-align:center; vertical-align:middle;">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-width:140px;"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_wagon_number"/></td>
+                                <!-- 'name' is the FSM order reference (Auftragsnummer) -->
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.name"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_fw_number"/></td>
+                            </tr>
+                            <tr style="background:#e6e6e6;">
+                                <td style="border:1px solid #000; padding:4px;"><strong>Halter / ECM:</strong></td>
+                                <td style="border:1px solid #000; padding:4px;"><strong>Kundenauftragsnummer:</strong></td>
+                                <td style="border:1px solid #000; padding:4px;"><strong>Erstellt am:</strong></td>
+                            </tr>
+                            <tr>
+                                <!-- 'customer_id' is the base fieldservice customer/partner field -->
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.customer_id.name"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_customer_order_ref"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.create_date" t-options="{'widget': 'date'}"/></td>
+                            </tr>
+                        </table>
+
+                        <!-- Execution date / maintenance level -->
+                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                            <tr style="background:#e6e6e6;">
+                                <td style="border:1px solid #000; padding:4px; width:50%;"><strong>Mobile Instandsetzung durchgeführt am:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:50%;"><strong>Durchgeführte Instandhaltungsstufe:</strong></td>
+                            </tr>
+                            <tr>
+                                <!-- 'date_start' is the actual FSM order start date/time in base fieldservice.
+                                     Verify against your instance (developer mode -> hover field label) and
+                                     switch to 'scheduled_date_start' if that fits better. -->
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.date_start" t-options="{'widget': 'date'}"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_maintenance_level"/></td>
+                            </tr>
+                        </table>
+
+                        <!-- Wagon old number / weight / revision cycle table -->
+                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                            <tr style="background:#e6e6e6;">
+                                <td style="border:1px solid #000; padding:4px;"><strong>Wagennummer Alt:</strong></td>
+                                <td style="border:1px solid #000; padding:4px;"><strong>Eigengewicht:</strong></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"><strong>Art:</strong></td>
+                                <td style="border:1px solid #000; padding:4px;"><strong>Zyklus:</strong></td>
+                                <td style="border:1px solid #000; padding:4px;"><strong>Datum:</strong></td>
+                                <td style="border:1px solid #000; padding:4px;"><strong>Verlängerung:</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_wagon_number_old"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_own_weight"/> kg</td>
+                                <td style="border:1px solid #000; padding:4px;">Revision</td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_revision_cycle"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_revision_date" t-options="{'widget': 'date'}"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_revision_extension"/></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;">Bremsrevision</td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_brake_type"/></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;">Frist</td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_brake_deadline" t-options="{'widget': 'date'}"/></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                                <td style="border:1px solid #000; padding:4px;"></td>
+                            </tr>
+                        </table>
+
+                        <!-- Work performed -->
+                        <div style="border:1px solid #000; margin-bottom:6px;">
+                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Durchgeführte Instandsetzungsarbeiten:</div>
+                            <div style="padding:6px; min-height:180px;">
+                                <span t-field="o.x_work_performed"/>
+                            </div>
+                        </div>
+
+                        <!-- Postponed work -->
+                        <div style="border:1px solid #000; margin-bottom:6px;">
+                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Zurückgestellte Arbeiten (einschließlich Begründung):</div>
+                            <div style="padding:6px; min-height:70px;">
+                                <span t-field="o.x_postponed_work"/>
+                            </div>
+                        </div>
+
+                        <!-- Replaced components -->
+                        <div style="border:1px solid #000; margin-bottom:6px;">
+                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Ausgetauschte Komponenten:</div>
+                            <div style="padding:6px; min-height:60px;">
+                                <span t-field="o.x_replaced_components"/>
+                            </div>
+                        </div>
+
+                        <!-- Other info -->
+                        <div style="border:1px solid #000; margin-bottom:6px;">
+                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Sonstige Angaben (nach Vorgabe des Halters/ECM):</div>
+                            <div style="padding:6px; min-height:60px;">
+                                <span t-field="o.x_other_information"/>
+                            </div>
+                        </div>
+
+                        <!-- Release confirmation -->
+                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px; width:22%;">
+                                    <span t-if="o.x_repair_confirmed">☒</span><span t-else="">☐</span> Instandsetzung
+                                </td>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    Die beschriebenen Arbeitsschritte wurden korrekt und vollständig ausgeführt.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    <span t-if="o.x_release_confirmed">☒</span><span t-else="">☐</span> Betriebsfreigabe
+                                </td>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    Die zusätzliche Kontrolle nach VPI-EMG 01, Anhang 19, ergab keine Beanstandung.
+                                    Wir bescheinigen hiermit, dass dieser Wagen den einschlägigen Gesetzen und
+                                    Verordnungen, den Vorschriften des Halters/ECM und des RID (sofern zutreffend) entspricht.
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Signatory / contact block -->
+                        <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
+                            <tr style="background:#e6e6e6;">
+                                <td style="border:1px solid #000; padding:4px; width:40%;"><strong>Name (des verantwortlichen Mitarbeiters):</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Telefonnummer:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Ausstellungsdatum:</strong></td>
+                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>E-Mail:</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px;">
+                                    <span t-field="o.company_id.name"/><br/>
+                                    <span t-field="o.company_id.street"/><br/>
+                                    <span t-field="o.company_id.zip"/> <span t-field="o.company_id.city"/><br/>
+                                    <!-- 'person_id' is the FSM worker assigned to the order (base fieldservice) -->
+                                    <span t-field="o.person_id.name"/>
+                                    <i>(signed digitally)</i>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.company_id.phone"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.x_issue_date" t-options="{'widget': 'date'}"/></td>
+                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.company_id.email"/></td>
+                            </tr>
+                        </table>
+
+                        <div style="margin-top:10px; font-size:9px; color:#555;">
+                            VPI-EMG 10 Anhang 2 | Stand: 01.12.2024
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
