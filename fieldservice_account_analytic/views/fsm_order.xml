@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <notebook position="inside">
                 <page name="accounting" string="Accounting">
-                    <group name="bill_to">
+                    <group name="bill_to" invisible="1">
                         <field
                             name="bill_to"
                             widget="radio"
