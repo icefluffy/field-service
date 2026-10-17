@@ -114,7 +114,7 @@ class FsmOrder(models.Model):
         self.ensure_one()
 
         if self.release_id:
-            return self.action_open_release_form()
+            return {"type": "ir.actions.client", "tag": "reload"}
 
         first_equipment = self.equipment_id or self.equipment_ids[:1]
 
@@ -139,7 +139,7 @@ class FsmOrder(models.Model):
 
         self.release_id = release.id
 
-        return self.action_open_release_form()
+        return {"type": "ir.actions.client", "tag": "reload"}
 
     def action_open_release_form(self):
         self.ensure_one()
