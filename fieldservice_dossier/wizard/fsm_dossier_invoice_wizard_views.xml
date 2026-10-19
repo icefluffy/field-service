@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_dossier_invoice_wizard_form" model="ir.ui.view">
+        <field name="name">fsm.dossier.invoice.wizard.form</field>
+        <field name="model">fsm.dossier.invoice.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="dossier_id"/>
+                </group>
+                <field name="line_ids" nolabel="1">
+                    <list editable="bottom" create="0" delete="0">
+                        <field name="selected" readonly="blocker"/>
+                        <field name="order_id" readonly="1"/>
+                        <field name="person_id"/>
+                        <field name="stage_id"/>
+                        <field name="blocker"/>
+                    </list>
+                </field>
+                <footer>
+                    <button name="action_create_invoice" string="Create one invoice"
+                            type="object" class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

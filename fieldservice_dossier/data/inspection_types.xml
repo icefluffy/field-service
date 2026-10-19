@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="inspection_type_wsr" model="fsm.dossier.inspection.type">
+        <field name="name">Wielstelrapport</field>
+        <field name="code">WSR</field>
+        <field name="sequence">10</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_ik" model="fsm.dossier.inspection.type">
+        <field name="name">Ingangskeuring</field>
+        <field name="code">IK</field>
+        <field name="sequence">20</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="True"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_gk" model="fsm.dossier.inspection.type">
+        <field name="name">Goedkeuring</field>
+        <field name="code">GK</field>
+        <field name="sequence">30</field>
+        <field name="is_approval" eval="True"/>
+        <field name="required_default" eval="True"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_var" model="fsm.dossier.inspection.type">
+        <field name="name">Varia</field>
+        <field name="code">VAR</field>
+        <field name="sequence">40</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_kp5" model="fsm.dossier.inspection.type">
+        <field name="name">Ketelproef 4/5 jaar</field>
+        <field name="code">KP5</field>
+        <field name="sequence">50</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_kp8" model="fsm.dossier.inspection.type">
+        <field name="name">Ketelproef 8 jaar</field>
+        <field name="code">KP8</field>
+        <field name="sequence">60</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">96</field>
+    </record>
+    <record id="inspection_type_rev" model="fsm.dossier.inspection.type">
+        <field name="name">Revisie</field>
+        <field name="code">REV</field>
+        <field name="sequence">70</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_omb" model="fsm.dossier.inspection.type">
+        <field name="name">Ombouwing</field>
+        <field name="code">OMB</field>
+        <field name="sequence">80</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_atm" model="fsm.dossier.inspection.type">
+        <field name="name">Atmosfeer Cont</field>
+        <field name="code">ATM</field>
+        <field name="sequence">90</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_uk" model="fsm.dossier.inspection.type">
+        <field name="name">Uitgangskeuring</field>
+        <field name="code">UK</field>
+        <field name="sequence">100</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="True"/>
+        <field name="validity_months">0</field>
+    </record>
+    <record id="inspection_type_si" model="fsm.dossier.inspection.type">
+        <field name="name">Speciale instructies</field>
+        <field name="code">SI</field>
+        <field name="sequence">110</field>
+        <field name="is_approval" eval="False"/>
+        <field name="required_default" eval="False"/>
+        <field name="validity_months">0</field>
+    </record>
+</odoo>

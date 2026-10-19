@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fsm_dossier_user,fsm.dossier user,model_fsm_dossier,fieldservice.group_fsm_user,1,1,1,0
+access_fsm_dossier_manager,fsm.dossier manager,model_fsm_dossier,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_dossier_inspection_user,fsm.dossier.inspection user,model_fsm_dossier_inspection,fieldservice.group_fsm_user,1,1,1,1
+access_fsm_dossier_inspection_manager,fsm.dossier.inspection manager,model_fsm_dossier_inspection,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_dossier_inspection_type_user,fsm.dossier.inspection.type user,model_fsm_dossier_inspection_type,fieldservice.group_fsm_user,1,0,0,0
+access_fsm_dossier_inspection_type_manager,fsm.dossier.inspection.type manager,model_fsm_dossier_inspection_type,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_dossier_invoice_wizard_user,fsm.dossier.invoice.wizard user,model_fsm_dossier_invoice_wizard,fieldservice.group_fsm_user,1,1,1,1
+access_fsm_dossier_invoice_wizard_line_user,fsm.dossier.invoice.wizard.line user,model_fsm_dossier_invoice_wizard_line,fieldservice.group_fsm_user,1,1,1,1

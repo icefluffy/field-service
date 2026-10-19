@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_dossier_form" model="ir.ui.view">
+        <field name="name">fsm.dossier.form</field>
+        <field name="model">fsm.dossier</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_plan" string="Plan" type="object"
+                            invisible="state != 'draft'"/>
+                    <button name="action_start" string="Start work" type="object"
+                            class="btn-primary" invisible="state not in ('draft', 'planned')"/>
+                    <button name="action_request_approval" string="Request approval"
+                            type="object" class="btn-primary"
+                            invisible="state != 'in_progress'"/>
+                    <button name="action_approve" string="Approve" type="object"
+                            class="btn-primary" invisible="state != 'awaiting_approval'"
+                            groups="fieldservice_dossier.group_dossier_approver"/>
+                    <button name="action_reject" string="Reject" type="object"
+                            invisible="state != 'awaiting_approval'"
+                            groups="fieldservice_dossier.group_dossier_approver"/>
+                    <button name="action_create_invoice" string="Create invoice"
+                            type="object"
+                            invisible="state in ('draft', 'cancelled') or billing_status in ('nothing', 'invoiced')"/>
+                    <button name="action_close" string="Close" type="object"
+                            invisible="state in ('draft', 'planned', 'closed', 'cancelled')"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state in ('closed', 'cancelled')"/>
+                    <button name="action_draft" string="Back to draft" type="object"
+                            invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,planned,in_progress,awaiting_approval,approved,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_orders" type="object"
+                                class="oe_stat_button" icon="fa-wrench">
+                            <field name="order_count" widget="statinfo" string="FSM Orders"/>
+                        </button>
+                        <button name="action_view_invoices" type="object"
+                                class="oe_stat_button" icon="fa-pencil-square-o"
+                                invisible="invoice_count == 0">
+                            <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="equipment_id" readonly="order_count &gt; 0"/>
+                            <field name="location_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="date_arrival"/>
+                            <field name="date_planned"/>
+                            <field name="date_done"/>
+                            <field name="inspection_progress"/>
+                            <field name="billing_status"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Inspections" name="inspections">
+                            <field name="inspection_ids">
+                                <list editable="bottom" decoration-muted="not required"
+                                      decoration-danger="result == 'failed'">
+                                    <field name="sequence" column_invisible="1"/>
+                                    <field name="is_approval" column_invisible="1"/>
+                                    <field name="type_id" readonly="id"/>
+                                    <field name="required"/>
+                                    <field name="order_id"
+                                           domain="[('dossier_id', '=', parent.id)]"
+                                           readonly="is_approval"/>
+                                    <field name="person_id"/>
+                                    <field name="work_status" widget="badge" readonly="is_approval"/>
+                                    <field name="result" widget="badge" readonly="is_approval"/>
+                                    <field name="date_performed" readonly="is_approval"/>
+                                    <field name="valid_until"/>
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="FSM Orders" name="orders">
+                            <field name="order_ids"
+                                   context="{'default_location_id': location_id, 'default_company_id': company_id}">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="person_id"/>
+                                    <field name="scheduled_date_start"/>
+                                    <field name="stage_id"/>
+                                    <field name="account_stage"/>
+                                    <field name="invoice_count"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Invoices" name="invoices">
+                            <field name="invoice_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="partner_id"/>
+                                    <field name="invoice_date"/>
+                                    <field name="amount_total"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Approval" name="approval">
+                            <group>
+                                <field name="approval_state"/>
+                                <field name="approved_by"/>
+                                <field name="approved_date"/>
+                                <field name="approval_note"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="fsm_dossier_list" model="ir.ui.view">
+        <field name="name">fsm.dossier.list</field>
+        <field name="model">fsm.dossier</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="equipment_id"/>
+                <field name="location_id"/>
+                <field name="date_arrival"/>
+                <field name="inspection_progress"/>
+                <field name="state" widget="badge"/>
+                <field name="approval_state" widget="badge"/>
+                <field name="billing_status" widget="badge"/>
+                <field name="user_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="fsm_dossier_search" model="ir.ui.view">
+        <field name="name">fsm.dossier.search</field>
+        <field name="model">fsm.dossier</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="equipment_id"/>
+                <field name="user_id"/>
+                <filter name="open" string="Open"
+                        domain="[('state', 'not in', ('closed', 'cancelled'))]"/>
+                <filter name="awaiting" string="Awaiting approval"
+                        domain="[('state', '=', 'awaiting_approval')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="g_state" string="Stage" context="{'group_by': 'state'}"/>
+                    <filter name="g_equipment" string="Equipment" context="{'group_by': 'equipment_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_fsm_dossier" model="ir.actions.act_window">
+        <field name="name">Dossiers</field>
+        <field name="res_model">fsm.dossier</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_open': 1}</field>
+    </record>
+</odoo>
