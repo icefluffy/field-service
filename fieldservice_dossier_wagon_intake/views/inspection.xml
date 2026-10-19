@@ -36,10 +36,45 @@
  </list></field></page>
  <page string="Resultaat"><group><field name="remarks" readonly="state not in ('draft','progress')"/><field name="outcome_note" readonly="state not in ('draft','progress')"/><field name="recorded_by"/><field name="recorded_at"/></group></page>
  </notebook></sheet><chatter/></form></field></record>
- <record id="inspection_form_intake" model="ir.ui.view"><field name="name">inspection.form.intake</field><field name="model">fsm.dossier.inspection</field><field name="inherit_id" ref="fieldservice_dossier.fsm_dossier_inspection_form"/>
- <field name="arch" type="xml"><xpath expr="//sheet" position="before"><header><button name="action_open_wagon_intake" string="Open Ingangskeuring" type="object"/></header></xpath></field></record>
- <record id="dossier_form_intake" model="ir.ui.view"><field name="name">dossier.form.intake</field><field name="model">fsm.dossier</field><field name="inherit_id" ref="fieldservice_dossier.fsm_dossier_form"/>
- <field name="arch" type="xml"><xpath expr="//field[@name='inspection_ids']/list" position="inside"><button name="action_open_wagon_intake" type="object" string="Open Ingangskeuring" icon="fa-list-alt"/></xpath></field></record>
+<record id="inspection_form_intake" model="ir.ui.view">
+    <field name="name">inspection.form.intake</field>
+    <field name="model">fsm.dossier.inspection</field>
+    <field name="inherit_id"
+           ref="fieldservice_dossier.fsm_dossier_inspection_form"/>
+
+    <field name="arch" type="xml">
+        <xpath expr="//sheet" position="before">
+            <header>
+                <field name="is_wagon_intake" invisible="1"/>
+
+                <button name="action_open_wagon_intake"
+                        string="Open Ingangskeuring"
+                        type="object"
+                        invisible="not is_wagon_intake"/>
+            </header>
+        </xpath>
+    </field>
+</record>
+ <record id="dossier_form_intake" model="ir.ui.view">
+    <field name="name">dossier.form.intake</field>
+    <field name="model">fsm.dossier</field>
+    <field name="inherit_id"
+           ref="fieldservice_dossier.fsm_dossier_form"/>
+
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='inspection_ids']/list"
+               position="inside">
+
+            <field name="is_wagon_intake" column_invisible="1"/>
+
+            <button name="action_open_wagon_intake"
+                    type="object"
+                    string="Open Ingangskeuring"
+                    icon="fa-list-alt"
+                    invisible="not is_wagon_intake"/>
+        </xpath>
+    </field>
+</record>
  <record id="order_form_intake" model="ir.ui.view"><field name="name">fsm.order.form.intake</field><field name="model">fsm.order</field><field name="inherit_id" ref="fieldservice.fsm_order_form"/>
  <field name="arch" type="xml"><xpath expr="//header" position="inside"><button name="action_open_wagon_intake" string="Ingangskeuring" type="object" invisible="not dossier_id"/></xpath></field></record>
 </odoo>

@@ -10,6 +10,21 @@ class Inspection(models.Model):
     _inherit = 'fsm.dossier.inspection'
 
     intake_report_ids = fields.One2many('fsm.wagon.intake', 'inspection_id', copy=False)
+    is_wagon_intake = fields.Boolean(
+        string="Is wagon intake",
+        compute="_compute_is_wagon_intake",
+    )
+
+    @api.depends("type_id")
+    def _compute_is_wagon_intake(self):
+        intake_type = self.env.ref(
+            "fieldservice_dossier.inspection_type_ik",
+            raise_if_not_found=False,
+        )
+        for inspection in self:
+            inspection.is_wagon_intake = bool(
+                intake_type and inspection.type_id == intake_type
+            )
 
     def action_open_wagon_intake(self):
         self.ensure_one()
