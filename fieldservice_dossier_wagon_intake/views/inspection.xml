@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <record id="rule_intake_company" model="ir.rule"><field name="name">Intake company</field><field name="model_id" ref="model_fsm_wagon_intake"/><field name="domain_force">[('company_id','in',company_ids)]</field></record>
+ <record id="rule_intake_line_company" model="ir.rule"><field name="name">Intake line company</field><field name="model_id" ref="model_fsm_wagon_intake_line"/><field name="domain_force">[('company_id','in',company_ids)]</field></record>
+ <record id="intake_form" model="ir.ui.view">
+  <field name="name">fsm.wagon.intake.form</field><field name="model">fsm.wagon.intake</field>
+  <field name="arch" type="xml"><form delete="0" duplicate="0">
+   <header>
+    <button name="action_start" string="Start inspectie" type="object" class="btn-primary" invisible="state != 'draft'"/>
+    <button name="action_pass" string="Geslaagd" type="object" class="btn-primary" invisible="state != 'progress'" confirm="Bevestig dat het onderzoek is uitgevoerd volgens uw geldende procedure."/>
+    <button name="action_remarks" string="Geslaagd met opmerkingen" type="object" invisible="state != 'progress'" confirm="Alleen gebruiken indien toegestaan door uw procedure; motiveer het resultaat."/>
+    <button name="action_fail" string="Afgekeurd" type="object" invisible="state != 'progress'"/>
+    <button name="action_reopen" string="Heropenen" type="object" invisible="state in ('draft','progress')" confirm="Het resultaat wordt teruggezet naar Pending. Eventuele dossiergoedkeuring vervalt."/>
+    <field name="state" widget="statusbar" statusbar_visible="draft,progress,passed,remarks,failed"/>
+   </header><sheet><h1><field name="name"/></h1>
+   <group><field name="inspection_id" readonly="1"/><field name="dossier_id"/><field name="equipment_id"/><field name="order_id"/><field name="source_reference"/></group>
+   <group readonly="state not in ('draft','progress')"><group>
+<field name="inspection_date" readonly="state not in ('draft','progress')"/>
+<field name="inspector_id" readonly="state not in ('draft','progress')"/>
+<field name="holder_mark" readonly="state not in ('draft','progress')"/>
+<field name="revision_mark" readonly="state not in ('draft','progress')"/>
+<field name="revision_date" readonly="state not in ('draft','progress')"/>
+<field name="brake_inscription" readonly="state not in ('draft','progress')"/>
+</group><group><field name="uic" readonly="state not in ('draft','progress')"/>
+<field name="customer_type" readonly="state not in ('draft','progress')"/>
+<field name="tare_kg" readonly="state not in ('draft','progress')"/>
+<field name="handbrake_t" readonly="state not in ('draft','progress')"/>
+<field name="handbrake_kn" readonly="state not in ('draft','progress')"/>
+<field name="handbrake_percent" readonly="state not in ('draft','progress')"/>
+</group></group>
+   <notebook><page string="Wagongegevens"><group readonly="state not in ('draft','progress')">
+<field name="load_a" readonly="state not in ('draft','progress')"/><field name="load_b" readonly="state not in ('draft','progress')"/><field name="load_c" readonly="state not in ('draft','progress')"/><field name="load_d" readonly="state not in ('draft','progress')"/><field name="load_e" readonly="state not in ('draft','progress')"/><field name="load_notes" readonly="state not in ('draft','progress')"/><field name="extra" readonly="state not in ('draft','progress')"/><field name="reason" readonly="state not in ('draft','progress')"/><field name="maintenance_inscriptions" readonly="state not in ('draft','progress')"/><field name="revision_plates" readonly="state not in ('draft','progress')"/><field name="brake_block_type" readonly="state not in ('draft','progress')"/></group></page><page string="Vaststellingen">
+ <field name="line_ids" readonly="state not in ('draft','progress')"><list editable="bottom" delete="0" decoration-danger="check_state == 'defect'" decoration-muted="check_state == 'na'">
+ <field name="sequence" optional="hide"/><field name="section"/><field name="component"/><field name="code"/>
+ <field name="check_state"/><field name="defect"/><field name="quantity"/><field name="note"/>
+ </list></field></page>
+ <page string="Resultaat"><group><field name="remarks" readonly="state not in ('draft','progress')"/><field name="outcome_note" readonly="state not in ('draft','progress')"/><field name="recorded_by"/><field name="recorded_at"/></group></page>
+ </notebook></sheet><chatter/></form></field></record>
+ <record id="inspection_form_intake" model="ir.ui.view"><field name="name">inspection.form.intake</field><field name="model">fsm.dossier.inspection</field><field name="inherit_id" ref="fieldservice_dossier.fsm_dossier_inspection_form"/>
+ <field name="arch" type="xml"><xpath expr="//sheet" position="before"><header><button name="action_open_wagon_intake" string="Open Ingangskeuring" type="object"/></header></xpath></field></record>
+ <record id="dossier_form_intake" model="ir.ui.view"><field name="name">dossier.form.intake</field><field name="model">fsm.dossier</field><field name="inherit_id" ref="fieldservice_dossier.fsm_dossier_form"/>
+ <field name="arch" type="xml"><xpath expr="//field[@name='inspection_ids']/list" position="inside"><button name="action_open_wagon_intake" type="object" string="Open Ingangskeuring" icon="fa-list-alt"/></xpath></field></record>
+ <record id="order_form_intake" model="ir.ui.view"><field name="name">fsm.order.form.intake</field><field name="model">fsm.order</field><field name="inherit_id" ref="fieldservice.fsm_order_form"/>
+ <field name="arch" type="xml"><xpath expr="//header" position="inside"><button name="action_open_wagon_intake" string="Ingangskeuring" type="object" invisible="not dossier_id"/></xpath></field></record>
+</odoo>
