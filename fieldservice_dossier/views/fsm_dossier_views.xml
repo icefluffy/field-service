@@ -74,8 +74,8 @@
                                            domain="[('dossier_id', '=', parent.id)]"
                                            readonly="is_approval"/>
                                     <field name="person_id"/>
-                                    <field name="work_status" widget="badge"/>
-                                    <field name="result" widget="badge"/>
+                                    <field name="work_status" widget="badge" readonly="is_approval"/>
+                                    <field name="result" widget="badge" readonly="is_approval"/>
                                     <field name="date_performed" readonly="is_approval"/>
                                     <field name="valid_until"/>
                                     <field name="note"/>
