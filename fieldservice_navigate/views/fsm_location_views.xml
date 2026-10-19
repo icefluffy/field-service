@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_fsm_location_form_navigate" model="ir.ui.view">
+        <field name="name">fsm.location.form.navigate.inherit</field>
+        <field name="model">fsm.location</field>
+        <!-- Instead of a hardcoded external id (which differs between
+             versions/forks), look up the primary form view for fsm.location
+             by domain. This finds whatever your instance actually calls it. -->
+        <field name="inherit_id"
+               search="[('model','=','fsm.location'),('type','=','form'),('mode','=','primary')]"/>
+        <field name="arch" type="xml">
+            <!-- Appended at the end of the sheet as a safe default.
+                 If your instance already has a "Map" tab/page (e.g. from
+                 fieldservice_geoengine or fieldservice_google_map), you can
+                 instead target that page directly, e.g.:
+                 <xpath expr="//page[@name='map']" position="inside"> ... -->
+            <xpath expr="//sheet" position="inside">
+                <div class="oe_button_box" name="navigate_button_box">
+                    <button name="action_open_google_maps"
+                            type="object"
+                            string="Navigate"
+                            icon="fa-map-marker"
+                            class="oe_stat_button"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
