@@ -7,9 +7,9 @@
   <field name="arch" type="xml"><form delete="0" duplicate="0">
    <header>
     <button name="action_start" string="Start inspectie" type="object" class="btn-primary" invisible="state != 'draft'"/>
-    <button name="action_pass" string="Geslaagd" type="object" class="btn-primary" invisible="state != 'progress'" confirm="Bevestig dat het onderzoek is uitgevoerd volgens uw geldende procedure."/>
-    <button name="action_remarks" string="Geslaagd met opmerkingen" type="object" invisible="state != 'progress'" confirm="Alleen gebruiken indien toegestaan door uw procedure; motiveer het resultaat."/>
-    <button name="action_fail" string="Afgekeurd" type="object" invisible="state != 'progress'"/>
+    <button name="action_pass" string="Passed" type="object" class="btn-primary" invisible="state != 'progress'" confirm="Bevestig dat het onderzoek is uitgevoerd volgens uw geldende procedure."/>
+    <button name="action_remarks" string="Passed with remarks" type="object" invisible="state != 'progress'" confirm="Alleen gebruiken indien toegestaan door uw procedure; motiveer het resultaat."/>
+    <button name="action_fail" string="Failed" type="object" invisible="state != 'progress'"/>
     <button name="action_reopen" string="Heropenen" type="object" invisible="state in ('draft','progress')" confirm="Het resultaat wordt teruggezet naar Pending. Eventuele dossiergoedkeuring vervalt."/>
     <field name="state" widget="statusbar" statusbar_visible="draft,progress,passed,remarks,failed"/>
    </header><sheet><h1><field name="name"/></h1>
@@ -76,5 +76,5 @@
     </field>
 </record>
  <record id="order_form_intake" model="ir.ui.view"><field name="name">fsm.order.form.intake</field><field name="model">fsm.order</field><field name="inherit_id" ref="fieldservice.fsm_order_form"/>
- <field name="arch" type="xml"><xpath expr="//header" position="inside"><button name="action_open_wagon_intake" string="Ingangsschouwing" type="object" invisible="not dossier_id"/></xpath></field></record>
+ <field name="arch" type="xml"><xpath expr="//header" position="inside"><button name="action_open_wagon_intake" string="Inbound inspection" type="object" invisible="not dossier_id"/></xpath></field></record>
 </odoo>
