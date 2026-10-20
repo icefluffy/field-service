@@ -3,6 +3,7 @@
 import json
 from urllib.parse import urlencode
 from odoo import fields, models
+from odoo.tools import html2plaintext
 
 
 class FsmRelease(models.Model):
@@ -181,6 +182,79 @@ class FsmRelease(models.Model):
         string="Issue Date",
         default=fields.Date.context_today,
     )
+
+
+    # Additional Vrijgave report; existing mobile report remains unchanged.
+    vrijgave_short_id = fields.Char(string="Locnr (kort)", copy=False)
+    vrijgave_evn = fields.Char(string="Locnr (volledig) / EVN", copy=False)
+    vrijgave_date = fields.Date(string="Vrijgave date", copy=False)
+    vrijgave_place = fields.Char(string="Place", copy=False)
+    vrijgave_customer_ref = fields.Char(string="Customer reference", copy=False)
+    vrijgave_order_ref = fields.Char(string="RSN work order number", copy=False)
+    vrijgave_technicians = fields.Char(string="Technicians", copy=False)
+    vrijgave_description = fields.Text(string="Short description of work", copy=False)
+    vrijgave_specific_checks = fields.Text(string="Specific checks according to", copy=False)
+    vrijgave_remarks = fields.Text(string="Checklist remarks", copy=False)
+    vrijgave_resolved_defects = fields.Text(string="Resolved defects", copy=False)
+    vrijgave_decision = fields.Selection([
+        ('unrestricted', 'Return to service without limitations'),
+        ('restricted', 'Return to service with limitations'),
+        ('refused', 'No return to service'),
+        ('work_only', 'Release limited to executed works'),
+    ], string="Return-to-service decision", copy=False)
+    vrijgave_technician_name = fields.Char(string="Signing technician", copy=False)
+    vrijgave_responsible_name = fields.Char(string="Person responsible for release", copy=False)
+    vrijgave_technician_signature = fields.Binary(string="Technician signature", copy=False)
+    vrijgave_responsible_signature = fields.Binary(string="Responsible person signature", copy=False)
+    vrijgave_unrestricted_remarks = fields.Text(string="Unrestricted decision remarks", copy=False)
+    vrijgave_restricted_remarks = fields.Text(string="Restricted decision remarks", copy=False)
+    vrijgave_refused_remarks = fields.Text(string="Refused decision remarks", copy=False)
+    vrijgave_work_only_remarks = fields.Text(string="Work Only decision remarks", copy=False)
+    vrijgave_check_1 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Works executed according to order', copy=False)
+    vrijgave_check_2 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Logbook inspected', copy=False)
+    vrijgave_check_3 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='General visual vehicle inspection', copy=False)
+    vrijgave_check_4 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Specific checks', copy=False)
+    vrijgave_check_5 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Vehicle left in safe condition', copy=False)
+    vrijgave_check_6 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Additional check 6', copy=False)
+    vrijgave_check_6_label = fields.Char(string="Check 6 description", copy=False)
+    vrijgave_check_7 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Additional check 7', copy=False)
+    vrijgave_check_7_label = fields.Char(string="Check 7 description", copy=False)
+    vrijgave_check_8 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Additional check 8', copy=False)
+    vrijgave_check_8_label = fields.Char(string="Check 8 description", copy=False)
+
+    def action_fill_vrijgave_missing(self):
+        """Explicitly seed blank identification fields; never decide or sign."""
+        self.ensure_one()
+        order = self.fsm_order_id
+        equipment = self.equipment_line_ids[:1]
+        evn = self.wagon_number or (equipment.lot_id.name if equipment else False)
+        employees = self.timesheet_line_ids.mapped('employee_id')
+        names = list(dict.fromkeys(employees.mapped('name')))
+        if not names and 'person_id' in order._fields and order.person_id:
+            names = [order.person_id.name]
+        customer_ref = self.customer_order_number
+        if not customer_ref and 'x_customer_order_ref' in order._fields:
+            customer_ref = order.x_customer_order_ref
+        source_work = self.work_performed
+        if not source_work and 'x_work_performed' in order._fields:
+            source_work = order.x_work_performed
+        candidates = {
+            'vrijgave_evn': evn,
+            'vrijgave_date': self.actual_release_date or self.issue_date,
+            'vrijgave_place': self.location_id.display_name,
+            'vrijgave_customer_ref': customer_ref,
+            'vrijgave_order_ref': order.name,
+            'vrijgave_technicians': ', '.join(names),
+            'vrijgave_description': html2plaintext(source_work).strip() if source_work else False,
+            'vrijgave_remarks': self.remarks,
+        }
+        self.write({key: value for key, value in candidates.items()
+                    if not self[key] and value})
+        return {'type': 'ir.actions.client', 'tag': 'reload'}
+
+    def action_print_vrijgave(self):
+        self.ensure_one()
+        return self.env.ref('fieldservice_release.action_report_fsm_vrijgave').report_action(self)
 
     def _compute_totals(self):
         for release in self:
