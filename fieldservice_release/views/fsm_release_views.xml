@@ -20,6 +20,8 @@
         <field name="arch" type="xml">
             <form string="Release Form">
                 <header>
+                    <button name="action_print_vrijgave" string="Print Vrijgave" type="object" class="btn-secondary" icon="fa-print"/>
+
                     <button name="action_preview_release_form"
                             string="Preview Mobile Release Form"
                             type="object"
@@ -106,6 +108,11 @@
                     </group>
 
                     <notebook>
+<page name="vrijgave" string="Vrijgave">
+ <button name="action_fill_vrijgave_missing" string="Fill missing identification from order" type="object" class="btn-secondary"/>
+ <div class="text-muted">Review all values before printing. Blank checks are not approvals. Printing does not release the vehicle or change its status.</div>
+ <group string="Identification"><field name="vrijgave_short_id"/><field name="vrijgave_evn"/><field name="vrijgave_date"/><field name="vrijgave_place"/><field name="vrijgave_customer_ref"/><field name="vrijgave_order_ref"/><field name="vrijgave_technicians"/></group><group string="Work and checks"><field name="vrijgave_description"/><field name="vrijgave_specific_checks"/><field name="vrijgave_check_1"/><field name="vrijgave_check_2"/><field name="vrijgave_check_3"/><field name="vrijgave_check_4"/><field name="vrijgave_check_5"/><field name="vrijgave_check_6_label"/><field name="vrijgave_check_6"/><field name="vrijgave_check_7_label"/><field name="vrijgave_check_7"/><field name="vrijgave_check_8_label"/><field name="vrijgave_check_8"/></group><group string="Remarks and defects"><field name="vrijgave_remarks"/><field name="vrijgave_resolved_defects"/></group>
+<group string="Return to service"><field name="vrijgave_decision"/><field name="vrijgave_unrestricted_remarks"/><field name="vrijgave_restricted_remarks"/><field name="vrijgave_refused_remarks"/><field name="vrijgave_work_only_remarks"/></group><group string="Signatures"><group><field name="vrijgave_technician_name"/><field name="vrijgave_technician_signature" widget="signature"/></group><group><field name="vrijgave_responsible_name"/><field name="vrijgave_responsible_signature" widget="signature"/></group></group></page>
                         <page name="contractor_costs" string="Contractor Costs">
                             <field name="contractor_cost_line_ids" nolabel="1">
                                 <list create="0" delete="0">
