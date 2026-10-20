@@ -1,314 +1,351 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <template id="report_fsm_release_document">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-set="lang" t-value="doc.partner_id.lang
-                    or doc.fsm_order_id.location_id.partner_id.lang
-                    or doc.env.user.lang"/>
-                <t t-call="fieldservice_release.report_fsm_release_page" t-lang="lang"/>
+                <t t-set="lang" t-value="doc.partner_id.lang                     or doc.fsm_order_id.location_id.partner_id.lang                     or doc.env.user.lang" />
+                <t t-call="fieldservice_release.report_fsm_release_page" t-lang="lang" />
             </t>
         </t>
     </template>
-    
     <template id="report_fsm_release_page">
-        <t t-set="o" t-value="doc.with_context(lang=lang)"/>
-        <t t-set="equipment" t-value="o.fsm_order_id.equipment_id or o.equipment_line_ids[:1].equipment_id"/>
+        <t t-set="o" t-value="doc.with_context(lang=lang)" />
+        <t t-set="equipment" t-value="o.fsm_order_id.equipment_id or o.equipment_line_ids[:1].equipment_id" />
         <t t-call="web.basic_layout">
-                    <div class="page" style="font-size:11px; font-family:Arial, sans-serif; color:#000;">
-                        <h2 style="text-decoration:underline; margin-bottom:10px;">
+            <div class="page" style="font-size:11px; font-family:Arial, sans-serif; color:#000;">
+                <h2 style="text-decoration:underline; margin-bottom:10px;">
                             Mobile Repair Report
                         </h2>
-
-                        <!-- Top identification block -->
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
-                            <tr style="background:#e6e6e6;">
-                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Wagon Number</strong></td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Order Number:</strong></td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>FW Number:</strong></td>
-                                <td rowspan="4" style="border:1px solid #000; padding:4px; width:25%; text-align:center; vertical-align:middle;">
-                                    <img t-if="o.fsm_order_id.company_id.logo"
-                                         t-att-src="image_data_uri(o.fsm_order_id.company_id.logo)"
-                                         style="max-width:140px;"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="equipment">
-                                        <span t-field="o.wagennummer_formatted"/>
-                                    </t>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.fsm_order_id.name"/></td>
-                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.fsm_order_id.company_id.name"/></td>
-                            </tr>
-                            <tr style="background:#e6e6e6;">
-                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Keeper / ECM:</strong></td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Customer Order Number:</strong></td>
-                                <td style="border:1px solid #000; padding:4px; width:25%;"><strong>Created On:</strong></td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="equipment and equipment.managed_by_id">
-                                        <span t-field="equipment.managed_by_id.name"/>
-                                    </t>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px;"><t t-out="o.fsm_order_id.sale_id.client_order_ref or o.fsm_order_id.customer_reference or o.fsm_order_id.x_customer_order_ref or ''"/></td>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.actual_release_date" t-options='{"widget": "date"}'/>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <!-- Work date and maintenance level -->
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px; width:60%; background:#e5e5e5; font-weight:bold;">
+                <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                    <tr style="background:#e6e6e6;">
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <strong>Wagon Number</strong>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <strong>Order Number:</strong>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <strong>FW Number:</strong>
+                        </td>
+                        <td rowspan="4" style="border:1px solid #000; padding:4px; width:25%; text-align:center; vertical-align:middle;">
+                            <img t-if="o.fsm_order_id.company_id.logo" t-att-src="image_data_uri(o.fsm_order_id.company_id.logo)" style="max-width:140px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <t t-if="equipment">
+                                <span t-field="o.wagennummer_formatted" />
+                            </t>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <span t-field="o.fsm_order_id.name" />
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <span t-field="o.fsm_order_id.company_id.name" />
+                        </td>
+                    </tr>
+                    <tr style="background:#e6e6e6;">
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <strong>Keeper / ECM:</strong>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <strong>Customer Order Number:</strong>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <strong>Created On:</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <t t-if="equipment and equipment.managed_by_id">
+                                <span t-field="equipment.managed_by_id.name" />
+                            </t>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <t t-out="o.fsm_order_id.sale_id.client_order_ref or o.fsm_order_id.customer_reference or o.fsm_order_id.x_customer_order_ref or ''" />
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <span t-field="o.actual_release_date" t-options="{&quot;widget&quot;: &quot;date&quot;}" />
+                        </td>
+                    </tr>
+                </table>
+                <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                    <tr>
+                        <td style="border:1px solid #000; padding:4px; width:60%; background:#e5e5e5; font-weight:bold;">
                                     Mobile Repair Performed On:
                                 </td>
-                                <td style="border:1px solid #000; padding:4px; width:40%; background:#e5e5e5; font-weight:bold;">
+                        <td style="border:1px solid #000; padding:4px; width:40%; background:#e5e5e5; font-weight:bold;">
                                     Maintenance Level Performed:
                                 </td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="o.fsm_order_id.date_end">
-                                        <span t-field="o.fsm_order_id.date_end"
-                                            t-options='{"widget": "date"}'/>
-                                    </t>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="o.maintenance_level"><span t-field="o.maintenance_level"/></t>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <!-- Wagon data, revision and brake inspection -->
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
-                            <thead>
-                                <tr style="background:#f2f2f2;">
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:20%;">Previous Wagon Number:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;">Tare Weight</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;"></th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Type:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Cycle:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Date:</th>
-                                    <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Extension:</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.wagon_number_old"><span t-field="o.wagon_number_old"/></t>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px;">
-                                        <t t-out="o.fsm_order_id.tare_print or o.own_weight or ''"/>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Revision</td>
-                                    <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.revision_type"><span t-field="o.revision_type"/></t>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.revision_cycle"><span t-field="o.revision_cycle"/></t>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.revision_date">
-                                            <span t-field="o.revision_date" t-options='{"widget": "date"}'/>
-                                        </t>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px;">
-                                        <t t-if="o.revision_extension"><span t-field="o.revision_extension"/></t>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:4px;"/>
-                                    <td style="padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Brake Revision</td>
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold;">
-                                        <t t-if="o.brake_type"><span t-field="o.brake_type"/></t>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                </tr>
-                                <tr>
-                                    <td style="padding:4px;"/>
-                                    <td style="padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Due Date</td>
-                                    <td style="border:1px solid #000; padding:4px; font-weight:bold;">
-                                        <t t-if="o.brake_deadline">
-                                            <span t-field="o.brake_deadline" t-options='{"widget": "date"}'/>
-                                        </t>
-                                    </td>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                    <td style="border:1px solid #000; padding:4px;"/>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <!-- Work performed -->
-                        <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold;">
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <t t-if="o.fsm_order_id.date_end">
+                                <span t-field="o.fsm_order_id.date_end" t-options="{&quot;widget&quot;: &quot;date&quot;}" />
+                            </t>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <t t-if="o.maintenance_level">
+                                <span t-field="o.maintenance_level" />
+                            </t>
+                        </td>
+                    </tr>
+                </table>
+                <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                    <thead>
+                        <tr style="background:#f2f2f2;">
+                            <th style="border:1px solid #000; padding:4px; font-weight:bold; width:20%;">Previous Wagon Number:</th>
+                            <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;">Tare Weight</th>
+                            <th style="border:1px solid #000; padding:4px; font-weight:bold; width:14%;" />
+                            <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Type:</th>
+                            <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Cycle:</th>
+                            <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Date:</th>
+                            <th style="border:1px solid #000; padding:4px; font-weight:bold; width:13%;">Extension:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px;">
+                                <t t-if="o.wagon_number_old">
+                                    <span t-field="o.wagon_number_old" />
+                                </t>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px;">
+                                <t t-out="o.fsm_order_id.tare_print or o.own_weight or ''" />
+                            </td>
+                            <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Revision</td>
+                            <td style="border:1px solid #000; padding:4px;">
+                                <t t-if="o.revision_type">
+                                    <span t-field="o.revision_type" />
+                                </t>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px;">
+                                <t t-if="o.revision_cycle">
+                                    <span t-field="o.revision_cycle" />
+                                </t>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px;">
+                                <t t-if="o.revision_date">
+                                    <span t-field="o.revision_date" t-options="{&quot;widget&quot;: &quot;date&quot;}" />
+                                </t>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px;">
+                                <t t-if="o.revision_extension">
+                                    <span t-field="o.revision_extension" />
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px;" />
+                            <td style="padding:4px;" />
+                            <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Brake Revision</td>
+                            <td style="border:1px solid #000; padding:4px; font-weight:bold;">
+                                <t t-if="o.brake_type">
+                                    <span t-field="o.brake_type" />
+                                </t>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px;" />
+                            <td style="border:1px solid #000; padding:4px;" />
+                            <td style="border:1px solid #000; padding:4px;" />
+                        </tr>
+                        <tr>
+                            <td style="padding:4px;" />
+                            <td style="padding:4px;" />
+                            <td style="border:1px solid #000; padding:4px; font-weight:bold; background:#f2f2f2;">Due Date</td>
+                            <td style="border:1px solid #000; padding:4px; font-weight:bold;">
+                                <t t-if="o.brake_deadline">
+                                    <span t-field="o.brake_deadline" t-options="{&quot;widget&quot;: &quot;date&quot;}" />
+                                </t>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px;" />
+                            <td style="border:1px solid #000; padding:4px;" />
+                            <td style="border:1px solid #000; padding:4px;" />
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold;">
                             Repair Work Performed
                         </div>
-                        <div style="border:1px solid #000; padding:6px; min-height:120px; margin-bottom:6px;">
-                            <t t-if="o.work_performed">
-                                <div style="margin-bottom:6px;"><span t-field="o.work_performed"/></div>
-                            </t>
-                            <!--
-                            <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
-                                <t t-if="activity.state == 'done'">
-                                    <div style="margin-bottom:3px;">
-                                        <t t-if="activity.ref"><strong><span t-field="activity.ref"/></strong> — </t>
-                                        <span t-field="activity.name"/>
-                                    </div>
-                                </t>
-                            </t>
-                            -->
-                            <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
-                                <div style="display:block; clear:both; margin-bottom:3px;">
-                                    <span t-field="cost_line.product_id"/> <span> — </span>
-                                    <strong>Qty:</strong> <span t-field="cost_line.quantity"/>
-                                </div>
-                            </t>
-                            <t t-foreach="o.timesheet_line_ids" t-as="time_line">
-                                <div style="margin-bottom:3px;"><span t-field="time_line.product_id"/></div>
-                            </t>
+                <div style="border:1px solid #000; padding:6px; min-height:120px; margin-bottom:6px;">
+                    <t t-if="o.work_performed">
+                        <div style="margin-bottom:6px;">
+                            <span t-field="o.work_performed" />
                         </div>
-
-                        <!-- Postponed or uncompleted activities -->
-                        <div style="border:1px solid #000; margin-bottom:6px;">
-                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">
+                    </t>
+                    <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
+                        <div style="display:block; clear:both; margin-bottom:3px;">
+                            <span t-field="cost_line.product_id" />
+                            <span> — </span>
+                            <strong>Qty:</strong>
+                            <span t-field="cost_line.quantity" />
+                        </div>
+                    </t>
+                    <t t-foreach="o.timesheet_line_ids" t-as="time_line">
+                        <div style="margin-bottom:3px;">
+                            <span t-field="time_line.product_id" />
+                        </div>
+                    </t>
+                </div>
+                <div style="border:1px solid #000; margin-bottom:6px;">
+                    <div style="background:#e6e6e6; padding:4px; font-weight:bold;">
                                 Postponed Work (Including Reason):
                             </div>
-                            <div style="padding:6px; min-height:70px;">
-                                <t t-if="o.postponed_work">
-                                    <div style="margin-bottom:6px;"><span t-field="o.postponed_work"/></div>
-                                </t>
-                                <t t-if="o.fsm_order_id.order_activity_ids.filtered(lambda activity: activity.state != 'done')">
-                                    <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
-                                        <t t-if="activity.state != 'done'">
-                                            <div style="margin-bottom:3px;">
-                                                <t t-if="activity.ref"><strong><span t-field="activity.ref"/></strong> — </t>
-                                                <span t-field="activity.name"/>
-                                                <t t-if="activity.state == 'cancel'"><span style="color:#b00020;"> (Cancelled)</span></t>
-                                                <t t-if="activity.state == 'todo'"><span style="color:#555;"> (Not completed)</span></t>
-                                            </div>
-                                        </t>
-                                    </t>
-                                </t>
-                                <t t-else=""><span style="color:#555;">No postponed or uncompleted activities.</span></t>
+                    <div style="padding:6px; min-height:70px;">
+                        <t t-if="o.postponed_work">
+                            <div style="margin-bottom:6px;">
+                                <span t-field="o.postponed_work" />
                             </div>
-                        </div>
-
-                        <!-- Replaced components -->
-                        <div style="border:1px solid #000; margin-bottom:6px;">
-                            <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Replaced Components:</div>
-                            <div style="padding:6px; min-height:60px;">
-                                <t t-if="o.replaced_components">
-                                    <div style="margin-bottom:6px;"><span t-field="o.replaced_components"/></div>
-                                </t>
-                                <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
-                                    <div style="display:block; clear:both; margin-bottom:3px;">
-                                        <span t-field="cost_line.product_id"/> <span> — </span>
-                                        <strong>Qty:</strong> <span t-field="cost_line.quantity"/>
+                        </t>
+                        <t t-if="o.fsm_order_id.order_activity_ids.filtered(lambda activity: activity.state != 'done')">
+                            <t t-foreach="o.fsm_order_id.order_activity_ids" t-as="activity">
+                                <t t-if="activity.state != 'done'">
+                                    <div style="margin-bottom:3px;">
+                                        <t t-if="activity.ref">
+                                            <strong>
+                                                <span t-field="activity.ref" />
+                                            </strong> — </t>
+                                        <span t-field="activity.name" />
+                                        <t t-if="activity.state == 'cancel'">
+                                            <span style="color:#b00020;"> (Cancelled)</span>
+                                        </t>
+                                        <t t-if="activity.state == 'todo'">
+                                            <span style="color:#555;"> (Not completed)</span>
+                                        </t>
                                     </div>
                                 </t>
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <span style="color:#555;">No postponed or uncompleted activities.</span>
+                        </t>
+                    </div>
+                </div>
+                <div style="border:1px solid #000; margin-bottom:6px;">
+                    <div style="background:#e6e6e6; padding:4px; font-weight:bold;">Replaced Components:</div>
+                    <div style="padding:6px; min-height:60px;">
+                        <t t-if="o.replaced_components">
+                            <div style="margin-bottom:6px;">
+                                <span t-field="o.replaced_components" />
                             </div>
-                        </div>
-
-                        <!-- Other information -->
-                        <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold;">
+                        </t>
+                        <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
+                            <div style="display:block; clear:both; margin-bottom:3px;">
+                                <span t-field="cost_line.product_id" />
+                                <span> — </span>
+                                <strong>Qty:</strong>
+                                <span t-field="cost_line.quantity" />
+                            </div>
+                        </t>
+                    </div>
+                </div>
+                <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold;">
                             Other Information (as Specified by Keeper/ECM)
                         </div>
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
-                            <tr>
-                                <td style="border:1px solid #000; padding:6px; min-height:45px; white-space:pre-wrap;">
-                                    <t t-if="o.remarks"><span t-field="o.remarks"/></t>
-                                    <t t-if="o.remarks and o.other_information"><br/></t>
-                                    <t t-if="o.other_information"><span t-field="o.other_information"/></t>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <!-- Release approval -->
-                        <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold;">
+                <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                    <tr>
+                        <td style="border:1px solid #000; padding:6px; min-height:45px; white-space:pre-wrap;">
+                            <t t-if="o.remarks">
+                                <span t-field="o.remarks" />
+                            </t>
+                            <t t-if="o.remarks and o.other_information">
+                                <br />
+                            </t>
+                            <t t-if="o.other_information">
+                                <span t-field="o.other_information" />
+                            </t>
+                        </td>
+                    </tr>
+                </table>
+                <div style="background:#e6e6e6; border:1px solid #000; border-bottom:0; padding:4px; font-weight:bold;">
                             Release Confirmation
                         </div>
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
-                                    <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
+                <table style="width:100%; border-collapse:collapse; border:1px solid #000; margin-bottom:6px;">
+                    <tr>
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
+                            <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
                                     Repair
                                 </td>
-                                <td style="border:1px solid #000; padding:4px;">
+                        <td style="border:1px solid #000; padding:4px;">
                                     The described work steps were performed correctly and completely.
                                 </td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px; width:25%;">
-                                    <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
-                                    <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #000; padding:4px; width:25%;">
+                            <span t-if="o.state == 'released'" style="font-size:12px; font-weight:bold;">☒</span>
+                            <span t-else="" style="font-size:12px; font-weight:bold;">☐</span>
                                     Release to Service
                                 </td>
-                                <td style="border:1px solid #000; padding:4px;">
+                        <td style="border:1px solid #000; padding:4px;">
                                     The additional check as per VPI-EMG 01, Annex 19, found no fault.
                                     We hereby certify that this wagon corresponds to the applicable laws and regulations,
                                     the requirements of the keeper/ECM and the RID (if applicable).
                                 </td>
-                            </tr>
-                        </table>
-
-                        <!-- Signatory and company details -->
-                        <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
-                            <tr style="background:#e6e6e6;">
-                                <td style="border:1px solid #000; padding:4px; width:40%;"><strong>Name (of Responsible Employee):</strong></td>
-                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Phone Number:</strong></td>
-                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Issue Date:</strong></td>
-                                <td style="border:1px solid #000; padding:4px; width:20%;"><strong>Email:</strong></td>
-                            </tr>
-                            <tr>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <div style="margin-left:20px;">
-                                        <span t-field="o.fsm_order_id.company_id.name"/><br/>
-                                        <span t-field="o.fsm_order_id.company_id.street"/>
-                                        <t t-if="o.fsm_order_id.company_id.street2">
-                                            <br/><span t-field="o.fsm_order_id.company_id.street2"/>
-                                        </t>
-                                        <br/><span t-field="o.fsm_order_id.company_id.zip"/>
-                                        <span t-field="o.fsm_order_id.company_id.city"/>
-                                    </div>
-                                    <span style="text-align:left;" t-field="o.create_uid.partner_id.name"/>
-                                    <br/><i>(signed digitally)</i>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px;"><span t-field="o.fsm_order_id.company_id.phone"/></td>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <t t-if="o.issue_date">
-                                        <span t-field="o.issue_date" t-options='{"widget": "date"}'/>
-                                    </t>
-                                    <t t-else="">
-                                        <span t-field="o.create_date" t-options='{"widget": "date"}'/>
-                                    </t>
-                                </td>
-                                <td style="border:1px solid #000; padding:4px;">
-                                    <span t-field="o.fsm_order_id.company_id.email"/>
+                    </tr>
+                </table>
+                <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
+                    <tr style="background:#e6e6e6;">
+                        <td style="border:1px solid #000; padding:4px; width:40%;">
+                            <strong>Name (of Responsible Employee):</strong>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px; width:20%;">
+                            <strong>Phone Number:</strong>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px; width:20%;">
+                            <strong>Issue Date:</strong>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px; width:20%;">
+                            <strong>Email:</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <div style="margin-left:20px;">
+                                <span t-field="o.fsm_order_id.company_id.name" />
+                                <br />
+                                <span t-field="o.fsm_order_id.company_id.street" />
+                                <t t-if="o.fsm_order_id.company_id.street2">
+                                    <br />
+                                    <span t-field="o.fsm_order_id.company_id.street2" />
+                                </t>
+                                <br />
+                                <span t-field="o.fsm_order_id.company_id.zip" />
+                                <span t-field="o.fsm_order_id.company_id.city" />
+                            </div>
+                            <span style="text-align:left;" t-field="o.create_uid.partner_id.name" />
+                            <br />
+                            <i>(signed digitally)</i>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <span t-field="o.fsm_order_id.company_id.phone" />
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <t t-if="o.issue_date">
+                                <span t-field="o.issue_date" t-options="{&quot;widget&quot;: &quot;date&quot;}" />
+                            </t>
+                            <t t-else="">
+                                <span t-field="o.create_date" t-options="{&quot;widget&quot;: &quot;date&quot;}" />
+                            </t>
+                        </td>
+                        <td style="border:1px solid #000; padding:4px;">
+                            <span t-field="o.fsm_order_id.company_id.email" />
                                     rsnoperations@rsn.be
                                 </td>
-                            </tr>
-                        </table>
-
-                        <div style="margin-top:10px; font-size:9px; color:#555; text-align:center;">
+                    </tr>
+                </table>
+                <div style="margin-top:10px; font-size:9px; color:#555; text-align:center;">
                             VPI-EMG 10 Annex 2 | Version: 01.12.2024 |
                             Translation: 10/12/2024
-                            <span t-field="o.fsm_order_id.name"/>
-                        </div>
-                    </div>
-                </t>
+                            <span t-field="o.fsm_order_id.name" />
+                </div>
+            </div>
+        </t>
     </template>
-
-<template id="report_fsm_vrijgave_document">
- <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.basic_layout">
- <style>
+    <template id="report_fsm_vrijgave_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <style>
  .vg-page {font-family:Arial,sans-serif;font-size:10px;color:#000;}
  .vg-table {width:100%;border-collapse:collapse;margin:5px 0 9px;table-layout:fixed;}
  .vg-table td {border:1px solid #000;padding:5px;vertical-align:top;word-wrap:break-word;}
@@ -316,8 +353,312 @@
  .vg-value {white-space:pre-wrap;min-height:15px;}
  .vg-footnote {font-size:8px;margin:4px 0;}
  </style>
- <div class="page vg-page"><table class="vg-table"><tr><td>Locnr (kort) <br/>Abkürzung  / Short ID</td><td><div class="vg-value"><span t-field="o.vrijgave_short_id"/></div></td><td>Locnr (volledig) <br/>Vollständige Lok-Nr / EVN</td><td><div class="vg-value"><span t-field="o.vrijgave_evn"/></div></td></tr><tr><td>Datum <br/>Date</td><td><div class="vg-value"><span t-field="o.vrijgave_date"/></div></td><td>Plaats <br/>Ort / Location</td><td><div class="vg-value"><span t-field="o.vrijgave_place"/></div></td></tr><tr><td>Klant ref. <br/>Kunden Ref. / Customer ref.</td><td><div class="vg-value"><span t-field="o.vrijgave_customer_ref"/></div></td><td>Werkbon nr. <br/>Auftragsnr RSN / Order nr. RSN</td><td><div class="vg-value"><span t-field="o.vrijgave_order_ref"/></div></td></tr><tr><td>Techniekers <br/>Techniker / Technicians</td><td><div colspan="3"><div class="vg-value"><span t-field="o.vrijgave_technicians"/></div></div></td><td></td><td></td></tr></table><p>Volgende werken werden aan het voertuig uitgevoerd en door middel van een rapport gedocumenteerd: Nachstehende Arbeiten wurden am Fahrzeug durchgeführt und protokolliert / Following works were performed and registered</p><table class="vg-table"><tr><td></td><td></td><td>OK<br/>In Ordnung</td><td>NOK<br/>Nicht In Ordnung</td><td>NVT<br/>Nicht zutreffend<br/>N.A.</td></tr><tr><td>1</td><td>Werken uitgevoerd zoals in opdracht gevraagd <br/>Die Arbeiten wurden gemäß Auftrag ausgeführt / Works executed according order<br/><br/>Korte omschrijving Kurzbeschreibung / Short description<div class="vg-value"><span t-field="o.vrijgave_description"/></div></td><td><span t-if="o.vrijgave_check_1 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_1 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_1 == 'na'">X</span></td></tr><tr><td>2</td><td>Logboek nagekeken Nachsicht Logbuch / Inspection of logbook</td><td><span t-if="o.vrijgave_check_2 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_2 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_2 == 'na'">X</span></td></tr><tr><td>3</td><td>Voertuig algemeen visueel nagekeken (1)<br/>Allgemeine Visuelle Kontrolle des Fahrzeuges / General visual check of vehicle</td><td><span t-if="o.vrijgave_check_3 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_3 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_3 == 'na'">X</span></td></tr><tr><td>4</td><td>Specifieke controles volgens Kontrolle gemäß / Check according<div class="vg-value"><span t-field="o.vrijgave_specific_checks"/></div></td><td><span t-if="o.vrijgave_check_4 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_4 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_4 == 'na'">X</span></td></tr><tr><td>5</td><td>Voertuig veilig achter gelaten (afgesloten, geremd, batterij uitgeschakeld, …)<br/>Sicheres hinterlassen des Fahrzeuges (abgeschlossen, gebremst, Batterie abgeschaltet, …)<br/>Leaving vehicle in safe condition (closed, braked, battery off, …)</td><td><span t-if="o.vrijgave_check_5 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_5 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_5 == 'na'">X</span></td></tr><tr><td>6</td><td><div class="vg-value"><span t-field="o.vrijgave_check_6_label"/></div></td><td><span t-if="o.vrijgave_check_6 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_6 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_6 == 'na'">X</span></td></tr><tr><td>7</td><td><div class="vg-value"><span t-field="o.vrijgave_check_7_label"/></div></td><td><span t-if="o.vrijgave_check_7 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_7 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_7 == 'na'">X</span></td></tr><tr><td>8</td><td><div class="vg-value"><span t-field="o.vrijgave_check_8_label"/></div></td><td><span t-if="o.vrijgave_check_8 == 'ok'">X</span></td><td><span t-if="o.vrijgave_check_8 == 'nok'">X</span></td><td><span t-if="o.vrijgave_check_8 == 'na'">X</span></td></tr></table><p>Opmerkingen / Kommentare / Remarks</p><div class="vg-value"><span t-field="o.vrijgave_remarks"/></div><p>Opgeloste storingen / Gelöste Störungen / Resolved defects</p><table class="vg-table"><tr><td><div class="vg-value"><span t-field="o.vrijgave_resolved_defects"/></div></td></tr></table><p class="vg-footnote">(1) : noodzakelijke opschriften en merken zichtbaar; gemarkeerde onderhoudskaders zijn nog geldig; geen eenvoudig visueel vaststelbare schade aan wielstellen, reminstallatie, trek- en stootinrichting, ophanging, draaistellen en andere onderdelen, die een veilig transport in het gedrang kunnen brengen; remblokken minimaal 15 mm dik; bufferplaten gesmeerd; schroefkoppeling werkzaam; eindkraan en halve koppelingen onbeschadigd</p><p class="vg-footnote">Notwendige Anschriften und Warnanstriche sichtbar; markierte Wartungsfristen sind weiterhin gültig; keine Beschädigungen an Radsätzen, Bremsanlage, Zug- und Stoßvorrichtung, Aufhängung, Drehgestellen und anderen Teilen, die den sicheren Transport gefährden können, was leicht visuell festgestellt werden kann; Bremsbeläge mindestens 15 mm dick; Pufferplatten geschmiert; Schraubenkupplung funktioniert; Endhahn und Bremskupplungen unbeschädigt</p><p class="vg-footnote">Necessary inscriptions and markings visible; visible maintenance frameworks are still valid; no damage to wheel sets, braking system, draw gear and buffers, suspension, bogies and other parts that can jeopardize safe transport, which can easily be determined visually; brake blocks at least 15 mm thick; buffer plates lubricated; screw couplings working; brake hose and end cocks undamaged.</p></div>
- <div class="page vg-page" style="page-break-before:always;"><table class="vg-table"><tr><td>Locnr <br/>Vollständige Lok-Nr / EVN</td><td><div class="vg-value"><span t-field="o.vrijgave_evn"/></div></td><td>Werkbon nr. <br/>Auftragsnr RSN / Order nr. RSN</td><td><div class="vg-value"><span t-field="o.vrijgave_order_ref"/></div></td></tr></table><h3>Bedrijfsvrijgave / Betriebsfreigabe / Return to Service</h3><table class="vg-table"><tr><td></td><td>*</td><td>Opmerking Kommentare / Remarks</td></tr><tr><td>Vrijgave voor gebruik zonder beperkingen (2)<br/>Freigabe ohne Einschränkung / RTS without limitations</td><td><span t-if="o.vrijgave_decision == 'unrestricted'">X</span></td><td><div class="vg-value"><span t-field="o.vrijgave_unrestricted_remarks"/></div></td></tr><tr><td>Vrijgave voor gebruik met beperkingen<br/>Freigabe mit Einschränkung / RTS with limitations</td><td><span t-if="o.vrijgave_decision == 'restricted'">X</span></td><td><div class="vg-value"><span t-field="o.vrijgave_restricted_remarks"/></div></td></tr><tr><td>Geen vrijgave voor gebruik, met reden<br/>Keine Freigabe, mit Grund / No RTS, with reason</td><td><span t-if="o.vrijgave_decision == 'refused'">X</span></td><td><div class="vg-value"><span t-field="o.vrijgave_refused_remarks"/></div></td></tr><tr><td>Vrijgave beperkt tot uitgevoerde werken<br/>Freigabe beschränkt auf ausgeführte Arbeiten / RTS limited to executed works</td><td><span t-if="o.vrijgave_decision == 'work_only'">X</span></td><td><div class="vg-value"><span t-field="o.vrijgave_work_only_remarks"/></div></td></tr></table><table class="vg-table"><tr><td>Naam + handtekening technieker <br/>Name und Unterschrift Techniker / Name and signature technician<div class="vg-value"><span t-field="o.vrijgave_technician_name"/></div><img t-if="o.vrijgave_technician_signature" t-att-src="image_data_uri(o.vrijgave_technician_signature)" style="max-height:70px;max-width:220px;"/></td><td>Naam+handtekening verantwoordelijke vrijgave<br/>Name und Unterschrift Verantwortliche Person für die Freigabe<br/>Name and signature of responsible person<div class="vg-value"><span t-field="o.vrijgave_responsible_name"/></div><img t-if="o.vrijgave_responsible_signature" t-att-src="image_data_uri(o.vrijgave_responsible_signature)" style="max-height:70px;max-width:220px;"/></td></tr></table><p class="vg-footnote">* : kruis aan wat van toepassing is    Zutreffendes ankreuzen / Tick what is applicable</p><p class="vg-footnote">(2) : gebaseerd op 3 – visuele controle en 4 – specifieke controle, indien vermeld</p><p class="vg-footnote">basierend auf 3 – Sichtprüfung und 4 – spezifische Prüfung, falls angegeben</p><p class="vg-footnote">based on 3 – visual check and 4 – specific check, if stated</p></div>
- </t></t></t>
-</template>
+                    <div class="page vg-page">
+                        <table class="vg-table">
+                            <tr>
+                                <td>Locnr (kort) <br />Abkürzung  / Short ID</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_short_id" />
+                                    </div>
+                                </td>
+                                <td>Locnr (volledig) <br />Vollständige Lok-Nr / EVN</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_evn" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Datum <br />Date</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_date" />
+                                    </div>
+                                </td>
+                                <td>Plaats <br />Ort / Location</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_place" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Klant ref. <br />Kunden Ref. / Customer ref.</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_customer_ref" />
+                                    </div>
+                                </td>
+                                <td>Werkbon nr. <br />Auftragsnr RSN / Order nr. RSN</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_order_ref" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Techniekers <br />Techniker / Technicians</td>
+                                <td>
+                                    <div colspan="3">
+                                        <div class="vg-value">
+                                            <span t-field="o.vrijgave_technicians" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td />
+                                <td />
+                            </tr>
+                        </table>
+                        <p>Volgende werken werden aan het voertuig uitgevoerd en door middel van een rapport gedocumenteerd: Nachstehende Arbeiten wurden am Fahrzeug durchgeführt und protokolliert / Following works were performed and registered</p>
+                        <table class="vg-table">
+                            <colgroup>
+                                <col style="width: 10%;"/>
+                                <col style="width: 60%;"/>
+                                <col style="width: 10%;"/>
+                                <col style="width: 10%;"/>
+                                <col style="width: 10%;"/>
+                            </colgroup>
+                            <tr>
+                                <td />
+                                <td />
+                                <td>OK<br />In Ordnung</td>
+                                <td>NOK<br />Nicht In Ordnung</td>
+                                <td>NVT<br />Nicht zutreffend<br />N.A.</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Werken uitgevoerd zoals in opdracht gevraagd <br />Die Arbeiten wurden gemäß Auftrag ausgeführt / Works executed according order<br />
+                                    <br />Korte omschrijving Kurzbeschreibung / Short description<div class="vg-value">
+                                        <span t-field="o.vrijgave_description" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_1 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_1 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_1 == 'na'">X</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Logboek nagekeken Nachsicht Logbuch / Inspection of logbook</td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_2 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_2 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_2 == 'na'">X</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Voertuig algemeen visueel nagekeken (1)<br />Allgemeine Visuelle Kontrolle des Fahrzeuges / General visual check of vehicle</td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_3 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_3 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_3 == 'na'">X</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Specifieke controles volgens Kontrolle gemäß / Check according<div class="vg-value">
+                                        <span t-field="o.vrijgave_specific_checks" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_4 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_4 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_4 == 'na'">X</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Voertuig veilig achter gelaten (afgesloten, geremd, batterij uitgeschakeld, …)<br />Sicheres hinterlassen des Fahrzeuges (abgeschlossen, gebremst, Batterie abgeschaltet, …)<br />Leaving vehicle in safe condition (closed, braked, battery off, …)</td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_5 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_5 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_5 == 'na'">X</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_check_6_label" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_6 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_6 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_6 == 'na'">X</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_check_7_label" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_7 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_7 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_7 == 'na'">X</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_check_8_label" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_8 == 'ok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_8 == 'nok'">X</span>
+                                </td>
+                                <td>
+                                    <span t-if="o.vrijgave_check_8 == 'na'">X</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>Opmerkingen / Kommentare / Remarks</p>
+                        <div class="vg-value">
+                            <span t-field="o.vrijgave_remarks" />
+                        </div>
+                        <p>Opgeloste storingen / Gelöste Störungen / Resolved defects</p>
+                        <table class="vg-table">
+                            <tr>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_resolved_defects" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="vg-footnote">(1) : noodzakelijke opschriften en merken zichtbaar; gemarkeerde onderhoudskaders zijn nog geldig; geen eenvoudig visueel vaststelbare schade aan wielstellen, reminstallatie, trek- en stootinrichting, ophanging, draaistellen en andere onderdelen, die een veilig transport in het gedrang kunnen brengen; remblokken minimaal 15 mm dik; bufferplaten gesmeerd; schroefkoppeling werkzaam; eindkraan en halve koppelingen onbeschadigd</p>
+                        <p class="vg-footnote">Notwendige Anschriften und Warnanstriche sichtbar; markierte Wartungsfristen sind weiterhin gültig; keine Beschädigungen an Radsätzen, Bremsanlage, Zug- und Stoßvorrichtung, Aufhängung, Drehgestellen und anderen Teilen, die den sicheren Transport gefährden können, was leicht visuell festgestellt werden kann; Bremsbeläge mindestens 15 mm dick; Pufferplatten geschmiert; Schraubenkupplung funktioniert; Endhahn und Bremskupplungen unbeschädigt</p>
+                        <p class="vg-footnote">Necessary inscriptions and markings visible; visible maintenance frameworks are still valid; no damage to wheel sets, braking system, draw gear and buffers, suspension, bogies and other parts that can jeopardize safe transport, which can easily be determined visually; brake blocks at least 15 mm thick; buffer plates lubricated; screw couplings working; brake hose and end cocks undamaged.</p>
+                    </div>
+                    <div class="page vg-page" style="page-break-before:always;">
+                        <table class="vg-table">
+                            <tr>
+                                <td>Locnr <br />Vollständige Lok-Nr / EVN</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_evn" />
+                                    </div>
+                                </td>
+                                <td>Werkbon nr. <br />Auftragsnr RSN / Order nr. RSN</td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_order_ref" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <h3>Bedrijfsvrijgave / Betriebsfreigabe / Return to Service</h3>
+                        <table class="vg-table">
+                            <tr>
+                                <td />
+                                <td>*</td>
+                                <td>Opmerking Kommentare / Remarks</td>
+                            </tr>
+                            <tr>
+                                <td>Vrijgave voor gebruik zonder beperkingen (2)<br />Freigabe ohne Einschränkung / RTS without limitations</td>
+                                <td>
+                                    <span t-if="o.vrijgave_decision == 'unrestricted'">X</span>
+                                </td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_unrestricted_remarks" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Vrijgave voor gebruik met beperkingen<br />Freigabe mit Einschränkung / RTS with limitations</td>
+                                <td>
+                                    <span t-if="o.vrijgave_decision == 'restricted'">X</span>
+                                </td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_restricted_remarks" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Geen vrijgave voor gebruik, met reden<br />Keine Freigabe, mit Grund / No RTS, with reason</td>
+                                <td>
+                                    <span t-if="o.vrijgave_decision == 'refused'">X</span>
+                                </td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_refused_remarks" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Vrijgave beperkt tot uitgevoerde werken<br />Freigabe beschränkt auf ausgeführte Arbeiten / RTS limited to executed works</td>
+                                <td>
+                                    <span t-if="o.vrijgave_decision == 'work_only'">X</span>
+                                </td>
+                                <td>
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_work_only_remarks" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="vg-table">
+                            <tr>
+                                <td>Naam + handtekening technieker <br />Name und Unterschrift Techniker / Name and signature technician
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_technician_name" />
+                                    </div>
+                                    <img t-if="o.vrijgave_technician_signature" t-att-src="image_data_uri(o.vrijgave_technician_signature)" style="max-height:70px;max-width:220px;" />
+                                </td>
+                                <td>Naam+handtekening verantwoordelijke vrijgave<br />Name und Unterschrift Verantwortliche Person für die Freigabe<br />Name and signature of responsible person<div class="vg-value">
+                                        <span t-field="o.vrijgave_responsible_name" />
+                                    </div>
+                                    <img t-if="o.vrijgave_responsible_signature" t-att-src="image_data_uri(o.vrijgave_responsible_signature)" style="max-height:70px;max-width:220px;" />
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="vg-footnote">* : kruis aan wat van toepassing is    Zutreffendes ankreuzen / Tick what is applicable</p>
+                        <p class="vg-footnote">(2) : gebaseerd op 3 – visuele controle en 4 – specifieke controle, indien vermeld</p>
+                        <p class="vg-footnote">basierend auf 3 – Sichtprüfung und 4 – spezifische Prüfung, falls angegeben</p>
+                        <p class="vg-footnote">based on 3 – visual check and 4 – specific check, if stated</p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
 </odoo>
