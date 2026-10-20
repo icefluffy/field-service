@@ -21,12 +21,12 @@
             <form string="Release Form">
                 <header>
                     <button name="action_preview_release_form"
-                            string="Preview Release Form"
+                            string="Preview Mobile Release Form"
                             type="object"
                             class="btn-secondary"
                             icon="fa-eye"/>
                     <button name="%(action_report_fsm_release)d"
-                            string="Print Release Form"
+                            string="Print Mobile Release Form"
                             type="action"
                             class="oe_highlight"
                             icon="fa-print"/>
