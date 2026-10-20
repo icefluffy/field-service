@@ -689,7 +689,8 @@
                             <tr>
                                 <td>4</td>
                                 <td>
-                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
+                                    <span class="vg-label">Specifieke controles volgens </span>
+                                    <span class="vg-subtitle">Kontrolle gemäß / Check according</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_specific_checks" />
                                     </div>
@@ -723,8 +724,6 @@
                             <tr>
                                 <td>6</td>
                                 <td>
-                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
-                                    <span class="vg-subtitle">Specific checks according to / Check according to</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_check_6_label" />
                                     </div>
@@ -742,8 +741,6 @@
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
-                                    <span class="vg-subtitle">Specific checks according to / Check according to</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_check_7_label" />
                                     </div>
@@ -761,8 +758,6 @@
                             <tr>
                                 <td>8</td>
                                 <td>
-                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
-                                    <span class="vg-subtitle">Specific checks according to / Check according to</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_check_8_label" />
                                     </div>
@@ -848,7 +843,10 @@
                                 <td>Opmerking Kommentare / Remarks</td>
                             </tr>
                             <tr>
-                                <td>Vrijgave voor gebruik zonder beperkingen (2)<br />Freigabe ohne Einschränkung / RTS without limitations</td>
+                                <td>
+                                    <span class="vg-label">Vrijgave voor gebruik zonder beperkingen (2)<br /></span>
+                                    <span class="vg-subtitle">Freigabe ohne Einschränkung / RTS without limitations</span>
+                                </td>
                                 <td>
                                     <span t-if="o.vrijgave_decision == 'unrestricted'">X</span>
                                 </td>
@@ -859,7 +857,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Vrijgave voor gebruik met beperkingen<br />Freigabe mit Einschränkung / RTS with limitations</td>
+                                <td>
+                                    <span class="vg-label">Vrijgave voor gebruik met beperkingen<br /></span>
+                                    <span class="vg-subtitle">Freigabe mit Einschränkung / RTS with limitations</span>
+                                </td>
                                 <td>
                                     <span t-if="o.vrijgave_decision == 'restricted'">X</span>
                                 </td>
@@ -870,7 +871,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Geen vrijgave voor gebruik, met reden<br />Keine Freigabe, mit Grund / No RTS, with reason</td>
+                                <td>
+                                    <span class="vg-label">Geen vrijgave voor gebruik, met reden<br /></span>
+                                    <span class="vg-subtitle">Keine Freigabe, mit Grund / No RTS, with reason</span>
+                                </td>
                                 <td>
                                     <span t-if="o.vrijgave_decision == 'refused'">X</span>
                                 </td>
@@ -881,9 +885,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Vrijgave beperkt tot uitgevoerde werken<br />Freigabe beschränkt auf ausgeführte Arbeiten / RTS limited to executed works</td>
                                 <td>
-                                    <span t-if="o.vrijgave_decision == 'work_only'">X</span>
+                                    <span class="vg-label">Vrijgave beperkt tot uitgevoerde werken<br /></span>
+                                    <span class="vg-subtitle">Freigabe beschränkt auf ausgeführte Arbeiten / RTS limited to executed works</span>
                                 </td>
                                 <td>
                                     <div class="vg-value">
@@ -898,13 +902,18 @@
                                 <col style="width: 50%;"/>
                             </colgroup>
                             <tr>
-                                <td>Naam + handtekening technieker <br />Name und Unterschrift Techniker / Name and signature technician
+                                <td>
+                                    <span class="vg-label">Naam + handtekening technieker <br /></span>
+                                    <span class="vg-subtitle">Name und Unterschrift Techniker / Name and signature technician</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_technician_name" />
                                     </div>
                                     <img t-if="o.vrijgave_technician_signature" t-att-src="image_data_uri(o.vrijgave_technician_signature)" style="max-height:70px;max-width:220px;" />
                                 </td>
-                                <td>Naam+handtekening verantwoordelijke vrijgave<br />Name und Unterschrift Verantwortliche Person für die Freigabe<br />Name and signature of responsible person<div class="vg-value">
+                                <td>
+                                    <span class="vg-label">Naam+handtekening verantwoordelijke vrijgave<br /></span>
+                                    <span class="vg-subtitle">Name und Unterschrift Verantwortliche Person für die Freigabe<br />Name and signature of responsible person</span>
+                                    <div class="vg-value">
                                         <span t-field="o.vrijgave_responsible_name" />
                                     </div>
                                     <img t-if="o.vrijgave_responsible_signature" t-att-src="image_data_uri(o.vrijgave_responsible_signature)" style="max-height:70px;max-width:220px;" />
