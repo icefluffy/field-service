@@ -26,4 +26,16 @@
         <field name="binding_type">report</field>
     </record>
 
+
+    <record id="action_report_fsm_vrijgave" model="ir.actions.report">
+        <field name="name">Vrijgave / Return to Service</field>
+        <field name="model">fsm.release</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fieldservice_release.report_fsm_vrijgave_document</field>
+        <field name="report_file">fieldservice_release.report_fsm_vrijgave_document</field>
+        <field name="paperformat_id" ref="fieldservice_release.paperformat_fsm_release_a4"/>
+        <field name="print_report_name">'Vrijgave - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_fsm_release"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>
