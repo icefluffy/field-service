@@ -252,6 +252,30 @@ class FsmRelease(models.Model):
                     if not self[key] and value})
         return {'type': 'ir.actions.client', 'tag': 'reload'}
 
+    def action_preview_vrijgave(self):
+        self.ensure_one()
+
+        query = urlencode({
+            "context": json.dumps({
+                "lang": (
+                    self.partner_id.lang
+                    or self.env.user.lang
+                    or "nl_BE"
+                ),
+            }),
+            "force_context_lang": "1",
+        })
+
+        return {
+            "type": "ir.actions.act_url",
+            "url": (
+                "/report/html/"
+                "fieldservice_release.report_fsm_vrijgave_document/"
+                f"{self.id}?{query}"
+            ),
+            "target": "new",
+        }
+    
     def action_print_vrijgave(self):
         self.ensure_one()
         return self.env.ref('fieldservice_release.action_report_fsm_vrijgave').report_action(self)
@@ -404,31 +428,6 @@ class FsmReleaseContractorCost(models.Model):
     def _compute_subtotal(self):
         for line in self:
             line.subtotal = line.quantity * line.price_unit
-
-    def action_preview_vrijgave(self):
-        self.ensure_one()
-
-        query = urlencode({
-            "context": json.dumps({
-                "lang": (
-                    self.partner_id.lang
-                    or self.env.user.lang
-                    or "nl_BE"
-                ),
-            }),
-            "force_context_lang": "1",
-        })
-
-        return {
-            "type": "ir.actions.act_url",
-            "url": (
-                "/report/html/"
-                "fieldservice_release.report_fsm_vrijgave_document/"
-                f"{self.id}?{query}"
-            ),
-            "target": "new",
-        }
-
 
 class FsmReleaseTimesheet(models.Model):
     _name = "fsm.release.timesheet"
