@@ -352,17 +352,19 @@
                             color: #000;
                         }
 
+                        /* General table layout */
                         .vg-table {
                             width: 100%;
                             border-collapse: collapse;
                             table-layout: fixed;
                             margin: 5px 0 9px;
+                            border: 2px solid #000;
                         }
 
                         .vg-table td,
                         .vg-table th {
                             border: 1px solid #000;
-                            padding: 3px 4px;
+                            padding: 3px 5px;
                             vertical-align: top;
                             overflow-wrap: break-word;
                         }
@@ -371,54 +373,166 @@
                             page-break-inside: avoid;
                         }
 
+                        /* Main labels and translated descriptions */
+                        .vg-label {
+                            display: block;
+                            font-weight: bold;
+                            font-size: 11px;
+                            line-height: 1.2;
+                            margin-bottom: 2px;
+                        }
+
+                        .vg-subtitle {
+                            display: block;
+                            font-size: 9px;
+                            font-style: italic;
+                            font-weight: normal;
+                            line-height: 1.15;
+                        }
+
                         .vg-value {
                             white-space: pre-wrap;
                             min-height: 15px;
                         }
 
-                        .vg-footnote {
-                            font-size: 8px;
-                            margin: 4px 0;
+                        /* Vehicle details */
+                        .vg-meta-table td {
+                            padding: 4px 6px;
                         }
 
-                        /* First page: vehicle information, 4 columns */
-                        .vg-meta-table col:nth-child(1) { width: 25%; }
-                        .vg-meta-table col:nth-child(2) { width: 17%; }
-                        .vg-meta-table col:nth-child(3) { width: 25%; }
-                        .vg-meta-table col:nth-child(4) { width: 33%; }
+                        .vg-meta-table tr:last-child td {
+                            border-bottom: 2px solid #000;
+                        }
 
-                        /* First page: checklist, 5 columns */
-                        .vg-check-table col:nth-child(1) { width: 5%; }
-                        .vg-check-table col:nth-child(2) { width: 61%; }
-                        .vg-check-table col:nth-child(3),
-                        .vg-check-table col:nth-child(4),
-                        .vg-check-table col:nth-child(5) { width: 11.3333%; }
+                        /* Checklist */
+                        .vg-check-table {
+                            border: 2px solid #000;
+                        }
 
-                        .vg-check-table th,
+                        .vg-check-table th {
+                            font-weight: bold;
+                            font-style: italic;
+                            text-align: center;
+                            vertical-align: middle;
+                            border-bottom: 2px solid #000;
+                            padding: 3px 2px;
+                        }
+
+                        .vg-check-table td:nth-child(1) {
+                            border-right: 2px solid #000;
+                            text-align: center;
+                            font-weight: bold;
+                        }
+
+                        .vg-check-table td:nth-child(2) {
+                            border-right: 3px solid #000;
+                        }
+
+                        .vg-check-table th:nth-child(2) {
+                            border-right: 3px solid #000;
+                        }
+
                         .vg-check-table td:nth-child(n+3) {
                             text-align: center;
                         }
 
-                        .vg-check-table td:nth-child(2) {
-                            text-align: left;
+                        .vg-check-table td {
+                            padding: 3px 4px;
                         }
 
-                        /* Resolved defects: one full-width column */
-                        .vg-defects-table col { width: 100%; }
+                        .vg-check-table .vg-check-description {
+                            font-size: 11px;
+                        }
 
-                        /* Second page: release decision, 3 columns */
-                        .vg-decision-table col:nth-child(1) { width: 44%; }
-                        .vg-decision-table col:nth-child(2) { width: 5%; }
-                        .vg-decision-table col:nth-child(3) { width: 51%; }
+                        .vg-check-table .vg-check-description .vg-subtitle {
+                            font-size: 9px;
+                        }
+
+                        /* Section headings */
+                        .vg-section-title {
+                            font-size: 14px;
+                            font-weight: bold;
+                            margin: 7px 0 3px;
+                        }
+
+                        .vg-section-title .vg-subtitle {
+                            display: inline;
+                            font-size: 10px;
+                        }
+
+                        /* Remarks and resolved defects boxes */
+                        .vg-remarks-box {
+                            border: 2px solid #000;
+                            min-height: 90px;
+                            padding: 5px;
+                            margin: 0 0 9px;
+                        }
+
+                        .vg-defects-table {
+                            border: 2px solid #000;
+                            margin-top: 3px;
+                        }
+
+                        .vg-defects-table td {
+                            height: 90px;
+                        }
+
+                        /* Release decision table on page 2 */
+                        .vg-decision-table {
+                            border: 2px solid #000;
+                        }
+
+                        .vg-decision-table tr:first-child td {
+                            border-bottom: 3px solid #000;
+                            font-weight: bold;
+                        }
+
+                        .vg-decision-table td:first-child {
+                            border-right: 3px solid #000;
+                        }
 
                         .vg-decision-table td:nth-child(2) {
                             text-align: center;
+                            font-weight: bold;
                         }
 
-                        /* Second page: two signature columns */
-                        .vg-signature-table col:nth-child(1),
-                        .vg-signature-table col:nth-child(2) {
-                            width: 50%;
+                        .vg-decision-table td {
+                            padding: 5px 6px;
+                        }
+
+                        .vg-decision-table .vg-decision-label {
+                            font-weight: bold;
+                            font-size: 11px;
+                        }
+
+                        .vg-decision-table tr:not(:first-child) td {
+                            height: 45px;
+                        }
+
+                        /* Signature table */
+                        .vg-signature-table {
+                            border: 2px solid #000;
+                        }
+
+                        .vg-signature-table td {
+                            height: 75px;
+                            padding: 5px 6px;
+                        }
+
+                        .vg-signature-table td:first-child {
+                            border-right: 2px solid #000;
+                        }
+
+                        .vg-footnote {
+                            font-size: 8px;
+                            line-height: 1.15;
+                            margin: 4px 0;
+                        }
+
+                        .vg-page h3 {
+                            font-size: 14px;
+                            font-weight: bold;
+                            margin: 7px 0 5px;
                         }
                     </style>
                     <div class="page vg-page">
@@ -430,13 +544,19 @@
                                 <col style="width: 33%;"/>
                             </colgroup>
                             <tr>
-                                <td>Locnr (kort) <br />Abkürzung  / Short ID</td>
+                                <td>
+                                    <span class="vg-label">Locnr (kort)</span>
+                                    <span class="vg-subtitle">Abkürzung / Short ID</span>
+                                </td>
                                 <td>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_short_id" />
                                     </div>
                                 </td>
-                                <td>Locnr (volledig) <br />Vollständige Lok-Nr / EVN</td>
+                                <td>
+                                    <span class="vg-label">Locnr (volledig)</span>
+                                    <span class="vg-subtitle">Vollständige Lok-Nr / EVN</span>
+                                </td>
                                 <td>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_evn" />
@@ -444,13 +564,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Datum <br />Date</td>
+                                <td>
+                                    <span class="vg-label">Datum</span>
+                                    <span class="vg-subtitle">Date</span>
+                                </td>
                                 <td>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_date" />
                                     </div>
                                 </td>
-                                <td>Plaats <br />Ort / Location</td>
+                                <td>
+                                    <span class="vg-label">Plaats</span>
+                                    <span class="vg-subtitle">Ort / Location</span>
+                                </td>
                                 <td>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_place" />
@@ -458,13 +584,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Klant ref. <br />Kunden Ref. / Customer ref.</td>
+                                <td>
+                                    <span class="vg-label">Klant ref.</span>
+                                    <span class="vg-subtitle">Kunden Ref. / Customer ref.</span>
+                                </td>
                                 <td>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_customer_ref" />
                                     </div>
                                 </td>
-                                <td>Werkbon nr. <br />Auftragsnr RSN / Order nr. RSN</td>
+                                <td>
+                                    <span class="vg-label">Werkbon nr.</span>
+                                    <span class="vg-subtitle">Auftragsnr RSN / Order nr. RSN</span>
+                                </td>
                                 <td>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_order_ref" />
@@ -472,7 +604,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Techniekers <br/>Techniker / Technicians</td>
+                                <td>
+                                    <span class="vg-label">Techniekers</span>
+                                    <span class="vg-subtitle">Techniker / Technicians</span>
+                                </td>
                                 <td colspan="3">
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_technicians"/>
@@ -498,8 +633,14 @@
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Werken uitgevoerd zoals in opdracht gevraagd <br />Die Arbeiten wurden gemäß Auftrag ausgeführt / Works executed according order<br />
-                                    <br />Korte omschrijving Kurzbeschreibung / Short description<div class="vg-value">
+                                <td>
+                                    <span class="vg-label">Werken uitgevoerd zoals in opdracht gevraagd</span>
+                                    <span class="vg-subtitle">Die Arbeiten wurden gemäß Auftrag ausgeführt / Works executed according order</span>
+                                    <br />
+                                    <br />
+                                    <span class="vg-label">Korte omschrijving</span>
+                                    <span class="vg-subtitle">Kurzbeschreibung / Short description</span>
+                                    <div class="vg-value">
                                         <span t-field="o.vrijgave_description" />
                                     </div>
                                 </td>
@@ -515,7 +656,10 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Logboek nagekeken Nachsicht Logbuch / Inspection of logbook</td>
+                                <td>
+                                    <span class="vg-label">Logboek nagekeken</span>
+                                    <span class="vg-subtitle">Nachsicht Logbuch / Inspection of logbook</span>
+                                </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_2 == 'ok'">X</span>
                                 </td>
@@ -528,7 +672,10 @@
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Voertuig algemeen visueel nagekeken (1)<br />Allgemeine Visuelle Kontrolle des Fahrzeuges / General visual check of vehicle</td>
+                                <td>
+                                    <span class="vg-label">Voertuig algemeen visueel nagekeken</span>
+                                    <span class="vg-subtitle">Allgemeine Visuelle Kontrolle des Fahrzeuges / General visual check of vehicle</span>
+                                </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_3 == 'ok'">X</span>
                                 </td>
@@ -541,7 +688,9 @@
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Specifieke controles volgens Kontrolle gemäß / Check according<div class="vg-value">
+                                <td>
+                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
+                                    <div class="vg-value">
                                         <span t-field="o.vrijgave_specific_checks" />
                                     </div>
                                 </td>
@@ -557,7 +706,10 @@
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>Voertuig veilig achter gelaten (afgesloten, geremd, batterij uitgeschakeld, …)<br />Sicheres hinterlassen des Fahrzeuges (abgeschlossen, gebremst, Batterie abgeschaltet, …)<br />Leaving vehicle in safe condition (closed, braked, battery off, …)</td>
+                                <td>
+                                    <span class="vg-label">Voertuig veilig achter gelaten</span>
+                                    <span class="vg-subtitle">Sicheres hinterlassen des Fahrzeuges (abgeschlossen, gebremst, Batterie abgeschaltet, …)<br />Leaving vehicle in safe condition (closed, braked, battery off, …)</span>
+                                </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_5 == 'ok'">X</span>
                                 </td>
@@ -571,6 +723,8 @@
                             <tr>
                                 <td>6</td>
                                 <td>
+                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
+                                    <span class="vg-subtitle">Specific checks according to / Check according to</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_check_6_label" />
                                     </div>
@@ -588,6 +742,8 @@
                             <tr>
                                 <td>7</td>
                                 <td>
+                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
+                                    <span class="vg-subtitle">Specific checks according to / Check according to</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_check_7_label" />
                                     </div>
@@ -605,6 +761,8 @@
                             <tr>
                                 <td>8</td>
                                 <td>
+                                    <span class="vg-label">Specifieke controles volgens Kontrolle gemäß / Check according</span>
+                                    <span class="vg-subtitle">Specific checks according to / Check according to</span>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_check_8_label" />
                                     </div>
@@ -620,11 +778,19 @@
                                 </td>
                             </tr>
                         </table>
-                        <p>Opmerkingen / Kommentare / Remarks</p>
-                        <div class="vg-value">
-                            <span t-field="o.vrijgave_remarks" />
+                        <p class="vg-section-title">
+                            Opmerkingen
+                            <span class="vg-subtitle">Kommentare / Remarks</span>
+                        </p>
+                        <div class="vg-remarks-box">
+                            <div class="vg-value">
+                                <span t-field="o.vrijgave_remarks"/>
+                            </div>
                         </div>
-                        <p>Opgeloste storingen / Gelöste Störungen / Resolved defects</p>
+                        <p class="vg-section-title">
+                            Opgeloste storingen
+                            <span class="vg-subtitle">Gelöste Störungen / Resolved defects</span>
+                        </p>
                         <table class="vg-table vg-defects-table">
                             <colgroup>
                                 <col style="width: 100%;"/>
@@ -664,7 +830,12 @@
                                 </td>
                             </tr>
                         </table>
-                        <h3>Bedrijfsvrijgave / Betriebsfreigabe / Return to Service</h3>
+                        <h3 class="vg-section-title">
+                            Bedrijfsvrijgave
+                            <span class="vg-subtitle">
+                                Betriebsfreigabe / Return to Service
+                            </span>
+                        </h3>
                         <table class="vg-table vg-decision-table">
                             <colgroup>
                                 <col style="width: 44%;"/>
