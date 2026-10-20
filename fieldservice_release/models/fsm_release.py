@@ -405,6 +405,30 @@ class FsmReleaseContractorCost(models.Model):
         for line in self:
             line.subtotal = line.quantity * line.price_unit
 
+    def action_preview_vrijgave(self):
+        self.ensure_one()
+
+        query = urlencode({
+            "context": json.dumps({
+                "lang": (
+                    self.partner_id.lang
+                    or self.env.user.lang
+                    or "nl_BE"
+                ),
+            }),
+            "force_context_lang": "1",
+        })
+
+        return {
+            "type": "ir.actions.act_url",
+            "url": (
+                "/report/html/"
+                "fieldservice_release.report_fsm_vrijgave_document/"
+                f"{self.id}?{query}"
+            ),
+            "target": "new",
+        }
+
 
 class FsmReleaseTimesheet(models.Model):
     _name = "fsm.release.timesheet"
