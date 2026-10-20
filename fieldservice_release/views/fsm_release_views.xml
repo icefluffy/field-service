@@ -20,7 +20,17 @@
         <field name="arch" type="xml">
             <form string="Release Form">
                 <header>
-                    <button name="action_print_vrijgave" string="Print Vrijgave" type="object" class="btn-secondary" icon="fa-print"/>
+                    <button name="action_preview_vrijgave"
+                            string="Preview Vrijgave"
+                            type="object"
+                            class="btn-secondary"
+                            icon="fa-eye"/>
+                    
+                    <button name="action_print_vrijgave"
+                            string="Print Vrijgave"
+                            type="object"
+                            class="btn-secondary"
+                            icon="fa-print"/>
 
                     <button name="action_preview_release_form"
                             string="Preview Mobile Release Form"
