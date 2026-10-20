@@ -346,15 +346,89 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
                     <style>
- .vg-page {font-family:Arial,sans-serif;font-size:12px;color:#000;}
- .vg-table {width:100%;border-collapse:collapse;margin:5px 0 9px;table-layout:fixed;}
- .vg-table td {border:1px solid #000;padding:5px;vertical-align:top;word-wrap:break-word;}
- .vg-table tr {page-break-inside:avoid;}
- .vg-value {white-space:pre-wrap;min-height:15px;}
- .vg-footnote {font-size:8px;margin:4px 0;}
- </style>
+                        .vg-page {
+                            font-family: Arial, sans-serif;
+                            font-size: 10px;
+                            color: #000;
+                        }
+
+                        .vg-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            table-layout: fixed;
+                            margin: 5px 0 9px;
+                        }
+
+                        .vg-table td,
+                        .vg-table th {
+                            border: 1px solid #000;
+                            padding: 3px 4px;
+                            vertical-align: top;
+                            overflow-wrap: break-word;
+                        }
+
+                        .vg-table tr {
+                            page-break-inside: avoid;
+                        }
+
+                        .vg-value {
+                            white-space: pre-wrap;
+                            min-height: 15px;
+                        }
+
+                        .vg-footnote {
+                            font-size: 8px;
+                            margin: 4px 0;
+                        }
+
+                        /* First page: vehicle information, 4 columns */
+                        .vg-meta-table col:nth-child(1) { width: 25%; }
+                        .vg-meta-table col:nth-child(2) { width: 17%; }
+                        .vg-meta-table col:nth-child(3) { width: 25%; }
+                        .vg-meta-table col:nth-child(4) { width: 33%; }
+
+                        /* First page: checklist, 5 columns */
+                        .vg-check-table col:nth-child(1) { width: 5%; }
+                        .vg-check-table col:nth-child(2) { width: 61%; }
+                        .vg-check-table col:nth-child(3),
+                        .vg-check-table col:nth-child(4),
+                        .vg-check-table col:nth-child(5) { width: 11.3333%; }
+
+                        .vg-check-table th,
+                        .vg-check-table td:nth-child(n+3) {
+                            text-align: center;
+                        }
+
+                        .vg-check-table td:nth-child(2) {
+                            text-align: left;
+                        }
+
+                        /* Resolved defects: one full-width column */
+                        .vg-defects-table col { width: 100%; }
+
+                        /* Second page: release decision, 3 columns */
+                        .vg-decision-table col:nth-child(1) { width: 44%; }
+                        .vg-decision-table col:nth-child(2) { width: 5%; }
+                        .vg-decision-table col:nth-child(3) { width: 51%; }
+
+                        .vg-decision-table td:nth-child(2) {
+                            text-align: center;
+                        }
+
+                        /* Second page: two signature columns */
+                        .vg-signature-table col:nth-child(1),
+                        .vg-signature-table col:nth-child(2) {
+                            width: 50%;
+                        }
+                    </style>
                     <div class="page vg-page">
-                        <table class="vg-table">
+                        <table class="vg-table vg-meta-table">
+                            <colgroup>
+                                <col style="width: 25%;"/>
+                                <col style="width: 17%;"/>
+                                <col style="width: 25%;"/>
+                                <col style="width: 33%;"/>
+                            </colgroup>
                             <tr>
                                 <td>Locnr (kort) <br />Abkürzung  / Short ID</td>
                                 <td>
@@ -398,26 +472,22 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Techniekers <br />Techniker / Technicians</td>
-                                <td>
-                                    <div colspan="3">
-                                        <div class="vg-value">
-                                            <span t-field="o.vrijgave_technicians" />
-                                        </div>
+                                <td>Techniekers <br/>Techniker / Technicians</td>
+                                <td colspan="3">
+                                    <div class="vg-value">
+                                        <span t-field="o.vrijgave_technicians"/>
                                     </div>
                                 </td>
-                                <td />
-                                <td />
                             </tr>
                         </table>
                         <p>Volgende werken werden aan het voertuig uitgevoerd en door middel van een rapport gedocumenteerd: Nachstehende Arbeiten wurden am Fahrzeug durchgeführt und protokolliert / Following works were performed and registered</p>
-                        <table class="vg-table">
+                        <table class="vg-table vg-check-table">
                             <colgroup>
-                                <col style="width: 10%;"/>
-                                <col style="width: 60%;"/>
-                                <col style="width: 10%;"/>
-                                <col style="width: 10%;"/>
-                                <col style="width: 10%;"/>
+                                <col style="width: 5%;"/>
+                                <col style="width: 61%;"/>
+                                <col style="width: 11.3333%;"/>
+                                <col style="width: 11.3333%;"/>
+                                <col style="width: 11.3333%;"/>
                             </colgroup>
                             <tr>
                                 <td />
@@ -555,7 +625,10 @@
                             <span t-field="o.vrijgave_remarks" />
                         </div>
                         <p>Opgeloste storingen / Gelöste Störungen / Resolved defects</p>
-                        <table class="vg-table">
+                        <table class="vg-table vg-defects-table">
+                            <colgroup>
+                                <col style="width: 100%;"/>
+                            </colgroup>
                             <tr>
                                 <td>
                                     <div class="vg-value">
@@ -570,6 +643,12 @@
                     </div>
                     <div class="page vg-page" style="page-break-before:always;">
                         <table class="vg-table">
+                            <colgroup>
+                                <col style="width: 25%;"/>
+                                <col style="width: 25%;"/>
+                                <col style="width: 25%;"/>
+                                <col style="width: 25%;"/>
+                            </colgroup>
                             <tr>
                                 <td>Locnr <br />Vollständige Lok-Nr / EVN</td>
                                 <td>
@@ -586,7 +665,12 @@
                             </tr>
                         </table>
                         <h3>Bedrijfsvrijgave / Betriebsfreigabe / Return to Service</h3>
-                        <table class="vg-table">
+                        <table class="vg-table vg-decision-table">
+                            <colgroup>
+                                <col style="width: 44%;"/>
+                                <col style="width: 5%;"/>
+                                <col style="width: 51%;"/>
+                            </colgroup>
                             <tr>
                                 <td />
                                 <td>*</td>
@@ -637,7 +721,11 @@
                                 </td>
                             </tr>
                         </table>
-                        <table class="vg-table">
+                        <table class="vg-table vg-signature-table">
+                            <colgroup>
+                                <col style="width: 50%;"/>
+                                <col style="width: 50%;"/>
+                            </colgroup>
                             <tr>
                                 <td>Naam + handtekening technieker <br />Name und Unterschrift Techniker / Name and signature technician
                                     <div class="vg-value">
