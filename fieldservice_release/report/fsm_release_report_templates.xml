@@ -890,6 +890,9 @@
                                     <span class="vg-subtitle">Freigabe beschränkt auf ausgeführte Arbeiten / RTS limited to executed works</span>
                                 </td>
                                 <td>
+                                    <span t-if="o.vrijgave_decision == 'work_only'">X</span>
+                                </td>
+                                <td>
                                     <div class="vg-value">
                                         <span t-field="o.vrijgave_work_only_remarks" />
                                     </div>
