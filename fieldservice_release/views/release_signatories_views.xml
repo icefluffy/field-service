@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <record id="fsm_release_form_signatory_selectors" model="ir.ui.view">
+  <field name="name">fsm.release.form.signatory.selectors</field>
+  <field name="model">fsm.release</field>
+  <field name="inherit_id" ref="fieldservice_release.fsm_release_form_view"/>
+  <field name="priority">90</field>
+  <field name="arch" type="xml">
+   <xpath expr="//field[@name='vrijgave_technician_name']" position="replace">
+    <field name="vrijgave_technician_id"
+           readonly="state != 'draft' or vrijgave_technician_signature"
+           options="{'no_create': True, 'no_create_edit': True}"/>
+    <field name="vrijgave_technician_name" string="Previously recorded name"
+           readonly="1" invisible="vrijgave_technician_id or not vrijgave_technician_name"/>
+   </xpath>
+   <xpath expr="//field[@name='vrijgave_responsible_name']" position="replace">
+    <field name="vrijgave_responsible_user_id"
+           readonly="state != 'draft' or vrijgave_responsible_signature"
+           options="{'no_create': True, 'no_create_edit': True}"/>
+    <field name="vrijgave_responsible_name" string="Previously recorded name"
+           readonly="1" invisible="vrijgave_responsible_user_id or not vrijgave_responsible_name"/>
+   </xpath>
+  </field>
+ </record>
+ <record id="fsm_order_form_signatory_selectors" model="ir.ui.view">
+  <field name="name">fsm.order.form.signatory.selectors</field>
+  <field name="model">fsm.order</field>
+  <field name="inherit_id" ref="fieldservice_release.fsm_order_form_release_wagon_deferred"/>
+  <field name="priority">90</field>
+  <field name="arch" type="xml">
+   <xpath expr="//field[@name='release_vg_technician_name']" position="replace">
+    <field name="release_vg_technician_id"
+           readonly="release_wagon_state != 'draft' or release_vg_technician_signature"
+           options="{'no_create': True, 'no_create_edit': True}"/>
+    <field name="release_vg_technician_name" string="Previously recorded name"
+           readonly="1" invisible="release_vg_technician_id or not release_vg_technician_name"/>
+   </xpath>
+   <xpath expr="//field[@name='release_vg_responsible_name']" position="replace">
+    <field name="release_vg_responsible_user_id"
+           readonly="release_wagon_state != 'draft' or release_vg_responsible_signature"
+           options="{'no_create': True, 'no_create_edit': True}"/>
+    <field name="release_vg_responsible_name" string="Previously recorded name"
+           readonly="1" invisible="release_vg_responsible_user_id or not release_vg_responsible_name"/>
+   </xpath>
+  </field>
+ </record>
+</odoo>
