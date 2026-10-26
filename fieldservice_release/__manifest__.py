@@ -15,6 +15,7 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        'views/release_wagon_views.xml',
 
         # The report action must be loaded before the release-form view,
         # because the view's Print button refers to this XML ID.

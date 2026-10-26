@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_person_form_membership" model="ir.ui.view">
+        <field name="name">fsm.person.form.team.membership</field>
+        <field name="model">fsm.person</field>
+        <field name="inherit_id" ref="fieldservice.fsm_person_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='calendar_id']" position="after">
+                <field name="company_id" invisible="1"/>
+                <field name="membership_team_ids" widget="many2many_tags"
+                       options="{'no_create': True, 'no_create_edit': True}"
+                       domain="[('company_id', 'in', allowed_company_ids)] + ([('company_id', '=', company_id)] if company_id else [])"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="fsm_person_list_membership" model="ir.ui.view">
+        <field name="name">fsm.person.list.team.membership</field>
+        <field name="model">fsm.person</field>
+        <field name="inherit_id" ref="fieldservice.fsm_person_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='calendar_id']" position="after">
+                <field name="membership_team_ids" widget="many2many_tags" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="fsm_person_search_membership" model="ir.ui.view">
+        <field name="name">fsm.person.search.team.membership</field>
+        <field name="model">fsm.person</field>
+        <field name="inherit_id" ref="fieldservice.fsm_person_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="membership_team_ids" string="Team"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="fsm_team_form_membership" model="ir.ui.view">
+        <field name="name">fsm.team.form.worker.membership</field>
+        <field name="model">fsm.team</field>
+        <field name="inherit_id" ref="fieldservice.view_team_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Team members">
+                    <field name="company_id" invisible="1"/>
+                    <field name="membership_worker_ids" widget="many2many_tags"
+                           options="{'no_create': True, 'no_create_edit': True}"
+                           domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
