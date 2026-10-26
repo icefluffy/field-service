@@ -395,11 +395,23 @@
                             display: block;
                             width: 100%;
                             box-sizing: border-box;
-                            white-space: pre-wrap;
                             min-height: 15px;
+                            white-space: pre-wrap;
                             text-align: left !important;
                             padding: 0;
                             margin: 0;
+                        }
+
+                        /* Force all content inside filled-in fields to the left */
+                        .vg-value * {
+                            text-align: left !important;
+                            text-indent: 0 !important;
+                        }
+
+                        /* Remove default paragraph spacing inside HTML fields */
+                        .vg-value p {
+                            margin: 0 !important;
+                            padding: 0 !important;
                         }
 
 
