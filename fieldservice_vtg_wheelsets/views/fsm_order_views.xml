@@ -28,7 +28,6 @@
                             string="Input Wheelset"
                             type="object"
                             class="oe_highlight"
-                            invisible="not equipment_ids"
                         />
                     </group>
                 </page>
