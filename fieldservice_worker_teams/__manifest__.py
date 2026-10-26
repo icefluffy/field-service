@@ -1,0 +1,1 @@
+{'name': 'Field Service - Worker Team Membership', 'summary': 'Assign workers to multiple FSM teams', 'version': '18.0.1.0.0', 'category': 'Field Service', 'license': 'AGPL-3', 'depends': ['fieldservice'], 'data': ['views/membership_views.xml'], 'installable': True, 'application': False}
