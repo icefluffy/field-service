@@ -106,6 +106,23 @@ class FsmOrderReleaseWagon(models.Model):
         related="release_id.vrijgave_check_8_label", readonly=False,
     )
 
+    def _autofill_wagon_release(self):
+        self.mapped("release_id")._autofill_vrijgave()
+
+    def web_read(self, specification):
+        self._autofill_wagon_release()
+        return super().web_read(specification)
+
+    def write(self, vals):
+        result = super().write(vals)
+        if not self.env.context.get("skip_vrijgave_autofill"):
+            self._autofill_wagon_release()
+        return result
+
+    def action_open_release_form(self):
+        self._autofill_wagon_release()
+        return super().action_open_release_form()
+
     def action_create_release_form(self):
         """Replace immediate snapshots with creation of an empty draft."""
         self.ensure_one()
@@ -138,7 +155,9 @@ class FsmOrderReleaseWagon(models.Model):
         return {"type": "ir.actions.client", "tag": "reload"}
 
     def action_prepare_wagon_release(self):
-        return self.action_create_release_form()
+        self.action_create_release_form()
+        self._autofill_wagon_release()
+        return {"type": "ir.actions.client", "tag": "reload"}
 
     def _wagon_release_required(self):
         self.ensure_one()
@@ -175,38 +194,8 @@ class FsmReleaseDeferredSnapshots(models.Model):
     )
 
     def action_fill_vrijgave_missing(self):
-        """Read live order values without creating snapshot lines."""
-        self.ensure_one()
-        if self.state != "draft":
-            raise UserError(_("Only draft release identification can be filled."))
-        order = self.fsm_order_id.with_company(self.company_id)
-        equipment = order.equipment_id or order.equipment_ids[:1]
-        evn = equipment.lot_id.name if equipment else False
-        names = list(dict.fromkeys(
-            order.employee_timesheet_ids.mapped("employee_id.name")
-        ))
-        if not names and order.person_id:
-            names = [order.person_id.name]
-        customer_ref = (
-            order.customer_reference
-            if "customer_reference" in order._fields
-            else False
-        )
-        source_work = self.work_performed or order.x_work_performed
-        candidates = {
-            "vrijgave_evn": evn or self.wagon_number,
-            "vrijgave_date": self.actual_release_date or self.issue_date,
-            "vrijgave_place": order.location_id.display_name,
-            "vrijgave_customer_ref": customer_ref,
-            "vrijgave_order_ref": order.name,
-            "vrijgave_technicians": ", ".join(n for n in names if n),
-            "vrijgave_description": (
-                html2plaintext(source_work).strip() if source_work else False
-            ),
-            "vrijgave_remarks": self.remarks,
-        }
-        self.write({key: value for key, value in candidates.items()
-                    if not self[key] and value})
+        """Delegate to the single automatic mapping in fsm_release.py."""
+        self._autofill_vrijgave()
         return {"type": "ir.actions.client", "tag": "reload"}
 
     def action_release(self):
@@ -243,6 +232,7 @@ class FsmReleaseDeferredSnapshots(models.Model):
                     "The order company differs from the prepared release company. "
                     "Review the release before finalizing."
                 ))
+            release._autofill_vrijgave()
             values = {
                 "equipment_line_ids": order._prepare_release_equipment_lines(),
                 "contractor_cost_line_ids": order._prepare_release_contractor_cost_lines(),
