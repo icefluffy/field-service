@@ -536,6 +536,20 @@
                         }
                     </style>
                     <div class="page vg-page">
+                        <table style="margin-top:4px; font-size:9px;">
+                            <tr>
+                                <td style="width:30%; vertical-align:top;">
+                                    <img t-if="order.company_id.logo" t-att-src="image_data_uri(order.company_id.logo)" style="max-height:35px; max-width:130px;"/>
+                                </td>
+                                <td style="width:60%; vertical-align:top;">
+                                    <span class="vg-label">Voertuigvrijgave</span>
+                                    <span class="vg-subtitle">Fahrzeugfreigabe / Vehicle Release</span>
+                                </td>
+                                <td style="width:30%; vertical-align:top;">
+                                    FG04-02_10.0
+                                </td>
+                            </tr>
+                        </table>
                         <table class="vg-table vg-meta-table">
                             <colgroup>
                                 <col style="width: 25%;"/>
