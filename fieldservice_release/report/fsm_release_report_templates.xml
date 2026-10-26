@@ -587,7 +587,7 @@
                                     <td style="border:1px solid #000;
                                             padding:6px;
                                             vertical-align:middle;
-                                            text-align:middle;
+                                            text-align:center;
                                             white-space:nowrap;
                                             font-size:14px;
                                             line-height:1.2;
