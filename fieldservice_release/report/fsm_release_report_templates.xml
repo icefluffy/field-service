@@ -393,6 +393,8 @@
                         .vg-value {
                             white-space: pre-wrap;
                             min-height: 15px;
+                            text-align: left;
+                            padding-left: 4px;
                         }
 
                         /* Vehicle details */

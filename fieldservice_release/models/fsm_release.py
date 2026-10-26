@@ -264,8 +264,11 @@ class FsmRelease(models.Model):
             people.extend(timesheets.mapped("employee_id.name"))
         names = list(dict.fromkeys(name for name in people if name))
 
-        work = (self.work_performed or value(order, "x_work_performed")
-                or value(order, "description"))
+        work = (
+            value(order, "x_work_performed")
+            or value(order, "description")
+            or self.work_performed
+        )
         resolution = value(order, "resolution")
         remarks = (value(order, "release_remarks") or self.remarks)
         location = value(order, "location_id")
@@ -282,41 +285,58 @@ class FsmRelease(models.Model):
         }
 
     def _autofill_vrijgave(self):
-        """Persist only blank mapped fields on writable saved drafts.
-
-        Called by form reads as well as create/save/preview. It intentionally
-        writes draft metadata on opening a form; never uses sudo or creates
-        equipment/cost/timesheet lines. Existing non-empty values are kept.
-        """
+        """Synchronize available order values onto writable draft releases."""
         if self.env.context.get("skip_vrijgave_autofill"):
             return
-        if not self.check_access_rights("write", raise_exception=False):
+
+        if not self.check_access_rights(
+            "write", raise_exception=False
+        ):
             return
+
         for release in self.sorted("id"):
             if not release.id or release.state != "draft":
                 continue
+
             try:
                 release.check_access_rule("write")
             except AccessError:
-                # Read-only viewers must still be able to open/print records.
                 continue
+
             candidates = release._get_vrijgave_order_defaults()
-            if not any(value and not release[key]
-                       for key, value in candidates.items()):
+
+            changes = {
+                key: value
+                for key, value in candidates.items()
+                if value and release[key] != value
+            }
+
+            if not changes:
                 continue
+
             release.flush_recordset()
             self.env.cr.execute(
                 "SELECT id FROM fsm_release WHERE id = %s FOR UPDATE",
                 [release.id],
             )
             release.invalidate_recordset()
+
             if release.state != "draft":
                 continue
+
+            # Read again after acquiring the lock.
             candidates = release._get_vrijgave_order_defaults()
-            missing = {key: value for key, value in candidates.items()
-                       if value and not release[key]}
-            if missing:
-                release.with_context(skip_vrijgave_autofill=True).write(missing)
+
+            changes = {
+                key: value
+                for key, value in candidates.items()
+                if value and release[key] != value
+            }
+
+            if changes:
+                release.with_context(
+                    skip_vrijgave_autofill=True
+                ).write(changes)
 
     @api.model_create_multi
     def create(self, vals_list):
