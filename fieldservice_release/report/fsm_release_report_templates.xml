@@ -424,6 +424,29 @@
                             border-bottom: 2px solid #000;
                         }
 
+
+                        /* Identification values: no preserved XML indentation. */
+                        .vg-meta-table td {
+                            text-align: left;
+                        }
+
+                        .vg-meta-table .vg-value {
+                            white-space: normal;
+                            text-align: left !important;
+                            text-indent: 0;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+                        .vg-meta-table .vg-value > span {
+                            display: block;
+                            white-space: pre-line;
+                            text-align: left !important;
+                            text-indent: 0 !important;
+                            margin: 0;
+                            padding: 0;
+                        }
+
                         /* Checklist */
                         .vg-check-table {
                             border: 2px solid #000;
@@ -630,18 +653,14 @@
                                     <span class="vg-subtitle">Abkürzung / Short ID</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_short_id" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_short_id" /></div>
                                 </td>
                                 <td>
                                     <span class="vg-label">Locnr (volledig)</span>
                                     <span class="vg-subtitle">Vollständige Lok-Nr / EVN</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_evn" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_evn" /></div>
                                 </td>
                             </tr>
                             <tr>
@@ -650,18 +669,14 @@
                                     <span class="vg-subtitle">Date</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_date" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_date" /></div>
                                 </td>
                                 <td>
                                     <span class="vg-label">Plaats</span>
                                     <span class="vg-subtitle">Ort / Location</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_place" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_place" /></div>
                                 </td>
                             </tr>
                             <tr>
@@ -670,18 +685,14 @@
                                     <span class="vg-subtitle">Kunden Ref. / Customer ref.</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_customer_ref" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_customer_ref" /></div>
                                 </td>
                                 <td>
                                     <span class="vg-label">Werkbon nr.</span>
                                     <span class="vg-subtitle">Auftragsnr RSN / Order nr. RSN</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_order_ref" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_order_ref" /></div>
                                 </td>
                             </tr>
                             <tr>
@@ -690,9 +701,7 @@
                                     <span class="vg-subtitle">Techniker / Technicians</span>
                                 </td>
                                 <td colspan="3">
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_technicians"/>
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_technicians"/></div>
                                 </td>
                             </tr>
                         </table>
