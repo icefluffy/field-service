@@ -57,6 +57,162 @@ class FsmOrder(models.Model):
         ondelete="set null",
     )
 
+    # Insert inside the EXISTING FsmOrder class in models/fsm_order.py.
+    # This is a fragment, not a replacement for that file. Preview Release in Order itself
+    release_wagon_state = fields.Selection(
+        related="release_id.state", readonly=True,
+    )
+    release_vg_short_id = fields.Char(
+        related="release_id.vrijgave_short_id",
+        readonly=False,
+    )
+    release_vg_evn = fields.Char(
+        related="release_id.vrijgave_evn",
+        readonly=False,
+    )
+    release_vg_date = fields.Date(
+        related="release_id.vrijgave_date",
+        readonly=False,
+    )
+    release_vg_place = fields.Char(
+        related="release_id.vrijgave_place",
+        readonly=False,
+    )
+    release_vg_customer_ref = fields.Char(
+        related="release_id.vrijgave_customer_ref",
+        readonly=False,
+    )
+    release_vg_order_ref = fields.Char(
+        related="release_id.vrijgave_order_ref",
+        readonly=False,
+    )
+    release_vg_technicians = fields.Char(
+        related="release_id.vrijgave_technicians",
+        readonly=False,
+    )
+    release_vg_description = fields.Text(
+        related="release_id.vrijgave_description",
+        readonly=False,
+    )
+    release_vg_specific_checks = fields.Text(
+        related="release_id.vrijgave_specific_checks",
+        readonly=False,
+    )
+    release_vg_remarks = fields.Text(
+        related="release_id.vrijgave_remarks",
+        readonly=False,
+    )
+    release_vg_resolved_defects = fields.Text(
+        related="release_id.vrijgave_resolved_defects",
+        readonly=False,
+    )
+    release_vg_decision = fields.Selection(
+        related="release_id.vrijgave_decision",
+        readonly=False,
+    )
+    release_vg_technician_name = fields.Char(
+        related="release_id.vrijgave_technician_name",
+        readonly=False,
+    )
+    release_vg_responsible_name = fields.Char(
+        related="release_id.vrijgave_responsible_name",
+        readonly=False,
+    )
+    release_vg_technician_signature = fields.Binary(
+        related="release_id.vrijgave_technician_signature",
+        readonly=False,
+    )
+    release_vg_responsible_signature = fields.Binary(
+        related="release_id.vrijgave_responsible_signature",
+        readonly=False,
+    )
+    release_vg_unrestricted_remarks = fields.Text(
+        related="release_id.vrijgave_unrestricted_remarks",
+        readonly=False,
+    )
+    release_vg_restricted_remarks = fields.Text(
+        related="release_id.vrijgave_restricted_remarks",
+        readonly=False,
+    )
+    release_vg_refused_remarks = fields.Text(
+        related="release_id.vrijgave_refused_remarks",
+        readonly=False,
+    )
+    release_vg_work_only_remarks = fields.Text(
+        related="release_id.vrijgave_work_only_remarks",
+        readonly=False,
+    )
+    release_vg_check_1 = fields.Selection(
+        related="release_id.vrijgave_check_1",
+        readonly=False,
+    )
+    release_vg_check_2 = fields.Selection(
+        related="release_id.vrijgave_check_2",
+        readonly=False,
+    )
+    release_vg_check_3 = fields.Selection(
+        related="release_id.vrijgave_check_3",
+        readonly=False,
+    )
+    release_vg_check_4 = fields.Selection(
+        related="release_id.vrijgave_check_4",
+        readonly=False,
+    )
+    release_vg_check_5 = fields.Selection(
+        related="release_id.vrijgave_check_5",
+        readonly=False,
+    )
+    release_vg_check_6 = fields.Selection(
+        related="release_id.vrijgave_check_6",
+        readonly=False,
+    )
+    release_vg_check_6_label = fields.Char(
+        related="release_id.vrijgave_check_6_label",
+        readonly=False,
+    )
+    release_vg_check_7 = fields.Selection(
+        related="release_id.vrijgave_check_7",
+        readonly=False,
+    )
+    release_vg_check_7_label = fields.Char(
+        related="release_id.vrijgave_check_7_label",
+        readonly=False,
+    )
+    release_vg_check_8 = fields.Selection(
+        related="release_id.vrijgave_check_8",
+        readonly=False,
+    )
+    release_vg_check_8_label = fields.Char(
+        related="release_id.vrijgave_check_8_label",
+        readonly=False,
+    )
+
+    def action_prepare_wagon_release(self):
+        self.ensure_one()
+        if not self.release_id:
+            self.action_create_release_form()
+            self.release_id.action_fill_vrijgave_missing()
+        return {"type": "ir.actions.client", "tag": "reload"}
+
+    def action_preview_wagon_release(self):
+        self.ensure_one()
+        if not self.release_id:
+            return self.action_prepare_wagon_release()
+        return self.release_id.action_preview_vrijgave()
+
+    def action_print_wagon_release(self):
+        self.ensure_one()
+        if not self.release_id:
+            return self.action_prepare_wagon_release()
+        return self.release_id.action_print_vrijgave()
+
+    def action_fill_wagon_release(self):
+        self.ensure_one()
+        if not self.release_id:
+            return self.action_prepare_wagon_release()
+        self.release_id.action_fill_vrijgave_missing()
+        return {"type": "ir.actions.client", "tag": "reload"}
+    
     def _get_release_partner(self):
         self.ensure_one()
 
