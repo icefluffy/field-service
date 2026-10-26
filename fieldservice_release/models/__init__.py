@@ -3,3 +3,4 @@
 
 from . import fsm_order
 from . import fsm_release
+from . import release_wagon_workflow
