@@ -33,11 +33,7 @@ class FSMOrder(models.Model):
 
     def _compute_show_wheelsets_tab(self):
         for order in self:
-            # Safe whether another addon provides customer_id or not.
-            customer = getattr(order, "customer_id", False)
-            order.show_wheelsets_tab = bool(
-                customer and "VTG" in (customer.name or "")
-            )
+            order.show_wheelsets_tab = True
 
     def action_open_equipment(self):
         self.ensure_one()
