@@ -390,12 +390,18 @@
                             line-height: 1.15;
                         }
 
+
                         .vg-value {
+                            display: block;
+                            width: 100%;
+                            box-sizing: border-box;
                             white-space: pre-wrap;
                             min-height: 15px;
-                            text-align: left;
-                            padding-left: 4px;
+                            text-align: left !important;
+                            padding: 0;
+                            margin: 0;
                         }
+
 
                         /* Vehicle details */
                         .vg-meta-table td {

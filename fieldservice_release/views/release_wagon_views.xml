@@ -43,12 +43,12 @@
     <attribute name="confirm">Capture the current equipment, contractor costs and timesheets and mark this release as released? Review the Vrijgave information first.</attribute>
    </xpath>
    <xpath expr="//sheet/notebook" position="before">
-    <group string="Final snapshots">
+    <group string="Final snapshots" invisible="1">
      <field name="snapshots_taken"/>
      <field name="snapshots_taken_at"/>
      <field name="snapshots_taken_by"/>
     </group>
-    <div class="alert alert-info" invisible="state != 'draft'">
+    <div class="alert alert-info" invisible="1">
      Under the new workflow, snapshots are taken on Release to Service,
      not during draft preparation, preview or printing.
     </div>
