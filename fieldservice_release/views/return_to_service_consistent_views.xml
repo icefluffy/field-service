@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="fsm_order_return_to_service_consistent" model="ir.ui.view">
+    <field name="name">fsm.order.return.to.service.consistent</field>
+    <field name="model">fsm.order</field>
+    <field name="inherit_id" ref="fieldservice_release.fsm_order_form_release_wagon_deferred"/>
+    <field name="priority">100</field>
+    <field name="arch" type="xml">
+      <xpath expr="//group[field[@name='release_vg_decision']]" position="attributes">
+        <attribute name="string">Return to service</attribute>
+      </xpath>
+      <xpath expr="//field[@name='release_vg_decision']" position="attributes">
+        <attribute name="string">Return-to-service decision</attribute>
+        <attribute name="readonly">release_wagon_state != 'draft'</attribute>
+        <attribute name="invisible">False</attribute>
+      </xpath>
+      <xpath expr="//field[@name='release_vg_unrestricted_remarks']" position="attributes">
+        <attribute name="string">Unrestricted decision remarks</attribute>
+        <attribute name="readonly">release_wagon_state != 'draft'</attribute>
+        <attribute name="invisible">release_vg_decision != 'unrestricted'</attribute>
+      </xpath>
+      <xpath expr="//field[@name='release_vg_restricted_remarks']" position="attributes">
+        <attribute name="string">Restrictions</attribute>
+        <attribute name="readonly">release_wagon_state != 'draft'</attribute>
+        <attribute name="invisible">release_vg_decision != 'restricted'</attribute>
+      </xpath>
+      <xpath expr="//field[@name='release_vg_refused_remarks']" position="attributes">
+        <attribute name="string">Reason for refusal</attribute>
+        <attribute name="readonly">release_wagon_state != 'draft'</attribute>
+        <attribute name="invisible">release_vg_decision != 'refused'</attribute>
+      </xpath>
+      <xpath expr="//field[@name='release_vg_work_only_remarks']" position="attributes">
+        <attribute name="string">Executed-work limitations</attribute>
+        <attribute name="readonly">release_wagon_state != 'draft'</attribute>
+        <attribute name="invisible">release_vg_decision != 'work_only'</attribute>
+      </xpath>
+    </field>
+  </record>
+  <record id="fsm_release_return_to_service_consistent" model="ir.ui.view">
+    <field name="name">fsm.release.return.to.service.consistent</field>
+    <field name="model">fsm.release</field>
+    <field name="inherit_id" ref="fieldservice_release.fsm_release_form_view"/>
+    <field name="priority">100</field>
+    <field name="arch" type="xml">
+      <xpath expr="//group[field[@name='vrijgave_decision']]" position="attributes">
+        <attribute name="string">Return to service</attribute>
+      </xpath>
+      <xpath expr="//field[@name='vrijgave_decision']" position="attributes">
+        <attribute name="string">Return-to-service decision</attribute>
+        <attribute name="readonly">state != 'draft'</attribute>
+        <attribute name="invisible">False</attribute>
+      </xpath>
+      <xpath expr="//field[@name='vrijgave_unrestricted_remarks']" position="attributes">
+        <attribute name="string">Unrestricted decision remarks</attribute>
+        <attribute name="readonly">state != 'draft'</attribute>
+        <attribute name="invisible">vrijgave_decision != 'unrestricted'</attribute>
+      </xpath>
+      <xpath expr="//field[@name='vrijgave_restricted_remarks']" position="attributes">
+        <attribute name="string">Restrictions</attribute>
+        <attribute name="readonly">state != 'draft'</attribute>
+        <attribute name="invisible">vrijgave_decision != 'restricted'</attribute>
+      </xpath>
+      <xpath expr="//field[@name='vrijgave_refused_remarks']" position="attributes">
+        <attribute name="string">Reason for refusal</attribute>
+        <attribute name="readonly">state != 'draft'</attribute>
+        <attribute name="invisible">vrijgave_decision != 'refused'</attribute>
+      </xpath>
+      <xpath expr="//field[@name='vrijgave_work_only_remarks']" position="attributes">
+        <attribute name="string">Executed-work limitations</attribute>
+        <attribute name="readonly">state != 'draft'</attribute>
+        <attribute name="invisible">vrijgave_decision != 'work_only'</attribute>
+      </xpath>
+    </field>
+  </record>
+</odoo>

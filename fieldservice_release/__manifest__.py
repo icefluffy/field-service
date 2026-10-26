@@ -25,6 +25,7 @@
         "views/fsm_release_views.xml",
         "views/fsm_order_views.xml",
         "views/release_signatories_views.xml",
+        "views/return_to_service_consistent_views.xml",
     ],
     "installable": True,
     "application": False,
