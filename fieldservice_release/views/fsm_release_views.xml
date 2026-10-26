@@ -30,10 +30,10 @@
  <group><group><field name="fsm_order_id"/><field name="partner_id"/></group>
  <group><field name="location_id"/><field name="vrijgave_evn" string="Vehicle / EVN" readonly="1"/></group></group>
  <notebook>
-  <page name="vrijgave" string="Vrijgave">
-   <div name="vrijgave_print_buttons" class="d-flex gap-2 mb-3"><button name="action_preview_vrijgave" string="Preview Vrijgave" type="object" class="btn-secondary" icon="fa-eye"/>
+  <page name="vrijgave" string="Release">
+   <div name="vrijgave_print_buttons" class="d-flex gap-2 mb-3"><button name="action_preview_vrijgave" string="Preview Release" type="object" class="btn-secondary" icon="fa-eye"/>
                     
-                    <button name="action_print_vrijgave" string="Print Vrijgave" type="object" class="btn-primary" icon="fa-print"/>
+                    <button name="action_print_vrijgave" string="Print Release" type="object" class="btn-primary" icon="fa-print"/>
 
                     </div>
    <group string="Identification"><group>
