@@ -2,8 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 import json
 from urllib.parse import urlencode
-from odoo import api, fields, models
-from odoo.exceptions import AccessError
+from odoo import fields, models
 from odoo.tools import html2plaintext
 
 
@@ -234,114 +233,36 @@ class FsmRelease(models.Model):
             else False
         )
     
-    def _get_vrijgave_order_defaults(self):
-        """One mapping, read from the order; no line snapshots or approvals."""
-        self.ensure_one()
-        order = self.fsm_order_id.with_company(self.company_id)
-
-        def value(record, name):
-            return record[name] if record and name in record._fields else False
-
-        def plain(text):
-            return html2plaintext(text).strip() if text else False
-
-        equipment = value(order, "equipment_id")
-        if not equipment:
-            equipments = value(order, "equipment_ids")
-            equipment = equipments[:1] if equipments else False
-        lot = value(equipment, "lot_id")
-        evn = value(lot, "name") or self.wagon_number
-
-        people = []
-        person = value(order, "person_id")
-        if person:
-            people.extend(person.mapped("name"))
-        persons = value(order, "person_ids")
-        if persons:
-            people.extend(persons.mapped("name"))
-        timesheets = value(order, "employee_timesheet_ids")
-        if timesheets:
-            people.extend(timesheets.mapped("employee_id.name"))
-        names = list(dict.fromkeys(name for name in people if name))
-
-        work = (self.work_performed or value(order, "x_work_performed")
-                or value(order, "description"))
-        resolution = value(order, "resolution")
-        remarks = (value(order, "release_remarks") or self.remarks)
-        location = value(order, "location_id")
-        return {
-            "vrijgave_evn": evn,
-            "vrijgave_date": self.actual_release_date or self.issue_date,
-            "vrijgave_place": location.display_name if location else False,
-            "vrijgave_customer_ref": self._get_vrijgave_customer_reference(),
-            "vrijgave_order_ref": order.name,
-            "vrijgave_technicians": ", ".join(names),
-            "vrijgave_description": plain(work),
-            "vrijgave_remarks": plain(remarks),
-            "vrijgave_resolved_defects": plain(resolution),
-        }
-
-    def _autofill_vrijgave(self):
-        """Persist only blank mapped fields on writable saved drafts.
-
-        Called by form reads as well as create/save/preview. It intentionally
-        writes draft metadata on opening a form; never uses sudo or creates
-        equipment/cost/timesheet lines. Existing non-empty values are kept.
-        """
-        if self.env.context.get("skip_vrijgave_autofill"):
-            return
-        if not self.check_access_rights("write", raise_exception=False):
-            return
-        for release in self.sorted("id"):
-            if not release.id or release.state != "draft":
-                continue
-            try:
-                release.check_access_rule("write")
-            except AccessError:
-                # Read-only viewers must still be able to open/print records.
-                continue
-            candidates = release._get_vrijgave_order_defaults()
-            if not any(value and not release[key]
-                       for key, value in candidates.items()):
-                continue
-            release.flush_recordset()
-            self.env.cr.execute(
-                "SELECT id FROM fsm_release WHERE id = %s FOR UPDATE",
-                [release.id],
-            )
-            release.invalidate_recordset()
-            if release.state != "draft":
-                continue
-            candidates = release._get_vrijgave_order_defaults()
-            missing = {key: value for key, value in candidates.items()
-                       if value and not release[key]}
-            if missing:
-                release.with_context(skip_vrijgave_autofill=True).write(missing)
-
-    @api.model_create_multi
-    def create(self, vals_list):
-        releases = super().create(vals_list)
-        releases._autofill_vrijgave()
-        return releases
-
-    def write(self, vals):
-        result = super().write(vals)
-        if not self.env.context.get("skip_vrijgave_autofill"):
-            self._autofill_vrijgave()
-        return result
-
-    def web_read(self, specification):
-        self._autofill_vrijgave()
-        return super().web_read(specification)
-
     def action_fill_vrijgave_missing(self):
-        """Compatibility entry point; no user-facing fill button is needed."""
-        self._autofill_vrijgave()
-        return {"type": "ir.actions.client", "tag": "reload"}
+        """Explicitly seed blank identification fields; never decide or sign."""
+        self.ensure_one()
+        order = self.fsm_order_id
+        equipment = self.equipment_line_ids[:1]
+        evn = self.wagon_number or (equipment.lot_id.name if equipment else False)
+        employees = self.timesheet_line_ids.mapped('employee_id')
+        names = list(dict.fromkeys(employees.mapped('name')))
+        if not names and 'person_id' in order._fields and order.person_id:
+            names = [order.person_id.name]
+        customer_ref = self._get_vrijgave_customer_reference()
+        source_work = self.work_performed
+        if not source_work and 'x_work_performed' in order._fields:
+            source_work = order.x_work_performed
+        candidates = {
+            'vrijgave_evn': evn,
+            'vrijgave_date': self.actual_release_date or self.issue_date,
+            'vrijgave_place': self.location_id.display_name,
+            'vrijgave_customer_ref': customer_ref,
+            'vrijgave_order_ref': order.name,
+            'vrijgave_technicians': ', '.join(names),
+            'vrijgave_description': html2plaintext(source_work).strip() if source_work else False,
+            'vrijgave_remarks': self.remarks,
+        }
+        self.write({key: value for key, value in candidates.items()
+                    if not self[key] and value})
+        return {'type': 'ir.actions.client', 'tag': 'reload'}
 
     def action_preview_vrijgave(self):
         self.ensure_one()
-        self._autofill_vrijgave()
 
         query = urlencode({
             "context": json.dumps({
@@ -366,7 +287,6 @@ class FsmRelease(models.Model):
     
     def action_print_vrijgave(self):
         self.ensure_one()
-        self._autofill_vrijgave()
         return self.env.ref('fieldservice_release.action_report_fsm_vrijgave').report_action(self)
 
     def _compute_totals(self):
@@ -381,7 +301,6 @@ class FsmRelease(models.Model):
 
     def action_preview_release_form(self):
         self.ensure_one()
-        self._autofill_vrijgave()
 
         query = urlencode({
             "context": json.dumps({
