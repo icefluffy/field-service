@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <record id="fsm_release_list_view" model="ir.ui.view">
         <field name="name">fsm.release.list</field>
@@ -20,44 +20,16 @@
         <field name="arch" type="xml">
             <form string="Release Form">
                 <header>
-                    <button name="action_preview_vrijgave"
-                            string="Preview Vrijgave"
-                            type="object"
-                            class="btn-secondary"
-                            icon="fa-eye"/>
+                    <button name="action_preview_vrijgave" string="Preview Vrijgave" type="object" class="btn-secondary" icon="fa-eye"/>
                     
-                    <button name="action_print_vrijgave"
-                            string="Print Vrijgave"
-                            type="object"
-                            class="btn-secondary"
-                            icon="fa-print"/>
+                    <button name="action_print_vrijgave" string="Print Vrijgave" type="object" class="btn-secondary" icon="fa-print"/>
 
-                    <button name="action_preview_release_form"
-                            string="Preview Mobile Release Form"
-                            type="object"
-                            class="btn-secondary"
-                            icon="fa-eye"/>
-                    <button name="%(action_report_fsm_release)d"
-                            string="Print Mobile Release Form"
-                            type="action"
-                            class="oe_highlight"
-                            icon="fa-print"/>
-                    <button name="action_release"
-                            string="Release to Service"
-                            type="object"
-                            class="oe_highlight"
-                            invisible="state != 'draft'"/>
-                    <button name="action_cancel"
-                            string="Cancel"
-                            type="object"
-                            invisible="state != 'draft'"/>
-                    <button name="action_reset_to_draft"
-                            string="Reset to Draft"
-                            type="object"
-                            invisible="state != 'cancelled'"/>
-                    <field name="state"
-                           widget="statusbar"
-                           statusbar_visible="draft,released,cancelled"/>
+                    <button name="action_preview_release_form" string="Preview Mobile Release Form" type="object" class="btn-secondary" icon="fa-eye"/>
+                    <button name="%(action_report_fsm_release)d" string="Print Mobile Release Form" type="action" class="oe_highlight" icon="fa-print"/>
+                    <button name="action_release" string="Release to Service" type="object" class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_cancel" string="Cancel" type="object" invisible="state != 'draft'"/>
+                    <button name="action_reset_to_draft" string="Reset to Draft" type="object" invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,released,cancelled"/>
                 </header>
 
                 <sheet>
@@ -119,7 +91,6 @@
 
                     <notebook>
 <page name="vrijgave" string="Vrijgave">
- <button name="action_fill_vrijgave_missing" string="Fill missing identification from order" type="object" class="btn-secondary"/>
  <div class="text-muted">Review all values before printing. Blank checks are not approvals. Printing does not release the vehicle or change its status.</div>
  <group string="Identification"><field name="vrijgave_short_id"/><field name="vrijgave_evn"/><field name="vrijgave_date"/><field name="vrijgave_place"/><field name="vrijgave_customer_ref"/><field name="vrijgave_order_ref"/><field name="vrijgave_technicians"/></group><group string="Work and checks"><field name="vrijgave_description"/><field name="vrijgave_specific_checks"/><field name="vrijgave_check_1"/><field name="vrijgave_check_2"/><field name="vrijgave_check_3"/><field name="vrijgave_check_4"/><field name="vrijgave_check_5"/><field name="vrijgave_check_6_label"/><field name="vrijgave_check_6"/><field name="vrijgave_check_7_label"/><field name="vrijgave_check_7"/><field name="vrijgave_check_8_label"/><field name="vrijgave_check_8"/></group><group string="Remarks and defects"><field name="vrijgave_remarks"/><field name="vrijgave_resolved_defects"/></group>
 <group string="Return to service"><field name="vrijgave_decision"/><field name="vrijgave_unrestricted_remarks"/><field name="vrijgave_restricted_remarks"/><field name="vrijgave_refused_remarks"/><field name="vrijgave_work_only_remarks"/></group><group string="Signatures"><group><field name="vrijgave_technician_name"/><field name="vrijgave_technician_signature" widget="signature"/></group><group><field name="vrijgave_responsible_name"/><field name="vrijgave_responsible_signature" widget="signature"/></group></group></page>
@@ -145,17 +116,13 @@
                                     <field name="employee_id"/>
                                     <field name="product_id"/>
                                     <field name="description"/>
-                                    <field name="unit_amount"
-                                           string="Duration"
-                                           widget="float_time"/>
+                                    <field name="unit_amount" string="Duration" widget="float_time"/>
                                     <field name="project_id"/>
                                     <field name="task_id"/>
                                 </list>
                             </field>
                             <group>
-                                <field name="employee_time_total"
-                                       readonly="1"
-                                       widget="float_time"/>
+                                <field name="employee_time_total" readonly="1" widget="float_time"/>
                             </group>
                         </page>
 
@@ -171,8 +138,7 @@
                         </page>
 
                         <page name="remarks" string="Remarks">
-                            <field name="remarks"
-                                   placeholder="Enter release-to-service remarks..."/>
+                            <field name="remarks" placeholder="Enter release-to-service remarks..."/>
                         </page>
                     </notebook>
                 </sheet>
@@ -185,18 +151,11 @@
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//form/sheet/group/group/field[@name='location_id']"
-                position="after">
-                <field
-                    name="equipment_id"
-                    string="Equipment"
-                    options="{'no_create': False, 'no_create_edit': False, 'no_quick_create': True}"
-                    groups="fieldservice.group_fsm_equipment"
-                />
+            <xpath expr="//form/sheet/group/group/field[@name='location_id']" position="after">
+                <field name="equipment_id" string="Equipment" options="{'no_create': False, 'no_create_edit': False, 'no_quick_create': True}" groups="fieldservice.group_fsm_equipment"/>
             </xpath>
 
-            <xpath expr="//page[@name='equipements_page']"
-                position="replace"/>
+            <xpath expr="//page[@name='equipements_page']" position="replace"/>
 
         </field>
     </record>
