@@ -187,7 +187,11 @@ class FsmReleaseDeferredSnapshots(models.Model):
         ))
         if not names and order.person_id:
             names = [order.person_id.name]
-        customer_ref = self.customer_order_number or order.x_customer_order_ref
+        customer_ref = (
+            order.customer_reference
+            if "customer_reference" in order._fields
+            else False
+        )
         source_work = self.work_performed or order.x_work_performed
         candidates = {
             "vrijgave_evn": evn or self.wagon_number,

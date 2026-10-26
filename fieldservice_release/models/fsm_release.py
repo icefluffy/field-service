@@ -222,6 +222,17 @@ class FsmRelease(models.Model):
     vrijgave_check_8 = fields.Selection([('ok', 'OK'), ('nok', 'NOK'), ('na', 'NVT / N.A.')], string='Additional check 8', copy=False)
     vrijgave_check_8_label = fields.Char(string="Check 8 description", copy=False)
 
+    def _get_vrijgave_customer_reference(self):
+        """Use the customer reference from the linked FSM order."""
+        self.ensure_one()
+        order = self.fsm_order_id
+
+        return (
+            order.customer_reference
+            if "customer_reference" in order._fields
+            else False
+        )
+    
     def action_fill_vrijgave_missing(self):
         """Explicitly seed blank identification fields; never decide or sign."""
         self.ensure_one()
@@ -232,9 +243,7 @@ class FsmRelease(models.Model):
         names = list(dict.fromkeys(employees.mapped('name')))
         if not names and 'person_id' in order._fields and order.person_id:
             names = [order.person_id.name]
-        customer_ref = self.customer_order_number
-        if not customer_ref and 'x_customer_order_ref' in order._fields:
-            customer_ref = order.x_customer_order_ref
+        customer_ref = self._get_vrijgave_customer_reference()
         source_work = self.work_performed
         if not source_work and 'x_work_performed' in order._fields:
             source_work = order.x_work_performed
