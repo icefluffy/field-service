@@ -110,7 +110,6 @@ class FsmOrderReleaseWagon(models.Model):
         self.mapped("release_id")._autofill_vrijgave()
 
     def web_read(self, specification):
-        self._autofill_wagon_release()
         return super().web_read(specification)
 
     def write(self, vals):
