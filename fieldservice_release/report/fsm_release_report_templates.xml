@@ -740,7 +740,19 @@
                                     <br />
                                     <span class="vg-label">Korte omschrijving</span>
                                     <span class="vg-subtitle">Kurzbeschreibung / Short description</span>
-                                    <div class="vg-value"><span t-field="o.vrijgave_description" /></div>
+                                    <div class="vg-value"
+                                        style="margin-top: 8px; white-space: normal;">
+                                        <t t-foreach="(o.vrijgave_description or '').splitlines()"
+                                        t-as="task_line">
+                                            <div t-if="task_line.strip()"
+                                                style="margin: 0;
+                                                        padding: 0;
+                                                        line-height: 1.2;
+                                                        white-space: normal;
+                                                        text-align: left;"
+                                                t-out="task_line.strip()"/>
+                                        </t>
+                                    </div>
                                 </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_1 == 'ok'">X</span>
