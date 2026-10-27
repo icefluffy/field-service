@@ -396,10 +396,20 @@
                             width: 100%;
                             box-sizing: border-box;
                             min-height: 15px;
-                            white-space: pre-wrap;
+                            white-space: normal;
                             text-align: left !important;
                             padding: 0;
                             margin: 0;
+                        }
+
+                        /* Preserve field line breaks without preserving XML indentation. */
+                        .vg-value > span {
+                            display: block;
+                            white-space: pre-wrap;
+                            text-align: left !important;
+                            text-indent: 0 !important;
+                            margin: 0;
+                            padding: 0;
                         }
 
                         /* Force all content inside filled-in fields to the left */
@@ -730,9 +740,7 @@
                                     <br />
                                     <span class="vg-label">Korte omschrijving</span>
                                     <span class="vg-subtitle">Kurzbeschreibung / Short description</span>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_description" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_description" /></div>
                                 </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_1 == 'ok'">X</span>
@@ -781,9 +789,7 @@
                                 <td>
                                     <span class="vg-label">Specifieke controles volgens </span>
                                     <span class="vg-subtitle">Kontrolle gemäß / Check according</span>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_specific_checks" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_specific_checks" /></div>
                                 </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_4 == 'ok'">X</span>
@@ -814,9 +820,7 @@
                             <tr>
                                 <td>6</td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_check_6_label" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_check_6_label" /></div>
                                 </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_6 == 'ok'">X</span>
@@ -831,9 +835,7 @@
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_check_7_label" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_check_7_label" /></div>
                                 </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_7 == 'ok'">X</span>
@@ -848,9 +850,7 @@
                             <tr>
                                 <td>8</td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_check_8_label" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_check_8_label" /></div>
                                 </td>
                                 <td>
                                     <span t-if="o.vrijgave_check_8 == 'ok'">X</span>
@@ -868,9 +868,7 @@
                             <span class="vg-subtitle">Kommentare / Remarks</span>
                         </p>
                         <div class="vg-remarks-box">
-                            <div class="vg-value">
-                                <span t-field="o.vrijgave_remarks"/>
-                            </div>
+                            <div class="vg-value"><span t-field="o.vrijgave_remarks"/></div>
                         </div>
                         <p class="vg-section-title">
                             Opgeloste storingen
@@ -882,9 +880,7 @@
                             </colgroup>
                             <tr>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_resolved_defects" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_resolved_defects" /></div>
                                 </td>
                             </tr>
                         </table>
@@ -903,15 +899,11 @@
                             <tr>
                                 <td>Locnr <br />Vollständige Lok-Nr / EVN</td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_evn" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_evn" /></div>
                                 </td>
                                 <td>Werkbon nr. <br />Auftragsnr RSN / Order nr. RSN</td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_order_ref" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_order_ref" /></div>
                                 </td>
                             </tr>
                         </table>
@@ -941,9 +933,7 @@
                                     <span t-if="o.vrijgave_decision == 'unrestricted'">X</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_unrestricted_remarks" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_unrestricted_remarks" /></div>
                                 </td>
                             </tr>
                             <tr>
@@ -955,9 +945,7 @@
                                     <span t-if="o.vrijgave_decision == 'restricted'">X</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_restricted_remarks" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_restricted_remarks" /></div>
                                 </td>
                             </tr>
                             <tr>
@@ -969,9 +957,7 @@
                                     <span t-if="o.vrijgave_decision == 'refused'">X</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_refused_remarks" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_refused_remarks" /></div>
                                 </td>
                             </tr>
                             <tr>
@@ -983,9 +969,7 @@
                                     <span t-if="o.vrijgave_decision == 'work_only'">X</span>
                                 </td>
                                 <td>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_work_only_remarks" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_work_only_remarks" /></div>
                                 </td>
                             </tr>
                         </table>
@@ -998,17 +982,13 @@
                                 <td>
                                     <span class="vg-label">Naam + handtekening technieker <br /></span>
                                     <span class="vg-subtitle">Name und Unterschrift Techniker / Name and signature technician</span>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_technician_name" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_technician_name" /></div>
                                     <img t-if="o.vrijgave_technician_signature" t-att-src="image_data_uri(o.vrijgave_technician_signature)" style="max-height:70px;max-width:220px;" />
                                 </td>
                                 <td>
                                     <span class="vg-label">Naam+handtekening verantwoordelijke vrijgave<br /></span>
                                     <span class="vg-subtitle">Name und Unterschrift Verantwortliche Person für die Freigabe<br />Name and signature of responsible person</span>
-                                    <div class="vg-value">
-                                        <span t-field="o.vrijgave_responsible_name" />
-                                    </div>
+                                    <div class="vg-value"><span t-field="o.vrijgave_responsible_name" /></div>
                                     <img t-if="o.vrijgave_responsible_signature" t-att-src="image_data_uri(o.vrijgave_responsible_signature)" style="max-height:70px;max-width:220px;" />
                                 </td>
                             </tr>
