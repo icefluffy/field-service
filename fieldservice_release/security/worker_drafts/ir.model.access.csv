@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_worker_draft_fsm_release,fsm.release.worker.draft.preparer,model_fsm_release,group_release_draft_preparer,1,1,1,0
+access_worker_draft_fsm_release_equipment,fsm.release.equipment.worker.draft.preparer,model_fsm_release_equipment,group_release_draft_preparer,1,0,0,0
+access_worker_draft_fsm_release_contractor_cost,fsm.release.contractor.cost.worker.draft.preparer,model_fsm_release_contractor_cost,group_release_draft_preparer,1,0,0,0
+access_worker_draft_fsm_release_timesheet,fsm.release.timesheet.worker.draft.preparer,model_fsm_release_timesheet,group_release_draft_preparer,1,0,0,0
