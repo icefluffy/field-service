@@ -14,6 +14,13 @@ class FsmReleaseSignatories(models.Model):
         ondelete="restrict", domain=[("share", "=", False)],
     )
 
+    @api.model
+    def _may_default_release_responsible(self):
+        return any(self.env.user.has_group(group) for group in (
+            "fieldservice.group_fsm_dispatcher",
+            "fieldservice.group_fsm_manager",
+        ))
+
     @api.model_create_multi
     def create(self, vals_list):
         prepared = []
@@ -35,7 +42,8 @@ class FsmReleaseSignatories(models.Model):
 
                     if technician:
                         vals["vrijgave_technician_id"] = technician.id
-                if ("vrijgave_responsible_user_id" not in vals
+                if (self._may_default_release_responsible()
+                        and "vrijgave_responsible_user_id" not in vals
                         and not vals.get("vrijgave_responsible_name")
                         and not vals.get("vrijgave_responsible_signature")):
                     vals["vrijgave_responsible_user_id"] = self.env.user.id
@@ -113,10 +121,11 @@ class FsmReleaseSignatories(models.Model):
 
                 if technician:
                     vals["vrijgave_technician_id"] = technician.id
-            if (not release.vrijgave_responsible_user_id
+            if (self._may_default_release_responsible()
+                    and not release.vrijgave_responsible_user_id
                     and not release.vrijgave_responsible_name
                     and not release.vrijgave_responsible_signature):
-                vals["vrijgave_responsible_user_id"] = release.create_uid.id
+                vals["vrijgave_responsible_user_id"] = self.env.user.id
             if vals:
                 release.with_context(
                     skip_signatory_defaults=True, skip_vrijgave_autofill=True

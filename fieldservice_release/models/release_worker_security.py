@@ -62,9 +62,9 @@ class FsmReleaseWorkerSecurity(models.Model):
             "vrijgave_resolved_defects", "vrijgave_decision",
             "vrijgave_unrestricted_remarks", "vrijgave_restricted_remarks",
             "vrijgave_refused_remarks", "vrijgave_work_only_remarks",
-            "vrijgave_technician_name", "vrijgave_responsible_name",
-            "vrijgave_technician_signature", "vrijgave_responsible_signature",
-            "vrijgave_technician_id", "vrijgave_responsible_user_id",
+            "vrijgave_technician_name",
+            "vrijgave_technician_signature",
+            "vrijgave_technician_id",
             "vrijgave_check_1", "vrijgave_check_2", "vrijgave_check_3",
             "vrijgave_check_4", "vrijgave_check_5", "vrijgave_check_6",
             "vrijgave_check_7", "vrijgave_check_8", "vrijgave_check_6_label",
@@ -105,6 +105,14 @@ class FsmReleaseWorkerSecurity(models.Model):
         prepared = []
         for original in vals_list:
             vals = dict(original)
+            for field in (
+                "vrijgave_responsible_user_id",
+                "vrijgave_responsible_name",
+                "vrijgave_responsible_signature",
+            ):
+                if vals.get(field):
+                    raise AccessError(_("Workers may not set the person responsible for release or their signature."))
+                vals.pop(field, None)
             if set(vals) - allowed or vals.get("state", "draft") != "draft":
                 raise AccessError(_("Workers may create drafts only; approval fields and snapshots are not permitted."))
             order = self.env["fsm.order"].browse(vals.get("fsm_order_id")).exists()
@@ -117,6 +125,9 @@ class FsmReleaseWorkerSecurity(models.Model):
                 "company_id": order.company_id.id,
                 "location_id": order.location_id.id,
                 "partner_id": order._get_release_partner().id,
+                "vrijgave_responsible_user_id": False,
+                "vrijgave_responsible_name": False,
+                "vrijgave_responsible_signature": False,
             })
             prepared.append(vals)
         # Do not accept context defaults for protected approval/link/snapshot fields.
