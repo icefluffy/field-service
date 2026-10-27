@@ -38,13 +38,22 @@ class FsmOrder(models.Model):
 
     @api.model
     def get_view(self, view_id=None, view_type="form", **options):
-        result = super().get_view(view_id=view_id, view_type=view_type, **options)
-        # Transform a private copy AFTER the normal cached view is obtained.
-        # Never modify an ir.ui.view record or the shared cached architecture.
-        if (view_type == "form" and self.env.context.get("fsm_mobile_scroll")
-                and self._mobile_scroll_member()):
-            result = deepcopy(result)
+        result = super().get_view(
+            view_id=view_id,
+            view_type=view_type,
+            **options,
+        )
+
+        if (
+            view_type == "form"
+            and self.env.context.get("fsm_mobile_scroll")
+            and self._mobile_scroll_member()
+        ):
+            # Copy only the outer mapping. Nested Odoo metadata
+            # may contain immutable frozendict objects.
+            result = dict(result)
             result["arch"] = scroll_arch(result["arch"])
+
         return result
 
     def _mobile_timestamp(self, stopping=False):
