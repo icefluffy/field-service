@@ -264,11 +264,18 @@ class FsmRelease(models.Model):
             people.extend(timesheets.mapped("employee_id.name"))
         names = list(dict.fromkeys(name for name in people if name))
 
-        work = (
-            value(order, "x_work_performed")
-            or value(order, "description")
-            or self.work_performed
-        )
+        # Short description lists executed activities, never reported damage.
+        activities = value(order, "order_activity_ids")
+        work = False
+        if activities:
+            completed = activities.filtered(
+                lambda activity: activity.state == "done"
+            ).sorted(key=lambda activity: (activity.sequence, activity.id))
+            work = "\n".join(
+                activity.name.strip()
+                for activity in completed
+                if activity.name and activity.name.strip()
+            ) or False
         resolution = value(order, "resolution")
         remarks = (value(order, "release_remarks") or self.remarks)
         location = value(order, "location_id")
@@ -279,7 +286,7 @@ class FsmRelease(models.Model):
             "vrijgave_customer_ref": self._get_vrijgave_customer_reference(),
             "vrijgave_order_ref": order.name,
             "vrijgave_technicians": ", ".join(names),
-            "vrijgave_description": plain(work),
+            "vrijgave_description": work,
             "vrijgave_remarks": plain(remarks),
             "vrijgave_resolved_defects": plain(resolution),
         }
@@ -304,11 +311,16 @@ class FsmRelease(models.Model):
                 continue
 
             candidates = release._get_vrijgave_order_defaults()
+            if (release.vrijgave_technician_signature
+                    or release.vrijgave_responsible_signature):
+                # Do not change what someone has already signed.
+                candidates.pop("vrijgave_description", None)
 
             changes = {
                 key: value
                 for key, value in candidates.items()
-                if value and release[key] != value
+                if (value or key == "vrijgave_description")
+                and release[key] != value
             }
 
             if not changes:
@@ -326,11 +338,16 @@ class FsmRelease(models.Model):
 
             # Read again after acquiring the lock.
             candidates = release._get_vrijgave_order_defaults()
+            if (release.vrijgave_technician_signature
+                    or release.vrijgave_responsible_signature):
+                # Do not change what someone has already signed.
+                candidates.pop("vrijgave_description", None)
 
             changes = {
                 key: value
                 for key, value in candidates.items()
-                if value and release[key] != value
+                if (value or key == "vrijgave_description")
+                and release[key] != value
             }
 
             if changes:
