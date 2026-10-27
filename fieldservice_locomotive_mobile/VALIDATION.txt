@@ -1,0 +1,22 @@
+VALIDATION REPORT — implementation candidate
+
+PASS: All addon Python sources parse.
+PASS: XML setup view is well-formed.
+PASS: Current uploaded base order view plus wheelset, activities, Release wagon,
+      signer-selector and conditional-decision inheritance used as offline fixture.
+PASS: Six requested sections are in order and no outer notebook remains.
+PASS: All original field names remain in the mobile architecture (hidden if omitted).
+PASS: Wheelset input button visible; wheelset history in hidden wrapper.
+PASS: Activities expose only Name and Quantity fields, retain Complete condition.
+PASS: Current Release wagon children preserved byte-for-byte in offline fixture.
+PASS: Mock timestamp test: first Start/Stop write only their corresponding fields.
+PASS: Mock timestamp test: repeated Start/Stop do not overwrite.
+PASS: Mock timestamp test: Stop without Start and nonmember action rejected.
+
+NOT RUN: actual Odoo registry install/upgrade, ORM JavaScript import/asset build,
+frontend form compilation, actual get_views caching and permissions, real device
+browser behavior, database concurrency and installed automation/write overrides.
+Public upstream source fetches were unavailable; imported frontend API must be
+verified in staging. Mock and architecture checks are not runtime certification.
+
+No deployment, installation or existing-file modification was performed.

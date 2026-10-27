@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <record id="mobile_team_setup_list" model="ir.ui.view">
+  <field name="name">fsm.team.mobile.setup.list</field>
+  <field name="model">fsm.team</field>
+  <field name="arch" type="xml">
+   <list string="Mobile Order Teams" create="0" delete="0" editable="bottom">
+    <field name="name" readonly="1"/>
+    <field name="company_id" readonly="1"/>
+    <field name="mobile_scroll_orders"/>
+   </list>
+  </field>
+ </record>
+ <record id="mobile_team_setup_action" model="ir.actions.act_window">
+  <field name="name">Mobile Order Teams</field>
+  <field name="res_model">fsm.team</field>
+  <field name="view_mode">list</field>
+  <field name="view_id" ref="mobile_team_setup_list"/>
+ </record>
+ <menuitem id="mobile_team_setup_menu" name="Mobile Order Setup"
+           action="mobile_team_setup_action" groups="base.group_system" sequence="95"/>
+</odoo>

@@ -1,0 +1,19 @@
+.o_fsm_mobile_scroll {
+    width: 100%;
+    .o_fsm_mobile_section { margin: 0 0 1.5rem; }
+    .o_fsm_mobile_heading {
+        font-size: 1.15rem;
+        border-bottom: 1px solid #d8dadd;
+        margin: 1rem 0;
+        padding-bottom: .5rem;
+    }
+    .o_fsm_mobile_time_buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+    }
+    button { min-height: 44px; }
+    .o_fsm_mobile_time_buttons button { min-width: 110px; }
+    .o_inner_group { max-width: 100%; }
+    .o_field_widget { max-width: 100%; }
+}
