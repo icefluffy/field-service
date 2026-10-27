@@ -22,5 +22,6 @@
         action="action_fsm_codes"
         groups="base.group_system"
         sequence="90"
+        web_icon="fieldservice_damage_codes,static/description/icon.png"
     />
 </odoo>

@@ -18,5 +18,5 @@
   <field name="view_id" ref="mobile_team_setup_list"/>
  </record>
  <menuitem id="mobile_team_setup_menu" name="Mobile Order Setup"
-           action="mobile_team_setup_action" groups="base.group_system" sequence="95"/>
+           action="mobile_team_setup_action" groups="base.group_system" sequence="95" web_icon="fieldservice_locomotive_mobile,static/description/icon.png"/>
 </odoo>

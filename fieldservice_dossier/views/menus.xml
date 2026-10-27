@@ -5,7 +5,7 @@
         name="Dossiers"
         sequence="35"
         groups="fieldservice.group_fsm_user"
-        web_icon="fieldservice_dossier,static/description/icon.png"/>
+        web_icon="fieldservice_dossier,static/description/icon.svg"/>
     <menuitem id="menu_fsm_dossier" name="Dossiers" parent="menu_fsm_dossier_root"
               action="action_fsm_dossier" sequence="10"/>
     <menuitem id="menu_fsm_dossier_inspection" name="Inspection Overview"
