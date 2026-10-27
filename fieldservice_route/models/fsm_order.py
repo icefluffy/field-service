@@ -92,16 +92,30 @@ class FSMOrder(models.Model):
         return super().create(vals_list)
 
     def write(self, vals):
+        routing_fields = {
+            "person_id",
+            "scheduled_date_start",
+            "location_id",
+            "fsm_route_id",
+            "route_id",
+        }
+
+        # Actual Start/End and other unrelated updates must not rebuild routes.
+        # Keep the remaining ORM write chain, permissions and automation intact.
+        if not routing_fields.intersection(vals):
+            return super().write(vals)
+
         for rec in self:
             if vals.get("route_id", False):
                 route = self.env["fsm.route"].browse(vals.get("route_id"))
-                vals.update(
-                    {
-                        "scheduled_date_start": route.date,
-                    }
-                )
+                vals.update({
+                    "scheduled_date_start": route.date,
+                })
+
             if (vals.get("person_id", False) or rec.person_id) and (
-                vals.get("scheduled_date_start", False) or rec.scheduled_date_start
+                vals.get("scheduled_date_start", False)
+                or rec.scheduled_date_start
             ):
                 vals = rec._manage_fsm_route(vals)
+
         return super().write(vals)
