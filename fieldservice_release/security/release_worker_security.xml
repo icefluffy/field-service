@@ -100,6 +100,8 @@
         <field name="domain_force">
             (
                 [
+                    '&amp;',
+                    ('company_id', 'in', company_ids),
                     '|',
                     ('person_id.partner_id', '=', user.partner_id.id),
                     ('person_ids.partner_id', '=', user.partner_id.id)
