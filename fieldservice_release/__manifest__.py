@@ -27,7 +27,7 @@
         "views/release_signatories_views.xml",
         "views/return_to_service_consistent_views.xml",
         "security/release_worker_security.xml",
-        "security/ir.model.access.worker_drafts.csv",
+        "security/worker_drafts/ir.model.access.csv",
     ],
     "installable": True,
     "application": False,
