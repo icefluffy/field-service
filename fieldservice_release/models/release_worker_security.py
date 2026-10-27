@@ -23,9 +23,29 @@ def require_approver(env):
 def hide_buttons(result, names):
     result = dict(result)
     root = etree.fromstring(result["arch"].encode())
+
     for button in root.xpath(".//button"):
         if button.get("name") in names:
             button.set("invisible", "True")
+
+    responsible_fields = {
+        "vrijgave_responsible_user_id",
+        "vrijgave_responsible_name",
+        "vrijgave_responsible_signature",
+        "release_vg_responsible_user_id",
+        "release_vg_responsible_name",
+        "release_vg_responsible_signature",
+    }
+
+    for field in root.xpath(".//field"):
+        if field.get("name") in responsible_fields:
+            field.set("invisible", "True")
+            field.set("readonly", "True")
+
+    for label in root.xpath(".//label"):
+        if label.get("for") in responsible_fields:
+            label.set("invisible", "True")
+
     result["arch"] = etree.tostring(root, encoding="unicode")
     return result
 
