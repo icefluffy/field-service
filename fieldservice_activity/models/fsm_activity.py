@@ -49,44 +49,63 @@ class FSMActivity(models.Model):
 
     def _get_assigned_employee(self):
         self.ensure_one()
-        person = self.fsm_order_id.person_id
-        if not person:
+        self.check_access_rights("write")
+        self.check_access_rule("write")
+        order = self.fsm_order_id
+        order.check_access_rights("read")
+        order.check_access_rule("read")
+        assigned_person = order.person_id
+        if not assigned_person:
             raise ValidationError(
                 _("Assign a worker to the Field Service Order before completing this activity.")
             )
 
-        employee = self.env["hr.employee"]
+        # Elevate this internal identity lookup only. Do not elevate completion,
+        # activity writes, order writes, or timesheet creation.
+        person = assigned_person.sudo()
+        company = order.company_id
+        Employee = self.env["hr.employee"].sudo().with_company(company)
+        employee = Employee.browse()
+
         if "employee_id" in person._fields and person.employee_id:
             employee = person.employee_id
         elif "employee_ids" in person._fields and person.employee_ids:
-            if len(person.employee_ids) != 1:
-                raise ValidationError(
-                    _("The assigned worker has multiple linked employees; choose one explicitly.")
-                )
             employee = person.employee_ids
+
+        if employee:
+            employee = employee.filtered(
+                lambda rec: rec.active and rec.company_id == company
+            )
+            if len(employee) != 1:
+                raise ValidationError(_(
+                    "The assigned worker must resolve to exactly one active "
+                    "employee in the order company. Check the worker's employee links."
+                ))
         else:
-            user = self.env["res.users"]
+            user = self.env["res.users"].sudo().browse()
             if "user_id" in person._fields and person.user_id:
                 user = person.user_id
             elif "partner_id" in person._fields and person.partner_id:
-                users = self.env["res.users"].search(
+                users = self.env["res.users"].sudo().search(
                     [("partner_id", "=", person.partner_id.id)], limit=2
                 )
                 if len(users) == 1:
                     user = users
-            if user:
-                employees = self.env["hr.employee"].search(
-                    [("user_id", "=", user.id)], limit=2
-                )
-                if len(employees) == 1:
-                    employee = employees
+            if len(user) == 1:
+                employee = Employee.search([
+                    ("user_id", "=", user.id),
+                    ("company_id", "=", company.id),
+                    ("active", "=", True),
+                ], limit=2)
 
         if len(employee) != 1:
-            raise ValidationError(
-                _("Assigned To '%s' does not resolve to exactly one employee.")
-                % person.display_name
-            )
-        return employee
+            raise ValidationError(_(
+                "The worker assigned to this order does not resolve to exactly "
+                "one active employee in the order company. Check its employee/user links."
+            ))
+
+        # Return an ordinary recordset, not an elevated recordset.
+        return self.env["hr.employee"].browse(employee.id)
 
     def _create_employee_timesheet(self):
         self.ensure_one()
