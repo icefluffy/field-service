@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="category_release_preparation" model="ir.module.category">
+    <field name="name">Field Service Release Preparation</field>
+    <field name="sequence">35</field>
+  </record>
+  <record id="group_release_draft_preparer" model="res.groups">
+    <field name="name">Release Draft Preparer</field>
+    <field name="category_id" ref="category_release_preparation"/>
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="comment">Prepare and sign assigned-order drafts; no approval or snapshot modifications.</field>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_worker" model="ir.rule">
+    <field name="name">fsm.release: assigned worker release access</field>
+    <field name="model_id" ref="model_fsm_release"/>
+    <field name="groups" eval="[(4, ref('group_release_draft_preparer'))]"/>
+    <field name="domain_force">['&amp;', ('company_id', 'in', company_ids), '|', ('fsm_order_id.person_id.partner_id', '=', user.partner_id.id), ('fsm_order_id.person_ids.partner_id', '=', user.partner_id.id)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_approver" model="ir.rule">
+    <field name="name">fsm.release: preserve dispatcher/manager release access</field>
+    <field name="model_id" ref="model_fsm_release"/>
+    <field name="groups" eval="[(4, ref('fieldservice.group_fsm_dispatcher')), (4, ref('fieldservice.group_fsm_manager'))]"/>
+    <field name="domain_force">[(1, "=", 1)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_equipment_worker" model="ir.rule">
+    <field name="name">fsm.release.equipment: assigned worker release access</field>
+    <field name="model_id" ref="model_fsm_release_equipment"/>
+    <field name="groups" eval="[(4, ref('group_release_draft_preparer'))]"/>
+    <field name="domain_force">['&amp;', ('release_id.company_id', 'in', company_ids), '|', ('release_id.fsm_order_id.person_id.partner_id', '=', user.partner_id.id), ('release_id.fsm_order_id.person_ids.partner_id', '=', user.partner_id.id)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_equipment_approver" model="ir.rule">
+    <field name="name">fsm.release.equipment: preserve dispatcher/manager release access</field>
+    <field name="model_id" ref="model_fsm_release_equipment"/>
+    <field name="groups" eval="[(4, ref('fieldservice.group_fsm_dispatcher')), (4, ref('fieldservice.group_fsm_manager'))]"/>
+    <field name="domain_force">[(1, "=", 1)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_contractor_cost_worker" model="ir.rule">
+    <field name="name">fsm.release.contractor.cost: assigned worker release access</field>
+    <field name="model_id" ref="model_fsm_release_contractor_cost"/>
+    <field name="groups" eval="[(4, ref('group_release_draft_preparer'))]"/>
+    <field name="domain_force">['&amp;', ('release_id.company_id', 'in', company_ids), '|', ('release_id.fsm_order_id.person_id.partner_id', '=', user.partner_id.id), ('release_id.fsm_order_id.person_ids.partner_id', '=', user.partner_id.id)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_contractor_cost_approver" model="ir.rule">
+    <field name="name">fsm.release.contractor.cost: preserve dispatcher/manager release access</field>
+    <field name="model_id" ref="model_fsm_release_contractor_cost"/>
+    <field name="groups" eval="[(4, ref('fieldservice.group_fsm_dispatcher')), (4, ref('fieldservice.group_fsm_manager'))]"/>
+    <field name="domain_force">[(1, "=", 1)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_timesheet_worker" model="ir.rule">
+    <field name="name">fsm.release.timesheet: assigned worker release access</field>
+    <field name="model_id" ref="model_fsm_release_timesheet"/>
+    <field name="groups" eval="[(4, ref('group_release_draft_preparer'))]"/>
+    <field name="domain_force">['&amp;', ('release_id.company_id', 'in', company_ids), '|', ('release_id.fsm_order_id.person_id.partner_id', '=', user.partner_id.id), ('release_id.fsm_order_id.person_ids.partner_id', '=', user.partner_id.id)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+  <record id="rule_worker_drafts_fsm_release_timesheet_approver" model="ir.rule">
+    <field name="name">fsm.release.timesheet: preserve dispatcher/manager release access</field>
+    <field name="model_id" ref="model_fsm_release_timesheet"/>
+    <field name="groups" eval="[(4, ref('fieldservice.group_fsm_dispatcher')), (4, ref('fieldservice.group_fsm_manager'))]"/>
+    <field name="domain_force">[(1, "=", 1)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+</odoo>
