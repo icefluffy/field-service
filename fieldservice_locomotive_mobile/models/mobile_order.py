@@ -1,4 +1,3 @@
-from copy import deepcopy
 
 from odoo import _, api, fields, models
 from odoo.exceptions import AccessError, UserError
