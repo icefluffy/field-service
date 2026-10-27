@@ -5,3 +5,4 @@ from . import fsm_order
 from . import fsm_release
 from . import release_wagon_workflow
 from . import release_signatories
+from . import release_worker_security
