@@ -134,9 +134,17 @@
                 <field name="location_id"/>
                 <field name="date_arrival"/>
                 <field name="inspection_progress"/>
-                <field name="state" widget="badge"/>
-                <field name="approval_state" widget="badge"/>
-                <field name="billing_status" widget="badge"/>
+                <field name="state"
+                       widget="badge"
+                       decoration-info="state in ('planned', 'in_progress')"
+                       decoration-warning="state == 'awaiting_approval'"
+                       decoration-success="state in ('approved', 'closed')"/>
+                <field name="approval_state"
+                       widget="badge"
+                       decoration-success="approval_state == 'approved'"/>
+                <field name="billing_status"
+                       widget="badge"
+                       decoration-success="billing_status == 'invoiced'"/>
                 <field name="user_id"/>
             </list>
         </field>
