@@ -17,7 +17,7 @@
    <group readonly="state not in ('draft','progress')"><group>
 <field name="inspection_date" readonly="state not in ('draft','progress')"/>
 <field name="inspector_id" readonly="state not in ('draft','progress')"/>
-<field name="holder_mark" readonly="state not in ('draft','progress')"/>
+<field name="keeper_id" readonly="state not in ('draft','progress')"/>
 <field name="revision_mark" readonly="state not in ('draft','progress')"/>
 <field name="revision_date" readonly="state not in ('draft','progress')"/>
 <field name="brake_inscription" readonly="state not in ('draft','progress')"/>
