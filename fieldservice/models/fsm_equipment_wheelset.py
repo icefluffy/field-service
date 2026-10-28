@@ -1,7 +1,7 @@
 # Copyright (C) 2026, TI-Consulting
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class FSMEquipmentWheelset(models.Model):
@@ -46,6 +46,17 @@ class FSMEquipmentWheelset(models.Model):
         default=fields.Date.context_today,
         store=False,
     )
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        # New Input Date is not stored, so copy it to Last Input Date on
+        # creation as well; otherwise the first save of a new row loses it.
+        vals_list = [dict(vals) for vals in vals_list]
+        for vals in vals_list:
+            input_date = vals.pop("new_input_date", None)
+            if input_date:
+                vals["last_input_date"] = input_date
+        return super().create(vals_list)
 
     def write(self, vals):
         vals = dict(vals)
