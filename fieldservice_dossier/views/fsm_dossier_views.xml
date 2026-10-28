@@ -64,8 +64,7 @@
                     <notebook>
                         <page string="Inspections" name="inspections">
                             <field name="inspection_ids">
-                                <list editable="bottom" decoration-muted="not required"
-                                      decoration-danger="result == 'failed'">
+                                <list editable="bottom" decoration-muted="not required">
                                     <field name="sequence" column_invisible="1"/>
                                     <field name="is_approval" column_invisible="1"/>
                                     <field name="type_id" readonly="id"/>
@@ -74,8 +73,12 @@
                                            domain="[('dossier_id', '=', parent.id)]"
                                            readonly="is_approval"/>
                                     <field name="person_id"/>
-                                    <field name="work_status" widget="badge" readonly="is_approval"/>
-                                    <field name="result" widget="badge" readonly="is_approval"/>
+                                    <field name="work_status" widget="badge"
+                                           decoration-success="work_status == 'done'" readonly="is_approval"/>
+                                    <field name="result" widget="badge"
+                                           decoration-success="result == 'passed'"
+                                           decoration-warning="result == 'remarks'"
+                                           decoration-danger="result == 'failed'" readonly="is_approval"/>
                                     <field name="date_performed" readonly="is_approval"/>
                                     <field name="valid_until"/>
                                     <field name="note"/>
