@@ -1,8 +1,12 @@
 from lxml import etree
 
 SECTIONS = (
-    "wheelsets_overview", "instructions_page", "planning_page",
-    "activities_page", "execution_page", "release_wagon",
+    "wheelsets_overview",
+    "instructions_page",
+    "planning_page",
+    "execution_page",
+    "activities_page",
+    "release_wagon",
 )
 
 
