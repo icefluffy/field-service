@@ -4,16 +4,19 @@
         <field name="name">fsm.dossier.inspection.list</field>
         <field name="model">fsm.dossier.inspection</field>
         <field name="arch" type="xml">
-            <list create="0" decoration-muted="not required"
-                  decoration-danger="result == 'failed'">
+            <list create="0" decoration-muted="not required">
                 <field name="equipment_id"/>
                 <field name="dossier_id"/>
                 <field name="type_id"/>
                 <field name="required"/>
                 <field name="order_id"/>
                 <field name="person_id"/>
-                <field name="work_status" widget="badge"/>
-                <field name="result" widget="badge"/>
+                <field name="work_status" widget="badge"
+                                           decoration-success="work_status == 'done'"/>
+                <field name="result" widget="badge"
+                                           decoration-success="result == 'passed'"
+                                           decoration-warning="result == 'remarks'"
+                                           decoration-danger="result == 'failed'"/>
                 <field name="date_performed"/>
                 <field name="valid_until"/>
             </list>
