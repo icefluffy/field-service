@@ -1,0 +1,798 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_dossier_wagon_intake
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 19:34+0000\n"
+"PO-Revision-Date: 2026-10-28 19:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_needaction
+msgid "Action Needed"
+msgstr "Actie gevraagd"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_ids
+msgid "Activities"
+msgstr "Activiteiten"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activiteit uitzondering decoratie"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_state
+msgid "Activity State"
+msgstr "Activiteitsfase"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Activiteitensoort icoon"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "An intake report requires an Inbound inspection."
+msgstr "Een ingangskeuringsrapport vereist een ingangskeuring."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Assess every component (OK, defect or not applicable) first."
+msgstr "Beoordeel eerst elk onderdeel (OK, defect of niet van toepassing)."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__check_state
+msgid "Assessment"
+msgstr "Beoordeling"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_attachment_count
+msgid "Attachment Count"
+msgstr "Aantal bijlagen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__brake
+msgid "Brake (5)"
+msgstr "Rem (5)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__brake_block_type
+msgid "Brake block type / size"
+msgstr "Type / maat remblok"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__brake_inscription
+msgid "Brake inscription"
+msgstr "Remopschrift"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__coupling
+msgid "Buffing and draw gear (6)"
+msgstr "Stoot- en trekwerk (6)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__company_id
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__component
+msgid "Component"
+msgstr "Onderdeel"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid ""
+"Confirm that the inspection was carried out according to your applicable "
+"procedure."
+msgstr ""
+"Bevestig dat het onderzoek is uitgevoerd volgens uw geldende procedure."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__create_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__create_date
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__customer_type
+msgid "Customer type"
+msgstr "Klanttype"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__check_state__defect
+msgid "Defect"
+msgstr "Defect"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__defect
+msgid "Defect / finding"
+msgstr "Defect / vaststelling"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__display_name
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__display_name
+msgid "Display Name"
+msgstr "Schermnaam"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__dossier_id
+msgid "Dossier"
+msgstr "Dossier"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model,name:fieldservice_dossier_wagon_intake.model_fsm_dossier_inspection
+msgid "Dossier Inspection Line"
+msgstr "Dossierinspectieregel"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Dossier is closed or cancelled."
+msgstr "Het dossier is afgesloten of geannuleerd."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Enter an explanation of the overall result."
+msgstr "Geef een toelichting bij het eindresultaat."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__equipment_id
+msgid "Equipment / Serial"
+msgstr "Materiaal / serienummer"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__note
+msgid "Explanation"
+msgstr "Uitleg"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__extra
+msgid "Extra"
+msgstr "Extra"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__order_id
+msgid "FSM Order"
+msgstr "Veldserviceopdracht"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__failed
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Failed"
+msgstr "Mislukt"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model,name:fieldservice_dossier_wagon_intake.model_fsm_order
+msgid "Field Service Order"
+msgstr "Veldserviceopdracht"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__line_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Findings"
+msgstr "Vaststellingen"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "First link the dossier Inbound inspection line to this FSM order."
+msgstr ""
+"Koppel eerst de ingangskeuringsregel van het dossier aan deze "
+"veldserviceopdracht."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_follower_ids
+msgid "Followers"
+msgstr "Volgers"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Volgers (Partners)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font awesome icoon bijv. fa-tasks"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "For a defect, enter its description and a quantity of at least 1."
+msgstr "Geef bij een defect een omschrijving en een aantal van minstens 1 op."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__code
+msgid "Group / Code"
+msgstr "Groep / code"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__handbrake_percent
+msgid "Handbrake (%)"
+msgstr "Handrem (%)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__handbrake_kn
+msgid "Handbrake (kN)"
+msgstr "Handrem (kN)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__handbrake_t
+msgid "Handbrake (t)"
+msgstr "Handrem (t)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__has_message
+msgid "Has Message"
+msgstr "Heeft bericht"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__id
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_exception_icon
+msgid "Icon"
+msgstr "Icoon"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icoon om uitzondering op activiteit aan te geven."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Indien aangevinkt vragen nieuwe berichten je aandacht."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_has_error
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Indien aangevinkt hebben sommige berichten een leveringsfout."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__progress
+msgid "In progress"
+msgstr "Bezig"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
+msgid "Inbound inspection"
+msgstr "Ingangskeuring"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model,name:fieldservice_dossier_wagon_intake.model_fsm_wagon_intake_line
+msgid "Inbound inspection component"
+msgstr "Onderdeel ingangskeuring"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model,name:fieldservice_dossier_wagon_intake.model_fsm_wagon_intake
+msgid "Inbound wagon inspection"
+msgstr "Ingangskeuring wagon"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__inspection_id
+msgid "Inspection"
+msgstr "Inspectie"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__inspection_date
+msgid "Inspection Date"
+msgstr "Inspectiedatum"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__inspector_id
+msgid "Inspector"
+msgstr "Keurder"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Inspector, date and inspection lines are required."
+msgstr "Keurder, datum en inspectieregels zijn verplicht."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__intake_report_ids
+msgid "Intake Report"
+msgstr "Ingangskeuringsrapport"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_is_follower
+msgid "Is Follower"
+msgstr "Is een volger"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__is_wagon_intake
+msgid "Is wagon intake"
+msgstr "Is ingangskeuring wagon"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Keep the template rows; use Not applicable instead of deleting."
+msgstr ""
+"Behoud de standaardregels; gebruik Niet van toepassing in plaats van te "
+"verwijderen."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__keeper_id
+msgid "Keeper"
+msgstr "Houder"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__holder_mark
+msgid "Keeper (old text)"
+msgstr "Houder (oude tekst)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__reason
+msgid "Label information / probable cause"
+msgstr "Labelinformatie / vermoedelijke oorzaak"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__write_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__write_date
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_notes
+msgid "Load limit raster  - additions / remarks"
+msgstr "Lastgrensraster - aanvullingen / opmerkingen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_a
+msgid "Load limit raster  A"
+msgstr "Lastgrensraster A"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_b
+msgid "Load limit raster  B"
+msgstr "Lastgrensraster B"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_c
+msgid "Load limit raster  C"
+msgstr "Lastgrensraster C"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_d
+msgid "Load limit raster  D"
+msgstr "Lastgrensraster D"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_e
+msgid "Load limit raster  E"
+msgstr "Lastgrensraster E"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__maintenance
+msgid "Maintenance / overhaul (9)"
+msgstr "Onderhoud / revisie (9)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_has_error
+msgid "Message Delivery error"
+msgstr "Bericht afleverfout"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_ids
+msgid "Messages"
+msgstr "Berichten"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mijn activiteit deadline"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Volgende activiteit deadline"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_summary
+msgid "Next Activity Summary"
+msgstr "Volgende activiteit overzicht"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_type_id
+msgid "Next Activity Type"
+msgstr "Volgende activiteit type"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__revision_plates__no
+msgid "No"
+msgstr "Nee"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__revision_plates__na
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__check_state__na
+msgid "Not applicable"
+msgstr "Niet van toepassing"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__check_state__pending
+msgid "Not assessed"
+msgstr "Niet beoordeeld"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__draft
+msgid "Not started"
+msgstr "Niet gestart"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Aantal acties"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_has_error_counter
+msgid "Number of errors"
+msgstr "Aantal fouten"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Aantal berichten die actie vereisen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Aantal berichten met leveringsfout"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__check_state__ok
+msgid "OK"
+msgstr "OK"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.constraint,message:fieldservice_dossier_wagon_intake.constraint_fsm_wagon_intake_inspection_unique
+msgid "Only one intake report per inspection."
+msgstr "Slechts één ingangskeuringsrapport per inspectie."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Only use this if your procedure allows it; justify the result."
+msgstr ""
+"Alleen gebruiken indien toegestaan door uw procedure; motiveer het "
+"resultaat."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.dossier_form_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.inspection_form_intake
+msgid "Open Inbound inspection"
+msgstr "Ingangskeuring openen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_plates
+msgid "Overhaul wagon: VPI base plate / overhaul plates present?"
+msgstr "Revisiewagon: VPI-basisplaat / revisieplaten aanwezig?"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__brake_block_type
+msgid ""
+"Paper: 320 / 250 mm; cast iron / C810 / J816 / J816M / J838 / Abex / Cobra /"
+" LL. Check transcription."
+msgstr ""
+"Papier: 320 / 250 mm; gietijzer / C810 / J816 / J816M / J838 / Abex / Cobra "
+"/ LL. Controleer de overname."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__passed
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Passed"
+msgstr "Geslaagd"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__remarks
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Passed with remarks"
+msgstr "Geslaagd met opmerkingen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__maintenance_inscriptions
+msgid "Preventive maintenance signage (PMB, F24, VSP, ...)"
+msgstr "Opschriften preventief onderhoud (PMB, F24, VSP, ...)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__quantity
+msgid "Quantity"
+msgstr "Hoeveelheid"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Quantity cannot be negative."
+msgstr "Aantal mag niet negatief zijn."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__rating_ids
+msgid "Ratings"
+msgstr "Beoordelingen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__recorded_at
+msgid "Recorded At"
+msgstr "Geregistreerd op"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__recorded_by
+msgid "Recorded By"
+msgstr "Geregistreerd door"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__remarks
+msgid "Remarks"
+msgstr "Opmerkingen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Reopen"
+msgstr "Heropenen"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Reopen the report before changing it."
+msgstr "Heropen het rapport voordat u het wijzigt."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__report_id
+msgid "Report"
+msgstr "Rapport"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Report reopened; a new result must be recorded."
+msgstr "Rapport heropend; er moet een nieuw resultaat worden geregistreerd."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwoordelijke gebruiker"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Result"
+msgstr "Resultaat"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__outcome_note
+msgid "Result justification"
+msgstr "Motivering resultaat"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Result recorded: %s"
+msgstr "Resultaat geregistreerd: %s"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_date
+msgid "Revision date"
+msgstr "Revisiedatum"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_mark
+msgid "Revision frame / REV"
+msgstr "Revisiekader / REV"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__running
+msgid "Running gear (2)"
+msgstr "Loopwerk (2)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS fout bij versturen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__section
+msgid "Section"
+msgstr "Sectie"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__sequence
+msgid "Sequence"
+msgstr "Reeks"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_order__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__smart_search
+msgid "Smart Search"
+msgstr "Slim zoeken"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__source_reference
+msgid "Source Reference"
+msgstr "Bronverwijzing"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Start inspection"
+msgstr "Start inspectie"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Start the inspection first."
+msgstr "Start eerst de inspectie."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__state
+msgid "State"
+msgstr "Status"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status gebaseerd op activiteiten\n"
+"Te laat: Datum is al gepasseerd\n"
+"Vandaag: Datum van activiteit is vandaag\n"
+"Gepland: Toekomstige activiteiten."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__body
+msgid "Superstructure (4)"
+msgstr "Opbouw (4)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__keeper_id
+msgid "Synchronised with the wagon's Managed By field."
+msgstr "Gesynchroniseerd met het veld Beheerd door van de wagon."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_mark
+msgid "Synchronised with the wagon's Revision frame property."
+msgstr "Gesynchroniseerd met de eigenschap Revisiekader van de wagon."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
+msgid "Synchronised with the wagon's Tare property."
+msgstr "Gesynchroniseerd met de eigenschap Tarra van de wagon."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__uic
+msgid "Synchronised with the wagon's UIC code property."
+msgstr "Gesynchroniseerd met de eigenschap UIC-code van de wagon."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
+msgid "Tare (kg)"
+msgstr "Tarra (kg)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "The result will be reset to Pending. Any dossier approval will lapse."
+msgstr ""
+"Het resultaat wordt teruggezet naar In afwachting. Een eventuele "
+"dossiergoedkeuring vervalt."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "This dossier is closed or cancelled."
+msgstr "Dit dossier is afgesloten of geannuleerd."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "This form is only for Inbound inspection."
+msgstr "Dit formulier is enkel voor de ingangskeuring."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "This report is not final."
+msgstr "Dit rapport is nog niet definitief."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type van de geregistreerde uitzonderingsactiviteit."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__uic
+msgid "UIC"
+msgstr "UIC"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid ""
+"Unresolved recorded defects: choose Failed or Passed with remarks, as "
+"authorised by your procedure."
+msgstr ""
+"Openstaande geregistreerde defecten: kies Mislukt of Geslaagd met "
+"opmerkingen, zoals toegestaan door uw procedure."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Use the result actions."
+msgstr "Gebruik de resultaatknoppen."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Use the workflow buttons; the linked inspection cannot be changed."
+msgstr ""
+"Gebruik de workflowknoppen; de gekoppelde inspectie kan niet worden "
+"gewijzigd."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Wagon data"
+msgstr "Wagongegevens"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__frame
+msgid "Wagon frame (3)"
+msgstr "Onderstel (3)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__website_message_ids
+msgid "Website Messages"
+msgstr "Websiteberichten"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__website_message_ids
+msgid "Website communication history"
+msgstr "Website communicatie geschiedenis"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__revision_plates__yes
+msgid "Yes"
+msgstr "Ja"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "You cannot move findings to another report."
+msgstr "U kunt vaststellingen niet naar een ander rapport verplaatsen."

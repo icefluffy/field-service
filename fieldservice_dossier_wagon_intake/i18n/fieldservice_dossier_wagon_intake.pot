@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0-20260324\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 19:08+0000\n"
-"PO-Revision-Date: 2026-10-28 19:08+0000\n"
+"POT-Creation-Date: 2026-10-28 19:34+0000\n"
+"PO-Revision-Date: 2026-10-28 19:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,13 +41,6 @@ msgid "Activity Type Icon"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid ""
-"Alleen gebruiken indien toegestaan door uw procedure; motiveer het "
-"resultaat."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "An intake report requires an Inbound inspection."
@@ -67,12 +60,6 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid ""
-"Bevestig dat het onderzoek is uitgevoerd volgens uw geldende procedure."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -104,6 +91,13 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__component
 msgid "Component"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid ""
+"Confirm that the inspection was carried out according to your applicable "
+"procedure."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -194,6 +188,7 @@ msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__line_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Findings"
 msgstr ""
 
@@ -247,18 +242,6 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__has_message
 msgid "Has Message"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Heropenen"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid ""
-"Het resultaat wordt teruggezet naar Pending. Eventuele dossiergoedkeuring "
-"vervalt."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -351,8 +334,13 @@ msgid "Keep the template rows; use Not applicable instead of deleting."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__holder_mark
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__keeper_id
 msgid "Keeper"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__holder_mark
+msgid "Keeper (old text)"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -428,11 +416,6 @@ msgid "Name"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
@@ -496,6 +479,11 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.constraint,message:fieldservice_dossier_wagon_intake.constraint_fsm_wagon_intake_inspection_unique
 msgid "Only one intake report per inspection."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Only use this if your procedure allows it; justify the result."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -565,6 +553,11 @@ msgid "Remarks"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Reopen"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "Reopen the report before changing it."
@@ -587,6 +580,11 @@ msgid "Responsible User"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Result"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__outcome_note
 msgid "Result justification"
 msgstr ""
@@ -595,11 +593,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "Result recorded: %s"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Resultaat"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -647,7 +640,7 @@ msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Start inspectie"
+msgid "Start inspection"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -676,8 +669,33 @@ msgid "Superstructure (4)"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__keeper_id
+msgid "Synchronised with the wagon's Managed By field."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_mark
+msgid "Synchronised with the wagon's Revision frame property."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
+msgid "Synchronised with the wagon's Tare property."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__uic
+msgid "Synchronised with the wagon's UIC code property."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
 msgid "Tare (kg)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "The result will be reset to Pending. Any dossier approval will lapse."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -730,17 +748,12 @@ msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Vaststellingen"
+msgid "Wagon data"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__frame
 msgid "Wagon frame (3)"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Wagongegevens"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake

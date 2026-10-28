@@ -6,11 +6,11 @@
   <field name="name">fsm.wagon.intake.form</field><field name="model">fsm.wagon.intake</field>
   <field name="arch" type="xml"><form delete="0" duplicate="0">
    <header>
-    <button name="action_start" string="Start inspectie" type="object" class="btn-primary" invisible="state != 'draft'"/>
-    <button name="action_pass" string="Passed" type="object" class="btn-primary" invisible="state != 'progress'" confirm="Bevestig dat het onderzoek is uitgevoerd volgens uw geldende procedure."/>
-    <button name="action_remarks" string="Passed with remarks" type="object" invisible="state != 'progress'" confirm="Alleen gebruiken indien toegestaan door uw procedure; motiveer het resultaat."/>
+    <button name="action_start" string="Start inspection" type="object" class="btn-primary" invisible="state != 'draft'"/>
+    <button name="action_pass" string="Passed" type="object" class="btn-primary" invisible="state != 'progress'" confirm="Confirm that the inspection was carried out according to your applicable procedure."/>
+    <button name="action_remarks" string="Passed with remarks" type="object" invisible="state != 'progress'" confirm="Only use this if your procedure allows it; justify the result."/>
     <button name="action_fail" string="Failed" type="object" invisible="state != 'progress'"/>
-    <button name="action_reopen" string="Heropenen" type="object" invisible="state in ('draft','progress')" confirm="Het resultaat wordt teruggezet naar Pending. Eventuele dossiergoedkeuring vervalt."/>
+    <button name="action_reopen" string="Reopen" type="object" invisible="state in ('draft','progress')" confirm="The result will be reset to Pending. Any dossier approval will lapse."/>
     <field name="state" widget="statusbar" statusbar_visible="draft,progress,passed,remarks,failed"/>
    </header><sheet><h1><field name="name"/></h1>
    <group><field name="inspection_id" readonly="1"/><field name="dossier_id"/><field name="equipment_id"/><field name="order_id"/><field name="source_reference"/></group>
@@ -28,13 +28,13 @@
 <field name="handbrake_kn" readonly="state not in ('draft','progress')"/>
 <field name="handbrake_percent" readonly="state not in ('draft','progress')"/>
 </group></group>
-   <notebook><page string="Wagongegevens"><group readonly="state not in ('draft','progress')">
-<field name="load_a" readonly="state not in ('draft','progress')"/><field name="load_b" readonly="state not in ('draft','progress')"/><field name="load_c" readonly="state not in ('draft','progress')"/><field name="load_d" readonly="state not in ('draft','progress')"/><field name="load_e" readonly="state not in ('draft','progress')"/><field name="load_notes" readonly="state not in ('draft','progress')"/><field name="extra" readonly="state not in ('draft','progress')"/><field name="reason" readonly="state not in ('draft','progress')"/><field name="maintenance_inscriptions" readonly="state not in ('draft','progress')"/><field name="revision_plates" readonly="state not in ('draft','progress')"/><field name="brake_block_type" readonly="state not in ('draft','progress')"/></group></page><page string="Vaststellingen">
+   <notebook><page string="Wagon data"><group readonly="state not in ('draft','progress')">
+<field name="load_a" readonly="state not in ('draft','progress')"/><field name="load_b" readonly="state not in ('draft','progress')"/><field name="load_c" readonly="state not in ('draft','progress')"/><field name="load_d" readonly="state not in ('draft','progress')"/><field name="load_e" readonly="state not in ('draft','progress')"/><field name="load_notes" readonly="state not in ('draft','progress')"/><field name="extra" readonly="state not in ('draft','progress')"/><field name="reason" readonly="state not in ('draft','progress')"/><field name="maintenance_inscriptions" readonly="state not in ('draft','progress')"/><field name="revision_plates" readonly="state not in ('draft','progress')"/><field name="brake_block_type" readonly="state not in ('draft','progress')"/></group></page><page string="Findings">
  <field name="line_ids" readonly="state not in ('draft','progress')"><list editable="bottom" delete="0" decoration-danger="check_state == 'defect'" decoration-muted="check_state == 'na'">
  <field name="sequence" optional="hide"/><field name="section"/><field name="component"/><field name="code"/>
  <field name="check_state"/><field name="defect"/><field name="quantity"/><field name="note"/>
  </list></field></page>
- <page string="Resultaat"><group><field name="remarks" readonly="state not in ('draft','progress')"/><field name="outcome_note" readonly="state not in ('draft','progress')"/><field name="recorded_by"/><field name="recorded_at"/></group></page>
+ <page string="Result"><group><field name="remarks" readonly="state not in ('draft','progress')"/><field name="outcome_note" readonly="state not in ('draft','progress')"/><field name="recorded_by"/><field name="recorded_at"/></group></page>
  </notebook></sheet><chatter/></form></field></record>
 <record id="inspection_form_intake" model="ir.ui.view">
     <field name="name">inspection.form.intake</field>
