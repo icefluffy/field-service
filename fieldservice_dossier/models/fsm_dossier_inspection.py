@@ -54,6 +54,10 @@ class FsmDossierInspection(models.Model):
         compute="_compute_valid_until", store=True, readonly=False,
     )
     note = fields.Char()
+    is_wheelset_report = fields.Boolean(
+        string="Is wheelset report",
+        compute="_compute_is_wheelset_report",
+    )
 
     _sql_constraints = [
         ("dossier_type_uniq", "unique(dossier_id, type_id)",
@@ -68,6 +72,30 @@ class FsmDossierInspection(models.Model):
                 line.valid_until = line.date_performed + relativedelta(months=months)
             else:
                 line.valid_until = False
+
+    @api.depends("type_id")
+    def _compute_is_wheelset_report(self):
+        wsr_type = self.env.ref(
+            "fieldservice_dossier.inspection_type_wsr", raise_if_not_found=False,
+        )
+        for line in self:
+            line.is_wheelset_report = bool(wsr_type and line.type_id == wsr_type)
+
+    def action_open_wheelsets(self):
+        """Open the wheelset input grid of the dossier's equipment."""
+        self.ensure_one()
+        equipment = self.equipment_id or self.dossier_id.equipment_id
+        if not equipment:
+            raise UserError(_("This dossier has no equipment to enter wheelsets for."))
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("Wheelsets - %s") % equipment.display_name,
+            "res_model": "fsm.equipment",
+            "res_id": equipment.id,
+            "view_mode": "form",
+            "views": [(self.env.ref("fieldservice.fsm_equipment_form_view").id, "form")],
+            "target": "current",
+        }
 
     @api.constrains("order_id", "dossier_id")
     def _check_order_dossier(self):

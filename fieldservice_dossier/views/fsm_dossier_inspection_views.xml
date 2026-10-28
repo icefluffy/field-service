@@ -27,6 +27,14 @@
         <field name="model">fsm.dossier.inspection</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="is_wheelset_report" invisible="1"/>
+                    <button name="action_open_wheelsets"
+                            string="Input wheelsets"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not is_wheelset_report"/>
+                </header>
                 <sheet>
                     <group>
                         <group>

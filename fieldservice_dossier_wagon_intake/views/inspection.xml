@@ -43,15 +43,12 @@
            ref="fieldservice_dossier.fsm_dossier_inspection_form"/>
 
     <field name="arch" type="xml">
-        <xpath expr="//sheet" position="before">
-            <header>
-                <field name="is_wagon_intake" invisible="1"/>
-
-                <button name="action_open_wagon_intake"
-                        string="Open Inbound inspection"
-                        type="object"
-                        invisible="not is_wagon_intake"/>
-            </header>
+        <xpath expr="//header" position="inside">
+            <field name="is_wagon_intake" invisible="1"/>
+            <button name="action_open_wagon_intake"
+                    string="Open Inbound inspection"
+                    type="object"
+                    invisible="not is_wagon_intake"/>
         </xpath>
     </field>
 </record>

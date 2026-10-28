@@ -82,6 +82,12 @@
                                     <field name="date_performed" readonly="is_approval"/>
                                     <field name="valid_until"/>
                                     <field name="note"/>
+                                    <field name="is_wheelset_report" column_invisible="1"/>
+                                    <button name="action_open_wheelsets"
+                                            type="object"
+                                            string="Input wheelsets"
+                                            icon="fa-cogs"
+                                            invisible="not is_wheelset_report"/>
                                 </list>
                             </field>
                         </page>
