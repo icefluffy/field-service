@@ -17,9 +17,9 @@ import tempfile
 import xmlrpc.client
 
 URL = "http://localhost:8069"
-DB = "RSN"
-USER = "vanherck.s"
-PASSWORD = "P@ssword01+"
+DB = "DBNAME"
+USER = "USERNAME"
+PASSWORD = "PASSWORD"
 
 REPOSITORY = "https://github.com/icefluffy/field-service.git"
 BRANCH = os.environ.get("FSM_BRANCH", "")
