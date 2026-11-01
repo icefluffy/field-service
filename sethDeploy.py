@@ -233,23 +233,32 @@ def deploy():
     errors = []
     count = 0
     for name in names:
-        for po in sorted((ADDONS / name / "i18n").glob("*.po")):
-            lang = po.stem
-            if lang not in active:
-                print(f"SKIP inactive/unmatched language: {name}/{po.name}")
-                continue
-            try:
-                record = call("base.language.import", "create", {
-                    "name": lang, "code": lang,
-                    "data": base64.b64encode(po.read_bytes()).decode("ascii"),
-                    "filename": po.name, "overwrite": True,
-                })
-                call("base.language.import", "import_lang", [record])
-                count += 1
-                print(f"Imported: {name}/{po.name}")
-            except Exception as exc:
-                errors.append(str(po))
-                print(f"FAILED {po}: {exc}")
+        i18n = ADDONS / name / "i18n"
+        used = set()
+        # Same lookup as Odoo (odoo.tools.translate.get_po_paths): for an active
+        # language such as fr_BE, load the base file fr.po first, then the
+        # specific fr_BE.po, so specific translations override the base ones.
+        for lang in sorted(active - {"en_US"}):
+            base = lang.split("_", 1)[0]
+            for stem in dict.fromkeys([base, lang]):
+                po = i18n / f"{stem}.po"
+                if not po.is_file():
+                    continue
+                used.add(po)
+                try:
+                    record = call("base.language.import", "create", {
+                        "name": lang, "code": lang,
+                        "data": base64.b64encode(po.read_bytes()).decode("ascii"),
+                        "filename": po.name, "overwrite": True,
+                    })
+                    call("base.language.import", "import_lang", [record])
+                    count += 1
+                    print(f"Imported: {name}/{po.name} -> {lang}")
+                except Exception as exc:
+                    errors.append(f"{po} -> {lang}")
+                    print(f"FAILED {po} -> {lang}: {exc}")
+        for po in sorted(set(i18n.glob("*.po")) - used):
+            print(f"SKIP no active language for: {name}/{po.name}")
     if errors:
         print("Translation import failed. Pending list retained; fix errors and rerun.")
         return 1

@@ -32,7 +32,7 @@ msgstr "%(order)s: %(why)s"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "'%s' is set by the dossier approval action only."
-msgstr "'%'s' wordt uitsluitend ingesteld door de goedkeuringsactie van het dossier."
+msgstr "'%s' wordt uitsluitend ingesteld door de goedkeuringsactie van het dossier."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_needaction

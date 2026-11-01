@@ -10,7 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-28 19:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: French (France)\n"
-"Language: fr_FR\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -32,7 +32,7 @@ msgstr "%(order)s : %(why)s"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "'%s' is set by the dossier approval action only."
-msgstr "'%'s' est défini uniquement par l'action d'approbation du dossier."
+msgstr "'%s' est défini uniquement par l'action d'approbation du dossier."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_needaction

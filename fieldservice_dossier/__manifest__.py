@@ -3,7 +3,7 @@
 {
     "name": "Field Service - Equipment Dossiers",
     "summary": "Service dossier per equipment visit: inspections, approval and grouped invoicing",
-    "version": "18.0.1.0.3",
+    "version": "18.0.1.0.4",
     "category": "Field Service",
     "author": "TI-Consulting",
     "license": "AGPL-3",
