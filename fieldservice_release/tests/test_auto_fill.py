@@ -1,3 +1,6 @@
+# Copyright 2026 TI-Consulting
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 """Standalone checks of fill policy. Does not start Odoo."""
 import ast
 from pathlib import Path

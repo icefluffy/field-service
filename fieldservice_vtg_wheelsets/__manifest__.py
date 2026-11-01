@@ -1,3 +1,6 @@
+# Copyright 2026 TI-Consulting
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 {
     "name": "Field Service VTG Wheelsets",
     "version": "18.0.1.0.3",

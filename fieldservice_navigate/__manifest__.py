@@ -1,11 +1,13 @@
+# Copyright 2026 TI-Consulting
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "RSN FSM Navigate to Location (Google Maps)",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "summary": "Adds a 'Navigate' button on Field Service Orders/Locations that opens Google Maps directions in a new tab",
     "category": "Field Service",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",
-    "license": "LGPL-3",
+    "license": "AGPL-3",
     # Core OCA Field Service module (github.com/OCA/field-service, 18.0 branch)
     "depends": ["fieldservice"],
     "data": [

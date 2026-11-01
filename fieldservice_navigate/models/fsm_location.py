@@ -1,5 +1,5 @@
 # Copyright 2026 TI-Consulting
-# License LGPL-3
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from urllib.parse import quote
 
