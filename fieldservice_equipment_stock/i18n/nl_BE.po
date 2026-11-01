@@ -9,7 +9,7 @@ msgstr ""
 "PO-Revision-Date: 2026-03-19 14:00+0100\n"
 "Last-Translator: IceFluffy\n"
 "Language-Team: Dutch (Belgium)\n"
-"Language: nl_NL\n"
+"Language: nl_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -83,7 +83,7 @@ msgstr ""
 
 #. module: fieldservice_equipment_stock
 #: model:ir.model.fields,field_description:fieldservice_equipment_stock.field_fsm_equipment__lot_id
-msgid "EVN/UIC"
+msgid "Serial #"
 msgstr "EVN/UIC"
 
 #. module: fieldservice_equipment_stock

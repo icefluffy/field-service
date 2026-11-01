@@ -1,6 +1,8 @@
 {
     "name": "Field Service Work Order Print",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
+    "author": "Icefluffy, TI-Consulting",
+    "website": "https://github.com/icefluffy/field-service",
     "category": "Field Service",
     "summary": "Printable work order and print preview for FSM orders",
     "depends": [

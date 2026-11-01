@@ -3,9 +3,10 @@
 {
     "name": "Field Service - Equipment Dossiers",
     "summary": "Service dossier per equipment visit: inspections, approval and grouped invoicing",
-    "version": "18.0.1.0.4",
+    "version": "18.0.1.0.5",
     "category": "Field Service",
-    "author": "TI-Consulting",
+    "author": "Icefluffy, TI-Consulting",
+    "website": "https://github.com/icefluffy/field-service",
     "license": "AGPL-3",
     "depends": [
         "fieldservice",

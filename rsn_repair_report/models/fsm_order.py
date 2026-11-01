@@ -1,4 +1,4 @@
-# Copyright Your Company
+# Copyright 2026 TI-Consulting
 # License LGPL-3
 
 from odoo import fields, models

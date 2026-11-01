@@ -1,6 +1,8 @@
 {
     "name": "Field Service VTG Wheelsets",
-    "version": "18.0.1.0.2",
+    "version": "18.0.1.0.3",
+    "author": "Icefluffy, TI-Consulting",
+    "website": "https://github.com/icefluffy/field-service",
     "category": "Field Service",
     "summary": "Test the existing wheelset grid on FSM orders",
     "depends": [

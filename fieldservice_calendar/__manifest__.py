@@ -7,7 +7,7 @@
     "website": "https://github.com/icefluffy/field-service/",
     "category": "Field Service",
     "license": "AGPL-3",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "depends": [
         "calendar",
         "fieldservice",

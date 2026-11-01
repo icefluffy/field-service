@@ -3,8 +3,8 @@
 {
     "name": "Field Service Equipment Type",
     "summary": "Field Service Equipment Type",
-    "version": "18.0.1.0.0",
-    "author": "Camptocamp, Odoo Community Association (OCA)",
+    "version": "18.0.1.0.1",
+    "author": "Camptocamp, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "license": "AGPL-3",
     "category": "Field Service",
     "depends": ["fieldservice"],

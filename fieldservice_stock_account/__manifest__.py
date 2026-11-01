@@ -3,10 +3,10 @@
 
 {
     "name": "Field Service - Stock Account",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "category": "Field Service",
     "summary": "Invoice inventory items delivered with Field Service orders",
-    "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
+    "author": "Open Source Integrators, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",
     "depends": [
         "fieldservice",
