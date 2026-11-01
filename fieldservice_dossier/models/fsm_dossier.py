@@ -48,6 +48,11 @@ class FsmDossier(models.Model):
     date_arrival = fields.Datetime(string="Arrival")
     date_planned = fields.Date(string="Planned completion")
     date_done = fields.Datetime(string="Completed on", copy=False, readonly=True)
+    customer_report_info = fields.Text(
+        string="Information with regards to reporting to customer (BfG e.a.)",
+        tracking=True,
+    )
+    comments = fields.Text(string="Comments", tracking=True)
 
     inspection_ids = fields.One2many(
         "fsm.dossier.inspection", "dossier_id", string="Inspections", copy=False,

@@ -51,6 +51,8 @@
                             <field name="equipment_id" readonly="order_count &gt; 0"/>
                             <field name="location_id"/>
                             <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="customer_report_info"/>
+                            <field name="comments"/>
                         </group>
                         <group>
                             <field name="user_id"/>
