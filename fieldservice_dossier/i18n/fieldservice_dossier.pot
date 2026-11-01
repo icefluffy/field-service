@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20260324\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 19:07+0000\n"
-"PO-Revision-Date: 2026-10-28 19:07+0000\n"
+"POT-Creation-Date: 2026-11-01 17:28+0000\n"
+"PO-Revision-Date: 2026-11-01 17:28+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -173,6 +173,11 @@ msgstr ""
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__code
 msgid "Code"
+msgstr ""
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__comments
+msgid "Comments"
 msgstr ""
 
 #. module: fieldservice_dossier
@@ -444,6 +449,11 @@ msgstr ""
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__in_progress
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__in_progress
 msgid "In progress"
+msgstr ""
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_report_info
+msgid "Information with regards to reporting to customer (BfG e.a.)"
 msgstr ""
 
 #. module: fieldservice_dossier
@@ -950,14 +960,4 @@ msgstr ""
 #. module: fieldservice_dossier
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
 msgid "Work status"
-msgstr ""
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_report_info
-msgid "Information with regards to reporting to customer (BfG e.a.)"
-msgstr ""
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__comments
-msgid "Comments"
 msgstr ""
