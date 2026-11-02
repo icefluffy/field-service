@@ -65,8 +65,8 @@ msgid ""
 "<span class=\"cb\"/>Work performed but other work still to be carried out, "
 "object is NOT ready"
 msgstr ""
-"<span class=\"cb\"/>Werk uitgevoerd, maar er moeten nog andere werken "
-"worden uitgevoerd; object is NIET gereed"
+"<span class=\"cb\"/>Werk uitgevoerd, maar er moeten nog andere werken worden"
+" uitgevoerd; object is NIET gereed"
 
 #. module: fieldservice_print_workorder
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
@@ -125,6 +125,7 @@ msgstr ""
 "onderhoudskaders geldig)."
 
 #. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
 msgid "Address:"
 msgstr "Adres:"
@@ -333,3 +334,167 @@ msgstr "Werkbon"
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
 msgid "kg"
 msgstr "kg"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,print_report_name:fieldservice_print_workorder.action_report_rsn_order
+msgid "'Report - %s' % (object.name)"
+msgstr "'Rapport - %s' % (object.name)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Address code"
+msgstr "Adres code"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Article number"
+msgstr "Artikelnummer"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,help:fieldservice_print_workorder.field_fsm_order__report_comment
+msgid "Comment printed in the Comment section of the customer report."
+msgstr ""
+"Commentaar dat in de rubriek Commentaar van het klantrapport wordt "
+"afgedrukt."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Comment shown on the customer report..."
+msgstr "Commentaar voor het klantrapport..."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Comment:"
+msgstr "Commentaar:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Contact person:"
+msgstr "Contactpersoon:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Execution date:"
+msgstr "Uitvoerdatum:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Invoice address:"
+msgstr "Factuuradres:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Logo"
+msgstr "Logo"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Materials used:"
+msgstr "Gebruikte materialen:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Name:"
+msgstr "Naam:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "No comment specified."
+msgstr "Geen commentaar gespecificeerd."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Photo"
+msgstr "Foto"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Postcode / city:"
+msgstr "Postcode / plaats:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Quantity"
+msgstr "Aantal"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "REPORT"
+msgstr "RAPPORT"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Reference:"
+msgstr "Referentie:"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,name:fieldservice_print_workorder.action_report_rsn_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Report"
+msgstr "Rapport"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__report_comment
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Report Comment"
+msgstr "Commentaar rapport"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__revision_frame_print
+msgid "Revision Frame Print"
+msgstr "Revisiekader (afdruk)"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__show_report_button
+msgid "Show Report Button"
+msgstr "Toon rapportknop"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__tare_print
+msgid "Tare Print"
+msgstr "Tarra (afdruk)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Type of work:"
+msgstr "Type werkzaamheden:"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__uic_code_print
+msgid "Uic Code Print"
+msgstr "UIC-code (afdruk)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work order number:"
+msgstr "Werkbonnummer:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work performed:"
+msgstr "Uitgevoerde werkzaamheden:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work to be performed:"
+msgstr "Uit te voeren werkzaamheden:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Worker"
+msgstr "Werknemer"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Worker:"
+msgstr "Werknemer:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Service location:"
+msgstr "Locatie:"

@@ -116,16 +116,18 @@ msgstr ""
 "et panneaux d'avertissement présents, complets et lisibles ; châssis et "
 "bogies visuellement exempts de fissures et de déformations ; appareils de "
 "traction et de choc visuellement exempts de fissures et de déformations ; "
-"dispositif de retenue des essieux conforme ; composants de frein visuellement "
-"exempts de fissures et de déformations ; marchepieds, supports, mains "
-"courantes, échelles et porte-signaux solidement fixés et visuellement exempts "
-"de fissures et de déformations ; crochet de traction, anneau de câble et "
-"étrier de protection visuellement exempts de fissures et de déformations / "
-"non endommagés ; essieux visuellement non endommagés ; semelles de frein ne "
-"frottant pas, non cassées, &gt;15 mm pour la fonte, &gt;13 mm pour K/LL ; "
-"lubrifiés ; révision valable ; autres cadres de maintenance valables)."
+"dispositif de retenue des essieux conforme ; composants de frein "
+"visuellement exempts de fissures et de déformations ; marchepieds, supports,"
+" mains courantes, échelles et porte-signaux solidement fixés et visuellement"
+" exempts de fissures et de déformations ; crochet de traction, anneau de "
+"câble et étrier de protection visuellement exempts de fissures et de "
+"déformations / non endommagés ; essieux visuellement non endommagés ; "
+"semelles de frein ne frottant pas, non cassées, &gt;15 mm pour la fonte, "
+"&gt;13 mm pour K/LL ; lubrifiés ; révision valable ; autres cadres de "
+"maintenance valables)."
 
 #. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
 msgid "Address:"
 msgstr "Adresse :"
@@ -334,3 +336,165 @@ msgstr "Bon de travail"
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
 msgid "kg"
 msgstr "kg"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,print_report_name:fieldservice_print_workorder.action_report_rsn_order
+msgid "'Report - %s' % (object.name)"
+msgstr "'Rapport - %s' % (object.name)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Address code"
+msgstr "Code adresse"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Article number"
+msgstr "Numéro d'article"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,help:fieldservice_print_workorder.field_fsm_order__report_comment
+msgid "Comment printed in the Comment section of the customer report."
+msgstr "Commentaire imprimé dans la section Commentaire du rapport client."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Comment shown on the customer report..."
+msgstr "Commentaire affiché sur le rapport client..."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Comment:"
+msgstr "Commentaire :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Contact person:"
+msgstr "Personne de contact :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Description"
+msgstr "Description"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Execution date:"
+msgstr "Date d'exécution :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Invoice address:"
+msgstr "Adresse de facturation :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Logo"
+msgstr "Logo"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Materials used:"
+msgstr "Matériaux utilisés :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Name:"
+msgstr "Nom :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "No comment specified."
+msgstr "Aucun commentaire spécifié."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Photo"
+msgstr "Photo"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Postcode / city:"
+msgstr "Code postal / localité :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "REPORT"
+msgstr "RAPPORT"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Reference:"
+msgstr "Référence :"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,name:fieldservice_print_workorder.action_report_rsn_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Report"
+msgstr "Rapport"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__report_comment
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Report Comment"
+msgstr "Commentaire du rapport"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__revision_frame_print
+msgid "Revision Frame Print"
+msgstr "Cadre de révision (impression)"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__show_report_button
+msgid "Show Report Button"
+msgstr "Afficher le bouton rapport"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__tare_print
+msgid "Tare Print"
+msgstr "Tare (impression)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Type of work:"
+msgstr "Type de travaux :"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__uic_code_print
+msgid "Uic Code Print"
+msgstr "Code UIC (impression)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work order number:"
+msgstr "Numéro du bon de travail :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work performed:"
+msgstr "Travaux effectués :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work to be performed:"
+msgstr "Travaux à effectuer :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Worker"
+msgstr "Technicien"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Worker:"
+msgstr "Technicien :"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Service location:"
+msgstr "Lieu d'intervention :"

@@ -41,8 +41,8 @@ msgid ""
 "<i>Note the correct quantities. Change / add where necessary. Tick OK ONLY "
 "if completed, otherwise leave BLANK.</i>"
 msgstr ""
-"<i>Die korrekten Mengen eintragen. Falls erforderlich ändern / ergänzen. "
-"OK NUR ankreuzen, wenn die Arbeit ausgeführt wurde, ansonsten LEER lassen.</i>"
+"<i>Die korrekten Mengen eintragen. Falls erforderlich ändern / ergänzen. OK "
+"NUR ankreuzen, wenn die Arbeit ausgeführt wurde, ansonsten LEER lassen.</i>"
 
 #. module: fieldservice_print_workorder
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
@@ -110,21 +110,22 @@ msgid ""
 "valid; other maintenance frameworks valid)."
 msgstr ""
 "Ein mit OK gekennzeichneter Güterwagen muss die Anforderungen des Auftrags "
-"erfüllen und mindestens bei Arbeiten nach GCU die Anforderungen von "
-"GCU-Anhang 10 bzw. bei Arbeiten nach VPI, soweit die Daten bekannt sind, "
-"die Anforderungen von VPI 01 Anhang 19 erfüllen (vorhandene, vollständige "
-"und lesbare Beschriftungen, Piktogramme und Warnhinweise; Untergestell und "
-"Drehgestell sichtbar frei von Rissen und Verformungen; Zug- und Stoßeinrichtung "
-"sichtbar frei von Rissen und Verformungen; Achssicherung vorschriftsmäßig; "
-"Bremsbauteile sichtbar frei von Rissen und Verformungen; Tritte, Halterungen, "
-"Handläufe, Leitern und Signalhalter sicher befestigt und sichtbar frei von "
-"Rissen und Verformungen; Zughaken, Seilöse und Schutzbügel sichtbar frei "
-"von Rissen und Verformungen / unbeschädigt; Radsätze sichtbar unbeschädigt; "
-"Bremsklötze laufen nicht an, nicht gebrochen, &gt;15 mm für Grauguss, "
-"&gt;13 mm für K/LL; geschmiert; Revision gültig; andere "
-"Instandhaltungsrahmen gültig)."
+"erfüllen und mindestens bei Arbeiten nach GCU die Anforderungen von GCU-"
+"Anhang 10 bzw. bei Arbeiten nach VPI, soweit die Daten bekannt sind, die "
+"Anforderungen von VPI 01 Anhang 19 erfüllen (vorhandene, vollständige und "
+"lesbare Beschriftungen, Piktogramme und Warnhinweise; Untergestell und "
+"Drehgestell sichtbar frei von Rissen und Verformungen; Zug- und "
+"Stoßeinrichtung sichtbar frei von Rissen und Verformungen; Achssicherung "
+"vorschriftsmäßig; Bremsbauteile sichtbar frei von Rissen und Verformungen; "
+"Tritte, Halterungen, Handläufe, Leitern und Signalhalter sicher befestigt "
+"und sichtbar frei von Rissen und Verformungen; Zughaken, Seilöse und "
+"Schutzbügel sichtbar frei von Rissen und Verformungen / unbeschädigt; "
+"Radsätze sichtbar unbeschädigt; Bremsklötze laufen nicht an, nicht "
+"gebrochen, &gt;15 mm für Grauguss, &gt;13 mm für K/LL; geschmiert; Revision "
+"gültig; andere Instandhaltungsrahmen gültig)."
 
 #. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
 msgid "Address:"
 msgstr "Adresse:"
@@ -307,7 +308,9 @@ msgstr "Techniker:"
 #. module: fieldservice_print_workorder
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
 msgid "The technician named on the left checks and signs after completion."
-msgstr "Der links genannte Techniker prüft und unterschreibt nach der Fertigstellung."
+msgstr ""
+"Der links genannte Techniker prüft und unterschreibt nach der "
+"Fertigstellung."
 
 #. module: fieldservice_print_workorder
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
@@ -333,3 +336,166 @@ msgstr "Arbeitsauftrag"
 #: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.workorder_layout
 msgid "kg"
 msgstr "kg"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,print_report_name:fieldservice_print_workorder.action_report_rsn_order
+msgid "'Report - %s' % (object.name)"
+msgstr "'Bericht - %s' % (object.name)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Address code"
+msgstr "Adresscode"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Article number"
+msgstr "Artikelnummer"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,help:fieldservice_print_workorder.field_fsm_order__report_comment
+msgid "Comment printed in the Comment section of the customer report."
+msgstr ""
+"Kommentar, der im Abschnitt Kommentar des Kundenberichts gedruckt wird."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Comment shown on the customer report..."
+msgstr "Kommentar für den Kundenbericht..."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Comment:"
+msgstr "Kommentar:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Contact person:"
+msgstr "Ansprechpartner:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Execution date:"
+msgstr "Ausführungsdatum:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Invoice address:"
+msgstr "Rechnungsadresse:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Logo"
+msgstr "Logo"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Materials used:"
+msgstr "Verwendete Materialien:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Name:"
+msgstr "Name:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "No comment specified."
+msgstr "Kein Kommentar angegeben."
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Photo"
+msgstr "Foto"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Postcode / city:"
+msgstr "PLZ / Ort:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Quantity"
+msgstr "Menge"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "REPORT"
+msgstr "BERICHT"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Reference:"
+msgstr "Referenz:"
+
+#. module: fieldservice_print_workorder
+#: model:ir.actions.report,name:fieldservice_print_workorder.action_report_rsn_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Report"
+msgstr "Bericht"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__report_comment
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.fsm_order_form_workorder_print
+msgid "Report Comment"
+msgstr "Berichtskommentar"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__revision_frame_print
+msgid "Revision Frame Print"
+msgstr "Revisionsrahmen (Druck)"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__show_report_button
+msgid "Show Report Button"
+msgstr "Berichtsschaltfläche anzeigen"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__tare_print
+msgid "Tare Print"
+msgstr "Eigengewicht (Druck)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Type of work:"
+msgstr "Art der Arbeiten:"
+
+#. module: fieldservice_print_workorder
+#: model:ir.model.fields,field_description:fieldservice_print_workorder.field_fsm_order__uic_code_print
+msgid "Uic Code Print"
+msgstr "UIC-Code (Druck)"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work order number:"
+msgstr "Arbeitsauftragsnummer:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work performed:"
+msgstr "Ausgeführte Arbeiten:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Work to be performed:"
+msgstr "Auszuführende Arbeiten:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Worker"
+msgstr "Mitarbeiter"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Worker:"
+msgstr "Mitarbeiter:"
+
+#. module: fieldservice_print_workorder
+#: model_terms:ir.ui.view,arch_db:fieldservice_print_workorder.report_rsn_order_page
+msgid "Service location:"
+msgstr "Einsatzort:"

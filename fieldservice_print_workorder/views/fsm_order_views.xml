@@ -17,6 +17,24 @@
                     type="object"
                     class="oe_highlight"
                 />
+                <field name="show_report_button" invisible="1"/>
+                <button
+                    name="action_preview_report"
+                    string="Report"
+                    type="object"
+                    icon="fa-file-text-o"
+                    invisible="not show_report_button"
+                />
+            </xpath>
+            <xpath expr="//group[@name='resolution_grp']" position="after">
+                <group string="Report Comment" name="report_comment_grp">
+                    <field
+                        name="report_comment"
+                        nolabel="1"
+                        colspan="2"
+                        placeholder="Comment shown on the customer report..."
+                    />
+                </group>
             </xpath>
         </field>
     </record>

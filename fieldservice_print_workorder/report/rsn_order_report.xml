@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 TI-Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="paperformat_rsn_order_report" model="report.paperformat">
+        <field name="name">RSN Order Report (A4)</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">12</field>
+        <field name="margin_bottom">12</field>
+        <field name="margin_left">12</field>
+        <field name="margin_right">12</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">96</field>
+        <field name="disable_shrinking" eval="True"/>
+    </record>
+
+    <record id="action_report_rsn_order" model="ir.actions.report">
+        <field name="name">Report</field>
+        <field name="model">fsm.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fieldservice_print_workorder.report_rsn_order_document</field>
+        <field name="report_file">fieldservice_print_workorder.report_rsn_order_document</field>
+        <field name="print_report_name">'Report - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="paperformat_rsn_order_report"/>
+        <field name="binding_model_id" ref="fieldservice.model_fsm_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_rsn_order_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="order">
+                <t t-call="fieldservice_print_workorder.report_rsn_order_page"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_rsn_order_page">
+        <t t-call="web.basic_layout">
+            <t t-set="company" t-value="order.company_id or env.company"/>
+            <t t-set="location" t-value="order.location_id"/>
+            <t t-set="loc_contact" t-value="order._get_report_location_contact()"/>
+            <t t-set="invoice_partner" t-value="order._get_workorder_customer()"/>
+            <t t-set="materials" t-value="order._get_report_materials()"/>
+            <t t-set="resolution_html" t-value="order._get_report_resolution_html()"/>
+            <t t-set="images" t-value="order._get_report_images()"/>
+
+            <style>
+                .rsn-rep { font-family: Arial, Helvetica, sans-serif; font-size: 11.5pt; color: #000; line-height: 1.2; }
+                .rsn-rep table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+                .rsn-rep td, .rsn-rep th { padding: 0 4px 0 0; vertical-align: top; text-align: left; border: 0 none !important; background: transparent !important; }
+                .rsn-rep tr, .rsn-rep thead, .rsn-rep tbody { border: 0 none !important; }
+                .rsn-rep .rep-title { color: #E84C1F; font-size: 17pt; font-weight: bold; padding-bottom: 2px; border-bottom: 1.5px solid #000; margin-bottom: 8px; }
+                .rsn-rep h2 { color: #E84C1F; font-size: 17pt; font-weight: bold; margin: 22px 0 6px 0; padding: 0; }
+                .rsn-rep .lbl { font-weight: bold; }
+                .rsn-rep .logo img { max-height: 95px; max-width: 320px; }
+                .rsn-rep .text-block p { margin: 0 0 4px 0; }
+                .rsn-rep .materials th { font-weight: bold; }
+                .rsn-rep .materials td, .rsn-rep .materials th { padding-bottom: 2px; }
+                .rsn-rep .nobreak { page-break-inside: avoid; }
+                .rsn-rep .photo-page { page-break-before: always; padding-top: 10px; }
+                .rsn-rep .photo-page img { max-width: 100%; max-height: 250mm; }
+            </style>
+
+            <div class="page rsn-rep">
+
+                <div class="rep-title">REPORT</div>
+
+                <table>
+                    <tr>
+                        <td style="width:60%;" class="logo">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                        </td>
+                        <td style="width:40%;">
+                            <div t-esc="company.name"/>
+                            <div t-if="company.street" t-esc="company.street"/>
+                            <div t-if="company.street2" t-esc="company.street2"/>
+                            <div t-if="company.zip or company.city">
+                                <t t-esc="company.zip or ''"/> <t t-esc="company.city or ''"/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Worker / order data -->
+                <div class="nobreak">
+                    <h2>Worker</h2>
+                    <table>
+                        <tr>
+                            <td style="width:20%;" class="lbl">Worker:</td>
+                            <td style="width:40%;" t-esc="order._get_report_workers()"/>
+                            <td style="width:20%;" class="lbl">Type of work:</td>
+                            <td style="width:20%;" t-esc="order._get_report_work_type()"/>
+                        </tr>
+                        <tr>
+                            <td class="lbl">Execution date:</td>
+                            <td t-esc="order._get_report_execution_date()"/>
+                            <td class="lbl">Reference:</td>
+                            <td t-esc="order._get_report_reference()"/>
+                        </tr>
+                        <tr>
+                            <td class="lbl">Work order number:</td>
+                            <td t-esc="order.name"/>
+                            <td/>
+                            <td/>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Location / invoice address -->
+                <div class="nobreak">
+                    <table>
+                        <tr>
+                            <td style="width:60%;"><h2>Service location:</h2></td>
+                            <td style="width:40%;"><h2>Invoice address:</h2></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td style="width:20%;" class="lbl">Name:</td>
+                            <td style="width:40%;" t-esc="location.name or ''"/>
+                            <td style="width:40%;" t-esc="invoice_partner.name or ''"/>
+                        </tr>
+                        <tr>
+                            <td class="lbl">Contact person:</td>
+                            <td t-esc="loc_contact.name or ''"/>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td class="lbl">Address:</td>
+                            <td>
+                                <t t-esc="location.street or ''"/>
+                                <t t-if="location.street2"><br/><t t-esc="location.street2"/></t>
+                            </td>
+                            <td>
+                                <t t-esc="invoice_partner.street or ''"/>
+                                <t t-if="invoice_partner.street2"><br/><t t-esc="invoice_partner.street2"/></t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl">Address code</td>
+                            <td t-esc="location.ref or ''"/>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td class="lbl">Postcode / city:</td>
+                            <td><t t-esc="location.zip or ''"/> <t t-esc="location.city or ''"/></td>
+                            <td><t t-esc="invoice_partner.zip or ''"/> <t t-esc="invoice_partner.city or ''"/></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Work to be performed (Description) -->
+                <div class="nobreak">
+                    <h2>Work to be performed:</h2>
+                    <div class="text-block">
+                        <t t-if="not is_html_empty(order.description)">
+                            <div t-field="order.description"/>
+                        </t>
+                    </div>
+                </div>
+
+                <!-- Work performed (Resolution, without images) -->
+                <div class="nobreak">
+                    <h2>Work performed:</h2>
+                    <div class="text-block">
+                        <t t-if="resolution_html"><t t-out="resolution_html"/></t>
+                    </div>
+                </div>
+
+                <!-- Materials used (completed activities with a product) -->
+                <div class="nobreak">
+                    <h2>Materials used:</h2>
+                    <table class="materials">
+                        <thead>
+                            <tr>
+                                <th style="width:23%;">Article number</th>
+                                <th style="width:62%;">Description</th>
+                                <th style="width:15%;">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="materials" t-as="line">
+                                <td t-esc="line['code']"/>
+                                <td t-esc="line['name']"/>
+                                <td t-esc="order._format_report_qty(line['qty'])"/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Comment -->
+                <div class="nobreak">
+                    <h2>Comment:</h2>
+                    <div t-if="order.report_comment" class="text-block" style="white-space: pre-line;" t-esc="order.report_comment"/>
+                    <div t-else="" class="text-block">No comment specified.</div>
+                </div>
+
+                <!-- Images from the Resolution field: one per page -->
+                <t t-foreach="images" t-as="img_src">
+                    <div class="photo-page">
+                        <img t-att-src="img_src" alt="Photo"/>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>
