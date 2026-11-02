@@ -176,13 +176,13 @@ class FSMOrder(models.Model):
         self.ensure_one()
         return self.contact_id or self.location_id.contact_id
 
-    def _get_report_materials(self):
-        """Completed order activities that carry a product."""
+    def _get_report_activities(self):
+        """Completed order activities, printed as the work performed."""
         self.ensure_one()
         if "order_activity_ids" not in self._fields:
             return []
         activities = self.order_activity_ids.filtered(
-            lambda a: a.product_id and a.state == "done"
+            lambda a: a.state == "done"
         ).sorted(lambda a: (a.sequence, a.id))
         return [
             {
@@ -192,6 +192,60 @@ class FSMOrder(models.Model):
             }
             for a in activities
         ]
+
+    def _get_report_materials(self):
+        """Products used from the Inventory tab.
+
+        Uses the stock requests of the order when there are any (outbound
+        lines, not cancelled; done quantity, else requested quantity).
+        Otherwise falls back to the outgoing stock moves of the order.
+        Lines are grouped per product.
+        """
+        self.ensure_one()
+        lines = []  # (product, qty)
+        requests = None
+        if "stock_request_ids" in self._fields:
+            requests = self.stock_request_ids.filtered(
+                lambda r: r.state != "cancel"
+                and r.product_id
+                and getattr(r, "direction", "outbound") != "inbound"
+            )
+        if requests:
+            for req in requests:
+                qty = req.qty_done or req.product_uom_qty
+                lines.append((req.product_id, qty))
+        elif "move_ids" in self._fields:
+            moves = self.move_ids.filtered(
+                lambda m: m.state != "cancel"
+                and m.product_id
+                and m.picking_id.picking_type_id.code == "outgoing"
+            )
+            for move in moves:
+                qty = move.quantity if move.state == "done" else move.product_uom_qty
+                lines.append((move.product_id, qty))
+        grouped = {}
+        for product, qty in lines:
+            grouped.setdefault(product, 0.0)
+            grouped[product] += qty or 0.0
+        return [
+            {
+                "code": product.default_code or "",
+                "name": product.name or "",
+                "qty": qty,
+            }
+            for product, qty in grouped.items()
+        ]
+
+    def _get_report_invoice_partner(self):
+        """Invoice address: the order's Contact/Client, like other documents."""
+        self.ensure_one()
+        customer = self.customer_id if "customer_id" in self._fields else False
+        if not customer:
+            customer = self.location_id.customer_id
+        if not customer:
+            return self.env["res.partner"]
+        invoice_id = customer.address_get(["invoice"]).get("invoice")
+        return self.env["res.partner"].browse(invoice_id) if invoice_id else customer
 
     @staticmethod
     def _format_report_qty(qty):

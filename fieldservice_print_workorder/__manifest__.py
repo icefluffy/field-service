@@ -3,7 +3,7 @@
 
 {
     "name": "Field Service Work Order Print",
-    "version": "18.0.1.0.3",
+    "version": "18.0.1.0.4",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",
     "category": "Field Service",
