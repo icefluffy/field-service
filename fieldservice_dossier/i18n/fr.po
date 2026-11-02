@@ -597,8 +597,8 @@ msgstr "Type de la prochaine activité"
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "No billable lines (contractor costs / timesheets)."
-msgstr "Aucune ligne facturable (coûts sous-traitant / feuilles de temps)."
+msgid "No billable lines (contractor costs / timesheets / materials)."
+msgstr "Aucune ligne facturable (coûts sous-traitant / feuilles de temps / matériaux)."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__na

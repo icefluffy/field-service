@@ -1,4 +1,5 @@
 # Copyright (C) 2022 - TODAY, Open Source Integrators
+# Copyright 2026 TI-Consulting
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
 from odoo import fields
@@ -9,132 +10,68 @@ class FSMStockAccountCase(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.FSMOrder = cls.env["fsm.order"]
-        cls.StockRequest = cls.env["stock.request"]
-
-        cls.test_location = cls.env.ref("fieldservice.test_location")
-        cls.inv_location = cls.env.ref("stock.stock_location_customers")
-        cls.test_person = cls.env.ref("fieldservice.test_person")
-        cls.test_partner = cls.env.ref("fieldservice.test_partner")
-
-        cls.product_1 = cls.env["product.product"].create(
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.customer = cls.env["res.partner"].create({"name": "Material Customer"})
+        cls.location = cls.env["fsm.location"].create(
             {
-                "name": "Product 1",
-                "detailed_type": "product",
-                "categ_id": cls.env.ref("product.product_category_all").id,
+                "name": "Material Location",
+                "owner_id": cls.customer.id,
+                "customer_id": cls.customer.id,
             }
         )
-
-    def test_fsm_order_stock_lines_added_to_invoice(self):
-        self.test_person.partner_id.supplier_rank = 1
-        self.test_location.inventory_location_id = self.inv_location.id
-
-        fsm_order = self.FSMOrder.create(
-            {"location_id": self.test_location.id, "person_id": self.test_person.id}
-        )
-
-        self.env["stock.picking.type"].create(
+        cls.product = cls.env["product.product"].create(
             {
-                "name": "Stock Request wh",
-                "sequence_id": self.env.ref("stock_request.seq_stock_request_order").id,
-                "code": "stock_request_order",
-                "sequence_code": "SRO",
-                "warehouse_id": fsm_order.warehouse_id.id,
+                "name": "Grease",
+                "default_code": "MAT-1",
+                "is_storable": True,
+                "lst_price": 10.0,
             }
         )
+        cls.order = cls.env["fsm.order"].create(
+            {"location_id": cls.location.id, "customer_id": cls.customer.id}
+        )
+        cls.warehouse = cls.env["stock.warehouse"].search(
+            [("company_id", "=", cls.env.company.id)], limit=1
+        )
 
-        stock_request = self.StockRequest.create(
+    def _request(self, qty, direction="outbound"):
+        return self.env["stock.request"].create(
             {
-                "warehouse_id": fsm_order.warehouse_id.id,
-                "location_id": fsm_order.inventory_location_id.id,
-                "product_id": self.product_1.id,
-                "product_uom_qty": 1,
-                "product_uom_id": self.product_1.uom_id.id,
-                "fsm_order_id": fsm_order.id,
-                "direction": "outbound",
+                "warehouse_id": self.warehouse.id,
+                "location_id": self.warehouse.lot_stock_id.id,
+                "product_id": self.product.id,
+                "product_uom_id": self.product.uom_id.id,
+                "product_uom_qty": qty,
+                "fsm_order_id": self.order.id,
+                "direction": direction,
                 "expected_date": fields.Datetime.now(),
                 "picking_policy": "direct",
             }
         )
 
-        fsm_order.stock_request_ids = [(6, 0, stock_request.ids)]
-        fsm_order.action_request_submit()
-        stock_request.action_confirm()
+    def test_materials_on_accounting_tab(self):
+        self._request(2)
+        self._request(1)
+        self._request(5, direction="inbound")
+        self.assertEqual(len(self.order.material_request_ids), 2)
+        self.assertEqual(self.order.material_total, 30.0)
+        req = self.order.material_request_ids[0]
+        self.assertEqual(req.fsm_price_unit, 10.0)
 
-        invoice = fsm_order.account_create_invoice()
-
-        stock_lines = invoice.invoice_line_ids.filtered(
-            lambda l: l.product_id == self.product_1 and l.show_in_report is False
+    def test_materials_added_to_invoice(self):
+        self._request(2)
+        self._request(1)
+        invoice = self.order.account_create_invoice()
+        lines = invoice.invoice_line_ids.filtered(
+            lambda line: line.product_id == self.product
         )
-        self.assertTrue(stock_lines)
-        self.assertEqual(stock_lines[0].quantity, stock_request.qty_done)
-        self.assertEqual(stock_lines[0].price_unit, 0)
+        self.assertEqual(len(lines), 1, "Materials are grouped per product")
+        self.assertEqual(lines.quantity, 3)
+        self.assertEqual(lines.price_unit, 10.0)
+        self.assertTrue(lines.show_in_report)
 
-    def test_account_no_invoice_creates_invoice_for_stock_requests(self):
-        self.test_person.partner_id.supplier_rank = 1
-        self.test_location.inventory_location_id = self.inv_location.id
-
-        fsm_order = self.FSMOrder.create(
-            {"location_id": self.test_location.id, "person_id": self.test_person.id}
-        )
-
-        self.env["stock.picking.type"].create(
-            {
-                "name": "Stock Request wh 2",
-                "sequence_id": self.env.ref("stock_request.seq_stock_request_order").id,
-                "code": "stock_request_order",
-                "sequence_code": "SRO2",
-                "warehouse_id": fsm_order.warehouse_id.id,
-            }
-        )
-
-        stock_request = self.StockRequest.create(
-            {
-                "warehouse_id": fsm_order.warehouse_id.id,
-                "location_id": fsm_order.inventory_location_id.id,
-                "product_id": self.product_1.id,
-                "product_uom_qty": 1,
-                "product_uom_id": self.product_1.uom_id.id,
-                "fsm_order_id": fsm_order.id,
-                "direction": "outbound",
-                "expected_date": fields.Datetime.now(),
-                "picking_policy": "direct",
-            }
-        )
-
-        fsm_order.stock_request_ids = [(6, 0, stock_request.ids)]
-        fsm_order.action_request_submit()
-        stock_request.action_confirm()
-
-        self.assertEqual(fsm_order.customer_id, fsm_order.location_id.customer_id)
-
-        fsm_order.account_no_invoice()
-
-        invoice = self.env["account.move"].search(
-            [
-                ("fsm_order_ids", "in", fsm_order.ids),
-                ("move_type", "=", "out_invoice"),
-            ],
-            limit=1,
-        )
-        self.assertTrue(invoice)
-
-        stock_lines = invoice.invoice_line_ids.filtered(
-            lambda l: l.product_id == self.product_1 and l.show_in_report is False
-        )
-        self.assertTrue(stock_lines)
-        self.assertEqual(invoice.partner_id, fsm_order.location_id.customer_id)
-
-        fsm_order.bill_to = "contact"
-        fsm_order.account_no_invoice()
-
-        invoice_contact = self.env["account.move"].search(
-            [
-                ("fsm_order_ids", "in", fsm_order.ids),
-                ("move_type", "=", "out_invoice"),
-                ("partner_id", "=", fsm_order.customer_id.id),
-            ],
-            order="id desc",
-            limit=1,
-        )
-        self.assertTrue(invoice_contact)
+    def test_cancelled_request_not_billed(self):
+        req = self._request(2)
+        req.state = "cancel"
+        self.assertFalse(self.order.material_request_ids)
+        self.assertFalse(self.order._get_material_lines())

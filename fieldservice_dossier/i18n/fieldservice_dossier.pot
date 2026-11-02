@@ -608,7 +608,7 @@ msgstr ""
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "No billable lines (contractor costs / timesheets)."
+msgid "No billable lines (contractor costs / timesheets / materials)."
 msgstr ""
 
 #. module: fieldservice_dossier

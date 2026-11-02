@@ -597,8 +597,8 @@ msgstr "Typ der nächsten Aktivität"
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "No billable lines (contractor costs / timesheets)."
-msgstr "Keine abrechenbaren Positionen (Unternehmerkosten / Zeiterfassungen)."
+msgid "No billable lines (contractor costs / timesheets / materials)."
+msgstr "Keine abrechenbaren Positionen (Unternehmerkosten / Zeiterfassungen / Materialien)."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__na

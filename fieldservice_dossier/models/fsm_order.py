@@ -87,9 +87,18 @@ class FSMOrder(models.Model):
             return _("Already invoiced (%s).") % ", ".join(
                 invoices.mapped(lambda m: m.name or _("Draft"))
             )
-        if not (self.contractor_cost_ids or self.employee_timesheet_ids):
-            return _("No billable lines (contractor costs / timesheets).")
+        if not self._has_billable_lines():
+            return _("No billable lines (contractor costs / timesheets / materials).")
         return False
+
+    def _has_billable_lines(self):
+        """Extension hook; other modules (e.g. stock materials) add to it."""
+        res = (
+            super()._has_billable_lines()
+            if hasattr(super(), "_has_billable_lines")
+            else False
+        )
+        return res or bool(self.contractor_cost_ids or self.employee_timesheet_ids)
 
     def account_create_invoice(self):
         if not self.env.context.get("fsm_allow_reinvoice"):

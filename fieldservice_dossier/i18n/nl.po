@@ -597,8 +597,8 @@ msgstr "Type volgende activiteit"
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "No billable lines (contractor costs / timesheets)."
-msgstr "Geen factureerbare regels (aannemerskosten / urenregistraties)."
+msgid "No billable lines (contractor costs / timesheets / materials)."
+msgstr "Geen factureerbare regels (aannemerskosten / urenregistraties / materialen)."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__na
