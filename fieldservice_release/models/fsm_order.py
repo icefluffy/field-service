@@ -1,8 +1,10 @@
 # Copyright (C) 2026 TI-Consulting
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+from markupsafe import Markup
+
 from odoo import Command, _, api, fields, models
-from odoo.tools import html2plaintext
+from odoo.tools import html2plaintext, html_escape
 
 class FsmOrder(models.Model):
     _inherit = "fsm.order"
@@ -90,9 +92,29 @@ class FsmOrder(models.Model):
                 "product_id": cost.product_id.id,
                 "quantity": cost.quantity,
                 "price_unit": cost.price_unit,
+                "is_material": cost.is_material,
+                "lot_names": cost.lot_names,
             })
             for index, cost in enumerate(self.contractor_cost_ids, start=1)
         ]
+
+    def _get_release_replaced_components_html(self):
+        """Delivered materials (Accounting tab) as release form text."""
+        self.ensure_one()
+        materials = self.contractor_cost_ids.filtered("is_material")
+        if not materials:
+            return False
+        items = []
+        for cost in materials:
+            text = "%s — %s: %s" % (
+                cost.product_id.display_name,
+                _("Qty"),
+                ("%g" % cost.quantity),
+            )
+            if cost.lot_names:
+                text += " — %s: %s" % (_("S/N"), cost.lot_names)
+            items.append("<li>%s</li>" % html_escape(text))
+        return Markup("<ul>%s</ul>" % "".join(items))
 
     def _prepare_release_timesheet_lines(self):
         self.ensure_one()

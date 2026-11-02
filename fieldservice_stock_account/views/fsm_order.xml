@@ -7,23 +7,15 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice_isp_account.fsm_order_form_isp_account"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='accounting']" position="inside">
-                <group string="Materials" name="materials_grp">
-                    <field name="material_request_ids" nolabel="1" colspan="2" readonly="1">
-                        <list create="0" delete="0" edit="0">
-                            <field name="product_id"/>
-                            <field name="fsm_billable_qty"/>
-                            <field name="product_uom_id" groups="uom.group_uom"/>
-                            <field name="fsm_price_unit"/>
-                            <field name="fsm_price_subtotal" sum="Total"/>
-                            <field name="state" widget="badge"/>
-                        </list>
-                    </field>
-                </group>
-                <group>
-                    <field name="material_currency_id" invisible="1"/>
-                    <field name="material_total" readonly="1"/>
-                </group>
+            <xpath expr="//field[@name='contractor_cost_ids']" position="before">
+                <div colspan="2" class="text-end">
+                    <button name="action_sync_delivered_materials"
+                            type="object"
+                            string="Copy Delivered Materials"
+                            icon="fa-refresh"
+                            class="btn-link"
+                            invisible="account_stage == 'invoiced'"/>
+                </div>
             </xpath>
         </field>
     </record>

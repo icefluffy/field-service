@@ -167,6 +167,12 @@ class FsmRelease(models.Model):
         string="Replaced Components",
     )
 
+    # Last value filled in automatically from the order's delivered
+    # materials; manual edits are never overwritten.
+    replaced_components_auto = fields.Html(
+        copy=False,
+    )
+
     other_information = fields.Html(
         string="Other Information (as Specified by Keeper/ECM)",
     )
@@ -279,7 +285,20 @@ class FsmRelease(models.Model):
         resolution = value(order, "resolution")
         remarks = (value(order, "release_remarks") or self.remarks)
         location = value(order, "location_id")
+        components = {}
+        if order and hasattr(order, "_get_release_replaced_components_html"):
+            generated = order._get_release_replaced_components_html()
+            current = plain(self.replaced_components)
+            # Only fill when empty or still the previous automatic text.
+            if generated and (
+                not current or current == plain(self.replaced_components_auto)
+            ):
+                components = {
+                    "replaced_components": generated,
+                    "replaced_components_auto": generated,
+                }
         return {
+            **components,
             "vrijgave_evn": evn,
             "vrijgave_date": self.actual_release_date or self.issue_date,
             "vrijgave_place": location.display_name if location else False,
@@ -315,6 +334,8 @@ class FsmRelease(models.Model):
                     or release.vrijgave_responsible_signature):
                 # Do not change what someone has already signed.
                 candidates.pop("vrijgave_description", None)
+                candidates.pop("replaced_components", None)
+                candidates.pop("replaced_components_auto", None)
 
             changes = {
                 key: value
@@ -342,6 +363,8 @@ class FsmRelease(models.Model):
                     or release.vrijgave_responsible_signature):
                 # Do not change what someone has already signed.
                 candidates.pop("vrijgave_description", None)
+                candidates.pop("replaced_components", None)
+                candidates.pop("replaced_components_auto", None)
 
             changes = {
                 key: value
@@ -544,6 +567,16 @@ class FsmReleaseContractorCost(models.Model):
 
     price_unit = fields.Float(
         string="Unit Price",
+        readonly=True,
+    )
+
+    is_material = fields.Boolean(
+        string="Material",
+        readonly=True,
+    )
+
+    lot_names = fields.Char(
+        string="Serial Numbers",
         readonly=True,
     )
 

@@ -2,7 +2,6 @@
 # Copyright 2026 TI-Consulting
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
-from odoo import fields
 from odoo.tests.common import TransactionCase
 
 
@@ -25,53 +24,119 @@ class FSMStockAccountCase(TransactionCase):
                 "default_code": "MAT-1",
                 "is_storable": True,
                 "lst_price": 10.0,
+                "standard_price": 4.0,
+            }
+        )
+        cls.serial_product = cls.env["product.product"].create(
+            {
+                "name": "Brake block",
+                "default_code": "MAT-SN",
+                "is_storable": True,
+                "tracking": "serial",
+                "lst_price": 50.0,
             }
         )
         cls.order = cls.env["fsm.order"].create(
             {"location_id": cls.location.id, "customer_id": cls.customer.id}
         )
-        cls.warehouse = cls.env["stock.warehouse"].search(
-            [("company_id", "=", cls.env.company.id)], limit=1
+        cls.warehouse = cls.order.warehouse_id
+        cls.stock = cls.warehouse.lot_stock_id
+        cls.customers = cls.env.ref("stock.stock_location_customers")
+        Quant = cls.env["stock.quant"]
+        Quant._update_available_quantity(cls.product, cls.stock, 10)
+        cls.lots = cls.env["stock.lot"].create(
+            [
+                {"name": name, "product_id": cls.serial_product.id}
+                for name in ("SN-1", "SN-2")
+            ]
         )
+        for lot in cls.lots:
+            Quant._update_available_quantity(
+                cls.serial_product, cls.stock, 1, lot_id=lot
+            )
 
-    def _request(self, qty, direction="outbound"):
-        return self.env["stock.request"].create(
+    def _deliver(self):
+        group = self.env["procurement.group"].create(
+            {"name": self.order.name, "fsm_order_id": self.order.id}
+        )
+        picking = self.env["stock.picking"].create(
             {
-                "warehouse_id": self.warehouse.id,
-                "location_id": self.warehouse.lot_stock_id.id,
-                "product_id": self.product.id,
-                "product_uom_id": self.product.uom_id.id,
-                "product_uom_qty": qty,
-                "fsm_order_id": self.order.id,
-                "direction": direction,
-                "expected_date": fields.Datetime.now(),
-                "picking_policy": "direct",
+                "picking_type_id": self.warehouse.out_type_id.id,
+                "location_id": self.stock.id,
+                "location_dest_id": self.customers.id,
+                "group_id": group.id,
+                "move_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "name": product.name,
+                            "product_id": product.id,
+                            "product_uom_qty": qty,
+                            "product_uom": product.uom_id.id,
+                            "location_id": self.stock.id,
+                            "location_dest_id": self.customers.id,
+                            "fsm_order_id": self.order.id,
+                            "group_id": group.id,
+                        },
+                    )
+                    for product, qty in ((self.product, 3), (self.serial_product, 2))
+                ],
             }
         )
+        picking.action_confirm()
+        picking.action_assign()
+        picking.move_ids.picked = True
+        picking.button_validate()
+        return picking
 
-    def test_materials_on_accounting_tab(self):
-        self._request(2)
-        self._request(1)
-        self._request(5, direction="inbound")
-        self.assertEqual(len(self.order.material_request_ids), 2)
-        self.assertEqual(self.order.material_total, 30.0)
-        req = self.order.material_request_ids[0]
-        self.assertEqual(req.fsm_price_unit, 10.0)
+    def test_delivery_copied_to_accounting_tab(self):
+        self.assertFalse(self.order.contractor_cost_ids)
+        self._deliver()
+        costs = self.order.contractor_cost_ids
+        self.assertEqual(len(costs), 2)
+        self.assertTrue(all(costs.mapped("is_material")))
+        grease = costs.filtered(lambda c: c.product_id == self.product)
+        self.assertEqual(grease.quantity, 3)
+        self.assertEqual(grease.price_unit, 4.0)
+        serial = costs.filtered(lambda c: c.product_id == self.serial_product)
+        self.assertEqual(serial.lot_names, "SN-1, SN-2")
+        # Syncing again does not duplicate lines.
+        self.order._sync_delivered_material_costs()
+        self.assertEqual(len(self.order.contractor_cost_ids), 2)
 
-    def test_materials_added_to_invoice(self):
-        self._request(2)
-        self._request(1)
-        invoice = self.order.account_create_invoice()
-        lines = invoice.invoice_line_ids.filtered(
-            lambda line: line.product_id == self.product
+    def test_return_deducted(self):
+        picking = self._deliver()
+        wizard = (
+            self.env["stock.return.picking"]
+            .with_context(active_id=picking.id, active_model="stock.picking")
+            .create({})
         )
-        self.assertEqual(len(lines), 1, "Materials are grouped per product")
-        self.assertEqual(lines.quantity, 3)
-        self.assertEqual(lines.price_unit, 10.0)
-        self.assertTrue(lines.show_in_report)
+        for line in wizard.product_return_moves:
+            line.quantity = 1 if line.product_id == self.serial_product else 3
+        returned = self.env["stock.picking"].browse(
+            wizard.action_create_returns()["res_id"]
+        )
+        returned.action_assign()
+        returned.move_ids.picked = True
+        returned.button_validate()
+        costs = self.order.contractor_cost_ids
+        self.assertEqual(costs.product_id, self.serial_product)
+        self.assertEqual(costs.quantity, 1)
+        self.assertEqual(len(costs.lot_names.split(", ")), 1)
 
-    def test_cancelled_request_not_billed(self):
-        req = self._request(2)
-        req.state = "cancel"
-        self.assertFalse(self.order.material_request_ids)
-        self.assertFalse(self.order._get_material_lines())
+    def test_materials_invoiced_with_serials(self):
+        self._deliver()
+        self.order.bill_to = "contact"
+        vals = self.order.account_prepare_invoice()
+        lines = [cmd[2] for cmd in vals["invoice_line_ids"]]
+        self.assertEqual(len(lines), 2)
+        serial_line = next(
+            line for line in lines if line["product_id"] == self.serial_product.id
+        )
+        self.assertIn("SN-1", serial_line["name"])
+
+    def test_materials_not_on_vendor_bill(self):
+        self._deliver()
+        vals = self.order.prepare_bills()
+        self.assertFalse(vals["invoice_line_ids"])

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 13:04+0000\n"
-"PO-Revision-Date: 2026-11-02 13:04+0000\n"
+"POT-Creation-Date: 2026-11-02 13:33+0000\n"
+"PO-Revision-Date: 2026-11-02 13:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,18 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: fieldservice_stock_account
-#: model:ir.model.fields,field_description:fieldservice_stock_account.field_stock_request__fsm_billable_qty
-msgid "Billable Quantity"
+#: model_terms:ir.ui.view,arch_db:fieldservice_stock_account.fsm_order_form_stock_account
+msgid "Copy Delivered Materials"
 msgstr ""
 
 #. module: fieldservice_stock_account
-#: model:ir.model.fields,help:fieldservice_stock_account.field_stock_request__fsm_billable_qty
-msgid ""
-"Delivered quantity, or the requested quantity while nothing has been "
-"delivered yet."
+#: model:ir.model.fields,help:fieldservice_stock_account.field_fsm_order_cost__stock_move_id
+msgid "Delivered stock move this material line was copied from."
+msgstr ""
+
+#. module: fieldservice_stock_account
+#: model:ir.model.fields,field_description:fieldservice_stock_account.field_fsm_order_cost__stock_move_id
+msgid "Delivery"
 msgstr ""
 
 #. module: fieldservice_stock_account
@@ -33,31 +36,13 @@ msgid "Field Service Order"
 msgstr ""
 
 #. module: fieldservice_stock_account
+#: model:ir.model,name:fieldservice_stock_account.model_fsm_order_cost
+msgid "Fsm Order Cost"
+msgstr ""
+
+#. module: fieldservice_stock_account
 #: model:ir.model,name:fieldservice_stock_account.model_account_move_line
 msgid "Journal Item"
-msgstr ""
-
-#. module: fieldservice_stock_account
-#: model:ir.model.fields,field_description:fieldservice_stock_account.field_fsm_order__material_currency_id
-msgid "Material Currency"
-msgstr ""
-
-#. module: fieldservice_stock_account
-#: model:ir.model.fields,field_description:fieldservice_stock_account.field_fsm_order__material_request_ids
-#: model_terms:ir.ui.view,arch_db:fieldservice_stock_account.fsm_order_form_stock_account
-msgid "Materials"
-msgstr ""
-
-#. module: fieldservice_stock_account
-#: model:ir.model.fields,field_description:fieldservice_stock_account.field_fsm_order__material_total
-msgid "Materials Total"
-msgstr ""
-
-#. module: fieldservice_stock_account
-#: model:ir.model.fields,help:fieldservice_stock_account.field_fsm_order__material_request_ids
-msgid ""
-"Materials used from the Inventory tab. They are added to the customer "
-"invoice."
 msgstr ""
 
 #. module: fieldservice_stock_account
@@ -66,21 +51,6 @@ msgid "Show in Report"
 msgstr ""
 
 #. module: fieldservice_stock_account
-#: model:ir.model,name:fieldservice_stock_account.model_stock_request
-msgid "Stock Request"
-msgstr ""
-
-#. module: fieldservice_stock_account
-#: model:ir.model.fields,field_description:fieldservice_stock_account.field_stock_request__fsm_price_subtotal
-msgid "Subtotal"
-msgstr ""
-
-#. module: fieldservice_stock_account
-#: model_terms:ir.ui.view,arch_db:fieldservice_stock_account.fsm_order_form_stock_account
-msgid "Total"
-msgstr ""
-
-#. module: fieldservice_stock_account
-#: model:ir.model.fields,field_description:fieldservice_stock_account.field_stock_request__fsm_price_unit
-msgid "Unit Price"
+#: model:ir.model,name:fieldservice_stock_account.model_stock_move
+msgid "Stock Move"
 msgstr ""

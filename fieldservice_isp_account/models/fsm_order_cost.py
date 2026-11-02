@@ -26,6 +26,24 @@ class FsmOrderCost(models.Model):
         required=True,
     )
 
+    is_material = fields.Boolean(
+        string="Material",
+        readonly=True,
+        help="Line created automatically from a delivered Inventory item.",
+    )
+    lot_names = fields.Char(
+        string="Serial Numbers",
+        help="Lot/serial numbers of the delivered items.",
+    )
+
+    def _get_invoice_line_name(self):
+        """Description used on customer invoice lines."""
+        self.ensure_one()
+        name = self.product_id.display_name or ""
+        if self.lot_names:
+            name = "%s\n%s" % (name, self.env._("S/N: %s") % self.lot_names)
+        return name
+
     @api.onchange("product_id")
     def _onchange_product_id(self):
         for rec in self:

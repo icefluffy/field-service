@@ -27,27 +27,36 @@ class AccountMoveLine(models.Model):
         return list(dict.fromkeys(order_ids))
 
     @staticmethod
-    def _get_wagon_serials(orders):
-        """Return unique wagon serials from selected FSM equipment."""
-        equipments = orders.mapped("equipment_ids")
+    def _is_wagon_equipment(equipment):
+        """Wagon = equipment whose product is "Generic Wagon".
 
-        # This deliberately uses product name. For a more robust implementation,
-        # replace this filter later by a fixed product ID or a product tag.
-        wagons = equipments.filtered(
-            lambda equipment: equipment.product_id
-            and equipment.product_id.display_name == "Generic Wagon"
+        Compare the untranslated product name, so an internal reference
+        ("[WAG] Generic Wagon") or a translated name does not break it.
+        """
+        product = equipment.product_id
+        if not product:
+            return False
+        names = {
+            product.with_context(lang="en_US").name,
+            product.name,
+            product.display_name,
+        }
+        return any(
+            name and name.strip().lower().endswith("generic wagon") for name in names
         )
 
-        serials = wagons.mapped("lot_id.name")
-        serials = [serial for serial in serials if isinstance(serial, str) and serial]
+    @classmethod
+    def _get_wagon_serials(cls, orders):
+        """Return unique wagon serials from the orders' equipment."""
+        equipments = orders.mapped("equipment_ids") | orders.mapped("equipment_id")
+        wagons = equipments.filtered(cls._is_wagon_equipment)
 
-        # Your equipment record name is also the wagon serial number.
-        if not serials:
-            serials = wagons.mapped("name")
-            serials = [
-                serial for serial in serials if isinstance(serial, str) and serial
-            ]
-
+        serials = []
+        for wagon in wagons:
+            # The lot is the wagon serial; the equipment name is the fallback.
+            serial = wagon.lot_id.name or wagon.name
+            if isinstance(serial, str) and serial:
+                serials.append(serial)
         return list(dict.fromkeys(serials))
 
     @api.model_create_multi

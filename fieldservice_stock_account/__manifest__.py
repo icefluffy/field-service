@@ -3,9 +3,9 @@
 
 {
     "name": "Field Service - Stock Account",
-    "version": "18.0.1.1.0",
+    "version": "18.0.1.2.0",
     "category": "Field Service",
-    "summary": "Show inventory materials on the Accounting tab and invoice them",
+    "summary": "Copy delivered Inventory materials to the Accounting tab",
     "author": "Open Source Integrators, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",
     "depends": [
@@ -13,6 +13,7 @@
         "fieldservice_account",
         "fieldservice_isp_account",
         "fieldservice_stock_request",
+        "fieldservice_stock",
     ],
     "data": [
         "views/fsm_order.xml",

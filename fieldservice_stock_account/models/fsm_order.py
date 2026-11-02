@@ -2,152 +2,93 @@
 # Copyright 2026 TI-Consulting
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import models
 
 
 class FSMOrder(models.Model):
     _inherit = "fsm.order"
 
-    material_request_ids = fields.One2many(
-        "stock.request",
-        "fsm_order_id",
-        string="Materials",
-        domain=[("state", "!=", "cancel"), ("direction", "!=", "inbound")],
-        readonly=True,
-        help="Materials used from the Inventory tab. They are added to the "
-        "customer invoice.",
-    )
-    material_total = fields.Monetary(
-        string="Materials Total",
-        compute="_compute_material_total",
-        currency_field="material_currency_id",
-    )
-    material_currency_id = fields.Many2one(
-        "res.currency",
-        compute="_compute_material_total",
-    )
-
     # ------------------------------------------------------------------
-    # Helpers
+    # Delivered materials -> Contractor Costs (Accounting tab)
     # ------------------------------------------------------------------
 
-    def _get_material_invoice_partner(self):
-        """Same partner rule as the invoice (fieldservice_isp_account)."""
+    def _get_delivered_material_moves(self):
+        """Done deliveries (to the customer) of this order."""
         self.ensure_one()
-        if self.bill_to == "contact" and self.customer_id:
-            return self.customer_id
-        return self.location_id.customer_id
-
-    def _get_billable_material_requests(self):
-        self.ensure_one()
-        return self.stock_request_ids.filtered(
-            lambda r: r.state != "cancel"
-            and r.product_id
-            and r.direction != "inbound"
-            and r._get_fsm_billable_qty() > 0
+        moves = self.env["stock.move"].search(
+            [
+                "|",
+                ("fsm_order_id", "=", self.id),
+                ("picking_id.fsm_order_id", "=", self.id),
+                ("state", "=", "done"),
+                ("picking_code", "=", "outgoing"),
+                ("origin_returned_move_id", "=", False),
+            ]
         )
+        return moves.filtered(lambda m: m.product_id and not m.scrapped)
 
-    def _get_material_price(self, product, quantity, uom=None):
-        """Unit price from the invoice partner's pricelist, in ``uom``."""
-        self.ensure_one()
-        partner = self._get_material_invoice_partner()
-        pricelist = partner.property_product_pricelist
-        price = self._get_partner_pricelist_price(
-            pricelist=pricelist,
-            product=product,
-            quantity=quantity,
-            partner=partner,
-        )
-        if uom and uom != product.uom_id:
-            # Pricelist price is per product UoM; convert to the request UoM.
-            price = product.uom_id._compute_price(price, uom)
-        return price
+    @staticmethod
+    def _material_lot_names(move_lines):
+        return [name for name in move_lines.mapped("lot_id.name") if name]
 
-    def _get_material_lines(self):
-        """Billable materials grouped per product and unit of measure."""
-        self.ensure_one()
-        grouped = {}
-        for req in self._get_billable_material_requests():
-            key = (req.product_id, req.product_uom_id or req.product_id.uom_id)
-            grouped[key] = grouped.get(key, 0.0) + req._get_fsm_billable_qty()
-        return [
-            {"product": product, "uom": uom, "qty": qty}
-            for (product, uom), qty in grouped.items()
-        ]
+    def _prepare_material_cost_values(self, move):
+        """Net delivered quantity (product UoM) and serials for ``move``."""
+        product = move.product_id
+        qty = move.product_uom._compute_quantity(move.quantity, product.uom_id)
+        lots = self._material_lot_names(move.move_line_ids)
+        returns = move.returned_move_ids.filtered(lambda m: m.state == "done")
+        for ret in returns:
+            qty -= ret.product_uom._compute_quantity(ret.quantity, product.uom_id)
+            for name in self._material_lot_names(ret.move_line_ids):
+                if name in lots:
+                    lots.remove(name)
+        return {
+            "quantity": qty,
+            "lot_names": ", ".join(dict.fromkeys(lots)) or False,
+        }
 
-    @api.depends(
-        "stock_request_ids.state",
-        "stock_request_ids.qty_done",
-        "stock_request_ids.product_uom_qty",
-        "stock_request_ids.product_id",
-        "customer_id",
-        "location_id",
-        "bill_to",
-    )
-    def _compute_material_total(self):
+    def _sync_delivered_material_costs(self):
+        """Create/update one Contractor Costs line per delivered stock move.
+
+        Lines are linked to their move, so syncing is idempotent. Returned
+        quantities are deducted. Orders that are already invoiced are left
+        untouched.
+        """
+        Cost = self.env["fsm.order.cost"]
         for order in self:
-            partner = order._get_material_invoice_partner()
-            order.material_currency_id = (
-                partner.property_product_pricelist.currency_id
-                or order.company_id.currency_id
-                or self.env.company.currency_id
+            if order.account_stage == "invoiced":
+                continue
+            existing = Cost.search(
+                [("fsm_order_id", "=", order.id), ("stock_move_id", "!=", False)]
             )
-            order.material_total = sum(
-                order._get_material_price(line["product"], line["qty"], line["uom"])
-                * line["qty"]
-                for line in order._get_material_lines()
-            )
+            by_move = {cost.stock_move_id: cost for cost in existing}
+            for move in order._get_delivered_material_moves():
+                vals = order._prepare_material_cost_values(move)
+                cost = by_move.pop(move, Cost)
+                if vals["quantity"] <= 0:
+                    cost.unlink()
+                elif cost:
+                    changes = {
+                        k: v for k, v in vals.items() if cost[k] != (v or False)
+                    }
+                    if changes:
+                        cost.write(changes)
+                else:
+                    Cost.create(
+                        dict(
+                            vals,
+                            fsm_order_id=order.id,
+                            stock_move_id=move.id,
+                            product_id=move.product_id.id,
+                            price_unit=move.product_id.standard_price,
+                            is_material=True,
+                        )
+                    )
 
-    def _has_billable_lines(self):
-        res = (
-            super()._has_billable_lines()
-            if hasattr(super(), "_has_billable_lines")
-            else False
-        )
-        return res or bool(self._get_billable_material_requests())
+    def action_sync_delivered_materials(self):
+        self._sync_delivered_material_costs()
+        return True
 
-    # ------------------------------------------------------------------
-    # Invoicing
-    # ------------------------------------------------------------------
-
-    def _prepare_material_invoice_lines(self):
-        self.ensure_one()
-        partner = self._get_material_invoice_partner()
-        fpos = partner.property_account_position_id
-        vals_list = []
-        for line in self._get_material_lines():
-            product = line["product"]
-            template = product.product_tmpl_id
-            account = template.get_product_accounts(fiscal_pos=fpos)["income"]
-            taxes = template.taxes_id.filtered(
-                lambda t: t.company_id == self.env.company
-            ) or template.taxes_id
-            tax_ids = fpos.map_tax(taxes) if fpos else taxes
-            vals_list.append(
-                (
-                    0,
-                    0,
-                    {
-                        "product_id": product.id,
-                        "product_uom_id": line["uom"].id,
-                        "quantity": line["qty"],
-                        "name": product.display_name,
-                        "price_unit": self._get_material_price(
-                            product, line["qty"], line["uom"]
-                        ),
-                        "account_id": account.id,
-                        "fsm_order_ids": [(4, self.id)],
-                        "tax_ids": [(6, 0, tax_ids.ids)],
-                        "show_in_report": True,
-                    },
-                )
-            )
-        return vals_list
-
-    def account_prepare_invoice(self):
-        invoice_vals = super().account_prepare_invoice()
-        material_lines = self._prepare_material_invoice_lines()
-        if material_lines:
-            invoice_vals.setdefault("invoice_line_ids", [])
-            invoice_vals["invoice_line_ids"] += material_lines
-        return invoice_vals
+    def action_complete(self):
+        self._sync_delivered_material_costs()
+        return super().action_complete()

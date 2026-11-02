@@ -4,7 +4,7 @@
 {
     "name": "Field Service - ISP Accounting",
     "summary": "Invoice Field Service orders based on employee time or contractor costs",
-    "version": "18.0.1.1.1",
+    "version": "18.0.1.1.2",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",

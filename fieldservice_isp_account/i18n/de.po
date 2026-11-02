@@ -266,3 +266,30 @@ msgstr "Stückpreis"
 #: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_person_form_isp_account
 msgid "Vendor Bills"
 msgstr "Lieferantenrechnungen"
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__is_material
+msgid "Line created automatically from a delivered Inventory item."
+msgstr ""
+"Automatisch aus einem gelieferten Artikel des Reiters Lager erstellte Zeile."
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__lot_names
+msgid "Lot/serial numbers of the delivered items."
+msgstr "Los-/Seriennummern der gelieferten Artikel."
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__is_material
+msgid "Material"
+msgstr "Material"
+
+#. module: fieldservice_isp_account
+#. odoo-python
+#: code:addons/fieldservice_isp_account/models/fsm_order_cost.py:0
+msgid "S/N: %s"
+msgstr "S/N: %s"
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__lot_names
+msgid "Serial Numbers"
+msgstr "Seriennummern"

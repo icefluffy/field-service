@@ -172,7 +172,7 @@
                             <span t-field="o.work_performed" />
                         </div>
                     </t>
-                    <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
+                    <t t-foreach="o.contractor_cost_line_ids.filtered(lambda l: not l.is_material)" t-as="cost_line">
                         <div style="display:block; clear:both; margin-bottom:3px;">
                             <span t-field="cost_line.product_id" />
                             <span> — </span>
@@ -228,12 +228,17 @@
                                 <span t-field="o.replaced_components" />
                             </div>
                         </t>
-                        <t t-foreach="o.contractor_cost_line_ids" t-as="cost_line">
+                        <t t-foreach="o.contractor_cost_line_ids.filtered(lambda l: l.is_material) if not o.replaced_components else []" t-as="cost_line">
                             <div style="display:block; clear:both; margin-bottom:3px;">
                                 <span t-field="cost_line.product_id" />
                                 <span> — </span>
                                 <strong>Qty:</strong>
                                 <span t-field="cost_line.quantity" />
+                                <t t-if="cost_line.lot_names">
+                                    <span> — </span>
+                                    <strong>S/N:</strong>
+                                    <span t-field="cost_line.lot_names" />
+                                </t>
                             </div>
                         </t>
                     </div>

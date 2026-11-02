@@ -88,7 +88,9 @@ class FSMOrder(models.Model):
     def action_complete(self):
         for order in self:
             order.account_stage = "review"
-            if order.person_id.partner_id.supplier_rank and not order.contractor_cost_ids:
+            if order.person_id.partner_id.supplier_rank and not (
+                order.contractor_cost_ids.filtered(lambda c: not c.is_material)
+            ):
                 raise ValidationError(
                     _("Cannot move to Complete until 'Contractor Costs' is filled in.")
                 )
@@ -111,7 +113,8 @@ class FSMOrder(models.Model):
         fpos = self.person_id.partner_id.property_account_position_id
         invoice_line_vals = []
 
-        for cost in self.contractor_cost_ids:
+        # Materials come from our own stock, not from the contractor.
+        for cost in self.contractor_cost_ids.filtered(lambda c: not c.is_material):
             template = cost.product_id.product_tmpl_id
             accounts = template.get_product_accounts()
             account = accounts["expense"]
@@ -163,7 +166,10 @@ class FSMOrder(models.Model):
 
     def account_confirm(self):
         for order in self:
-            if order.contractor_cost_ids and order.person_id.partner_id.supplier_rank:
+            if (
+                order.contractor_cost_ids.filtered(lambda c: not c.is_material)
+                and order.person_id.partner_id.supplier_rank
+            ):
                 order.create_bills()
             order.account_stage = "confirmed"
 
@@ -228,7 +234,7 @@ class FSMOrder(models.Model):
                     {
                         "product_id": cost.product_id.id,
                         "quantity": cost.quantity,
-                        "name": cost.product_id.display_name,
+                        "name": cost._get_invoice_line_name(),
                         "price_unit": price,
                         "account_id": account.id,
                         "fsm_order_ids": [(4, self.id)],

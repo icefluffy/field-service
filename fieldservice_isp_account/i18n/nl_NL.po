@@ -10,11 +10,11 @@ msgstr ""
 "PO-Revision-Date: 2026-10-02 09:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: Dutch (Belgium)\n"
+"Language: nl_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: nl_BE\n"
 
 #. module: fieldservice_isp_account
 #: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order__account_stage
@@ -25,13 +25,17 @@ msgstr "Boekhoudkundige status"
 #. odoo-python
 #: code:addons/fieldservice_isp_account/models/fsm_order.py:0
 msgid "Cannot move to Complete until 'Contractor Costs' is filled in."
-msgstr "Kan niet naar Voltooid worden verplaatst totdat 'Kosten onderaannemers' is ingevuld."
+msgstr ""
+"Kan niet naar Voltooid worden verplaatst totdat 'Kosten onderaannemers' is "
+"ingevuld."
 
 #. module: fieldservice_isp_account
 #. odoo-python
 #: code:addons/fieldservice_isp_account/models/fsm_order.py:0
 msgid "Cannot move to Complete until 'Employee Timesheets' is filled in."
-msgstr "Kan niet naar Voltooid worden verplaatst totdat 'Urenstaten medewerkers' is ingevuld."
+msgstr ""
+"Kan niet naar Voltooid worden verplaatst totdat 'Urenstaten medewerkers' is "
+"ingevuld."
 
 #. module: fieldservice_isp_account
 #: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_order_form_isp_account
@@ -250,3 +254,31 @@ msgstr "Eenheidsprijs"
 #: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_person_form_isp_account
 msgid "Vendor Bills"
 msgstr "Leveranciersfacturen"
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__is_material
+msgid "Line created automatically from a delivered Inventory item."
+msgstr ""
+"Regel automatisch aangemaakt vanuit een geleverd artikel uit het tabblad "
+"Voorraad."
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__lot_names
+msgid "Lot/serial numbers of the delivered items."
+msgstr "Lot-/serienummers van de geleverde artikelen."
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__is_material
+msgid "Material"
+msgstr "Materiaal"
+
+#. module: fieldservice_isp_account
+#. odoo-python
+#: code:addons/fieldservice_isp_account/models/fsm_order_cost.py:0
+msgid "S/N: %s"
+msgstr "S/N: %s"
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__lot_names
+msgid "Serial Numbers"
+msgstr "Serienummers"
