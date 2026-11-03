@@ -30,6 +30,15 @@ class FsmDossier(models.Model):
         "fsm.equipment", string="Equipment / Serial", required=True,
         ondelete="restrict", index=True, tracking=True,
     )
+    customer_id = fields.Many2one(
+        "res.partner", string="Contact/Client", index=True, tracking=True,
+        help="Customer of this dossier; copied to new FSM orders.",
+    )
+    customer_reference = fields.Char(
+        string="Reference", tracking=True, copy=False,
+        help="Customer reference of this dossier; copied to new FSM orders "
+        "as their Customer Reference.",
+    )
     location_id = fields.Many2one(
         "fsm.location", string="Service Location", required=True, tracking=True,
     )
@@ -127,6 +136,27 @@ class FsmDossier(models.Model):
     def _onchange_equipment_id(self):
         if self.equipment_id and self.equipment_id.current_location_id:
             self.location_id = self.equipment_id.current_location_id
+
+    @api.onchange("location_id")
+    def _onchange_location_id_customer(self):
+        """Propose the location's customer when no customer is chosen yet."""
+        if self.location_id and not self.customer_id and self.location_id.customer_id:
+            self.customer_id = self.location_id.customer_id
+
+    # ------------------------------------------------------------------
+    # FSM order defaults
+    # ------------------------------------------------------------------
+    def _get_order_default_context(self):
+        """Context with default values for a new FSM order of this dossier."""
+        self.ensure_one()
+        return {
+            "default_dossier_id": self.id,
+            "default_equipment_id": self.equipment_id.id,
+            "default_location_id": self.location_id.id,
+            "default_customer_id": self.customer_id.id,
+            "default_customer_reference": self.customer_reference,
+            "default_company_id": self.company_id.id,
+        }
 
     # ------------------------------------------------------------------
     # ORM
@@ -305,10 +335,7 @@ class FsmDossier(models.Model):
             "res_model": "fsm.order",
             "view_mode": "list,form",
             "domain": [("dossier_id", "=", self.id)],
-            "context": {
-                "default_dossier_id": self.id,
-                "default_location_id": self.location_id.id,
-            },
+            "context": self._get_order_default_context(),
         }
 
     def action_view_invoices(self):

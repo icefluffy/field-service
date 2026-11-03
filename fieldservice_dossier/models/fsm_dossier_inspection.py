@@ -97,6 +97,32 @@ class FsmDossierInspection(models.Model):
             "target": "current",
         }
 
+    def action_create_order(self):
+        """Open a new FSM order, prefilled with the dossier data, in a dialog.
+
+        On save the order is linked to this inspection line
+        (see ``fsm.order.create``).
+        """
+        self.ensure_one()
+        dossier = self.dossier_id
+        if dossier.state in ("closed", "cancelled"):
+            raise UserError(_("Dossier %s is closed or cancelled.") % dossier.name)
+        if self.is_approval:
+            raise UserError(_("No FSM order can be linked to the approval line."))
+        ctx = dict(
+            dossier._get_order_default_context(),
+            dossier_inspection_id=self.id,
+        )
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("New FSM order - %s") % self.type_id.name,
+            "res_model": "fsm.order",
+            "view_mode": "form",
+            "views": [(False, "form")],
+            "target": "new",
+            "context": ctx,
+        }
+
     @api.constrains("order_id", "dossier_id")
     def _check_order_dossier(self):
         for line in self:

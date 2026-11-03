@@ -23,9 +23,26 @@ class FSMOrder(models.Model):
     @api.onchange("dossier_id")
     def _onchange_dossier_id(self):
         if self.dossier_id:
-            self.equipment_id = self.dossier_id.equipment_id
-            self.equipment_ids = [Command.set(self.dossier_id.equipment_id.ids)]
+            dossier = self.dossier_id
+            self.equipment_id = dossier.equipment_id
+            self.equipment_ids = [Command.set(dossier.equipment_id.ids)]
+            self.location_id = dossier.location_id
+            if dossier.customer_id and not self.customer_id:
+                self.customer_id = dossier.customer_id
+            if dossier.customer_reference and not self.customer_reference:
+                self.customer_reference = dossier.customer_reference
+
+    @api.onchange("customer_id")
+    def _onchange_customer_id_location(self):
+        """Inside a dossier the service location is the dossier's location.
+
+        The standard onchange replaces the location by the customer's service
+        location (or empties it), which would break the dossier defaults.
+        """
+        res = super()._onchange_customer_id_location()
+        if self.dossier_id.location_id:
             self.location_id = self.dossier_id.location_id
+        return res
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -36,7 +53,22 @@ class FSMOrder(models.Model):
                 vals["equipment_ids"] = [Command.set(dossier.equipment_id.ids)]
                 vals.setdefault("location_id", dossier.location_id.id)
                 vals.setdefault("company_id", dossier.company_id.id)
-        return super().create(vals_list)
+                if "customer_id" not in vals and dossier.customer_id:
+                    vals["customer_id"] = dossier.customer_id.id
+                if "customer_reference" not in vals and dossier.customer_reference:
+                    vals["customer_reference"] = dossier.customer_reference
+        orders = super().create(vals_list)
+        line_id = self.env.context.get("dossier_inspection_id")
+        if line_id:
+            # created from the "+" button of a dossier inspection line
+            line = self.env["fsm.dossier.inspection"].browse(line_id).exists()
+            order = orders.filtered(lambda o: o.dossier_id == line.dossier_id)[:1]
+            if line and order and not line.order_id:
+                line_vals = {"order_id": order.id}
+                if line.work_status == "not_started":
+                    line_vals["work_status"] = "planned"
+                line.write(line_vals)
+        return orders
 
     def write(self, vals):
         if vals.get("dossier_id"):
