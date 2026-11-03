@@ -123,4 +123,24 @@
     
         </field>
     </record>
+
+    <!--
+        Final layout step: other modules (dossier, navigate, release) insert
+        fields "after location_id", and the order in which Odoo applies those
+        views differs between databases. This view runs last (high priority)
+        and puts Track, then Equipment, directly under the visible Location.
+    -->
+    <record id="fsm_order_form_track_under_location" model="ir.ui.view">
+        <field name="name">fsm.order.form.track.under.location</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group/field[@name='location_id'][not(@invisible='1')]" position="after">
+                <xpath expr="//form/sheet/group/group/field[@name='track']" position="move"/>
+                <xpath expr="//form/sheet/group/group/field[@name='equipment_id']" position="move"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
