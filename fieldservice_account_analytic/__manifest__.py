@@ -5,7 +5,7 @@
     "name": "Field Service - Analytic Accounting",
     "summary": """Track analytic accounts on Field Service locations
                   and orders""",
-    "version": "18.0.1.1.2",
+    "version": "18.0.1.1.3",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",

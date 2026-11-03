@@ -20,7 +20,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/fieldservice_vtg_wheelsets/models/fsm_order.py:0
 msgid "Equipment"
-msgstr "Materieel"
+msgstr "Voorwerpnummer"
 
 #. module: fieldservice_vtg_wheelsets
 #: model:ir.model,name:fieldservice_vtg_wheelsets.model_fsm_order
@@ -36,7 +36,7 @@ msgstr "Wielstel invoeren"
 #. odoo-python
 #: code:addons/fieldservice_vtg_wheelsets/models/fsm_order.py:0
 msgid "Select an equipment on the FSM order before opening it."
-msgstr "Selecteer materieel op de serviceopdracht voordat u het opent."
+msgstr "Selecteer een voorwerpnummer op de serviceopdracht voordat u het opent."
 
 #. module: fieldservice_vtg_wheelsets
 #: model:ir.model.fields,field_description:fieldservice_vtg_wheelsets.field_fsm_order__smart_search

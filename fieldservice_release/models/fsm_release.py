@@ -53,6 +53,7 @@ class FsmRelease(models.Model):
         string="Service Location",
         readonly=True,
     )
+    track = fields.Char(related="fsm_order_id.track")
 
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -301,7 +302,10 @@ class FsmRelease(models.Model):
             **components,
             "vrijgave_evn": evn,
             "vrijgave_date": self.actual_release_date or self.issue_date,
-            "vrijgave_place": location.display_name if location else False,
+            "vrijgave_place": (
+                order._get_location_with_track(location.display_name)
+                if location else False
+            ),
             "vrijgave_customer_ref": self._get_vrijgave_customer_reference(),
             "vrijgave_order_ref": order.name,
             "vrijgave_technicians": ", ".join(names),

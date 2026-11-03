@@ -628,7 +628,7 @@ msgstr "Voer de opmerkingen voor het vrijgaveformulier in..."
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__equipment_id
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_equipment_under_location
 msgid "Equipment"
-msgstr "Materieel"
+msgstr "Voorwerpnummer"
 
 #. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
@@ -674,7 +674,7 @@ msgstr "Onderaannemingskost vrijgaveformulier buitendienst"
 #. module: fieldservice_release
 #: model:ir.model,name:fieldservice_release.model_fsm_release_equipment
 msgid "Field Service Release Form Equipment"
-msgstr "Materieel vrijgaveformulier buitendienst"
+msgstr "Voorwerpnummer vrijgaveformulier buitendienst"
 
 #. module: fieldservice_release
 #: model:ir.model,name:fieldservice_release.model_fsm_release_timesheet
@@ -1643,3 +1643,13 @@ msgstr "S/N"
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__lot_names
 msgid "Serial Numbers"
 msgstr "Serienummers"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__track
+msgid "Track"
+msgstr "Spoor"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,help:fieldservice_release.field_fsm_release__track
+msgid "Track at the service location, e.g. the rail track where the wagon stands. Printed between brackets after the location."
+msgstr "Spoor op de servicelocatie, bv. het spoor waar de wagon staat. Wordt tussen haakjes achter de locatie afgedrukt."

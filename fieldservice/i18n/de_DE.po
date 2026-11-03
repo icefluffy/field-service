@@ -1156,6 +1156,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:fieldservice.selection__fsm_stage__stage_type__equipment
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__equipment_id
 msgid "Equipment"
 msgstr ""
 
@@ -3834,3 +3835,33 @@ msgstr ""
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zuletzt geändert am"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__track
+msgid "Track"
+msgstr "Gleis"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__track
+msgid "Track at the service location, e.g. the rail track where the wagon stands. Printed between brackets after the location."
+msgstr "Gleis am Einsatzort, z. B. das Gleis, auf dem der Wagen steht. Wird in Klammern hinter dem Standort gedruckt."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__location_track_display
+msgid "Location (Track)"
+msgstr "Standort (Gleis)"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__location_track_display
+msgid "Location name followed by the track between brackets."
+msgstr "Name des Standorts, gefolgt vom Gleis in Klammern."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__calendar_name
+msgid "Calendar Title"
+msgstr "Kalendertitel"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__calendar_name
+msgid "Order number followed by the equipment between brackets."
+msgstr "Auftragsnummer, gefolgt vom Equipment in Klammern."

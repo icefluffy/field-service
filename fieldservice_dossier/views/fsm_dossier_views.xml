@@ -106,6 +106,7 @@
                                    context="{'default_equipment_id': equipment_id, 'default_location_id': location_id, 'default_customer_id': customer_id, 'default_customer_reference': customer_reference, 'default_company_id': company_id}">
                                 <list>
                                     <field name="name"/>
+                                    <field name="equipment_id" optional="show"/>
                                     <field name="person_id"/>
                                     <field name="scheduled_date_start"/>
                                     <field name="stage_id"/>

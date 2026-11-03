@@ -73,6 +73,7 @@
                         </group>
                         <group>
                             <field name="location_id" />
+                            <field name="track" />
                             <field
                                 name="territory_id"
                                 invisible='1'
@@ -228,7 +229,9 @@
             <list name="orders" default_order="scheduled_date_start">
                 <field name="scheduled_date_start" />
                 <field name="name" />
+                <field name="equipment_id" optional="show" />
                 <field name="location_id" />
+                <field name="track" optional="show" />
                 <field name="person_id" />
                 <field name="stage_id" string="Stage" />
                 <field name="company_id" groups="base.group_multi_company" />
@@ -258,6 +261,8 @@
                 <field name="name" />
                 <field name="priority" />
                 <field name="location_id" />
+                <field name="track" />
+                <field name="equipment_id" />
                 <field name="person_id" />
                 <field name="color" />
                 <templates>
@@ -291,6 +296,13 @@
                                     <strong class="o_kanban_record_title">
                                         <field name="name" />
                                     </strong>
+                                    <div
+                                        t-if="record.equipment_id.raw_value"
+                                        name="kanban_equipment"
+                                        style="color: #00008b; font-weight: 700;"
+                                    >
+                                        <field name="equipment_id" />
+                                    </div>
                                 </div>
                                 <div>
                                     <field
@@ -302,6 +314,9 @@
                                 </div>
                                 <div>
                                     <field name="location_id" />
+                                    <t t-if="record.track.raw_value">
+                                        (<field name="track" />)
+                                    </t>
                                 </div>
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
@@ -349,6 +364,8 @@
                     string="FSM Order Name"
                 />
                 <field name="location_id" />
+                <field name="track" />
+                <field name="equipment_id" />
                 <field name="branch_id" />
                 <field name="district_id" />
                 <field name="region_id" />
@@ -455,10 +472,13 @@
                 date_start="scheduled_date_start"
                 date_delay="scheduled_duration"
                 color="stage_id"
+                create_name_field="calendar_name"
             >
+                <field name="calendar_name" invisible="1" />
                 <field name="name" />
                 <field name="stage_id" filters="1" />
                 <field name="location_id" />
+                <field name="track" />
                 <field name="phone" />
                 <field
                     name="person_id"

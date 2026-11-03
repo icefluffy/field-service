@@ -28,7 +28,8 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice.fsm_order_list_view" />
         <field name="arch" type="xml">
-            <field name="name" position="after">
+            <!-- after the equipment, which follows the order number -->
+            <field name="equipment_id" position="after">
                 <field name="customer_id" />
             </field>
         </field>

@@ -1229,6 +1229,7 @@ msgstr "Saisissez la résolution de l’intervention..."
 #: model:ir.model.fields.selection,name:fieldservice.selection__fsm_stage__stage_type__equipment
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__equipment_id
 msgid "Equipment"
 msgstr "Équipement"
 
@@ -4203,3 +4204,33 @@ msgstr "Modèle"
 
 #~ msgid "templates"
 #~ msgstr "Modèles"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__track
+msgid "Track"
+msgstr "Voie"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__track
+msgid "Track at the service location, e.g. the rail track where the wagon stands. Printed between brackets after the location."
+msgstr "Voie sur le lieu d'intervention, p. ex. la voie où se trouve le wagon. Imprimée entre parenthèses après le lieu."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__location_track_display
+msgid "Location (Track)"
+msgstr "Lieu (voie)"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__location_track_display
+msgid "Location name followed by the track between brackets."
+msgstr "Nom du lieu suivi de la voie entre parenthèses."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__calendar_name
+msgid "Calendar Title"
+msgstr "Titre du calendrier"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__calendar_name
+msgid "Order number followed by the equipment between brackets."
+msgstr "Numéro d'ordre suivi de l'équipement entre parenthèses."

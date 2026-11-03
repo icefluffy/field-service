@@ -324,13 +324,13 @@ msgstr "Elk inspectietype kan slechts één keer per dossier voorkomen."
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
 msgid "Equipment"
-msgstr "Materiaal"
+msgstr "Voorwerpnummer"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__equipment_id
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__equipment_id
 msgid "Equipment / Serial"
-msgstr "Materiaal / serienummer"
+msgstr "Voorwerpnummer / serienummer"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__order_id

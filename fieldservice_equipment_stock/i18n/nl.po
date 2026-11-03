@@ -45,7 +45,7 @@ msgstr "Huidige voorraadlocatie"
 #. module: fieldservice_equipment_stock
 #: model:ir.model.fields,field_description:fieldservice_equipment_stock.field_stock_lot__fsm_equipment_id
 msgid "Equipment"
-msgstr "Apparatuur"
+msgstr "Voorwerpnummer"
 
 #. module: fieldservice_equipment_stock
 #: model:ir.model,name:fieldservice_equipment_stock.model_fsm_equipment

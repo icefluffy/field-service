@@ -121,7 +121,7 @@
                     <table>
                         <tr>
                             <td style="width:20%;" class="lbl">Name:</td>
-                            <td style="width:40%;" t-esc="location.name or ''"/>
+                            <td style="width:40%;" t-esc="order.location_track_display or ''"/>
                             <td style="width:40%;" t-esc="invoice_partner.commercial_partner_id.name or invoice_partner.name or ''"/>
                         </tr>
                         <tr>

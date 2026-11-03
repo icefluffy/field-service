@@ -1678,3 +1678,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
 msgid "rsnoperations@rsn.be"
 msgstr ""
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__track
+msgid "Track"
+msgstr ""
+
+#. module: fieldservice_release
+#: model:ir.model.fields,help:fieldservice_release.field_fsm_release__track
+msgid "Track at the service location, e.g. the rail track where the wagon stands. Printed between brackets after the location."
+msgstr ""

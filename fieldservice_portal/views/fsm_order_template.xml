@@ -54,7 +54,7 @@
                                     </td>
                                     <td>
                                         <t
-                                            t-out="fsm_order.sudo().location_id.display_name"
+                                            t-out="fsm_order.sudo()._get_location_with_track(fsm_order.sudo().location_id.display_name)"
                                         />
                                     </td>
                                     <td>

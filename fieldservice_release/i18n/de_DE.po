@@ -1646,3 +1646,13 @@ msgstr "S/N"
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__lot_names
 msgid "Serial Numbers"
 msgstr "Seriennummern"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__track
+msgid "Track"
+msgstr "Gleis"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,help:fieldservice_release.field_fsm_release__track
+msgid "Track at the service location, e.g. the rail track where the wagon stands. Printed between brackets after the location."
+msgstr "Gleis am Einsatzort, z. B. das Gleis, auf dem der Wagen steht. Wird in Klammern hinter dem Standort gedruckt."

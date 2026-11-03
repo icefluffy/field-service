@@ -149,6 +149,21 @@ class FSMOrder(models.Model):
         index=True,
         required=True,
     )
+    track = fields.Char(
+        tracking=True,
+        help="Track at the service location, e.g. the rail track where the "
+        "wagon stands. Printed between brackets after the location.",
+    )
+    location_track_display = fields.Char(
+        string="Location (Track)",
+        compute="_compute_location_track_display",
+        help="Location name followed by the track between brackets.",
+    )
+    calendar_name = fields.Char(
+        string="Calendar Title",
+        compute="_compute_calendar_name",
+        help="Order number followed by the equipment between brackets.",
+    )
     location_directions = fields.Text(
         compute="_compute_location_directions",
         precompute=True,
@@ -343,6 +358,31 @@ class FSMOrder(models.Model):
             ] + search_domain
         return stages.search(search_domain, order="sequence, id")
 
+    @api.depends("location_id.name", "track")
+    def _compute_location_track_display(self):
+        for order in self:
+            order.location_track_display = order._get_location_with_track()
+
+    def _get_location_with_track(self, location_name=None):
+        """Return ``Location (Track)``; only the location when no track is set.
+
+        ``location_name`` overrides the location text (e.g. its display name).
+        """
+        self.ensure_one()
+        name = (self.location_id.name or "") if location_name is None else location_name
+        track = (self.track or "").strip()
+        if track:
+            return f"{name} ({track})" if name else f"({track})"
+        return name
+
+    @api.depends("name", "equipment_id.name", "equipment_ids.name")
+    def _compute_calendar_name(self):
+        for order in self:
+            equipment = order.equipment_id or order.equipment_ids[:1]
+            order.calendar_name = (
+                f"{order.name} ({equipment.name})" if equipment.name else order.name
+            )
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
@@ -353,7 +393,12 @@ class FSMOrder(models.Model):
             self._calc_scheduled_dates(vals)
             if not vals.get("request_late"):
                 vals = self._calc_request_late(vals)
-        return super().create(vals_list)
+        orders = super().create(vals_list)
+        # Keep the main equipment (shown on kanban, list and calendar) in sync
+        # with the Equipments tab when only the latter was given.
+        for order in orders.filtered(lambda o: not o.equipment_id and o.equipment_ids):
+            order.equipment_id = order.equipment_ids[:1]
+        return orders
 
     def write(self, vals):
         if (
