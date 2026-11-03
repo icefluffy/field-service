@@ -5,7 +5,7 @@
     "name": "Field Service - Release to service",
     "summary": """Track analytic accounts on Field Service locations
                   and orders""",
-    "version": "18.0.1.1.16",
+    "version": "18.0.1.1.17",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "license": "AGPL-3",

@@ -117,7 +117,8 @@
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//form/sheet/group/group/field[@name='location_id']" position="after">
+            <!-- under Track, which sits directly under Location -->
+            <xpath expr="//form/sheet/group/group/field[@name='track']" position="after">
                 <field name="equipment_id" string="Equipment" options="{'no_create': False, 'no_create_edit': False, 'no_quick_create': True}" groups="fieldservice.group_fsm_equipment"/>
             </xpath>
 
