@@ -32,8 +32,12 @@ class FSMOrder(models.Model):
             action_id = order.stage_id.action_id
             if not action_id:
                 continue
+            # Always pass active_ids too: Odoo gives active_ids precedence over
+            # active_id, and a leftover active_ids from the calling screen
+            # (e.g. a dossier or team) would otherwise be read as order ids.
             ctx = {
                 "active_model": self._name,
                 "active_id": order.id,
+                "active_ids": [order.id],
             }
             action_id.with_context(**ctx).run()
