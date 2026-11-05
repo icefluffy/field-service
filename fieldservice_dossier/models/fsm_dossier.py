@@ -46,6 +46,13 @@ class FsmDossier(models.Model):
         "res.company", required=True, index=True,
         default=lambda self: self.env.company,
     )
+    team_id = fields.Many2one(
+        "fsm.team", string="Team", index=True, tracking=True,
+        default=lambda self: self._default_team_id(),
+        domain="[('company_id', '=', company_id)]",
+        help="FSM team of this dossier; copied to new FSM orders. Defaults to "
+        "the team of the user who creates the dossier.",
+    )
     user_id = fields.Many2one(
         "res.users", string="Coordinator", default=lambda self: self.env.user,
         tracking=True,
@@ -90,6 +97,23 @@ class FsmDossier(models.Model):
     approved_by = fields.Many2one("res.users", copy=False, readonly=True)
     approved_date = fields.Datetime(copy=False, readonly=True)
     approval_note = fields.Text(string="Approval remarks", copy=False)
+
+    @api.model
+    def _default_team_id(self):
+        """FSM team of the current user, via his worker's team membership.
+
+        The user is matched to a worker (fsm.person) through his contact.
+        If he belongs to several teams of the current company, the first
+        team (by sequence) is used. No team is set when he belongs to none.
+        """
+        workers = self.env["fsm.person"].sudo().search([
+            ("partner_id", "=", self.env.user.partner_id.id),
+            ("active", "=", True),
+        ])
+        teams = workers.mapped("membership_team_ids").filtered(
+            lambda t: t.active and t.company_id == self.env.company
+        )
+        return teams.sorted(lambda t: (t.sequence, t.id))[:1].id
 
     # ------------------------------------------------------------------
     # computes
@@ -157,6 +181,8 @@ class FsmDossier(models.Model):
             "default_customer_reference": self.customer_reference,
             "default_company_id": self.company_id.id,
         }
+        # team_id is not passed: fsm.order._compute_team_id takes the team
+        # from the dossier (an empty default would block the standard team).
 
     # ------------------------------------------------------------------
     # ORM

@@ -17,6 +17,19 @@ class FSMOrder(models.Model):
         "fsm.dossier.inspection", "order_id", string="Dossier Inspections",
     )
 
+    @api.depends("dossier_id")
+    def _compute_team_id(self):
+        """Orders of a dossier take the dossier's team.
+
+        Without a dossier, or when the dossier has no team, the standard
+        team applies (location team, else the first team).
+        """
+        res = super()._compute_team_id()
+        for order in self:
+            if order.dossier_id.team_id:
+                order.team_id = order.dossier_id.team_id
+        return res
+
     # ------------------------------------------------------------------
     # equipment consistency (both equipment_id and equipment_ids)
     # ------------------------------------------------------------------

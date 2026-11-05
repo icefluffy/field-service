@@ -56,6 +56,7 @@
                             <field name="comments"/>
                         </group>
                         <group>
+                            <field name="team_id"/>
                             <field name="user_id"/>
                             <field name="customer_reference"/>
                             <field name="date_arrival"/>
@@ -187,6 +188,7 @@
                     <filter name="g_state" string="Stage" context="{'group_by': 'state'}"/>
                     <filter name="g_equipment" string="Equipment" context="{'group_by': 'equipment_id'}"/>
                     <filter name="g_customer" string="Contact/Client" context="{'group_by': 'customer_id'}"/>
+                    <filter name="g_team" string="Team" context="{'group_by': 'team_id'}"/>
                 </group>
             </search>
         </field>
