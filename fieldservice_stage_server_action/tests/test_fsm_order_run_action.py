@@ -38,3 +38,20 @@ class TestFSMOrderRunAction(TransactionCase):
         tag = capture.records
         self.assertEqual(1, len(tag))
         self.assertEqual("New test tag", tag.name)
+
+    def test_fsm_order_same_stage_does_not_rerun_action(self):
+        order = self.Order.create(
+            {
+                "location_id": self.test_location.id,
+                "stage_id": self.stage1.id,
+            }
+        )
+        with RecordCapturer(self.Tag, []) as capture:
+            order.write({"stage_id": self.stage2.id})
+        self.assertEqual(1, len(capture.records))
+        # Saving the same stage again, or editing other fields, must not
+        # run the stage action again.
+        with RecordCapturer(self.Tag, []) as capture:
+            order.write({"stage_id": self.stage2.id})
+            order.write({"resolution": "Edited after completion"})
+        self.assertFalse(capture.records)
