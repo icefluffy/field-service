@@ -23,6 +23,10 @@ HIDDEN_HEADER_FIELDS = (
 )
 
 
+# Buttons not shown on phones/tablets.
+HIDDEN_BUTTONS = ("action_preview_workorder", "action_print_workorder")
+
+
 def _outside_notebook_and_subviews(node):
     return not node.xpath("ancestor::notebook or ancestor::field")
 
@@ -37,6 +41,9 @@ def _adapt_header(root):
         if field.get("name") in HIDDEN_HEADER_FIELDS:
             field.set("invisible", "True")
             field.attrib.pop("required", None)
+    for button in root.xpath(".//button"):
+        if button.get("name") in HIDDEN_BUTTONS and not button.xpath("ancestor::field"):
+            button.set("invisible", "True")
     # Put the Navigate button directly under Track.
     tracks = [
         f for f in sheet_fields
