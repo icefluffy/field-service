@@ -31,8 +31,8 @@
    <notebook><page string="Wagon data"><group readonly="state not in ('draft','progress')">
 <field name="load_a" readonly="state not in ('draft','progress')"/><field name="load_b" readonly="state not in ('draft','progress')"/><field name="load_c" readonly="state not in ('draft','progress')"/><field name="load_d" readonly="state not in ('draft','progress')"/><field name="load_e" readonly="state not in ('draft','progress')"/><field name="load_notes" readonly="state not in ('draft','progress')"/><field name="extra" readonly="state not in ('draft','progress')"/><field name="reason" readonly="state not in ('draft','progress')"/><field name="maintenance_inscriptions" readonly="state not in ('draft','progress')"/><field name="revision_plates" readonly="state not in ('draft','progress')"/><field name="brake_block_type" readonly="state not in ('draft','progress')"/></group></page><page string="Findings">
  <field name="line_ids" readonly="state not in ('draft','progress')"><list editable="bottom" delete="0" decoration-danger="check_state == 'defect'" decoration-muted="check_state == 'na'">
- <field name="sequence" optional="hide"/><field name="section"/><field name="component"/><field name="code"/>
- <field name="check_state"/><field name="defect"/><field name="quantity"/><field name="note"/>
+ <field name="sequence" optional="hide"/><field name="section" widget="intake_selection"/><field name="component"/><field name="code"/>
+ <field name="check_state" widget="intake_selection"/><field name="defect"/><field name="quantity"/><field name="note"/>
  </list></field></page>
  <page string="Result"><group><field name="remarks" readonly="state not in ('draft','progress')"/><field name="outcome_note" readonly="state not in ('draft','progress')"/><field name="recorded_by"/><field name="recorded_at"/></group></page>
  </notebook></sheet><chatter/></form></field></record>

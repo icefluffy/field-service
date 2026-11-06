@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="fieldservice_dossier_wagon_intake.IntakeSelectionField">
+        <t t-if="props.readonly">
+            <span t-esc="string" t-att-raw-value="value"/>
+        </t>
+        <t t-else="">
+            <SelectMenu
+                class="'o_intake_selection border-0 w-100'"
+                togglerClass="'o_input border-0 bg-transparent px-0 py-0 shadow-none text-start'"
+                choices="choices"
+                value="value"
+                required="props.required"
+                searchable="false"
+                autoSort="false"
+                placeholder="props.placeholder"
+                onSelect.bind="onSelect"
+            />
+        </t>
+    </t>
+</templates>
