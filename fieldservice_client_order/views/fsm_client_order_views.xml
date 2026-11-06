@@ -120,6 +120,9 @@
                 <field name="dossier_ids" string="Wagon / Dossier"
                        filter_domain="['|', ('dossier_ids.name', 'ilike', self), ('dossier_ids.equipment_id', 'ilike', self)]"/>
                 <field name="user_id"/>
+                <filter name="not_closed" string="Open &amp; In progress"
+                        domain="[('state', 'in', ('open', 'in_progress'))]"/>
+                <separator/>
                 <filter name="open" string="Open" domain="[('state', '=', 'open')]"/>
                 <filter name="in_progress" string="In progress" domain="[('state', '=', 'in_progress')]"/>
                 <filter name="closed" string="Closed" domain="[('state', '=', 'closed')]"/>
@@ -136,7 +139,7 @@
         <field name="name">Client Orders</field>
         <field name="res_model">fsm.client.order</field>
         <field name="view_mode">list,form</field>
-        <field name="context">{'search_default_open': 1}</field>
+        <field name="context">{'search_default_not_closed': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Create a client order</p>
             <p>One client order per client request (order, e-mail). Add its wagons:

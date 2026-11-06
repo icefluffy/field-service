@@ -555,6 +555,11 @@ msgid "Open"
 msgstr "Ouvert"
 
 #. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Open & In progress"
+msgstr "Ouvertes & en cours"
+
+#. module: fieldservice_client_order
 #: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__order_id
 msgid "Order"
 msgstr "Ordre"
