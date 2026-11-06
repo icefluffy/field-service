@@ -38,7 +38,8 @@ for a new free-text activity without a product.
 Start (green) stores server UTC now in date_start and moves the order to the
 team's 'Stage on Start' (Mobile Order Setup), or else to the order stage named
 'In execution'. Without such a stage, Start shows an error and saves nothing. Stop (red) is shown after
-the Activities section once started; it stores date_end and then completes the
+the Activities section once started; it stores date_end and then moves the order to the
+team's 'Stage on Stop'; when that is empty or Completed it completes the
 order through the normal action_complete, so all installed completion checks
 (required activities, timesheets, etc.) and follow-up logic (inspection lines,
 stage server action / completion e-mail) run. If a check fails, the error is
@@ -47,7 +48,8 @@ These are request-processing timestamps, not client-clock timestamps. An online
 connection is required. Stop requires Start; existing timestamps are not
 overwritten on repeated calls. Corrections remain in the normal full view.
 
-Above the sections, Customer Reference, Template, Team and Vehicle are hidden
+Above the sections, Customer Reference, Template, Team, Vehicle, Dossier, Tags
+and Damage Codes are hidden
 (still loaded, not removed) and the Navigate button sits directly under Track.
 
 The device signal is browser user-agent based, including iPad desktop user-agent

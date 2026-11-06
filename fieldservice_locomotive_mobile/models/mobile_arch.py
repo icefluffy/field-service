@@ -12,7 +12,15 @@ SECTIONS = (
 )
 
 # Fields of the order header area that are not shown on phones/tablets.
-HIDDEN_HEADER_FIELDS = ("customer_reference", "template_id", "team_id", "vehicle_id")
+HIDDEN_HEADER_FIELDS = (
+    "customer_reference",
+    "template_id",
+    "team_id",
+    "vehicle_id",
+    "dossier_id",
+    "tag_ids",
+    "fsm_code_ids",  # damage codes
+)
 
 
 def _outside_notebook_and_subviews(node):

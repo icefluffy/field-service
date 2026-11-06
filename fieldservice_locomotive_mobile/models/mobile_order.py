@@ -23,6 +23,14 @@ class FsmTeam(models.Model):
         "phone/tablet. Empty: the order stage named 'In execution' is used.",
         groups="base.group_system",
     )
+    mobile_stop_stage_id = fields.Many2one(
+        "fsm.stage",
+        string="Stage on Stop",
+        domain="[('stage_type', '=', 'order')]",
+        help="Stage an order of this team moves to when Stop is pressed on a "
+        "phone/tablet. Empty or Completed: the order is completed normally.",
+        groups="base.group_system",
+    )
 
 
 START_STAGE_NAMES = ("In execution", "In uitvoering")
@@ -107,10 +115,15 @@ class FsmOrder(models.Model):
             if not self.date_end:
                 self.write({"date_end": fields.Datetime.now()})
             if not self.is_closed:
-                # Normal completion: all installed checks and follow-up
-                # logic (activities, inspection lines, stage action) run.
-                # If a check fails, the stop time is rolled back as well.
-                self.action_complete()
+                stage = self.team_id.sudo().mobile_stop_stage_id
+                completed = self.env.ref("fieldservice.fsm_stage_completed")
+                if not stage or stage == completed:
+                    # Normal completion: all installed checks and follow-up
+                    # logic (activities, inspection lines, stage action) run.
+                    # If a check fails, the stop time is rolled back as well.
+                    self.action_complete()
+                elif stage != self.stage_id:
+                    self.write({"stage_id": stage.id})
         elif not self.date_start:
             if self.date_end:
                 raise UserError(_("Review the existing Actual End before recording a start."))
