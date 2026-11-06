@@ -3,7 +3,7 @@
 {
     "name": "Field Service - Client Order Quotations",
     "summary": "Quotations per client order (all its dossiers) or per dossier",
-    "version": "18.0.1.1.0",
+    "version": "18.0.1.2.0",
     "category": "Field Service",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",

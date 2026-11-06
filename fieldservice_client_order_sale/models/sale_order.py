@@ -108,9 +108,10 @@ def dossier_title(dossier):
 
 def quotation_vals(env, partner, reference, origin, dossiers, company, location=None):
     lines = []
-    for dossier in dossiers:
+    for index, dossier in enumerate(dossiers, start=1):
         lines.append((0, 0, {"display_type": "line_section",
-                             "name": dossier_title(dossier)}))
+                             "name": dossier_title(dossier),
+                             "sequence": index * 10}))
     if not location and len(dossiers.location_id) == 1:
         location = dossiers.location_id
     vals = {
