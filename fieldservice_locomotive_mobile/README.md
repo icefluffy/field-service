@@ -49,8 +49,8 @@ connection is required. Stop requires Start; existing timestamps are not
 overwritten on repeated calls. Corrections remain in the normal full view.
 
 Above the sections, Customer Reference, Template, Team, Vehicle, Dossier, Tags
-and Damage Codes are hidden, as are the Print Preview Workorder and Print
-Work Order buttons,
+and Damage Codes are hidden, as are the Print Preview Workorder, Print
+Work Order, Preview Release and Print Release buttons,
 (still loaded, not removed) and the Navigate button sits directly under Track.
 
 The device signal is browser user-agent based, including iPad desktop user-agent

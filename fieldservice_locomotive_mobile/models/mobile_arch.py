@@ -24,7 +24,12 @@ HIDDEN_HEADER_FIELDS = (
 
 
 # Buttons not shown on phones/tablets.
-HIDDEN_BUTTONS = ("action_preview_workorder", "action_print_workorder")
+HIDDEN_BUTTONS = (
+    "action_preview_workorder",
+    "action_print_workorder",
+    "action_preview_wagon_release",
+    "action_print_wagon_release",
+)
 
 
 def _outside_notebook_and_subviews(node):
