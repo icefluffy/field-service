@@ -1,0 +1,169 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-06 15:33+0000\n"
+"PO-Revision-Date: 2026-11-06 15:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/sale_order.py:0
+msgid ""
+"%(orders)s belong to a client order or dossier. Their work is invoiced from "
+"the client order or dossier (Create invoice), based on the completed FSM "
+"orders, so it is not invoiced twice."
+msgstr ""
+"%(orders)s gehören zu einem Kundenauftrag oder Dossier. Die Arbeit wird aus "
+"dem Kundenauftrag oder Dossier (Rechnung erstellen) auf Basis der "
+"abgeschlossenen Aufträge abgerechnet, damit sie nicht doppelt abgerechnet "
+"wird."
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_fsm_client_order__amount_quoted
+msgid "Accepted Quotations (excl. VAT)"
+msgstr "Angenommene Angebote (netto)"
+
+#. module: fieldservice_client_order_sale
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.view_order_form_fsm_client_order
+msgid "Back to quotation"
+msgstr "Zurück zum Angebot"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model,name:fieldservice_client_order_sale.model_fsm_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_sale_order__fsm_client_order_id
+msgid "Client Order"
+msgstr "Kundenauftrag"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_sale_order__fsm_dossier_id
+msgid "Dossier"
+msgstr "Dossier"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_fsm_dossier__sale_order_ids
+msgid "Dossier Quotations"
+msgstr "Angebote des Dossiers"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model,name:fieldservice_client_order_sale.model_fsm_dossier
+msgid "Field Service Dossier (one equipment visit)"
+msgstr "Field-Service-Dossier (ein Ausrüstungsbesuch)"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_sale_order_line__fsm_options_section
+msgid "Fsm Options Section"
+msgstr "Abschnitt optionale Produkte"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,help:fieldservice_client_order_sale.field_sale_order_line__fsm_options_section
+msgid "Heading under which optional products added by the client are placed."
+msgstr ""
+"Überschrift, unter der vom Kunden hinzugefügte optionale Produkte stehen."
+
+#. module: fieldservice_client_order_sale
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.fsm_client_order_form_sale
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.fsm_dossier_form_sale
+msgid "New quotation"
+msgstr "Neues Angebot"
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/sale_order_option.py:0
+msgid "Optional products"
+msgstr "Optionale Produkte"
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/fsm_client_order.py:0
+#: code:addons/fieldservice_client_order_sale/models/fsm_dossier.py:0
+msgid "Quotation %s created."
+msgstr "Angebot %s erstellt."
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/sale_order.py:0
+msgid "Quotation %s has invoices; it cannot go back to quotation."
+msgstr ""
+"Angebot %s hat Rechnungen; es kann nicht zum Angebot zurückgesetzt werden."
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_fsm_client_order__quotation_count
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_fsm_dossier__quotation_count
+msgid "Quotation Count"
+msgstr "Anzahl Angebote"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_fsm_client_order__sale_order_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.fsm_client_order_form_sale
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.fsm_dossier_form_sale
+msgid "Quotations"
+msgstr "Angebote"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model,name:fieldservice_client_order_sale.model_sale_order_option
+msgid "Sale Options"
+msgstr "Verkaufsoptionen"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model,name:fieldservice_client_order_sale.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Vorauszahlungsrechnung"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model,name:fieldservice_client_order_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Verkaufsauftrag"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model,name:fieldservice_client_order_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Verkaufsauftragszeile"
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/sale_order.py:0
+msgid "Set back to quotation to make changes."
+msgstr "Zum Ändern auf Angebot zurückgesetzt."
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/fsm_dossier.py:0
+msgid "Set the Contact/Client of the dossier first."
+msgstr "Legen Sie zuerst den Kontakt/Kunden des Dossiers fest."
+
+#. module: fieldservice_client_order_sale
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.view_order_form_fsm_client_order
+msgid "Set this order back to quotation to change it?"
+msgstr "Diesen Auftrag zum Ändern auf Angebot zurücksetzen?"
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,help:fieldservice_client_order_sale.field_sale_order__fsm_dossier_id
+msgid "Set when the quotation is for this one dossier only."
+msgstr "Gesetzt, wenn das Angebot nur für dieses eine Dossier gilt."
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/fsm_client_order.py:0
+msgid "This client order is cancelled."
+msgstr "Dieser Kundenauftrag ist storniert."
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/fsm_dossier.py:0
+msgid "This dossier is cancelled."
+msgstr "Dieses Dossier ist storniert."
+
+#. module: fieldservice_client_order_sale
+#: model:ir.model.fields,help:fieldservice_client_order_sale.field_fsm_client_order__amount_quoted
+msgid ""
+"Total of the confirmed quotations of this client order and its dossiers."
+msgstr ""
+"Summe der bestätigten Angebote dieses Kundenauftrags und seiner Dossiers."

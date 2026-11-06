@@ -1,0 +1,82 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-06 17:52+0000\n"
+"PO-Revision-Date: 2026-11-06 17:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fieldservice_worker_teams
+#. odoo-python
+#: code:addons/fieldservice_worker_teams/models/membership.py:0
+msgid ""
+"A company-specific worker can only join teams of that company. Use a shared "
+"worker contact (Company empty) if membership across companies is required."
+msgstr ""
+"Un technicien propre à une société ne peut rejoindre que les équipes de "
+"cette société. Utilisez un technicien partagé (Société vide) si "
+"l'appartenance à plusieurs sociétés est nécessaire."
+
+#. module: fieldservice_worker_teams
+#. odoo-python
+#: code:addons/fieldservice_worker_teams/models/membership.py:0
+msgid ""
+"A team can contain shared workers or workers belonging to the same company "
+"as the team."
+msgstr ""
+"Une équipe peut contenir des techniciens partagés ou des techniciens de la "
+"même société que l'équipe."
+
+#. module: fieldservice_worker_teams
+#: model:ir.model,name:fieldservice_worker_teams.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: fieldservice_worker_teams
+#: model:ir.model,name:fieldservice_worker_teams.model_fsm_team
+msgid "Field Service Team"
+msgstr "Équipe d'intervention"
+
+#. module: fieldservice_worker_teams
+#: model:ir.model,name:fieldservice_worker_teams.model_fsm_person
+msgid "Field Service Worker"
+msgstr "Technicien d'intervention"
+
+#. module: fieldservice_worker_teams
+#: model_terms:ir.ui.view,arch_db:fieldservice_worker_teams.fsm_person_search_membership
+msgid "Team"
+msgstr "Équipe"
+
+#. module: fieldservice_worker_teams
+#: model_terms:ir.ui.view,arch_db:fieldservice_worker_teams.fsm_team_form_membership
+msgid "Team members"
+msgstr "Membres de l'équipe"
+
+#. module: fieldservice_worker_teams
+#: model:ir.model.fields,help:fieldservice_worker_teams.field_fsm_person__membership_team_ids
+msgid "Team membership only; does not assign this worker to orders."
+msgstr ""
+"Appartenance à l'équipe uniquement ; n'assigne pas ce technicien aux ordres."
+
+#. module: fieldservice_worker_teams
+#: model:ir.model.fields,field_description:fieldservice_worker_teams.field_fsm_person__membership_team_ids
+msgid "Teams"
+msgstr "Équipes"
+
+#. module: fieldservice_worker_teams
+#: model:ir.model.fields,field_description:fieldservice_worker_teams.field_fsm_team__membership_worker_ids
+msgid "Workers"
+msgstr "Techniciens"
+
+#. module: fieldservice_worker_teams
+#: model:ir.model.fields,help:fieldservice_worker_teams.field_fsm_team__membership_worker_ids
+msgid "Workers belonging to this team; does not assign order workers."
+msgstr ""
+"Techniciens de cette équipe ; n'assigne pas de techniciens aux ordres."

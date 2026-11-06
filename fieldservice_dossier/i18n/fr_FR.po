@@ -1,0 +1,1155 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 19:07+0000\n"
+"PO-Revision-Date: 2026-10-28 19:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: French (France)\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid ""
+"%(equipment)s already has an open dossier: %(dossier)s (%(state)s). Close or"
+" cancel it before creating a new dossier for this equipment."
+msgstr ""
+"%(equipment)s a déjà un dossier ouvert : %(dossier)s (%(state)s). Clôturez-"
+"le ou annulez-le avant de créer un nouveau dossier pour cet équipement."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/wizard/fsm_dossier_invoice_wizard.py:0
+msgid "%(order)s cannot be combined with %(first)s: different %(keys)s."
+msgstr ""
+"%(order)s ne peut pas être combiné avec %(first)s : %(keys)s différents."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/wizard/fsm_dossier_invoice_wizard.py:0
+msgid "%(order)s: %(why)s"
+msgstr "%(order)s : %(why)s"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "'%s' is set by the dossier approval action only."
+msgstr "'%s' est défini uniquement par l'action d'approbation du dossier."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_needaction
+msgid "Action Needed"
+msgstr "Action requise"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Décoration d'activité exceptionnelle"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_state
+msgid "Activity State"
+msgstr "État de l'activité"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icône du type d'activité"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__auto_add
+msgid "Add to every new dossier"
+msgstr "Ajouter à chaque nouveau dossier"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid "Already invoiced (%s)."
+msgstr "Déjà facturé (%s)."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "An inspection result changed after approval: re-approval is required."
+msgstr ""
+"Un résultat d'inspection a changé après approbation : une nouvelle "
+"approbation est requise."
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Approval"
+msgstr "Approbation"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__approval_state
+msgid "Approval State"
+msgstr "État d'approbation"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__approval_note
+msgid "Approval remarks"
+msgstr "Remarques d'approbation"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__approval_state__approved
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__approved
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "Approved"
+msgstr "Approuvé"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__approved_by
+msgid "Approved By"
+msgstr "Approuvé par"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__approved_date
+msgid "Approved Date"
+msgstr "Date d'approbation"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Approved by %s."
+msgstr "Approuvé par %s."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__date_arrival
+msgid "Arrival"
+msgstr "Arrivée"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__awaiting_approval
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "Awaiting approval"
+msgstr "En attente d'approbation"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Back to draft"
+msgstr "Revenir au brouillon"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__billing_status
+msgid "Billing Status"
+msgstr "Statut de facturation"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_invoice_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__cancelled
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__cancelled
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Close"
+msgstr "Clôturer"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__closed
+msgid "Closed"
+msgstr "Clôturé"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__code
+msgid "Code"
+msgstr "Code"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__comments
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__company_id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__done
+msgid "Completed"
+msgstr "Terminé"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__date_done
+msgid "Completed on"
+msgstr "Terminé le"
+
+#. module: fieldservice_dossier
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_config
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Contact/Client"
+msgstr "Contact/Client"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__is_approval
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__is_approval
+msgid "Controlled approval"
+msgstr "Approbation contrôlée"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__user_id
+msgid "Coordinator"
+msgstr "Coordinateur"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.actions.act_window,help:fieldservice_dossier.action_fsm_team_dossier_dashboard
+msgid "Create a Field Service team first"
+msgstr "Créez d'abord une équipe Field Service"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Create invoice"
+msgstr "Créer une facture"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_invoice_wizard_form
+msgid "Create one invoice"
+msgstr "Créer une seule facture"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__create_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__create_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__create_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__create_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__create_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__create_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__create_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__create_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_id
+msgid "Customer of this dossier; copied to new FSM orders."
+msgstr "Client de ce dossier ; repris dans les nouveaux ordres FSM."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_reference
+msgid ""
+"Customer reference of this dossier; copied to new FSM orders as their "
+"Customer Reference."
+msgstr ""
+"Référence client de ce dossier ; reprise comme Référence client dans les "
+"nouveaux ordres FSM."
+
+#. module: fieldservice_dossier
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_dashboard
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__date_performed
+msgid "Date Performed"
+msgstr "Date d'exécution"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__display_name
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__display_name
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__display_name
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__display_name
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__dossier_id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__dossier_id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__dossier_id
+msgid "Dossier"
+msgstr "Dossier"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Dossier %(name)s cannot move to this stage from '%(state)s'."
+msgstr ""
+"Le dossier %(name)s ne peut pas passer de « %(state)s » à cette étape."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Dossier %s cannot be closed yet (approval required?)."
+msgstr ""
+"Le dossier %s ne peut pas encore être clôturé (approbation requise ?)."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "Dossier %s is closed or cancelled."
+msgstr "Le dossier %s est clôturé ou annulé."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Dossier %s is not awaiting approval."
+msgstr "Le dossier %s n'est pas en attente d'approbation."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_approved_count
+msgid "Dossier Approved Count"
+msgstr "Nombre de dossiers approuvés"
+
+#. module: fieldservice_dossier
+#: model:res.groups,name:fieldservice_dossier.group_dossier_approver
+msgid "Dossier Approver"
+msgstr "Approbateur de dossier"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_awaiting_approval_count
+msgid "Dossier Awaiting Approval Count"
+msgstr "Nombre de dossiers en attente d'approbation"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_draft_count
+msgid "Dossier Draft Count"
+msgstr "Nombre de dossiers brouillon"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_in_progress_count
+msgid "Dossier In Progress Count"
+msgstr "Nombre de dossiers en cours"
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_dossier_inspection_type
+msgid "Dossier Inspection / Activity Type"
+msgstr "Inspection de dossier / type d'activité"
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_dossier_inspection
+msgid "Dossier Inspection Line"
+msgstr "Ligne d'inspection de dossier"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__inspection_ids
+msgid "Dossier Inspections"
+msgstr "Inspections de dossier"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_open_count
+msgid "Dossier Open Count"
+msgstr "Nombre de dossiers ouverts"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_planned_count
+msgid "Dossier Planned Count"
+msgstr "Nombre de dossiers planifiés"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_to_invoice_count
+msgid "Dossier To Invoice Count"
+msgstr "Nombre de dossiers à facturer"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid "Dossier set to In progress: work started on its FSM orders."
+msgstr "Dossier passé à En cours : le travail sur ses ordres a commencé."
+
+#. module: fieldservice_dossier
+#: model:ir.actions.act_window,name:fieldservice_dossier.action_fsm_dossier
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_dashboard_dossiers
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_root
+msgid "Dossiers"
+msgstr "Dossiers"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_team.py:0
+msgid "Dossiers - %s"
+msgstr "Dossiers - %s"
+
+#. module: fieldservice_dossier
+#: model:ir.actions.act_window,name:fieldservice_dossier.action_fsm_team_dossier_dashboard
+msgid "Dossiers per Team"
+msgstr "Dossiers par équipe"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__draft
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/wizard/fsm_dossier_invoice_wizard.py:0
+msgid "Draft invoice created for orders: %s."
+msgstr "Facture brouillon créée pour les ordres : %s."
+
+#. module: fieldservice_dossier
+#: model:ir.model.constraint,message:fieldservice_dossier.constraint_fsm_dossier_inspection_dossier_type_uniq
+msgid "Each inspection type can appear only once per dossier."
+msgstr ""
+"Chaque type d'inspection ne peut apparaître qu'une seule fois par dossier."
+
+#. module: fieldservice_dossier
+#: model_terms:ir.actions.act_window,help:fieldservice_dossier.action_fsm_team_dossier_dashboard
+msgid "Each team gets a card with its dossiers per status."
+msgstr "Chaque équipe a une carte avec ses dossiers par statut."
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Equipment"
+msgstr "Équipement"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__equipment_id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__equipment_id
+msgid "Equipment / Serial"
+msgstr "Équipement / numéro de série"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__order_id
+msgid "FSM Order"
+msgstr "Ordre de service sur site"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__order_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "FSM Orders"
+msgstr "Ordres de service sur site"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "FSM order %s does not belong to this dossier."
+msgstr "L'ordre de service sur site %s n'appartient pas à ce dossier."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__team_id
+msgid ""
+"FSM team of this dossier; copied to new FSM orders. Defaults to the team of "
+"the user who creates the dossier."
+msgstr ""
+"Équipe FSM de ce dossier ; reprise dans les nouveaux ordres FSM. Par défaut,"
+" l'équipe de l'utilisateur qui crée le dossier."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__failed
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+msgid "Failed"
+msgstr "Échoué"
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_dossier
+msgid "Field Service Dossier (one equipment visit)"
+msgstr "Dossier de service sur site (une visite d'équipement)"
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_order
+msgid "Field Service Order"
+msgstr "Ordre de service sur site"
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_team
+msgid "Field Service Team"
+msgstr "Équipe Field Service"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Fill in the approval remarks (Approval tab) before rejecting."
+msgstr ""
+"Renseignez les remarques d'approbation (onglet Approbation) avant de "
+"refuser."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (contacts)"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icône Font Awesome, p. ex. fa-tasks"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__billing_status__invoiced
+msgid "Fully invoiced"
+msgstr "Entièrement facturé"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__has_message
+msgid "Has Message"
+msgstr "A un message"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_exception_icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône indiquant une activité exceptionnelle."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, les nouveaux messages nécessitent votre attention."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__message_has_error
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si coché, certains messages présentent une erreur de livraison."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__validity_months
+msgid ""
+"If set, a passed result gets a 'valid until' date this many months after the"
+" date performed. 0 = no validity tracking."
+msgstr ""
+"Si défini, un résultat réussi reçoit une date de validité ce nombre de mois "
+"après la date d'exécution. 0 = pas de suivi de validité."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__in_progress
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__in_progress
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "In progress"
+msgstr "En cours"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_report_info
+msgid "Information with regards to reporting to customer (BfG e.a.)"
+msgstr "Informations concernant le reporting au client (BfG, etc.)"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_form
+msgid "Input wheelsets"
+msgstr "Saisir les essieux"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+msgid "Inspection"
+msgstr "Inspection"
+
+#. module: fieldservice_dossier
+#: model:ir.actions.act_window,name:fieldservice_dossier.action_fsm_dossier_inspection
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_inspection
+msgid "Inspection Overview"
+msgstr "Aperçu des inspections"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__inspection_progress
+msgid "Inspection Progress"
+msgstr "Avancement des inspections"
+
+#. module: fieldservice_dossier
+#: model:ir.actions.act_window,name:fieldservice_dossier.action_fsm_dossier_inspection_type
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_inspection_type
+msgid "Inspection Types"
+msgstr "Types d'inspection"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__inspection_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Inspections"
+msgstr "Inspections"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "Inspections of a closed or cancelled dossier cannot be changed."
+msgstr ""
+"Les inspections d'un dossier clôturé ou annulé ne peuvent pas être "
+"modifiées."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__invoice_count
+msgid "Invoice Count"
+msgstr "Nombre de factures"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Invoice FSM orders"
+msgstr "Facturer les ordres de service sur site"
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_dossier_invoice_wizard
+msgid "Invoice several FSM orders of a dossier"
+msgstr "Facturer plusieurs ordres de service sur site d'un dossier"
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_dossier_invoice_wizard_line
+msgid "Invoice wizard line"
+msgstr "Ligne de l'assistant de facturation"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__invoice_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_is_follower
+msgid "Is Follower"
+msgstr "Est abonné"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__is_wheelset_report
+msgid "Is wheelset report"
+msgstr "Est un rapport d'essieux"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__write_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__write_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__write_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__write_uid
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__write_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__write_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__write_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__write_date
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__required_default
+msgid "Mark the line as required when it is added automatically."
+msgstr ""
+"Marquer la ligne comme obligatoire lorsqu'elle est ajoutée automatiquement."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur de livraison du message"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Échéance de mon activité"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__name
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "New"
+msgstr "Nouveau"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "New FSM order - %s"
+msgstr "Nouvel ordre FSM - %s"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "New FSM order with the dossier data"
+msgstr "Nouvel ordre FSM avec les données du dossier"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Prochain événement d'agenda de l'activité"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Échéance de la prochaine activité"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé de la prochaine activité"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type de la prochaine activité"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "No FSM order can be linked to the approval line."
+msgstr "Aucun ordre FSM ne peut être lié à la ligne d'approbation."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid "No billable lines (contractor costs / timesheets / materials)."
+msgstr ""
+"Aucune ligne facturable (coûts sous-traitant / feuilles de temps / "
+"matériaux)."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__na
+msgid "Not applicable"
+msgstr "Non applicable"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__blocker
+msgid "Not billable because"
+msgstr "Non facturable car"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__not_started
+msgid "Not started"
+msgstr "Non démarré"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__note
+msgid "Note"
+msgstr "Note"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__billing_status__nothing
+msgid "Nothing to invoice"
+msgstr "Rien à facturer"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Only an authorised approver may do this."
+msgstr "Seul un approbateur autorisé peut effectuer cette action."
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Open"
+msgstr "Ouvert"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Open dossier exists"
+msgstr "Un dossier ouvert existe"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__order_id
+msgid "Order"
+msgstr "Ordre"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid ""
+"Order %(order)s is already invoiced (%(inv)s). Cancel that invoice first."
+msgstr ""
+"L'ordre %(order)s est déjà facturé (%(inv)s). Annulez d'abord cette facture."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid ""
+"Order %(order)s must have exactly the equipment of dossier %(dossier)s "
+"(%(equipment)s)."
+msgstr ""
+"L'ordre %(order)s doit avoir exactement l'équipement du dossier %(dossier)s "
+"(%(equipment)s)."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid "Order %s and its dossier must belong to the same company."
+msgstr "L'ordre %s et son dossier doivent appartenir à la même société."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__order_count
+msgid "Order Count"
+msgstr "Nombre d'ordres"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid "Order is not completed."
+msgstr "L'ordre n'est pas terminé."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__line_ids
+msgid "Orders"
+msgstr "Ordres"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__billing_status__partial
+msgid "Partially invoiced"
+msgstr "Partiellement facturé"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__passed
+msgid "Passed"
+msgstr "Réussi"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__remarks
+msgid "Passed with remarks"
+msgstr "Réussi avec remarques"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__approval_state__pending
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__pending
+msgid "Pending"
+msgstr "En attente"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Plan"
+msgstr "Planifier"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__planned
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__planned
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "Planned"
+msgstr "Planifié"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__date_planned
+msgid "Planned completion"
+msgstr "Achèvement prévu"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__rating_ids
+msgid "Ratings"
+msgstr "Évaluations"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Reject"
+msgstr "Refuser"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__approval_state__rejected
+msgid "Rejected"
+msgstr "Refusé"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Rejected by %(user)s: %(note)s"
+msgstr "Refusé par %(user)s : %(note)s"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Request approval"
+msgstr "Demander l'approbation"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__required
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+msgid "Required"
+msgstr "Obligatoire"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__required_default
+msgid "Required by default"
+msgstr "Obligatoire par défaut"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_user_id
+msgid "Responsible User"
+msgstr "Utilisateur responsable"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__result
+msgid "Result"
+msgstr "Résultat"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur de livraison SMS"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/wizard/fsm_dossier_invoice_wizard.py:0
+msgid "Select at least one order."
+msgstr "Sélectionnez au moins un ordre."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__selected
+msgid "Selected"
+msgstr "Sélectionné"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__sequence
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__location_id
+msgid "Service Location"
+msgstr "Lieu de service"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__stage_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Stage"
+msgstr "Étape"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "Start work"
+msgstr "Commencer le travail"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__state
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__dossier_state
+msgid "State"
+msgstr "Statut"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà passée\n"
+"Aujourd'hui : la date de l'activité est aujourd'hui\n"
+"Planifié : activités futures."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection__is_approval
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__is_approval
+msgid ""
+"Status is set only by the dossier approval action, never edited by "
+"technicians."
+msgstr ""
+"Le statut est défini uniquement par l'action d'approbation du dossier et "
+"n'est jamais modifié par les techniciens."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__team_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Team"
+msgstr "Équipe"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__person_id
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__person_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+msgid "Technician"
+msgstr "Technicien"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid ""
+"The equipment cannot be changed once FSM orders are linked to dossier %s."
+msgstr ""
+"L'équipement ne peut pas être modifié une fois que des ordres de service sur"
+" site sont liés au dossier %s."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid ""
+"These required items are not completed:\n"
+"%s"
+msgstr ""
+"Ces éléments obligatoires ne sont pas terminés :\n"
+"%s"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid ""
+"These required items have no passing result:\n"
+"%s"
+msgstr ""
+"Ces éléments obligatoires n'ont pas de résultat réussi :\n"
+"%s"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "This dossier has no equipment to enter wheelsets for."
+msgstr ""
+"Ce dossier ne comporte aucun équipement pour lequel saisir des essieux."
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "To Do"
+msgstr "À faire"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__billing_status__to_invoice
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "To invoice"
+msgstr "À facturer"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__type_id
+msgid "Type"
+msgstr "Type"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type de l'activité exceptionnelle de cet enregistrement."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__valid_until
+msgid "Valid Until"
+msgstr "Valide jusqu'au"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__validity_months
+msgid "Validity (months)"
+msgstr "Validité (mois)"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+msgid "Validity expired"
+msgstr "Validité expirée"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__website_message_ids
+msgid "Website communication history"
+msgstr "Historique des communications du site web"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "Wheelsets - %s"
+msgstr "Essieux - %s"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "Assistant"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__work_status
+msgid "Work Status"
+msgstr "Statut du travail"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
+msgid "Work status"
+msgstr "Statut du travail"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__smart_search
+msgid "Smart Search"
+msgstr "Recherche intelligente"

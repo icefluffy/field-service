@@ -1,0 +1,119 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-06 12:00+0000\n"
+"PO-Revision-Date: 2026-11-06 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model,name:fieldservice_locomotive_mobile.model_fsm_order
+msgid "Field Service Order"
+msgstr "Ordre de service sur site"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model,name:fieldservice_locomotive_mobile.model_fsm_team
+msgid "Field Service Team"
+msgstr "Équipe d'intervention"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,help:fieldservice_locomotive_mobile.field_fsm_team__mobile_scroll_orders
+msgid ""
+"Members of this team receive the scrolling order layout on phones/tablets."
+msgstr ""
+"Les membres de cette équipe reçoivent la présentation défilante des "
+"commandes sur téléphone/tablette."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.ui.menu,name:fieldservice_locomotive_mobile.mobile_team_setup_menu
+msgid "Mobile Order Setup"
+msgstr "Configuration des commandes mobiles"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.actions.act_window,name:fieldservice_locomotive_mobile.mobile_team_setup_action
+#: model_terms:ir.ui.view,arch_db:fieldservice_locomotive_mobile.mobile_team_setup_list
+msgid "Mobile Order Teams"
+msgstr "Equipes des commandes mobiles"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid ""
+"No 'In execution' stage found. Ask an administrator to set 'Stage on Start' "
+"for this team in Mobile Order Setup."
+msgstr ""
+"Aucune étape « In execution » trouvée. Demandez à un administrateur de "
+"définir « Etape au démarrage » pour cette équipe dans Configuration des "
+"commandes mobiles."
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Record Actual Start before stopping."
+msgstr "Enregistrez d'abord le démarrage réel avant d'arrêter."
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Review the existing Actual End before recording a start."
+msgstr "Vérifiez la fin réelle existante avant d'enregistrer un démarrage."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,field_description:fieldservice_locomotive_mobile.field_fsm_team__mobile_scroll_orders
+msgid "Simplified phone/tablet orders"
+msgstr "Commandes simplifiées sur téléphone/tablette"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,help:fieldservice_locomotive_mobile.field_fsm_team__mobile_start_stage_id
+msgid ""
+"Stage an order of this team moves to when Start is pressed on a "
+"phone/tablet. Empty: the order stage named 'In execution' is used."
+msgstr ""
+"Etape vers laquelle passe une commande de cette équipe lorsque l'on appuie "
+"sur Démarrer sur un téléphone/une tablette. Vide : l'étape « In execution » "
+"ou « In uitvoering » est utilisée."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,help:fieldservice_locomotive_mobile.field_fsm_team__mobile_stop_stage_id
+msgid ""
+"Stage an order of this team moves to when Stop is pressed on a phone/tablet."
+" Empty or Completed: the order is completed normally."
+msgstr ""
+"Etape vers laquelle passe une commande de cette équipe lorsque l'on appuie "
+"sur Arrêter sur un téléphone/une tablette. Vide ou Terminé : la commande est"
+" terminée normalement."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,field_description:fieldservice_locomotive_mobile.field_fsm_team__mobile_start_stage_id
+msgid "Stage on Start"
+msgstr "Etape au démarrage"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,field_description:fieldservice_locomotive_mobile.field_fsm_team__mobile_stop_stage_id
+msgid "Stage on Stop"
+msgstr "Etape à l'arrêt"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Start"
+msgstr "Démarrer"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Stop"
+msgstr "Arrêter"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "This action is for members of a configured mobile team."
+msgstr "Cette action est réservée aux membres d'une équipe mobile configurée."

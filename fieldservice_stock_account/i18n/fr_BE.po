@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_stock_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-02 13:04+0000\n"
+"PO-Revision-Date: 2026-11-02 13:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_stock_account
+#: model_terms:ir.ui.view,arch_db:fieldservice_stock_account.fsm_order_form_stock_account
+msgid "Copy Delivered Materials"
+msgstr "Reprendre les matériaux livrés"
+
+#. module: fieldservice_stock_account
+#: model:ir.model.fields,help:fieldservice_stock_account.field_fsm_order_cost__stock_move_id
+msgid "Delivered stock move this material line was copied from."
+msgstr "Mouvement de stock livré dont cette ligne de matériel a été reprise."
+
+#. module: fieldservice_stock_account
+#: model:ir.model.fields,field_description:fieldservice_stock_account.field_fsm_order_cost__stock_move_id
+msgid "Delivery"
+msgstr "Livraison"
+
+#. module: fieldservice_stock_account
+#: model:ir.model,name:fieldservice_stock_account.model_fsm_order
+msgid "Field Service Order"
+msgstr "Ordre d'intervention"
+
+#. module: fieldservice_stock_account
+#: model:ir.model,name:fieldservice_stock_account.model_fsm_order_cost
+msgid "Fsm Order Cost"
+msgstr "Coût d'intervention"
+
+#. module: fieldservice_stock_account
+#: model:ir.model,name:fieldservice_stock_account.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: fieldservice_stock_account
+#: model:ir.model.fields,field_description:fieldservice_stock_account.field_account_move_line__show_in_report
+msgid "Show in Report"
+msgstr "Afficher dans le rapport"
+
+#. module: fieldservice_stock_account
+#: model:ir.model,name:fieldservice_stock_account.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"

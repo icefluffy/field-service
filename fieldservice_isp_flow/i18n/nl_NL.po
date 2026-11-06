@@ -1,0 +1,133 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_isp_flow
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fieldservice_isp_flow
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
+msgid "Assign"
+msgstr "Toewijzen"
+
+#. module: fieldservice_isp_flow
+#: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_assigned
+msgid "Assigned"
+msgstr "Toegewezen"
+
+#. module: fieldservice_isp_flow
+#. odoo-python
+#: code:addons/fieldservice_isp_flow/models/fsm_order.py:0
+#, python-format
+msgid "Cannot move to Assigned until 'Assigned To' is filled in"
+msgstr "Kan niet naar Toegewezen zolang 'Toegewezen aan' niet is ingevuld"
+
+#. module: fieldservice_isp_flow
+#. odoo-python
+#: code:addons/fieldservice_isp_flow/models/fsm_order.py:0
+#, python-format
+msgid "Cannot move to Complete until 'Actual End' is filled in"
+msgstr "Kan niet naar Voltooid zolang 'Werkelijk einde' niet is ingevuld"
+
+#. module: fieldservice_isp_flow
+#. odoo-python
+#: code:addons/fieldservice_isp_flow/models/fsm_order.py:0
+#, python-format
+msgid "Cannot move to Complete until 'Resolution' is filled in"
+msgstr "Kan niet naar Voltooid zolang 'Oplossing' niet is ingevuld"
+
+#. module: fieldservice_isp_flow
+#. odoo-python
+#: code:addons/fieldservice_isp_flow/models/fsm_order.py:0
+#, python-format
+msgid "Cannot move to Requested until 'Request Workers' is filled in"
+msgstr ""
+"Kan niet naar Aangevraagd zolang 'Gevraagde medewerkers' niet is ingevuld"
+
+#. module: fieldservice_isp_flow
+#. odoo-python
+#: code:addons/fieldservice_isp_flow/models/fsm_order.py:0
+#, python-format
+msgid ""
+"Cannot move to Scheduled until both 'Assigned To' and 'Scheduled Start Date'"
+" are filled in"
+msgstr ""
+"Kan niet naar Ingepland zolang 'Toegewezen aan' en 'Geplande startdatum' "
+"niet beide zijn ingevuld"
+
+#. module: fieldservice_isp_flow
+#. odoo-python
+#: code:addons/fieldservice_isp_flow/models/fsm_order.py:0
+#, python-format
+msgid "Cannot move to Start until 'Actual Start' is filled in"
+msgstr "Kan niet naar Gestart zolang 'Werkelijke start' niet is ingevuld"
+
+#. module: fieldservice_isp_flow
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#. module: fieldservice_isp_flow
+#: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_confirmed
+msgid "Confirmed"
+msgstr "Bevestigd"
+
+#. module: fieldservice_isp_flow
+#: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_enroute
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
+msgid "En Route"
+msgstr "Onderweg"
+
+#. module: fieldservice_isp_flow
+#: model:ir.model,name:fieldservice_isp_flow.model_fsm_order
+msgid "Field Service Order"
+msgstr "Buitendienst werkorder"
+
+#. module: fieldservice_isp_flow
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_search_view
+msgid "Orders"
+msgstr "Opdrachten"
+
+#. module: fieldservice_isp_flow
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_search_view
+msgid "Past Due Orders"
+msgstr "Achterstallige orders"
+
+#. module: fieldservice_isp_flow
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
+msgid "Request"
+msgstr "Aanvragen"
+
+#. module: fieldservice_isp_flow
+#: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_requested
+msgid "Requested"
+msgstr "Aangevraagd"
+
+#. module: fieldservice_isp_flow
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
+msgid "Schedule"
+msgstr "Inplannen"
+
+#. module: fieldservice_isp_flow
+#: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_scheduled
+msgid "Scheduled"
+msgstr "Ingepland"
+
+#. module: fieldservice_isp_flow
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
+msgid "Start"
+msgstr "Start"
+
+#. module: fieldservice_isp_flow
+#: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_started
+msgid "Started"
+msgstr "Gestart"

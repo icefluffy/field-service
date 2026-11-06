@@ -1,0 +1,123 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/fsm_order.py:0
+msgid "- Delivery Date: %(old)s → %(new)s"
+msgstr "- Date de livraison : %(old)s → %(new)s"
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/fsm_order.py:0
+msgid "- Delivery End Date: %(old)s → %(new)s"
+msgstr "- Date de fin de livraison : %(old)s → %(new)s"
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/fsm_order.py:0
+msgid "<b>Updated Delivery Dates:</b><br/>"
+msgstr "<b>Dates de livraison mises à jour :</b><br/>"
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model.fields,field_description:fieldservice_sale_stock_route.field_sale_order__commitment_date_end
+msgid "Delivery End Date"
+msgstr "Date de fin de livraison"
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/fsm_order.py:0
+msgid "Delivery postponed. New scheduled date: %s."
+msgstr "Livraison reportée. Nouvelle date prévue : %s."
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model.fields,help:fieldservice_sale_stock_route.field_fsm_route__force_schedule
+msgid "Enable this to allow scheduling on non-route days."
+msgstr "Activez ceci pour autoriser la planification les jours sans tournée."
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/sale_order.py:0
+msgid "FSM Location must have a route set."
+msgstr "Le lieu FSM doit avoir une tournée."
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/sale_order.py:0
+msgid "FSM Route must have a person set."
+msgstr "La tournée FSM doit avoir une personne."
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/sale_order.py:0
+msgid "FSM Route must have days set."
+msgstr "La tournée FSM doit avoir des jours."
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model,name:fieldservice_sale_stock_route.model_fsm_order
+msgid "Field Service Order"
+msgstr "Ordre de service sur site"
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model,name:fieldservice_sale_stock_route.model_fsm_route
+msgid "Field Service Route"
+msgstr "Tournée d'intervention"
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model,name:fieldservice_sale_stock_route.model_fsm_route_dayroute
+msgid "Field Service Route Dayroute"
+msgstr "Tournée journalière d'intervention"
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model.fields,field_description:fieldservice_sale_stock_route.field_fsm_route__force_schedule
+msgid "Force Schedule"
+msgstr "Forcer la planification"
+
+#. module: fieldservice_sale_stock_route
+#: model_terms:ir.ui.view,arch_db:fieldservice_sale_stock_route.fsm_order_form_inherit_product_move_ids
+msgid "Postpone Delivery"
+msgstr "Reporter la livraison"
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model,name:fieldservice_sale_stock_route.model_sale_order
+msgid "Sales Order"
+msgstr "Commande client"
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model.fields,field_description:fieldservice_sale_stock_route.field_fsm_order__show_postpone_button
+msgid "Show Postpone Button"
+msgstr "Afficher le bouton Reporter"
+
+#. module: fieldservice_sale_stock_route
+#. odoo-python
+#: code:addons/fieldservice_sale_stock_route/models/sale_order.py:0
+msgid ""
+"The selected delivery date (%(day)s) is not available for route %(route)s. "
+"Please choose a valid date based on the available schedule, or enable 'Force"
+" Schedule' on the route to override this restriction."
+msgstr ""
+"La date de livraison choisie (%(day)s) n'est pas disponible pour la tournée "
+"%(route)s. Choisissez une date valide selon le planning disponible, ou "
+"activez « Forcer la planification » sur la tournée pour lever cette "
+"restriction."
+
+#. module: fieldservice_sale_stock_route
+#: model:ir.model.fields,help:fieldservice_sale_stock_route.field_sale_order__commitment_date_end
+msgid ""
+"This is the delivery deadline date promised to the customer. If set, the "
+"delivery order will be scheduled based on this date rather than product lead"
+" times."
+msgstr ""
+"Il s'agit de la date limite de livraison promise au client. Si elle est "
+"définie, la livraison sera planifiée sur cette date plutôt que sur les "
+"délais des produits."

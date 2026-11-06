@@ -1,0 +1,134 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2019-11-26 14:27+0000\n"
+"Last-Translator: Maria Sparenberg <maria.sparenberg@gmx.net>\n"
+"Language-Team: none\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.8\n"
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model.fields,help:fieldservice_vehicle_stock.field_stock_picking_type__fsm_vehicle_in
+msgid ""
+"Check this box for operation types that will be used\n"
+"        to load inventory on FSM Vehicles."
+msgstr ""
+"Aktivieren Sie dies für Vorgangsarten, die verwendet werden,\n"
+"        um Bestand in FSM-Fahrzeuge zu laden."
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model.fields,help:fieldservice_vehicle_stock.field_stock_picking_type__fsm_vehicle_out
+msgid ""
+"Check this box for operation types that will be used\n"
+"        to unload inventory from FSM Vehicles."
+msgstr ""
+"Aktivieren Sie dies für Vorgangsarten, die verwendet werden,\n"
+"        um Bestand aus FSM-Fahrzeugen zu entladen."
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model,name:fieldservice_vehicle_stock.model_fsm_order
+msgid "Field Service Order"
+msgstr "Service-Fahrzeug"
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model,name:fieldservice_vehicle_stock.model_fsm_vehicle
+msgid "Field Service Vehicle"
+msgstr "Service-Fahrzeug"
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model.fields,field_description:fieldservice_vehicle_stock.field_fsm_vehicle__inventory_location_id
+msgid "Inventory Location"
+msgstr "Lagerort"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.picking.type,name:fieldservice_vehicle_stock.picking_type_vehicle_to_location
+msgid "Location Delivery"
+msgstr "Lieferung an Standort"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.picking.type,name:fieldservice_vehicle_stock.picking_type_location_to_vehicle
+msgid "Location Pickup"
+msgstr "Abholung am Standort"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.route,name:fieldservice_vehicle_stock.route_location_return
+msgid "Location Return"
+msgstr "Rücksendung vom Standort"
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model,name:fieldservice_vehicle_stock.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Vorgangsart"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.route,name:fieldservice_vehicle_stock.route_stock_to_vehicle_to_location
+msgid "Stock to Vehicle to Location"
+msgstr "Lager zu Fahrzeug zu Standort"
+
+#. module: fieldservice_vehicle_stock
+#. odoo-python
+#: code:addons/fieldservice_vehicle_stock/models/stock_picking.py:0
+msgid ""
+"The inventory location of the FSM vehicle must be a descendant of the "
+"Vehicles location."
+msgstr ""
+"Der Lagerort des FSM-Fahrzeugs muss unterhalb des Lagerorts Fahrzeuge "
+"liegen."
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model,name:fieldservice_vehicle_stock.model_stock_picking
+msgid "Transfer"
+msgstr "Übertragung"
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model.fields,field_description:fieldservice_vehicle_stock.field_stock_picking_type__fsm_vehicle_in
+msgid "Used to load a Field Service Vehicle"
+msgstr "Zum Beladen eines Außendienstfahrzeugs"
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model.fields,field_description:fieldservice_vehicle_stock.field_stock_picking_type__fsm_vehicle_out
+msgid "Used to unload a Field Service Vehicle"
+msgstr "Zum Entladen eines Außendienstfahrzeugs"
+
+#. module: fieldservice_vehicle_stock
+#: model:ir.model.fields,field_description:fieldservice_vehicle_stock.field_stock_picking__fsm_vehicle_id
+msgid "Vehicle"
+msgstr "Fahrzeug"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.picking.type,name:fieldservice_vehicle_stock.picking_type_output_to_vehicle
+msgid "Vehicle Loading"
+msgstr "Fahrzeugbeladung"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.picking.type,name:fieldservice_vehicle_stock.picking_type_vehicle_to_input
+msgid "Vehicle Returns"
+msgstr "Fahrzeugrücksendungen"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.rule,name:fieldservice_vehicle_stock.procurement_rule_vehicle_to_location
+msgid "Vehicle → Location"
+msgstr "Fahrzeug → Standort"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.rule,name:fieldservice_vehicle_stock.stock_rule_vehicle_to_input
+msgid "Vehicle → Warehouse"
+msgstr "Fahrzeug → Lager"
+
+#. module: fieldservice_vehicle_stock
+#: model:stock.rule,name:fieldservice_vehicle_stock.procurement_rule_location_to_vehicle
+#: model:stock.rule,name:fieldservice_vehicle_stock.procurement_rule_output_to_vehicle
+msgid "Warehouse → Vehicle"
+msgstr "Lager → Fahrzeug"
+
+#. module: fieldservice_vehicle_stock
+#. odoo-python
+#: code:addons/fieldservice_vehicle_stock/models/stock_picking.py:0
+msgid "You must provide the vehicle for this picking type."
+msgstr "Sie müssen das Fahrzeug für diese Vorgangsart angeben."
