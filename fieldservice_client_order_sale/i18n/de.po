@@ -164,7 +164,7 @@ msgstr "Optionale Produkte"
 #. module: fieldservice_client_order_sale
 #: model:ir.model,name:fieldservice_client_order_sale.model_sale_order_option
 msgid "Sale Options"
-msgstr ""
+msgstr "Verkaufsoptionen"
 
 #. module: fieldservice_client_order_sale
 #: model:ir.model,name:fieldservice_client_order_sale.model_sale_order_line
