@@ -1080,3 +1080,74 @@ msgstr "Volgende activiteitsagendagebeurtenis"
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__smart_search
 msgid "Smart Search"
 msgstr "Slim zoeken"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.actions.act_window,help:fieldservice_dossier.action_fsm_team_dossier_dashboard
+msgid "Create a Field Service team first"
+msgstr "Maak eerst een Field Service-team aan"
+
+#. module: fieldservice_dossier
+#: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_dashboard
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_approved_count
+msgid "Dossier Approved Count"
+msgstr "Aantal goedgekeurde dossiers"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_awaiting_approval_count
+msgid "Dossier Awaiting Approval Count"
+msgstr "Aantal dossiers wachtend op goedkeuring"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_draft_count
+msgid "Dossier Draft Count"
+msgstr "Aantal dossiers in concept"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_in_progress_count
+msgid "Dossier In Progress Count"
+msgstr "Aantal dossiers in uitvoering"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_open_count
+msgid "Dossier Open Count"
+msgstr "Aantal open dossiers"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_planned_count
+msgid "Dossier Planned Count"
+msgstr "Aantal geplande dossiers"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_team__dossier_to_invoice_count
+msgid "Dossier To Invoice Count"
+msgstr "Aantal te factureren dossiers"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_team.py:0
+msgid "Dossiers - %s"
+msgstr "Dossiers - %s"
+
+#. module: fieldservice_dossier
+#: model:ir.actions.act_window,name:fieldservice_dossier.action_fsm_team_dossier_dashboard
+msgid "Dossiers per Team"
+msgstr "Dossiers per team"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.actions.act_window,help:fieldservice_dossier.action_fsm_team_dossier_dashboard
+msgid "Each team gets a card with its dossiers per status."
+msgstr "Elk team krijgt een kaart met zijn dossiers per status."
+
+#. module: fieldservice_dossier
+#: model:ir.model,name:fieldservice_dossier.model_fsm_team
+msgid "Field Service Team"
+msgstr "Field Service-team"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_team_dossier_dashboard_kanban
+msgid "To Do"
+msgstr "Te doen"

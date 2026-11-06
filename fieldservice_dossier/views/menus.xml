@@ -6,6 +6,11 @@
         sequence="35"
         groups="fieldservice.group_fsm_user"
         web_icon="fieldservice_dossier,static/description/icon.svg"/>
+    <menuitem id="menu_fsm_dossier_dashboard" name="Dashboard"
+              parent="menu_fsm_dossier_root" sequence="1"/>
+    <menuitem id="menu_fsm_dossier_dashboard_dossiers" name="Dossiers"
+              parent="menu_fsm_dossier_dashboard"
+              action="action_fsm_team_dossier_dashboard" sequence="10"/>
     <menuitem id="menu_fsm_dossier" name="Dossiers" parent="menu_fsm_dossier_root"
               action="action_fsm_dossier" sequence="10"/>
     <menuitem id="menu_fsm_dossier_inspection" name="Inspection Overview"

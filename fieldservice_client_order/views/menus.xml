@@ -2,5 +2,8 @@
 <odoo>
     <menuitem id="menu_fsm_client_order" name="Client Orders"
               parent="fieldservice_dossier.menu_fsm_dossier_root"
-              action="action_fsm_client_order" sequence="5"/>
+              action="action_fsm_client_order" sequence="15"/>
+    <menuitem id="menu_fsm_client_order_dashboard" name="Client Orders"
+              parent="fieldservice_dossier.menu_fsm_dossier_dashboard"
+              action="action_fsm_team_client_order_dashboard" sequence="20"/>
 </odoo>

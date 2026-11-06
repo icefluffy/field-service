@@ -760,3 +760,44 @@ msgstr "Communicatiegeschiedenis website"
 #: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__wizard_id
 msgid "Wizard"
 msgstr "Wizard"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_team__client_order_active_count
+msgid "Client Order Active Count"
+msgstr "Aantal actieve klantorders"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_team__client_order_in_progress_count
+msgid "Client Order In Progress Count"
+msgstr "Aantal klantorders in uitvoering"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_team__client_order_open_count
+msgid "Client Order Open Count"
+msgstr "Aantal open klantorders"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_team__client_order_to_invoice_count
+msgid "Client Order To Invoice Count"
+msgstr "Aantal te factureren klantorders"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_team.py:0
+msgid "Client Orders - %s"
+msgstr "Klantorders - %s"
+
+#. module: fieldservice_client_order
+#: model:ir.actions.act_window,name:fieldservice_client_order.action_fsm_team_client_order_dashboard
+msgid "Client Orders per Team"
+msgstr "Klantorders per team"
+
+#. module: fieldservice_client_order
+#: model:ir.model,name:fieldservice_client_order.model_fsm_team
+msgid "Field Service Team"
+msgstr "Field Service-team"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_team_client_order_dashboard_kanban
+msgid "To Do"
+msgstr "Te doen"

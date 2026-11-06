@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Dossier dashboard: one card per FSM team, like the FSM team dashboard -->
+    <record id="fsm_team_dossier_dashboard_kanban" model="ir.ui.view">
+        <field name="name">fsm.team.dossier.dashboard.kanban</field>
+        <field name="model">fsm.team</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors o_fsm_team_kanban"
+                    create="0" action="action_dashboard_dossiers" type="object">
+                <field name="color"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="o_kanban_card_header">
+                            <div class="o_kanban_card_header_title">
+                                <div class="o_primary"><field name="name"/></div>
+                            </div>
+                        </div>
+                        <div class="container o_kanban_card_content">
+                            <div class="row">
+                                <div class="col-5 o_kanban_primary_left">
+                                    <button class="btn btn-primary" type="object"
+                                            name="action_dashboard_dossiers"
+                                            context="{'dossier_filter': 'open'}">
+                                        <field name="dossier_open_count"/> To Do
+                                    </button>
+                                </div>
+                                <div class="col-7 o_kanban_primary_right">
+                                    <div class="row" invisible="not dossier_draft_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_dossiers"
+                                            context="{'dossier_filter': 'draft'}">Draft</a></div>
+                                        <div class="col-3"><field name="dossier_draft_count"/></div>
+                                    </div>
+                                    <div class="row" invisible="not dossier_planned_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_dossiers"
+                                            context="{'dossier_filter': 'planned'}">Planned</a></div>
+                                        <div class="col-3"><field name="dossier_planned_count"/></div>
+                                    </div>
+                                    <div class="row" invisible="not dossier_in_progress_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_dossiers"
+                                            context="{'dossier_filter': 'in_progress'}">In progress</a></div>
+                                        <div class="col-3"><field name="dossier_in_progress_count"/></div>
+                                    </div>
+                                    <div class="row" invisible="not dossier_awaiting_approval_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_dossiers"
+                                            context="{'dossier_filter': 'awaiting_approval'}">Awaiting approval</a></div>
+                                        <div class="col-3"><field name="dossier_awaiting_approval_count"/></div>
+                                    </div>
+                                    <div class="row" invisible="not dossier_approved_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_dossiers"
+                                            context="{'dossier_filter': 'approved'}">Approved</a></div>
+                                        <div class="col-3"><field name="dossier_approved_count"/></div>
+                                    </div>
+                                    <div class="row" invisible="not dossier_to_invoice_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_dossiers"
+                                            context="{'dossier_filter': 'to_invoice'}">To invoice</a></div>
+                                        <div class="col-3"><field name="dossier_to_invoice_count"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_fsm_team_dossier_dashboard" model="ir.actions.act_window">
+        <field name="name">Dossiers per Team</field>
+        <field name="res_model">fsm.team</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="fsm_team_dossier_dashboard_kanban"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a Field Service team first</p>
+            <p>Each team gets a card with its dossiers per status.</p>
+        </field>
+    </record>
+</odoo>

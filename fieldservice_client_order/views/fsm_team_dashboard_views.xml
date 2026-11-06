@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Client order dashboard: one card per FSM team -->
+    <record id="fsm_team_client_order_dashboard_kanban" model="ir.ui.view">
+        <field name="name">fsm.team.client.order.dashboard.kanban</field>
+        <field name="model">fsm.team</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors o_fsm_team_kanban"
+                    create="0" action="action_dashboard_client_orders" type="object">
+                <field name="color"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="o_kanban_card_header">
+                            <div class="o_kanban_card_header_title">
+                                <div class="o_primary"><field name="name"/></div>
+                            </div>
+                        </div>
+                        <div class="container o_kanban_card_content">
+                            <div class="row">
+                                <div class="col-5 o_kanban_primary_left">
+                                    <button class="btn btn-primary" type="object"
+                                            name="action_dashboard_client_orders"
+                                            context="{'client_order_filter': 'active'}">
+                                        <field name="client_order_active_count"/> To Do
+                                    </button>
+                                </div>
+                                <div class="col-7 o_kanban_primary_right">
+                                    <div class="row" invisible="not client_order_open_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_client_orders"
+                                            context="{'client_order_filter': 'open'}">Open</a></div>
+                                        <div class="col-3"><field name="client_order_open_count"/></div>
+                                    </div>
+                                    <div class="row" invisible="not client_order_in_progress_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_client_orders"
+                                            context="{'client_order_filter': 'in_progress'}">In progress</a></div>
+                                        <div class="col-3"><field name="client_order_in_progress_count"/></div>
+                                    </div>
+                                    <div class="row" invisible="not client_order_to_invoice_count">
+                                        <div class="col-9"><a type="object" name="action_dashboard_client_orders"
+                                            context="{'client_order_filter': 'to_invoice'}">To invoice</a></div>
+                                        <div class="col-3"><field name="client_order_to_invoice_count"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_fsm_team_client_order_dashboard" model="ir.actions.act_window">
+        <field name="name">Client Orders per Team</field>
+        <field name="res_model">fsm.team</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="fsm_team_client_order_dashboard_kanban"/>
+    </record>
+</odoo>

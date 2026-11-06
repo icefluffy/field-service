@@ -3,7 +3,7 @@
 {
     "name": "Field Service - Equipment Dossiers",
     "summary": "Service dossier per equipment visit: inspections, approval and grouped invoicing",
-    "version": "18.0.1.1.0",
+    "version": "18.0.1.2.0",
     "category": "Field Service",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",
@@ -24,6 +24,7 @@
         "views/fsm_dossier_views.xml",
         "views/fsm_order_views.xml",
         "wizard/fsm_dossier_invoice_wizard_views.xml",
+        "views/fsm_team_dashboard_views.xml",
         "views/menus.xml",
     ],
     "installable": True,
