@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_locomotive_mobile
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-06 12:00+0000\n"
+"PO-Revision-Date: 2026-11-06 12:00+0000\n"
+"Last-Translator: \n"
+"Language: nl\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,help:fieldservice_locomotive_mobile.field_fsm_team__mobile_scroll_orders
+msgid "Members of this team receive the scrolling order layout on phones/tablets."
+msgstr "Leden van dit team krijgen op telefoon/tablet de doorlopende werkorderweergave."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.ui.menu,name:fieldservice_locomotive_mobile.mobile_team_setup_menu
+msgid "Mobile Order Setup"
+msgstr "Instellingen mobiele werkorders"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.actions.act_window,name:fieldservice_locomotive_mobile.mobile_team_setup_action
+#: model_terms:ir.ui.view,arch_db:fieldservice_locomotive_mobile.mobile_team_setup_list
+msgid "Mobile Order Teams"
+msgstr "Mobiele werkorderteams"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "No 'In execution' stage found. Ask an administrator to set 'Stage on Start' for this team in Mobile Order Setup."
+msgstr "Geen status 'In uitvoering' gevonden. Vraag een beheerder om 'Status bij start' voor dit team in te stellen in Instellingen mobiele werkorders."
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Record Actual Start before stopping."
+msgstr "Registreer eerst de werkelijke start voordat je stopt."
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Review the existing Actual End before recording a start."
+msgstr "Controleer het bestaande werkelijke einde voordat je een start registreert."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,field_description:fieldservice_locomotive_mobile.field_fsm_team__mobile_scroll_orders
+msgid "Simplified phone/tablet orders"
+msgstr "Vereenvoudigde werkorders op telefoon/tablet"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,help:fieldservice_locomotive_mobile.field_fsm_team__mobile_start_stage_id
+msgid "Stage an order of this team moves to when Start is pressed on a phone/tablet. Empty: the order stage named 'In execution' is used."
+msgstr "Status waarnaar een werkorder van dit team gaat wanneer op telefoon/tablet op Start gedrukt wordt. Leeg: de status 'In execution' of 'In uitvoering' wordt gebruikt."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,help:fieldservice_locomotive_mobile.field_fsm_team__mobile_stop_stage_id
+msgid "Stage an order of this team moves to when Stop is pressed on a phone/tablet. Empty or Completed: the order is completed normally."
+msgstr "Status waarnaar een werkorder van dit team gaat wanneer op telefoon/tablet op Stop gedrukt wordt. Leeg of Voltooid: de werkorder wordt normaal voltooid."
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,field_description:fieldservice_locomotive_mobile.field_fsm_team__mobile_start_stage_id
+msgid "Stage on Start"
+msgstr "Status bij start"
+
+#. module: fieldservice_locomotive_mobile
+#: model:ir.model.fields,field_description:fieldservice_locomotive_mobile.field_fsm_team__mobile_stop_stage_id
+msgid "Stage on Stop"
+msgstr "Status bij stop"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Start"
+msgstr "Start"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "Stop"
+msgstr "Stop"
+
+#. module: fieldservice_locomotive_mobile
+#. odoo-python
+#: code:addons/fieldservice_locomotive_mobile/models/mobile_order.py:0
+msgid "This action is for members of a configured mobile team."
+msgstr "Deze actie is voorbehouden aan leden van een ingesteld mobiel team."

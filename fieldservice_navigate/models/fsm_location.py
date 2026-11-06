@@ -3,7 +3,7 @@
 
 from urllib.parse import quote
 
-from odoo import fields, models
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 
 
@@ -41,8 +41,10 @@ class FSMLocation(models.Model):
         address = ", ".join(p for p in parts if p)
         if not address:
             raise UserError(
-                "This location has no address or coordinates set, "
-                "so a route cannot be calculated."
+                _(
+                    "This location has no address or coordinates set, "
+                    "so a route cannot be calculated."
+                )
             )
         return address
 

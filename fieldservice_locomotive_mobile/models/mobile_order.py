@@ -96,7 +96,9 @@ class FsmOrder(models.Model):
             # Copy only the outer mapping. Nested Odoo metadata
             # may contain immutable frozendict objects.
             result = dict(result)
-            result["arch"] = scroll_arch(result["arch"])
+            result["arch"] = scroll_arch(
+                result["arch"], {"start": _("Start"), "stop": _("Stop")}
+            )
 
         return result
 

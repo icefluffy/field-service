@@ -61,15 +61,18 @@ def _adapt_header(root):
             anchor = button
 
 
-def _stop_button(parent):
+def _stop_button(parent, label="Stop"):
     return etree.SubElement(
         parent, "button", name="action_mobile_record_stop",
-        string="Stop", type="object", attrib={"class": "btn-danger"},
+        string=label, type="object", attrib={"class": "btn-danger"},
         invisible="not date_start or date_end",
     )
 
 
-def scroll_arch(arch):
+def scroll_arch(arch, labels=None):
+    # Labels are passed in already translated (the arch is built after
+    # Odoo's own view translation step).
+    labels = {"start": "Start", "stop": "Stop", **(labels or {})}
     root = etree.fromstring(arch.encode() if isinstance(arch, str) else arch)
     _adapt_header(root)
     notebooks = root.xpath(".//sheet//notebook[not(ancestor::field) and not(ancestor::notebook)]")
@@ -126,7 +129,7 @@ def scroll_arch(arch):
                     stop_box = etree.SubElement(
                         page, "div", attrib={"class": "o_fsm_mobile_time_buttons"}
                     )
-                    _stop_button(stop_box)
+                    _stop_button(stop_box, labels["stop"])
             elif name == "execution_page":
                 hidden = etree.Element("div", invisible="True")
                 for child in list(page):
@@ -134,10 +137,10 @@ def scroll_arch(arch):
                 page.append(hidden)
                 buttons = etree.SubElement(page, "div", attrib={"class": "o_fsm_mobile_time_buttons"})
                 etree.SubElement(buttons, "button", name="action_mobile_record_start",
-                                 string="Start", type="object", attrib={"class": "btn-success"},
+                                 string=labels["start"], type="object", attrib={"class": "btn-success"},
                                  invisible="date_start or date_end")
                 if not has_activities:
-                    _stop_button(buttons)
+                    _stop_button(buttons, labels["stop"])
             if title:
                 heading = etree.Element("h2", attrib={"class": "o_fsm_mobile_heading"})
                 heading.text = title
