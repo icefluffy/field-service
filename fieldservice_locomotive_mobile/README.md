@@ -35,7 +35,9 @@ selector is NOT automatically set. Existing configured billable activities keep
 their existing product and completion/timesheet logic. No billing is invented
 for a new free-text activity without a product.
 
-Start (green) stores server UTC now in date_start. Stop (red) is shown after
+Start (green) stores server UTC now in date_start and moves the order to the
+team's 'Stage on Start' (Mobile Order Setup), or else to the order stage named
+'In execution'. Without such a stage, Start shows an error and saves nothing. Stop (red) is shown after
 the Activities section once started; it stores date_end and then completes the
 order through the normal action_complete, so all installed completion checks
 (required activities, timesheets, etc.) and follow-up logic (inspection lines,

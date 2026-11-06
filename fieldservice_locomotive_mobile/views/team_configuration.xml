@@ -8,6 +8,7 @@
     <field name="name" readonly="1"/>
     <field name="company_id" readonly="1"/>
     <field name="mobile_scroll_orders"/>
+    <field name="mobile_start_stage_id" options="{'no_create': True}"/>
    </list>
   </field>
  </record>
