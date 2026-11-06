@@ -48,7 +48,7 @@ class FsmClientOrder(models.Model):
         dossiers = self.dossier_ids.filtered(lambda d: d.state != "cancelled").sorted("id")
         vals = quotation_vals(
             self.env, self.customer_id, self.reference, self.name, dossiers,
-            self.company_id,
+            self.company_id, location=self.location_id,
         )
         vals["fsm_client_order_id"] = self.id
         quotation = self.env["sale.order"].with_company(self.company_id).create(vals)

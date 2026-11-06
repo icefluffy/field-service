@@ -7,17 +7,17 @@
             <form>
                 <header>
                     <button name="action_add_dossiers" string="Add wagons" type="object"
-                            class="btn-primary" invisible="state != 'open'"/>
+                            class="btn-primary" invisible="state not in ('open', 'in_progress')"/>
                     <button name="action_create_invoice" string="Create invoice"
                             type="object"
                             invisible="state == 'cancelled' or billing_status in ('nothing', 'invoiced')"/>
                     <button name="action_close" string="Close" type="object"
-                            invisible="state != 'open'"/>
+                            invisible="state not in ('open', 'in_progress')"/>
                     <button name="action_cancel" string="Cancel" type="object"
-                            invisible="state != 'open'"/>
+                            invisible="state not in ('open', 'in_progress')"/>
                     <button name="action_reopen" string="Reopen" type="object"
-                            invisible="state == 'open'"/>
-                    <field name="state" widget="statusbar" statusbar_visible="open,closed"/>
+                            invisible="state in ('open', 'in_progress')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="open,in_progress,closed"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -41,7 +41,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="customer_id" readonly="dossier_count &gt; 0 and state != 'open'"/>
+                            <field name="customer_id" readonly="dossier_count &gt; 0 and state not in ('open', 'in_progress')"/>
                             <field name="contact_id"/>
                             <field name="date_received"/>
                             <field name="date_planned"/>
@@ -59,7 +59,7 @@
                     </group>
                     <notebook>
                         <page string="Dossiers" name="dossiers">
-                            <field name="dossier_ids"
+                            <field name="dossier_ids" widget="one2many_save_first"
                                    context="{'default_client_order_id': id, 'default_customer_id': customer_id, 'default_customer_reference': reference, 'default_company_id': company_id, 'default_team_id': team_id, 'default_location_id': location_id}">
                                 <list>
                                     <field name="name"/>
@@ -100,7 +100,7 @@
                 <field name="dossier_progress"/>
                 <field name="user_id" optional="show"/>
                 <field name="team_id" optional="hide"/>
-                <field name="state" widget="badge" decoration-success="state == 'closed'"
+                <field name="state" widget="badge" decoration-info="state == 'in_progress'" decoration-success="state == 'closed'"
                        decoration-muted="state == 'cancelled'"/>
                 <field name="billing_status" widget="badge"
                        decoration-success="billing_status == 'invoiced'"
@@ -121,6 +121,7 @@
                        filter_domain="['|', ('dossier_ids.name', 'ilike', self), ('dossier_ids.equipment_id', 'ilike', self)]"/>
                 <field name="user_id"/>
                 <filter name="open" string="Open" domain="[('state', '=', 'open')]"/>
+                <filter name="in_progress" string="In progress" domain="[('state', '=', 'in_progress')]"/>
                 <filter name="closed" string="Closed" domain="[('state', '=', 'closed')]"/>
                 <group expand="0" string="Group By">
                     <filter name="g_customer" string="Client" context="{'group_by': 'customer_id'}"/>

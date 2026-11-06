@@ -5,6 +5,7 @@ from odoo.exceptions import UserError, ValidationError
 
 STATES = [
     ("open", "Open"),
+    ("in_progress", "In progress"),
     ("closed", "Closed"),
     ("cancelled", "Cancelled"),
 ]
@@ -33,7 +34,8 @@ class FsmClientOrder(models.Model):
     )
     contact_id = fields.Many2one(
         "res.partner", string="Contact Person", tracking=True,
-        domain="[('id', 'child_of', customer_id)]",
+        help="Person who sent the request. Any contact can be chosen; "
+        "contacts of the client are the usual choice.",
     )
     date_received = fields.Date(
         string="Received On", default=fields.Date.context_today, tracking=True,
@@ -212,6 +214,26 @@ class FsmClientOrder(models.Model):
 
     def action_reopen(self):
         self.write({"state": "open"})
+        self._update_progress_state()
+
+    def _update_progress_state(self):
+        """Open <-> In progress, following the dossiers.
+
+        In progress as soon as one dossier is in progress or further
+        (awaiting approval, approved, closed). Closed and cancelled client
+        orders are left alone.
+        """
+        started = ("in_progress", "awaiting_approval", "approved", "closed")
+        for rec in self.filtered(lambda r: r.state in ("open", "in_progress")):
+            busy = any(d.state in started for d in rec.dossier_ids)
+            new = "in_progress" if busy else "open"
+            if rec.state != new:
+                rec.state = new
+
+    @api.onchange("contact_id")
+    def _onchange_contact_id(self):
+        if self.contact_id and not self.customer_id:
+            self.customer_id = self.contact_id.commercial_partner_id
 
     # ------------------------------------------------------------------
     # actions
@@ -265,7 +287,7 @@ class FsmClientOrder(models.Model):
 
     def action_add_dossiers(self):
         self.ensure_one()
-        if self.state != "open":
+        if self.state not in ("open", "in_progress"):
             raise UserError(_("Only open client orders can get new dossiers."))
         return {
             "type": "ir.actions.act_window",

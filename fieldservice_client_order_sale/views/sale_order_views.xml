@@ -5,6 +5,12 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <button name="action_cancel" position="before">
+                <button name="action_fsm_back_to_quotation" string="Back to quotation"
+                        type="object"
+                        invisible="state != 'sale' or not (fsm_client_order_id or fsm_dossier_id)"
+                        confirm="Set this order back to quotation to change it?"/>
+            </button>
             <group name="order_details" position="inside">
                 <field name="fsm_client_order_id" invisible="not fsm_client_order_id"/>
                 <field name="fsm_dossier_id" invisible="not fsm_dossier_id"/>

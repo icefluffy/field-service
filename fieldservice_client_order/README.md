@@ -13,6 +13,12 @@ e-mail, a phone call - under a **Client Order** with one client reference.
 - The client reference is kept in sync: changing it on the client order
   changes it on all dossiers and their (not closed) FSM orders. On a linked
   dossier the reference is read-only.
+- Status: Open -> In progress (automatically, as soon as one dossier is in
+  progress or further) -> Closed. A dossier goes to In progress automatically
+  when work on one of its FSM orders starts (actual start recorded, stage
+  'In execution', or completed).
+- "Add a line" on a new client order saves it first, so the new dossier is
+  linked right away and shows its default inspections.
 - Safeguards: one client per client order (dossiers must have the same
   client), a reference can be used only once per client.
 - **Create invoice**: one combined draft invoice for the completed FSM orders

@@ -35,6 +35,60 @@ class SaleOrder(models.Model):
                 orders=", ".join(linked.mapped("name")),
             ))
 
+    # ------------------------------------------------------------------
+    # quotation templates: template lines repeated under every dossier
+    # ------------------------------------------------------------------
+    def _fsm_quote_dossiers(self):
+        self.ensure_one()
+        if self.fsm_dossier_id:
+            return self.fsm_dossier_id
+        return self.fsm_client_order_id.dossier_ids.filtered(
+            lambda d: d.state != "cancelled"
+        ).sorted("id")
+
+    @api.onchange("sale_order_template_id")
+    def _onchange_sale_order_template_id(self):
+        res = super()._onchange_sale_order_template_id()
+        if not (self.sale_order_template_id and self._is_fsm_quotation()):
+            return res
+        dossiers = self._fsm_quote_dossiers()
+        if not dossiers:
+            return res
+        template = self.sale_order_template_id.with_context(lang=self.partner_id.lang)
+        commands = [fields.Command.clear()]
+        sequence = 0
+        for dossier in dossiers:
+            sequence += 1
+            commands.append(fields.Command.create({
+                "display_type": "line_section",
+                "name": dossier_title(dossier),
+                "sequence": sequence,
+            }))
+            for tmpl_line in template.sale_order_template_line_ids:
+                sequence += 1
+                vals = tmpl_line._prepare_order_line_values()
+                vals["sequence"] = sequence
+                commands.append(fields.Command.create(vals))
+        self.order_line = commands
+        return res
+
+    # ------------------------------------------------------------------
+    # back to quotation (never invoiced from Sales, so always safe)
+    # ------------------------------------------------------------------
+    def action_fsm_back_to_quotation(self):
+        for order in self:
+            if order.invoice_ids.filtered(lambda m: m.state != "cancel"):
+                raise UserError(_(
+                    "Quotation %s has invoices; it cannot go back to quotation.",
+                    order.name,
+                ))
+        self._action_cancel()
+        self.write({"locked": False})
+        self.action_draft()
+        for order in self:
+            order.message_post(body=_("Set back to quotation to make changes."))
+        return True
+
     def _create_invoices(self, grouped=False, final=False, date=None):
         self._check_not_fsm_quotation()
         return super()._create_invoices(grouped=grouped, final=final, date=date)
@@ -48,12 +102,18 @@ class SaleAdvancePaymentInv(models.TransientModel):
         return super().create_invoices()
 
 
-def quotation_vals(env, partner, reference, origin, dossiers, company):
+def dossier_title(dossier):
+    return "%s - %s" % (dossier.name, dossier.equipment_id.display_name)
+
+
+def quotation_vals(env, partner, reference, origin, dossiers, company, location=None):
     lines = []
     for dossier in dossiers:
-        title = "%s - %s" % (dossier.name, dossier.equipment_id.display_name)
-        lines.append((0, 0, {"display_type": "line_section", "name": title}))
-    return {
+        lines.append((0, 0, {"display_type": "line_section",
+                             "name": dossier_title(dossier)}))
+    if not location and len(dossiers.location_id) == 1:
+        location = dossiers.location_id
+    vals = {
         "partner_id": partner.id,
         "client_order_ref": reference or False,
         "origin": origin,
@@ -61,3 +121,7 @@ def quotation_vals(env, partner, reference, origin, dossiers, company):
         "user_id": env.user.id,
         "order_line": lines,
     }
+    # "Service Location" of fieldservice_sale, when that module is installed
+    if location and "fsm_location_id" in env["sale.order"]._fields:
+        vals["fsm_location_id"] = location.id
+    return vals

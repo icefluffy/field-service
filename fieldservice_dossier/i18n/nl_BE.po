@@ -9,8 +9,8 @@ msgstr ""
 "POT-Creation-Date: 2026-10-28 19:07+0000\n"
 "PO-Revision-Date: 2026-10-28 19:07+0000\n"
 "Last-Translator: \n"
-"Language: nl_BE\n"
 "Language-Team: Dutch (Belgium)\n"
+"Language: nl_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -18,9 +18,21 @@ msgstr ""
 
 #. module: fieldservice_dossier
 #. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid ""
+"%(equipment)s already has an open dossier: %(dossier)s (%(state)s). Close or"
+" cancel it before creating a new dossier for this equipment."
+msgstr ""
+"%(equipment)s heeft al een open dossier: %(dossier)s (%(state)s). Sluit of "
+"annuleer het voordat je een nieuw dossier voor dit materiaal aanmaakt."
+
+#. module: fieldservice_dossier
+#. odoo-python
 #: code:addons/fieldservice_dossier/wizard/fsm_dossier_invoice_wizard.py:0
 msgid "%(order)s cannot be combined with %(first)s: different %(keys)s."
-msgstr "%(order)s kan niet gecombineerd worden met %(first)s: verschillende %(keys)s."
+msgstr ""
+"%(order)s kan niet gecombineerd worden met %(first)s: verschillende "
+"%(keys)s."
 
 #. module: fieldservice_dossier
 #. odoo-python
@@ -32,7 +44,8 @@ msgstr "%(order)s: %(why)s"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "'%s' is set by the dossier approval action only."
-msgstr "'%s' wordt uitsluitend ingesteld door de goedkeuringsactie van het dossier."
+msgstr ""
+"'%s' wordt uitsluitend ingesteld door de goedkeuringsactie van het dossier."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_needaction
@@ -79,7 +92,9 @@ msgstr "Reeds gefactureerd (%s)."
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
 msgid "An inspection result changed after approval: re-approval is required."
-msgstr "Een inspectieresultaat is gewijzigd na goedkeuring: hergoedkeuring is vereist."
+msgstr ""
+"Een inspectieresultaat is gewijzigd na goedkeuring: hergoedkeuring is "
+"vereist."
 
 #. module: fieldservice_dossier
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
@@ -177,6 +192,11 @@ msgid "Code"
 msgstr "Code"
 
 #. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__comments
+msgid "Comments"
+msgstr "Opmerkingen"
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__company_id
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__company_id
 msgid "Company"
@@ -196,6 +216,12 @@ msgstr "Voltooid op"
 #: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_config
 msgid "Configuration"
 msgstr "Configuratie"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Contact/Client"
+msgstr "Contactpersoon/klant"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__is_approval
@@ -237,6 +263,20 @@ msgid "Created on"
 msgstr "Aangemaakt op"
 
 #. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_id
+msgid "Customer of this dossier; copied to new FSM orders."
+msgstr "Klant van dit dossier; wordt overgenomen in nieuwe FSM-orders."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_reference
+msgid ""
+"Customer reference of this dossier; copied to new FSM orders as their "
+"Customer Reference."
+msgstr ""
+"Klantreferentie van dit dossier; wordt als Referentie klant overgenomen in "
+"nieuwe FSM-orders."
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__date_performed
 msgid "Date Performed"
 msgstr "Uitvoeringsdatum"
@@ -271,6 +311,12 @@ msgstr "Dossier %s kan nog niet worden afgesloten (goedkeuring vereist?)."
 
 #. module: fieldservice_dossier
 #. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "Dossier %s is closed or cancelled."
+msgstr "Dossier %s is afgesloten of geannuleerd."
+
+#. module: fieldservice_dossier
+#. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
 msgid "Dossier %s is not awaiting approval."
 msgstr "Dossier %s wacht niet op goedkeuring."
@@ -294,6 +340,13 @@ msgstr "Dossierinspectieregel"
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__inspection_ids
 msgid "Dossier Inspections"
 msgstr "Dossierinspecties"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid "Dossier set to In progress: work started on its FSM orders."
+msgstr ""
+"Dossier op In uitvoering gezet: het werk aan de werkorders is gestart."
 
 #. module: fieldservice_dossier
 #: model:ir.actions.act_window,name:fieldservice_dossier.action_fsm_dossier
@@ -352,6 +405,15 @@ msgid "FSM order %s does not belong to this dossier."
 msgstr "Buitendienst werkorder %s behoort niet tot dit dossier."
 
 #. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__team_id
+msgid ""
+"FSM team of this dossier; copied to new FSM orders. Defaults to the team of "
+"the user who creates the dossier."
+msgstr ""
+"FSM-team van dit dossier; wordt overgenomen in nieuwe FSM-orders. Standaard "
+"het team van de gebruiker die het dossier aanmaakt."
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__failed
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
 msgid "Failed"
@@ -371,7 +433,8 @@ msgstr "Buitendienst werkorder"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
 msgid "Fill in the approval remarks (Approval tab) before rejecting."
-msgstr "Vul de goedkeuringsopmerkingen (tabblad Goedkeuring) in vóór het afwijzen."
+msgstr ""
+"Vul de goedkeuringsopmerkingen (tabblad Goedkeuring) in vóór het afwijzen."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_follower_ids
@@ -436,14 +499,23 @@ msgstr "Indien aangevinkt, hebben sommige berichten een leveringsfout."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__validity_months
-msgid "If set, a passed result gets a 'valid until' date this many months after the date performed. 0 = no validity tracking."
-msgstr "Indien ingesteld, krijgt een geslaagd resultaat een vervaldatum dit aantal maanden na de uitvoeringsdatum. 0 = geen geldigheidsopvolging."
+msgid ""
+"If set, a passed result gets a 'valid until' date this many months after the"
+" date performed. 0 = no validity tracking."
+msgstr ""
+"Indien ingesteld, krijgt een geslaagd resultaat een vervaldatum dit aantal "
+"maanden na de uitvoeringsdatum. 0 = geen geldigheidsopvolging."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__in_progress
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__in_progress
 msgid "In progress"
 msgstr "Bezig"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_report_info
+msgid "Information with regards to reporting to customer (BfG e.a.)"
+msgstr "Informatie m.b.t. rapportering aan klant (BfG e.a.)"
 
 #. module: fieldservice_dossier
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
@@ -483,7 +555,9 @@ msgstr "Inspecties"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "Inspections of a closed or cancelled dossier cannot be changed."
-msgstr "Inspecties van een afgesloten of geannuleerd dossier kunnen niet worden gewijzigd."
+msgstr ""
+"Inspecties van een afgesloten of geannuleerd dossier kunnen niet worden "
+"gewijzigd."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__invoice_count
@@ -545,7 +619,8 @@ msgstr "Laatst bijgewerkt op"
 #. module: fieldservice_dossier
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__required_default
 msgid "Mark the line as required when it is added automatically."
-msgstr "Markeer de regel als verplicht wanneer deze automatisch wordt toegevoegd."
+msgstr ""
+"Markeer de regel als verplicht wanneer deze automatisch wordt toegevoegd."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_has_error
@@ -575,9 +650,15 @@ msgid "New"
 msgstr "Nieuw"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Volgende activiteitsagendagebeurtenis"
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "New FSM order - %s"
+msgstr "Nieuwe FSM-order - %s"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "New FSM order with the dossier data"
+msgstr "Nieuwe FSM-order met de gegevens van het dossier"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_date_deadline
@@ -596,9 +677,16 @@ msgstr "Type volgende activiteit"
 
 #. module: fieldservice_dossier
 #. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "No FSM order can be linked to the approval line."
+msgstr "Aan de goedkeuringslijn kan geen FSM-order gekoppeld worden."
+
+#. module: fieldservice_dossier
+#. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
 msgid "No billable lines (contractor costs / timesheets / materials)."
-msgstr "Geen factureerbare regels (aannemerskosten / urenregistraties / materialen)."
+msgstr ""
+"Geen factureerbare regels (aannemerskosten / urenregistraties / materialen)."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__na
@@ -658,6 +746,12 @@ msgid "Open"
 msgstr "Open"
 
 #. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Open dossier exists"
+msgstr "Er bestaat al een open dossier"
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__order_id
 msgid "Order"
 msgstr "Opdracht"
@@ -665,20 +759,29 @@ msgstr "Opdracht"
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "Order %(order)s is already invoiced (%(inv)s). Cancel that invoice first."
-msgstr "Opdracht %(order)s is reeds gefactureerd (%(inv)s). Annuleer eerst die factuur."
+msgid ""
+"Order %(order)s is already invoiced (%(inv)s). Cancel that invoice first."
+msgstr ""
+"Opdracht %(order)s is reeds gefactureerd (%(inv)s). Annuleer eerst die "
+"factuur."
 
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "Order %(order)s must have exactly the equipment of dossier %(dossier)s (%(equipment)s)."
-msgstr "Opdracht %(order)s moet exact het materiaal van dossier %(dossier)s hebben (%(equipment)s)."
+msgid ""
+"Order %(order)s must have exactly the equipment of dossier %(dossier)s "
+"(%(equipment)s)."
+msgstr ""
+"Opdracht %(order)s moet exact het materiaal van dossier %(dossier)s hebben "
+"(%(equipment)s)."
 
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
 msgid "Order %s and its dossier must belong to the same company."
-msgstr "Opdracht %s en het bijbehorende dossier moeten tot hetzelfde bedrijf behoren."
+msgstr ""
+"Opdracht %s en het bijbehorende dossier moeten tot hetzelfde bedrijf "
+"behoren."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__order_count
@@ -737,6 +840,11 @@ msgstr "Geplande voltooiing"
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__rating_ids
 msgid "Ratings"
 msgstr "Beoordelingen"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_reference
+msgid "Reference"
+msgstr "Referentie"
 
 #. module: fieldservice_dossier
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
@@ -808,16 +916,6 @@ msgid "Service Location"
 msgstr "Servicelocatie"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__smart_search
-msgid "Smart Search"
-msgstr "Slim zoeken"
-
-#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__stage_id
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
 msgid "Stage"
@@ -850,8 +948,18 @@ msgstr ""
 #. module: fieldservice_dossier
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection__is_approval
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__is_approval
-msgid "Status is set only by the dossier approval action, never edited by technicians."
-msgstr "De status wordt uitsluitend ingesteld door de goedkeuringsactie van het dossier en nooit door technici gewijzigd."
+msgid ""
+"Status is set only by the dossier approval action, never edited by "
+"technicians."
+msgstr ""
+"De status wordt uitsluitend ingesteld door de goedkeuringsactie van het "
+"dossier en nooit door technici gewijzigd."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__team_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Team"
+msgstr "Team"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__person_id
@@ -863,8 +971,11 @@ msgstr "Technicus"
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
-msgid "The equipment cannot be changed once FSM orders are linked to dossier %s."
-msgstr "Het materiaal kan niet worden gewijzigd zodra Buitendienst werkorders aan dossier %s zijn gekoppeld."
+msgid ""
+"The equipment cannot be changed once FSM orders are linked to dossier %s."
+msgstr ""
+"Het materiaal kan niet worden gewijzigd zodra Buitendienst werkorders aan "
+"dossier %s zijn gekoppeld."
 
 #. module: fieldservice_dossier
 #. odoo-python
@@ -890,7 +1001,9 @@ msgstr ""
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "This dossier has no equipment to enter wheelsets for."
-msgstr "Dit dossier heeft geen materiaal waarvoor wielstellen kunnen worden ingevoerd."
+msgstr ""
+"Dit dossier heeft geen materiaal waarvoor wielstellen kunnen worden "
+"ingevoerd."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__billing_status__to_invoice
@@ -954,66 +1067,16 @@ msgid "Work status"
 msgstr "Werkstatus"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_report_info
-msgid "Information with regards to reporting to customer (BfG e.a.)"
-msgstr "Informatie m.b.t. rapportering aan klant (BfG e.a.)"
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Volgende activiteitsagendagebeurtenis"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__comments
-msgid "Comments"
-msgstr "Opmerkingen"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_id
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
-msgid "Contact/Client"
-msgstr "Contactpersoon/klant"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_id
-msgid "Customer of this dossier; copied to new FSM orders."
-msgstr "Klant van dit dossier; wordt overgenomen in nieuwe FSM-orders."
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_reference
-msgid "Customer reference of this dossier; copied to new FSM orders as their Customer Reference."
-msgstr "Klantreferentie van dit dossier; wordt als Referentie klant overgenomen in nieuwe FSM-orders."
-
-#. module: fieldservice_dossier
-#. odoo-python
-#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
-msgid "Dossier %s is closed or cancelled."
-msgstr "Dossier %s is afgesloten of geannuleerd."
-
-#. module: fieldservice_dossier
-#. odoo-python
-#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
-msgid "New FSM order - %s"
-msgstr "Nieuwe FSM-order - %s"
-
-#. module: fieldservice_dossier
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
-msgid "New FSM order with the dossier data"
-msgstr "Nieuwe FSM-order met de gegevens van het dossier"
-
-#. module: fieldservice_dossier
-#. odoo-python
-#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
-msgid "No FSM order can be linked to the approval line."
-msgstr "Aan de goedkeuringslijn kan geen FSM-order gekoppeld worden."
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_reference
-msgid "Reference"
-msgstr "Referentie"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__team_id
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
-msgid "Team"
-msgstr "Team"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__team_id
-msgid "FSM team of this dossier; copied to new FSM orders. Defaults to the team of the user who creates the dossier."
-msgstr "FSM-team van dit dossier; wordt overgenomen in nieuwe FSM-orders. Standaard het team van de gebruiker die het dossier aanmaakt."
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__smart_search
+msgid "Smart Search"
+msgstr "Slim zoeken"

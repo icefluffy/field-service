@@ -81,6 +81,7 @@ class FSMOrder(models.Model):
                 if line.work_status == "not_started":
                     line_vals["work_status"] = "planned"
                 line.write(line_vals)
+        orders._start_dossiers()
         return orders
 
     def write(self, vals):
@@ -91,7 +92,44 @@ class FSMOrder(models.Model):
                 equipment_id=dossier.equipment_id.id,
                 equipment_ids=[Command.set(dossier.equipment_id.ids)],
             )
-        return super().write(vals)
+        res = super().write(vals)
+        if {"stage_id", "date_start", "dossier_id"} & set(vals):
+            self._start_dossiers()
+        return res
+
+    # ------------------------------------------------------------------
+    # dossier progress
+    # ------------------------------------------------------------------
+    def _is_started_for_dossier(self):
+        """True when the work of this order has started or is done.
+
+        Started = actual start recorded, or the order is in the Completed
+        stage, a closed stage (not Cancelled) or a stage named
+        'In execution' / 'In uitvoering'.
+        """
+        self.ensure_one()
+        stage = self.stage_id
+        if not stage or stage == self.env.ref("fieldservice.fsm_stage_cancelled", False):
+            return False
+        if self.date_start or stage.is_closed:
+            return True
+        if stage == self.env.ref("fieldservice.fsm_stage_completed", False):
+            return True
+        name = (stage.with_context(lang="en_US").name or "").strip().lower()
+        return name in ("in execution", "in uitvoering")
+
+    def _start_dossiers(self):
+        """Move draft/planned dossiers to 'In progress' once an order started."""
+        dossiers = self.env["fsm.dossier"]
+        for order in self:
+            dossier = order.dossier_id
+            if dossier.state in ("draft", "planned") and order._is_started_for_dossier():
+                dossiers |= dossier
+        for dossier in dossiers:
+            dossier.write({"state": "in_progress"})
+            dossier.message_post(
+                body=_("Dossier set to In progress: work started on its FSM orders.")
+            )
 
     @api.constrains("dossier_id", "equipment_id", "equipment_ids", "company_id")
     def _check_dossier_equipment(self):

@@ -18,9 +18,22 @@ msgstr ""
 
 #. module: fieldservice_dossier
 #. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid ""
+"%(equipment)s already has an open dossier: %(dossier)s (%(state)s). Close or"
+" cancel it before creating a new dossier for this equipment."
+msgstr ""
+"%(equipment)s hat bereits ein offenes Dossier: %(dossier)s (%(state)s). "
+"Schließen oder stornieren Sie es, bevor Sie ein neues Dossier für diese "
+"Ausrüstung erstellen."
+
+#. module: fieldservice_dossier
+#. odoo-python
 #: code:addons/fieldservice_dossier/wizard/fsm_dossier_invoice_wizard.py:0
 msgid "%(order)s cannot be combined with %(first)s: different %(keys)s."
-msgstr "%(order)s kann nicht mit %(first)s kombiniert werden: unterschiedliche %(keys)s."
+msgstr ""
+"%(order)s kann nicht mit %(first)s kombiniert werden: unterschiedliche "
+"%(keys)s."
 
 #. module: fieldservice_dossier
 #. odoo-python
@@ -32,7 +45,8 @@ msgstr "%(order)s: %(why)s"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "'%s' is set by the dossier approval action only."
-msgstr "'%s' wird ausschließlich durch die Freigabeaktion des Dossiers gesetzt."
+msgstr ""
+"'%s' wird ausschließlich durch die Freigabeaktion des Dossiers gesetzt."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_needaction
@@ -79,7 +93,9 @@ msgstr "Bereits abgerechnet (%s)."
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
 msgid "An inspection result changed after approval: re-approval is required."
-msgstr "Ein Prüfergebnis wurde nach der Freigabe geändert: erneute Freigabe erforderlich."
+msgstr ""
+"Ein Prüfergebnis wurde nach der Freigabe geändert: erneute Freigabe "
+"erforderlich."
 
 #. module: fieldservice_dossier
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
@@ -177,6 +193,11 @@ msgid "Code"
 msgstr "Code"
 
 #. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__comments
+msgid "Comments"
+msgstr "Bemerkungen"
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__company_id
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__company_id
 msgid "Company"
@@ -196,6 +217,12 @@ msgstr "Abgeschlossen am"
 #: model:ir.ui.menu,name:fieldservice_dossier.menu_fsm_dossier_config
 msgid "Configuration"
 msgstr "Konfiguration"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Contact/Client"
+msgstr "Kontakt/Kunde"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__is_approval
@@ -237,6 +264,20 @@ msgid "Created on"
 msgstr "Erstellt am"
 
 #. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_id
+msgid "Customer of this dossier; copied to new FSM orders."
+msgstr "Kunde dieses Dossiers; wird in neue FSM-Aufträge übernommen."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_reference
+msgid ""
+"Customer reference of this dossier; copied to new FSM orders as their "
+"Customer Reference."
+msgstr ""
+"Kundenreferenz dieses Dossiers; wird als Kundenreferenz in neue FSM-Aufträge"
+" übernommen."
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__date_performed
 msgid "Date Performed"
 msgstr "Durchführungsdatum"
@@ -267,7 +308,14 @@ msgstr "Dossier %(name)s kann nicht von '%(state)s' in diese Phase übergehen."
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
 msgid "Dossier %s cannot be closed yet (approval required?)."
-msgstr "Dossier %s kann noch nicht abgeschlossen werden (Freigabe erforderlich?)."
+msgstr ""
+"Dossier %s kann noch nicht abgeschlossen werden (Freigabe erforderlich?)."
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "Dossier %s is closed or cancelled."
+msgstr "Dossier %s ist abgeschlossen oder storniert."
 
 #. module: fieldservice_dossier
 #. odoo-python
@@ -294,6 +342,14 @@ msgstr "Dossierprüfposition"
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__inspection_ids
 msgid "Dossier Inspections"
 msgstr "Dossierprüfungen"
+
+#. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_order.py:0
+msgid "Dossier set to In progress: work started on its FSM orders."
+msgstr ""
+"Dossier auf In Bearbeitung gesetzt: Die Arbeit an seinen Aufträgen hat "
+"begonnen."
 
 #. module: fieldservice_dossier
 #: model:ir.actions.act_window,name:fieldservice_dossier.action_fsm_dossier
@@ -352,6 +408,15 @@ msgid "FSM order %s does not belong to this dossier."
 msgstr "Field-Service-Auftrag %s gehört nicht zu diesem Dossier."
 
 #. module: fieldservice_dossier
+#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__team_id
+msgid ""
+"FSM team of this dossier; copied to new FSM orders. Defaults to the team of "
+"the user who creates the dossier."
+msgstr ""
+"FSM-Team dieses Dossiers; wird in neue FSM-Aufträge übernommen. "
+"Standardmäßig das Team des Benutzers, der das Dossier anlegt."
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__failed
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_inspection_search
 msgid "Failed"
@@ -371,7 +436,9 @@ msgstr "Field-Service-Auftrag"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
 msgid "Fill in the approval remarks (Approval tab) before rejecting."
-msgstr "Füllen Sie die Freigabebemerkungen (Registerkarte Freigabe) vor der Ablehnung aus."
+msgstr ""
+"Füllen Sie die Freigabebemerkungen (Registerkarte Freigabe) vor der "
+"Ablehnung aus."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_follower_ids
@@ -436,14 +503,23 @@ msgstr "Wenn aktiviert, haben einige Nachrichten einen Zustellfehler."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__validity_months
-msgid "If set, a passed result gets a 'valid until' date this many months after the date performed. 0 = no validity tracking."
-msgstr "Wenn festgelegt, erhält ein bestandenes Ergebnis ein Ablaufdatum diese Anzahl Monate nach dem Durchführungsdatum. 0 = keine Gültigkeitsverfolgung."
+msgid ""
+"If set, a passed result gets a 'valid until' date this many months after the"
+" date performed. 0 = no validity tracking."
+msgstr ""
+"Wenn festgelegt, erhält ein bestandenes Ergebnis ein Ablaufdatum diese "
+"Anzahl Monate nach dem Durchführungsdatum. 0 = keine Gültigkeitsverfolgung."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__state__in_progress
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__work_status__in_progress
 msgid "In progress"
 msgstr "In Bearbeitung"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_report_info
+msgid "Information with regards to reporting to customer (BfG e.a.)"
+msgstr "Informationen zur Berichterstattung an den Kunden (BfG u.a.)"
 
 #. module: fieldservice_dossier
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
@@ -483,7 +559,9 @@ msgstr "Prüfungen"
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "Inspections of a closed or cancelled dossier cannot be changed."
-msgstr "Prüfungen eines abgeschlossenen oder abgebrochenen Dossiers können nicht geändert werden."
+msgstr ""
+"Prüfungen eines abgeschlossenen oder abgebrochenen Dossiers können nicht "
+"geändert werden."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__invoice_count
@@ -545,7 +623,9 @@ msgstr "Zuletzt aktualisiert am"
 #. module: fieldservice_dossier
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__required_default
 msgid "Mark the line as required when it is added automatically."
-msgstr "Markieren Sie die Position als erforderlich, wenn sie automatisch hinzugefügt wird."
+msgstr ""
+"Markieren Sie die Position als erforderlich, wenn sie automatisch "
+"hinzugefügt wird."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__message_has_error
@@ -575,9 +655,15 @@ msgid "New"
 msgstr "Neu"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Nächste Aktivitätskalenderereignis"
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "New FSM order - %s"
+msgstr "Neuer FSM-Auftrag - %s"
+
+#. module: fieldservice_dossier
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
+msgid "New FSM order with the dossier data"
+msgstr "Neuer FSM-Auftrag mit den Daten des Dossiers"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_date_deadline
@@ -596,9 +682,17 @@ msgstr "Typ der nächsten Aktivität"
 
 #. module: fieldservice_dossier
 #. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
+msgid "No FSM order can be linked to the approval line."
+msgstr "Der Freigabezeile kann kein FSM-Auftrag zugeordnet werden."
+
+#. module: fieldservice_dossier
+#. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
 msgid "No billable lines (contractor costs / timesheets / materials)."
-msgstr "Keine abrechenbaren Positionen (Unternehmerkosten / Zeiterfassungen / Materialien)."
+msgstr ""
+"Keine abrechenbaren Positionen (Unternehmerkosten / Zeiterfassungen / "
+"Materialien)."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier_inspection__result__na
@@ -658,6 +752,12 @@ msgid "Open"
 msgstr "Offen"
 
 #. module: fieldservice_dossier
+#. odoo-python
+#: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
+msgid "Open dossier exists"
+msgstr "Offenes Dossier vorhanden"
+
+#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__order_id
 msgid "Order"
 msgstr "Auftrag"
@@ -665,20 +765,28 @@ msgstr "Auftrag"
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "Order %(order)s is already invoiced (%(inv)s). Cancel that invoice first."
-msgstr "Auftrag %(order)s ist bereits abgerechnet (%(inv)s). Brechen Sie zunächst diese Rechnung ab."
+msgid ""
+"Order %(order)s is already invoiced (%(inv)s). Cancel that invoice first."
+msgstr ""
+"Auftrag %(order)s ist bereits abgerechnet (%(inv)s). Brechen Sie zunächst "
+"diese Rechnung ab."
 
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
-msgid "Order %(order)s must have exactly the equipment of dossier %(dossier)s (%(equipment)s)."
-msgstr "Auftrag %(order)s muss genau die Ausrüstung des Dossiers %(dossier)s haben (%(equipment)s)."
+msgid ""
+"Order %(order)s must have exactly the equipment of dossier %(dossier)s "
+"(%(equipment)s)."
+msgstr ""
+"Auftrag %(order)s muss genau die Ausrüstung des Dossiers %(dossier)s haben "
+"(%(equipment)s)."
 
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_order.py:0
 msgid "Order %s and its dossier must belong to the same company."
-msgstr "Auftrag %s und das zugehörige Dossier müssen zum selben Unternehmen gehören."
+msgstr ""
+"Auftrag %s und das zugehörige Dossier müssen zum selben Unternehmen gehören."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__order_count
@@ -737,6 +845,11 @@ msgstr "Geplante Fertigstellung"
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__rating_ids
 msgid "Ratings"
 msgstr "Bewertungen"
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_reference
+msgid "Reference"
+msgstr "Referenz"
 
 #. module: fieldservice_dossier
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
@@ -808,16 +921,6 @@ msgid "Service Location"
 msgstr "Servicestandort"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__smart_search
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__smart_search
-msgid "Smart Search"
-msgstr "Intelligente Suche"
-
-#. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__stage_id
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
 msgid "Stage"
@@ -850,8 +953,18 @@ msgstr ""
 #. module: fieldservice_dossier
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection__is_approval
 #: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier_inspection_type__is_approval
-msgid "Status is set only by the dossier approval action, never edited by technicians."
-msgstr "Der Status wird ausschließlich durch die Freigabeaktion des Dossiers gesetzt und niemals von Technikern bearbeitet."
+msgid ""
+"Status is set only by the dossier approval action, never edited by "
+"technicians."
+msgstr ""
+"Der Status wird ausschließlich durch die Freigabeaktion des Dossiers gesetzt"
+" und niemals von Technikern bearbeitet."
+
+#. module: fieldservice_dossier
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__team_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
+msgid "Team"
+msgstr "Team"
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__person_id
@@ -863,8 +976,11 @@ msgstr "Techniker"
 #. module: fieldservice_dossier
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier.py:0
-msgid "The equipment cannot be changed once FSM orders are linked to dossier %s."
-msgstr "Die Ausrüstung kann nicht geändert werden, sobald Field-Service-Aufträge mit Dossier %s verknüpft sind."
+msgid ""
+"The equipment cannot be changed once FSM orders are linked to dossier %s."
+msgstr ""
+"Die Ausrüstung kann nicht geändert werden, sobald Field-Service-Aufträge mit"
+" Dossier %s verknüpft sind."
 
 #. module: fieldservice_dossier
 #. odoo-python
@@ -890,7 +1006,8 @@ msgstr ""
 #. odoo-python
 #: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
 msgid "This dossier has no equipment to enter wheelsets for."
-msgstr "Dieses Dossier hat keine Ausrüstung, für die Radsätze erfasst werden können."
+msgstr ""
+"Dieses Dossier hat keine Ausrüstung, für die Radsätze erfasst werden können."
 
 #. module: fieldservice_dossier
 #: model:ir.model.fields.selection,name:fieldservice_dossier.selection__fsm_dossier__billing_status__to_invoice
@@ -954,66 +1071,16 @@ msgid "Work status"
 msgstr "Arbeitsstatus"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_report_info
-msgid "Information with regards to reporting to customer (BfG e.a.)"
-msgstr "Informationen zur Berichterstattung an den Kunden (BfG u.a.)"
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Nächste Aktivitätskalenderereignis"
 
 #. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__comments
-msgid "Comments"
-msgstr "Bemerkungen"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_id
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
-msgid "Contact/Client"
-msgstr "Kontakt/Kunde"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_id
-msgid "Customer of this dossier; copied to new FSM orders."
-msgstr "Kunde dieses Dossiers; wird in neue FSM-Aufträge übernommen."
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__customer_reference
-msgid "Customer reference of this dossier; copied to new FSM orders as their Customer Reference."
-msgstr "Kundenreferenz dieses Dossiers; wird als Kundenreferenz in neue FSM-Aufträge übernommen."
-
-#. module: fieldservice_dossier
-#. odoo-python
-#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
-msgid "Dossier %s is closed or cancelled."
-msgstr "Dossier %s ist abgeschlossen oder storniert."
-
-#. module: fieldservice_dossier
-#. odoo-python
-#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
-msgid "New FSM order - %s"
-msgstr "Neuer FSM-Auftrag - %s"
-
-#. module: fieldservice_dossier
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_form
-msgid "New FSM order with the dossier data"
-msgstr "Neuer FSM-Auftrag mit den Daten des Dossiers"
-
-#. module: fieldservice_dossier
-#. odoo-python
-#: code:addons/fieldservice_dossier/models/fsm_dossier_inspection.py:0
-msgid "No FSM order can be linked to the approval line."
-msgstr "Der Freigabezeile kann kein FSM-Auftrag zugeordnet werden."
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__customer_reference
-msgid "Reference"
-msgstr "Referenz"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__team_id
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier.fsm_dossier_search
-msgid "Team"
-msgstr "Team"
-
-#. module: fieldservice_dossier
-#: model:ir.model.fields,help:fieldservice_dossier.field_fsm_dossier__team_id
-msgid "FSM team of this dossier; copied to new FSM orders. Defaults to the team of the user who creates the dossier."
-msgstr "FSM-Team dieses Dossiers; wird in neue FSM-Aufträge übernommen. Standardmäßig das Team des Benutzers, der das Dossier anlegt."
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_inspection_type__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_dossier_invoice_wizard_line__smart_search
+#: model:ir.model.fields,field_description:fieldservice_dossier.field_fsm_order__smart_search
+msgid "Smart Search"
+msgstr "Intelligente Suche"

@@ -35,6 +35,11 @@ msgid "Accepted Quotations (excl. VAT)"
 msgstr "Angenommene Angebote (netto)"
 
 #. module: fieldservice_client_order_sale
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.view_order_form_fsm_client_order
+msgid "Back to quotation"
+msgstr "Zurück zum Angebot"
+
+#. module: fieldservice_client_order_sale
 #: model:ir.model,name:fieldservice_client_order_sale.model_fsm_client_order
 #: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_sale_order__fsm_client_order_id
 msgid "Client Order"
@@ -69,6 +74,13 @@ msgid "Quotation %s created."
 msgstr "Angebot %s erstellt."
 
 #. module: fieldservice_client_order_sale
+#. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/sale_order.py:0
+msgid "Quotation %s has invoices; it cannot go back to quotation."
+msgstr ""
+"Angebot %s hat Rechnungen; es kann nicht zum Angebot zurückgesetzt werden."
+
+#. module: fieldservice_client_order_sale
 #: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_fsm_client_order__quotation_count
 #: model:ir.model.fields,field_description:fieldservice_client_order_sale.field_fsm_dossier__quotation_count
 msgid "Quotation Count"
@@ -93,9 +105,20 @@ msgstr "Verkaufsauftrag"
 
 #. module: fieldservice_client_order_sale
 #. odoo-python
+#: code:addons/fieldservice_client_order_sale/models/sale_order.py:0
+msgid "Set back to quotation to make changes."
+msgstr "Zum Ändern auf Angebot zurückgesetzt."
+
+#. module: fieldservice_client_order_sale
+#. odoo-python
 #: code:addons/fieldservice_client_order_sale/models/fsm_dossier.py:0
 msgid "Set the Contact/Client of the dossier first."
 msgstr "Legen Sie zuerst den Kontakt/Kunden des Dossiers fest."
+
+#. module: fieldservice_client_order_sale
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order_sale.view_order_form_fsm_client_order
+msgid "Set this order back to quotation to change it?"
+msgstr "Diesen Auftrag zum Ändern auf Angebot zurücksetzen?"
 
 #. module: fieldservice_client_order_sale
 #: model:ir.model.fields,help:fieldservice_client_order_sale.field_sale_order__fsm_dossier_id

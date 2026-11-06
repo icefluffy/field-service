@@ -38,6 +38,16 @@ class FsmClientOrderDossierWizard(models.TransientModel):
                 "These wagons already have a dossier in this client order: %s",
                 ", ".join(already.mapped("display_name")),
             ))
+        busy = self.env["fsm.dossier"].sudo().search([
+            ("equipment_id", "in", self.equipment_ids.ids),
+            ("state", "not in", ("closed", "cancelled")),
+        ])
+        if busy:
+            raise UserError(_(
+                "These wagons already have an open dossier; close or cancel it "
+                "first: %s",
+                ", ".join("%s (%s)" % (d.equipment_id.display_name, d.name) for d in busy),
+            ))
         vals_list = []
         missing = self.env["fsm.equipment"]
         for equipment in self.equipment_ids:

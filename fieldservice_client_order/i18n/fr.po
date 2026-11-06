@@ -385,6 +385,12 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si coché, certains messages présentent une erreur de livraison."
 
 #. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__state__in_progress
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "In progress"
+msgstr "En cours"
+
+#. module: fieldservice_client_order
 #: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__invoice_count
 msgid "Invoice Count"
 msgstr "Nombre de factures"
@@ -578,6 +584,15 @@ msgstr ""
 " PDF original dans le chatter."
 
 #. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__contact_id
+msgid ""
+"Person who sent the request. Any contact can be chosen; contacts of the "
+"client are the usual choice."
+msgstr ""
+"Personne qui a envoyé la demande. Tout contact peut être choisi ; en général"
+" un contact du client."
+
+#. module: fieldservice_client_order
 #: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__date_planned
 msgid "Planned Completion"
 msgstr "Achèvement prévu"
@@ -690,6 +705,15 @@ msgstr "Équipe proposée pour les nouveaux dossiers de cette demande client."
 #: code:addons/fieldservice_client_order/wizard/fsm_client_order_dossier_wizard.py:0
 msgid "These wagons already have a dossier in this client order: %s"
 msgstr "Ces wagons ont déjà un dossier dans cette demande client : %s"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_dossier_wizard.py:0
+msgid ""
+"These wagons already have an open dossier; close or cancel it first: %s"
+msgstr ""
+"Ces wagons ont déjà un dossier ouvert ; clôturez-le ou annulez-le d'abord : "
+"%s"
 
 #. module: fieldservice_client_order
 #. odoo-python

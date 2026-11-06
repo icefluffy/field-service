@@ -1,7 +1,7 @@
 # Copyright 2026 TI-Consulting
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo import Command, _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 APPROVER_GROUP = "fieldservice_dossier.group_dossier_approver"
 
@@ -160,6 +160,44 @@ class FsmDossier(models.Model):
     def _onchange_equipment_id(self):
         if self.equipment_id and self.equipment_id.current_location_id:
             self.location_id = self.equipment_id.current_location_id
+        if self.equipment_id:
+            other = self._find_open_dossier(self.equipment_id)
+            if other:
+                return {"warning": {
+                    "title": _("Open dossier exists"),
+                    "message": self._open_dossier_message(self.equipment_id, other),
+                }}
+
+    # ------------------------------------------------------------------
+    # one open dossier per equipment
+    # ------------------------------------------------------------------
+    def _find_open_dossier(self, equipment):
+        """Another dossier of this equipment that is not closed/cancelled."""
+        domain = [
+            ("equipment_id", "=", equipment.id),
+            ("state", "not in", ("closed", "cancelled")),
+        ]
+        own = self._origin.id if self else False
+        if own:
+            domain.append(("id", "!=", own))
+        return self.sudo().search(domain, limit=1)
+
+    def _open_dossier_message(self, equipment, other):
+        return _(
+            "%(equipment)s already has an open dossier: %(dossier)s (%(state)s). "
+            "Close or cancel it before creating a new dossier for this "
+            "equipment.",
+            equipment=equipment.display_name, dossier=other.name,
+            state=dict(other._fields["state"]._description_selection(self.env))
+            .get(other.state),
+        )
+
+    @api.constrains("equipment_id")
+    def _check_one_open_dossier(self):
+        for rec in self.filtered(lambda d: d.state not in ("closed", "cancelled")):
+            other = rec._find_open_dossier(rec.equipment_id)
+            if other:
+                raise ValidationError(rec._open_dossier_message(rec.equipment_id, other))
 
     @api.onchange("location_id")
     def _onchange_location_id_customer(self):
@@ -187,6 +225,21 @@ class FsmDossier(models.Model):
     # ------------------------------------------------------------------
     # ORM
     # ------------------------------------------------------------------
+    @api.model
+    def default_get(self, fields_list):
+        """Show the default inspections already on a new, unsaved dossier."""
+        res = super().default_get(fields_list)
+        if "inspection_ids" in fields_list and not res.get("inspection_ids"):
+            types = self.env["fsm.dossier.inspection.type"].search(
+                [("auto_add", "=", True)]
+            )
+            if types:
+                res["inspection_ids"] = [
+                    Command.create({"type_id": t.id, "required": t.required_default})
+                    for t in types
+                ]
+        return res
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:

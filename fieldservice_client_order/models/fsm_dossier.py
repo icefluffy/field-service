@@ -10,7 +10,8 @@ class FsmDossier(models.Model):
     client_order_id = fields.Many2one(
         "fsm.client.order", string="Client Order", index=True, tracking=True,
         ondelete="restrict", copy=False,
-        domain="[('state', '=', 'open'), ('company_id', '=', company_id)]",
+        domain="[('state', 'in', ('open', 'in_progress')),"
+        " ('company_id', '=', company_id)]",
         help="Client order (client request/reference) this dossier belongs to. "
         "The dossier takes over its client and reference.",
     )
@@ -50,9 +51,19 @@ class FsmDossier(models.Model):
                 if order.team_id and not vals.get("team_id"):
                     vals["team_id"] = order.team_id.id
                 vals.setdefault("company_id", order.company_id.id)
-        return super().create(vals_list)
+        dossiers = super().create(vals_list)
+        dossiers.client_order_id._update_progress_state()
+        return dossiers
 
     def write(self, vals):
+        old_orders = self.client_order_id if "client_order_id" in vals else None
+        res = self._write_client_order(vals)
+        if "state" in vals or "client_order_id" in vals:
+            (self.client_order_id | (old_orders or self.client_order_id.browse()))\
+                ._update_progress_state()
+        return res
+
+    def _write_client_order(self, vals):
         if (
             "customer_reference" in vals
             and not self.env.context.get("client_order_sync")

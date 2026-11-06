@@ -41,7 +41,7 @@ class FsmDossier(models.Model):
             raise UserError(_("Set the Contact/Client of the dossier first."))
         vals = quotation_vals(
             self.env, self.customer_id, self.customer_reference, self.name, self,
-            self.company_id,
+            self.company_id, location=self.location_id,
         )
         vals.update(
             fsm_dossier_id=self.id, fsm_client_order_id=self.client_order_id.id,

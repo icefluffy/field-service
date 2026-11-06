@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-06 15:33+0000\n"
-"PO-Revision-Date: 2026-11-06 15:33+0000\n"
+"POT-Creation-Date: 2026-11-06 16:33+0000\n"
+"PO-Revision-Date: 2026-11-06 16:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -373,6 +373,12 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__state__in_progress
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "In progress"
+msgstr ""
+
+#. module: fieldservice_client_order
 #: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__invoice_count
 msgid "Invoice Count"
 msgstr ""
@@ -555,6 +561,13 @@ msgid ""
 msgstr ""
 
 #. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__contact_id
+msgid ""
+"Person who sent the request. Any contact can be chosen; contacts of the "
+"client are the usual choice."
+msgstr ""
+
+#. module: fieldservice_client_order
 #: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__date_planned
 msgid "Planned Completion"
 msgstr ""
@@ -657,6 +670,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/fieldservice_client_order/wizard/fsm_client_order_dossier_wizard.py:0
 msgid "These wagons already have a dossier in this client order: %s"
+msgstr ""
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_dossier_wizard.py:0
+msgid ""
+"These wagons already have an open dossier; close or cancel it first: %s"
 msgstr ""
 
 #. module: fieldservice_client_order

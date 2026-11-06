@@ -46,4 +46,5 @@ def post_init_hook(env):
         members.with_context(client_order_sync=True).write(
             {"client_order_id": order.id}
         )
+        order._update_progress_state()
     _logger.info("Client orders created for existing dossiers: %s", len(groups))
