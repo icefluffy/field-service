@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_dossier_form_client_order" model="ir.ui.view">
+        <field name="name">fsm.dossier.form.client.order</field>
+        <field name="model">fsm.dossier</field>
+        <field name="inherit_id" ref="fieldservice_dossier.fsm_dossier_form"/>
+        <field name="arch" type="xml">
+            <field name="customer_reference" position="before">
+                <field name="client_order_id" options="{'no_create': True}"/>
+            </field>
+            <field name="customer_reference" position="attributes">
+                <attribute name="readonly">client_order_id</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="fsm_dossier_list_client_order" model="ir.ui.view">
+        <field name="name">fsm.dossier.list.client.order</field>
+        <field name="model">fsm.dossier</field>
+        <field name="inherit_id" ref="fieldservice_dossier.fsm_dossier_list"/>
+        <field name="arch" type="xml">
+            <field name="customer_reference" position="before">
+                <field name="client_order_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="fsm_dossier_search_client_order" model="ir.ui.view">
+        <field name="name">fsm.dossier.search.client.order</field>
+        <field name="model">fsm.dossier</field>
+        <field name="inherit_id" ref="fieldservice_dossier.fsm_dossier_search"/>
+        <field name="arch" type="xml">
+            <field name="customer_reference" position="after">
+                <field name="client_order_id"/>
+            </field>
+            <filter name="g_customer" position="after">
+                <filter name="g_client_order" string="Client Order"
+                        context="{'group_by': 'client_order_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

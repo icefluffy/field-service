@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_client_order_form_sale" model="ir.ui.view">
+        <field name="name">fsm.client.order.form.sale</field>
+        <field name="model">fsm.client.order</field>
+        <field name="inherit_id" ref="fieldservice_client_order.fsm_client_order_form"/>
+        <field name="arch" type="xml">
+            <button name="action_create_invoice" position="before">
+                <button name="action_new_quotation" string="New quotation" type="object"
+                        invisible="state == 'cancelled'" groups="sales_team.group_sale_salesman"/>
+            </button>
+            <button name="action_view_invoices" position="before">
+                <button name="action_view_quotations" type="object"
+                        class="oe_stat_button" icon="fa-file-text-o"
+                        invisible="quotation_count == 0" groups="sales_team.group_sale_salesman">
+                    <field name="quotation_count" widget="statinfo" string="Quotations"/>
+                </button>
+            </button>
+            <field name="amount_invoiced" position="before">
+                <field name="amount_quoted" invisible="quotation_count == 0"
+                       groups="sales_team.group_sale_salesman"/>
+            </field>
+        </field>
+    </record>
+</odoo>

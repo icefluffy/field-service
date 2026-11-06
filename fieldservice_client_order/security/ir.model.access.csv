@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fsm_client_order_user,fsm.client.order user,model_fsm_client_order,fieldservice.group_fsm_user,1,1,1,0
+access_fsm_client_order_manager,fsm.client.order manager,model_fsm_client_order,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_client_order_dossier_wizard_user,fsm.client.order.dossier.wizard user,model_fsm_client_order_dossier_wizard,fieldservice.group_fsm_user,1,1,1,1
+access_fsm_client_order_invoice_wizard_user,fsm.client.order.invoice.wizard user,model_fsm_client_order_invoice_wizard,fieldservice.group_fsm_user,1,1,1,1
+access_fsm_client_order_invoice_wizard_line_user,fsm.client.order.invoice.wizard.line user,model_fsm_client_order_invoice_wizard_line,fieldservice.group_fsm_user,1,1,1,1

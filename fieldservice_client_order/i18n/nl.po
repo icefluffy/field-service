@@ -1,0 +1,734 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_client_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-06 15:33+0000\n"
+"PO-Revision-Date: 2026-11-06 15:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_invoice_wizard.py:0
+msgid "%(order)s cannot be combined with %(first)s: different %(keys)s."
+msgstr ""
+"%(order)s kan niet gecombineerd worden met %(first)s: verschillende "
+"%(keys)s."
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_invoice_wizard.py:0
+msgid "%(order)s: %(why)s"
+msgstr "%(order)s: %(why)s"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+msgid "A client order with dossiers cannot be deleted; cancel it instead."
+msgstr ""
+"Een klantorder met dossiers kan niet verwijderd worden; annuleer hem in de "
+"plaats."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_needaction
+msgid "Action Needed"
+msgstr "Actie vereist"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_ids
+msgid "Activities"
+msgstr "Activiteiten"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoreren van uitzonderingsactiviteit"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_state
+msgid "Activity State"
+msgstr "Activiteitsstatus"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Pictogram activiteitstype"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Add wagons"
+msgstr "Wagons toevoegen"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__date_arrival
+msgid "Arrival"
+msgstr "Aankomst"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_attachment_count
+msgid "Attachment Count"
+msgstr "Aantal bijlagen"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__billing_status
+msgid "Billing Status"
+msgstr "Facturatiestatus"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_dossier_wizard_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_invoice_wizard_form
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+msgid "Cancel these dossiers first: %s"
+msgstr "Annuleer eerst deze dossiers: %s"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__state__cancelled
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__customer_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Client"
+msgstr "Klant"
+
+#. module: fieldservice_client_order
+#: model:ir.model,name:fieldservice_client_order.model_fsm_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__client_order_id
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__client_order_id
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_dossier__client_order_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_dossier_search_client_order
+msgid "Client Order"
+msgstr "Klantorder"
+
+#. module: fieldservice_client_order
+#: model:ir.actions.act_window,name:fieldservice_client_order.action_fsm_client_order
+#: model:ir.ui.menu,name:fieldservice_client_order.menu_fsm_client_order
+msgid "Client Orders"
+msgstr "Klantorders"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__reference
+msgid "Client Reference"
+msgstr "Referentie klant"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__description
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Client Request"
+msgstr "Aanvraag klant"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+msgid "Client order %(other)s already uses reference %(ref)s for this client."
+msgstr "Klantorder %(other)s gebruikt referentie %(ref)s al voor deze klant."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_dossier__client_order_id
+msgid ""
+"Client order (client request/reference) this dossier belongs to. The dossier"
+" takes over its client and reference."
+msgstr ""
+"Klantorder (aanvraag/referentie van de klant) waartoe dit dossier behoort. "
+"Het dossier neemt de klant en referentie ervan over."
+
+#. module: fieldservice_client_order
+#: model:ir.model,name:fieldservice_client_order.model_fsm_client_order_invoice_wizard_line
+msgid "Client order invoice wizard line"
+msgstr "Lijn wizard facturatie klantorder"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Client reference (order number, e-mail, ...)"
+msgstr "Referentie klant (bestelnummer, e-mail, ...)"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Close"
+msgstr "Afsluiten"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+msgid "Close or cancel these dossiers first: %s"
+msgstr "Sluit of annuleer eerst deze dossiers: %s"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__state__closed
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Closed"
+msgstr "Afgesloten"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__contact_id
+msgid "Contact Person"
+msgstr "Contactpersoon"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__user_id
+msgid "Coordinator"
+msgstr "Coördinator"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.actions.act_window,help:fieldservice_client_order.action_fsm_client_order
+msgid "Create a client order"
+msgstr "Maak een klantorder aan"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_dossier_wizard_form
+msgid "Create dossiers"
+msgstr "Dossiers aanmaken"
+
+#. module: fieldservice_client_order
+#: model:ir.model,name:fieldservice_client_order.model_fsm_client_order_dossier_wizard
+msgid "Create dossiers (one per wagon) for a client order"
+msgstr "Dossiers aanmaken (één per wagon) voor een klantorder"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_invoice_wizard_form
+msgid "Create draft invoice"
+msgstr "Conceptfactuur aanmaken"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Create invoice"
+msgstr "Factuur aanmaken"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__create_uid
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__create_uid
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__create_uid
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__create_date
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__create_date
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__create_date
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__currency_id
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__location_id
+msgid "Default Service Location"
+msgstr "Standaard servicelocatie"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__display_name
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__display_name
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__display_name
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__dossier_id
+msgid "Dossier"
+msgstr "Dossier"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_dossier.py:0
+msgid ""
+"Dossier %(dossier)s takes its reference from client order %(order)s; change "
+"it there."
+msgstr ""
+"Dossier %(dossier)s neemt zijn referentie over van klantorder %(order)s; "
+"wijzig ze daar."
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_dossier.py:0
+msgid ""
+"Dossier %(dossier)s: the client must be %(client)s, the client of client "
+"order %(order)s."
+msgstr ""
+"Dossier %(dossier)s: de klant moet %(client)s zijn, de klant van klantorder "
+"%(order)s."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__dossier_count
+msgid "Dossier Count"
+msgstr "Aantal dossiers"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__dossier_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Dossiers"
+msgstr "Dossiers"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__dossier_progress
+msgid "Dossiers Closed"
+msgstr "Dossiers afgesloten"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_dossier_wizard.py:0
+msgid "Dossiers created: %s"
+msgstr "Dossiers aangemaakt: %s"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_invoice_wizard.py:0
+msgid "Draft invoice created for orders: %s."
+msgstr "Conceptfactuur aangemaakt voor opdrachten: %s."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__equipment_id
+msgid "Equipment / Serial"
+msgstr "Voorwerpnummer / serienummer"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__order_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "FSM Orders"
+msgstr "Buitendienst werkorders"
+
+#. module: fieldservice_client_order
+#: model:ir.model,name:fieldservice_client_order.model_fsm_dossier
+msgid "Field Service Dossier (one equipment visit)"
+msgstr "Veldservicedossier (één bezoek aan materiaal)"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_follower_ids
+msgid "Followers"
+msgstr "Volgers"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Volgers (relaties)"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font Awesome-pictogram, bv. fa-tasks"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__billing_status__invoiced
+msgid "Fully invoiced"
+msgstr "Volledig gefactureerd"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Group By"
+msgstr "Groeperen op"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__has_message
+msgid "Has Message"
+msgstr "Heeft bericht"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__id
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__id
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__id
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_exception_icon
+msgid "Icon"
+msgstr "Pictogram"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Pictogram om een uitzonderingsactiviteit aan te geven."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Indien aangevinkt, vereisen nieuwe berichten uw aandacht."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__message_has_error
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Indien aangevinkt, hebben sommige berichten een leveringsfout."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__invoice_count
+msgid "Invoice Count"
+msgstr "Aantal facturen"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+msgid "Invoice client order"
+msgstr "Klantorder factureren"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__amount_invoiced
+msgid "Invoiced (excl. VAT)"
+msgstr "Gefactureerd (excl. btw)"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__invoice_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Invoices"
+msgstr "Facturen"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_is_follower
+msgid "Is Follower"
+msgstr "Is volger"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__write_uid
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__write_uid
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__write_uid
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__write_date
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__write_date
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__write_date
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_has_error
+msgid "Message Delivery error"
+msgstr "Fout bij berichtlevering"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_ids
+msgid "Messages"
+msgstr "Berichten"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mijn activiteitstermijn"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+msgid "New"
+msgstr "Nieuw"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Termijn volgende activiteit"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_summary
+msgid "Next Activity Summary"
+msgstr "Samenvatting volgende activiteit"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type volgende activiteit"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__blocker
+msgid "Not billable because"
+msgstr "Niet factureerbaar omdat"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__billing_status__nothing
+msgid "Nothing to invoice"
+msgstr "Niets te factureren"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Aantal acties"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_has_error_counter
+msgid "Number of errors"
+msgstr "Aantal fouten"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Aantal berichten die actie vereisen"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Aantal berichten met leveringsfout"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.actions.act_window,help:fieldservice_client_order.action_fsm_client_order
+msgid ""
+"One client order per client request (order, e-mail). Add its wagons:\n"
+"               each gets its own dossier with the same reference, and the whole\n"
+"               request can be quoted and invoiced at once."
+msgstr ""
+"Eén klantorder per aanvraag van de klant (bestelling, e-mail). Voeg de "
+"wagons toe: elk krijgt een eigen dossier met dezelfde referentie, en de "
+"volledige aanvraag kan in één keer geoffreerd en gefactureerd worden."
+
+#. module: fieldservice_client_order
+#: model:ir.model,name:fieldservice_client_order.model_fsm_client_order_invoice_wizard
+msgid "One combined invoice for the FSM orders of a client order"
+msgstr "Eén gecombineerde factuur voor de werkorders van een klantorder"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_dossier_wizard_form
+msgid ""
+"One dossier is created per wagon, with the client and reference of\n"
+"                   the client order."
+msgstr ""
+"Per wagon wordt één dossier aangemaakt, met de klant en referentie van de "
+"klantorder."
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_invoice_wizard_form
+msgid ""
+"One draft invoice for the selected orders of all dossiers, with a\n"
+"                   section per dossier and the client reference as invoice reference."
+msgstr ""
+"Eén conceptfactuur voor de geselecteerde opdrachten van alle dossiers, met "
+"een sectie per dossier en de referentie van de klant als factuurreferentie."
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/models/fsm_client_order.py:0
+msgid "Only open client orders can get new dossiers."
+msgstr "Enkel open klantorders kunnen nieuwe dossiers krijgen."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__state__open
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Open"
+msgstr "Open"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__order_id
+msgid "Order"
+msgstr "Opdracht"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__order_count
+msgid "Order Count"
+msgstr "Aantal opdrachten"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard__line_ids
+msgid "Orders"
+msgstr "Opdrachten"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__billing_status__partial
+msgid "Partially invoiced"
+msgstr "Gedeeltelijk gefactureerd"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid ""
+"Paste or summarise the client's e-mail or order here. Attach the original "
+"e-mail/PDF in the chatter."
+msgstr ""
+"Plak of vat hier de e-mail of bestelling van de klant samen. Voeg de "
+"originele e-mail/pdf toe in de chatter."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__date_planned
+msgid "Planned Completion"
+msgstr "Geplande voltooiing"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__date_planned
+msgid "Planned completion"
+msgstr "Geplande voltooiing"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__location_id
+msgid "Proposed for new dossiers when the wagon has no current location."
+msgstr ""
+"Voorgesteld voor nieuwe dossiers als de wagon geen huidige locatie heeft."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__rating_ids
+msgid "Ratings"
+msgstr "Beoordelingen"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__date_received
+msgid "Received On"
+msgstr "Ontvangen op"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__reference
+msgid ""
+"Reference of the client (order number, e-mail subject, ...). Copied to all "
+"dossiers and FSM orders of this client order and used as reference on its "
+"quotations and invoices."
+msgstr ""
+"Referentie van de klant (bestelnummer, onderwerp e-mail, ...). Wordt "
+"overgenomen op alle dossiers en werkorders van deze klantorder en gebruikt "
+"als referentie op de offertes en facturen."
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_form
+msgid "Reopen"
+msgstr "Heropenen"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwoordelijke gebruiker"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Fout bij SMS-levering"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_invoice_wizard.py:0
+msgid "Select at least one order."
+msgstr "Selecteer minstens één opdracht."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__selected
+msgid "Selected"
+msgstr "Geselecteerd"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__location_id
+msgid "Service Location"
+msgstr "Servicelocatie"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__stage_id
+msgid "Stage"
+msgstr "Fase"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__state
+msgid "State"
+msgstr "Status"
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Status"
+msgstr "Status"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status op basis van activiteiten\n"
+"Te laat: vervaldatum is reeds verstreken\n"
+"Vandaag: activiteitdatum is vandaag\n"
+"Gepland: toekomstige activiteiten."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__team_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Team"
+msgstr "Team"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__team_id
+msgid "Team proposed for new dossiers of this client order."
+msgstr "Team dat voorgesteld wordt voor nieuwe dossiers van deze klantorder."
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_dossier_wizard.py:0
+msgid "These wagons already have a dossier in this client order: %s"
+msgstr "Deze wagons hebben al een dossier in deze klantorder: %s"
+
+#. module: fieldservice_client_order
+#. odoo-python
+#: code:addons/fieldservice_client_order/wizard/fsm_client_order_dossier_wizard.py:0
+msgid "These wagons have no current location; choose a Service Location: %s"
+msgstr "Deze wagons hebben geen huidige locatie; kies een servicelocatie: %s"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields.selection,name:fieldservice_client_order.selection__fsm_client_order__billing_status__to_invoice
+msgid "To invoice"
+msgstr "Te factureren"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type van de uitzonderingsactiviteit op dit record."
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order_dossier_wizard__location_id
+msgid "Used for wagons without a current location."
+msgstr "Gebruikt voor wagons zonder huidige locatie."
+
+#. module: fieldservice_client_order
+#: model_terms:ir.ui.view,arch_db:fieldservice_client_order.fsm_client_order_search
+msgid "Wagon / Dossier"
+msgstr "Wagon / dossier"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_dossier_wizard__equipment_ids
+msgid "Wagons / Equipment"
+msgstr "Wagons / materiaal"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order__website_message_ids
+msgid "Website Messages"
+msgstr "Websiteberichten"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,help:fieldservice_client_order.field_fsm_client_order__website_message_ids
+msgid "Website communication history"
+msgstr "Communicatiegeschiedenis website"
+
+#. module: fieldservice_client_order
+#: model:ir.model.fields,field_description:fieldservice_client_order.field_fsm_client_order_invoice_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "Wizard"
