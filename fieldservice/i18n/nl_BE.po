@@ -1,26 +1,22 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* fieldservice
 #
 msgid ""
-msgstr "Project-Id-Version: Odoo Server 18.0\nReport-Msgid-Bugs-To: \nPO-Revision-Date: 2026-10-14 17:11+0200\nLast-Translator: \nLanguage-Team: \nLanguage: nl_BE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-10-14 17:11+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__meeting_count
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__meeting_count
 msgid "# Meetings"
 msgstr "# Vergaderingen"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__opportunity_count
-msgid "# Opportunities"
-msgstr "# Verkoopkansen"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__supplier_invoice_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__supplier_invoice_count
-msgid "# Vendor Bills"
-msgstr "# Leveranciersfacturen"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__owned_location_count
@@ -63,7 +59,9 @@ msgstr "<strong>Verwachte aankomsttijd:</strong>"
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_person_form
 msgid "<strong>The contact linked to this user is still active</strong>"
-msgstr "<strong>De contactpersoon die aan deze gebruiker is gekoppeld, is nog actief</strong>"
+msgstr ""
+"<strong>De contactpersoon die aan deze gebruiker is gekoppeld, is nog "
+"actief</strong>"
 
 #. module: fieldservice
 #. odoo-python
@@ -76,18 +74,6 @@ msgstr "Er bestaat al een Buitendienstlocatie voor deze contactpersoon."
 #: code:addons/fieldservice/wizard/fsm_wizard.py:0
 msgid "A Field Service Worker related to that partner already exists."
 msgstr "Er bestaat al een Buitendienstmedewerker voor deze contactpersoon."
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_account_payable_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_account_payable_id
-msgid "Account Payable"
-msgstr "Crediteurenrekening"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_account_receivable_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_account_receivable_id
-msgid "Account Receivable"
-msgstr "Debiteurenrekening"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__message_needaction
@@ -212,20 +198,9 @@ msgstr "Adrestype"
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_order__state_name
 msgid ""
-"Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
-msgstr "Administratieve indelingen van een land, bijvoorbeeld deelstaat, departement of kanton."
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__agreement_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__agreement_ids
-msgid "Agreements"
-msgstr "Overeenkomsten"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__agreements_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__agreements_count
-msgid "Agreements Count"
-msgstr "Aantal overeenkomsten"
+"Administrative divisions of a country. E.g. Fed. State, Department, Canton"
+msgstr ""
+"Bestuurlijke indeling van een land, bv. deelstaat, departement, kanton"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.view_team_kanban
@@ -243,7 +218,9 @@ msgstr "Alle werkorders"
 msgid ""
 "All the emails and documents sent to this contact will be translated in this"
 " language."
-msgstr "Alle e-mails en documenten die naar deze contactpersoon worden verzonden, worden in deze taal vertaald."
+msgstr ""
+"Alle e-mails en documenten die naar deze contactpersoon worden verzonden, "
+"worden in deze taal vertaald."
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__module_fieldservice_google_map
@@ -282,8 +259,8 @@ msgstr "Toegewezen monteur"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__person_id
-msgid "Assigned To"
-msgstr "Toegewezen aan"
+msgid "Assigned To (released by)"
+msgstr "Toegewezen aan (vrijgegeven door)"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__message_attachment_count
@@ -318,37 +295,32 @@ msgstr "Medewerkers automatisch toevoegen aan locatie op basis van gebied"
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__auto_populate_equipments_on_order
 msgid "Auto-populate equipments on Order based on the Location"
-msgstr "Apparatuur automatisch toevoegen aan werkorder op basis van de locatie"
+msgstr ""
+"Apparatuur automatisch toevoegen aan werkorder op basis van de locatie"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid ""
 "Auto-populate the equipments on the order based on the location content"
-msgstr "Apparatuur automatisch toevoegen aan de werkorder op basis van de inhoud van de locatie"
+msgstr ""
+"Apparatuur automatisch toevoegen aan de werkorder op basis van de inhoud van"
+" de locatie"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid ""
 "Auto-populate the preferred workers of a location based on the territory"
-msgstr "Voorkeursmedewerkers van een locatie automatisch toevoegen op basis van het gebied"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__autopost_bills
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__autopost_bills
-msgid "Auto-post bills"
-msgstr "Facturen automatisch boeken"
+msgstr ""
+"Voorkeursmedewerkers van een locatie automatisch toevoegen op basis van het "
+"gebied"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid ""
 "Automatically creates a day route when an order is assigned and scheduled"
-msgstr "Maakt automatisch een dagroute aan wanneer een werkorder wordt toegewezen en gepland"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__autopost_bills
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__autopost_bills
-msgid "Automatically post bills for this trusted partner"
-msgstr "Facturen voor deze vertrouwde contactpersoon automatisch boeken"
+msgstr ""
+"Maakt automatisch een dagroute aan wanneer een werkorder wordt toegewezen en"
+" gepland"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__avatar_1920
@@ -381,10 +353,11 @@ msgid "Avatar 512"
 msgstr "Avatar 512"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__bank_account_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__bank_account_count
-msgid "Bank"
-msgstr "Bank"
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+#: model:ir.model.fields.selection,name:fieldservice.selection__fsm_equipment_wheelset__y_b__b
+msgid "B"
+msgstr "B"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__bank_ids
@@ -403,18 +376,6 @@ msgstr "Streepjescode"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__is_blacklisted
 msgid "Blacklist"
 msgstr "Zwarte lijst"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__mobile_blacklisted
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__mobile_blacklisted
-msgid "Blacklisted Phone Is Mobile"
-msgstr "Geblokkeerd telefoonnummer is mobiel"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_blacklisted
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_blacklisted
-msgid "Blacklisted Phone is Phone"
-msgstr "Geblokkeerd telefoonnummer is vast nummer"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__message_bounce
@@ -443,6 +404,11 @@ msgid "CRM"
 msgstr "CRM"
 
 #. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__calendar_name
+msgid "Calendar Title"
+msgstr "Kalendertitel"
+
+#. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_sign_wizard_view_form
 #: model_terms:ir.ui.view,arch_db:fieldservice.partner_wizard_view
 msgid "Cancel"
@@ -464,7 +430,9 @@ msgstr "Geannuleerd"
 msgid ""
 "Cannot create FSM Stage because it has the same Type and Sequence of an "
 "existing FSM Stage."
-msgstr "De Buitendienststatus kan niet worden aangemaakt omdat er al een status met hetzelfde type en dezelfde volgorde bestaat."
+msgstr ""
+"De Buitendienststatus kan niet worden aangemaakt omdat er al een status met "
+"hetzelfde type en dezelfde volgorde bestaat."
 
 #. module: fieldservice
 #. odoo-python
@@ -510,7 +478,8 @@ msgstr "Ontvangen betalingen controleren"
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__is_company
 #: model:ir.model.fields,help:fieldservice.field_fsm_person__is_company
 msgid "Check if the contact is a company, otherwise it is a person"
-msgstr "Vink aan als de contactpersoon een bedrijf is; anders is het een persoon"
+msgstr ""
+"Vink aan als de contactpersoon een bedrijf is; anders is het een persoon"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
@@ -601,12 +570,6 @@ msgstr "Commerciële entiteit"
 #: model:ir.model,name:fieldservice.model_res_company
 msgid "Companies"
 msgstr "Bedrijven"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__ref_company_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__ref_company_ids
-msgid "Companies that refers to partner"
-msgstr "Bedrijven die naar deze contactpersoon verwijzen"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_category__company_id
@@ -732,9 +695,16 @@ msgstr "Configuratie"
 #. module: fieldservice
 #: model:ir.model,name:fieldservice.model_res_partner
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__contact_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__contact_id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__child_ids
 msgid "Contact"
 msgstr "Contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__contact_id
+msgid "Contact for this field service order, release form, and billing."
+msgstr ""
+"Contactpersoon voor deze werkorder, het vrijgaveformulier en de facturatie."
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
@@ -826,7 +796,8 @@ msgstr "Maak een werkordersjabloon aan"
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Create multiple FSM Locations at once using Location Builder Wizard"
-msgstr "Maak meerdere Buitendienstlocaties tegelijk aan met de wizard Locatiebouwer"
+msgstr ""
+"Maak meerdere Buitendienstlocaties tegelijk aan met de wizard Locatiebouwer"
 
 #. module: fieldservice
 #: model_terms:ir.actions.act_window,help:fieldservice.action_fsm_location_person
@@ -837,11 +808,14 @@ msgstr "Maak de gekoppelde locaties van een medewerker aan."
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid ""
 "Create vendor bills and customer invoices when completing service orders."
-msgstr "Maak leveranciersfacturen en klantfacturen aan bij het voltooien van werkorders."
+msgstr ""
+"Maak leveranciersfacturen en klantfacturen aan bij het voltooien van "
+"werkorders."
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_category__create_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__create_uid
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__create_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__create_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__create_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__create_uid
@@ -860,6 +834,7 @@ msgstr "Aangemaakt door"
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_category__create_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__create_date
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__create_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__create_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__create_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__create_date
@@ -876,30 +851,6 @@ msgid "Created on"
 msgstr "Aangemaakt op"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__credit_limit
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__credit_limit
-msgid "Credit Limit"
-msgstr "Kredietlimiet"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__credit_to_invoice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__credit_to_invoice
-msgid "Credit To Invoice"
-msgstr "Te factureren krediet"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__credit_limit
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__credit_limit
-msgid "Credit limit specific to this partner."
-msgstr "Kredietlimiet specifiek voor deze contactpersoon."
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__currency_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__currency_id
-msgid "Currency"
-msgstr "Valuta"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__current_date
 msgid "Current Date"
 msgstr "Huidige datum"
@@ -908,24 +859,6 @@ msgstr "Huidige datum"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__current_location_id
 msgid "Current Location"
 msgstr "Huidige locatie"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_stock_customer
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_stock_customer
-msgid "Customer Location"
-msgstr "Klantlocatie"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_payment_term_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_payment_term_id
-msgid "Customer Payment Terms"
-msgstr "Betalingsvoorwaarden klant"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__customer_rank
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__customer_rank
-msgid "Customer Rank"
-msgstr "Klantclassificatie"
 
 #. module: fieldservice
 #: model:ir.actions.act_window,name:fieldservice.fsm_order_sign_wizard_action
@@ -945,12 +878,6 @@ msgid "Dashboard"
 msgstr "Dashboard"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__days_sales_outstanding
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__days_sales_outstanding
-msgid "Days Sales Outstanding (DSO)"
-msgstr "Gemiddelde incassoperiode (DSO)"
-
-#. module: fieldservice
 #: model:fsm.team,name:fieldservice.fsm_team_default
 msgid "Default Team"
 msgstr "Standaardteam"
@@ -964,12 +891,6 @@ msgstr "Standaardduur in uren"
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__team_id
 msgid "Default team assigned to orders in this location"
 msgstr "Standaardteam dat wordt toegewezen aan werkorders op deze locatie"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__trust
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__trust
-msgid "Degree of trust you have in this debtor"
-msgstr "Mate van vertrouwen in deze debiteur"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__fsm_parent_id
@@ -1003,20 +924,9 @@ msgid "Dispatcher"
 msgstr "Dispatcher"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__display_invoice_edi_format
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__display_invoice_edi_format
-msgid "Display Invoice Edi Format"
-msgstr "EDI-factuurformaat weergeven"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__display_invoice_template_pdf_report_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__display_invoice_template_pdf_report_id
-msgid "Display Invoice Template Pdf Report"
-msgstr "PDF-factuursjabloonrapport weergeven"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_category__display_name
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__display_name
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__display_name
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__display_name
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__display_name
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order_sign_wizard__display_name
@@ -1072,18 +982,6 @@ msgid "Due Within 7 Days"
 msgstr "Vervalt binnen 7 dagen"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__duplicate_bank_partner_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__duplicate_bank_partner_ids
-msgid "Duplicate Bank Partner"
-msgstr "Dubbele bankcontactpersoon"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__duplicated_bank_account_partners_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__duplicated_bank_account_partners_count
-msgid "Duplicated Bank Account Partners Count"
-msgstr "Aantal contactpersonen met dubbele bankrekening"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_template__duration
 msgid "Duration"
 msgstr "Duur"
@@ -1106,7 +1004,10 @@ msgid ""
 "Either customer (not a user), either shared user. Indicated the current "
 "partner is a customer without access or with a limited access created for "
 "sharing data."
-msgstr "Of klant (geen gebruiker), of gedeelde gebruiker. Geeft aan dat de huidige contactpersoon een klant is zonder toegang of met beperkte toegang, aangemaakt voor het delen van gegevens."
+msgstr ""
+"Of klant (geen gebruiker), of gedeelde gebruiker. Geeft aan dat de huidige "
+"contactpersoon een klant is zonder toegang of met beperkte toegang, "
+"aangemaakt voor het delen van gegevens."
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__email
@@ -1118,20 +1019,9 @@ msgstr "E-mail"
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employee
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee_id
 msgid "Employee"
 msgstr "Werknemer"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employee_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee_ids
-msgid "Employees"
-msgstr "Werknemers"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employees_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employees_count
-msgid "Employees Count"
-msgstr "Aantal werknemers"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_form
@@ -1139,11 +1029,12 @@ msgid "Enter the resolution for the order..."
 msgstr "Voer de oplossing voor de werkorder in..."
 
 #. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__equipment_id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__equipment_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__equipment_id
 #: model:ir.model.fields.selection,name:fieldservice.selection__fsm_stage__stage_type__equipment
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__equipment_id
 msgid "Equipment"
 msgstr "Voorwerpnummer"
 
@@ -1151,21 +1042,6 @@ msgstr "Voorwerpnummer"
 #: model:ir.model.constraint,message:fieldservice.constraint_fsm_equipment_name_uniq
 msgid "Equipment name already exists!"
 msgstr "De naam van de apparatuur bestaat al!"
-
-#. module: fieldservice
-#: model:fsm.stage,name:fieldservice.equipment_stage_1
-msgid "Equipment-1"
-msgstr "Apparatuur-1"
-
-#. module: fieldservice
-#: model:fsm.stage,name:fieldservice.equipment_stage_2
-msgid "Equipment-2"
-msgstr "Apparatuur-2"
-
-#. module: fieldservice
-#: model:fsm.stage,name:fieldservice.equipment_stage_3
-msgid "Equipment-3"
-msgstr "Apparatuur-3"
 
 #. module: fieldservice
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_report_equipment
@@ -1196,7 +1072,9 @@ msgstr "Uitvoering"
 msgid ""
 "Explanation text to help users using the star and priority mechanism on "
 "stages or orders that are in this stage."
-msgstr "Uitleg om gebruikers te helpen bij het gebruik van de ster- en prioriteitsmechanismen voor statussen of werkorders in deze status."
+msgstr ""
+"Uitleg om gebruikers te helpen bij het gebruik van de ster- en "
+"prioriteitsmechanismen voor statussen of werkorders in deze status."
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.report_fsm_order_document
@@ -1212,6 +1090,11 @@ msgstr "Buitendienst"
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_search_view
 msgid "FSM Equipment Name"
 msgstr "Naam Buitendienstapparatuur"
+
+#. module: fieldservice
+#: model:ir.model,name:fieldservice.model_fsm_equipment_wheelset
+msgid "FSM Equipment Wheelset"
+msgstr "FSM-wielstel van uitrusting"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
@@ -1334,26 +1217,6 @@ msgid "Field Service Workers"
 msgstr "Buitendienstmedewerkers"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__phone_sanitized
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__phone_sanitized
-msgid ""
-"Field used to store sanitized phone number. Helps speeding up searches and "
-"comparisons."
-msgstr "Veld voor het opslaan van een gestandaardiseerd telefoonnummer. Versnelt zoeken en vergelijken."
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__fiscal_country_codes
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__fiscal_country_codes
-msgid "Fiscal Country Codes"
-msgstr "Fiscale landcodes"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_account_position_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_account_position_id
-msgid "Fiscal Position"
-msgstr "Fiscale positie"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_stage__fold
 msgid "Folded in Kanban"
 msgstr "Ingeklapt in Kanban"
@@ -1414,12 +1277,6 @@ msgid "Future Orders"
 msgstr "Toekomstige werkorders"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__global_location_number
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__global_location_number
-msgid "GLN"
-msgstr "GLN"
-
-#. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
 msgid "General Notes"
 msgstr "Algemene opmerkingen"
@@ -1451,12 +1308,6 @@ msgstr "Geolocatie"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__date_localization
 msgid "Geolocation Date"
 msgstr "Datum geolocatie"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__global_location_number
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__global_location_number
-msgid "Global Location Number"
-msgstr "Globaal locatienummer"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_search_view
@@ -1515,6 +1366,7 @@ msgstr "Bufferuren voor Buitendienstwerkorders met gemiddelde prioriteit"
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_category__id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__id
@@ -1565,15 +1417,10 @@ msgstr "Indien aangevinkt vereisen nieuwe berichten uw aandacht."
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_equipment__message_has_error
-#: model:ir.model.fields,help:fieldservice.field_fsm_equipment__message_has_sms_error
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__message_has_error
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__message_has_sms_error
 #: model:ir.model.fields,help:fieldservice.field_fsm_order__message_has_error
-#: model:ir.model.fields,help:fieldservice.field_fsm_order__message_has_sms_error
 #: model:ir.model.fields,help:fieldservice.field_fsm_person__message_has_error
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__message_has_sms_error
 #: model:ir.model.fields,help:fieldservice.field_fsm_team__message_has_error
-#: model:ir.model.fields,help:fieldservice.field_fsm_team__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Indien aangevinkt hebben sommige berichten een bezorgfout."
 
@@ -1583,27 +1430,9 @@ msgstr "Indien aangevinkt hebben sommige berichten een bezorgfout."
 msgid ""
 "If the email address is on the blacklist, the contact won't receive mass "
 "mailing anymore, from any list"
-msgstr "Als het e-mailadres op de zwarte lijst staat, ontvangt de contactpersoon geen massale e-mail meer vanuit een lijst"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__phone_sanitized_blacklisted
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__phone_sanitized_blacklisted
-msgid ""
-"If the sanitized phone number is on the blacklist, the contact won't receive"
-" mass mailing sms anymore, from any list"
-msgstr "Als het gestandaardiseerde telefoonnummer op de zwarte lijst staat, ontvangt de contactpersoon geen massale sms meer vanuit een lijst"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__ignore_abnormal_invoice_amount
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__ignore_abnormal_invoice_amount
-msgid "Ignore Abnormal Invoice Amount"
-msgstr "Afwijkend factuurbedrag negeren"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__ignore_abnormal_invoice_date
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__ignore_abnormal_invoice_date
-msgid "Ignore Abnormal Invoice Date"
-msgstr "Afwijkende factuurdatum negeren"
+msgstr ""
+"Als het e-mailadres op de zwarte lijst staat, ontvangt de contactpersoon "
+"geen massale e-mail meer vanuit een lijst"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__image_1920
@@ -1636,24 +1465,6 @@ msgid "Image 512"
 msgstr "Afbeelding 512"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__mobile_blacklisted
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__mobile_blacklisted
-msgid ""
-"Indicates if a blacklisted sanitized phone number is a mobile number. Helps "
-"distinguish which number is blacklisted             when there is both a "
-"mobile and phone field in a model."
-msgstr "Geeft aan of een op de zwarte lijst geplaatst gestandaardiseerd telefoonnummer een mobiel nummer is. Helpt onderscheid maken welk nummer is geblokkeerd wanneer een model zowel een mobiel- als telefoonveld heeft."
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__phone_blacklisted
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__phone_blacklisted
-msgid ""
-"Indicates if a blacklisted sanitized phone number is a phone number. Helps "
-"distinguish which number is blacklisted             when there is both a "
-"mobile and phone field in a model."
-msgstr "Geeft aan of een op de zwarte lijst geplaatst gestandaardiseerd telefoonnummer een vast nummer is. Helpt onderscheid maken welk nummer is geblokkeerd wanneer een model zowel een mobiel- als telefoonveld heeft."
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__industry_id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__industry_id
 msgid "Industry"
@@ -1681,30 +1492,6 @@ msgid "Internal Type"
 msgstr "Intern type"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_warn
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_warn
-msgid "Invoice"
-msgstr "Factuur"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_edi_format_store
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_edi_format_store
-msgid "Invoice Edi Format Store"
-msgstr "Opslag EDI-factuurformaat"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_sending_method
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_sending_method
-msgid "Invoice sending"
-msgstr "Factuurverzending"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_template_pdf_report_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_template_pdf_report_id
-msgid "Invoice template"
-msgstr "Factuursjabloon"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__module_fieldservice_account
 msgid "Invoice your FSM orders"
 msgstr "Buitendienstwerkorders factureren"
@@ -1713,18 +1500,6 @@ msgstr "Buitendienstwerkorders factureren"
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Invoice your Service Orders"
 msgstr "Uw werkorders factureren"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_ids
-msgid "Invoices"
-msgstr "Facturen"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__is_coa_installed
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__is_coa_installed
-msgid "Is Coa Installed"
-msgstr "Is grootboekschema geïnstalleerd"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__message_is_follower
@@ -1785,20 +1560,20 @@ msgid "Job Position"
 msgstr "Functie"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__journal_item_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__journal_item_count
-msgid "Journal Items"
-msgstr "Boekingsregels"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__lang
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__lang
 msgid "Language"
 msgstr "Taal"
 
 #. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__last_input_date
+msgid "Last Input Date"
+msgstr "Laatste invoerdatum"
+
+#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_category__write_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__write_uid
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__write_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__write_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__write_uid
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__write_uid
@@ -1817,6 +1592,7 @@ msgstr "Laatst bijgewerkt door"
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_category__write_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__write_date
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__write_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__write_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__write_date
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__write_date
@@ -1831,6 +1607,12 @@ msgstr "Laatst bijgewerkt door"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_wizard__write_date
 msgid "Last Updated on"
 msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+msgid "Last input date"
+msgstr "Laatste invoerdatum"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__calendar_last_notif_ack
@@ -1908,6 +1690,11 @@ msgid "Location"
 msgstr "Locatie"
 
 #. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__location_track_display
+msgid "Location (Track)"
+msgstr "Locatie (spoor)"
+
+#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__location_directions
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_form
 msgid "Location Directions"
@@ -1944,19 +1731,9 @@ msgid "Location Workers"
 msgstr "Locatiemedewerkers"
 
 #. module: fieldservice
-#: model:fsm.stage,name:fieldservice.location_stage_1
-msgid "Location-1"
-msgstr "Locatie-1"
-
-#. module: fieldservice
-#: model:fsm.stage,name:fieldservice.location_stage_2
-msgid "Location-2"
-msgstr "Locatie-2"
-
-#. module: fieldservice
-#: model:fsm.stage,name:fieldservice.location_stage_3
-msgid "Location-3"
-msgstr "Locatie-3"
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__location_track_display
+msgid "Location name followed by the track between brackets."
+msgstr "Naam van de locatie, gevolgd door het spoor tussen haakjes."
 
 #. module: fieldservice
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_report_location
@@ -1984,7 +1761,8 @@ msgstr "MRP-reparatie"
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Make sure to send the right worker with the appropriate skills"
-msgstr "Zorg ervoor dat u de juiste medewerker met de juiste vaardigheden stuurt"
+msgstr ""
+"Zorg ervoor dat u de juiste medewerker met de juiste vaardigheden stuurt"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_res_config_settings__module_fieldservice_agreement
@@ -2155,7 +1933,9 @@ msgstr "Apparatuur op de servicelocatie beheren"
 msgid ""
 "Manage materials and stock operations. Automatically activate Lots & Serial "
 "Numbers."
-msgstr "Materialen en voorraadbewerkingen beheren. Lots en serienummers automatisch activeren."
+msgstr ""
+"Materialen en voorraadbewerkingen beheren. Lots en serienummers automatisch "
+"activeren."
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
@@ -2234,6 +2014,11 @@ msgid "Mapping Tools"
 msgstr "Kaarttools"
 
 #. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__markings
+msgid "Markings"
+msgstr "Markeringen"
+
+#. module: fieldservice
 #: model:ir.ui.menu,name:fieldservice.data
 msgid "Master Data"
 msgstr "Stamgegevens"
@@ -2257,24 +2042,6 @@ msgstr "Vergaderingen"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_team__message_has_error
 msgid "Message Delivery error"
 msgstr "Fout bij berichtbezorging"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_warn_msg
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_warn_msg
-msgid "Message for Invoice"
-msgstr "Bericht voor factuur"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_warn_msg
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_warn_msg
-msgid "Message for Sales Order"
-msgstr "Bericht voor verkooporder"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__picking_warn_msg
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__picking_warn_msg
-msgid "Message for Stock Picking"
-msgstr "Bericht voor voorraadverwerking"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__message_ids
@@ -2336,6 +2103,17 @@ msgstr "Planning nodig"
 #: model:fsm.stage,name:fieldservice.fsm_stage_new
 msgid "New"
 msgstr "Nieuw"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__new_input_date
+msgid "New Input Date"
+msgstr "Nieuwe invoerdatum"
+
+#. module: fieldservice
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+msgid "New input date"
+msgstr "Nieuwe invoerdatum"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__activity_calendar_event_id
@@ -2400,6 +2178,13 @@ msgid "Notes"
 msgstr "Opmerkingen"
 
 #. module: fieldservice
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__serial_number
+msgid "Number"
+msgstr "Nummer"
+
+#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__message_needaction_counter
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__message_needaction_counter
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__message_needaction_counter
@@ -2444,17 +2229,6 @@ msgstr "Kantooruren"
 #: model:ir.ui.menu,name:fieldservice.operations
 msgid "Operations"
 msgstr "Operaties"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__opportunity_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__opportunity_ids
-msgid "Opportunities"
-msgstr "Verkoopkansen"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__opportunity_count
-msgid "Opportunity Count"
-msgstr "Aantal verkoopkansen"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__display_name
@@ -2551,6 +2325,11 @@ msgid "Order en route"
 msgstr "Werkorder onderweg"
 
 #. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__calendar_name
+msgid "Order number followed by the equipment between brackets."
+msgstr "Ordernummer, gevolgd door het voorwerpnummer tussen haakjes."
+
+#. module: fieldservice
 #: model:mail.message.subtype,description:fieldservice.mt_order_scheduled
 msgid "Order scheduled"
 msgstr "Werkorder gepland"
@@ -2645,30 +2424,6 @@ msgid "Parent name"
 msgstr "Naam bovenliggend niveau"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__partner_company_registry_placeholder
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__partner_company_registry_placeholder
-msgid "Partner Company Registry Placeholder"
-msgstr "Placeholder bedrijfsnummer contactpersoon"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__contract_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__contract_ids
-msgid "Partner Contracts"
-msgstr "Contracten contactpersoon"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__use_partner_credit_limit
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__use_partner_credit_limit
-msgid "Partner Limit"
-msgstr "Limiet contactpersoon"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__partner_vat_placeholder
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__partner_vat_placeholder
-msgid "Partner Vat Placeholder"
-msgstr "Placeholder btw-nummer contactpersoon"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__active_partner
 msgid "Partner is Active"
 msgstr "Contactpersoon is actief"
@@ -2686,24 +2441,6 @@ msgid "Partner with same Tax ID"
 msgstr "Contactpersoon met hetzelfde fiscaal nummer"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__debit_limit
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__debit_limit
-msgid "Payable Limit"
-msgstr "Crediteurenlimiet"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__payment_token_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__payment_token_count
-msgid "Payment Token Count"
-msgstr "Aantal betaaltokens"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__payment_token_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__payment_token_ids
-msgid "Payment Tokens"
-msgstr "Betaaltokens"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person_calendar_filter__person_checked
 msgid "Person Checked"
 msgstr "Persoon gecontroleerd"
@@ -2716,21 +2453,16 @@ msgid "Phone"
 msgstr "Telefoon"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_sanitized_blacklisted
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_sanitized_blacklisted
-msgid "Phone Blacklisted"
-msgstr "Telefoonnummer op zwarte lijst"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_mobile_search
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_mobile_search
-msgid "Phone/Mobile"
-msgstr "Telefoon/Mobiel"
-
-#. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_form
 msgid "Planning"
 msgstr "Planning"
+
+#. module: fieldservice
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__position
+msgid "Position"
+msgstr "Positie"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
@@ -2738,33 +2470,11 @@ msgid "Preferred Workers"
 msgstr "Voorkeursmedewerkers"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_outbound_payment_method_line_id
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_outbound_payment_method_line_id
-msgid ""
-"Preferred payment method when buying from this vendor. This will be set by "
-"default on all outgoing payments created for this vendor"
-msgstr "Voorkeursbetaalmethode bij aankopen bij deze leverancier. Deze wordt standaard ingesteld op alle uitgaande betalingen die voor deze leverancier worden aangemaakt"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_inbound_payment_method_line_id
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_inbound_payment_method_line_id
-msgid ""
-"Preferred payment method when selling to this customer. This will be set by "
-"default on all incoming payments created for this customer"
-msgstr "Voorkeursbetaalmethode bij verkopen aan deze klant. Deze wordt standaard ingesteld op alle inkomende betalingen die voor deze klant worden aangemaakt"
-
-#. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_person_form
 msgid "Previous Stage"
 msgstr "Vorige status"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_product_pricelist
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_product_pricelist
-msgid "Pricelist"
-msgstr "Prijslijst"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__territory_manager_id
@@ -2800,18 +2510,6 @@ msgstr "Uitleg prioriteitsbeheer"
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
 msgid "Projects and Tasks"
 msgstr "Projecten en taken"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_inbound_payment_method_line_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_inbound_payment_method_line_id
-msgid "Property Inbound Payment Method Line"
-msgstr "Regel inkomende betaalmethode"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_outbound_payment_method_line_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_outbound_payment_method_line_id
-msgid "Property Outbound Payment Method Line"
-msgstr "Regel uitgaande betaalmethode"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.res_config_settings_view_form
@@ -2887,12 +2585,6 @@ msgid "Related Partner"
 msgstr "Gerelateerde contactpersoon"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__employee_ids
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__employee_ids
-msgid "Related employees based on their private address"
-msgstr "Gerelateerde werknemers op basis van hun privéadres"
-
-#. module: fieldservice
 #: model:ir.ui.menu,name:fieldservice.reporting
 msgid "Reporting"
 msgstr "Rapportering"
@@ -2939,43 +2631,10 @@ msgid "Routes"
 msgstr "Routes"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__message_has_sms_error
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__message_has_sms_error
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__message_has_sms_error
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__message_has_sms_error
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_team__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Fout bij sms-bezorging"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_order_count
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_order_count
-msgid "Sale Order Count"
-msgstr "Aantal verkooporders"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_order_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_order_ids
-msgid "Sales Order"
-msgstr "Verkooporder"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_warn
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_warn
-msgid "Sales Warnings"
-msgstr "Verkoopwaarschuwingen"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__user_id
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__user_id
 msgid "Salesperson"
 msgstr "Verkoper"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_sanitized
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_sanitized
-msgid "Sanitized Number"
-msgstr "Gestandaardiseerd nummer"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_form
@@ -3036,24 +2695,18 @@ msgid "Search Locations based on their full hierarchy name"
 msgstr "Locaties zoeken op basis van hun volledige hiërarchische naam"
 
 #. module: fieldservice
+#: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_search_view
+msgid "Search Orders and Equipment"
+msgstr "Orders en uitrusting zoeken"
+
+#. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.partner_wizard_view
 msgid ""
 "Select whether you want to convert this record to a Field\n"
 "                    Service Worker or Location."
-msgstr "Kies of u dit record wilt converteren naar een\n                    Buitendienstmedewerker of locatie."
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__invoice_warn
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__picking_warn
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__sale_warn
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__invoice_warn
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__picking_warn
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__sale_warn
-msgid ""
-"Selecting the \"Warning\" option will notify user with the message, "
-"Selecting \"Blocking Message\" will throw an exception with the message and "
-"block the flow. The Message has to be written in the next field."
-msgstr "Met de optie \"Waarschuwing\" ontvangt de gebruiker een melding met het bericht. Met \"Blokkerend bericht\" wordt een foutmelding gegenereerd en wordt de flow geblokkeerd. Het bericht moet in het volgende veld worden ingevuld."
+msgstr ""
+"Kies of u dit record wilt converteren naar een\n"
+"                    Buitendienstmedewerker of locatie."
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__self
@@ -3109,12 +2762,6 @@ msgid "Services in this stage are considered as closed."
 msgstr "Werkorders in deze status worden als gesloten beschouwd."
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__use_partner_credit_limit
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__use_partner_credit_limit
-msgid "Set a value greater than 0.0 to activate a credit limit check"
-msgstr "Stel een waarde groter dan 0,0 in om de controle van de kredietlimiet te activeren"
-
-#. module: fieldservice
 #: model:ir.actions.act_window,name:fieldservice.action_fsm_config
 #: model:ir.ui.menu,name:fieldservice.settings
 msgid "Settings"
@@ -3125,12 +2772,6 @@ msgstr "Instellingen"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__partner_share
 msgid "Share Partner"
 msgstr "Gedeelde contactpersoon"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__show_credit_limit
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__show_credit_limit
-msgid "Show Credit Limit"
-msgstr "Kredietlimiet weergeven"
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_order_form
@@ -3160,12 +2801,6 @@ msgstr "Ondertekend op"
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__signup_type
 msgid "Signup Token Type"
 msgstr "Type registratietoken"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__specific_property_product_pricelist
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__specific_property_product_pricelist
-msgid "Specific Property Product Pricelist"
-msgstr "Specifieke productprijslijst"
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__stage_id
@@ -3226,13 +2861,11 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr "Status op basis van activiteiten\nTe laat: de vervaldatum is verstreken\nVandaag: de activiteitdatum is vandaag\nGepland: toekomstige activiteiten."
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__picking_warn
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__picking_warn
-msgid "Stock Picking"
-msgstr "Voorraadverwerking"
+msgstr ""
+"Status op basis van activiteiten\n"
+"Te laat: de vervaldatum is verstreken\n"
+"Vandaag: de activiteitdatum is vandaag\n"
+"Gepland: toekomstige activiteiten."
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__street
@@ -3269,12 +2902,6 @@ msgstr "Onderliggende locaties"
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_location_form_view
 msgid "Sub-Locations"
 msgstr "Onderliggende locaties"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__supplier_rank
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__supplier_rank
-msgid "Supplier Rank"
-msgstr "Leveranciersclassificatie"
 
 #. module: fieldservice
 #: model:ir.model.constraint,message:fieldservice.constraint_fsm_tag_name_uniq
@@ -3361,7 +2988,9 @@ msgstr "Gebied"
 msgid ""
 "The ISO country code in two chars. \n"
 "You can use this field for quick search."
-msgstr "De ISO-landcode van twee tekens.\nU kunt dit veld gebruiken voor snel zoeken."
+msgstr ""
+"De ISO-landcode van twee tekens.\n"
+"U kunt dit veld gebruiken voor snel zoeken."
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__vat
@@ -3370,20 +2999,17 @@ msgid ""
 "The Tax Identification Number. Values here will be validated based on the "
 "country format. You can use '/' to indicate that the partner is not subject "
 "to tax."
-msgstr "Het fiscaal identificatienummer. Waarden worden gevalideerd volgens het formaat van het land. Gebruik '/' om aan te geven dat de contactpersoon niet aan btw is onderworpen."
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_account_position_id
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_account_position_id
-msgid ""
-"The fiscal position determines the taxes/accounts used for this contact."
-msgstr "De fiscale positie bepaalt de belastingen en rekeningen die voor deze contactpersoon worden gebruikt."
+msgstr ""
+"Het fiscaal identificatienummer. Waarden worden gevalideerd volgens het "
+"formaat van het land. Gebruik '/' om aan te geven dat de contactpersoon niet"
+" aan btw is onderworpen."
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__user_id
 #: model:ir.model.fields,help:fieldservice.field_fsm_person__user_id
 msgid "The internal user in charge of this contact."
-msgstr "De interne gebruiker die verantwoordelijk is voor deze contactpersoon."
+msgstr ""
+"De interne gebruiker die verantwoordelijk is voor deze contactpersoon."
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__company_registry
@@ -3391,21 +3017,10 @@ msgstr "De interne gebruiker die verantwoordelijk is voor deze contactpersoon."
 msgid ""
 "The registry number of the company. Use it if it is different from the Tax "
 "ID. It must be unique across all partners of a same country"
-msgstr "Het registratienummer van het bedrijf. Gebruik het als het afwijkt van het fiscaal nummer. Het moet uniek zijn voor alle contactpersonen in hetzelfde land"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_stock_customer
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_stock_customer
-msgid ""
-"The stock location used as destination when sending goods to this contact."
-msgstr "De voorraadlocatie die als bestemming wordt gebruikt wanneer goederen naar deze contactpersoon worden verzonden."
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_stock_supplier
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_stock_supplier
-msgid ""
-"The stock location used as source when receiving goods from this contact."
-msgstr "De voorraadlocatie die als bron wordt gebruikt wanneer goederen van deze contactpersoon worden ontvangen."
+msgstr ""
+"Het registratienummer van het bedrijf. Gebruik het als het afwijkt van het "
+"fiscaal nummer. Het moet uniek zijn voor alle contactpersonen in hetzelfde "
+"land"
 
 #. module: fieldservice
 #: model:ir.model.constraint,message:fieldservice.constraint_fsm_location_person_location_person_uniq
@@ -3413,59 +3028,23 @@ msgid "The worker is already linked to this location."
 msgstr "De medewerker is al gekoppeld aan deze locatie."
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_account_payable_id
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_account_payable_id
-msgid ""
-"This account will be used instead of the default one as the payable account "
-"for the current partner"
-msgstr "Dit account wordt in plaats van het standaardaccount gebruikt als crediteurenrekening voor de huidige contactpersoon"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_account_receivable_id
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_account_receivable_id
-msgid ""
-"This account will be used instead of the default one as the receivable "
-"account for the current partner"
-msgstr "Dit account wordt in plaats van het standaardaccount gebruikt als debiteurenrekening voor de huidige contactpersoon"
-
-#. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__email_normalized
 #: model:ir.model.fields,help:fieldservice.field_fsm_person__email_normalized
 msgid ""
 "This field is used to search on email address as the primary email field can"
 " contain more than strictly an email address."
-msgstr "Dit veld wordt gebruikt om op e-mailadres te zoeken, omdat het primaire e-mailveld meer kan bevatten dan uitsluitend een e-mailadres."
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_supplier_payment_term_id
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_supplier_payment_term_id
-msgid ""
-"This payment term will be used instead of the default one for purchase "
-"orders and vendor bills"
-msgstr "Deze betalingsvoorwaarde wordt in plaats van de standaardvoorwaarde gebruikt voor inkooporders en leveranciersfacturen"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_payment_term_id
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_payment_term_id
-msgid ""
-"This payment term will be used instead of the default one for sales orders "
-"and customer invoices"
-msgstr "Deze betalingsvoorwaarde wordt in plaats van de standaardvoorwaarde gebruikt voor verkooporders en klantfacturen"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_product_pricelist
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_product_pricelist
-msgid ""
-"This pricelist will be used, instead of the default one, for sales to the "
-"current partner"
-msgstr "Deze prijslijst wordt in plaats van de standaardprijslijst gebruikt voor verkopen aan de huidige contactpersoon"
+msgstr ""
+"Dit veld wordt gebruikt om op e-mailadres te zoeken, omdat het primaire "
+"e-mailveld meer kan bevatten dan uitsluitend een e-mailadres."
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_stage__fold
 msgid ""
 "This stage is folded in the kanban view when there are no record in that "
 "stage to display."
-msgstr "Deze status is ingeklapt in de Kanban-weergave wanneer er geen records in die status zijn om weer te geven."
+msgstr ""
+"Deze status is ingeklapt in de Kanban-weergave wanneer er geen records in "
+"die status zijn om weer te geven."
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__tz
@@ -3507,36 +3086,30 @@ msgid "Today Orders"
 msgstr "Werkorders van vandaag"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__total_invoiced
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__total_invoiced
-msgid "Total Invoiced"
-msgstr "Totaal gefactureerd"
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__ton
+msgid "Ton"
+msgstr "Ton"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__debit
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__debit
-msgid "Total Payable"
-msgstr "Totaal te betalen"
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__track
+msgid "Track"
+msgstr "Spoor"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__credit
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__credit
-msgid "Total Receivable"
-msgstr "Totaal te ontvangen"
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__track
+msgid ""
+"Track at the service location, e.g. the rail track where the wagon stands. "
+"Printed between brackets after the location."
+msgstr ""
+"Spoor op de servicelocatie, bv. het spoor waar de wagon staat. Wordt tussen "
+"haakjes achter de locatie afgedrukt."
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__credit
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__credit
-msgid "Total amount this customer owes you."
-msgstr "Totaalbedrag dat deze klant aan u verschuldigd is."
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__debit
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__debit
-msgid "Total amount you have to pay to this vendor."
-msgstr "Totaalbedrag dat u aan deze leverancier moet betalen."
-
-#. module: fieldservice
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__wheelset_type
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_order__type
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_stage__stage_type
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_template__type_id
@@ -3643,40 +3216,16 @@ msgid "Vehicles"
 msgstr "Voertuigen"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_stock_supplier
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_stock_supplier
-msgid "Vendor Location"
-msgstr "Leverancierslocatie"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_supplier_payment_term_id
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_supplier_payment_term_id
-msgid "Vendor Payment Terms"
-msgstr "Betalingsvoorwaarden leverancier"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__website
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__website
 msgid "Website Link"
 msgstr "Websitelink"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__website_message_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__website_message_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__website_message_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__website_message_ids
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_team__website_message_ids
-msgid "Website Messages"
-msgstr "Websiteberichten"
-
-#. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_equipment__website_message_ids
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__website_message_ids
-#: model:ir.model.fields,help:fieldservice.field_fsm_order__website_message_ids
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__website_message_ids
-#: model:ir.model.fields,help:fieldservice.field_fsm_team__website_message_ids
-msgid "Website communication history"
-msgstr "Communicatiegeschiedenis website"
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__wheelset_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice.fsm_equipment_form_view
+msgid "Wheelsets"
+msgstr "Wielstellen"
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_location__tz
@@ -3685,14 +3234,19 @@ msgid ""
 "When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
 "If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
 "Anywhere else, time values are computed according to the time offset of your web client."
-msgstr "Bij het afdrukken van documenten en het exporteren/importeren van gegevens worden tijden berekend volgens deze tijdzone.\nAls geen tijdzone is ingesteld, wordt UTC (Coordinated Universal Time) gebruikt.\nIn alle andere gevallen worden tijden berekend volgens het tijdverschil van uw webclient."
+msgstr ""
+"Bij het afdrukken van documenten en het exporteren/importeren van gegevens worden tijden berekend volgens deze tijdzone.\n"
+"Als geen tijdzone is ingesteld, wordt UTC (Coordinated Universal Time) gebruikt.\n"
+"In alle andere gevallen worden tijden berekend volgens het tijdverschil van uw webclient."
 
 #. module: fieldservice
 #: model:ir.model.fields,help:fieldservice.field_fsm_order__require_signature
 #: model:ir.model.fields,help:fieldservice.field_fsm_stage__require_signature
 msgid ""
 "Whether to ask for a Customer Signature when the order is in this stage."
-msgstr "Of om een handtekening van de klant wordt gevraagd wanneer de werkorder zich in deze status bevindt."
+msgstr ""
+"Of om een handtekening van de klant wordt gevraagd wanneer de werkorder zich"
+" in deze status bevindt."
 
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location_person__person_id
@@ -3709,21 +3263,6 @@ msgid "Worker Phone"
 msgstr "Telefoonnummer medewerker"
 
 #. module: fieldservice
-#: model:fsm.stage,name:fieldservice.worker_stage_1
-msgid "Worker Stage 1"
-msgstr "Medewerkerstatus 1"
-
-#. module: fieldservice
-#: model:fsm.stage,name:fieldservice.worker_stage_2
-msgid "Worker Stage 2"
-msgstr "Medewerkerstatus 2"
-
-#. module: fieldservice
-#: model:fsm.stage,name:fieldservice.worker_stage_3
-msgid "Worker Stage 3"
-msgstr "Medewerkerstatus 3"
-
-#. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__person_ids
 #: model:ir.ui.menu,name:fieldservice.menu_fsm_config_person
 #: model:ir.ui.menu,name:fieldservice.menu_fsm_person
@@ -3737,11 +3276,27 @@ msgid "Working Schedule"
 msgstr "Werkrooster"
 
 #. module: fieldservice
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+#: model:ir.model.fields.selection,name:fieldservice.selection__fsm_equipment_wheelset__y_b__y
+msgid "Y"
+msgstr "Y"
+
+#. module: fieldservice
+#. odoo-javascript
+#: code:addons/fieldservice/static/src/xml/wheelset_grid_field.xml:0
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment_wheelset__y_b
+msgid "Y/B"
+msgstr "Y/B"
+
+#. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_stage_form_view
 msgid ""
 "You can add a description to help your coworkers understand the meaning and "
 "purpose of the stage."
-msgstr "U kunt een omschrijving toevoegen om collega's te helpen de betekenis en het doel van de status te begrijpen."
+msgstr ""
+"U kunt een omschrijving toevoegen om collega's te helpen de betekenis en het"
+" doel van de status te begrijpen."
 
 #. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_person_form
@@ -3785,20 +3340,6 @@ msgid "Zip"
 msgstr "Postcode"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_location__days_sales_outstanding
-#: model:ir.model.fields,help:fieldservice.field_fsm_person__days_sales_outstanding
-msgid ""
-"[(Total Receivable/Total Revenue) * number of days since the first invoice] "
-"for this customer"
-msgstr "[(Totaal te ontvangen/Totale omzet) * aantal dagen sinds de eerste factuur] voor deze klant"
-
-#. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_edi_format
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_edi_format
-msgid "eInvoice format"
-msgstr "E-factuurformaat"
-
-#. module: fieldservice
 #: model_terms:ir.ui.view,arch_db:fieldservice.fsm_tag_form_view
 msgid "tag"
 msgstr "tag"
@@ -3809,31 +3350,710 @@ msgid "template"
 msgstr "sjabloon"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__track
-msgid "Track"
-msgstr "Spoor"
+#: model_terms:ir.ui.view,arch_db:fieldservice.fsm_person_form
+msgid "x"
+msgstr "x"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_order__track
-msgid "Track at the service location, e.g. the rail track where the wagon stands. Printed between brackets after the location."
-msgstr "Spoor op de servicelocatie, bv. het spoor waar de wagon staat. Wordt tussen haakjes achter de locatie afgedrukt."
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__opportunity_count
+msgid "# Opportunities"
+msgstr "# Verkoopkansen"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__location_track_display
-msgid "Location (Track)"
-msgstr "Locatie (spoor)"
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__supplier_invoice_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__supplier_invoice_count
+msgid "# Vendor Bills"
+msgstr "# Leveranciersfacturen"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_order__location_track_display
-msgid "Location name followed by the track between brackets."
-msgstr "Naam van de locatie, gevolgd door het spoor tussen haakjes."
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_account_payable_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_account_payable_id
+msgid "Account Payable"
+msgstr "Crediteurenrekening"
 
 #. module: fieldservice
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__calendar_name
-msgid "Calendar Title"
-msgstr "Kalendertitel"
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_account_receivable_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_account_receivable_id
+msgid "Account Receivable"
+msgstr "Debiteurenrekening"
 
 #. module: fieldservice
-#: model:ir.model.fields,help:fieldservice.field_fsm_order__calendar_name
-msgid "Order number followed by the equipment between brackets."
-msgstr "Ordernummer, gevolgd door het voorwerpnummer tussen haakjes."
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__state_name
+msgid ""
+"Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr ""
+"Administratieve indelingen van een land, bijvoorbeeld deelstaat, departement"
+" of kanton."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__agreement_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__agreement_ids
+msgid "Agreements"
+msgstr "Overeenkomsten"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__agreements_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__agreements_count
+msgid "Agreements Count"
+msgstr "Aantal overeenkomsten"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__person_id
+msgid "Assigned To"
+msgstr "Toegewezen aan"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__autopost_bills
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__autopost_bills
+msgid "Auto-post bills"
+msgstr "Facturen automatisch boeken"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__autopost_bills
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__autopost_bills
+msgid "Automatically post bills for this trusted partner"
+msgstr "Facturen voor deze vertrouwde contactpersoon automatisch boeken"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__bank_account_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__bank_account_count
+msgid "Bank"
+msgstr "Bank"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__mobile_blacklisted
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__mobile_blacklisted
+msgid "Blacklisted Phone Is Mobile"
+msgstr "Geblokkeerd telefoonnummer is mobiel"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_blacklisted
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_blacklisted
+msgid "Blacklisted Phone is Phone"
+msgstr "Geblokkeerd telefoonnummer is vast nummer"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__ref_company_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__ref_company_ids
+msgid "Companies that refers to partner"
+msgstr "Bedrijven die naar deze contactpersoon verwijzen"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__credit_limit
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__credit_limit
+msgid "Credit Limit"
+msgstr "Kredietlimiet"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__credit_to_invoice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__credit_to_invoice
+msgid "Credit To Invoice"
+msgstr "Te factureren krediet"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__credit_limit
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__credit_limit
+msgid "Credit limit specific to this partner."
+msgstr "Kredietlimiet specifiek voor deze contactpersoon."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__currency_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__currency_id
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_stock_customer
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_stock_customer
+msgid "Customer Location"
+msgstr "Klantlocatie"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_payment_term_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr "Betalingsvoorwaarden klant"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__customer_rank
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__customer_rank
+msgid "Customer Rank"
+msgstr "Klantclassificatie"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__days_sales_outstanding
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__days_sales_outstanding
+msgid "Days Sales Outstanding (DSO)"
+msgstr "Gemiddelde incassoperiode (DSO)"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__trust
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__trust
+msgid "Degree of trust you have in this debtor"
+msgstr "Mate van vertrouwen in deze debiteur"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__display_invoice_edi_format
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__display_invoice_edi_format
+msgid "Display Invoice Edi Format"
+msgstr "EDI-factuurformaat weergeven"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__display_invoice_template_pdf_report_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__display_invoice_template_pdf_report_id
+msgid "Display Invoice Template Pdf Report"
+msgstr "PDF-factuursjabloonrapport weergeven"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__duplicate_bank_partner_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__duplicate_bank_partner_ids
+msgid "Duplicate Bank Partner"
+msgstr "Dubbele bankcontactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__duplicated_bank_account_partners_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__duplicated_bank_account_partners_count
+msgid "Duplicated Bank Account Partners Count"
+msgstr "Aantal contactpersonen met dubbele bankrekening"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employee_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee_ids
+msgid "Employees"
+msgstr "Werknemers"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employees_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employees_count
+msgid "Employees Count"
+msgstr "Aantal werknemers"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.equipment_stage_1
+msgid "Equipment-1"
+msgstr "Apparatuur-1"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.equipment_stage_2
+msgid "Equipment-2"
+msgstr "Apparatuur-2"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.equipment_stage_3
+msgid "Equipment-3"
+msgstr "Apparatuur-3"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__phone_sanitized
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__phone_sanitized
+msgid ""
+"Field used to store sanitized phone number. Helps speeding up searches and "
+"comparisons."
+msgstr ""
+"Veld voor het opslaan van een gestandaardiseerd telefoonnummer. Versnelt "
+"zoeken en vergelijken."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__fiscal_country_codes
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__fiscal_country_codes
+msgid "Fiscal Country Codes"
+msgstr "Fiscale landcodes"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_account_position_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_account_position_id
+msgid "Fiscal Position"
+msgstr "Fiscale positie"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__global_location_number
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__global_location_number
+msgid "GLN"
+msgstr "GLN"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__global_location_number
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__global_location_number
+msgid "Global Location Number"
+msgstr "Globaal locatienummer"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__phone_sanitized_blacklisted
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__phone_sanitized_blacklisted
+msgid ""
+"If the sanitized phone number is on the blacklist, the contact won't receive"
+" mass mailing sms anymore, from any list"
+msgstr ""
+"Als het gestandaardiseerde telefoonnummer op de zwarte lijst staat, ontvangt"
+" de contactpersoon geen massale sms meer vanuit een lijst"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__ignore_abnormal_invoice_amount
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__ignore_abnormal_invoice_amount
+msgid "Ignore Abnormal Invoice Amount"
+msgstr "Afwijkend factuurbedrag negeren"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__ignore_abnormal_invoice_date
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__ignore_abnormal_invoice_date
+msgid "Ignore Abnormal Invoice Date"
+msgstr "Afwijkende factuurdatum negeren"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__mobile_blacklisted
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__mobile_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a mobile number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+"Geeft aan of een op de zwarte lijst geplaatst gestandaardiseerd "
+"telefoonnummer een mobiel nummer is. Helpt onderscheid maken welk nummer is "
+"geblokkeerd wanneer een model zowel een mobiel- als telefoonveld heeft."
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__phone_blacklisted
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__phone_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a phone number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+"Geeft aan of een op de zwarte lijst geplaatst gestandaardiseerd "
+"telefoonnummer een vast nummer is. Helpt onderscheid maken welk nummer is "
+"geblokkeerd wanneer een model zowel een mobiel- als telefoonveld heeft."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_warn
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_warn
+msgid "Invoice"
+msgstr "Factuur"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_edi_format_store
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_edi_format_store
+msgid "Invoice Edi Format Store"
+msgstr "Opslag EDI-factuurformaat"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_sending_method
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_sending_method
+msgid "Invoice sending"
+msgstr "Factuurverzending"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_template_pdf_report_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_template_pdf_report_id
+msgid "Invoice template"
+msgstr "Factuursjabloon"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_ids
+msgid "Invoices"
+msgstr "Facturen"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__is_coa_installed
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__is_coa_installed
+msgid "Is Coa Installed"
+msgstr "Is grootboekschema geïnstalleerd"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__journal_item_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__journal_item_count
+msgid "Journal Items"
+msgstr "Boekingsregels"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.location_stage_1
+msgid "Location-1"
+msgstr "Locatie-1"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.location_stage_2
+msgid "Location-2"
+msgstr "Locatie-2"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.location_stage_3
+msgid "Location-3"
+msgstr "Locatie-3"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_warn_msg
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_warn_msg
+msgid "Message for Invoice"
+msgstr "Bericht voor factuur"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_warn_msg
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_warn_msg
+msgid "Message for Sales Order"
+msgstr "Bericht voor verkooporder"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__picking_warn_msg
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__picking_warn_msg
+msgid "Message for Stock Picking"
+msgstr "Bericht voor voorraadverwerking"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__opportunity_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__opportunity_ids
+msgid "Opportunities"
+msgstr "Verkoopkansen"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__opportunity_count
+msgid "Opportunity Count"
+msgstr "Aantal verkoopkansen"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__partner_company_registry_placeholder
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__partner_company_registry_placeholder
+msgid "Partner Company Registry Placeholder"
+msgstr "Placeholder bedrijfsnummer contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__contract_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__contract_ids
+msgid "Partner Contracts"
+msgstr "Contracten contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__use_partner_credit_limit
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__use_partner_credit_limit
+msgid "Partner Limit"
+msgstr "Limiet contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__partner_vat_placeholder
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__partner_vat_placeholder
+msgid "Partner Vat Placeholder"
+msgstr "Placeholder btw-nummer contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__debit_limit
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__debit_limit
+msgid "Payable Limit"
+msgstr "Crediteurenlimiet"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__payment_token_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__payment_token_count
+msgid "Payment Token Count"
+msgstr "Aantal betaaltokens"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__payment_token_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__payment_token_ids
+msgid "Payment Tokens"
+msgstr "Betaaltokens"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_sanitized_blacklisted
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_sanitized_blacklisted
+msgid "Phone Blacklisted"
+msgstr "Telefoonnummer op zwarte lijst"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_mobile_search
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_mobile_search
+msgid "Phone/Mobile"
+msgstr "Telefoon/Mobiel"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_outbound_payment_method_line_id
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_outbound_payment_method_line_id
+msgid ""
+"Preferred payment method when buying from this vendor. This will be set by "
+"default on all outgoing payments created for this vendor"
+msgstr ""
+"Voorkeursbetaalmethode bij aankopen bij deze leverancier. Deze wordt "
+"standaard ingesteld op alle uitgaande betalingen die voor deze leverancier "
+"worden aangemaakt"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_inbound_payment_method_line_id
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_inbound_payment_method_line_id
+msgid ""
+"Preferred payment method when selling to this customer. This will be set by "
+"default on all incoming payments created for this customer"
+msgstr ""
+"Voorkeursbetaalmethode bij verkopen aan deze klant. Deze wordt standaard "
+"ingesteld op alle inkomende betalingen die voor deze klant worden aangemaakt"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_product_pricelist
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_product_pricelist
+msgid "Pricelist"
+msgstr "Prijslijst"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_inbound_payment_method_line_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_inbound_payment_method_line_id
+msgid "Property Inbound Payment Method Line"
+msgstr "Regel inkomende betaalmethode"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_outbound_payment_method_line_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_outbound_payment_method_line_id
+msgid "Property Outbound Payment Method Line"
+msgstr "Regel uitgaande betaalmethode"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__employee_ids
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__employee_ids
+msgid "Related employees based on their private address"
+msgstr "Gerelateerde werknemers op basis van hun privéadres"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__message_has_sms_error
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__message_has_sms_error
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__message_has_sms_error
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__message_has_sms_error
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_team__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Fout bij sms-bezorging"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_order_count
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_order_count
+msgid "Sale Order Count"
+msgstr "Aantal verkooporders"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_order_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_order_ids
+msgid "Sales Order"
+msgstr "Verkooporder"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__sale_warn
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__sale_warn
+msgid "Sales Warnings"
+msgstr "Verkoopwaarschuwingen"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__phone_sanitized
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__phone_sanitized
+msgid "Sanitized Number"
+msgstr "Gestandaardiseerd nummer"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__invoice_warn
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__picking_warn
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__sale_warn
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__invoice_warn
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__picking_warn
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__sale_warn
+msgid ""
+"Selecting the \"Warning\" option will notify user with the message, "
+"Selecting \"Blocking Message\" will throw an exception with the message and "
+"block the flow. The Message has to be written in the next field."
+msgstr ""
+"Met de optie \"Waarschuwing\" ontvangt de gebruiker een melding met het "
+"bericht. Met \"Blokkerend bericht\" wordt een foutmelding gegenereerd en "
+"wordt de flow geblokkeerd. Het bericht moet in het volgende veld worden "
+"ingevuld."
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__use_partner_credit_limit
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__use_partner_credit_limit
+msgid "Set a value greater than 0.0 to activate a credit limit check"
+msgstr ""
+"Stel een waarde groter dan 0,0 in om de controle van de kredietlimiet te "
+"activeren"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__show_credit_limit
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__show_credit_limit
+msgid "Show Credit Limit"
+msgstr "Kredietlimiet weergeven"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__specific_property_product_pricelist
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__specific_property_product_pricelist
+msgid "Specific Property Product Pricelist"
+msgstr "Specifieke productprijslijst"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__picking_warn
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__picking_warn
+msgid "Stock Picking"
+msgstr "Voorraadverwerking"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__supplier_rank
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__supplier_rank
+msgid "Supplier Rank"
+msgstr "Leveranciersclassificatie"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_account_position_id
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_account_position_id
+msgid ""
+"The fiscal position determines the taxes/accounts used for this contact."
+msgstr ""
+"De fiscale positie bepaalt de belastingen en rekeningen die voor deze "
+"contactpersoon worden gebruikt."
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_stock_customer
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_stock_customer
+msgid ""
+"The stock location used as destination when sending goods to this contact."
+msgstr ""
+"De voorraadlocatie die als bestemming wordt gebruikt wanneer goederen naar "
+"deze contactpersoon worden verzonden."
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_stock_supplier
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_stock_supplier
+msgid ""
+"The stock location used as source when receiving goods from this contact."
+msgstr ""
+"De voorraadlocatie die als bron wordt gebruikt wanneer goederen van deze "
+"contactpersoon worden ontvangen."
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_account_payable_id
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_account_payable_id
+msgid ""
+"This account will be used instead of the default one as the payable account "
+"for the current partner"
+msgstr ""
+"Dit account wordt in plaats van het standaardaccount gebruikt als "
+"crediteurenrekening voor de huidige contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_account_receivable_id
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_account_receivable_id
+msgid ""
+"This account will be used instead of the default one as the receivable "
+"account for the current partner"
+msgstr ""
+"Dit account wordt in plaats van het standaardaccount gebruikt als "
+"debiteurenrekening voor de huidige contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_supplier_payment_term_id
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_supplier_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for purchase "
+"orders and vendor bills"
+msgstr ""
+"Deze betalingsvoorwaarde wordt in plaats van de standaardvoorwaarde gebruikt"
+" voor inkooporders en leveranciersfacturen"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_payment_term_id
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for sales orders "
+"and customer invoices"
+msgstr ""
+"Deze betalingsvoorwaarde wordt in plaats van de standaardvoorwaarde gebruikt"
+" voor verkooporders en klantfacturen"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__property_product_pricelist
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr ""
+"Deze prijslijst wordt in plaats van de standaardprijslijst gebruikt voor "
+"verkopen aan de huidige contactpersoon"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__total_invoiced
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__total_invoiced
+msgid "Total Invoiced"
+msgstr "Totaal gefactureerd"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__debit
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__debit
+msgid "Total Payable"
+msgstr "Totaal te betalen"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__credit
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__credit
+msgid "Total Receivable"
+msgstr "Totaal te ontvangen"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__credit
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__credit
+msgid "Total amount this customer owes you."
+msgstr "Totaalbedrag dat deze klant aan u verschuldigd is."
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__debit
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "Totaalbedrag dat u aan deze leverancier moet betalen."
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_stock_supplier
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_stock_supplier
+msgid "Vendor Location"
+msgstr "Leverancierslocatie"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__property_supplier_payment_term_id
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__property_supplier_payment_term_id
+msgid "Vendor Payment Terms"
+msgstr "Betalingsvoorwaarden leverancier"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_equipment__website_message_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__website_message_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_order__website_message_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__website_message_ids
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_team__website_message_ids
+msgid "Website Messages"
+msgstr "Websiteberichten"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_equipment__website_message_ids
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__website_message_ids
+#: model:ir.model.fields,help:fieldservice.field_fsm_order__website_message_ids
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__website_message_ids
+#: model:ir.model.fields,help:fieldservice.field_fsm_team__website_message_ids
+msgid "Website communication history"
+msgstr "Communicatiegeschiedenis website"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.worker_stage_1
+msgid "Worker Stage 1"
+msgstr "Medewerkerstatus 1"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.worker_stage_2
+msgid "Worker Stage 2"
+msgstr "Medewerkerstatus 2"
+
+#. module: fieldservice
+#: model:fsm.stage,name:fieldservice.worker_stage_3
+msgid "Worker Stage 3"
+msgstr "Medewerkerstatus 3"
+
+#. module: fieldservice
+#: model:ir.model.fields,help:fieldservice.field_fsm_location__days_sales_outstanding
+#: model:ir.model.fields,help:fieldservice.field_fsm_person__days_sales_outstanding
+msgid ""
+"[(Total Receivable/Total Revenue) * number of days since the first invoice] "
+"for this customer"
+msgstr ""
+"[(Totaal te ontvangen/Totale omzet) * aantal dagen sinds de eerste factuur] "
+"voor deze klant"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__invoice_edi_format
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_edi_format
+msgid "eInvoice format"
+msgstr "E-factuurformaat"

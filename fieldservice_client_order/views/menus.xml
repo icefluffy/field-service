@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Same record as in fieldservice_dossier: declared here too so this
+         module also installs when fieldservice_dossier was not upgraded yet. -->
+    <menuitem id="fieldservice_dossier.menu_fsm_dossier_dashboard" name="Dashboard"
+              parent="fieldservice_dossier.menu_fsm_dossier_root" sequence="1"/>
     <menuitem id="menu_fsm_client_order" name="Client Orders"
               parent="fieldservice_dossier.menu_fsm_dossier_root"
               action="action_fsm_client_order" sequence="15"/>

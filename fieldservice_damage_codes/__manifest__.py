@@ -4,7 +4,7 @@
 {
     "name": "Field Service Wagon Damage Codes",
     "summary": "translate Damage codes to describe the damage on the wagon",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "category": "Field Service",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",

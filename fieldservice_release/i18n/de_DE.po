@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* fieldservice_release
 #
 msgid ""
 msgstr ""
@@ -266,6 +263,15 @@ msgstr "<span style=\"color:#b00020;\"> (Storniert)</span>"
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
 msgid ""
 "<span> — </span>\n"
+"                                    <strong>S/N:</strong>"
+msgstr ""
+"<span> — </span>\n"
+"                                    <strong>S/N:</strong>"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
+msgid ""
+"<span> — </span>\n"
 "                                <strong>Qty:</strong>"
 msgstr ""
 "<span> — </span>\n"
@@ -332,6 +338,12 @@ msgstr "<strong>Wagennummer</strong>"
 
 #. module: fieldservice_release
 #. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "A draft must remain linked to its original order."
+msgstr "Ein Entwurf muss mit seinem ursprünglichen Auftrag verknüpft bleiben."
+
+#. module: fieldservice_release
+#. odoo-python
 #: code:addons/fieldservice_release/models/release_wagon_workflow.py:0
 msgid ""
 "A release containing snapshots cannot be reset by this workflow. Its "
@@ -340,6 +352,12 @@ msgstr ""
 "Eine Freigabe mit Datenmomentaufnahmen kann über diesen Arbeitsablauf nicht "
 "auf Entwurf zurückgesetzt werden. Ihre historischen Datenmomentaufnahmen "
 "müssen erhalten bleiben."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "A valid assigned order is required."
+msgstr "Ein gültiger zugewiesener Auftrag ist erforderlich."
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_check_6
@@ -467,6 +485,14 @@ msgstr "Bemerkungen zu den Prüfungen"
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
 msgid "Checks"
 msgstr "Prüfungen"
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_signatories.py:0
+msgid "Clear the existing signature and save before changing its signatory."
+msgstr ""
+"Löschen Sie die vorhandene Unterschrift und speichern Sie, bevor Sie den "
+"Unterzeichner ändern."
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__company_id
@@ -632,6 +658,12 @@ msgid "Equipment"
 msgstr "Ausrüstung"
 
 #. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_return_to_service_consistent
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_return_to_service_consistent
+msgid "Executed-work limitations"
+msgstr "Einschränkungen der ausgeführten Arbeiten"
+
+#. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
 msgid "Extension:"
 msgstr "Verlängerung:"
@@ -683,6 +715,11 @@ msgid "Field Service Release Form Timesheet"
 msgstr "Zeiterfassung des Außendienst-Freigabeformulars"
 
 #. module: fieldservice_release
+#: model:ir.module.category,name:fieldservice_release.category_release_preparation
+msgid "Field Service Release Preparation"
+msgstr "Vorbereitung der Freigabe"
+
+#. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_deferred_snapshot_status
 msgid "Final snapshots"
 msgstr "Endgültige Datenmomentaufnahmen"
@@ -697,6 +734,11 @@ msgstr "Endgültige Datenmomentaufnahmen erstellt"
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__x_brake_deadline
 msgid "Frist (Bremsrevision)"
 msgstr "Frist (Bremsrevision)"
+
+#. module: fieldservice_release
+#: model:ir.model,name:fieldservice_release.model_fsm_order_cost
+msgid "Fsm Order Cost"
+msgstr "Außendienstauftragskosten"
 
 #. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
@@ -796,6 +838,11 @@ msgstr "Durchgeführte Instandhaltungsstufe"
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
 msgid "Maintenance Level Performed:"
 msgstr "Durchgeführte Instandhaltungsstufe:"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__is_material
+msgid "Material"
+msgstr "Material"
 
 #. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
@@ -904,6 +951,16 @@ msgstr "OK<br/>In Ordnung"
 
 #. module: fieldservice_release
 #. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid ""
+"Only a Field Service Dispatcher or Manager may finalize, cancel, or reset a "
+"release."
+msgstr ""
+"Nur ein Außendienst-Disponent oder -Manager darf eine Freigabe abschließen, "
+"abbrechen oder zurücksetzen."
+
+#. module: fieldservice_release
+#. odoo-python
 #: code:addons/fieldservice_release/models/release_wagon_workflow.py:0
 msgid "Only a draft can be released."
 msgstr "Nur ein Entwurf kann freigegeben werden."
@@ -949,7 +1006,9 @@ msgstr "Sonstige Angaben"
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_user_id
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_user_id
 msgid "Person responsible for release"
 msgstr "Verantwortliche Person für die Freigabe"
 
@@ -979,6 +1038,15 @@ msgstr "Zurückgestellte Arbeiten"
 #: code:addons/fieldservice_release/models/release_wagon_workflow.py:0
 msgid "Prepare a draft release first."
 msgstr "Bereiten Sie zuerst einen Freigabeentwurf vor."
+
+#. module: fieldservice_release
+#: model:res.groups,comment:fieldservice_release.group_release_draft_preparer
+msgid ""
+"Prepare and sign assigned-order drafts; no approval or snapshot "
+"modifications."
+msgstr ""
+"Entwürfe zugewiesener Aufträge vorbereiten und unterschreiben; keine "
+"Freigabe oder Änderung von Momentaufnahmen."
 
 #. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_release_wagon_deferred
@@ -1017,6 +1085,12 @@ msgid "Previous Wagon Number:"
 msgstr "Vorherige Wagennummer:"
 
 #. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_signatory_selectors
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_signatory_selectors
+msgid "Previously recorded name"
+msgstr "Zuvor erfasster Name"
+
+#. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
 msgid "Print Mobile Release Form"
 msgstr "Mobiles Freigabeformular drucken"
@@ -1039,6 +1113,12 @@ msgid "Project"
 msgstr "Projekt"
 
 #. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/fsm_order.py:0
+msgid "Qty"
+msgstr "Menge"
+
+#. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__quantity
 msgid "Quantity"
 msgstr "Menge"
@@ -1050,7 +1130,9 @@ msgid "RSN work order number"
 msgstr "RSN-Auftragsnummer"
 
 #. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_return_to_service_consistent
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_return_to_service_consistent
 msgid "Reason for refusal"
 msgstr "Ablehnungsgrund"
 
@@ -1074,6 +1156,11 @@ msgstr "Freigabe"
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
 msgid "Release Confirmation"
 msgstr "Freigabebestätigung"
+
+#. module: fieldservice_release
+#: model:res.groups,name:fieldservice_release.group_release_draft_preparer
+msgid "Release Draft Preparer"
+msgstr "Vorbereiter des Freigabeentwurfs"
 
 #. module: fieldservice_release
 #: model:ir.actions.report,name:fieldservice_release.action_report_fsm_release
@@ -1172,6 +1259,11 @@ msgid "Replaced Components"
 msgstr "Ausgetauschte Komponenten"
 
 #. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__replaced_components_auto
+msgid "Replaced Components Auto"
+msgstr "Ausgetauschte Komponenten (automatisch)"
+
+#. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
 msgid "Replaced Components:"
 msgstr "Ausgetauschte Komponenten:"
@@ -1205,7 +1297,9 @@ msgid "Restricted decision remarks"
 msgstr "Bemerkungen zur Freigabe mit Einschränkungen"
 
 #. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_return_to_service_consistent
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_return_to_service_consistent
 msgid "Restrictions"
 msgstr "Einschränkungen"
 
@@ -1225,7 +1319,9 @@ msgid "Result 8"
 msgstr "Ergebnis 8"
 
 #. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_return_to_service_consistent
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_return_to_service_consistent
 msgid "Return to service"
 msgstr "Betriebsfreigabe"
 
@@ -1243,6 +1339,8 @@ msgstr "Betriebsfreigabe ohne Einschränkungen"
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_decision
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_decision
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_release_wagon_deferred
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_return_to_service_consistent
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_return_to_service_consistent
 msgid "Return-to-service decision"
 msgstr "Entscheidung zur Betriebsfreigabe"
 
@@ -1272,6 +1370,12 @@ msgid "Revision Type"
 msgstr "Revisionsart"
 
 #. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/fsm_order.py:0
+msgid "S/N"
+msgstr "S/N"
+
+#. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
 msgid "Scope of release"
 msgstr "Freigabeumfang"
@@ -1286,6 +1390,11 @@ msgstr "Reihenfolge"
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__lot_id
 msgid "Serial Number"
 msgstr "Seriennummer"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__lot_names
+msgid "Serial Numbers"
+msgstr "Seriennummern"
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__location_id
@@ -1304,25 +1413,25 @@ msgid "Short vehicle ID"
 msgstr "Kurze Fahrzeugkennung"
 
 #. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_signatories.py:0
+msgid "Signatories can only be changed on a draft release."
+msgstr ""
+"Unterzeichner können nur bei einer Freigabe im Entwurf geändert werden."
+
+#. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_form_release_wagon_deferred
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_form_view
 msgid "Signatures"
 msgstr "Unterschriften"
 
 #. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_id
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_id
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_name
 msgid "Signing technician"
 msgstr "Unterzeichnender Techniker"
-
-#. module: fieldservice_release
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__smart_search
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__smart_search
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__smart_search
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__smart_search
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__smart_search
-msgid "Smart Search"
-msgstr "Intelligente Suche"
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__snapshots_taken_at
@@ -1419,6 +1528,13 @@ msgstr ""
 
 #. module: fieldservice_release
 #. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "The order company is not among your allowed companies."
+msgstr ""
+"Das Unternehmen des Auftrags gehört nicht zu Ihren erlaubten Unternehmen."
+
+#. module: fieldservice_release
+#. odoo-python
 #: code:addons/fieldservice_release/models/release_wagon_workflow.py:0
 msgid ""
 "This draft already contains snapshot lines from the old workflow. Nothing "
@@ -1448,6 +1564,20 @@ msgid "Total Employee Hours"
 msgstr "Mitarbeiterstunden gesamt"
 
 #. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__track
+msgid "Track"
+msgstr "Gleis"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,help:fieldservice_release.field_fsm_release__track
+msgid ""
+"Track at the service location, e.g. the rail track where the wagon stands. "
+"Printed between brackets after the location."
+msgstr ""
+"Gleis am Einsatzort, z. B. das Gleis, auf dem der Wagen steht. Wird in "
+"Klammern hinter dem Standort gedruckt."
+
+#. module: fieldservice_release
 #: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
 msgid "Type:"
 msgstr "Typ:"
@@ -1470,6 +1600,8 @@ msgstr "Einzelpreis"
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_unrestricted_remarks
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_unrestricted_remarks
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_order_return_to_service_consistent
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.fsm_release_return_to_service_consistent
 msgid "Unrestricted decision remarks"
 msgstr "Bemerkungen zur Freigabe ohne Einschränkungen"
 
@@ -1574,10 +1706,101 @@ msgid "Work details"
 msgstr "Arbeitsdetails"
 
 #. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid ""
+"Workers may create drafts only; approval fields and snapshots are not "
+"permitted."
+msgstr ""
+"Mitarbeiter dürfen nur Entwürfe erstellen; Freigabefelder und "
+"Momentaufnahmen sind nicht erlaubt."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid ""
+"Workers may edit draft checks, remarks and signatures only; approval, links "
+"and snapshots are protected."
+msgstr ""
+"Mitarbeiter dürfen nur Prüfungen, Bemerkungen und Unterschriften von "
+"Entwürfen bearbeiten; Freigabe, Verknüpfungen und Momentaufnahmen sind "
+"geschützt."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "Workers may edit only drafts without final or legacy snapshots."
+msgstr ""
+"Mitarbeiter dürfen nur Entwürfe ohne endgültige oder alte Momentaufnahmen "
+"bearbeiten."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "Workers may not create release snapshots."
+msgstr "Mitarbeiter dürfen keine Freigabe-Momentaufnahmen erstellen."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "Workers may not delete release snapshots."
+msgstr "Mitarbeiter dürfen keine Freigabe-Momentaufnahmen löschen."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "Workers may not delete releases."
+msgstr "Mitarbeiter dürfen keine Freigaben löschen."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "Workers may not modify release snapshots."
+msgstr "Mitarbeiter dürfen keine Freigabe-Momentaufnahmen ändern."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "Workers may not remove an order's release link."
+msgstr ""
+"Mitarbeiter dürfen die Freigabeverknüpfung eines Auftrags nicht entfernen."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid "Workers may not replace an existing release link."
+msgstr ""
+"Mitarbeiter dürfen eine bestehende Freigabeverknüpfung nicht ersetzen."
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid ""
+"Workers may not set the person responsible for release or their signature."
+msgstr ""
+"Mitarbeiter dürfen den Freigabeverantwortlichen oder dessen Unterschrift "
+"nicht festlegen."
+
+#. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_check_1
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_check_1
 msgid "Works executed according to order"
 msgstr "Arbeiten gemäß Auftrag ausgeführt"
+
+#. module: fieldservice_release
+#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_vrijgave_document
+msgid "X"
+msgstr "X"
+
+#. module: fieldservice_release
+#. odoo-python
+#: code:addons/fieldservice_release/models/release_worker_security.py:0
+msgid ""
+"You may prepare releases only for orders where you are an assigned or listed"
+" worker."
+msgstr ""
+"Sie dürfen Freigaben nur für Aufträge vorbereiten, denen Sie als Mitarbeiter"
+" zugewiesen oder aufgeführt sind."
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__x_postponed_work
@@ -1607,52 +1830,10 @@ msgid "rsnoperations@rsn.be"
 msgstr "rsnoperations@rsn.be"
 
 #. module: fieldservice_release
-#: model_terms:ir.ui.view,arch_db:fieldservice_release.report_fsm_release_page
-msgid ""
-"<span> — </span>\n"
-"                                    <strong>S/N:</strong>"
-msgstr ""
-"<span> — </span>\n"
-"                                    <strong>S/N:</strong>"
-
-#. module: fieldservice_release
-#: model:ir.model,name:fieldservice_release.model_fsm_order_cost
-msgid "Fsm Order Cost"
-msgstr "Außendienstauftragskosten"
-
-#. module: fieldservice_release
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__is_material
-msgid "Material"
-msgstr "Material"
-
-#. module: fieldservice_release
-#. odoo-python
-#: code:addons/fieldservice_release/models/fsm_order.py:0
-msgid "Qty"
-msgstr "Menge"
-
-#. module: fieldservice_release
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__replaced_components_auto
-msgid "Replaced Components Auto"
-msgstr "Ausgetauschte Komponenten (automatisch)"
-
-#. module: fieldservice_release
-#. odoo-python
-#: code:addons/fieldservice_release/models/fsm_order.py:0
-msgid "S/N"
-msgstr "S/N"
-
-#. module: fieldservice_release
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__lot_names
-msgid "Serial Numbers"
-msgstr "Seriennummern"
-
-#. module: fieldservice_release
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__track
-msgid "Track"
-msgstr "Gleis"
-
-#. module: fieldservice_release
-#: model:ir.model.fields,help:fieldservice_release.field_fsm_release__track
-msgid "Track at the service location, e.g. the rail track where the wagon stands. Printed between brackets after the location."
-msgstr "Gleis am Einsatzort, z. B. das Gleis, auf dem der Wagen steht. Wird in Klammern hinter dem Standort gedruckt."
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_contractor_cost__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_equipment__smart_search
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__smart_search
+msgid "Smart Search"
+msgstr "Intelligente Suche"

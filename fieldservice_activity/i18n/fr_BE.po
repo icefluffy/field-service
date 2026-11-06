@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# * fieldservice_activity
 #
 msgid ""
 msgstr ""
@@ -10,6 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-14 18:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -30,14 +28,6 @@ msgid ""
 msgstr ""
 "Assignez un intervenant à l'ordre de service sur site avant de terminer "
 "cette activité."
-
-#. module: fieldservice_activity
-#. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_activity.py:0
-msgid "Assigned To '%s' does not resolve to exactly one employee."
-msgstr ""
-"« %s » dans le champ « Assigné à » ne correspond pas à exactement un "
-"employé."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__product_id
@@ -154,10 +144,10 @@ msgstr "Nom"
 
 #. module: fieldservice_activity
 #. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
 #: code:addons/fieldservice_activity/models/fsm_order.py:0
 msgid "Only one equipment is allowed per Field Service Order."
-msgstr ""
-"Un seul équipement est autorisé par ordre de service sur site."
+msgstr "Un seul équipement est autorisé par ordre de service sur site."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__order_activity_ids
@@ -197,16 +187,63 @@ msgid "Sequence"
 msgstr "Séquence"
 
 #. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
+msgid "State"
+msgstr "Statut"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The assigned worker must resolve to exactly one active employee in the order"
+" company. Check the worker's employee links."
+msgstr ""
+"Le technicien assigné doit correspondre à exactement un employé actif dans "
+"la société de l'ordre. Vérifiez les liens employé du technicien."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "The billable activity quantity must be greater than zero."
+msgstr "La quantité de l'activité facturable doit être supérieure à zéro."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The worker assigned to this order does not resolve to exactly one active "
+"employee in the order company. Check its employee/user links."
+msgstr ""
+"Le technicien assigné à cet ordre ne correspond pas à exactement un employé "
+"actif dans la société de l'ordre. Vérifiez ses liens employé/utilisateur."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__todo
+msgid "To Do"
+msgstr "À faire"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
+#: code:addons/fieldservice_activity/models/fsm_order.py:0
+msgid "You must complete activity '%s' before completing this order."
+msgstr ""
+"Vous devez terminer l'activité « %s » avant de pouvoir terminer cet ordre."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Assigned To '%s' does not resolve to exactly one employee."
+msgstr ""
+"« %s » dans le champ « Assigné à » ne correspond pas à exactement un "
+"employé."
+
+#. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__smart_search
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__smart_search
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__smart_search
 msgid "Smart Search"
 msgstr "Recherche intelligente"
-
-#. module: fieldservice_activity
-#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
-msgid "State"
-msgstr "Statut"
 
 #. module: fieldservice_activity
 #. odoo-python
@@ -216,22 +253,3 @@ msgid ""
 msgstr ""
 "L'intervenant assigné est lié à plusieurs employés ; choisissez-en "
 "explicitement un."
-
-#. module: fieldservice_activity
-#. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_activity.py:0
-msgid "The billable activity quantity must be greater than zero."
-msgstr ""
-"La quantité de l'activité facturable doit être supérieure à zéro."
-
-#. module: fieldservice_activity
-#: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__todo
-msgid "To Do"
-msgstr "À faire"
-
-#. module: fieldservice_activity
-#. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_order.py:0
-msgid "You must complete activity '%s' before completing this order."
-msgstr ""
-"Vous devez terminer l'activité « %s » avant de pouvoir terminer cet ordre."

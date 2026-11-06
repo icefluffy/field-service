@@ -7,8 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2022-12-03 15:45+0000\n"
-"Last-Translator: Nils Coenen | NICO SOLUTIONS - ENGINEERING & IT <nils."
-"coenen@nico-solutions.de>\n"
+"Last-Translator: Nils Coenen | NICO SOLUTIONS - ENGINEERING & IT <nils.coenen@nico-solutions.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +24,7 @@ msgstr "Zuweisen"
 #. module: fieldservice_isp_flow
 #: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_assigned
 msgid "Assigned"
-msgstr ""
+msgstr "Zugewiesen"
 
 #. module: fieldservice_isp_flow
 #. odoo-python
@@ -68,8 +67,8 @@ msgstr ""
 #: code:addons/fieldservice_isp_flow/models/fsm_order.py:0
 #, python-format
 msgid ""
-"Cannot move to Scheduled until both 'Assigned To' and 'Scheduled Start Date' "
-"are filled in"
+"Cannot move to Scheduled until both 'Assigned To' and 'Scheduled Start Date'"
+" are filled in"
 msgstr ""
 "Kann nicht in Geplant bewegt werden, solange 'Zugewiesen an' als auch "
 "'Geplantes Startdatum' nicht ausgefüllt sind"
@@ -91,7 +90,7 @@ msgstr "Bestätigen"
 #. module: fieldservice_isp_flow
 #: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_confirmed
 msgid "Confirmed"
-msgstr ""
+msgstr "Bestätigt"
 
 #. module: fieldservice_isp_flow
 #: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_enroute
@@ -122,7 +121,7 @@ msgstr "Anfrage"
 #. module: fieldservice_isp_flow
 #: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_requested
 msgid "Requested"
-msgstr ""
+msgstr "Angefordert"
 
 #. module: fieldservice_isp_flow
 #: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
@@ -132,14 +131,14 @@ msgstr "Planen"
 #. module: fieldservice_isp_flow
 #: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_scheduled
 msgid "Scheduled"
-msgstr ""
+msgstr "Geplant"
 
 #. module: fieldservice_isp_flow
 #: model_terms:ir.ui.view,arch_db:fieldservice_isp_flow.fsm_order_form
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #. module: fieldservice_isp_flow
 #: model:fsm.stage,name:fieldservice_isp_flow.fsm_stage_started
 msgid "Started"
-msgstr ""
+msgstr "Gestartet"

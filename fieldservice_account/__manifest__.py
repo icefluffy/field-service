@@ -4,7 +4,7 @@
 {
     "name": "Field Service - Accounting",
     "summary": "Track invoices linked to Field Service orders",
-    "version": "18.0.1.1.0",
+    "version": "18.0.1.1.1",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "website": "https://github.com/icefluffy/field-service/",

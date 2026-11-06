@@ -1,0 +1,254 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-14 18:02+0000\n"
+"PO-Revision-Date: 2026-10-14 18:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__temp_activity_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
+msgid "Activities"
+msgstr "Activiteiten"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"Assign a worker to the Field Service Order before completing this activity."
+msgstr ""
+"Wijs een werknemer toe aan de veldserviceorder voordat u deze activiteit "
+"voltooit."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__product_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
+msgid "Billable Service"
+msgstr "Factureerbare dienst"
+
+#. module: fieldservice_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__cancel
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Cannot add a billable activity after accounting has been confirmed."
+msgstr ""
+"U kunt geen factureerbare activiteit toevoegen nadat de boekhouding is "
+"bevestigd."
+
+#. module: fieldservice_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_order_form_add_activity
+#: model_terms:ir.ui.view,arch_db:fieldservice_activity.view_fsm_template_form_add_activity
+msgid "Complete"
+msgstr "Voltooien"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed
+#: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__done
+msgid "Completed"
+msgstr "Voltooid"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed_by
+msgid "Completed By"
+msgstr "Voltooid door"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__completed_on
+msgid "Completed On"
+msgstr "Voltooid op"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__timesheet_line_id
+msgid "Employee Timesheet Line"
+msgstr "Urenregistratieregel werknemer"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__fsm_order_id
+msgid "FSM Order"
+msgstr "Veldserviceorder"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__fsm_template_id
+msgid "FSM Template"
+msgstr "Veldservicesjabloon"
+
+#. module: fieldservice_activity
+#: model:ir.model,name:fieldservice_activity.model_fsm_activity
+msgid "Field Service Activity"
+msgstr "Veldserviceactiviteit"
+
+#. module: fieldservice_activity
+#: model:ir.model,name:fieldservice_activity.model_fsm_order
+msgid "Field Service Order"
+msgstr "Veldserviceorder"
+
+#. module: fieldservice_activity
+#: model:ir.model,name:fieldservice_activity.model_fsm_template
+msgid "Field Service Order Template"
+msgstr "Sjabloon veldserviceorder"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
+#: code:addons/fieldservice_activity/models/fsm_order.py:0
+msgid "Only one equipment is allowed per Field Service Order."
+msgstr "Er is slechts één uitrusting toegestaan per veldserviceorder."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__order_activity_ids
+msgid "Order Activities"
+msgstr "Orderactiviteiten"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__quantity
+msgid "Quantity"
+msgstr "Hoeveelheid"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__ref
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__required
+msgid "Required"
+msgstr "Verplicht"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sale_line_id
+msgid "Sales Order Line"
+msgstr "Verkooporderregel"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Save the Field Service Order before completing this activity."
+msgstr "Sla de veldserviceorder op voordat u deze activiteit voltooit."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__sequence
+msgid "Sequence"
+msgstr "Volgorde"
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
+msgid "State"
+msgstr "Status"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The assigned worker must resolve to exactly one active employee in the order"
+" company. Check the worker's employee links."
+msgstr ""
+"De toegewezen medewerker moet overeenkomen met precies één actieve werknemer"
+" in het bedrijf van de order. Controleer de werknemerskoppelingen van de "
+"medewerker."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "The billable activity quantity must be greater than zero."
+msgstr ""
+"De hoeveelheid van de factureerbare activiteit moet groter zijn dan nul."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The worker assigned to this order does not resolve to exactly one active "
+"employee in the order company. Check its employee/user links."
+msgstr ""
+"De medewerker die aan deze order is toegewezen komt niet overeen met precies"
+" één actieve werknemer in het bedrijf van de order. Controleer de "
+"werknemer-/gebruikerskoppelingen."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__todo
+msgid "To Do"
+msgstr "Te doen"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
+#: code:addons/fieldservice_activity/models/fsm_order.py:0
+msgid "You must complete activity '%s' before completing this order."
+msgstr "U moet activiteit '%s' voltooien voordat u deze order kunt voltooien."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Assigned To '%s' does not resolve to exactly one employee."
+msgstr "'%s' in 'Toegewezen aan' komt niet overeen met precies één werknemer."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__smart_search
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__smart_search
+msgid "Smart Search"
+msgstr "Slim zoeken"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The assigned worker has multiple linked employees; choose one explicitly."
+msgstr ""
+"De toegewezen werknemer is gekoppeld aan meerdere werknemers; kies er "
+"expliciet één."

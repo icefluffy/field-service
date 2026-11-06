@@ -4,7 +4,7 @@
 {
     "name": "Field Service Wagon Invoice Serials",
     "summary": "Add treated wagon serial numbers to FSM invoice lines",
-    "version": "18.0.1.1.2",
+    "version": "18.0.1.1.3",
     "category": "Field Service",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",

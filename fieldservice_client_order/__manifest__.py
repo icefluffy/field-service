@@ -3,7 +3,7 @@
 {
     "name": "Field Service - Client Orders",
     "summary": "Group dossiers under one client order/reference, with one combined invoice",
-    "version": "18.0.1.2.0",
+    "version": "18.0.1.2.1",
     "category": "Field Service",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",

@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# * fieldservice_activity
 #
 msgid ""
 msgstr ""
@@ -10,6 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-14 18:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -30,13 +28,6 @@ msgid ""
 msgstr ""
 "Weisen Sie dem Feldserviceauftrag einen Mitarbeiter zu, bevor Sie diese "
 "Aktivität abschließen."
-
-#. module: fieldservice_activity
-#. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_activity.py:0
-msgid "Assigned To '%s' does not resolve to exactly one employee."
-msgstr ""
-"„%s“ im Feld „Zugewiesen an“ entspricht nicht genau einem Mitarbeiter."
 
 #. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__product_id
@@ -153,6 +144,7 @@ msgstr "Name"
 
 #. module: fieldservice_activity
 #. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
 #: code:addons/fieldservice_activity/models/fsm_order.py:0
 msgid "Only one equipment is allowed per Field Service Order."
 msgstr "Pro Feldserviceauftrag ist nur eine Ausrüstung erlaubt."
@@ -195,16 +187,65 @@ msgid "Sequence"
 msgstr "Reihenfolge"
 
 #. module: fieldservice_activity
+#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
+msgid "State"
+msgstr "Status"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The assigned worker must resolve to exactly one active employee in the order"
+" company. Check the worker's employee links."
+msgstr ""
+"Der zugewiesene Mitarbeiter muss genau einem aktiven Mitarbeiter im "
+"Unternehmen des Auftrags entsprechen. Prüfen Sie die "
+"Mitarbeiterverknüpfungen."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "The billable activity quantity must be greater than zero."
+msgstr "Die Menge der abrechenbaren Aktivität muss größer als null sein."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid ""
+"The worker assigned to this order does not resolve to exactly one active "
+"employee in the order company. Check its employee/user links."
+msgstr ""
+"Der diesem Auftrag zugewiesene Mitarbeiter entspricht nicht genau einem "
+"aktiven Mitarbeiter im Unternehmen des Auftrags. Prüfen Sie die "
+"Mitarbeiter-/Benutzerverknüpfungen."
+
+#. module: fieldservice_activity
+#: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__todo
+msgid "To Do"
+msgstr "Zu erledigen"
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_order copy.py:0
+#: code:addons/fieldservice_activity/models/fsm_order.py:0
+msgid "You must complete activity '%s' before completing this order."
+msgstr ""
+"Sie müssen die Aktivität „%s“ abschließen, bevor Sie diesen Auftrag "
+"abschließen können."
+
+#. module: fieldservice_activity
+#. odoo-python
+#: code:addons/fieldservice_activity/models/fsm_activity.py:0
+msgid "Assigned To '%s' does not resolve to exactly one employee."
+msgstr ""
+"„%s“ im Feld „Zugewiesen an“ entspricht nicht genau einem Mitarbeiter."
+
+#. module: fieldservice_activity
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__smart_search
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_order__smart_search
 #: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_template__smart_search
 msgid "Smart Search"
 msgstr "Intelligente Suche"
-
-#. module: fieldservice_activity
-#: model:ir.model.fields,field_description:fieldservice_activity.field_fsm_activity__state
-msgid "State"
-msgstr "Status"
 
 #. module: fieldservice_activity
 #. odoo-python
@@ -214,23 +255,3 @@ msgid ""
 msgstr ""
 "Der zugewiesene Mitarbeiter ist mit mehreren Mitarbeitern verknüpft; wählen "
 "Sie explizit einen aus."
-
-#. module: fieldservice_activity
-#. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_activity.py:0
-msgid "The billable activity quantity must be greater than zero."
-msgstr ""
-"Die Menge der abrechenbaren Aktivität muss größer als null sein."
-
-#. module: fieldservice_activity
-#: model:ir.model.fields.selection,name:fieldservice_activity.selection__fsm_activity__state__todo
-msgid "To Do"
-msgstr "Zu erledigen"
-
-#. module: fieldservice_activity
-#. odoo-python
-#: code:addons/fieldservice_activity/models/fsm_order.py:0
-msgid "You must complete activity '%s' before completing this order."
-msgstr ""
-"Sie müssen die Aktivität „%s“ abschließen, bevor Sie diesen Auftrag "
-"abschließen können."

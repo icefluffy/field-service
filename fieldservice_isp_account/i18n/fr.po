@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* fieldservice_isp_account
 #
 msgid ""
 msgstr ""
@@ -17,11 +14,6 @@ msgstr ""
 "X-Generator: Weblate 5.15.2\n"
 
 #. module: fieldservice_isp_account
-#: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_order_form_isp_account
-msgid "Accounting"
-msgstr ""
-
-#. module: fieldservice_isp_account
 #: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order__account_stage
 msgid "Accounting Stage"
 msgstr "Étape comptable"
@@ -29,20 +21,18 @@ msgstr "Étape comptable"
 #. module: fieldservice_isp_account
 #. odoo-python
 #: code:addons/fieldservice_isp_account/models/fsm_order.py:0
-#, python-format
-msgid "Cannot move to Complete until 'Contractor Costs' is filled in"
+msgid "Cannot move to Complete until 'Contractor Costs' is filled in."
 msgstr ""
-"Impossible de terminer tant que les « Coûts sous-traitant » ne sont pas "
-"renseignés"
+"Impossible de passer à Terminé tant que « Coûts sous-traitant » n'est pas "
+"rempli."
 
 #. module: fieldservice_isp_account
 #. odoo-python
 #: code:addons/fieldservice_isp_account/models/fsm_order.py:0
-#, python-format
-msgid "Cannot move to Complete until 'Employee Timesheets' is filled in"
+msgid "Cannot move to Complete until 'Employee Timesheets' is filled in."
 msgstr ""
-"Impossible de terminer tant que les « Feuilles de temps employé » ne sont "
-"pas renseignées"
+"Impossible de passer à Terminé tant que « Feuilles de temps des employés » "
+"n'est pas rempli."
 
 #. module: fieldservice_isp_account
 #: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_order_form_isp_account
@@ -67,8 +57,8 @@ msgstr "Coûts sous-traitant"
 
 #. module: fieldservice_isp_account
 #: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_order_form_isp_account
-msgid "Create Invoice"
-msgstr "Créer une facture"
+msgid "Create Invoice Concept"
+msgstr "Créer une facture brouillon"
 
 #. module: fieldservice_isp_account
 #: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__create_uid
@@ -157,11 +147,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: fieldservice_isp_account
-#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost____last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
-
-#. module: fieldservice_isp_account
 #: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
@@ -170,6 +155,23 @@ msgstr "Dernière mise à jour par"
 #: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__is_material
+msgid "Line created automatically from a delivered Inventory item."
+msgstr ""
+"Ligne créée automatiquement à partir d'un article livré de l'onglet "
+"Inventaire."
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__lot_names
+msgid "Lot/serial numbers of the delivered items."
+msgstr "Numéros de lot/série des articles livrés."
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__is_material
+msgid "Material"
+msgstr "Matériel"
 
 #. module: fieldservice_isp_account
 #: model:ir.model.fields.selection,name:fieldservice_isp_account.selection__fsm_order__account_stage__review
@@ -228,17 +230,21 @@ msgstr ""
 "        "
 
 #. module: fieldservice_isp_account
+#. odoo-python
+#: code:addons/fieldservice_isp_account/models/fsm_order_cost.py:0
+msgid "S/N: %s"
+msgstr "N° de série : %s"
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__lot_names
+msgid "Serial Numbers"
+msgstr "Numéros de série"
+
+#. module: fieldservice_isp_account
 #: model:ir.actions.act_window,name:fieldservice_isp_account.action_account_fsm_order
 #: model:ir.ui.menu,name:fieldservice_isp_account.menu_account_fsm_order
 msgid "Service Orders"
 msgstr "Commandes d'intervention"
-
-#. module: fieldservice_isp_account
-#. odoo-python
-#: code:addons/fieldservice_isp_account/models/fsm_order.py:0
-#, python-format
-msgid "The worker assigned to this order is not a supplier"
-msgstr "Le technicien affecté à cette commande n'est pas un fournisseur"
 
 #. module: fieldservice_isp_account
 #: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order__employee_time_total
@@ -268,29 +274,41 @@ msgid "Vendor Bills"
 msgstr "Factures fournisseur"
 
 #. module: fieldservice_isp_account
-#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__is_material
-msgid "Line created automatically from a delivered Inventory item."
-msgstr ""
-"Ligne créée automatiquement à partir d'un article livré de l'onglet "
-"Inventaire."
-
-#. module: fieldservice_isp_account
-#: model:ir.model.fields,help:fieldservice_isp_account.field_fsm_order_cost__lot_names
-msgid "Lot/serial numbers of the delivered items."
-msgstr "Numéros de lot/série des articles livrés."
-
-#. module: fieldservice_isp_account
-#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__is_material
-msgid "Material"
-msgstr "Matériel"
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_order_form_isp_account
+msgid "Accounting"
+msgstr "Comptabilité"
 
 #. module: fieldservice_isp_account
 #. odoo-python
-#: code:addons/fieldservice_isp_account/models/fsm_order_cost.py:0
-msgid "S/N: %s"
-msgstr "N° de série : %s"
+#: code:addons/fieldservice_isp_account/models/fsm_order.py:0
+#, python-format
+msgid "Cannot move to Complete until 'Contractor Costs' is filled in"
+msgstr ""
+"Impossible de terminer tant que les « Coûts sous-traitant » ne sont pas "
+"renseignés"
 
 #. module: fieldservice_isp_account
-#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost__lot_names
-msgid "Serial Numbers"
-msgstr "Numéros de série"
+#. odoo-python
+#: code:addons/fieldservice_isp_account/models/fsm_order.py:0
+#, python-format
+msgid "Cannot move to Complete until 'Employee Timesheets' is filled in"
+msgstr ""
+"Impossible de terminer tant que les « Feuilles de temps employé » ne sont "
+"pas renseignées"
+
+#. module: fieldservice_isp_account
+#: model_terms:ir.ui.view,arch_db:fieldservice_isp_account.fsm_order_form_isp_account
+msgid "Create Invoice"
+msgstr "Créer une facture"
+
+#. module: fieldservice_isp_account
+#: model:ir.model.fields,field_description:fieldservice_isp_account.field_fsm_order_cost____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fieldservice_isp_account
+#. odoo-python
+#: code:addons/fieldservice_isp_account/models/fsm_order.py:0
+#, python-format
+msgid "The worker assigned to this order is not a supplier"
+msgstr "Le technicien affecté à cette commande n'est pas un fournisseur"

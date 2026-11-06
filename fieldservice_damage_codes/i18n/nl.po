@@ -1,0 +1,88 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Language: nl\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__code
+msgid "Code"
+msgstr "Code"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_damage_codes
+#: model:ir.actions.act_window,name:fieldservice_damage_codes.action_fsm_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_order__fsm_code_ids
+#: model:ir.ui.menu,name:fieldservice_damage_codes.menu_fsm_codes
+msgid "Damage Codes"
+msgstr "Schade codes"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__description
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model,name:fieldservice_damage_codes.model_fsm_code
+msgid "FSM Defect Code"
+msgstr "FSM-defectcode"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model,name:fieldservice_damage_codes.model_fsm_order
+msgid "Field Service Order"
+msgstr "Buitendienst werkorder"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields.selection,name:fieldservice_damage_codes.selection__fsm_code__vehicle_type__l
+msgid "Locomotive"
+msgstr "Locomotief"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__cd
+msgid "Number Sequence"
+msgstr "Codenummer"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.constraint,message:fieldservice_damage_codes.constraint_fsm_code_fsm_code_code_unique
+msgid "The code must be unique."
+msgstr "De code moet uniek zijn."
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__vehicle_type
+msgid "Vehicle Type"
+msgstr "Voertuigtype"
+
+#. module: fieldservice_damage_codes
+#: model:ir.model.fields.selection,name:fieldservice_damage_codes.selection__fsm_code__vehicle_type__w
+msgid "Wagon"
+msgstr "Wagon"

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Field Service - Sale Order Create Wizard",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "summary": "Create Sale Order from Field Service Kanban View",
     "category": "Field Service",
     "website": "https://github.com/icefluffy/field-service",

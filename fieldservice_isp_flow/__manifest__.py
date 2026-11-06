@@ -4,7 +4,7 @@
 {
     "name": "Field Service - Flow for ISP",
     "summary": "Field Service workflow for Internet Service Providers",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "category": "Field Service",
     "author": "Open Source Integrators, Akretion, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "website": "https://github.com/OCA/field-service",

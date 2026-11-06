@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* fieldservice_sale
 #
 msgid ""
 msgstr ""
@@ -147,7 +144,8 @@ msgstr "Product"
 #. module: fieldservice_sale
 #: model:ir.model.fields,help:fieldservice_sale.field_sale_order__fsm_location_id
 msgid "SO Lines generating a FSM order will be for this location"
-msgstr "Verkoopregels die een buitendienstorder genereren, zijn voor deze locatie"
+msgstr ""
+"Verkoopregels die een buitendienstorder genereren, zijn voor deze locatie"
 
 #. module: fieldservice_sale
 #: model:ir.model.fields,field_description:fieldservice_sale.field_fsm_order__sale_id

@@ -1,0 +1,108 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model_terms:ir.ui.view,arch_db:fieldservice_sale_order_create_wizard.fsm_order_create_wizard_view_form
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model_terms:ir.ui.view,arch_db:fieldservice_sale_order_create_wizard.fsm_order_create_wizard_view_form
+msgid "Create"
+msgstr "Erstellen"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model_terms:ir.ui.view,arch_db:fieldservice_sale_order_create_wizard.fsm_order_create_wizard_view_form
+msgid "Create Sale Order"
+msgstr "Verkaufsauftrag erstellen"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__create_uid
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__create_date
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__discount
+msgid "Discount (%)"
+msgstr "Rabatt (%)"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__display_name
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model,name:fieldservice_sale_order_create_wizard.model_fsm_create_so_wizard
+msgid "FSM Create Sale Order Wizard"
+msgstr "FSM-Assistent Verkaufsauftrag erstellen"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model,name:fieldservice_sale_order_create_wizard.model_fsm_create_so_wizard_line
+msgid "FSM Sale Order Wizard Line"
+msgstr "FSM-Assistentenzeile Verkaufsauftrag"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__id
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__write_uid
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__write_date
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__location_id
+msgid "Location"
+msgstr "Standort"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard__line_ids
+msgid "Order Lines"
+msgstr "Auftragspositionen"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__product_id
+msgid "Product"
+msgstr "Produkt"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__quantity
+msgid "Quantity"
+msgstr "Menge"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__product_uom_id
+msgid "Unit of Measure"
+msgstr "Maßeinheit"
+
+#. module: fieldservice_sale_order_create_wizard
+#: model:ir.model.fields,field_description:fieldservice_sale_order_create_wizard.field_fsm_create_so_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "Assistent"

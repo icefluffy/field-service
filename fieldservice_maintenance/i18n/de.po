@@ -22,7 +22,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fieldservice_maintenance.field_maintenance_equipment__display_name
 #: model:ir.model.fields,field_description:fieldservice_maintenance.field_maintenance_request__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #. module: fieldservice_maintenance
 #: model:ir.model,name:fieldservice_maintenance.model_fsm_equipment
@@ -48,12 +48,12 @@ msgstr "Field-Service-Auftrag"
 #: model:ir.model.fields,field_description:fieldservice_maintenance.field_maintenance_equipment__id
 #: model:ir.model.fields,field_description:fieldservice_maintenance.field_maintenance_request__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: fieldservice_maintenance
 #: model:ir.model.fields,field_description:fieldservice_maintenance.field_fsm_order_type__internal_type
 msgid "Internal Type"
-msgstr ""
+msgstr "Interner Typ"
 
 #. module: fieldservice_maintenance
 #: model:ir.model.fields,field_description:fieldservice_maintenance.field_fsm_equipment__is_fsm_equipment
@@ -90,7 +90,7 @@ msgstr "Wartungsauftrag"
 #. module: fieldservice_maintenance
 #: model:ir.model.fields,field_description:fieldservice_maintenance.field_fsm_order__display_name
 msgid "Order"
-msgstr ""
+msgstr "Auftrag"
 
 #. module: fieldservice_maintenance
 #: code:addons/fieldservice_maintenance/models/maintenance_request.py:0

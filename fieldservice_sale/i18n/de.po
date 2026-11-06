@@ -1,14 +1,10 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* fieldservice_sale
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2022-12-04 15:44+0000\n"
-"Last-Translator: Nils Coenen | NICO SOLUTIONS - ENGINEERING & IT <nils."
-"coenen@nico-solutions.de>\n"
+"Last-Translator: Nils Coenen | NICO SOLUTIONS - ENGINEERING & IT <nils.coenen@nico-solutions.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -25,15 +21,17 @@ msgstr "<span class=\"o_stat_text\">Verkaufsauftrag</span>"
 #. module: fieldservice_sale
 #: model:ir.model.fields,help:fieldservice_sale.field_sale_order_line__qty_delivered_method
 msgid ""
-"According to product configuration, the delivered quantity can be "
-"automatically computed by mechanism:\n"
+"According to product configuration, the delivered quantity can be automatically computed by mechanism:\n"
 "  - Manual: the quantity is set manually on the line\n"
-"  - Analytic From expenses: the quantity is the quantity sum from posted "
-"expenses\n"
-"  - Timesheet: the quantity is the sum of hours recorded on tasks linked to "
-"this sale line\n"
+"  - Analytic From expenses: the quantity is the quantity sum from posted expenses\n"
+"  - Timesheet: the quantity is the sum of hours recorded on tasks linked to this sale line\n"
 "  - Stock Moves: the quantity comes from confirmed pickings\n"
 msgstr ""
+"Je nach Produktkonfiguration kann die gelieferte Menge automatisch durch einen Mechanismus berechnet werden:\n"
+"  - Manuell: Die Menge wird manuell auf der Position eingestellt\n"
+"  - Kostenrechnung aus Auslagen: Die Menge ist die Mengensumme aus gebuchten Auslagen\n"
+"  - Zeiterfassung: Die Menge ist die Summe der Stunden, die für Aufgaben erfasst wurden, die mit dieser Verkaufsposition verbunden sind.\n"
+"  - Lagerbuchungen: Die Menge stammt aus bestätigten Kommissionierungen\n"
 
 #. module: fieldservice_sale
 #: model:ir.model.fields.selection,name:fieldservice_sale.selection__product_template__field_service_tracking__sale
@@ -51,18 +49,14 @@ msgstr "Erstellen Sie einen FSM-Auftrag pro Verkaufsauftragsposition"
 msgid ""
 "Determines what happens upon sale order confirmation:\n"
 "                - None: nothing additional, default behavior.\n"
-"                - Per Sale Order: One FSM Order will be created for the "
-"sale.\n"
-"                - Per Sale Order Line: One FSM Order for each sale order "
-"line\n"
+"                - Per Sale Order: One FSM Order will be created for the sale.\n"
+"                - Per Sale Order Line: One FSM Order for each sale order line\n"
 "                will be created."
 msgstr ""
 "Legt fest, was bei Auftragsbestätigung passiert:\n"
 "                - Nichts: nichts Zusätzliches, Standardverhalten.\n"
-"                - Pro Verkaufsauftrag: Für den Verkauf wird ein FSM-Auftrag "
-"erstellt.\n"
-"                - Pro Verkaufsauftragszeile: Ein FSM-Auftrag für jede "
-"Verkaufsauftragszeile\n"
+"                - Pro Verkaufsauftrag: Für den Verkauf wird ein FSM-Auftrag erstellt.\n"
+"                - Pro Verkaufsauftragszeile: Ein FSM-Auftrag für jede Verkaufsauftragszeile\n"
 "                wird erstellt."
 
 #. module: fieldservice_sale
@@ -103,7 +97,7 @@ msgstr "Von der Verkaufsauftragsposition generierter Field Service-Auftrag"
 #. odoo-python
 #: code:addons/fieldservice_sale/models/sale_order.py:0
 msgid "Field Service Order(s) Created: %s"
-msgstr ""
+msgstr "Serviceauftrag/-aufträge erstellt: %s"
 
 #. module: fieldservice_sale
 #: model:ir.model.fields.selection,name:fieldservice_sale.selection__product_template__service_type__field
@@ -125,19 +119,13 @@ msgstr "Field Service Aufträge, die diesem Verkauf zugeordnet sind"
 #: model:ir.model.fields,help:fieldservice_sale.field_product_product__service_type
 #: model:ir.model.fields,help:fieldservice_sale.field_product_template__service_type
 msgid ""
-"Manually set quantities on order: Invoice based on the manually entered "
-"quantity, without creating an analytic account.\n"
-"Timesheets on contract: Invoice based on the tracked hours on the related "
-"timesheet.\n"
-"Create a task and track hours: Create a task on the sales order validation "
-"and track the work hours."
+"Manually set quantities on order: Invoice based on the manually entered quantity, without creating an analytic account.\n"
+"Timesheets on contract: Invoice based on the tracked hours on the related timesheet.\n"
+"Create a task and track hours: Create a task on the sales order validation and track the work hours."
 msgstr ""
-"Bestellmenge manuell einstellen: Rechnung auf Basis der manuell eingegebenen "
-"Menge, ohne Erstellung eines Analysekontos.\n"
-"Stundenzettel im Vertrag: Rechnung basierend auf den nachverfolgten Stunden "
-"auf dem zugehörigen Stundenzettel.\n"
-"Erstellen Sie eine Aufgabe und verfolgen Sie die Stunden: Erstellen Sie eine "
-"Aufgabe zur Auftragsvalidierung und verfolgen Sie die Arbeitsstunden."
+"Bestellmenge manuell einstellen: Rechnung auf Basis der manuell eingegebenen Menge, ohne Erstellung eines Analysekontos.\n"
+"Stundenzettel im Vertrag: Rechnung basierend auf den nachverfolgten Stunden auf dem zugehörigen Stundenzettel.\n"
+"Erstellen Sie eine Aufgabe und verfolgen Sie die Stunden: Erstellen Sie eine Aufgabe zur Auftragsvalidierung und verfolgen Sie die Arbeitsstunden."
 
 #. module: fieldservice_sale
 #: model:ir.model.fields,field_description:fieldservice_sale.field_sale_order_line__qty_delivered_method
@@ -152,7 +140,7 @@ msgstr "Auftrag"
 #. module: fieldservice_sale
 #: model:ir.model,name:fieldservice_sale.model_product_template
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #. module: fieldservice_sale
 #: model:ir.model.fields,help:fieldservice_sale.field_sale_order__fsm_location_id
@@ -208,86 +196,3 @@ msgstr "Service-Ort"
 #: model:ir.model.fields,field_description:fieldservice_sale.field_product_template__service_type
 msgid "Track Service"
 msgstr "Service nachverfolgen"
-
-#~ msgid ""
-#~ "According to product configuration, the delivered quantity can be "
-#~ "automatically computed by mechanism :\n"
-#~ "  - Manual: the quantity is set manually on the line\n"
-#~ "  - Analytic From expenses: the quantity is the quantity sum from posted "
-#~ "expenses\n"
-#~ "  - Timesheet: the quantity is the sum of hours recorded on tasks linked "
-#~ "to this sale line\n"
-#~ "  - Stock Moves: the quantity comes from confirmed pickings\n"
-#~ msgstr ""
-#~ "Je nach Produktkonfiguration kann die gelieferte Menge automatisch nach "
-#~ "Mechanismus berechnet werden :\n"
-#~ "  - Manuell: Die Menge wird manuell auf der Zeile eingestellt\n"
-#~ "  - Analytisch aus Ausgaben: Die Menge ist die Mengensumme aus gebuchten "
-#~ "Ausgaben\n"
-#~ "  - Zeiterfassung: Die Menge ist die Summe der Stunden, die für Aufgaben "
-#~ "erfasst wurden, die mit dieser Verkaufszeile verknüpft sind\n"
-#~ "  - Lagerbewegungen: Die Menge stammt aus bestätigten Entnahmen\n"
-
-#~ msgid "Product Template"
-#~ msgstr "Produktvorlage"
-
-#, python-format
-#~ msgid ""
-#~ "Field Service Order Created ({}): <a href=\n"
-#~ "                   # data-oe-model=fsm.order data-oe-id={}>{}</a>\n"
-#~ "                "
-#~ msgstr ""
-#~ "Field Service Auftrag erstellt ({}): <a href=\n"
-#~ "                   # data-oe-model=fsm.order data-oe-id={}>{}</a>\n"
-#~ "                "
-
-#, python-format
-#~ msgid ""
-#~ "Field Service Order Created: <a href=\n"
-#~ "                   # data-oe-model=fsm.order data-oe-id={}>{}</a>\n"
-#~ "                "
-#~ msgstr ""
-#~ "Field Service Auftrag erstellt: <a href=\n"
-#~ "                   # data-oe-model=fsm.order data-oe-id={}>{}</a>\n"
-#~ "                "
-
-#, python-format
-#~ msgid ""
-#~ "This order has been created from: <a href=\n"
-#~ "                   # data-oe-model=sale.order data-oe-id={}>{}</a>\n"
-#~ "                "
-#~ msgstr ""
-#~ "Dieser Auftrag wurde erstellt aus: <a href=\n"
-#~ "                   # data-oe-model=sale.order data-oe-id={}>{}</a>\n"
-#~ "                "
-
-#, python-format
-#~ msgid ""
-#~ "This order has been created from: <a href=\n"
-#~ "                   # data-oe-model=sale.order data-oe-id={}>{}</a> ({})\n"
-#~ "                "
-#~ msgstr ""
-#~ "Dieser Auftrag wurde erstellt aus: <a href=\n"
-#~ "                   # data-oe-model=sale.order data-oe-id={}>{}</a> ({})\n"
-#~ "                "
-
-#~ msgid "Create a recurring order"
-#~ msgstr "Wiederkehrenden Auftrag erstellen"
-
-#~ msgid "Field Service Location"
-#~ msgstr "Field-Service-Ort"
-
-#~ msgid "Sale Order"
-#~ msgstr "Verkaufsauftrag"
-
-#~ msgid "Stock Moves"
-#~ msgstr "Lagerbewegungen"
-
-#~ msgid "Create a single order"
-#~ msgstr "Auftrag erstellen"
-
-#~ msgid "Field Service Information"
-#~ msgstr "Field-Service-Informationen"
-
-#~ msgid "Requested Service Date"
-#~ msgstr "Gew??nschter Service-Termin"

@@ -2,7 +2,7 @@
 {
     "name": "List Dropdowns Open on First Click",
     "summary": "In editable lists, dropdowns open with one click/tap instead of two",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",
     "category": "Hidden/Tools",
