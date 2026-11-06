@@ -72,6 +72,11 @@ class FsmOrder(models.Model):
                 raise UserError(_("Record Actual Start before stopping."))
             if not self.date_end:
                 self.write({"date_end": fields.Datetime.now()})
+            if not self.is_closed:
+                # Normal completion: all installed checks and follow-up
+                # logic (activities, inspection lines, stage action) run.
+                # If a check fails, the stop time is rolled back as well.
+                self.action_complete()
         elif not self.date_start:
             if self.date_end:
                 raise UserError(_("Review the existing Actual End before recording a start."))

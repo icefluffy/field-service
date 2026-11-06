@@ -11,12 +11,58 @@ SECTIONS = (
     "release_wagon",
 )
 
+# Fields of the order header area that are not shown on phones/tablets.
+HIDDEN_HEADER_FIELDS = ("customer_reference", "template_id", "team_id", "vehicle_id")
+
+
+def _outside_notebook_and_subviews(node):
+    return not node.xpath("ancestor::notebook or ancestor::field")
+
+
+def _adapt_header(root):
+    sheet_fields = [
+        f for f in root.xpath(".//sheet//field")
+        if _outside_notebook_and_subviews(f)
+    ]
+    # Hide unwanted fields (they stay loaded, only not displayed).
+    for field in sheet_fields:
+        if field.get("name") in HIDDEN_HEADER_FIELDS:
+            field.set("invisible", "True")
+            field.attrib.pop("required", None)
+    # Put the Navigate button directly under Track.
+    tracks = [
+        f for f in sheet_fields
+        if f.get("name") == "track" and f.get("invisible") not in ("1", "True")
+    ]
+    buttons = [
+        b for b in root.xpath(".//sheet//button[@name='action_open_google_maps']")
+        if _outside_notebook_and_subviews(b)
+    ]
+    if tracks and buttons:
+        anchor = tracks[0]
+        for button in buttons:
+            button.getparent().remove(button)
+            anchor.addnext(button)
+            anchor = button
+
+
+def _stop_button(parent):
+    return etree.SubElement(
+        parent, "button", name="action_mobile_record_stop",
+        string="Stop", type="object", attrib={"class": "btn-danger"},
+        invisible="not date_start or date_end",
+    )
+
 
 def scroll_arch(arch):
     root = etree.fromstring(arch.encode() if isinstance(arch, str) else arch)
+    _adapt_header(root)
     notebooks = root.xpath(".//sheet//notebook[not(ancestor::field) and not(ancestor::notebook)]")
     for notebook in notebooks:
         pages = list(notebook)
+        names = {p.get("name") for p in pages if p.tag == "page"}
+        has_activities = "activities_page" in names
+        has_execution = "execution_page" in names
         notebook.tag = "div"
         notebook.set("class", "o_fsm_mobile_scroll")
         for page in pages:
@@ -60,6 +106,12 @@ def scroll_arch(arch):
                     for button in listing.findall("button"):
                         if button.get("name") != "action_done":
                             button.set("invisible", "True")
+                # Stop comes after the Activities section.
+                if has_execution:
+                    stop_box = etree.SubElement(
+                        page, "div", attrib={"class": "o_fsm_mobile_time_buttons"}
+                    )
+                    _stop_button(stop_box)
             elif name == "execution_page":
                 hidden = etree.Element("div", invisible="True")
                 for child in list(page):
@@ -67,11 +119,10 @@ def scroll_arch(arch):
                 page.append(hidden)
                 buttons = etree.SubElement(page, "div", attrib={"class": "o_fsm_mobile_time_buttons"})
                 etree.SubElement(buttons, "button", name="action_mobile_record_start",
-                                 string="Start", type="object", attrib={"class": "btn-primary"},
+                                 string="Start", type="object", attrib={"class": "btn-success"},
                                  invisible="date_start or date_end")
-                etree.SubElement(buttons, "button", name="action_mobile_record_stop",
-                                 string="Stop", type="object", attrib={"class": "btn-secondary"},
-                                 invisible="not date_start or date_end")
+                if not has_activities:
+                    _stop_button(buttons)
             if title:
                 heading = etree.Element("h2", attrib={"class": "o_fsm_mobile_heading"})
                 heading.text = title
