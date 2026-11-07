@@ -296,13 +296,11 @@
                                     <strong class="o_kanban_record_title">
                                         <field name="name" />
                                     </strong>
-                                    <div
-                                        t-if="record.equipment_id.raw_value"
-                                        name="kanban_equipment"
-                                        style="color: #00008b; font-weight: 700;"
-                                    >
-                                        <field name="equipment_id" />
-                                    </div>
+                                <div t-if="record.equipment_id.raw_value"
+                                    name="kanban_equipment"
+                                    class="fsm-kanban-equipment">
+                                    <field name="equipment_id"/>
+                                </div>
                                 </div>
                                 <div>
                                     <field
