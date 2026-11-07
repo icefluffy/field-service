@@ -49,9 +49,11 @@
     "assets": {
         "web.assets_backend": [
             "fieldservice/static/src/scss/team_dashboard.scss",
-            "fieldservice/static/src/scss/team_dashboard.dark.scss",
             "fieldservice/static/src/js/wheelset_grid_field.js",
             "fieldservice/static/src/xml/wheelset_grid_field.xml",
-        ]
+        ],
+        "web.assets_web_dark": [
+            "fieldservice/static/src/scss/team_dashboard.dark.scss",
+        ],
     },
 }
