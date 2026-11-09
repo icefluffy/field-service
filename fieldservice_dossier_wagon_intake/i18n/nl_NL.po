@@ -81,11 +81,6 @@ msgid "Company"
 msgstr "Bedrijf"
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Complete the inbound inspection? The report will be locked."
-msgstr "Ingangskeuring voltooien? Het rapport wordt vergrendeld."
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Completed"
@@ -185,11 +180,6 @@ msgid ""
 msgstr ""
 "Vul alle velden in voordat u de keuring voltooit. Nog ontbrekend:\n"
 "%s"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Fill in all fields to complete the inspection. Still to fill in:"
-msgstr "Vul alle velden in om de keuring te voltooien. Nog in te vullen:"
 
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
@@ -330,11 +320,6 @@ msgstr "Keurder"
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__intake_report_ids
 msgid "Intake Report"
 msgstr "Ingangskeuringsrapport"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__is_complete
-msgid "Is Complete"
-msgstr "Is volledig"
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_is_follower
@@ -662,11 +647,6 @@ msgstr ""
 "Te laat: Datum is al gepasseerd\n"
 "Vandaag: Datum van activiteit is vandaag\n"
 "Gepland: Toekomstige activiteiten."
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__missing_info
-msgid "Still to fill in"
-msgstr "Nog in te vullen"
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__body

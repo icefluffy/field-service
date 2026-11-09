@@ -161,8 +161,6 @@ class Intake(models.Model):
     outcome_note = fields.Text(string='Conclusion')
     line_ids = fields.One2many('fsm.wagon.intake.line', 'report_id', string='Findings', copy=False)
     source_reference = fields.Char(default='FG04-01_90-01.04 — Revision 02 — 06/05/24', readonly=True)
-    is_complete = fields.Boolean(compute='_compute_completion')
-    missing_info = fields.Text(string='Still to fill in', compute='_compute_completion')
 
 
     _sql_constraints = [('inspection_unique', 'unique(inspection_id)', 'Only one intake report per inspection.')]
@@ -249,14 +247,6 @@ class Intake(models.Model):
                 'names': ', '.join(pending.mapped('component')),
             })
         return missing
-
-
-    @api.depends(lambda self: COMPLETION_FIELDS + ['line_ids.check_state'])
-    def _compute_completion(self):
-        for r in self:
-            missing = r._get_missing_info()
-            r.is_complete = not missing
-            r.missing_info = '\n'.join('- %s' % m for m in missing) or False
 
 
     @api.depends('equipment_id', 'dossier_id')

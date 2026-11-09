@@ -16,10 +16,10 @@ the same report. One report is allowed per dossier inspection.
 There is no Start button: as soon as one field or finding is filled in and saved,
 the report moves from Niet gestart to In uitvoering (dossier line In progress).
 An inbound wagon always arrives damaged, so there is no Passed / Passed with
-remarks / Failed outcome. While the report is open, a banner lists everything that
-is still empty. Once every field is filled in (numeric fields must be non-zero) and
-every component is assessed (OK, defect or not applicable), the Voltooid button
-appears. It locks the report and sets the dossier inspection line to Completed with
+remarks / Failed outcome. Clicking Voltooid checks the report; if anything
+is still empty, a pop-up lists what is missing. All fields must be filled in
+(numeric fields non-zero) and every component assessed (OK, defect or not
+applicable). Completing locks the report and sets the dossier inspection line to Completed with
 result Not applicable, so it does not block dossier approval. The required fields
 are listed in COMPLETION_FIELDS in models/inspection.py.
 Heropenen returns the report to In uitvoering and invalidates approved dossiers

@@ -81,11 +81,6 @@ msgid "Company"
 msgstr "Société"
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Complete the inbound inspection? The report will be locked."
-msgstr "Terminer le contrôle d'entrée ? Le rapport sera verrouillé."
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Completed"
@@ -185,12 +180,6 @@ msgid ""
 msgstr ""
 "Remplissez tous les champs avant de terminer le contrôle. Manquant :\n"
 "%s"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Fill in all fields to complete the inspection. Still to fill in:"
-msgstr ""
-"Remplissez tous les champs pour terminer le contrôle. Reste à remplir :"
 
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
@@ -332,11 +321,6 @@ msgstr "Inspecteur"
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__intake_report_ids
 msgid "Intake Report"
 msgstr "Rapport de contrôle d'entrée"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__is_complete
-msgid "Is Complete"
-msgstr "Est complet"
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_is_follower
@@ -663,11 +647,6 @@ msgstr ""
 "En retard : la date d'échéance est déjà dépassée\n"
 "Aujourd'hui : la date d'activité est aujourd'hui\n"
 "Planifiée : activités futures"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__missing_info
-msgid "Still to fill in"
-msgstr "Reste à remplir"
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__body

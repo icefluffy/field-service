@@ -83,11 +83,6 @@ msgid "Company"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Complete the inbound inspection? The report will be locked."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Completed"
@@ -184,11 +179,6 @@ msgstr ""
 msgid ""
 "Fill in all fields before completing the inspection. Still missing:\n"
 "%s"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Fill in all fields to complete the inspection. Still to fill in:"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -327,11 +317,6 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__intake_report_ids
 msgid "Intake Report"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__is_complete
-msgid "Is Complete"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -641,11 +626,6 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__missing_info
-msgid "Still to fill in"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
