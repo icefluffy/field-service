@@ -3,7 +3,7 @@
 {
     "name": "Field Service - Ingangskeuring Wagon",
     "summary": "Wagon intake inspection linked to equipment service dossiers",
-    "version": "18.0.1.0.9",
+    "version": "18.0.1.1.0",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",
     "category": "Field Service",

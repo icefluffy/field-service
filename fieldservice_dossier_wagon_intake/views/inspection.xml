@@ -6,13 +6,16 @@
   <field name="name">fsm.wagon.intake.form</field><field name="model">fsm.wagon.intake</field>
   <field name="arch" type="xml"><form delete="0" duplicate="0">
    <header>
-    <button name="action_start" string="Start inspection" type="object" class="btn-primary" invisible="state != 'draft'"/>
-    <button name="action_pass" string="Passed" type="object" class="btn-primary" invisible="state != 'progress'" confirm="Confirm that the inspection was carried out according to your applicable procedure."/>
-    <button name="action_remarks" string="Passed with remarks" type="object" invisible="state != 'progress'" confirm="Only use this if your procedure allows it; justify the result."/>
-    <button name="action_fail" string="Failed" type="object" invisible="state != 'progress'"/>
-    <button name="action_reopen" string="Reopen" type="object" invisible="state in ('draft','progress')" confirm="The result will be reset to Pending. Any dossier approval will lapse."/>
-    <field name="state" widget="statusbar" statusbar_visible="draft,progress,passed,remarks,failed"/>
-   </header><sheet><h1><field name="name"/></h1>
+    <field name="is_complete" invisible="1"/>
+    <button name="action_complete" string="Completed" type="object" class="btn-primary" invisible="state not in ('draft','progress') or not is_complete" confirm="Complete the inbound inspection? The report will be locked."/>
+    <button name="action_reopen" string="Reopen" type="object" invisible="state in ('draft','progress')" confirm="The inspection will be reopened. Any dossier approval will lapse."/>
+    <field name="state" widget="statusbar" statusbar_visible="draft,progress,done"/>
+   </header><sheet>
+   <div class="alert alert-info" role="alert" invisible="state not in ('draft','progress') or is_complete">
+    <strong>Fill in all fields to complete the inspection. Still to fill in:</strong>
+    <field name="missing_info" nolabel="1" readonly="1"/>
+   </div>
+   <h1><field name="name"/></h1>
    <group><field name="inspection_id" readonly="1"/><field name="dossier_id"/><field name="equipment_id"/><field name="order_id"/><field name="source_reference"/></group>
    <group readonly="state not in ('draft','progress')"><group>
 <field name="inspection_date" readonly="state not in ('draft','progress')"/>

@@ -47,12 +47,6 @@ msgid "An intake report requires an Inbound inspection."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Assess every component (OK, defect or not applicable) first."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__check_state
 msgid "Assessment"
 msgstr ""
@@ -89,15 +83,24 @@ msgid "Company"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Complete the inbound inspection? The report will be locked."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Completed"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake_line__component
 msgid "Component"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid ""
-"Confirm that the inspection was carried out according to your applicable "
-"procedure."
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__outcome_note
+msgid "Conclusion"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -150,12 +153,6 @@ msgid "Dossier is closed or cancelled."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Enter an explanation of the overall result."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__equipment_id
 msgid "Equipment / Serial"
 msgstr ""
@@ -176,20 +173,35 @@ msgid "FSM Order"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__failed
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Failed"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model,name:fieldservice_dossier_wagon_intake.model_fsm_order
 msgid "Field Service Order"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__line_ids
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+#, python-format
+msgid ""
+"Fill in all fields before completing the inspection. Still missing:\n"
+"%s"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Fill in all fields to complete the inspection. Still to fill in:"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "Findings"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+#, python-format
+msgid "Findings: %(count)s component(s) not assessed (%(names)s)"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -282,6 +294,12 @@ msgid "Inbound inspection"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Inbound inspection completed."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model,name:fieldservice_dossier_wagon_intake.model_fsm_wagon_intake_line
 msgid "Inbound inspection component"
 msgstr ""
@@ -307,14 +325,13 @@ msgid "Inspector"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Inspector, date and inspection lines are required."
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__intake_report_ids
+msgid "Intake Report"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_dossier_inspection__intake_report_ids
-msgid "Intake Report"
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__is_complete
+msgid "Is Complete"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -510,18 +527,6 @@ msgid ""
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__passed
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Passed"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__remarks
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Passed with remarks"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__maintenance_inscriptions
 msgid "Preventive maintenance signage (PMB, F24, VSP, ...)"
 msgstr ""
@@ -576,7 +581,7 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Report reopened; a new result must be recorded."
+msgid "Report reopened; complete it again when finished."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -587,17 +592,6 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Result"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__outcome_note
-msgid "Result justification"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Result recorded: %s"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -636,17 +630,6 @@ msgid "Source Reference"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Start inspection"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Start the inspection first."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__state
 msgid "State"
 msgstr ""
@@ -658,6 +641,11 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__missing_info
+msgid "Still to fill in"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -692,7 +680,7 @@ msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "The result will be reset to Pending. Any dossier approval will lapse."
+msgid "The inspection will be reopened. Any dossier approval will lapse."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -710,7 +698,7 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "This report is not final."
+msgid "This report is not completed."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -726,15 +714,7 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid ""
-"Unresolved recorded defects: choose Failed or Passed with remarks, as "
-"authorised by your procedure."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Use the result actions."
+msgid "Use the workflow buttons."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake

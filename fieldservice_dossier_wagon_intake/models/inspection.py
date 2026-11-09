@@ -17,6 +17,21 @@ WAGON_PROPERTY_LABELS = {
     'tare_kg': 'tare',
 }
 
+# Fields the inspector must fill in before the inspection can be completed.
+# Editing any of them (or a finding) moves a new report to In progress.
+# Numeric fields count as empty while they are 0.
+COMPLETION_FIELDS = [
+    'inspection_date', 'inspector_id', 'keeper_id', 'revision_mark',
+    'revision_date', 'brake_inscription', 'uic', 'customer_type', 'tare_kg',
+    'handbrake_t', 'handbrake_kn', 'handbrake_percent',
+    'load_a', 'load_b', 'load_c', 'load_d', 'load_e', 'load_notes',
+    'extra', 'reason', 'maintenance_inscriptions', 'revision_plates',
+    'brake_block_type', 'remarks', 'outcome_note',
+]
+INPUT_FIELDS = set(COMPLETION_FIELDS) | {'line_ids', 'holder_mark'}
+LINE_INPUT_FIELDS = {'check_state', 'defect', 'quantity', 'note'}
+OPEN_STATES = ('draft', 'progress')
+
 
 def _convert_property_value(value, target_type):
     """Convert a value between a property type and an intake field type."""
@@ -99,8 +114,8 @@ class Intake(models.Model):
     equipment_id = fields.Many2one(related='inspection_id.equipment_id', store=True)
     order_id = fields.Many2one(related='inspection_id.order_id')
     company_id = fields.Many2one(related='inspection_id.company_id', store=True)
-    state = fields.Selection([('draft','Not started'), ('progress','In progress'),
-        ('passed','Passed'), ('remarks','Passed with remarks'), ('failed','Failed')],
+    state = fields.Selection([('draft', 'Not started'), ('progress', 'In progress'),
+        ('done', 'Completed')],
         default='draft', required=True, readonly=True, tracking=True, copy=False)
     inspection_date = fields.Date(default=fields.Date.context_today, required=True)
     inspector_id = fields.Many2one('res.users', default=lambda self: self.env.user, required=True)
@@ -143,9 +158,11 @@ class Intake(models.Model):
     brake_block_type = fields.Char(string='Brake block type / size',
         help='Paper: 320 / 250 mm; cast iron / C810 / J816 / J816M / J838 / Abex / Cobra / LL. Check transcription.')
     remarks = fields.Text(string='Remarks')
-    outcome_note = fields.Text(string='Result justification')
+    outcome_note = fields.Text(string='Conclusion')
     line_ids = fields.One2many('fsm.wagon.intake.line', 'report_id', string='Findings', copy=False)
     source_reference = fields.Char(default='FG04-01_90-01.04 — Revision 02 — 06/05/24', readonly=True)
+    is_complete = fields.Boolean(compute='_compute_completion')
+    missing_info = fields.Text(string='Still to fill in', compute='_compute_completion')
 
 
     _sql_constraints = [('inspection_unique', 'unique(inspection_id)', 'Only one intake report per inspection.')]
@@ -215,6 +232,33 @@ class Intake(models.Model):
                 equipment.lot_id.sudo().lot_properties = values
 
 
+    def _get_missing_info(self):
+        """Return the labels of the fields and findings that are still empty."""
+        self.ensure_one()
+        missing = [
+            self._fields[fname]._description_string(self.env)
+            for fname in COMPLETION_FIELDS
+            if not self[fname]
+        ]
+        pending = self.line_ids.filtered(lambda l: l.check_state == 'pending')
+        if not self.line_ids:
+            missing.append(_('Findings'))
+        elif pending:
+            missing.append(_('Findings: %(count)s component(s) not assessed (%(names)s)') % {
+                'count': len(pending),
+                'names': ', '.join(pending.mapped('component')),
+            })
+        return missing
+
+
+    @api.depends(lambda self: COMPLETION_FIELDS + ['line_ids.check_state'])
+    def _compute_completion(self):
+        for r in self:
+            missing = r._get_missing_info()
+            r.is_complete = not missing
+            r.missing_info = '\n'.join('- %s' % m for m in missing) or False
+
+
     @api.depends('equipment_id', 'dossier_id')
     def _compute_name(self):
         for r in self:
@@ -230,7 +274,7 @@ class Intake(models.Model):
             if line.dossier_id.state in ('closed', 'cancelled'):
                 raise UserError(_('Dossier is closed or cancelled.'))
             if vals.get('state', 'draft') != 'draft' or vals.get('recorded_by') or vals.get('recorded_at'):
-                raise UserError(_('Use the result actions.'))
+                raise UserError(_('Use the workflow buttons.'))
             vals['line_ids'] = [Command.create({'section': s, 'component': c, 'code': code, 'sequence': i * 10})
                                 for i, (s, c, code) in enumerate(ROWS, 1)]
         return super().create(vals_list)
@@ -240,7 +284,7 @@ class Intake(models.Model):
         for r in self:
             if r.dossier_id.state in ('closed', 'cancelled'):
                 raise UserError(_('Dossier is closed or cancelled.'))
-            if r.state not in ('draft', 'progress'):
+            if r.state not in OPEN_STATES:
                 raise UserError(_('Reopen the report before changing it.'))
 
 
@@ -248,7 +292,17 @@ class Intake(models.Model):
         if {'state', 'recorded_by', 'recorded_at', 'inspection_id'} & set(vals):
             raise UserError(_('Use the workflow buttons; the linked inspection cannot be changed.'))
         self._check_editable()
+        if INPUT_FIELDS & set(vals):
+            self._mark_in_progress()
         return super().write(vals)
+
+
+    def _mark_in_progress(self):
+        """Move reports that are not started yet to In progress."""
+        todo = self.filtered(lambda r: r.state == 'draft')
+        if todo:
+            todo._workflow_write({'state': 'progress'})
+            todo.inspection_id.write({'work_status': 'in_progress', 'result': 'pending'})
 
 
     def _workflow_write(self, vals):
@@ -257,51 +311,40 @@ class Intake(models.Model):
 
     def action_start(self):
         self._check_editable()
-        self._workflow_write({'state': 'progress'})
+        self._mark_in_progress()
+
+
+    def action_complete(self):
+        """Complete the inspection once every field and finding is filled in.
+
+        An inbound wagon is always damaged, so there is no pass/fail outcome:
+        the dossier line is marked done with result Not applicable, which the
+        dossier approval accepts.
+        """
         for r in self:
-            r.inspection_id.write({'work_status':'in_progress', 'result':'pending'})
-
-
-    def _finish(self, result):
-        self.ensure_one()
-        self._check_editable()
-        if self.state != 'progress':
-            raise UserError(_('Start the inspection first.'))
-        pending = self.line_ids.filtered(lambda l: l.check_state == 'pending')
-        if pending:
-            raise UserError(_('Assess every component (OK, defect or not applicable) first.'))
-        if not self.line_ids or not self.inspector_id or not self.inspection_date:
-            raise UserError(_('Inspector, date and inspection lines are required.'))
-        if not self.outcome_note:
-            raise UserError(_('Enter an explanation of the overall result.'))
-        defects = self.line_ids.filtered(lambda l: l.check_state == 'defect')
-        if result == 'passed' and defects:
-            raise UserError(_('Unresolved recorded defects: choose Failed or Passed with remarks, as authorised by your procedure.'))
-        self.inspection_id.write({'work_status':'done', 'result':result,
-                                 'date_performed':self.inspection_date,
-                                 'note':self.outcome_note})
-        self._workflow_write({'state':result, 'recorded_by':self.env.user.id,
-                              'recorded_at':fields.Datetime.now()})
-        self.message_post(body=_('Result recorded: %s') % result)
-
-
-    def action_pass(self):
-        return self._finish('passed')
-    def action_remarks(self):
-        return self._finish('remarks')
-    def action_fail(self):
-        return self._finish('failed')
+            r._check_editable()
+            missing = r._get_missing_info()
+            if missing:
+                raise UserError(
+                    _('Fill in all fields before completing the inspection. Still missing:\n%s')
+                    % '\n'.join('- %s' % m for m in missing))
+            r.inspection_id.write({'work_status': 'done', 'result': 'na',
+                                   'date_performed': r.inspection_date,
+                                   'note': r.outcome_note})
+            r._workflow_write({'state': 'done', 'recorded_by': self.env.user.id,
+                               'recorded_at': fields.Datetime.now()})
+            r.message_post(body=_('Inbound inspection completed.'))
 
 
     def action_reopen(self):
         for r in self:
             if r.dossier_id.state in ('closed', 'cancelled'):
                 raise UserError(_('Dossier is closed or cancelled.'))
-            if r.state in ('draft', 'progress'):
-                raise UserError(_('This report is not final.'))
+            if r.state in OPEN_STATES:
+                raise UserError(_('This report is not completed.'))
             r.inspection_id.write({'work_status':'in_progress','result':'pending'})
             r._workflow_write({'state':'progress', 'recorded_by':False, 'recorded_at':False})
-            r.message_post(body=_('Report reopened; a new result must be recorded.'))
+            r.message_post(body=_('Report reopened; complete it again when finished.'))
 
 
 class IntakeLine(models.Model):
@@ -337,9 +380,12 @@ class IntakeLine(models.Model):
 
 
     def write(self, vals):
-        self.mapped('report_id')._check_editable()
+        reports = self.mapped('report_id')
+        reports._check_editable()
         if 'report_id' in vals:
             raise UserError(_('You cannot move findings to another report.'))
+        if LINE_INPUT_FIELDS & set(vals):
+            reports._mark_in_progress()
         return super().write(vals)
 
 

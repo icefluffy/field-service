@@ -13,20 +13,27 @@ other inspection types reports that it is not applicable. Alternatively open
 Inspection Overview, open the Ingangskeuring record, then Open Ingangskeuring.
 Link that inspection to the appropriate FSM order; its Ingangskeuring button opens
 the same report. One report is allowed per dossier inspection.
-Start inspectie; fill wagon details, assess every component (including non-applicable
-items), record findings and quantities, then provide an overall justification on
-Resultaat. Choose Geslaagd, Geslaagd met opmerkingen, or Afgekeurd.
-These actions set the dossier inspection result and actual date. Final reports are
-locked. Heropenen clears the result and invalidates approved dossiers through the
-base module. Closed/cancelled dossiers cannot be edited.
+There is no Start button: as soon as one field or finding is filled in and saved,
+the report moves from Niet gestart to In uitvoering (dossier line In progress).
+An inbound wagon always arrives damaged, so there is no Passed / Passed with
+remarks / Failed outcome. While the report is open, a banner lists everything that
+is still empty. Once every field is filled in (numeric fields must be non-zero) and
+every component is assessed (OK, defect or not applicable), the Voltooid button
+appears. It locks the report and sets the dossier inspection line to Completed with
+result Not applicable, so it does not block dossier approval. The required fields
+are listed in COMPLETION_FIELDS in models/inspection.py.
+Heropenen returns the report to In uitvoering and invalidates approved dossiers
+through the base module. Closed/cancelled dossiers cannot be edited.
+Upgrading to 18.0.1.1.0 converts existing Passed / Passed with remarks / Failed
+reports to Completed and their dossier line result to Not applicable.
 Attachments can be uploaded in the chatter. Chatter attachments are not immutable.
 
 ## Scope / limitations
 Digitisation of the supplied photograph, not an approved railway safety procedure.
 Review every component label/code and header against the controlled source before use.
 No acceptance thresholds, regulatory rules or defect severity are inferred.
-Passed with remarks requires operator judgement under your approved procedure;
-it does NOT establish permission to release a wagon to service. Dossier approval
+Completing the inbound inspection does NOT establish permission to release a
+wagon to service. Dossier approval
 is a separate process. All Field Service users have report editing/result rights;
 restrict those ACLs if only qualified inspectors may record outcomes.
 The extra per-component OK/Defect/Not applicable assessment is a digital addition.
