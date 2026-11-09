@@ -39,9 +39,9 @@ msgstr "Locomotive"
 #. module: fieldservice_damage_codes
 #: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_order__fsm_code_ids
 msgid "Damage Codes"
-msgstr "Damage Codes"
+msgstr "Motive Codes"
 
 #. module: fieldservice_damage_codes
 #: model:ir.actions.act_window,name:fieldservice_damage_codes.action_fsm_codes
 msgid "Damage Codes"
-msgstr "Damage Codes"
+msgstr "Motive Codes"
