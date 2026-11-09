@@ -25,7 +25,7 @@ msgstr "Créé le"
 #: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_order__fsm_code_ids
 #: model:ir.ui.menu,name:fieldservice_damage_codes.menu_fsm_codes
 msgid "Damage Codes"
-msgstr "Codes de dommages"
+msgstr "Codes de Motifs"
 
 #. module: fieldservice_damage_codes
 #: model:ir.model.fields,field_description:fieldservice_damage_codes.field_fsm_code__description
