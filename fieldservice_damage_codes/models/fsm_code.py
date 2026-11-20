@@ -68,7 +68,44 @@ class FSMCode(models.Model):
     _description = "FSM Defect Code"
     _order = "code"
     _rec_name = "cd"
+    cd_search = fields.Char(
+        string="Number Sequence Search",
+        compute="_compute_cd_search",
+        store=True,
+        index=True,
+    )
 
+    @api.depends("cd")
+    def _compute_cd_search(self):
+        for record in self:
+            record.cd_search = "".join((record.cd or "").replace(".", "").split())
+
+    @api.model
+    def name_search(self, name="", args=None, operator="ilike", limit=100):
+        normalized_name = "".join((name or "").replace(".", "").split())
+
+        if not normalized_name or operator not in (
+            "ilike", "like", "=ilike", "=like", "="
+        ):
+            return super().name_search(
+                name=name,
+                args=args,
+                operator=operator,
+                limit=limit,
+            )
+
+        domain = [
+            "|",
+            ("cd", operator, name),
+            ("cd_search", operator, normalized_name),
+        ]
+
+        records = self.search(
+            domain + list(args or []),
+            limit=limit,
+        )
+        return [(record.id, record.display_name) for record in records]
+    
     code = fields.Char(
         string="Code",
         required=True,
