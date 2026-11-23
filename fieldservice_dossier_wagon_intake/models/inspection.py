@@ -79,12 +79,12 @@ class Inspection(models.Model):
         intake_type = self.env.ref('fieldservice_dossier.inspection_type_ik')
         if self.type_id != intake_type:
             raise UserError(_('This form is only for Inbound inspection.'))
-        report = self.intake_report_ids[:1]
-        if not report and not self.order_id:
+        if not self.order_id:
             raise UserError(_(
                 "First link a work order to the %s line (use the + button).",
                 self.type_id.name,
             ))
+        report = self.intake_report_ids[:1]
         if not report:
             if self.dossier_id.state in ('closed', 'cancelled'):
                 raise UserError(_('This dossier is closed or cancelled.'))
