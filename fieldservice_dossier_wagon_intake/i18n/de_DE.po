@@ -769,3 +769,9 @@ msgstr "Hat Eingangsprüfung"
 #: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
 msgid "True when the dossier Inbound inspection line is linked to this work order."
 msgstr "Aktiviert, wenn die Dossierzeile Eingangsprüfung mit diesem Arbeitsauftrag verknüpft ist."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "First link a work order to the %s line (use the + button)."
+msgstr "Verknüpfen Sie zuerst einen Arbeitsauftrag mit der Zeile %s (Schaltfläche +)."

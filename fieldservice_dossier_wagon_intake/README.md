@@ -8,7 +8,8 @@ Field Service - Ingangskeuring Wagon. The existing fieldservice_dossier must be 
 Test on a database copy first. No automatic invoice or approval is performed.
 
 ## Usage
-On the dossier Ingangskeuring line, click Open Ingangskeuring. The same button on
+On the dossier Ingangskeuring line, click Open Ingangskeuring. If no work order is
+linked to the line yet (and no report exists), a message asks you to link one with + first. The same button on
 other inspection types reports that it is not applicable. Alternatively open
 Inspection Overview, open the Ingangskeuring record, then Open Ingangskeuring.
 Link that inspection to the appropriate FSM order; its Ingangskeuring button opens
