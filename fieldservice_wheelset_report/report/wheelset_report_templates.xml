@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_wheelset_report_document">
+        <t t-set="o" t-value="o.with_context(lang=o.filled_by_id.lang or o.env.user.lang)"/>
+        <div class="page o_wsr">
+            <style>
+                .o_wsr { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #000; }
+                .o_wsr table { width: 100%; border-collapse: collapse; }
+                .o_wsr td, .o_wsr th { border: 1px solid #000; padding: 2px 3px; vertical-align: middle; }
+                .o_wsr th { font-size: 7.5pt; font-weight: bold; text-align: left; vertical-align: top; background: #f2f2f2; }
+                .o_wsr .lbl { font-weight: bold; white-space: nowrap; }
+                .o_wsr .val { font-family: "Courier New", monospace; font-size: 10pt; }
+                .o_wsr .c { text-align: center; }
+                .o_wsr .r { text-align: right; }
+                .o_wsr .small { font-size: 7pt; }
+                .o_wsr .title { font-size: 14pt; font-weight: bold; text-align: center; }
+                .o_wsr .sub td { border-top: 1px dotted #777; }
+                .o_wsr .noborder td { border: none; }
+                .o_wsr .warn { border: 2px solid #c00; color: #c00; padding: 4px; margin-top: 4px; }
+                .o_wsr .rows td { height: 16px; }
+                .o_wsr .mt { margin-top: 4px; }
+            </style>
+            <!-- Title block -->
+            <table>
+                <tr>
+                    <td class="small" style="width: 20%;">
+                        Measurements depend on the type of check.<br/>
+                        For IS0 always qR, Eh, Eb, back-to-back dimension, tread width and out-of-round.
+                    </td>
+                    <td class="c" style="width: 14%;">
+                        <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 32px; max-width: 120px;"/>
+                        <div t-else="" class="lbl" t-out="o.company_id.name"/>
+                    </td>
+                    <td class="title" style="width: 34%;">Wheelset record</td>
+                    <td class="c lbl" style="width: 16%;">FG04-01_03-01.01</td>
+                    <td style="width: 16%;">
+                        <span class="lbl">SS, S**, S***: </span><span class="val" t-out="o.report_value('speed_class')"/><br/>
+                        <span class="lbl">120 0-line: </span><span class="val" t-out="o.report_value('line_120')"/>
+                    </td>
+                </tr>
+            </table>
+            <!-- Wagon header -->
+            <table class="mt">
+                <tr>
+                    <td class="lbl" style="width: 13%;">Wagon number</td>
+                    <td class="val" style="width: 22%;" t-out="o.wagon_number or ''"/>
+                    <td class="lbl" style="width: 10%;">Filled in by</td>
+                    <td class="val" style="width: 17%;" t-out="o.filled_by_id.name or ''"/>
+                    <td class="lbl" style="width: 8%;">Tare (kg)</td>
+                    <td class="val r" style="width: 10%;" t-out="o.report_value('tare_kg')"/>
+                    <td class="lbl" style="width: 5%;">UIC</td>
+                    <td class="val" style="width: 15%;" t-out="o.uic or ''"/>
+                </tr>
+                <tr>
+                    <td class="lbl">Wagon revision date</td>
+                    <td class="val" t-out="o.revision_text or ''"/>
+                    <td class="lbl">Date</td>
+                    <td class="val" t-out="o.report_value('date')"/>
+                    <td class="lbl">Rotule?</td>
+                    <td class="val c" t-out="o.report_value('rotule')"/>
+                    <td class="lbl">Type</td>
+                    <td class="val" t-out="o.uic_type or ''"/>
+                </tr>
+            </table>
+            <!-- Wheelset rows -->
+            <table class="mt rows">
+                <thead>
+                    <tr>
+                        <th style="width: 3%;">Pos.</th>
+                        <th style="width: 6%;">Keeper marking</th>
+                        <th style="width: 5%;">Type</th>
+                        <th style="width: 8%;">Wheelset no.</th>
+                        <th style="width: 6%;">Axle box / Bearing</th>
+                        <th style="width: 5%;">Mounting</th>
+                        <th style="width: 8%;">IS2/IS3 (mm/yy) + place, other IS</th>
+                        <th style="width: 5%;">Out-of-round (mm)</th>
+                        <th style="width: 5%;">White stripe?</th>
+                        <th style="width: 4%;">Ton</th>
+                        <th style="width: 9%;">Damage / remark</th>
+                        <th style="width: 5%;">Diam. (mm)</th>
+                        <th style="width: 7%;">Back-to-back (mm)</th>
+                        <th style="width: 6%;">Flange gauge (mm) E1+Eb1+Eb2</th>
+                        <th style="width: 5%;">Width (mm)</th>
+                        <th style="width: 4%;">qR (mm)</th>
+                        <th style="width: 4%;">Eb (thickness) (mm)</th>
+                        <th style="width: 5%;">Eh (height) (mm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="o.line_ids" t-as="l">
+                        <tr>
+                            <td class="c lbl" rowspan="2" t-out="l.position"/>
+                            <td class="val" rowspan="2" t-out="l.holder_mark or ''"/>
+                            <td class="val" rowspan="2" t-out="l.wheelset_type or ''"/>
+                            <td class="val" rowspan="2" t-out="l.wheelset_number or ''"/>
+                            <td class="val" rowspan="2" t-out="l.bearing or ''"/>
+                            <td class="val" rowspan="2" t-out="l.mounting_date or ''"/>
+                            <td class="val" rowspan="2">
+                                <t t-out="l.is_date or ''"/><br/><t t-out="l.is_place or ''"/>
+                            </td>
+                            <td class="val r" rowspan="2" t-out="l.report_value('out_of_round')"/>
+                            <td class="val c" rowspan="2" t-out="l.report_value('white_stripe')"/>
+                            <td class="val r" rowspan="2" t-out="l.report_value('ton')"/>
+                            <td class="val" rowspan="2">
+                                <t t-out="l.report_value('damage_code_ids')"/>
+                                <t t-if="l.damage_note"><br/><t t-out="l.damage_note"/></t>
+                            </td>
+                            <td class="val r" rowspan="2" t-out="l.report_value('diameter')"/>
+                            <td class="val r" rowspan="2">
+                                <t t-out="l.report_value('gauge_1')"/><br/>
+                                <t t-out="l.report_value('gauge_2')"/><br/>
+                                <t t-out="l.report_value('gauge_3')"/>
+                            </td>
+                            <td class="val r" rowspan="2" t-out="l.report_value('track_gauge')"/>
+                            <td class="val r" t-out="l.report_value('width_1')"/>
+                            <td class="val r" t-out="l.report_value('qr_1')"/>
+                            <td class="val r" t-out="l.report_value('eb_1')"/>
+                            <td class="val r" t-out="l.report_value('eh_1')"/>
+                        </tr>
+                        <tr class="sub">
+                            <td class="val r" t-out="l.report_value('width_2')"/>
+                            <td class="val r" t-out="l.report_value('qr_2')"/>
+                            <td class="val r" t-out="l.report_value('eb_2')"/>
+                            <td class="val r" t-out="l.report_value('eh_2')"/>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <!-- Footer data -->
+            <table class="mt">
+                <tr>
+                    <td class="lbl" style="width: 14%;">Measuring instruments used</td>
+                    <td class="val" style="width: 30%;" t-out="o.instruments or ''"/>
+                    <td style="width: 22%;">
+                        <span class="lbl">Leaf spring: </span><span class="val" t-out="o.report_value('leaf_spring')"/>
+                        <t t-if="o.leaf_spring_type"> <span class="lbl">type DS: </span><span class="val" t-out="o.leaf_spring_type"/></t><br/>
+                        <span class="lbl">Coil spring: </span><span class="val" t-out="o.report_value('coil_spring')"/>
+                    </td>
+                    <td style="width: 20%;">
+                        <span class="lbl">Brake block type: </span><span class="val" t-out="o.report_value('brake_block_type')"/>
+                    </td>
+                    <td style="width: 14%;">
+                        <span class="lbl">VTA? </span><span class="val" t-out="o.report_value('vta')"/><br/>
+                        <span class="lbl">Bracket / Weld: </span><span class="val" t-out="o.report_value('bracket_weld')"/>
+                    </td>
+                </tr>
+            </table>
+            <table class="mt">
+                <tr>
+                    <td class="small" style="width: 44%;">
+                        <b>Note: HUPAC and Mercitalia max. diameter difference 10 mm per bogie and 20 mm in total.</b><br/>
+                        Max. load: max. load regime (A, B, C, D ...) and any separate CM or CM/D rasters.<br/>
+                        UIC code: including customer series, e.g. Sgns 107. Type: e.g. 6910B0.<br/>
+                        <b>Attention: special instructions for a.o. 004, e.g. different minimum diameter criteria.</b>
+                    </td>
+                    <td style="width: 26%;">
+                        <span class="lbl">Load limit raster: </span><span class="val" t-out="o.report_value('load_regime')"/><br/>
+                        <span class="lbl">CM or CM/D raster: </span><span class="val" t-out="o.report_value('cm_ton')"/><span t-if="o.cm_ton"> t</span>
+                    </td>
+                    <td style="width: 30%; vertical-align: top;">
+                        <span class="lbl">Special: </span><span class="val" t-out="o.special or ''"/>
+                    </td>
+                </tr>
+            </table>
+            <div class="warn" t-if="o.diameter_warning">
+                <b>HUPAC / Mercitalia: </b><t t-out="o.diameter_warning"/>
+            </div>
+            <table class="mt noborder small">
+                <tr>
+                    <td style="width: 40%;">
+                        <t t-out="o.name"/> - <t t-out="o.report_value('state')"/>
+                        <t t-if="o.completed_at"> - <t t-out="o.completed_by_id.name"/>, <t t-out="o.completed_at" t-options="{'widget': 'datetime'}"/></t>
+                        <t t-if="o.replaces_id"> - correction of <t t-out="o.replaces_id.name"/></t>
+                    </td>
+                    <td style="width: 35%;">
+                        <t t-out="o.order_id.name"/><t t-if="o.dossier_id"> / <t t-out="o.dossier_id.name"/></t>
+                    </td>
+                    <td class="r" style="width: 25%;">Revision: 11 - Date: 29/10/24</td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="report_wheelset_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-call="fieldservice_wheelset_report.report_wheelset_report_document"/>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

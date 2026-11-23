@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_fsm_wheelset_report" model="ir.sequence">
+        <field name="name">Wheelset record</field>
+        <field name="code">fsm.wheelset.report</field>
+        <field name="prefix">OW/</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>

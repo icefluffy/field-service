@@ -1,0 +1,1363 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-23 17:14+0000\n"
+"PO-Revision-Date: 2026-11-23 17:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: Dutch (Belgium)\n"
+"Language: nl_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "%(field)s of position %(pos)s cannot be negative."
+msgstr "%(field)s van positie %(pos)s mag niet negatief zijn."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.actions.report,print_report_name:fieldservice_wheelset_report.action_report_wheelset_report
+msgid "'Opname wielstellen - %s' % (object.name)"
+msgstr "'Opname wielstellen - %s' % (object.name)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "- correction of"
+msgstr "- correctie van"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__line_120
+msgid "120 0-line?"
+msgstr "120 0-lijn?"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "6910B0"
+msgstr "6910B0"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "9R-AP-29.06.20"
+msgstr "9R-AP-29.06.20"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<b>HUPAC / Mercitalia: </b>"
+msgstr "<b>HUPAC / Mercitalia: </b>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid ""
+"<b>Note: HUPAC and Mercitalia max. diameter difference 10 mm per bogie and 20 mm in total.</b><br/>\n"
+"                        Max. load: max. load regime (A, B, C, D ...) and any separate CM or CM/D rasters.<br/>\n"
+"                        UIC code: including customer series, e.g. Sgns 107. Type: e.g. 6910B0.<br/>\n"
+"                        <b>Attention: special instructions for a.o. 004, e.g. different minimum diameter criteria.</b>"
+msgstr ""
+"<b>Opgelet: HUPAC en Mercitalia max. diameterverschil 10 mm per draaistel en"
+" 20 mm in totaal.</b><br/> Max. last: max. lastregime (A, B, C, D ...) en "
+"eventuele aparte CM of CM/D kaders.<br/> UIC-code: inclusief klantenserie "
+"bv. Sgns 107. Type: bv. 6910B0.<br/> <b>Let op: speciale instructies voor "
+"oa. 004 bv. afwijkende minimale diametercriteria.</b>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid ""
+"<br/>\n"
+"                        <span class=\"lbl\">120 0-line: </span>"
+msgstr "<br/> <span class=\"lbl\">120 0-lijn: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid ""
+"<br/>\n"
+"                        <span class=\"lbl\">Bracket / Weld: </span>"
+msgstr "<br/> <span class=\"lbl\">Beugel / Las: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid ""
+"<br/>\n"
+"                        <span class=\"lbl\">CM or CM/D raster: </span>"
+msgstr "<br/> <span class=\"lbl\">CM of CM/D kader: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid ""
+"<br/>\n"
+"                        <span class=\"lbl\">Coil spring: </span>"
+msgstr "<br/> <span class=\"lbl\">Spiraalveer: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<span class=\"lbl\">Brake block type: </span>"
+msgstr "<span class=\"lbl\">Rembloktype: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<span class=\"lbl\">Leaf spring: </span>"
+msgstr "<span class=\"lbl\">Bladveer: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<span class=\"lbl\">Load limit raster: </span>"
+msgstr "<span class=\"lbl\">Lastenkader: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<span class=\"lbl\">SS, S**, S***: </span>"
+msgstr "<span class=\"lbl\">SS, S**, S***: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<span class=\"lbl\">Special: </span>"
+msgstr "<span class=\"lbl\">Speciale: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<span class=\"lbl\">VTA? </span>"
+msgstr "<span class=\"lbl\">VTA? </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "<span class=\"lbl\">type DS: </span>"
+msgstr "<span class=\"lbl\">type DS: </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "<span> - </span>"
+msgstr "<span> - </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "<span> mm - Ton </span>"
+msgstr "<span> mm - Ton </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "<span>Diam. </span>"
+msgstr "<span>Diam. </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "<span>Pos. </span>"
+msgstr "<span>Pos. </span>"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "<strong>HUPAC / Mercitalia: </strong>"
+msgstr "<strong>HUPAC / Mercitalia: </strong>"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__load_regime__a
+msgid "A"
+msgstr "A"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid ""
+"A new, editable copy is made and this record is marked Replaced. Continue?"
+msgstr ""
+"Er wordt een nieuwe, bewerkbare kopie gemaakt en deze opname wordt als "
+"Vervangen gemarkeerd. Doorgaan?"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "A wagon can have at most %s wheelsets."
+msgstr "Een wagon kan maximaal %s wielstellen hebben."
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "A wheelset row cannot be moved to another record."
+msgstr "Een wielstelregel kan niet naar een andere opname worden verplaatst."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_needaction
+msgid "Action Needed"
+msgstr "Actie gevraagd"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_ids
+msgid "Activities"
+msgstr "Activiteiten"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activiteit uitzondering decoratie"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_state
+msgid "Activity State"
+msgstr "Activiteitsfase"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Activiteitensoort icoon"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid ""
+"After completing, the record is locked and number, type and ton are copied "
+"to the wagon. Continue?"
+msgstr ""
+"Na voltooien wordt de opname vergrendeld en worden nummer, type en ton naar "
+"de wagon gekopieerd. Doorgaan?"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
+msgid "As written on the wagon, e.g. 9R-AP-29.06.20."
+msgstr "Zoals op de wagon vermeld, bv. 9R-AP-29.06.20."
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "At least one wheelset"
+msgstr "Minstens één wielstel"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_attachment_count
+msgid "Attachment Count"
+msgstr "Aantal bijlagen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__bearing
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Axle box / Bearing"
+msgstr "Aspot / Lager"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__load_regime__b
+msgid "B"
+msgstr "B"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "B2B 1"
+msgstr "Speer 1"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "B2B 2"
+msgstr "Speer 2"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "B2B 3"
+msgstr "Speer 3"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Back-to-back (mm)"
+msgstr "Speermaat (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__gauge_1
+msgid "Back-to-back 1 (mm)"
+msgstr "Speermaat 1 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__gauge_2
+msgid "Back-to-back 2 (mm)"
+msgstr "Speermaat 2 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__gauge_3
+msgid "Back-to-back 3 (mm)"
+msgstr "Speermaat 3 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Back-to-back dimension (3 readings)"
+msgstr "Speermaat (3 metingen)"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid ""
+"Bogie with positions %(a)s-%(b)s: diameter difference %(diff)s mm (max. "
+"%(max)s mm)."
+msgstr ""
+"Draaistel met posities %(a)s-%(b)s: diameterverschil %(diff)s mm (max. "
+"%(max)s mm)."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__bracket_weld__bracket
+msgid "Bracket"
+msgstr "Beugel"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__bracket_weld
+msgid "Bracket / Weld"
+msgstr "Beugel / Las"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__brake_block_type
+msgid "Brake block type"
+msgstr "Rembloktype"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__load_regime__c
+msgid "C"
+msgstr "C"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__cm_ton
+msgid "CM or CM/D raster (t)"
+msgstr "CM of CM/D kader (ton)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__brake_block_type__cast_iron
+msgid "Cast iron"
+msgstr "Gietijzer"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__diameter_rule_applies
+msgid "Check diameter difference (HUPAC / Mercitalia)"
+msgstr "Diameterverschil controleren (HUPAC / Mercitalia)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__coil_spring
+msgid "Coil spring"
+msgstr "Spiraalveer"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__company_id
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Complete"
+msgstr "Voltooien"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__state__done
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_search
+msgid "Completed"
+msgstr "Voltooid"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__completed_at
+msgid "Completed At"
+msgstr "Voltooid op"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__completed_by_id
+msgid "Completed By"
+msgstr "Voltooid door"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Condition"
+msgstr "Toestand"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Correct"
+msgstr "Corrigeren"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Correction of %s."
+msgstr "Correctie van %s."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__create_uid
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__create_date
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__load_regime__d
+msgid "D"
+msgstr "D"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Damage / remark"
+msgstr "Schade / opmerking"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__damage_code_ids
+msgid "Damage codes"
+msgstr "Motief codes"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__date
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Date"
+msgstr "Datum"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__diameter
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Diam. (mm)"
+msgstr "Diam. (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__diameter_warning
+msgid "Diameter Warning"
+msgstr "Diameterwaarschuwing"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__brake_block_type__disc
+msgid "Disc brake"
+msgstr "Schijfrem"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__display_name
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__dossier_id
+msgid "Dossier"
+msgstr "Dossier"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/fsm_order.py:0
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Dossier %s is closed or cancelled."
+msgstr "Dossier %s is afgesloten of geannuleerd."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model,name:fieldservice_wheelset_report.model_fsm_dossier_inspection
+msgid "Dossier Inspection Line"
+msgstr "Dossier inspectieregel"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__inspection_type_id
+msgid "Dossier inspection"
+msgstr "Dossierinspectie"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__load_regime__e
+msgid "E"
+msgstr "E"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic_type
+msgid "E.g. 6910B0."
+msgstr "Bv. 6910B0."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__lot_id
+msgid "EVN/UIC serial number"
+msgstr "EVN/UIC serienummer"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.constraint,message:fieldservice_wheelset_report.constraint_fsm_wheelset_report_line_position_uniq
+msgid "Each position can be used only once per wheelset record."
+msgstr "Elke positie kan maar één keer per opname worden gebruikt."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Eb (thickness) (mm)"
+msgstr "Eb (dikte) (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Eb 1"
+msgstr "Eb 1"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Eb 2"
+msgstr "Eb 2"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Eb flange thickness (mm)"
+msgstr "Eb flensdikte (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__eb_1
+msgid "Eb flange thickness wheel 1 (mm)"
+msgstr "Eb flensdikte wiel 1 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__eb_2
+msgid "Eb flange thickness wheel 2 (mm)"
+msgstr "Eb flensdikte wiel 2 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Eh (height) (mm)"
+msgstr "Eh (hoogte) (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Eh 1"
+msgstr "Eh 1"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Eh 2"
+msgstr "Eh 2"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Eh flange height (mm)"
+msgstr "Eh flenshoogte (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__eh_1
+msgid "Eh flange height wheel 1 (mm)"
+msgstr "Eh flenshoogte wiel 1 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__eh_2
+msgid "Eh flange height wheel 2 (mm)"
+msgstr "Eh flenshoogte wiel 2 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "FG04-01_03-01.01"
+msgstr "FG04-01_03-01.01"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model,name:fieldservice_wheelset_report.model_fsm_equipment
+msgid "Field Service Equipment"
+msgstr "Field Service uitrusting"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model,name:fieldservice_wheelset_report.model_fsm_order
+msgid "Field Service Order"
+msgstr "Field Service order"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid ""
+"Fill in these fields before completing the record:\n"
+"%s"
+msgstr ""
+"Vul deze velden in voordat u de opname voltooit:\n"
+"%s"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__filled_by_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Filled in by"
+msgstr "Ingevuld door"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/fsm_dossier_inspection.py:0
+msgid ""
+"First link a work order to the %s line (use the + button). The wheelset "
+"record is saved on that work order."
+msgstr ""
+"Koppel eerst een werkorder aan de regel %s (gebruik de knop +). De opname "
+"wordt op die werkorder opgeslagen."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Flange gauge (mm) E1+Eb1+Eb2"
+msgstr "Spoormaat (mm) E1+Eb1+Eb2"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__track_gauge
+msgid "Flange gauge E1+Eb1+Eb2 (mm)"
+msgstr "Spoormaat E1+Eb1+Eb2 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_follower_ids
+msgid "Followers"
+msgstr "Volgers"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Volgers (Partners)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font awesome icoon bijv. fa-tasks"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_search
+msgid "Group By"
+msgstr "Groeperen op"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__has_message
+msgid "Has Message"
+msgstr "Heeft bericht"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__id
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__is_place
+msgid "IS place / other IS"
+msgstr "IS plaats / andere IS"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__is_date
+msgid "IS2/IS3 (mm/yy)"
+msgstr "IS2/IS3 (mm/jj)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "IS2/IS3 (mm/yy) + place, other IS"
+msgstr "IS2/IS3 (mm/jj) + plaats, andere IS"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_exception_icon
+msgid "Icon"
+msgstr "Icoon"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icoon om uitzondering op activiteit aan te geven."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Indien aangevinkt vragen nieuwe berichten je aandacht."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__message_has_error
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Indien aangevinkt hebben sommige berichten een leveringsfout."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__state__progress
+msgid "In progress"
+msgstr "In uitvoering"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic
+msgid "Including the customer series, e.g. Sgns 107."
+msgstr "Inclusief klantenserie, bv. Sgns 107."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_is_follower
+msgid "Is Follower"
+msgstr "Is een volger"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__brake_block_type__k
+msgid "K"
+msgstr "K"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__holder_mark
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Keeper marking"
+msgstr "Houdermarkering"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__brake_block_type__ll
+msgid "LL"
+msgstr "LL"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__write_uid
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__write_date
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__leaf_spring
+msgid "Leaf spring"
+msgstr "Bladveer"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__leaf_spring_type
+msgid "Leaf spring type (DS)"
+msgstr "Bladveer type (DS)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__line_count
+msgid "Line Count"
+msgstr "Aantal regels"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__load_regime
+msgid "Load limit raster"
+msgstr "Lastenkader"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__brake_block_type__m
+msgid "M"
+msgstr "M"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "MW0069 / MW0007 / ..."
+msgstr "MW0069 / MW0007 / ..."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__diameter_rule_applies
+msgid ""
+"Max. diameter difference 10 mm per bogie and 20 mm in total. Set "
+"automatically when the keeper, owner or customer is HUPAC or Mercitalia; it "
+"can be changed by hand."
+msgstr ""
+"Max. diameterverschil 10 mm per draaistel en 20 mm in totaal. Wordt "
+"automatisch aangezet als de houder, eigenaar of klant HUPAC of Mercitalia "
+"is; kan manueel worden gewijzigd."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__load_regime
+msgid "Maximum load regime."
+msgstr "Maximaal lastregime."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid ""
+"Measurements depend on the type of check. For IS0 always measure qR, Eb, Eh,\n"
+"                        back-to-back dimension, tread width and out-of-round."
+msgstr ""
+"Metingen afhankelijk van soort controle. Bij IS0 systematisch qR, Eb, Eh, "
+"speermaat, bandbreedte en onrondheid meten."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid ""
+"Measurements depend on the type of check.<br/>\n"
+"                        For IS0 always qR, Eh, Eb, back-to-back dimension, tread width and out-of-round."
+msgstr ""
+"Metingen afhankelijk van soort controle.<br/> Bij IS0 systematisch qR, Eh, "
+"Eb, speermaat, bandbreedte, onrondheid."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__instruments
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Measuring instruments used"
+msgstr "Gebruikte meetinstrumenten"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_has_error
+msgid "Message Delivery error"
+msgstr "Bericht afleverfout"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_ids
+msgid "Messages"
+msgstr "Berichten"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__mounting_date
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Mounting"
+msgstr "Montage"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mijn activiteit deadline"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "New"
+msgstr "Nieuw"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Volgende activiteit deadline"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_summary
+msgid "Next Activity Summary"
+msgstr "Volgende activiteit overzicht"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_type_id
+msgid "Next Activity Type"
+msgstr "Volgende activiteit type"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__line_120__no
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__rotule__no
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__vta__no
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report_line__white_stripe__no
+msgid "No"
+msgstr "Nee"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.actions.act_window,help:fieldservice_wheelset_report.action_fsm_wheelset_report
+msgid "No wheelset records yet"
+msgstr "Nog geen opnames wielstellen"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_search
+msgid "Not replaced"
+msgstr "Niet vervangen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__state__draft
+msgid "Not started"
+msgstr "Niet gestart"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid ""
+"Note: HUPAC and Mercitalia max. diameter difference 10 mm per bogie and 20 mm in total.\n"
+"                        Item 004 a.o. may have special instructions, e.g. different minimum diameter criteria."
+msgstr ""
+"Opgelet: HUPAC en Mercitalia max. diameterverschil 10 mm per draaistel en 20"
+" mm in totaal. Let op: speciale instructies voor oa. 004, bv. afwijkende "
+"minimale diametercriteria."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Aantal acties"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_has_error_counter
+msgid "Number of errors"
+msgstr "Aantal fouten"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Aantal berichten die actie vereisen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Aantal berichten met leveringsfout"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Only a completed wheelset record can be corrected."
+msgstr "Alleen een voltooide opname kan worden gecorrigeerd."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__cm_ton
+msgid "Only if present."
+msgstr "Alleen als aanwezig."
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Only wheelset records that are not started can be deleted."
+msgstr "Alleen opnames die niet gestart zijn kunnen worden verwijderd."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_search
+msgid "Open"
+msgstr "Open"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.actions.act_window,help:fieldservice_wheelset_report.action_fsm_wheelset_report
+msgid ""
+"Open a work order or the Opname Wielstellen line of a dossier and click "
+"Input wheelsets."
+msgstr ""
+"Open een werkorder of de regel Opname Wielstellen van een dossier en klik op"
+" Wielstellen invoeren."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.actions.act_window,name:fieldservice_wheelset_report.action_fsm_wheelset_report
+#: model:ir.actions.report,name:fieldservice_wheelset_report.action_report_wheelset_report
+#: model:ir.ui.menu,name:fieldservice_wheelset_report.menu_fsm_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Opname wielstellen"
+msgstr "Opname wielstellen"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Other data"
+msgstr "Overige gegevens"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__out_of_round
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Out-of-round (mm)"
+msgstr "Onrondheid (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__position
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Pos."
+msgstr "Pos."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Print"
+msgstr "Afdrukken"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__product_id
+msgid "Product"
+msgstr "Product"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__rating_ids
+msgid "Ratings"
+msgstr "Beoordelingen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__name
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__damage_note
+msgid "Remark"
+msgstr "Opmerking"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__state__replaced
+msgid "Replaced"
+msgstr "Vervangen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__replaced_by_id
+msgid "Replaced by"
+msgstr "Vervangen door"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Replaced by %s for a correction."
+msgstr "Vervangen door %s voor een correctie."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__replaces_id
+msgid "Replaces"
+msgstr "Vervangt"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__report_id
+msgid "Report"
+msgstr "Rapport"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwoordelijke gebruiker"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Revision: 11 - Date: 29/10/24"
+msgstr "Revisie: 11 - Datum: 29/10/24"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Rim width (mm)"
+msgstr "Bandbreedte (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__width_1
+msgid "Rim width wheel 1 (mm)"
+msgstr "Bandbreedte wiel 1 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__width_2
+msgid "Rim width wheel 2 (mm)"
+msgstr "Bandbreedte wiel 2 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__rotule
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Rotule?"
+msgstr "Rotule?"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__speed_class__s2
+msgid "S**"
+msgstr "S**"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__speed_class__s3
+msgid "S***"
+msgstr "S***"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS fout bij versturen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__speed_class__ss
+msgid "SS"
+msgstr "SS"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__speed_class
+msgid "SS, S**, S***?"
+msgstr "SS, S**, S***?"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Select a wagon on work order %s before entering wheelsets."
+msgstr "Kies eerst een wagon op werkorder %s voordat u wielstellen invoert."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Sgns 107"
+msgstr "Sgns 107"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__source_reference
+msgid "Source Reference"
+msgstr "Bronreferentie"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__special
+msgid "Special"
+msgstr "Speciale"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__state
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__state
+msgid "State"
+msgstr "Status"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_search
+msgid "Status"
+msgstr "Status"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status gebaseerd op activiteiten\n"
+"Te laat: Datum is al gepasseerd\n"
+"Vandaag: Datum van activiteit is vandaag\n"
+"Gepland: Toekomstige activiteiten."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__tare_kg
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Tare (kg)"
+msgstr "Tarra (kg)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__inspection_id
+msgid ""
+"The Opname Wielstellen line of the dossier that is linked to this work "
+"order."
+msgstr ""
+"De regel Opname Wielstellen van het dossier die aan deze werkorder gekoppeld"
+" is."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__replaces_id
+msgid "The completed record that this record corrects."
+msgstr "De voltooide opname die deze opname corrigeert."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.constraint,message:fieldservice_wheelset_report.constraint_fsm_wheelset_report_line_position_range
+msgid "The position must be between 1 and 8."
+msgstr "De positie moet tussen 1 en 8 liggen."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__lot_id
+msgid ""
+"The wagon's serial number at the time of the record. It stays linked even if"
+" the wagon gets another serial later."
+msgstr ""
+"Het serienummer van de wagon op het moment van de opname. Het blijft "
+"gekoppeld, ook als de wagon later een ander serienummer krijgt."
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/fsm_dossier_inspection.py:0
+msgid "This form is only for Opname Wielstellen."
+msgstr "Dit formulier is alleen voor Opname Wielstellen."
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "This record was replaced by a correction:"
+msgstr "Deze opname werd vervangen door een correctie:"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__ton
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Ton"
+msgstr "Ton"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Total diameter difference %(diff)s mm (max. %(max)s mm)."
+msgstr "Totaal diameterverschil %(diff)s mm (max. %(max)s mm)."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__uic_type
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__wheelset_type
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Type"
+msgstr "Type"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type van de geregistreerde uitzonderingsactiviteit."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__uic
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "UIC"
+msgstr "UIC"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Use the workflow buttons."
+msgstr "Gebruik de workflowknoppen."
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid ""
+"Use the workflow buttons; the work order and wagon of a wheelset record "
+"cannot be changed."
+msgstr ""
+"Gebruik de workflowknoppen; de werkorder en wagon van een opname kunnen niet"
+" worden gewijzigd."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__vta
+msgid "VTA?"
+msgstr "VTA?"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__equipment_id
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_search
+msgid "Wagon"
+msgstr "Wagon"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__wagon_number
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Wagon number"
+msgstr "Wagonnummer"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Wagon revision date"
+msgstr "Revisiedatum wagon"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Warning:"
+msgstr "Waarschuwing:"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__website_message_ids
+msgid "Website Messages"
+msgstr "Websiteberichten"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__website_message_ids
+msgid "Website communication history"
+msgstr "Website communicatie geschiedenis"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__bracket_weld__weld
+msgid "Weld"
+msgstr "Las"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Wheel 1"
+msgstr "Wiel 1"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Wheel 2"
+msgstr "Wiel 2"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "Wheelset"
+msgstr "Wielstel"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_order__wheelset_report_count
+msgid "Wheelset Report Count"
+msgstr "Aantal opnames wielstellen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__wheelset_number
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_search
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Wheelset no."
+msgstr "Wieln°"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Wheelset number of position %s"
+msgstr "Wielnummer van positie %s"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Wheelset record"
+msgstr "Opname wielstellen"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid ""
+"Wheelset record %s is completed and locked. Use 'Correct' to make a new "
+"version."
+msgstr ""
+"Opname %s is voltooid en vergrendeld. Gebruik 'Corrigeren' om een nieuwe "
+"versie te maken."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model,name:fieldservice_wheelset_report.model_fsm_wheelset_report
+msgid "Wheelset record (Opname wielstellen)"
+msgstr "Opname wielstellen"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Wheelset record completed and copied to the wagon."
+msgstr "Opname wielstellen voltooid en naar de wagon gekopieerd."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model,name:fieldservice_wheelset_report.model_fsm_wheelset_report_line
+msgid "Wheelset record row"
+msgstr "Regel opname wielstellen"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/fsm_order.py:0
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_equipment__wheelset_report_ids
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_order__wheelset_report_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_equipment_form_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_order_form_wheelset_report
+msgid "Wheelset records"
+msgstr "Opnames wielstellen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__line_ids
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_list
+msgid "Wheelsets"
+msgstr "Wielstellen"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__white_stripe
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "White stripe?"
+msgstr "Witte streep?"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "Width (mm)"
+msgstr "Breedte (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Width 1"
+msgstr "Breedte 1"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Width 2"
+msgstr "Breedte 2"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__order_id
+msgid "Work Order"
+msgstr "Werkorder"
+
+#. module: fieldservice_wheelset_report
+#. odoo-python
+#: code:addons/fieldservice_wheelset_report/models/wheelset_report.py:0
+msgid "Work order %s already has a wheelset record."
+msgstr "Werkorder %s heeft al een opname wielstellen."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__line_120__yes
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__rotule__yes
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__vta__yes
+#: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report_line__white_stripe__yes
+msgid "Yes"
+msgstr "Ja"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report_line__mounting_date
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+msgid "mm/yy"
+msgstr "mm/jj"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_line_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "qR (mm)"
+msgstr "qR (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "qR 1"
+msgstr "qR 1"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "qR 2"
+msgstr "qR 2"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__qr_1
+msgid "qR wheel 1 (mm)"
+msgstr "qR wiel 1 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report_line__qr_2
+msgid "qR wheel 2 (mm)"
+msgstr "qR wiel 2 (mm)"
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
+msgid "t"
+msgstr "ton"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__inspection_id
+msgid "Dossier inspection line"
+msgstr "Inspectieregel dossier"

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fsm_wheelset_report_user,fsm.wheelset.report.user,model_fsm_wheelset_report,fieldservice.group_fsm_user,1,1,1,0
+access_fsm_wheelset_report_line_user,fsm.wheelset.report.line.user,model_fsm_wheelset_report_line,fieldservice.group_fsm_user,1,1,1,1
+access_fsm_wheelset_report_manager,fsm.wheelset.report.manager,model_fsm_wheelset_report,fieldservice.group_fsm_manager,1,1,1,1

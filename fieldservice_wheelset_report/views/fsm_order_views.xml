@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_order_form_wheelset_report" model="ir.ui.view">
+        <field name="name">fsm.order.form.wheelset.report</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice_vtg_wheelsets.fsm_order_form_wheelsets"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_wheelset_reports" type="object"
+                        class="oe_stat_button" icon="fa-cogs"
+                        invisible="not wheelset_report_count">
+                    <field name="wheelset_report_count" widget="statinfo" string="Wheelset records"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

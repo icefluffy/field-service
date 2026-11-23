@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_wheelset_report" model="report.paperformat">
+        <field name="name">A4 landscape - Opname wielstellen</field>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">8</field>
+        <field name="margin_bottom">8</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+    <record id="action_report_wheelset_report" model="ir.actions.report">
+        <field name="name">Opname wielstellen</field>
+        <field name="model">fsm.wheelset.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fieldservice_wheelset_report.report_wheelset_report</field>
+        <field name="report_file">fieldservice_wheelset_report.report_wheelset_report</field>
+        <field name="print_report_name">'Opname wielstellen - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_fsm_wheelset_report"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_wheelset_report"/>
+    </record>
+</odoo>

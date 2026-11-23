@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- One wheelset row, opened in a dialog (desktop) or full screen (phone). -->
+    <record id="fsm_wheelset_report_line_form" model="ir.ui.view">
+        <field name="name">fsm.wheelset.report.line.form</field>
+        <field name="model">fsm.wheelset.report.line</field>
+        <field name="arch" type="xml">
+            <form string="Wheelset">
+                <field name="state" invisible="1"/>
+                <group>
+                    <group string="Wheelset">
+                        <field name="position"/>
+                        <field name="holder_mark"/>
+                        <field name="wheelset_type"/>
+                        <field name="wheelset_number"/>
+                        <field name="bearing"/>
+                        <field name="mounting_date" placeholder="mm/yy"/>
+                        <field name="is_date" placeholder="mm/yy"/>
+                        <field name="is_place"/>
+                    </group>
+                    <group string="Condition">
+                        <field name="out_of_round"/>
+                        <field name="white_stripe" widget="radio" options="{'horizontal': true}"/>
+                        <field name="ton"/>
+                        <field name="damage_code_ids" widget="many2many_tags"/>
+                        <field name="damage_note"/>
+                        <field name="diameter"/>
+                    </group>
+                    <group string="Back-to-back dimension (3 readings)">
+                        <field name="gauge_1"/>
+                        <field name="gauge_2"/>
+                        <field name="gauge_3"/>
+                        <field name="track_gauge"/>
+                    </group>
+                    <group string="Wheel 1">
+                        <field name="width_1" string="Rim width (mm)"/>
+                        <field name="qr_1" string="qR (mm)"/>
+                        <field name="eb_1" string="Eb flange thickness (mm)"/>
+                        <field name="eh_1" string="Eh flange height (mm)"/>
+                    </group>
+                    <group string="Wheel 2">
+                        <field name="width_2" string="Rim width (mm)"/>
+                        <field name="qr_2" string="qR (mm)"/>
+                        <field name="eb_2" string="Eb flange thickness (mm)"/>
+                        <field name="eh_2" string="Eh flange height (mm)"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="fsm_wheelset_report_form" model="ir.ui.view">
+        <field name="name">fsm.wheelset.report.form</field>
+        <field name="model">fsm.wheelset.report</field>
+        <field name="arch" type="xml">
+            <form string="Opname wielstellen" create="0" duplicate="0">
+                <header>
+                    <button name="action_complete" string="Complete" type="object"
+                            class="btn-primary" invisible="state not in ('draft', 'progress')"
+                            confirm="After completing, the record is locked and number, type and ton are copied to the wagon. Continue?"/>
+                    <button name="action_correct" string="Correct" type="object"
+                            invisible="state != 'done'"
+                            confirm="A new, editable copy is made and this record is marked Replaced. Continue?"/>
+                    <button name="action_print" string="Print" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,progress,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <div class="alert alert-warning" role="alert" invisible="not diameter_warning">
+                        <strong>HUPAC / Mercitalia: </strong>
+                        <field name="diameter_warning" nolabel="1" class="d-inline"/>
+                    </div>
+                    <div class="alert alert-info" role="alert" invisible="state != 'replaced'">
+                        This record was replaced by a correction:
+                        <field name="replaced_by_id" nolabel="1" class="d-inline"/>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="order_id"/>
+                            <field name="dossier_id"/>
+                            <field name="inspection_id" invisible="1"/>
+                            <field name="inspection_type_id" invisible="not inspection_id"/>
+                            <field name="replaces_id" invisible="not replaces_id"/>
+                        </group>
+                        <group>
+                            <field name="equipment_id"/>
+                            <field name="lot_id"/>
+                            <field name="product_id" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="source_reference"/>
+                        </group>
+                    </group>
+                    <group string="Wagon">
+                        <group>
+                            <field name="wagon_number" readonly="state in ('done', 'replaced')"/>
+                            <field name="revision_text" readonly="state in ('done', 'replaced')" placeholder="9R-AP-29.06.20"/>
+                            <field name="filled_by_id" readonly="state in ('done', 'replaced')"/>
+                            <field name="date" readonly="state in ('done', 'replaced')"/>
+                            <field name="tare_kg" readonly="state in ('done', 'replaced')"/>
+                        </group>
+                        <group>
+                            <field name="rotule" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
+                            <field name="uic" readonly="state in ('done', 'replaced')" placeholder="Sgns 107"/>
+                            <field name="uic_type" readonly="state in ('done', 'replaced')" placeholder="6910B0"/>
+                            <field name="speed_class" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
+                            <field name="line_120" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
+                        </group>
+                    </group>
+                    <div class="text-muted small mb-2">
+                        Measurements depend on the type of check. For IS0 always measure qR, Eb, Eh,
+                        back-to-back dimension, tread width and out-of-round.
+                    </div>
+                    <field name="line_ids" readonly="state in ('done', 'replaced')"
+                           context="{'default_report_id': id}">
+                        <list decoration-muted="not wheelset_number">
+                            <field name="position"/>
+                            <field name="holder_mark"/>
+                            <field name="wheelset_type"/>
+                            <field name="wheelset_number"/>
+                            <field name="bearing"/>
+                            <field name="mounting_date" optional="show"/>
+                            <field name="is_date"/>
+                            <field name="is_place"/>
+                            <field name="out_of_round" optional="show"/>
+                            <field name="white_stripe"/>
+                            <field name="ton"/>
+                            <field name="damage_code_ids" widget="many2many_tags"/>
+                            <field name="damage_note" optional="hide"/>
+                            <field name="diameter"/>
+                            <field name="gauge_1" string="B2B 1"/>
+                            <field name="gauge_2" string="B2B 2"/>
+                            <field name="gauge_3" string="B2B 3"/>
+                            <field name="track_gauge" optional="hide"/>
+                            <field name="width_1" string="Width 1" optional="show"/>
+                            <field name="width_2" string="Width 2" optional="show"/>
+                            <field name="qr_1" string="qR 1" optional="show"/>
+                            <field name="qr_2" string="qR 2" optional="show"/>
+                            <field name="eb_1" string="Eb 1" optional="show"/>
+                            <field name="eb_2" string="Eb 2" optional="show"/>
+                            <field name="eh_1" string="Eh 1" optional="show"/>
+                            <field name="eh_2" string="Eh 2" optional="show"/>
+                        </list>
+                        <kanban>
+                            <field name="position"/>
+                            <templates>
+                                <t t-name="card">
+                                    <div class="d-flex justify-content-between">
+                                        <strong>
+                                            <span>Pos. </span><field name="position"/>
+                                            <span> - </span><field name="wheelset_number"/>
+                                        </strong>
+                                        <span><field name="wheelset_type"/></span>
+                                    </div>
+                                    <div class="text-muted">
+                                        <span>Diam. </span><field name="diameter"/>
+                                        <span> mm - Ton </span><field name="ton"/>
+                                    </div>
+                                    <field name="damage_code_ids" widget="many2many_tags"/>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                    <group string="Other data">
+                        <group>
+                            <field name="instruments" readonly="state in ('done', 'replaced')" placeholder="MW0069 / MW0007 / ..."/>
+                            <field name="leaf_spring" readonly="state in ('done', 'replaced')"/>
+                            <field name="leaf_spring_type" readonly="state in ('done', 'replaced')" invisible="not leaf_spring"/>
+                            <field name="coil_spring" readonly="state in ('done', 'replaced')"/>
+                            <field name="brake_block_type" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
+                            <field name="vta" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
+                            <field name="bracket_weld" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
+                        </group>
+                        <group>
+                            <field name="load_regime" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
+                            <field name="cm_ton" readonly="state in ('done', 'replaced')"/>
+                            <field name="special" readonly="state in ('done', 'replaced')"/>
+                            <field name="diameter_rule_applies" readonly="state in ('done', 'replaced')"/>
+                        </group>
+                    </group>
+                    <div class="text-muted small">
+                        Note: HUPAC and Mercitalia max. diameter difference 10 mm per bogie and 20 mm in total.
+                        Item 004 a.o. may have special instructions, e.g. different minimum diameter criteria.
+                    </div>
+                    <group string="Completed" invisible="state not in ('done', 'replaced')">
+                        <group>
+                            <field name="completed_by_id"/>
+                            <field name="completed_at"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="fsm_wheelset_report_list" model="ir.ui.view">
+        <field name="name">fsm.wheelset.report.list</field>
+        <field name="model">fsm.wheelset.report</field>
+        <field name="arch" type="xml">
+            <list create="0" decoration-muted="state == 'replaced'"
+                  decoration-success="state == 'done'">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="equipment_id"/>
+                <field name="lot_id" optional="hide"/>
+                <field name="order_id"/>
+                <field name="dossier_id"/>
+                <field name="filled_by_id"/>
+                <field name="line_count" string="Wheelsets"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'done'"
+                       decoration-info="state == 'progress'"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="fsm_wheelset_report_search" model="ir.ui.view">
+        <field name="name">fsm.wheelset.report.search</field>
+        <field name="model">fsm.wheelset.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="equipment_id"/>
+                <field name="lot_id"/>
+                <field name="order_id"/>
+                <field name="dossier_id"/>
+                <field name="filled_by_id"/>
+                <field name="line_ids" string="Wheelset no." filter_domain="[('line_ids.wheelset_number', 'ilike', self)]"/>
+                <filter name="open" string="Open" domain="[('state', 'in', ('draft', 'progress'))]"/>
+                <filter name="done" string="Completed" domain="[('state', '=', 'done')]"/>
+                <filter name="not_replaced" string="Not replaced" domain="[('state', '!=', 'replaced')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="g_equipment" string="Wagon" context="{'group_by': 'equipment_id'}"/>
+                    <filter name="g_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_fsm_wheelset_report" model="ir.actions.act_window">
+        <field name="name">Opname wielstellen</field>
+        <field name="res_model">fsm.wheelset.report</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_not_replaced': 1, 'create': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No wheelset records yet</p>
+            <p>Open a work order or the Opname Wielstellen line of a dossier and click Input wheelsets.</p>
+        </field>
+    </record>
+</odoo>
