@@ -91,6 +91,21 @@ class Inspection(models.Model):
 class Order(models.Model):
     _inherit = 'fsm.order'
 
+    has_wagon_intake = fields.Boolean(
+        string="Has inbound inspection",
+        compute="_compute_has_wagon_intake",
+        help="True when the dossier Inbound inspection line is linked to this work order.",
+    )
+
+    @api.depends("inspection_ids.type_id")
+    def _compute_has_wagon_intake(self):
+        intake_type = self.env.ref(
+            "fieldservice_dossier.inspection_type_ik", raise_if_not_found=False,
+        )
+        for order in self:
+            order.has_wagon_intake = bool(intake_type) and any(
+                line.type_id == intake_type for line in order.inspection_ids
+            )
 
     def action_open_wagon_intake(self):
         self.ensure_one()

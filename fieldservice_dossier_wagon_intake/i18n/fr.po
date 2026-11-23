@@ -754,3 +754,13 @@ msgstr "Oui"
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "You cannot move findings to another report."
 msgstr "Vous ne pouvez pas déplacer des constatations vers un autre rapport."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
+msgid "Has inbound inspection"
+msgstr "A une inspection d'entrée"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
+msgid "True when the dossier Inbound inspection line is linked to this work order."
+msgstr "Coché lorsque la ligne Inspection d'entrée du dossier est liée à cet ordre de travail."

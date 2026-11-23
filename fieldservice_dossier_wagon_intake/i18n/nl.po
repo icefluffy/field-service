@@ -755,3 +755,13 @@ msgstr "Ja"
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "You cannot move findings to another report."
 msgstr "U kunt vaststellingen niet naar een ander rapport verplaatsen."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
+msgid "Has inbound inspection"
+msgstr "Heeft ingangskeuring"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
+msgid "True when the dossier Inbound inspection line is linked to this work order."
+msgstr "Aangevinkt wanneer de dossierlijn Ingangskeuring aan deze werkorder gekoppeld is."

@@ -4,7 +4,7 @@
     "name": "Field Service - Opname Wielstellen",
     "summary": "Wheelset measurement form (FG04-01_03-01.01) per work order, "
     "linked to the wagon and its serial number",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "category": "Field Service",
     "author": "Icefluffy, TI-Consulting",
     "website": "https://github.com/icefluffy/field-service",

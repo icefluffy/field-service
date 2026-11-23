@@ -26,12 +26,17 @@
                         <field name="damage_note"/>
                         <field name="diameter"/>
                     </group>
+                </group>
+                <group>
                     <group string="Back-to-back dimension (3 readings)">
                         <field name="gauge_1"/>
                         <field name="gauge_2"/>
                         <field name="gauge_3"/>
                         <field name="track_gauge"/>
                     </group>
+                    <group/>
+                </group>
+                <group>
                     <group string="Wheel 1">
                         <field name="width_1" string="Rim width (mm)"/>
                         <field name="qr_1" string="qR (mm)"/>
