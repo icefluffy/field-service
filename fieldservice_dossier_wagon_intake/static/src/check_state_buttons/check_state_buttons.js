@@ -47,6 +47,23 @@ export class CheckStateButtons extends Component {
         }));
     }
 
+    /**
+     * Open the finding in its form, exactly like tapping the card.
+     * The kanban card component owns openRecord; walk up to it. Fall back to
+     * a click on the card element.
+     */
+    openFinding(card) {
+        let node = this.__owl__.parent;
+        while (node) {
+            const props = node.component && node.component.props;
+            if (props && typeof props.openRecord === "function" && props.record?.id === this.props.record.id) {
+                return props.openRecord(props.record);
+            }
+            node = node.parent;
+        }
+        card?.click();
+    }
+
     async onClick(ev, value) {
         if (this.isLocked) {
             return;
@@ -60,9 +77,8 @@ export class CheckStateButtons extends Component {
             }
             await this.props.record.update(changes);
         }
-        if (value === "defect" && card) {
-            // Same as tapping the card: open the finding in its form.
-            card.click();
+        if (value === "defect") {
+            this.openFinding(card);
         }
     }
 }
