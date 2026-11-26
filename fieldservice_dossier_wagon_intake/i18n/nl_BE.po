@@ -281,6 +281,8 @@ msgid "In progress"
 msgstr "In uitvoering"
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
 msgid "Inbound inspection"
 msgstr "Ingangskeuring"
@@ -771,3 +773,213 @@ msgstr "Aangevinkt wanneer de dossierlijn Ingangskeuring aan deze werkorder geko
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "First link a work order to the %s line (use the + button)."
 msgstr "Koppel eerst een werkorder aan de regel %s (gebruik de knop +)."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Wheelset"
+msgstr "Wielstel"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "T-piece"
+msgstr "T-stuk"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Coil spring"
+msgstr "Spiraalveer"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Leaf spring"
+msgstr "Bladveer"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Bogie"
+msgstr "Draaistel"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding piece"
+msgstr "Glijstuk"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Earthing"
+msgstr "Aarding"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Axle plate"
+msgstr "Asplaat"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Flame plate"
+msgstr "Vlamplaat"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Towing hook"
+msgstr "Sleephaak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Inscription plate"
+msgstr "Inscriptieplaat"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Letter box"
+msgstr "Brievenkast"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Box"
+msgstr "Kast"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Door (box)"
+msgstr "Deur (kast)"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Open wagon body"
+msgstr "Bak open bak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Open wagon door"
+msgstr "Deur open bak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Open wagon slide"
+msgstr "Schuif open bak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding roof"
+msgstr "Schuifdak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Hood"
+msgstr "Huif"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding roof / hood operation"
+msgstr "Bediening schuifdak / huif"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Tilting roof"
+msgstr "Kanteldak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding tilting roof"
+msgstr "Schuif kanteldak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Brake block"
+msgstr "Remblok"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "½ coupling"
+msgstr "½-koppel"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Distributor"
+msgstr "Verdeler"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Brake regulator"
+msgstr "Remregelaar"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Release valve (operation)"
+msgstr "Spuiklep (bediening)"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Changeover"
+msgstr "Omschakeling"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "End cock"
+msgstr "Eindkraan"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Load-weighing valve"
+msgstr "Weegklep"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Buffer"
+msgstr "Buffer"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Draw hook"
+msgstr "Trekhaak"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Screw coupling"
+msgstr "Schroefkoppeling"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding plate"
+msgstr "Glijplaat"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Preventive maintenance / overhaul / painting / inscription / testing"
+msgstr "Preventief onderhoud / revisie / schildering / opschrift / beproeving"

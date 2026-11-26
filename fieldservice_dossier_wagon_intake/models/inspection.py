@@ -2,9 +2,88 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo import _, api, fields, models, Command
 from odoo.exceptions import UserError, ValidationError
+from odoo.osv import expression
+from odoo.tools.translate import LazyTranslate
+
+_lt = LazyTranslate(__name__)
 
 
-ROWS = [('running', 'Wheelset', '21-'), ('running', 'T-piece', '2162-'), ('running', 'Coil spring', '231-'), ('running', 'Leaf spring', '232-'), ('running', 'Bogie', '22-'), ('running', 'Sliding piece', '241-'), ('running', 'Earthing', '2491-'), ('running', 'Axle plate', '2323-'), ('frame', 'Flame plate', '3141-'), ('frame', 'Towing hook', '3151-'), ('frame', 'Inscription plate', '3221-'), ('frame', 'Letter box', '3222-'), ('body', 'Box', '431-'), ('body', 'Door (box)', '432-'), ('body', 'Open wagon body', '441-'), ('body', 'Open wagon door', '442-'), ('body', 'Open wagon slide', '443-'), ('body', 'Sliding roof', '451-'), ('body', 'Hood', '452-'), ('body', 'Sliding roof / hood operation', '453-'), ('body', 'Tilting roof', '461-'), ('body', 'Sliding tilting roof', '462-'), ('brake', 'Brake block', '5123-'), ('brake', '½ coupling', '5242-'), ('brake', 'Distributor', '5211-'), ('brake', 'Brake regulator', '513-'), ('brake', 'Release valve (operation)', '515-'), ('brake', 'Changeover', '515-'), ('brake', 'End cock', '5251-'), ('brake', 'Load-weighing valve', '522-'), ('coupling', 'Buffer', '611-'), ('coupling', 'Draw hook', '6212-'), ('coupling', 'Screw coupling', '6211-'), ('coupling', 'Sliding plate', '6213-'), ('maintenance', 'Preventive maintenance / overhaul / painting / inscription / testing', '')]
+# Component names are translatable (see i18n/*.po); the English text is the
+# source and every active language gets its translation when a report is made.
+ROWS = [
+    ('running', _lt('Wheelset'), '21-'),
+    ('running', _lt('T-piece'), '2162-'),
+    ('running', _lt('Coil spring'), '231-'),
+    ('running', _lt('Leaf spring'), '232-'),
+    ('running', _lt('Bogie'), '22-'),
+    ('running', _lt('Sliding piece'), '241-'),
+    ('running', _lt('Earthing'), '2491-'),
+    ('running', _lt('Axle plate'), '2323-'),
+    ('frame', _lt('Flame plate'), '3141-'),
+    ('frame', _lt('Towing hook'), '3151-'),
+    ('frame', _lt('Inscription plate'), '3221-'),
+    ('frame', _lt('Letter box'), '3222-'),
+    ('body', _lt('Box'), '431-'),
+    ('body', _lt('Door (box)'), '432-'),
+    ('body', _lt('Open wagon body'), '441-'),
+    ('body', _lt('Open wagon door'), '442-'),
+    ('body', _lt('Open wagon slide'), '443-'),
+    ('body', _lt('Sliding roof'), '451-'),
+    ('body', _lt('Hood'), '452-'),
+    ('body', _lt('Sliding roof / hood operation'), '453-'),
+    ('body', _lt('Tilting roof'), '461-'),
+    ('body', _lt('Sliding tilting roof'), '462-'),
+    ('brake', _lt('Brake block'), '5123-'),
+    ('brake', _lt('½ coupling'), '5242-'),
+    ('brake', _lt('Distributor'), '5211-'),
+    ('brake', _lt('Brake regulator'), '513-'),
+    ('brake', _lt('Release valve (operation)'), '515-'),
+    ('brake', _lt('Changeover'), '515-'),
+    ('brake', _lt('End cock'), '5251-'),
+    ('brake', _lt('Load-weighing valve'), '522-'),
+    ('coupling', _lt('Buffer'), '611-'),
+    ('coupling', _lt('Draw hook'), '6212-'),
+    ('coupling', _lt('Screw coupling'), '6211-'),
+    ('coupling', _lt('Sliding plate'), '6213-'),
+    ('maintenance', _lt('Preventive maintenance / overhaul / painting / inscription / testing'), ''),
+]
+# Component names of reports made before the form was translated to English.
+LEGACY_DUTCH_COMPONENTS = {
+    'Wielstel': 'Wheelset',
+    'T-stuk': 'T-piece',
+    'Spiraalveer': 'Coil spring',
+    'Bladveer': 'Leaf spring',
+    'Draaistel': 'Bogie',
+    'Glijstuk': 'Sliding piece',
+    'Aarding': 'Earthing',
+    'Asplaat': 'Axle plate',
+    'Vlamplaat': 'Flame plate',
+    'Sleephaak': 'Towing hook',
+    'Inscriptieplaat': 'Inscription plate',
+    'Brievenkast': 'Letter box',
+    'Kast': 'Box',
+    'Deur (kast)': 'Door (box)',
+    'Bak open bak': 'Open wagon body',
+    'Deur open bak': 'Open wagon door',
+    'Schuif open bak': 'Open wagon slide',
+    'Schuifdak': 'Sliding roof',
+    'Huif': 'Hood',
+    'Bediening schuifdak / huif': 'Sliding roof / hood operation',
+    'Kanteldak': 'Tilting roof',
+    'Schuif kanteldak': 'Sliding tilting roof',
+    'Remblok': 'Brake block',
+    '½-koppel': '½ coupling',
+    'Verdeler': 'Distributor',
+    'Remregelaar': 'Brake regulator',
+    'Spuiklep (bediening)': 'Release valve (operation)',
+    'Omschakeling': 'Changeover',
+    'Eindkraan': 'End cock',
+    'Weegklep': 'Load-weighing valve',
+    'Trekhaak': 'Draw hook',
+    'Schroefkoppeling': 'Screw coupling',
+    'Glijplaat': 'Sliding plate',
+    'Preventief onderhoud / revisie / schildering / opschrift / beproeving': 'Preventive maintenance / overhaul / painting / inscription / testing',
+}
 SECTIONS = [('running', 'Running gear (2)'), ('frame', 'Wagon frame (3)'),
             ('body', 'Superstructure (4)'), ('brake', 'Brake (5)'),
             ('coupling', 'Buffing and draw gear (6)'), ('maintenance', 'Maintenance / overhaul (9)')]
@@ -128,7 +207,8 @@ class Intake(models.Model):
     _rec_name = 'name'
 
 
-    name = fields.Char(compute='_compute_name', store=True)
+    # Not stored: the title follows the language of whoever views the report.
+    name = fields.Char(compute='_compute_name', search='_search_name')
     inspection_id = fields.Many2one('fsm.dossier.inspection', required=True, ondelete='restrict', copy=False)
     dossier_id = fields.Many2one(related='inspection_id.dossier_id', store=True)
     equipment_id = fields.Many2one(related='inspection_id.equipment_id', store=True)
@@ -270,9 +350,26 @@ class Intake(models.Model):
 
 
     @api.depends('equipment_id', 'dossier_id')
+    @api.depends_context('lang')
     def _compute_name(self):
+        label = self.env._('Inbound inspection')
         for r in self:
-            r.name = 'Inbound inspection - %s - %s' % (r.equipment_id.display_name or '', r.dossier_id.display_name or '')
+            r.name = '%s - %s - %s' % (
+                label, r.equipment_id.display_name or '', r.dossier_id.display_name or '')
+
+    @api.depends('name')
+    @api.depends_context('lang')
+    def _compute_display_name(self):
+        for r in self:
+            r.display_name = r.name
+
+    def _search_name(self, operator, value):
+        # The title is built from the wagon and the dossier, so search on those.
+        if not isinstance(value, str):
+            return [('id', '=', 0)] if operator not in expression.NEGATIVE_TERM_OPERATORS else []
+        if operator in expression.NEGATIVE_TERM_OPERATORS:
+            return ['&', ('equipment_id', operator, value), ('dossier_id', operator, value)]
+        return ['|', ('equipment_id', operator, value), ('dossier_id', operator, value)]
 
 
     @api.model_create_multi
@@ -285,9 +382,11 @@ class Intake(models.Model):
                 raise UserError(_('Dossier is closed or cancelled.'))
             if vals.get('state', 'draft') != 'draft' or vals.get('recorded_by') or vals.get('recorded_at'):
                 raise UserError(_('Use the workflow buttons.'))
-            vals['line_ids'] = [Command.create({'section': s, 'component': c, 'code': code, 'sequence': i * 10})
+            vals['line_ids'] = [Command.create({'section': s, 'component': c._source, 'code': code, 'sequence': i * 10})
                                 for i, (s, c, code) in enumerate(ROWS, 1)]
-        return super().create(vals_list)
+        reports = super().create(vals_list)
+        reports.line_ids._set_component_translations()
+        return reports
 
 
     def _check_editable(self):
@@ -365,13 +464,33 @@ class IntakeLine(models.Model):
     company_id = fields.Many2one(related='report_id.company_id', store=True)
     sequence = fields.Integer(default=500)
     section = fields.Selection(SECTIONS, required=True)
-    component = fields.Char(string='Component', required=True)
+    component = fields.Char(string='Component', required=True, translate=True)
     code = fields.Char(string='Group / Code')
     check_state = fields.Selection([('pending','Not assessed'),('ok','OK'),('defect','Defect'),('na','Not applicable')], default='pending', required=True, string='Assessment')
     defect = fields.Text(string='Defect / finding')
     quantity = fields.Integer(string='Quantity', default=0)
     note = fields.Char(string='Explanation')
 
+
+    def _set_component_translations(self):
+        """Fill every active language with the translation of the template row.
+
+        Lines are matched on their English text (or the original Dutch text of
+        reports made before the form was translated); lines whose component was
+        typed in by hand are left alone.
+        """
+        langs = [code for code, _name in self.env['res.lang'].get_installed()]
+        by_source = {}
+        for _section, label, _code in ROWS:
+            values = {lang: label._translate(lang) for lang in langs}
+            values['en_US'] = label._source
+            by_source[label._source] = values
+        by_source.update({nl: by_source[en] for nl, en in LEGACY_DUTCH_COMPONENTS.items()})
+        for line in self.sudo():
+            stored = line.with_context(lang='en_US').component
+            values = by_source.get(stored)
+            if values:
+                line.update_field_translations('component', dict(values))
 
     @api.constrains('quantity','check_state','defect')
     def _check_defect(self):
