@@ -1,5 +1,7 @@
 # Copyright 2026 TI-Consulting
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+import json
+
 from odoo import _, api, fields, models, Command
 from odoo.exceptions import UserError, ValidationError
 from odoo.osv import expression
@@ -478,7 +480,12 @@ class IntakeLine(models.Model):
         Lines are matched on their English text (or the original Dutch text of
         reports made before the form was translated); lines whose component was
         typed in by hand are left alone.
+
+        Written in SQL on purpose: the translations are not user input, so the
+        edit lock (closed dossier / completed report) must not block them.
         """
+        if not self:
+            return
         langs = [code for code, _name in self.env['res.lang'].get_installed()]
         by_source = {}
         for _section, label, _code in ROWS:
@@ -486,11 +493,17 @@ class IntakeLine(models.Model):
             values['en_US'] = label._source
             by_source[label._source] = values
         by_source.update({nl: by_source[en] for nl, en in LEGACY_DUTCH_COMPONENTS.items()})
-        for line in self.sudo():
-            stored = line.with_context(lang='en_US').component
+        self.flush_recordset(['component'])
+        self.env.cr.execute(
+            "SELECT id, component->>'en_US' FROM fsm_wagon_intake_line WHERE id IN %s",
+            [tuple(self.ids)])
+        for line_id, stored in self.env.cr.fetchall():
             values = by_source.get(stored)
             if values:
-                line.update_field_translations('component', dict(values))
+                self.env.cr.execute(
+                    "UPDATE fsm_wagon_intake_line SET component = %s WHERE id = %s",
+                    [json.dumps(values), line_id])
+        self.invalidate_recordset(['component'])
 
     @api.constrains('quantity','check_state','defect')
     def _check_defect(self):
