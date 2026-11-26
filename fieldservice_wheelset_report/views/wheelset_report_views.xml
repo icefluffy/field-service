@@ -196,6 +196,11 @@
                             <field name="completed_at"/>
                         </group>
                     </group>
+                    <div class="mt-4 mb-2" invisible="state not in ('draft', 'progress')">
+                        <button name="action_complete" string="Complete" type="object"
+                                class="btn btn-primary btn-lg w-100"
+                                confirm="After completing, the record is locked and number, type and ton are copied to the wagon. Continue?"/>
+                    </div>
                 </sheet>
                 <chatter/>
             </form>
