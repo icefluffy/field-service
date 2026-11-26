@@ -574,6 +574,18 @@ class FsmWheelsetReport(models.Model):
             "fieldservice_wheelset_report.action_report_wheelset_report"
         ).report_action(self)
 
+    def action_print_preview(self):
+        """Open the PDF in a new browser tab instead of downloading it."""
+        self.ensure_one()
+        report = self.env.ref(
+            "fieldservice_wheelset_report.action_report_wheelset_report"
+        )
+        return {
+            "type": "ir.actions.act_url",
+            "url": "/report/pdf/%s/%s" % (report.report_name, self.id),
+            "target": "new",
+        }
+
     def report_value(self, fname):
         self.ensure_one()
         return _report_value(self, fname)

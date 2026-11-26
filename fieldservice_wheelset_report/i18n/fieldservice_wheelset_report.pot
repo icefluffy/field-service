@@ -1324,3 +1324,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__inspection_id
 msgid "Dossier inspection line"
 msgstr ""
+
+#. module: fieldservice_wheelset_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
+msgid "Print preview"
+msgstr ""

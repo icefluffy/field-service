@@ -67,6 +67,7 @@
                             invisible="state != 'done'"
                             confirm="A new, editable copy is made and this record is marked Replaced. Continue?"/>
                     <button name="action_print" string="Print" type="object"/>
+                    <button name="action_print_preview" string="Print preview" type="object"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,progress,done"/>
                 </header>
                 <sheet>
@@ -95,7 +96,7 @@
                             <field name="lot_id"/>
                             <field name="product_id" invisible="1"/>
                             <field name="company_id" invisible="1"/>
-                            <field name="source_reference"/>
+                            <field name="source_reference" invisible="1"/>
                         </group>
                     </group>
                     <group string="Wagon">
