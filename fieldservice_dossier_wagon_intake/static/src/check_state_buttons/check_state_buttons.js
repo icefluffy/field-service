@@ -15,7 +15,7 @@ const OPEN_STATES = ["draft", "progress"];
 const CHOICES = [
     { value: "ok", btnClass: "btn-success", outlineClass: "btn-outline-success" },
     { value: "defect", btnClass: "btn-danger", outlineClass: "btn-outline-danger" },
-    { value: "na", btnClass: "btn-dark", outlineClass: "btn-outline-secondary" },
+    { value: "na", btnClass: "o_fsm_btn_na_active", outlineClass: "o_fsm_btn_na" },
 ];
 
 export class CheckStateButtons extends Component {
@@ -74,6 +74,11 @@ export class CheckStateButtons extends Component {
             // A defect needs a quantity of at least 1; start from 1.
             if (value === "defect" && !(this.props.record.data.quantity > 0)) {
                 changes.quantity = 1;
+            }
+            // Leaving Defect: the defect text and quantity no longer apply.
+            if (this.value === "defect" && value !== "defect") {
+                changes.defect = false;
+                changes.quantity = 0;
             }
             await this.props.record.update(changes);
         }

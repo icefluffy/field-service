@@ -1,4 +1,83 @@
+// Inbound inspection findings: OK / Defect / N/A cards.
+// Phone: one card per component. Computer and tablet (md and up): one
+// full-width checklist row per component with the buttons on the right.
+
+$o-fsm-na-color: #6c757d;
+
 .o_fsm_check_state_buttons .btn {
     min-height: 44px; // comfortable touch target
     font-weight: 600;
+}
+
+.o_fsm_btn_na {
+    border: $border-width solid $o-fsm-na-color;
+    color: inherit;
+    background-color: transparent;
+    &:hover {
+        background-color: rgba($o-fsm-na-color, 0.15);
+    }
+}
+
+.o_fsm_btn_na_active,
+.o_fsm_btn_na_active:hover,
+.o_fsm_state_badge.o_fsm_state_na {
+    border: $border-width solid $o-fsm-na-color;
+    background-color: $o-fsm-na-color;
+    color: #fff;
+}
+
+.o_fsm_state_badge {
+    &.o_fsm_state_ok { background-color: $success; color: #fff; }
+    &.o_fsm_state_defect { background-color: $danger; color: #fff; }
+    &.o_fsm_state_pending { background-color: $warning; color: #000; }
+}
+
+.o_fsm_findings .o_kanban_renderer .o_kanban_record:not(.o_kanban_ghost) {
+    // Coloured stripe on the left so the status is visible at a glance.
+    border: $border-width solid rgba(128, 128, 128, 0.45);
+    border-left: 6px solid $warning;
+    &:has(.o_fsm_state_ok) { border-left-color: $success; }
+    &:has(.o_fsm_state_defect) { border-left-color: $danger; }
+    &:has(.o_fsm_state_na) { border-left-color: $o-fsm-na-color; }
+}
+
+@include media-breakpoint-up(md) {
+    .o_fsm_findings .o_kanban_renderer.o_kanban_ungrouped {
+        .o_kanban_record {
+            width: 100%;
+            flex-basis: 100%;
+            margin: 0 0 4px 0;
+            &.o_kanban_ghost {
+                display: none;
+            }
+            &:nth-child(even):not(.o_kanban_ghost) {
+                background-color: rgba(128, 128, 128, 0.07);
+            }
+        }
+    }
+
+    .o_fsm_finding_card {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr) minmax(300px, 360px);
+        grid-template-areas:
+            "head meta buttons"
+            "detail detail .";
+        column-gap: 1rem;
+        align-items: center;
+
+        .o_fsm_finding_head { grid-area: head; }
+        .o_fsm_finding_meta { grid-area: meta; }
+        .o_fsm_finding_buttons { grid-area: buttons; margin-top: 0 !important; }
+        .o_fsm_finding_detail { grid-area: detail; }
+        .o_fsm_finding_detail:empty { display: none; }
+
+        // The stripe and the buttons already show the status.
+        .o_fsm_state_badge:not(.o_fsm_state_pending) { display: none; }
+
+        .o_fsm_check_state_buttons .btn {
+            min-height: 36px;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+    }
 }
