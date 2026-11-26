@@ -11,7 +11,7 @@
     <field name="state" widget="statusbar" statusbar_visible="draft,progress,done"/>
    </header><sheet>
    <h1><field name="name"/></h1>
-   <group><field name="inspection_id" readonly="1"/><field name="dossier_id"/><field name="equipment_id"/><field name="order_id"/><field name="source_reference"/></group>
+   <group><field name="inspection_id" readonly="1"/><field name="dossier_id"/><field name="equipment_id"/><field name="order_id"/><field name="source_reference" invisible="1"/></group>
    <group readonly="state not in ('draft','progress')"><group>
 <field name="inspection_date" readonly="state not in ('draft','progress')"/>
 <field name="inspector_id" readonly="state not in ('draft','progress')"/>
