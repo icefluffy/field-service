@@ -35,16 +35,6 @@ msgid "120 0-line?"
 msgstr "Ligne 120 0 ?"
 
 #. module: fieldservice_wheelset_report
-#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
-msgid "6910B0"
-msgstr "6910B0"
-
-#. module: fieldservice_wheelset_report
-#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
-msgid "9R-AP-29.06.20"
-msgstr "9R-AP-29.06.20"
-
-#. module: fieldservice_wheelset_report
 #: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
 msgid "<b>HUPAC / Mercitalia: </b>"
 msgstr "<b>HUPAC / Mercitalia : </b>"
@@ -210,11 +200,6 @@ msgid ""
 msgstr ""
 "Après achèvement, le relevé est verrouillé et le numéro, le type et le "
 "tonnage sont copiés sur le wagon. Continuer ?"
-
-#. module: fieldservice_wheelset_report
-#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
-msgid "As written on the wagon, e.g. 9R-AP-29.06.20."
-msgstr "Tel qu'indiqué sur le wagon, p. ex. 9R-AP-29.06.20."
 
 #. module: fieldservice_wheelset_report
 #. odoo-python
@@ -455,11 +440,6 @@ msgid "E"
 msgstr "E"
 
 #. module: fieldservice_wheelset_report
-#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic_type
-msgid "E.g. 6910B0."
-msgstr "P. ex. 6910B0."
-
-#. module: fieldservice_wheelset_report
 #: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__lot_id
 msgid "EVN/UIC serial number"
 msgstr "Numéro de série EVN/UIC"
@@ -651,11 +631,6 @@ msgstr "Si coché, certains messages ont une erreur de livraison."
 #: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__state__progress
 msgid "In progress"
 msgstr "En cours"
-
-#. module: fieldservice_wheelset_report
-#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic
-msgid "Including the customer series, e.g. Sgns 107."
-msgstr "Y compris la série client, p. ex. Sgns 107."
 
 #. module: fieldservice_wheelset_report
 #: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_is_follower
@@ -1027,11 +1002,6 @@ msgstr ""
 "Sélectionnez un wagon sur l'ordre de travail %s avant de saisir les essieux."
 
 #. module: fieldservice_wheelset_report
-#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
-msgid "Sgns 107"
-msgstr "Sgns 107"
-
-#. module: fieldservice_wheelset_report
 #: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__source_reference
 msgid "Source Reference"
 msgstr "Référence source"
@@ -1367,3 +1337,37 @@ msgstr "Ligne d'inspection du dossier"
 #: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
 msgid "Print preview"
 msgstr "Aperçu avant impression"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
+msgid "Wagon revision frame"
+msgstr "Cadre de révision du wagon"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
+msgid ""
+"As written in the wagon's revision frame, e.g. 9R-AP-29.06.20. Shared with "
+"the wagon and its other forms; the wagon's revision date is taken from it."
+msgstr ""
+"Tel qu'inscrit dans le cadre de révision du wagon, p. ex. 9R-AP-29.06.20. "
+"Partagé avec le wagon et ses autres formulaires ; la date de révision du "
+"wagon en est reprise."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__tare_kg
+msgid "Shared with the wagon's tare and its other forms."
+msgstr "Partagé avec la tare du wagon et ses autres formulaires."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic
+msgid ""
+"Including the customer series, e.g. Sgns 107. Shared with the wagon's UIC "
+"code and its other forms."
+msgstr ""
+"Y compris la série client, p. ex. Sgns 107. Partagé avec le code UIC du "
+"wagon et ses autres formulaires."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic_type
+msgid "E.g. 6910B0. Shared with the wagon and its other forms."
+msgstr "P. ex. 6910B0. Partagé avec le wagon et ses autres formulaires."

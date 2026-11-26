@@ -102,15 +102,15 @@
                     <group string="Wagon">
                         <group>
                             <field name="wagon_number" readonly="state in ('done', 'replaced')"/>
-                            <field name="revision_text" readonly="state in ('done', 'replaced')" placeholder="9R-AP-29.06.20"/>
+                            <field name="revision_text" readonly="state in ('done', 'replaced')"/>
                             <field name="filled_by_id" readonly="state in ('done', 'replaced')"/>
                             <field name="date" readonly="state in ('done', 'replaced')"/>
                             <field name="tare_kg" readonly="state in ('done', 'replaced')"/>
                         </group>
                         <group>
                             <field name="rotule" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
-                            <field name="uic" readonly="state in ('done', 'replaced')" placeholder="Sgns 107"/>
-                            <field name="uic_type" readonly="state in ('done', 'replaced')" placeholder="6910B0"/>
+                            <field name="uic" readonly="state in ('done', 'replaced')"/>
+                            <field name="uic_type" readonly="state in ('done', 'replaced')"/>
                             <field name="speed_class" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
                             <field name="line_120" readonly="state in ('done', 'replaced')" widget="radio" options="{'horizontal': true}"/>
                         </group>

@@ -154,3 +154,14 @@ msgstr "Mouvement de stock"
 #: model:ir.model.fields,field_description:fieldservice_equipment_stock.field_stock_picking_type__smart_search
 msgid "Smart Search"
 msgstr "Recherche intelligente"
+
+#. module: fieldservice_equipment_stock
+#. odoo-python
+#: code:addons/fieldservice_equipment_stock/models/wagon_properties.py:0
+msgid "Wagon data aligned with serial number %s:"
+msgstr "Données du wagon alignées sur le numéro de série %s :"
+
+#. module: fieldservice_equipment_stock
+#: model:ir.model,name:fieldservice_equipment_stock.model_product_product
+msgid "Product Variant"
+msgstr "Variante de produit"

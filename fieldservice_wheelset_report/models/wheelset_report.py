@@ -5,6 +5,10 @@
 from odoo import Command, _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
+from odoo.addons.fieldservice_equipment_stock.models.wagon_properties import (
+    convert_value,
+)
+
 MAX_WHEELSETS = 8
 YES_NO = [("yes", "Yes"), ("no", "No")]
 OPEN_STATES = ("draft", "progress")
@@ -19,12 +23,13 @@ WORKFLOW_FIELDS = {
     "order_id", "equipment_id", "lot_id",
 }
 
-# Wagon lot property (label, case-insensitive) -> header field, used to
-# prefill a new form. Same labels as the Ingangskeuring module.
-WAGON_PROPERTY_LABELS = {
-    "revision_text": "revision frame",
-    "uic": "uic code",
+# Header field -> wagon key (see fieldservice_equipment_stock): the value is
+# kept on the wagon's serial number and shared with the other forms.
+WAGON_FIELDS = {
+    "revision_text": "revision_frame",
+    "uic": "uic_code",
     "tare_kg": "tare",
+    "uic_type": "uic_type",
 }
 
 # Customers / keepers with the extra diameter rule printed on the form.
@@ -146,21 +151,38 @@ class FsmWheelsetReport(models.Model):
     # --- header -----------------------------------------------------------
     wagon_number = fields.Char(string="Wagon number")
     revision_text = fields.Char(
-        string="Wagon revision date",
-        help="As written on the wagon, e.g. 9R-AP-29.06.20.",
+        string="Wagon revision frame",
+        compute="_compute_wagon_data", inverse="_inverse_wagon_data",
+        store=True, readonly=False, copy=False,
+        help="As written in the wagon's revision frame, e.g. 9R-AP-29.06.20. "
+        "Shared with the wagon and its other forms; the wagon's revision date "
+        "is taken from it.",
     )
     filled_by_id = fields.Many2one(
         "res.users", string="Filled in by",
         default=lambda self: self.env.user,
     )
     date = fields.Date(default=fields.Date.context_today)
-    tare_kg = fields.Float(string="Tare (kg)", digits=(16, 0))
+    tare_kg = fields.Float(
+        string="Tare (kg)", digits=(16, 0),
+        compute="_compute_wagon_data", inverse="_inverse_wagon_data",
+        store=True, readonly=False, copy=False,
+        help="Shared with the wagon's tare and its other forms.",
+    )
     rotule = fields.Selection(YES_NO, string="Rotule?")
     uic = fields.Char(
         string="UIC",
-        help="Including the customer series, e.g. Sgns 107.",
+        compute="_compute_wagon_data", inverse="_inverse_wagon_data",
+        store=True, readonly=False, copy=False,
+        help="Including the customer series, e.g. Sgns 107. "
+        "Shared with the wagon's UIC code and its other forms.",
     )
-    uic_type = fields.Char(string="Type", help="E.g. 6910B0.")
+    uic_type = fields.Char(
+        string="Type",
+        compute="_compute_wagon_data", inverse="_inverse_wagon_data",
+        store=True, readonly=False, copy=False,
+        help="E.g. 6910B0. Shared with the wagon and its other forms.",
+    )
     speed_class = fields.Selection(
         [("ss", "SS"), ("s2", "S**"), ("s3", "S***")],
         string="SS, S**, S***?",
@@ -222,6 +244,39 @@ class FsmWheelsetReport(models.Model):
         for report in self:
             lines = report.order_id.inspection_ids.filtered("is_wheelset_report")
             report.inspection_id = lines[:1]
+
+    @api.depends("state", "lot_id.lot_properties")
+    def _compute_wagon_data(self):
+        # The wagon's serial number is the source of truth while the record
+        # is open. Completed and replaced records keep their values. A value
+        # is only kept locally when the wagon has no such property.
+        for report in self:
+            values = {}
+            if report.state in OPEN_STATES and report.lot_id.product_id:
+                values = report.lot_id._get_wagon_values()
+            for fname, key in WAGON_FIELDS.items():
+                if key in values:
+                    value = convert_value(values[key], report._fields[fname].type)
+                    report[fname] = value or False
+                else:
+                    report[fname] = report[fname]
+
+    def _inverse_wagon_data(self):
+        for report in self:
+            if report.state not in OPEN_STATES or not report.lot_id:
+                continue
+            report.lot_id._set_wagon_values({
+                key: report[fname] for fname, key in WAGON_FIELDS.items()
+            })
+
+    def _resync_wagon_data(self):
+        records = self.filtered(lambda r: r.state in OPEN_STATES)
+        if not records:
+            return
+        fnames = list(WAGON_FIELDS)
+        for fname in fnames:
+            self.env.add_to_compute(self._fields[fname], records)
+        records._recompute_recordset(fnames)
 
     def _compute_replaced_by_id(self):
         replacements = self.search([("replaces_id", "in", self.ids)])
@@ -354,7 +409,6 @@ class FsmWheelsetReport(models.Model):
             "wagon_number": equipment.lot_id.name or equipment.name,
             "filled_by_id": (technician_user or self.env.user).id,
         }
-        vals.update(self._wagon_property_values(equipment))
         wheelsets = equipment.wheelset_ids.filtered(
             lambda w: 1 <= w.position <= MAX_WHEELSETS
         ).sorted("position")
@@ -368,28 +422,6 @@ class FsmWheelsetReport(models.Model):
             for wheelset in wheelsets
         ]
         return vals
-
-    @api.model
-    def _wagon_property_values(self, equipment):
-        definition = equipment.product_id.lot_properties_definition or []
-        values = equipment.lot_properties or {}
-        by_label = {
-            (prop.get("string") or "").strip().casefold(): prop
-            for prop in definition
-            if isinstance(prop, dict) and prop.get("name")
-        }
-        result = {}
-        for fname, label in WAGON_PROPERTY_LABELS.items():
-            prop = by_label.get(label)
-            value = values.get(prop["name"]) if prop else None
-            if value in (None, False, ""):
-                continue
-            if self._fields[fname].type == "float":
-                value = _to_float(value)
-            elif isinstance(value, float):
-                value = _format_number(value)
-            result[fname] = value or False
-        return result
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -442,6 +474,8 @@ class FsmWheelsetReport(models.Model):
         self._check_editable()
         res = super().write(vals)
         self._mark_in_progress()
+        if set(WAGON_FIELDS) & input_fields:
+            self._resync_wagon_data()
         return res
 
     def _workflow_write(self, vals):

@@ -662,21 +662,6 @@ msgid "Synchronised with the wagon's Managed By field."
 msgstr "Gesynchroniseerd met het veld Beheerd door van de wagon."
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_mark
-msgid "Synchronised with the wagon's Revision frame property."
-msgstr "Gesynchroniseerd met de eigenschap Revisiekader van de wagon."
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
-msgid "Synchronised with the wagon's Tare property."
-msgstr "Gesynchroniseerd met de eigenschap Tarra van de wagon."
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__uic
-msgid "Synchronised with the wagon's UIC code property."
-msgstr "Gesynchroniseerd met de eigenschap UIC-code van de wagon."
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
 msgid "Tare (kg)"
 msgstr "Tarra (kg)"
@@ -766,8 +751,11 @@ msgstr "Heeft ingangskeuring"
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
-msgid "True when the dossier Inbound inspection line is linked to this work order."
-msgstr "Aangevinkt wanneer de dossierlijn Ingangskeuring aan deze werkorder gekoppeld is."
+msgid ""
+"True when the dossier Inbound inspection line is linked to this work order."
+msgstr ""
+"Aangevinkt wanneer de dossierlijn Ingangskeuring aan deze werkorder "
+"gekoppeld is."
 
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
@@ -1022,8 +1010,12 @@ msgstr "Keuring voltooien"
 
 #. module: fieldservice_dossier_wagon_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Assess every component: OK, Defect or Not applicable. For a defect, enter the finding and the quantity."
-msgstr "Beoordeel elk onderdeel: OK, Defect of Niet van toepassing. Vul bij een defect de vaststelling en de hoeveelheid in."
+msgid ""
+"Assess every component: OK, Defect or Not applicable. For a defect, enter "
+"the finding and the quantity."
+msgstr ""
+"Beoordeel elk onderdeel: OK, Defect of Niet van toepassing. Vul bij een "
+"defect de vaststelling en de hoeveelheid in."
 
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-javascript
@@ -1036,3 +1028,31 @@ msgstr "N.v.t."
 #: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
 msgid "Assessment buttons"
 msgstr "Beoordelingsknoppen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_mark
+msgid ""
+"As written in the wagon's revision frame, e.g. 9R-AP-29.06.20. Shared with "
+"the wagon and its other forms."
+msgstr ""
+"Zoals geschreven in het revisiekader van de wagon, bv. 9R-AP-29.06.20. "
+"Gedeeld met de wagon en zijn andere formulieren."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_date
+msgid ""
+"Filled in from the date in the revision frame. Shared with the wagon and its"
+" other forms."
+msgstr ""
+"Ingevuld met de datum uit het revisiekader. Gedeeld met de wagon en zijn "
+"andere formulieren."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__uic
+msgid "Shared with the wagon's UIC code and its other forms."
+msgstr "Gedeeld met de UIC-code van de wagon en zijn andere formulieren."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
+msgid "Shared with the wagon's tare and its other forms."
+msgstr "Gedeeld met de tarra van de wagon en zijn andere formulieren."

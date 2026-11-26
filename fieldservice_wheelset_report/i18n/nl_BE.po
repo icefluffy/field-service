@@ -35,16 +35,6 @@ msgid "120 0-line?"
 msgstr "120 0-lijn?"
 
 #. module: fieldservice_wheelset_report
-#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
-msgid "6910B0"
-msgstr "6910B0"
-
-#. module: fieldservice_wheelset_report
-#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
-msgid "9R-AP-29.06.20"
-msgstr "9R-AP-29.06.20"
-
-#. module: fieldservice_wheelset_report
 #: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.report_wheelset_report_document
 msgid "<b>HUPAC / Mercitalia: </b>"
 msgstr "<b>HUPAC / Mercitalia: </b>"
@@ -209,11 +199,6 @@ msgid ""
 msgstr ""
 "Na voltooien wordt de opname vergrendeld en worden nummer, type en ton naar "
 "de wagon gekopieerd. Doorgaan?"
-
-#. module: fieldservice_wheelset_report
-#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
-msgid "As written on the wagon, e.g. 9R-AP-29.06.20."
-msgstr "Zoals op de wagon vermeld, bv. 9R-AP-29.06.20."
 
 #. module: fieldservice_wheelset_report
 #. odoo-python
@@ -454,11 +439,6 @@ msgid "E"
 msgstr "E"
 
 #. module: fieldservice_wheelset_report
-#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic_type
-msgid "E.g. 6910B0."
-msgstr "Bv. 6910B0."
-
-#. module: fieldservice_wheelset_report
 #: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__lot_id
 msgid "EVN/UIC serial number"
 msgstr "EVN/UIC serienummer"
@@ -650,11 +630,6 @@ msgstr "Indien aangevinkt hebben sommige berichten een leveringsfout."
 #: model:ir.model.fields.selection,name:fieldservice_wheelset_report.selection__fsm_wheelset_report__state__progress
 msgid "In progress"
 msgstr "In uitvoering"
-
-#. module: fieldservice_wheelset_report
-#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic
-msgid "Including the customer series, e.g. Sgns 107."
-msgstr "Inclusief klantenserie, bv. Sgns 107."
 
 #. module: fieldservice_wheelset_report
 #: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__message_is_follower
@@ -1024,11 +999,6 @@ msgid "Select a wagon on work order %s before entering wheelsets."
 msgstr "Kies eerst een wagon op werkorder %s voordat u wielstellen invoert."
 
 #. module: fieldservice_wheelset_report
-#: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
-msgid "Sgns 107"
-msgstr "Sgns 107"
-
-#. module: fieldservice_wheelset_report
 #: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__source_reference
 msgid "Source Reference"
 msgstr "Bronreferentie"
@@ -1366,3 +1336,37 @@ msgstr "Inspectieregel dossier"
 #: model_terms:ir.ui.view,arch_db:fieldservice_wheelset_report.fsm_wheelset_report_form
 msgid "Print preview"
 msgstr "Afdrukvoorbeeld"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,field_description:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
+msgid "Wagon revision frame"
+msgstr "Revisiekader wagon"
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__revision_text
+msgid ""
+"As written in the wagon's revision frame, e.g. 9R-AP-29.06.20. Shared with "
+"the wagon and its other forms; the wagon's revision date is taken from it."
+msgstr ""
+"Zoals geschreven in het revisiekader van de wagon, bv. 9R-AP-29.06.20. "
+"Gedeeld met de wagon en zijn andere formulieren; de revisiedatum van de "
+"wagon wordt eruit overgenomen."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__tare_kg
+msgid "Shared with the wagon's tare and its other forms."
+msgstr "Gedeeld met de tarra van de wagon en zijn andere formulieren."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic
+msgid ""
+"Including the customer series, e.g. Sgns 107. Shared with the wagon's UIC "
+"code and its other forms."
+msgstr ""
+"Inclusief klantenserie, bv. Sgns 107. Gedeeld met de UIC-code van de wagon "
+"en zijn andere formulieren."
+
+#. module: fieldservice_wheelset_report
+#: model:ir.model.fields,help:fieldservice_wheelset_report.field_fsm_wheelset_report__uic_type
+msgid "E.g. 6910B0. Shared with the wagon and its other forms."
+msgstr "Bv. 6910B0. Gedeeld met de wagon en zijn andere formulieren."

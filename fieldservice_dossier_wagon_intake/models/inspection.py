@@ -7,6 +7,11 @@ from odoo.exceptions import UserError, ValidationError
 from odoo.osv import expression
 from odoo.tools.translate import LazyTranslate
 
+from odoo.addons.fieldservice_equipment_stock.models.wagon_properties import (
+    convert_value,
+    parse_revision_date,
+)
+
 _lt = LazyTranslate(__name__)
 
 
@@ -91,10 +96,12 @@ SECTIONS = [('running', 'Running gear (2)'), ('frame', 'Wagon frame (3)'),
             ('coupling', 'Buffing and draw gear (6)'), ('maintenance', 'Maintenance / overhaul (9)')]
 
 
-# Intake field -> label (case-insensitive) of the wagon's lot property.
-WAGON_PROPERTY_LABELS = {
-    'revision_mark': 'revision frame',
-    'uic': 'uic code',
+# Intake field -> wagon key (see fieldservice_equipment_stock): the value is
+# kept on the wagon's serial number and shared with the other forms.
+WAGON_FIELDS = {
+    'revision_mark': 'revision_frame',
+    'revision_date': 'revision_date',
+    'uic': 'uic_code',
     'tare_kg': 'tare',
 }
 
@@ -112,24 +119,6 @@ COMPLETION_FIELDS = [
 INPUT_FIELDS = set(COMPLETION_FIELDS) | {'line_ids', 'holder_mark'}
 LINE_INPUT_FIELDS = {'check_state', 'defect', 'quantity', 'note'}
 OPEN_STATES = ('draft', 'progress')
-
-
-def _convert_property_value(value, target_type):
-    """Convert a value between a property type and an intake field type."""
-    if value in (None, False, ''):
-        return None
-    if target_type in ('float', 'integer'):
-        if isinstance(value, str):
-            try:
-                value = float(value.strip().replace(' ', '').replace(',', '.'))
-            except ValueError:
-                return None
-        return int(value) if target_type == 'integer' else float(value)
-    if target_type == 'char':
-        if isinstance(value, float):
-            return ('%f' % value).rstrip('0').rstrip('.')
-        return str(value)
-    return None
 
 
 class Inspection(models.Model):
@@ -231,18 +220,23 @@ class Intake(models.Model):
     revision_mark = fields.Char(
         string='Revision frame / REV', compute='_compute_wagon_data',
         inverse='_inverse_wagon_properties', store=True, readonly=False,
-        help="Synchronised with the wagon's Revision frame property.")
-    revision_date = fields.Date(string='Revision date')
+        help="As written in the wagon's revision frame, e.g. 9R-AP-29.06.20. "
+        "Shared with the wagon and its other forms.")
+    revision_date = fields.Date(
+        string='Revision date', compute='_compute_wagon_data',
+        inverse='_inverse_wagon_properties', store=True, readonly=False,
+        help="Filled in from the date in the revision frame. "
+        "Shared with the wagon and its other forms.")
     brake_inscription = fields.Char(string='Brake inscription')
     uic = fields.Char(
         string='UIC', compute='_compute_wagon_data',
         inverse='_inverse_wagon_properties', store=True, readonly=False,
-        help="Synchronised with the wagon's UIC code property.")
+        help="Shared with the wagon's UIC code and its other forms.")
     customer_type = fields.Char(string='Customer type')
     tare_kg = fields.Float(
         string='Tare (kg)', compute='_compute_wagon_data',
         inverse='_inverse_wagon_properties', store=True, readonly=False,
-        help="Synchronised with the wagon's Tare property.")
+        help="Shared with the wagon's tare and its other forms.")
     handbrake_t = fields.Float(string='Handbrake (t)')
     handbrake_kn = fields.Float(string='Handbrake (kN)')
     handbrake_percent = fields.Float(string='Handbrake (%)')
@@ -268,69 +262,56 @@ class Intake(models.Model):
     _sql_constraints = [('inspection_unique', 'unique(inspection_id)', 'Only one intake report per inspection.')]
 
 
-    def _wagon_property_definitions(self):
-        """Map intake fields to the wagon's lot property definitions (by label)."""
-        self.ensure_one()
-        definition = self.equipment_id.product_id.lot_properties_definition or []
-        by_label = {
-            (prop.get('string') or '').strip().casefold(): prop
-            for prop in definition
-            if isinstance(prop, dict) and prop.get('name')
-        }
-        return {
-            fname: by_label[label]
-            for fname, label in WAGON_PROPERTY_LABELS.items()
-            if label in by_label
-        }
-
-
-    @api.depends('equipment_id.managed_by_id', 'equipment_id.lot_properties')
+    @api.depends('state', 'equipment_id.managed_by_id',
+                 'equipment_id.lot_id.lot_properties')
     def _compute_wagon_data(self):
-        # The wagon is the source of truth while the report is open; a value
-        # already on the report is kept when the wagon has none. Recorded
-        # (final) reports keep the values they were recorded with.
+        # The wagon's serial number is the source of truth while the report
+        # is open. Completed reports keep the values they were recorded with.
+        # A value is only kept locally when the wagon has no such property.
         for r in self:
-            if r.state not in ('draft', 'progress'):
+            if r.state not in OPEN_STATES:
                 r.keeper_id = r.keeper_id
-                r.revision_mark = r.revision_mark
-                r.uic = r.uic
-                r.tare_kg = r.tare_kg
+                for fname in WAGON_FIELDS:
+                    r[fname] = r[fname]
                 continue
             r.keeper_id = r.equipment_id.managed_by_id or r.keeper_id
-            values = r.equipment_id.lot_properties or {}
-            definitions = r._wagon_property_definitions() if r.equipment_id else {}
-            for fname in WAGON_PROPERTY_LABELS:
-                prop = definitions.get(fname)
-                value = values.get(prop['name']) if prop else None
-                value = _convert_property_value(value, r._fields[fname].type)
-                r[fname] = value if value not in (None, False, '', 0, 0.0) else r[fname]
-
+            lot = r.equipment_id.lot_id
+            values = lot._get_wagon_values() if lot.product_id else {}
+            for fname, key in WAGON_FIELDS.items():
+                if key in values:
+                    value = convert_value(values[key], r._fields[fname].type)
+                    r[fname] = value or False
+                else:
+                    r[fname] = r[fname]
 
     def _inverse_keeper_id(self):
         for r in self:
             if r.equipment_id and r.keeper_id and r.equipment_id.managed_by_id != r.keeper_id:
                 r.equipment_id.managed_by_id = r.keeper_id
 
-
     def _inverse_wagon_properties(self):
         for r in self:
-            equipment = r.equipment_id
-            if not equipment.lot_id:
+            lot = r.equipment_id.lot_id
+            if r.state not in OPEN_STATES or not lot:
                 continue
-            values = dict(equipment.lot_properties or {})
-            changed = False
-            for fname, prop in r._wagon_property_definitions().items():
-                if not r[fname]:
-                    continue
-                new_value = _convert_property_value(r[fname], prop.get('type'))
-                if new_value is None or values.get(prop['name']) == new_value:
-                    continue
-                values[prop['name']] = new_value
-                changed = True
-            if changed:
-                # Inspectors may not have stock rights; only these keys change.
-                equipment.lot_id.sudo().lot_properties = values
+            lot._set_wagon_values({key: r[fname] for fname, key in WAGON_FIELDS.items()})
 
+    def _resync_wagon_data(self):
+        """Read the wagon values again (e.g. a date derived from the frame)."""
+        records = self.filtered(lambda r: r.state in OPEN_STATES)
+        if not records:
+            return
+        fnames = list(WAGON_FIELDS)
+        for fname in fnames:
+            self.env.add_to_compute(self._fields[fname], records)
+        records._recompute_recordset(fnames)
+
+    @api.onchange('revision_mark')
+    def _onchange_revision_mark(self):
+        for r in self:
+            revision_date = parse_revision_date(r.revision_mark)
+            if revision_date:
+                r.revision_date = revision_date
 
     def _get_missing_info(self):
         """Return the labels of the fields and findings that are still empty."""
@@ -405,7 +386,10 @@ class Intake(models.Model):
         self._check_editable()
         if INPUT_FIELDS & set(vals):
             self._mark_in_progress()
-        return super().write(vals)
+        res = super().write(vals)
+        if set(WAGON_FIELDS) & set(vals):
+            self._resync_wagon_data()
+        return res
 
 
     def _mark_in_progress(self):

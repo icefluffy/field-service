@@ -143,3 +143,14 @@ msgstr ""
 #: model:ir.model,name:fieldservice_equipment_stock.model_stock_move
 msgid "Stock Move"
 msgstr ""
+
+#. module: fieldservice_equipment_stock
+#. odoo-python
+#: code:addons/fieldservice_equipment_stock/models/wagon_properties.py:0
+msgid "Wagon data aligned with serial number %s:"
+msgstr ""
+
+#. module: fieldservice_equipment_stock
+#: model:ir.model,name:fieldservice_equipment_stock.model_product_product
+msgid "Product Variant"
+msgstr ""

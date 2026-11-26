@@ -4,4 +4,5 @@ from . import (
     fsm_equipment,
     product_template,
     stock_lot,
+    wagon_properties,
 )
