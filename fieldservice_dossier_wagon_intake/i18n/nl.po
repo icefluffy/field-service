@@ -1024,3 +1024,15 @@ msgstr "Keuring voltooien"
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Assess every component: OK, Defect or Not applicable. For a defect, enter the finding and the quantity."
 msgstr "Beoordeel elk onderdeel: OK, Defect of Niet van toepassing. Vul bij een defect de vaststelling en de hoeveelheid in."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
+msgid "N/A"
+msgstr "N.v.t."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
+msgid "Assessment buttons"
+msgstr "Beoordelingsknoppen"

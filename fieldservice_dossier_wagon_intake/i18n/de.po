@@ -1028,3 +1028,15 @@ msgstr "Prüfung abschließen"
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Assess every component: OK, Defect or Not applicable. For a defect, enter the finding and the quantity."
 msgstr "Bewerten Sie jedes Bauteil: OK, Mangel oder Nicht zutreffend. Bei einem Mangel Befund und Menge eingeben."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
+msgid "N/A"
+msgstr "Entfällt"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
+msgid "Assessment buttons"
+msgstr "Bewertungsschaltflächen"

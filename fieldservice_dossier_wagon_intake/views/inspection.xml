@@ -81,8 +81,9 @@
             <div class="text-muted small mb-2" invisible="state not in ('draft','progress')">
                 Assess every component: OK, Defect or Not applicable. For a defect, enter the finding and the quantity.
             </div>
-            <!-- Desktop and tablet: editable list. Phone: one card per component;
-                 tapping a card opens it full screen with large choice buttons. -->
+            <!-- Desktop and tablet: editable list. Phone: one card per component
+                 with OK / Defect / N/A buttons; Defect opens the finding full
+                 screen to enter the defect and quantity. -->
             <field name="line_ids" readonly="state not in ('draft','progress')">
                 <list editable="bottom" delete="0" decoration-danger="check_state == 'defect'" decoration-muted="check_state == 'na'">
                     <field name="sequence" optional="hide"/>
@@ -100,14 +101,16 @@
                         <t t-name="card">
                             <div class="d-flex justify-content-between align-items-start gap-2">
                                 <field name="component" class="fw-bold"/>
-                                <span t-attf-class="badge rounded-pill flex-shrink-0 #{record.check_state.raw_value == 'ok' ? 'text-bg-success' : record.check_state.raw_value == 'defect' ? 'text-bg-danger' : record.check_state.raw_value == 'na' ? 'text-bg-secondary' : 'text-bg-warning'}"
-                                      t-out="record.check_state.value"/>
+                                <span class="badge rounded-pill text-bg-warning flex-shrink-0" invisible="check_state != 'pending'">
+                                    <field name="check_state"/>
+                                </span>
                             </div>
                             <div class="text-muted small">
                                 <field name="code" class="me-2"/>
                                 <field name="section"/>
                             </div>
-                            <div invisible="not defect" class="text-danger small">
+                            <field name="check_state" widget="fsm_check_state_buttons" class="mt-2"/>
+                            <div invisible="not defect" class="text-danger small mt-1">
                                 <field name="quantity"/> × <field name="defect"/>
                             </div>
                             <div invisible="not note" class="small">

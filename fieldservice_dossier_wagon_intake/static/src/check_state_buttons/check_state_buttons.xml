@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="fieldservice_dossier_wagon_intake.CheckStateButtons">
+        <div class="o_fsm_check_state_buttons d-flex gap-2 w-100" role="radiogroup">
+            <t t-foreach="choices" t-as="choice" t-key="choice.value">
+                <button type="button"
+                        t-attf-class="btn flex-fill oe_kanban_action #{value === choice.value ? choice.btnClass : choice.outlineClass}"
+                        t-att-aria-pressed="value === choice.value ? 'true' : 'false'"
+                        t-att-title="choice.title"
+                        t-att-disabled="isLocked"
+                        t-on-click.stop="(ev) => this.onClick(ev, choice.value)"
+                        t-esc="choice.label"/>
+            </t>
+        </div>
+    </t>
+</templates>
