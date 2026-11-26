@@ -184,6 +184,7 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__line_ids
 msgid "Findings"
 msgstr "Vaststellingen"
 
@@ -983,3 +984,43 @@ msgstr "Glijplaat"
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "Preventive maintenance / overhaul / painting / inscription / testing"
 msgstr "Preventief onderhoud / revisie / schildering / opschrift / beproeving"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "1. Wagon and inspection"
+msgstr "1. Wagon en keuring"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "2. Brake and handbrake"
+msgstr "2. Rem en handrem"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "3. Load limit raster"
+msgstr "3. Lastgrensraster"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "4. Inscriptions and labels"
+msgstr "4. Opschriften en labels"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "5. Findings"
+msgstr "5. Vaststellingen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "6. Result"
+msgstr "6. Resultaat"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Complete inspection"
+msgstr "Keuring voltooien"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Assess every component: OK, Defect or Not applicable. For a defect, enter the finding and the quantity."
+msgstr "Beoordeel elk onderdeel: OK, Defect of Niet van toepassing. Vul bij een defect de vaststelling en de hoeveelheid in."

@@ -2,38 +2,150 @@
 <odoo>
  <record id="rule_intake_company" model="ir.rule"><field name="name">Intake company</field><field name="model_id" ref="model_fsm_wagon_intake"/><field name="domain_force">[('company_id','in',company_ids)]</field></record>
  <record id="rule_intake_line_company" model="ir.rule"><field name="name">Intake line company</field><field name="model_id" ref="model_fsm_wagon_intake_line"/><field name="domain_force">[('company_id','in',company_ids)]</field></record>
+ <!-- Inbound inspection: one scrolling page (no tabs) so it is easy to fill in
+      on a phone or tablet. The sections follow the order the technician works
+      in and end with a large "Complete inspection" button. -->
  <record id="intake_form" model="ir.ui.view">
   <field name="name">fsm.wagon.intake.form</field><field name="model">fsm.wagon.intake</field>
-  <field name="arch" type="xml"><form delete="0" duplicate="0">
-   <header>
-    <button name="action_complete" string="Completed" type="object" class="btn-primary" invisible="state not in ('draft','progress')"/>
-    <button name="action_reopen" string="Reopen" type="object" invisible="state in ('draft','progress')" confirm="The inspection will be reopened. Any dossier approval will lapse."/>
-    <field name="state" widget="statusbar" statusbar_visible="draft,progress,done"/>
-   </header><sheet>
-   <h1><field name="name"/></h1>
-   <group><field name="inspection_id" readonly="1"/><field name="dossier_id"/><field name="equipment_id"/><field name="order_id"/><field name="source_reference" invisible="1"/></group>
-   <group readonly="state not in ('draft','progress')"><group>
-<field name="inspection_date" readonly="state not in ('draft','progress')"/>
-<field name="inspector_id" readonly="state not in ('draft','progress')"/>
-<field name="keeper_id" readonly="state not in ('draft','progress')"/>
-<field name="revision_mark" readonly="state not in ('draft','progress')"/>
-<field name="revision_date" readonly="state not in ('draft','progress')"/>
-<field name="brake_inscription" readonly="state not in ('draft','progress')"/>
-</group><group><field name="uic" readonly="state not in ('draft','progress')"/>
-<field name="customer_type" readonly="state not in ('draft','progress')"/>
-<field name="tare_kg" readonly="state not in ('draft','progress')"/>
-<field name="handbrake_t" readonly="state not in ('draft','progress')"/>
-<field name="handbrake_kn" readonly="state not in ('draft','progress')"/>
-<field name="handbrake_percent" readonly="state not in ('draft','progress')"/>
-</group></group>
-   <notebook><page string="Wagon data"><group readonly="state not in ('draft','progress')">
-<field name="load_a" readonly="state not in ('draft','progress')"/><field name="load_b" readonly="state not in ('draft','progress')"/><field name="load_c" readonly="state not in ('draft','progress')"/><field name="load_d" readonly="state not in ('draft','progress')"/><field name="load_e" readonly="state not in ('draft','progress')"/><field name="load_notes" readonly="state not in ('draft','progress')"/><field name="extra" readonly="state not in ('draft','progress')"/><field name="reason" readonly="state not in ('draft','progress')"/><field name="maintenance_inscriptions" readonly="state not in ('draft','progress')"/><field name="revision_plates" readonly="state not in ('draft','progress')"/><field name="brake_block_type" readonly="state not in ('draft','progress')"/></group></page><page string="Findings">
- <field name="line_ids" readonly="state not in ('draft','progress')"><list editable="bottom" delete="0" decoration-danger="check_state == 'defect'" decoration-muted="check_state == 'na'">
- <field name="sequence" optional="hide"/><field name="section"/><field name="component"/><field name="code"/>
- <field name="check_state"/><field name="defect"/><field name="quantity"/><field name="note"/>
- </list></field></page>
- <page string="Result"><group><field name="remarks" readonly="state not in ('draft','progress')"/><field name="outcome_note" readonly="state not in ('draft','progress')"/><field name="recorded_by"/><field name="recorded_at"/></group></page>
- </notebook></sheet><chatter/></form></field></record>
+  <field name="arch" type="xml">
+    <form delete="0" duplicate="0">
+        <header>
+            <button name="action_complete" string="Complete inspection" type="object" class="btn-primary" invisible="state not in ('draft','progress')"/>
+            <button name="action_reopen" string="Reopen" type="object" invisible="state in ('draft','progress')" confirm="The inspection will be reopened. Any dossier approval will lapse."/>
+            <field name="state" widget="statusbar" statusbar_visible="draft,progress,done"/>
+        </header>
+        <sheet>
+            <div class="oe_title">
+                <h1><field name="name"/></h1>
+            </div>
+            <group>
+                <group>
+                    <field name="inspection_id" invisible="1"/>
+                    <field name="dossier_id"/>
+                </group>
+                <group>
+                    <field name="equipment_id"/>
+                    <field name="order_id"/>
+                    <field name="source_reference" invisible="1"/>
+                </group>
+            </group>
+
+            <group string="1. Wagon and inspection">
+                <group>
+                    <field name="inspection_date" readonly="state not in ('draft','progress')"/>
+                    <field name="inspector_id" readonly="state not in ('draft','progress')"/>
+                    <field name="keeper_id" readonly="state not in ('draft','progress')"/>
+                    <field name="customer_type" readonly="state not in ('draft','progress')"/>
+                </group>
+                <group>
+                    <field name="uic" readonly="state not in ('draft','progress')"/>
+                    <field name="revision_mark" readonly="state not in ('draft','progress')"/>
+                    <field name="revision_date" readonly="state not in ('draft','progress')"/>
+                    <field name="tare_kg" readonly="state not in ('draft','progress')"/>
+                </group>
+            </group>
+
+            <group string="2. Brake and handbrake">
+                <group>
+                    <field name="brake_inscription" readonly="state not in ('draft','progress')"/>
+                    <field name="brake_block_type" readonly="state not in ('draft','progress')"/>
+                </group>
+                <group>
+                    <field name="handbrake_t" readonly="state not in ('draft','progress')"/>
+                    <field name="handbrake_kn" readonly="state not in ('draft','progress')"/>
+                    <field name="handbrake_percent" readonly="state not in ('draft','progress')"/>
+                </group>
+            </group>
+
+            <group string="3. Load limit raster">
+                <group>
+                    <field name="load_a" readonly="state not in ('draft','progress')"/>
+                    <field name="load_b" readonly="state not in ('draft','progress')"/>
+                    <field name="load_c" readonly="state not in ('draft','progress')"/>
+                    <field name="load_d" readonly="state not in ('draft','progress')"/>
+                    <field name="load_e" readonly="state not in ('draft','progress')"/>
+                </group>
+                <group>
+                    <field name="load_notes" readonly="state not in ('draft','progress')"/>
+                </group>
+            </group>
+
+            <group string="4. Inscriptions and labels">
+                <field name="maintenance_inscriptions" readonly="state not in ('draft','progress')"/>
+                <field name="revision_plates" readonly="state not in ('draft','progress')" widget="radio" options="{'horizontal': true}"/>
+                <field name="reason" readonly="state not in ('draft','progress')"/>
+                <field name="extra" readonly="state not in ('draft','progress')"/>
+            </group>
+
+            <separator string="5. Findings"/>
+            <div class="text-muted small mb-2" invisible="state not in ('draft','progress')">
+                Assess every component: OK, Defect or Not applicable. For a defect, enter the finding and the quantity.
+            </div>
+            <!-- Desktop and tablet: editable list. Phone: one card per component;
+                 tapping a card opens it full screen with large choice buttons. -->
+            <field name="line_ids" readonly="state not in ('draft','progress')">
+                <list editable="bottom" delete="0" decoration-danger="check_state == 'defect'" decoration-muted="check_state == 'na'">
+                    <field name="sequence" optional="hide"/>
+                    <field name="section" optional="show"/>
+                    <field name="component"/>
+                    <field name="code" optional="show"/>
+                    <field name="check_state"/>
+                    <field name="defect"/>
+                    <field name="quantity"/>
+                    <field name="note" optional="show"/>
+                </list>
+                <kanban create="0" delete="0">
+                    <field name="check_state"/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="d-flex justify-content-between align-items-start gap-2">
+                                <field name="component" class="fw-bold"/>
+                                <span t-attf-class="badge rounded-pill flex-shrink-0 #{record.check_state.raw_value == 'ok' ? 'text-bg-success' : record.check_state.raw_value == 'defect' ? 'text-bg-danger' : record.check_state.raw_value == 'na' ? 'text-bg-secondary' : 'text-bg-warning'}"
+                                      t-out="record.check_state.value"/>
+                            </div>
+                            <div class="text-muted small">
+                                <field name="code" class="me-2"/>
+                                <field name="section"/>
+                            </div>
+                            <div invisible="not defect" class="text-danger small">
+                                <field name="quantity"/> × <field name="defect"/>
+                            </div>
+                            <div invisible="not note" class="small">
+                                <field name="note"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+                <form>
+                    <div class="oe_title">
+                        <h2><field name="component" readonly="1"/></h2>
+                    </div>
+                    <group>
+                        <field name="section" readonly="1"/>
+                        <field name="code" readonly="1"/>
+                        <field name="check_state" widget="radio"/>
+                        <field name="defect" required="check_state == 'defect'"/>
+                        <field name="quantity"/>
+                        <field name="note"/>
+                    </group>
+                </form>
+            </field>
+
+            <group string="6. Result">
+                <field name="remarks" readonly="state not in ('draft','progress')"/>
+                <field name="outcome_note" readonly="state not in ('draft','progress')"/>
+                <field name="recorded_by" invisible="not recorded_by"/>
+                <field name="recorded_at" invisible="not recorded_at"/>
+            </group>
+
+            <div class="mt-4 mb-2" invisible="state not in ('draft','progress')">
+                <button name="action_complete" string="Complete inspection" type="object" class="btn btn-primary btn-lg w-100"/>
+            </div>
+        </sheet>
+        <chatter/>
+    </form>
+  </field>
+ </record>
 <record id="inspection_form_intake" model="ir.ui.view">
     <field name="name">inspection.form.intake</field>
     <field name="model">fsm.dossier.inspection</field>
