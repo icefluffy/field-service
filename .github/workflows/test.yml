@@ -33,6 +33,9 @@ jobs:
           - 5432:5432
     env:
       OCA_ENABLE_CHECKLOG_ODOO: "1"
+      # Not ported to 18.0 (refers to fieldservice.fsm_order_tree_view, which
+      # no longer exists); it cannot be installed, so it is not tested.
+      EXCLUDE: fieldservice_isp_flow
     steps:
       - uses: actions/checkout@v4
         with:
