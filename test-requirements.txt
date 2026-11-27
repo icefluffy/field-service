@@ -1,0 +1,6 @@
+# Modules RSN takes from the icefluffy fork of stock-logistics-request
+# (stock_request_picking_type is not in OCA; the others are modified there).
+odoo-addon-stock_request @ git+https://github.com/icefluffy/stock-logistics-request.git@18.0#subdirectory=stock_request
+odoo-addon-stock_request_direction @ git+https://github.com/icefluffy/stock-logistics-request.git@18.0#subdirectory=stock_request_direction
+odoo-addon-stock_request_submit @ git+https://github.com/icefluffy/stock-logistics-request.git@18.0#subdirectory=stock_request_submit
+odoo-addon-stock_request_picking_type @ git+https://github.com/icefluffy/stock-logistics-request.git@18.0#subdirectory=stock_request_picking_type
