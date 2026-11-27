@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fsm_equipment_form_revision_frame" model="ir.ui.view">
+        <field name="name">fsm.equipment.form.revision.frame</field>
+        <field name="model">fsm.equipment</field>
+        <field name="inherit_id" ref="fieldservice_equipment_stock.fsm_equipment_form_view_stock"/>
+        <field name="arch" type="xml">
+            <field name="lot_properties" position="after">
+                <field name="revision_frame_state" widget="badge"
+                       invisible="not revision_frame_state"
+                       decoration-success="revision_frame_state == 'ok'"
+                       decoration-warning="revision_frame_state == 'review'"/>
+                <field name="revision_frame_note" invisible="not revision_frame_note"/>
+                <field name="revision_workshop_id" invisible="not revision_workshop_id"/>
+                <button name="action_read_revision_frame" type="object"
+                        string="Read revision frame again" class="btn-secondary"
+                        colspan="2" invisible="not revision_frame_state"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="fsm_equipment_search_revision_frame" model="ir.ui.view">
+        <field name="name">fsm.equipment.search.revision.frame</field>
+        <field name="model">fsm.equipment</field>
+        <field name="inherit_id" ref="fieldservice.fsm_equipment_search_view"/>
+        <field name="arch" type="xml">
+            <field name="person_id" position="after">
+                <filter name="revision_frame_review" string="Revision frame to review"
+                        domain="[('lot_id.revision_frame_state', '=', 'review')]"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_fsm_equipment_revision_review" model="ir.actions.act_window">
+        <field name="name">Revision Frames to Review</field>
+        <field name="res_model">fsm.equipment</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="fieldservice.fsm_equipment_search_view"/>
+        <field name="context">{'search_default_revision_frame_review': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No revision frames to review.</p>
+            <p>A wagon is listed here when part of its revision frame could not be read.</p>
+        </field>
+    </record>
+
+    <record id="action_server_fsm_equipment_read_revision_frame" model="ir.actions.server">
+        <field name="name">Read revision frame</field>
+        <field name="model_id" ref="fieldservice.model_fsm_equipment"/>
+        <field name="binding_model_id" ref="fieldservice.model_fsm_equipment"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">records.action_read_revision_frame()</field>
+    </record>
+</odoo>

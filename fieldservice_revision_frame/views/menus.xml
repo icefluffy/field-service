@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_fsm_revision_workshop" name="Revision Workshops"
+              parent="fieldservice_dossier.menu_fsm_dossier_config"
+              action="action_fsm_revision_workshop" sequence="40"/>
+    <menuitem id="menu_fsm_revision_review" name="Revision Frames to Review"
+              parent="fieldservice_dossier.menu_fsm_dossier_config"
+              action="action_fsm_equipment_revision_review" sequence="41"/>
+</odoo>

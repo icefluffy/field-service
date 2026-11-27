@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_lot_form_revision_frame" model="ir.ui.view">
+        <field name="name">stock.lot.form.revision.frame</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+            <field name="lot_properties" position="after">
+                <group name="revision_frame" invisible="not revision_frame_state">
+                    <group>
+                        <field name="revision_frame_state" widget="badge"
+                               decoration-success="revision_frame_state == 'ok'"
+                               decoration-warning="revision_frame_state == 'review'"/>
+                        <field name="revision_workshop_id"/>
+                    </group>
+                    <group>
+                        <field name="revision_frame_note" invisible="not revision_frame_note"/>
+                        <button name="action_read_revision_frame" type="object"
+                                string="Read revision frame again" class="btn-secondary"/>
+                    </group>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="stock_lot_search_revision_frame" model="ir.ui.view">
+        <field name="name">stock.lot.search.revision.frame</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.search_product_lot_filter"/>
+        <field name="arch" type="xml">
+            <filter name="on_hand" position="after">
+                <separator/>
+                <filter name="revision_frame_review" string="Revision frame to review"
+                        domain="[('revision_frame_state', '=', 'review')]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="action_server_stock_lot_read_revision_frame" model="ir.actions.server">
+        <field name="name">Read revision frame</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">records.action_read_revision_frame()</field>
+    </record>
+</odoo>

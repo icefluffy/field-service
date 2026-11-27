@@ -112,8 +112,14 @@ def property_value(value, prop_type):
     return value
 
 
-def new_property_definition(key):
-    label, prop_type = WAGON_PROPERTIES[key]
+def new_property_definition(key, specs=None):
+    """Property definition for wagon key ``key``.
+
+    ``specs`` is the key -> (label, type) mapping to use (default
+    ``WAGON_PROPERTIES``); other modules add their own wagon keys through
+    ``product.product._wagon_property_specs``.
+    """
+    label, prop_type = (specs or WAGON_PROPERTIES)[key]
     return {
         "name": uuid.uuid4().hex[:16],
         "string": label,

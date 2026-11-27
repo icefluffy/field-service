@@ -1,0 +1,416 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_revision_frame
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-27 11:10+0000\n"
+"PO-Revision-Date: 2026-11-27 11:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "(cleared)"
+msgstr "(gelöscht)"
+
+#. module: fieldservice_revision_frame
+#: model_terms:ir.actions.act_window,help:fieldservice_revision_frame.action_fsm_equipment_revision_review
+msgid ""
+"A wagon is listed here when part of its revision frame could not be read."
+msgstr ""
+"Ein Wagen steht hier, wenn ein Teil seines Revisionsrasters nicht gelesen "
+"werden konnte."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.constraint,message:fieldservice_revision_frame.constraint_fsm_revision_workshop_code_name_unique
+msgid "A workshop code can belong to one workshop only."
+msgstr "Ein Werkstattcode kann nur zu einer Werkstatt gehören."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: fieldservice_revision_frame
+#: model_terms:ir.actions.act_window,help:fieldservice_revision_frame.action_fsm_revision_workshop
+msgid "Add a revision workshop."
+msgstr "Fügen Sie eine Revisionswerkstatt hinzu."
+
+#. module: fieldservice_revision_frame
+#: model_terms:ir.ui.view,arch_db:fieldservice_revision_frame.fsm_revision_workshop_form
+#: model_terms:ir.ui.view,arch_db:fieldservice_revision_frame.fsm_revision_workshop_search
+msgid "Archived"
+msgstr "Archiviert"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__name
+#: model_terms:ir.ui.view,arch_db:fieldservice_revision_frame.fsm_revision_workshop_search
+msgid "Code"
+msgstr "Code"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_fsm_revision_workshop_code__name
+msgid "Code as written in the revision frame, e.g. 975, RSN or Bö."
+msgstr "Code wie im Revisionsraster angeschrieben, z. B. 975, RSN oder Bö."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__code_ids
+msgid "Codes"
+msgstr "Codes"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__codes
+msgid "Codes on wagons"
+msgstr "Codes an Wagen"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_fsm_revision_workshop__code_ids
+msgid ""
+"Codes written in revision frames for this workshop. A wagon carries one of "
+"them, e.g. 314 or 307."
+msgstr ""
+"Codes, die in Revisionsrastern für diese Werkstatt angeschrieben werden. Ein"
+" Wagen trägt einen davon, z. B. 314 oder 307."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__create_uid
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__create_date
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__display_name
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model,name:fieldservice_revision_frame.model_fsm_equipment
+msgid "Field Service Equipment"
+msgstr "Service-Equipment"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__id
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Invalid date: %(value)s."
+msgstr "Ungültiges Datum: %(value)s."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__write_uid
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__write_date
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model,name:fieldservice_revision_frame.model_stock_lot
+msgid "Lot/Serial"
+msgstr "Los/Serie"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "More than one date found: %(value)s."
+msgstr "Mehr als ein Datum gefunden: %(value)s."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "More than one extension found: %(value)s."
+msgstr "Mehr als eine Verlängerung gefunden: %(value)s."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "More than one possible revision cycle: %(value)s."
+msgstr "Mehr als ein möglicher Revisionszyklus: %(value)s."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "More than one possible workshop code: %(value)s."
+msgstr "Mehr als ein möglicher Werkstattcode: %(value)s."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_fsm_revision_workshop__name
+msgid ""
+"Name and place of the workshop, e.g. 'Alstom Transport Deutschland GmbH, "
+"Salzgitter'."
+msgstr ""
+"Name und Ort der Werkstatt, z. B. 'Alstom Transport Deutschland GmbH, "
+"Salzgitter'."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields.selection,name:fieldservice_revision_frame.selection__stock_lot__revision_frame_state__review
+msgid "Needs review"
+msgstr "Zu prüfen"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "No revision cycle found."
+msgstr "Kein Revisionszyklus gefunden."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "No revision date found."
+msgstr "Kein Revisionsdatum gefunden."
+
+#. module: fieldservice_revision_frame
+#: model_terms:ir.actions.act_window,help:fieldservice_revision_frame.action_fsm_equipment_revision_review
+msgid "No revision frames to review."
+msgstr "Keine Revisionsraster zu prüfen."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "No wagon fields changed."
+msgstr "Keine Wagenfelder geändert."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "No workshop code found."
+msgstr "Kein Werkstattcode gefunden."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Parts not recognised: %(value)s."
+msgstr "Nicht erkannte Teile: %(value)s."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model,name:fieldservice_revision_frame.model_product_product
+msgid "Product Variant"
+msgstr "Produktvariante"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields.selection,name:fieldservice_revision_frame.selection__stock_lot__revision_frame_state__ok
+msgid "Read"
+msgstr "Gelesen"
+
+#. module: fieldservice_revision_frame
+#: model:ir.actions.server,name:fieldservice_revision_frame.action_server_fsm_equipment_read_revision_frame
+#: model:ir.actions.server,name:fieldservice_revision_frame.action_server_stock_lot_read_revision_frame
+msgid "Read revision frame"
+msgstr "Revisionsraster lesen"
+
+#. module: fieldservice_revision_frame
+#: model_terms:ir.ui.view,arch_db:fieldservice_revision_frame.fsm_equipment_form_revision_frame
+#: model_terms:ir.ui.view,arch_db:fieldservice_revision_frame.stock_lot_form_revision_frame
+msgid "Read revision frame again"
+msgstr "Revisionsraster erneut lesen"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_fsm_equipment__revision_frame_state
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_stock_lot__revision_frame_state
+msgid ""
+"Read: the revision frame was split without doubt.\n"
+"Needs review: part of the revision frame could not be read; see the reasons. Only the certain parts were copied to the wagon."
+msgstr ""
+"Gelesen: das Revisionsraster wurde zweifelsfrei aufgeteilt.\n"
+"Zu prüfen: ein Teil des Revisionsrasters konnte nicht gelesen werden; siehe die Gründe. Nur die sicheren Teile wurden in den Wagen übernommen."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__note
+msgid "Remark"
+msgstr "Bemerkung"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_stock_lot__revision_frame_problems
+msgid "Revision Frame Problems"
+msgstr "Probleme Revisionsraster"
+
+#. module: fieldservice_revision_frame
+#: model:ir.actions.act_window,name:fieldservice_revision_frame.action_fsm_equipment_revision_review
+#: model:ir.ui.menu,name:fieldservice_revision_frame.menu_fsm_revision_review
+msgid "Revision Frames to Review"
+msgstr "Zu prüfende Revisionsraster"
+
+#. module: fieldservice_revision_frame
+#: model:ir.actions.act_window,name:fieldservice_revision_frame.action_fsm_revision_workshop
+#: model:ir.ui.menu,name:fieldservice_revision_frame.menu_fsm_revision_workshop
+msgid "Revision Workshops"
+msgstr "Revisionswerkstätten"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Revision cycle"
+msgstr "Revisionszyklus"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Revision cycle %(value)s is not between 1 and 15 years."
+msgstr "Revisionszyklus %(value)s liegt nicht zwischen 1 und 15 Jahren."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Revision date"
+msgstr "Revisionsdatum"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Revision date %(value)s is in the future."
+msgstr "Revisionsdatum %(value)s liegt in der Zukunft."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Revision extension"
+msgstr "Revisionsverlängerung"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_equipment__revision_frame_state
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_stock_lot__revision_frame_state
+msgid "Revision frame check"
+msgstr "Prüfung Revisionsraster"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Revision frame read: %s"
+msgstr "Revisionsraster gelesen: %s"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_equipment__revision_frame_note
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_stock_lot__revision_frame_note
+msgid "Revision frame remarks"
+msgstr "Bemerkungen Revisionsraster"
+
+#. module: fieldservice_revision_frame
+#: model_terms:ir.ui.view,arch_db:fieldservice_revision_frame.fsm_equipment_search_revision_frame
+#: model_terms:ir.ui.view,arch_db:fieldservice_revision_frame.stock_lot_search_revision_frame
+msgid "Revision frame to review"
+msgstr "Revisionsraster zu prüfen"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+#: model:ir.model,name:fieldservice_revision_frame.model_fsm_revision_workshop
+msgid "Revision workshop"
+msgstr "Revisionswerkstatt"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_equipment__revision_workshop_id
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_stock_lot__revision_workshop_id
+msgid "Revision workshop (list)"
+msgstr "Revisionswerkstatt (Liste)"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model,name:fieldservice_revision_frame.model_fsm_revision_workshop_code
+msgid "Revision workshop code"
+msgstr "Code Revisionswerkstatt"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_fsm_equipment__revision_frame_note
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_stock_lot__revision_frame_note
+msgid "Shown in the language of the user."
+msgstr "In der Sprache des Benutzers angezeigt."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_fsm_revision_workshop__xml_value
+msgid ""
+"Text sent in the XML message, e.g. '109 - Alstom Transport Deutschland GmbH,"
+" Salzgitter'."
+msgstr ""
+"Text, der in der XML-Meldung gesendet wird, z. B. '109 - Alstom Transport "
+"Deutschland GmbH, Salzgitter'."
+
+#. module: fieldservice_revision_frame
+#: model_terms:ir.actions.act_window,help:fieldservice_revision_frame.action_fsm_revision_workshop
+msgid ""
+"The codes of a workshop are the codes written in the revision frame of a "
+"wagon, e.g. 975 or RSN."
+msgstr ""
+"Die Codes einer Werkstatt sind die Codes im Revisionsraster eines Wagens, z."
+" B. 975 oder RSN."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid ""
+"The revision date in the frame (%(value)s) is older than the wagon's "
+"revision date. Nothing was copied."
+msgstr ""
+"Das Revisionsdatum im Raster (%(value)s) ist älter als das Revisionsdatum "
+"des Wagens. Es wurde nichts übernommen."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "The revision frame could not be read: %(value)s"
+msgstr "Das Revisionsraster konnte nicht gelesen werden: %(value)s"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid ""
+"The wagon's revision date (%(value)s) differs from the date in the revision "
+"frame."
+msgstr ""
+"Das Revisionsdatum des Wagens (%(value)s) weicht vom Datum im "
+"Revisionsraster ab."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__xml_value
+msgid "Value in XML message"
+msgstr "Wert in der XML-Meldung"
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop__name
+#: model:ir.model.fields,field_description:fieldservice_revision_frame.field_fsm_revision_workshop_code__workshop_id
+msgid "Workshop"
+msgstr "Werkstatt"
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/revision_workshop.py:0
+msgid "Workshop code %(code)s already exists for %(workshop)s."
+msgstr "Werkstattcode %(code)s existiert bereits für %(workshop)s."
+
+#. module: fieldservice_revision_frame
+#. odoo-python
+#: code:addons/fieldservice_revision_frame/models/stock_lot.py:0
+msgid "Workshop code %(value)s is not in the workshop list."
+msgstr "Werkstattcode %(value)s steht nicht in der Werkstattliste."
+
+#. module: fieldservice_revision_frame
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_fsm_equipment__revision_workshop_id
+#: model:ir.model.fields,help:fieldservice_revision_frame.field_stock_lot__revision_workshop_id
+msgid ""
+"Workshop of the code in the wagon's 'Revision workshop' property, from the "
+"revision workshop list."
+msgstr ""
+"Werkstatt des Codes in der Wageneigenschaft 'Revision workshop', aus der "
+"Liste der Revisionswerkstätten."

@@ -26,6 +26,13 @@ class ProductProduct(models.Model):
         }
         return any(label in labels for label in WAGON_PRODUCT_LABELS)
 
+    def _wagon_property_specs(self):
+        """Wagon key -> (property label, property type).
+
+        Extension hook: other modules add their wagon keys here.
+        """
+        return dict(WAGON_PROPERTIES)
+
     def _wagon_property_definitions(self):
         """Wagon key -> property definition (dict) of this product."""
         self.ensure_one()
@@ -35,7 +42,7 @@ class ProductProduct(models.Model):
             if isinstance(prop, dict) and prop.get("name")
         }
         result = {}
-        for key, (label, _type) in WAGON_PROPERTIES.items():
+        for key, (label, _type) in self._wagon_property_specs().items():
             prop = by_label.get(label.casefold())
             if prop:
                 result[key] = prop
@@ -46,12 +53,13 @@ class ProductProduct(models.Model):
         for product in self.sudo():
             if not product._is_wagon_product():
                 continue
+            specs = product._wagon_property_specs()
             existing = product._wagon_property_definitions()
-            missing = [key for key in WAGON_PROPERTIES if key not in existing]
+            missing = [key for key in specs if key not in existing]
             if missing:
                 product.lot_properties_definition = list(
                     product.lot_properties_definition or []
-                ) + [new_property_definition(key) for key in missing]
+                ) + [new_property_definition(key, specs) for key in missing]
         return True
 
 

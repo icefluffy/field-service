@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Source: Werkplaatscodes.xlsx, sheet "Data zoals op wagon" (one row per code on the wagon). -->
+<odoo noupdate="1">
+    <record id="workshop_vrz99" model="fsm.revision.workshop">
+        <field name="name">AGONREMONTEN ZAVOD-99 AD, Septemvri</field>
+        <field name="xml_value">VRZ99 - AGONREMONTEN ZAVOD-99 AD, Septemvri</field>
+    </record>
+    <record id="workshop_code_vrz99" model="fsm.revision.workshop.code">
+        <field name="name">VRZ99</field>
+        <field name="workshop_id" ref="workshop_vrz99"/>
+    </record>
+    <record id="workshop_ajax" model="fsm.revision.workshop">
+        <field name="name">ajax Loktechnik GmbH &amp; Co KG, Hamburg</field>
+        <field name="xml_value">ajax - ajax Loktechnik GmbH &amp; Co KG, Hamburg</field>
+    </record>
+    <record id="workshop_code_ajax" model="fsm.revision.workshop.code">
+        <field name="name">ajax</field>
+        <field name="workshop_id" ref="workshop_ajax"/>
+    </record>
+    <record id="workshop_109" model="fsm.revision.workshop">
+        <field name="name">Alstom Transport Deutschland GmbH, Salzgitter</field>
+        <field name="xml_value">109 - Alstom Transport Deutschland GmbH, Salzgitter</field>
+    </record>
+    <record id="workshop_code_109" model="fsm.revision.workshop.code">
+        <field name="name">109</field>
+        <field name="workshop_id" ref="workshop_109"/>
+    </record>
+    <record id="workshop_ujs" model="fsm.revision.workshop">
+        <field name="name">Ateliers de Joigny, Joigny Cedex</field>
+        <field name="xml_value">UJS - Ateliers de Joigny, Joigny Cedex</field>
+    </record>
+    <record id="workshop_code_ujs" model="fsm.revision.workshop.code">
+        <field name="name">UJS</field>
+        <field name="workshop_id" ref="workshop_ujs"/>
+    </record>
+    <record id="workshop_ufo" model="fsm.revision.workshop">
+        <field name="name">ATELIERS D'ORVAL, St-Amand-Montrond</field>
+        <field name="xml_value">UFO - ATELIERS D'ORVAL, St-Amand-Montrond</field>
+    </record>
+    <record id="workshop_code_ufo" model="fsm.revision.workshop.code">
+        <field name="name">UFO</field>
+        <field name="workshop_id" ref="workshop_ufo"/>
+    </record>
+    <record id="workshop_306" model="fsm.revision.workshop">
+        <field name="name">BASF SE, Ludwigshafen</field>
+        <field name="xml_value">306 - BASF SE, Ludwigshafen</field>
+    </record>
+    <record id="workshop_code_306" model="fsm.revision.workshop.code">
+        <field name="name">306</field>
+        <field name="workshop_id" ref="workshop_306"/>
+    </record>
+    <record id="workshop_beb" model="fsm.revision.workshop">
+        <field name="name">Bentheimer Eisenbahn AG, Nordhorn</field>
+        <field name="xml_value">BEB - Bentheimer Eisenbahn AG, Nordhorn</field>
+    </record>
+    <record id="workshop_code_beb" model="fsm.revision.workshop.code">
+        <field name="name">BEB</field>
+        <field name="workshop_id" ref="workshop_beb"/>
+    </record>
+    <record id="workshop_bo" model="fsm.revision.workshop">
+        <field name="name">BLS AG, Bönigen</field>
+        <field name="xml_value">Bö - BLS AG, Bönigen</field>
+    </record>
+    <record id="workshop_code_bo" model="fsm.revision.workshop.code">
+        <field name="name">Bö</field>
+        <field name="workshop_id" ref="workshop_bo"/>
+    </record>
+    <record id="workshop_obb" model="fsm.revision.workshop">
+        <field name="name">BLS AG, Oberburg</field>
+        <field name="xml_value">Obb - BLS AG, Oberburg</field>
+    </record>
+    <record id="workshop_code_obb" model="fsm.revision.workshop.code">
+        <field name="name">Obb</field>
+        <field name="workshop_id" ref="workshop_obb"/>
+    </record>
+    <record id="workshop_sp" model="fsm.revision.workshop">
+        <field name="name">BLS AG, Spiez</field>
+        <field name="xml_value">Sp - BLS AG, Spiez</field>
+    </record>
+    <record id="workshop_code_sp" model="fsm.revision.workshop.code">
+        <field name="name">Sp</field>
+        <field name="workshop_id" ref="workshop_sp"/>
+    </record>
+    <record id="workshop_504" model="fsm.revision.workshop">
+        <field name="name">BWR Waggonreparatur GmbH, Rastatt</field>
+        <field name="xml_value">504 - BWR Waggonreparatur GmbH, Rastatt</field>
+    </record>
+    <record id="workshop_code_504" model="fsm.revision.workshop.code">
+        <field name="name">504</field>
+        <field name="workshop_id" ref="workshop_504"/>
+    </record>
+    <record id="workshop_925" model="fsm.revision.workshop">
+        <field name="name">CIMA Riparazioni Ferroviarie S.r.l. con unico socio, Bozzolo MN</field>
+        <field name="xml_value">925 - CIMA Riparazioni Ferroviarie S.r.l. con unico socio, Bozzolo MN</field>
+    </record>
+    <record id="workshop_code_925" model="fsm.revision.workshop.code">
+        <field name="name">925</field>
+        <field name="workshop_id" ref="workshop_925"/>
+    </record>
+    <record id="workshop_tt_cf" model="fsm.revision.workshop">
+        <field name="name">COSMEF s.r.l.,Tortona</field>
+        <field name="xml_value">TT-CF - COSMEF s.r.l.,Tortona</field>
+    </record>
+    <record id="workshop_code_tt_cf" model="fsm.revision.workshop.code">
+        <field name="name">TT-CF</field>
+        <field name="workshop_id" ref="workshop_tt_cf"/>
+    </record>
+    <record id="workshop_611" model="fsm.revision.workshop">
+        <field name="name">DB Bahnbau Gruppe GmbH, Königsborn</field>
+        <field name="xml_value">611 - DB Bahnbau Gruppe GmbH, Königsborn</field>
+    </record>
+    <record id="workshop_code_611" model="fsm.revision.workshop.code">
+        <field name="name">611</field>
+        <field name="workshop_id" ref="workshop_611"/>
+    </record>
+    <record id="workshop_ch" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Chemnitz</field>
+        <field name="xml_value">CH - DB Fahrzeuginstandhaltung GmbH, Chemnitz</field>
+    </record>
+    <record id="workshop_code_ch" model="fsm.revision.workshop.code">
+        <field name="name">CH</field>
+        <field name="workshop_id" ref="workshop_ch"/>
+    </record>
+    <record id="workshop_bcs" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Cottbus</field>
+        <field name="xml_value">BCS - DB Fahrzeuginstandhaltung GmbH, Cottbus</field>
+    </record>
+    <record id="workshop_code_bcs" model="fsm.revision.workshop.code">
+        <field name="name">BCS</field>
+        <field name="workshop_id" ref="workshop_bcs"/>
+    </record>
+    <record id="workshop_wex" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Eberswalde</field>
+        <field name="xml_value">WEX - DB Fahrzeuginstandhaltung GmbH, Eberswalde</field>
+    </record>
+    <record id="workshop_code_wex" model="fsm.revision.workshop.code">
+        <field name="name">WEX</field>
+        <field name="workshop_id" ref="workshop_wex"/>
+    </record>
+    <record id="workshop_ful" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Fulda</field>
+        <field name="xml_value">FUL - DB Fahrzeuginstandhaltung GmbH, Fulda</field>
+    </record>
+    <record id="workshop_code_ful" model="fsm.revision.workshop.code">
+        <field name="name">FUL</field>
+        <field name="workshop_id" ref="workshop_ful"/>
+    </record>
+    <record id="workshop_626" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Meiningen</field>
+        <field name="xml_value">626 - DB Fahrzeuginstandhaltung GmbH, Meiningen</field>
+    </record>
+    <record id="workshop_code_626" model="fsm.revision.workshop.code">
+        <field name="name">626</field>
+        <field name="workshop_id" ref="workshop_626"/>
+    </record>
+    <record id="workshop_an" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Neumünster</field>
+        <field name="xml_value">AN - DB Fahrzeuginstandhaltung GmbH, Neumünster</field>
+    </record>
+    <record id="workshop_code_an" model="fsm.revision.workshop.code">
+        <field name="name">AN</field>
+        <field name="workshop_id" ref="workshop_an"/>
+    </record>
+    <record id="workshop_epdx" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Paderborn</field>
+        <field name="xml_value">EPDX - DB Fahrzeuginstandhaltung GmbH, Paderborn</field>
+    </record>
+    <record id="workshop_code_epdx" model="fsm.revision.workshop.code">
+        <field name="name">EPDX</field>
+        <field name="workshop_id" ref="workshop_epdx"/>
+    </record>
+    <record id="workshop_dzwx" model="fsm.revision.workshop">
+        <field name="name">DB Fahrzeuginstandhaltung GmbH, Zwickau</field>
+        <field name="xml_value">DZWX - DB Fahrzeuginstandhaltung GmbH, Zwickau</field>
+    </record>
+    <record id="workshop_code_dzwx" model="fsm.revision.workshop.code">
+        <field name="name">DZWX</field>
+        <field name="workshop_id" ref="workshop_dzwx"/>
+    </record>
+    <record id="workshop_314" model="fsm.revision.workshop">
+        <field name="name">Dillinger Hüttenwerke AG, Dillingen / Saar</field>
+        <field name="xml_value">314 (307) - Dillinger Hüttenwerke AG, Dillingen / Saar</field>
+        <field name="note">Zowel 314 als 307 komt voor</field>
+    </record>
+    <record id="workshop_code_314" model="fsm.revision.workshop.code">
+        <field name="name">314</field>
+        <field name="workshop_id" ref="workshop_314"/>
+    </record>
+    <record id="workshop_code_307" model="fsm.revision.workshop.code">
+        <field name="name">307</field>
+        <field name="workshop_id" ref="workshop_314"/>
+    </record>
+    <record id="workshop_219" model="fsm.revision.workshop">
+        <field name="name">Dortmunder Eisenbahn GmbH, Dortmund</field>
+        <field name="xml_value">219 - Dortmunder Eisenbahn GmbH, Dortmund</field>
+    </record>
+    <record id="workshop_code_219" model="fsm.revision.workshop.code">
+        <field name="name">219</field>
+        <field name="workshop_id" ref="workshop_219"/>
+    </record>
+    <record id="workshop_119" model="fsm.revision.workshop">
+        <field name="name">ETZ - Eisenbahn Technik Zentrum GmbH, Herne</field>
+        <field name="xml_value">119 - ETZ - Eisenbahn Technik Zentrum GmbH, Herne</field>
+    </record>
+    <record id="workshop_code_119" model="fsm.revision.workshop.code">
+        <field name="name">119</field>
+        <field name="workshop_id" ref="workshop_119"/>
+    </record>
+    <record id="workshop_956" model="fsm.revision.workshop">
+        <field name="name">EuroMaint Rail AB, Landskrona</field>
+        <field name="xml_value">956 - EuroMaint Rail AB, Landskrona</field>
+    </record>
+    <record id="workshop_code_956" model="fsm.revision.workshop.code">
+        <field name="name">956</field>
+        <field name="workshop_id" ref="workshop_956"/>
+    </record>
+    <record id="workshop_tor" model="fsm.revision.workshop">
+        <field name="name">EuroMaint Rail AB, Örebro</field>
+        <field name="xml_value">TOR - EuroMaint Rail AB, Örebro</field>
+    </record>
+    <record id="workshop_code_tor" model="fsm.revision.workshop.code">
+        <field name="name">TOR</field>
+        <field name="workshop_id" ref="workshop_tor"/>
+    </record>
+    <record id="workshop_emd" model="fsm.revision.workshop">
+        <field name="name">EuroMaint Rail GmbH, Delitzsch</field>
+        <field name="xml_value">EMD (SFWD) - EuroMaint Rail GmbH, Delitzsch</field>
+    </record>
+    <record id="workshop_code_emd" model="fsm.revision.workshop.code">
+        <field name="name">EMD</field>
+        <field name="workshop_id" ref="workshop_emd"/>
+    </record>
+    <record id="workshop_code_sfwd" model="fsm.revision.workshop.code">
+        <field name="name">SFWD</field>
+        <field name="workshop_id" ref="workshop_emd"/>
+    </record>
+    <record id="workshop_213" model="fsm.revision.workshop">
+        <field name="name">EuroMaint Rail GmbH, Duisburg</field>
+        <field name="xml_value">213 - EuroMaint Rail GmbH, Duisburg</field>
+    </record>
+    <record id="workshop_code_213" model="fsm.revision.workshop.code">
+        <field name="name">213</field>
+        <field name="workshop_id" ref="workshop_213"/>
+    </record>
+    <record id="workshop_eml" model="fsm.revision.workshop">
+        <field name="name">EuroMaint Rail GmbH, Engelsdorf</field>
+        <field name="xml_value">EML (001) - EuroMaint Rail GmbH, Engelsdorf</field>
+        <field name="note">Zowel EML als 001 komt voor</field>
+    </record>
+    <record id="workshop_code_eml" model="fsm.revision.workshop.code">
+        <field name="name">EML</field>
+        <field name="workshop_id" ref="workshop_eml"/>
+    </record>
+    <record id="workshop_code_001" model="fsm.revision.workshop.code">
+        <field name="name">001</field>
+        <field name="workshop_id" ref="workshop_eml"/>
+    </record>
+    <record id="workshop_emrk" model="fsm.revision.workshop">
+        <field name="name">EuroMaint Rail GmbH, Kaiserslautern</field>
+        <field name="xml_value">EMRK (SRS) - EuroMaint Rail GmbH, Kaiserslautern</field>
+        <field name="note">Zowel EMRK als SRS komt voor</field>
+    </record>
+    <record id="workshop_code_emrk" model="fsm.revision.workshop.code">
+        <field name="name">EMRK</field>
+        <field name="workshop_id" ref="workshop_emrk"/>
+    </record>
+    <record id="workshop_code_srs" model="fsm.revision.workshop.code">
+        <field name="name">SRS</field>
+        <field name="workshop_id" ref="workshop_emrk"/>
+    </record>
+    <record id="workshop_emo" model="fsm.revision.workshop">
+        <field name="name">EuroMaint Rail GmbH, Oberhausen</field>
+        <field name="xml_value">EMO (403) - EuroMaint Rail GmbH, Oberhausen</field>
+        <field name="note">Zowel EMO als 403 komt voor</field>
+    </record>
+    <record id="workshop_code_emo" model="fsm.revision.workshop.code">
+        <field name="name">EMO</field>
+        <field name="workshop_id" ref="workshop_emo"/>
+    </record>
+    <record id="workshop_code_403" model="fsm.revision.workshop.code">
+        <field name="name">403</field>
+        <field name="workshop_id" ref="workshop_emo"/>
+    </record>
+    <record id="workshop_913" model="fsm.revision.workshop">
+        <field name="name">Fabryka Wagonow Gniewczyna S.A. (FWG), Gniewczyna</field>
+        <field name="xml_value">913 - Fabryka Wagonow Gniewczyna S.A. (FWG), Gniewczyna</field>
+    </record>
+    <record id="workshop_code_913" model="fsm.revision.workshop.code">
+        <field name="name">913</field>
+        <field name="workshop_id" ref="workshop_913"/>
+    </record>
+    <record id="workshop_110" model="fsm.revision.workshop">
+        <field name="name">Fahrzeugfabrik F. Kiffe Söhne GmbH, Münster</field>
+        <field name="xml_value">110 - Fahrzeugfabrik F. Kiffe Söhne GmbH, Münster</field>
+    </record>
+    <record id="workshop_code_110" model="fsm.revision.workshop.code">
+        <field name="name">110</field>
+        <field name="workshop_id" ref="workshop_110"/>
+    </record>
+    <record id="workshop_fka" model="fsm.revision.workshop">
+        <field name="name">Fahrzeugkompetenzzentrum Augsburg GmbH, Augsburg</field>
+        <field name="xml_value">FKA -Fahrzeugkompetenzzentrum Augsburg GmbH, Augsburg</field>
+    </record>
+    <record id="workshop_code_fka" model="fsm.revision.workshop.code">
+        <field name="name">FKA</field>
+        <field name="workshop_id" ref="workshop_fka"/>
+    </record>
+    <record id="workshop_uff" model="fsm.revision.workshop">
+        <field name="name">FERIFOS, Fos sur Mer</field>
+        <field name="xml_value">UFF - FERIFOS, Fos sur Mer</field>
+    </record>
+    <record id="workshop_code_uff" model="fsm.revision.workshop.code">
+        <field name="name">UFF</field>
+        <field name="workshop_id" ref="workshop_uff"/>
+    </record>
+    <record id="workshop_620" model="fsm.revision.workshop">
+        <field name="name">FEW Fahrzeug- und EntwicklungswerkBlankenburg GmbH, Blankenburg/Harz</field>
+        <field name="xml_value">620 - FEW Fahrzeug- und EntwicklungswerkBlankenburg GmbH, Blankenburg/Harz</field>
+    </record>
+    <record id="workshop_code_620" model="fsm.revision.workshop.code">
+        <field name="name">620</field>
+        <field name="workshop_id" ref="workshop_620"/>
+    </record>
+    <record id="workshop_102" model="fsm.revision.workshop">
+        <field name="name">Franz Kaminski Waggonbau GmbH, Hameln</field>
+        <field name="xml_value">102 - Franz Kaminski Waggonbau GmbH, Hameln</field>
+    </record>
+    <record id="workshop_code_102" model="fsm.revision.workshop.code">
+        <field name="name">102</field>
+        <field name="workshop_id" ref="workshop_102"/>
+    </record>
+    <record id="workshop_fkhu" model="fsm.revision.workshop">
+        <field name="name">Franz Kaminski Waggonbau Hungaria Kft., Debrecen</field>
+        <field name="xml_value">FKHU (FKH) - Franz Kaminski Waggonbau Hungaria Kft., Debrecen</field>
+        <field name="note">Zowel FKHU als FKH komt voor</field>
+    </record>
+    <record id="workshop_code_fkhu" model="fsm.revision.workshop.code">
+        <field name="name">FKHU</field>
+        <field name="workshop_id" ref="workshop_fkhu"/>
+    </record>
+    <record id="workshop_code_fkh" model="fsm.revision.workshop.code">
+        <field name="name">FKH</field>
+        <field name="workshop_id" ref="workshop_fkhu"/>
+    </record>
+    <record id="workshop_fkp" model="fsm.revision.workshop">
+        <field name="name">Franz Kaminski Waggonbau Polska Sp. z o.o., Nysa</field>
+        <field name="xml_value">FKP - Franz Kaminski Waggonbau Polska Sp. z o.o., Nysa</field>
+    </record>
+    <record id="workshop_code_fkp" model="fsm.revision.workshop.code">
+        <field name="name">FKP</field>
+        <field name="workshop_id" ref="workshop_fkp"/>
+    </record>
+    <record id="workshop_617" model="fsm.revision.workshop">
+        <field name="name">FWB Fahrzeugwerk Brandenburg, Brandenburg</field>
+        <field name="xml_value">617 - FWB Fahrzeugwerk Brandenburg, Brandenburg</field>
+    </record>
+    <record id="workshop_code_617" model="fsm.revision.workshop.code">
+        <field name="name">617</field>
+        <field name="workshop_id" ref="workshop_617"/>
+    </record>
+    <record id="workshop_625" model="fsm.revision.workshop">
+        <field name="name">FWN Fahrzeugwerk Niedersachswerfen, Ellrich, OT Woffleben</field>
+        <field name="xml_value">625 - FWN Fahrzeugwerk Niedersachswerfen, Ellrich, OT Woffleben</field>
+    </record>
+    <record id="workshop_code_625" model="fsm.revision.workshop.code">
+        <field name="name">625</field>
+        <field name="workshop_id" ref="workshop_625"/>
+    </record>
+    <record id="workshop_619" model="fsm.revision.workshop">
+        <field name="name">GBM Gleisbaumechanik Brandenburg GmbH, Brandenburg</field>
+        <field name="xml_value">619 - GBM Gleisbaumechanik Brandenburg GmbH, Brandenburg</field>
+    </record>
+    <record id="workshop_code_619" model="fsm.revision.workshop.code">
+        <field name="name">619</field>
+        <field name="workshop_id" ref="workshop_619"/>
+    </record>
+    <record id="workshop_ewc" model="fsm.revision.workshop">
+        <field name="name">GHH Valdunes SAS, Trith Saint Leger</field>
+        <field name="xml_value">EWC - GHH Valdunes SAS, Trith Saint Leger</field>
+    </record>
+    <record id="workshop_code_ewc" model="fsm.revision.workshop.code">
+        <field name="name">EWC</field>
+        <field name="workshop_id" ref="workshop_ewc"/>
+    </record>
+    <record id="workshop_812" model="fsm.revision.workshop">
+        <field name="name">Grampet Debreceni Vagongyar Kft, Debrecen</field>
+        <field name="xml_value">812 - Grampet Debreceni Vagongyar Kft, Debrecen</field>
+    </record>
+    <record id="workshop_code_812" model="fsm.revision.workshop.code">
+        <field name="name">812</field>
+        <field name="workshop_id" ref="workshop_812"/>
+    </record>
+    <record id="workshop_113" model="fsm.revision.workshop">
+        <field name="name">Häfen und Güterverkehr Köln AG, Brühl</field>
+        <field name="xml_value">113 - Häfen und Güterverkehr Köln AG, Brühl</field>
+    </record>
+    <record id="workshop_code_113" model="fsm.revision.workshop.code">
+        <field name="name">113</field>
+        <field name="workshop_id" ref="workshop_113"/>
+    </record>
+    <record id="workshop_218" model="fsm.revision.workshop">
+        <field name="name">INFRACOR GmbH, Marl</field>
+        <field name="xml_value">218 - INFRACOR GmbH, Marl</field>
+    </record>
+    <record id="workshop_code_218" model="fsm.revision.workshop.code">
+        <field name="name">218</field>
+        <field name="workshop_id" ref="workshop_218"/>
+    </record>
+    <record id="workshop_602" model="fsm.revision.workshop">
+        <field name="name">InfraLeuna GmbH, Leuna</field>
+        <field name="xml_value">602 - InfraLeuna GmbH, Leuna</field>
+    </record>
+    <record id="workshop_code_602" model="fsm.revision.workshop.code">
+        <field name="name">602</field>
+        <field name="workshop_id" ref="workshop_602"/>
+    </record>
+    <record id="workshop_302" model="fsm.revision.workshop">
+        <field name="name">Infraserv GmbH &amp; Co. Höchst KG, Frankfurt/Main</field>
+        <field name="xml_value">302 - Infraserv GmbH &amp; Co. Höchst KG, Frankfurt/Main</field>
+    </record>
+    <record id="workshop_code_302" model="fsm.revision.workshop.code">
+        <field name="name">302</field>
+        <field name="workshop_id" ref="workshop_302"/>
+    </record>
+    <record id="workshop_jmr" model="fsm.revision.workshop">
+        <field name="name">Josef Meyer Rail AG, Rheinfelden</field>
+        <field name="xml_value">JMR (942) - Josef Meyer Rail AG, Rheinfelden</field>
+        <field name="note">Zowel JMR als 942 komt voor</field>
+    </record>
+    <record id="workshop_code_jmr" model="fsm.revision.workshop.code">
+        <field name="name">JMR</field>
+        <field name="workshop_id" ref="workshop_jmr"/>
+    </record>
+    <record id="workshop_code_942" model="fsm.revision.workshop.code">
+        <field name="name">942</field>
+        <field name="workshop_id" ref="workshop_jmr"/>
+    </record>
+    <record id="workshop_621" model="fsm.revision.workshop">
+        <field name="name">Jumbo Tec GmbH, Spremberg</field>
+        <field name="xml_value">621 - Jumbo Tec GmbH, Spremberg</field>
+    </record>
+    <record id="workshop_code_621" model="fsm.revision.workshop.code">
+        <field name="name">621</field>
+        <field name="workshop_id" ref="workshop_621"/>
+    </record>
+    <record id="workshop_juwa" model="fsm.revision.workshop">
+        <field name="name">Jungenthal Waggon GmbH, Hannover</field>
+        <field name="xml_value">JUWA (104) - Jungenthal Waggon GmbH, Hannover</field>
+        <field name="note">Zowel JUWA als 104 komt voor</field>
+    </record>
+    <record id="workshop_code_juwa" model="fsm.revision.workshop.code">
+        <field name="name">JUWA</field>
+        <field name="workshop_id" ref="workshop_juwa"/>
+    </record>
+    <record id="workshop_code_104" model="fsm.revision.workshop.code">
+        <field name="name">104</field>
+        <field name="workshop_id" ref="workshop_juwa"/>
+    </record>
+    <record id="workshop_895" model="fsm.revision.workshop">
+        <field name="name">Krnovske Opravny a Strojirny s.r.o., Krnov</field>
+        <field name="xml_value">895 - Krnovske Opravny a Strojirny s.r.o., Krnov</field>
+    </record>
+    <record id="workshop_code_895" model="fsm.revision.workshop.code">
+        <field name="name">895</field>
+        <field name="workshop_id" ref="workshop_895"/>
+    </record>
+    <record id="workshop_221" model="fsm.revision.workshop">
+        <field name="name">Künstler Bahntechnik GmbH, Holzwickede</field>
+        <field name="xml_value">221 - Künstler Bahntechnik GmbH, Holzwickede</field>
+    </record>
+    <record id="workshop_code_221" model="fsm.revision.workshop.code">
+        <field name="name">221</field>
+        <field name="workshop_id" ref="workshop_221"/>
+    </record>
+    <record id="workshop_896" model="fsm.revision.workshop">
+        <field name="name">LEGIOS a.s., Louny</field>
+        <field name="xml_value">896 - LEGIOS a.s., Louny</field>
+    </record>
+    <record id="workshop_code_896" model="fsm.revision.workshop.code">
+        <field name="name">896</field>
+        <field name="workshop_id" ref="workshop_896"/>
+    </record>
+    <record id="workshop_lww" model="fsm.revision.workshop">
+        <field name="name">LENZING Aktiengesellschaft, Lenzing</field>
+        <field name="xml_value">LWW - LENZING Aktiengesellschaft, Lenzing</field>
+    </record>
+    <record id="workshop_code_lww" model="fsm.revision.workshop.code">
+        <field name="name">LWW</field>
+        <field name="workshop_id" ref="workshop_lww"/>
+    </record>
+    <record id="workshop_902" model="fsm.revision.workshop">
+        <field name="name">Logistik Service GmbH, Linz</field>
+        <field name="xml_value">902 - Logistik Service GmbH, Linz</field>
+    </record>
+    <record id="workshop_code_902" model="fsm.revision.workshop.code">
+        <field name="name">902</field>
+        <field name="workshop_id" ref="workshop_902"/>
+    </record>
+    <record id="workshop_963" model="fsm.revision.workshop">
+        <field name="name">LORMAFER S.A., Creutzwald</field>
+        <field name="xml_value">963 - LORMAFER S.A., Creutzwald</field>
+    </record>
+    <record id="workshop_code_963" model="fsm.revision.workshop.code">
+        <field name="name">963</field>
+        <field name="workshop_id" ref="workshop_963"/>
+    </record>
+    <record id="workshop_lth" model="fsm.revision.workshop">
+        <field name="name">LTH Railservice GmbH, Halle/Saale</field>
+        <field name="xml_value">LTH - LTH Railservice GmbH, Halle/Saale</field>
+    </record>
+    <record id="workshop_code_lth" model="fsm.revision.workshop.code">
+        <field name="name">LTH</field>
+        <field name="workshop_id" ref="workshop_lth"/>
+    </record>
+    <record id="workshop_l" model="fsm.revision.workshop">
+        <field name="name">Lucchini RS S.p.A., Lovere (Bg)</field>
+        <field name="xml_value">L - Lucchini RS S.p.A., Lovere (Bg)</field>
+    </record>
+    <record id="workshop_code_l" model="fsm.revision.workshop.code">
+        <field name="name">L</field>
+        <field name="workshop_id" ref="workshop_l"/>
+    </record>
+    <record id="workshop_lp" model="fsm.revision.workshop">
+        <field name="name">Lucchuni Poland Sp.z.o.o., Minsk Mazowiecki</field>
+        <field name="xml_value">LP - Lucchuni Poland Sp.z.o.o., Minsk Mazowiecki</field>
+    </record>
+    <record id="workshop_code_lp" model="fsm.revision.workshop.code">
+        <field name="name">LP</field>
+        <field name="workshop_id" ref="workshop_lp"/>
+    </record>
+    <record id="workshop_811" model="fsm.revision.workshop">
+        <field name="name">MAV Vagon Kft., Szekesfehervar</field>
+        <field name="xml_value">811 - MAV Vagon Kft., Szekesfehervar</field>
+    </record>
+    <record id="workshop_code_811" model="fsm.revision.workshop.code">
+        <field name="name">811</field>
+        <field name="workshop_id" ref="workshop_811"/>
+    </record>
+    <record id="workshop_mvj" model="fsm.revision.workshop">
+        <field name="name">MAV VASJARMÜ Jarmüjavito es Gyarto Kft., Szombathely</field>
+        <field name="xml_value">MVJ - MAV VASJARMÜ Jarmüjavito es Gyarto Kft., Szombathely</field>
+    </record>
+    <record id="workshop_code_mvj" model="fsm.revision.workshop.code">
+        <field name="name">MVJ</field>
+        <field name="workshop_id" ref="workshop_mvj"/>
+    </record>
+    <record id="workshop_605" model="fsm.revision.workshop">
+        <field name="name">MEG Mitteldeutsche Eisenbahn GmbH, Merseburg</field>
+        <field name="xml_value">605 - MEG Mitteldeutsche Eisenbahn GmbH, Merseburg</field>
+    </record>
+    <record id="workshop_code_605" model="fsm.revision.workshop.code">
+        <field name="name">605</field>
+        <field name="workshop_id" ref="workshop_605"/>
+    </record>
+    <record id="workshop_210" model="fsm.revision.workshop">
+        <field name="name">NIAG Niederrheinische Verkehrsbetriebe AG, Moers</field>
+        <field name="xml_value">210 - NIAG Niederrheinische Verkehrsbetriebe AG, Moers</field>
+    </record>
+    <record id="workshop_code_210" model="fsm.revision.workshop.code">
+        <field name="name">210</field>
+        <field name="workshop_id" ref="workshop_210"/>
+    </record>
+    <record id="workshop_nrs" model="fsm.revision.workshop">
+        <field name="name">Nordic Rail Service GmbH, Lübeck</field>
+        <field name="xml_value">NRS - Nordic Rail Service GmbH, Lübeck</field>
+    </record>
+    <record id="workshop_code_nrs" model="fsm.revision.workshop.code">
+        <field name="name">NRS</field>
+        <field name="workshop_id" ref="workshop_nrs"/>
+    </record>
+    <record id="workshop_903" model="fsm.revision.workshop">
+        <field name="name">ÖBB Technische Service GmbH, Wien</field>
+        <field name="xml_value">903 - ÖBB Technische Service GmbH, Wien</field>
+    </record>
+    <record id="workshop_code_903" model="fsm.revision.workshop.code">
+        <field name="name">903</field>
+        <field name="workshop_id" ref="workshop_903"/>
+    </record>
+    <record id="workshop_904" model="fsm.revision.workshop">
+        <field name="name">ÖBB Technische Services, Knittelfeld</field>
+        <field name="xml_value">904 - ÖBB Technische Services, Knittelfeld</field>
+    </record>
+    <record id="workshop_code_904" model="fsm.revision.workshop.code">
+        <field name="name">904</field>
+        <field name="workshop_id" ref="workshop_904"/>
+    </record>
+    <record id="workshop_ot" model="fsm.revision.workshop">
+        <field name="name">On Track GmbH, Krefeld</field>
+        <field name="xml_value">OT - On Track GmbH, Krefeld</field>
+    </record>
+    <record id="workshop_code_ot" model="fsm.revision.workshop.code">
+        <field name="name">OT</field>
+        <field name="workshop_id" ref="workshop_ot"/>
+    </record>
+    <record id="workshop_132" model="fsm.revision.workshop">
+        <field name="name">R.B.S. Kirchweyhe GmbH, Weyhe-Kirchweyhe</field>
+        <field name="xml_value">132 - R.B.S. Kirchweyhe GmbH, Weyhe-Kirchweyhe</field>
+    </record>
+    <record id="workshop_code_132" model="fsm.revision.workshop.code">
+        <field name="name">132</field>
+        <field name="workshop_id" ref="workshop_132"/>
+    </record>
+    <record id="workshop_rafil" model="fsm.revision.workshop">
+        <field name="name">Radsatzfabrik Ilsenburg GmbH, Ilsenburg</field>
+        <field name="xml_value">RAFIL - Radsatzfabrik Ilsenburg GmbH, Ilsenburg</field>
+    </record>
+    <record id="workshop_code_rafil" model="fsm.revision.workshop.code">
+        <field name="name">RAFIL</field>
+        <field name="workshop_id" ref="workshop_rafil"/>
+    </record>
+    <record id="workshop_rsn" model="fsm.revision.workshop">
+        <field name="name">Rail Service Net BVBA,Wommelgem</field>
+        <field name="xml_value">RSN - Rail Service Net BVBA,Wommelgem</field>
+    </record>
+    <record id="workshop_code_rsn" model="fsm.revision.workshop.code">
+        <field name="name">RSN</field>
+        <field name="workshop_id" ref="workshop_rsn"/>
+    </record>
+    <record id="workshop_258" model="fsm.revision.workshop">
+        <field name="name">RBH Logistics GmbH, Gladbeck</field>
+        <field name="xml_value">258 - RBH Logistics GmbH, Gladbeck</field>
+    </record>
+    <record id="workshop_code_258" model="fsm.revision.workshop.code">
+        <field name="name">258</field>
+        <field name="workshop_id" ref="workshop_258"/>
+    </record>
+    <record id="workshop_ury" model="fsm.revision.workshop">
+        <field name="name">Rolanfer Materiel Ferroviaire, Yutz Cedex</field>
+        <field name="xml_value">URY - Rolanfer Materiel Ferroviaire, Yutz Cedex</field>
+    </record>
+    <record id="workshop_code_ury" model="fsm.revision.workshop.code">
+        <field name="name">URY</field>
+        <field name="workshop_id" ref="workshop_ury"/>
+    </record>
+    <record id="workshop_rtb" model="fsm.revision.workshop">
+        <field name="name">Rurtalbahn GmbH, Düren</field>
+        <field name="xml_value">RTB - Rurtalbahn GmbH, Düren</field>
+    </record>
+    <record id="workshop_code_rtb" model="fsm.revision.workshop.code">
+        <field name="name">RTB</field>
+        <field name="workshop_id" ref="workshop_rtb"/>
+    </record>
+    <record id="workshop_202" model="fsm.revision.workshop">
+        <field name="name">RWE Power AG Technikzentrum Tagebau/HW, Frechen</field>
+        <field name="xml_value">202 - RWE Power AG Technikzentrum Tagebau/HW, Frechen</field>
+    </record>
+    <record id="workshop_code_202" model="fsm.revision.workshop.code">
+        <field name="name">202</field>
+        <field name="workshop_id" ref="workshop_202"/>
+    </record>
+    <record id="workshop_897" model="fsm.revision.workshop">
+        <field name="name">RYKO ® a.s., Decin</field>
+        <field name="xml_value">897 - RYKO ® a.s., Decin</field>
+    </record>
+    <record id="workshop_code_897" model="fsm.revision.workshop.code">
+        <field name="name">897</field>
+        <field name="workshop_id" ref="workshop_897"/>
+    </record>
+    <record id="workshop_872" model="fsm.revision.workshop">
+        <field name="name">S.C. MEVA S.A., Drobeta Turnu Severin</field>
+        <field name="xml_value">872 - S.C. MEVA S.A., Drobeta Turnu Severin</field>
+    </record>
+    <record id="workshop_code_872" model="fsm.revision.workshop.code">
+        <field name="name">872</field>
+        <field name="workshop_id" ref="workshop_872"/>
+    </record>
+    <record id="workshop_874" model="fsm.revision.workshop">
+        <field name="name">S.C. REVA - S.A., Simeria</field>
+        <field name="xml_value">874 - S.C. REVA - S.A., Simeria</field>
+    </record>
+    <record id="workshop_code_874" model="fsm.revision.workshop.code">
+        <field name="name">874</field>
+        <field name="workshop_id" ref="workshop_874"/>
+    </record>
+    <record id="workshop_slb" model="fsm.revision.workshop">
+        <field name="name">Salzburg AG, Salzburg</field>
+        <field name="xml_value">SLB - Salzburg AG, Salzburg</field>
+    </record>
+    <record id="workshop_code_slb" model="fsm.revision.workshop.code">
+        <field name="name">SLB</field>
+        <field name="workshop_id" ref="workshop_slb"/>
+    </record>
+    <record id="workshop_uab" model="fsm.revision.workshop">
+        <field name="name">SARI S.A., Achiet La Grand</field>
+        <field name="xml_value">UAB (UAD) - SARI S.A., Achiet La Grand</field>
+        <field name="note">Zowel UAB als UAD komt voor</field>
+    </record>
+    <record id="workshop_code_uab" model="fsm.revision.workshop.code">
+        <field name="name">UAB</field>
+        <field name="workshop_id" ref="workshop_uab"/>
+    </record>
+    <record id="workshop_code_uad" model="fsm.revision.workshop.code">
+        <field name="name">UAD</field>
+        <field name="workshop_id" ref="workshop_uab"/>
+    </record>
+    <record id="workshop_be" model="fsm.revision.workshop">
+        <field name="name">Schweizerische Bundesbahnen SBB, Bellinzona</field>
+        <field name="xml_value">Be - Schweizerische Bundesbahnen SBB, Bellinzona</field>
+    </record>
+    <record id="workshop_code_be" model="fsm.revision.workshop.code">
+        <field name="name">Be</field>
+        <field name="workshop_id" ref="workshop_be"/>
+    </record>
+    <record id="workshop_bi" model="fsm.revision.workshop">
+        <field name="name">Schweizerische Bundesbahnen SBB, Biel</field>
+        <field name="xml_value">Bi - Schweizerische Bundesbahnen SBB, Biel</field>
+    </record>
+    <record id="workshop_code_bi" model="fsm.revision.workshop.code">
+        <field name="name">Bi</field>
+        <field name="workshop_id" ref="workshop_bi"/>
+    </record>
+    <record id="workshop_usd" model="fsm.revision.workshop">
+        <field name="name">SDH Ferroviaire, Saint-Denis-de-l'Hotel</field>
+        <field name="xml_value">USD (966) - SDH Ferroviaire, Saint-Denis-de-l'Hotel</field>
+        <field name="note">Zowel USD als 966 komt voor</field>
+    </record>
+    <record id="workshop_code_usd" model="fsm.revision.workshop.code">
+        <field name="name">USD</field>
+        <field name="workshop_id" ref="workshop_usd"/>
+    </record>
+    <record id="workshop_code_966" model="fsm.revision.workshop.code">
+        <field name="name">966</field>
+        <field name="workshop_id" ref="workshop_usd"/>
+    </record>
+    <record id="workshop_sema" model="fsm.revision.workshop">
+        <field name="name">SEMA AG, Celle</field>
+        <field name="xml_value">SEMA - SEMA AG, Celle</field>
+    </record>
+    <record id="workshop_code_sema" model="fsm.revision.workshop.code">
+        <field name="name">SEMA</field>
+        <field name="workshop_id" ref="workshop_sema"/>
+    </record>
+    <record id="workshop_wbs" model="fsm.revision.workshop">
+        <field name="name">Shunter Wagenbedrijf Nederland B.V., Rotterdam</field>
+        <field name="xml_value">WBS - Shunter Wagenbedrijf Nederland B.V., Rotterdam</field>
+    </record>
+    <record id="workshop_code_wbs" model="fsm.revision.workshop.code">
+        <field name="name">WBS</field>
+        <field name="workshop_id" ref="workshop_wbs"/>
+    </record>
+    <record id="workshop_tg" model="fsm.revision.workshop">
+        <field name="name">SNCF Tergnier, Tergnier</field>
+        <field name="xml_value">TG - SNCF Tergnier, Tergnier</field>
+    </record>
+    <record id="workshop_code_tg" model="fsm.revision.workshop.code">
+        <field name="name">TG</field>
+        <field name="workshop_id" ref="workshop_tg"/>
+    </record>
+    <record id="workshop_sa" model="fsm.revision.workshop">
+        <field name="name">STAG AG, Sargans</field>
+        <field name="xml_value">Sa - STAG AG, Sargans</field>
+    </record>
+    <record id="workshop_code_sa" model="fsm.revision.workshop.code">
+        <field name="name">Sa</field>
+        <field name="workshop_id" ref="workshop_sa"/>
+    </record>
+    <record id="workshop_mmf" model="fsm.revision.workshop">
+        <field name="name">SüdostBayernBahnDB RegioNetz Verkehrs GmbH, Mühldorf</field>
+        <field name="xml_value">MMF - SüdostBayernBahnDB RegioNetz Verkehrs GmbH, Mühldorf</field>
+    </record>
+    <record id="workshop_code_mmf" model="fsm.revision.workshop.code">
+        <field name="name">MMF</field>
+        <field name="workshop_id" ref="workshop_mmf"/>
+    </record>
+    <record id="workshop_gblg" model="fsm.revision.workshop">
+        <field name="name">SweMaint AB, Borlänge</field>
+        <field name="xml_value">GBLG - SweMaint AB, Borlänge</field>
+    </record>
+    <record id="workshop_code_gblg" model="fsm.revision.workshop.code">
+        <field name="name">GBLG</field>
+        <field name="workshop_id" ref="workshop_gblg"/>
+    </record>
+    <record id="workshop_kgav" model="fsm.revision.workshop">
+        <field name="name">SweMaint AB, Gävle</field>
+        <field name="xml_value">KGAV - SweMaint AB, Gävle</field>
+    </record>
+    <record id="workshop_code_kgav" model="fsm.revision.workshop.code">
+        <field name="name">KGAV</field>
+        <field name="workshop_id" ref="workshop_kgav"/>
+    </record>
+    <record id="workshop_kg" model="fsm.revision.workshop">
+        <field name="name">SweMaint AB, Göteborg</field>
+        <field name="xml_value">KG - SweMaint AB, Göteborg</field>
+    </record>
+    <record id="workshop_code_kg" model="fsm.revision.workshop.code">
+        <field name="name">KG</field>
+        <field name="workshop_id" ref="workshop_kg"/>
+    </record>
+    <record id="workshop_gh" model="fsm.revision.workshop">
+        <field name="name">SweMaint AB, Hallsberg</field>
+        <field name="xml_value">GH - SweMaint AB, Hallsberg</field>
+    </record>
+    <record id="workshop_code_gh" model="fsm.revision.workshop.code">
+        <field name="name">GH</field>
+        <field name="workshop_id" ref="workshop_gh"/>
+    </record>
+    <record id="workshop_ghb" model="fsm.revision.workshop">
+        <field name="name">SweMaint AB, Helsingborg</field>
+        <field name="xml_value">GHB - SweMaint AB, Helsingborg</field>
+    </record>
+    <record id="workshop_code_ghb" model="fsm.revision.workshop.code">
+        <field name="name">GHB</field>
+        <field name="workshop_id" ref="workshop_ghb"/>
+    </record>
+    <record id="workshop_gm" model="fsm.revision.workshop">
+        <field name="name">SweMaint AB, Malmö</field>
+        <field name="xml_value">GM - SweMaint AB, Malmö</field>
+    </record>
+    <record id="workshop_code_gm" model="fsm.revision.workshop.code">
+        <field name="name">GM</field>
+        <field name="workshop_id" ref="workshop_gm"/>
+    </record>
+    <record id="workshop_gnr" model="fsm.revision.workshop">
+        <field name="name">SweMaint AB, Norrköping</field>
+        <field name="xml_value">GNR - SweMaint AB, Norrköping</field>
+    </record>
+    <record id="workshop_code_gnr" model="fsm.revision.workshop.code">
+        <field name="name">GNR</field>
+        <field name="workshop_id" ref="workshop_gnr"/>
+    </record>
+    <record id="workshop_do" model="fsm.revision.workshop">
+        <field name="name">SZ - Centralne delavnice Ljubljana d.o.o., Dobova</field>
+        <field name="xml_value">Do - SZ - Centralne delavnice Ljubljana d.o.o., Dobova</field>
+    </record>
+    <record id="workshop_code_do" model="fsm.revision.workshop.code">
+        <field name="name">Do</field>
+        <field name="workshop_id" ref="workshop_do"/>
+    </record>
+    <record id="workshop_pt" model="fsm.revision.workshop">
+        <field name="name">SZ - Centralne delavnice Ljubljana d.o.o., Ptuj</field>
+        <field name="xml_value">Pt (PTUJ) - SZ - Centralne delavnice Ljubljana d.o.o., Ptuj</field>
+        <field name="note">Zowel Pt als PTUJ komt voor</field>
+    </record>
+    <record id="workshop_code_pt" model="fsm.revision.workshop.code">
+        <field name="name">Pt</field>
+        <field name="workshop_id" ref="workshop_pt"/>
+    </record>
+    <record id="workshop_code_ptuj" model="fsm.revision.workshop.code">
+        <field name="name">PTUJ</field>
+        <field name="workshop_id" ref="workshop_pt"/>
+    </record>
+    <record id="workshop_266" model="fsm.revision.workshop">
+        <field name="name">ThyssenKrupp Steel Europe AG, Duisburg</field>
+        <field name="xml_value">266 - ThyssenKrupp Steel Europe AG, Duisburg</field>
+    </record>
+    <record id="workshop_code_266" model="fsm.revision.workshop.code">
+        <field name="name">266</field>
+        <field name="workshop_id" ref="workshop_266"/>
+    </record>
+    <record id="workshop_sml" model="fsm.revision.workshop">
+        <field name="name">TRAKTSIA AD, Samuil</field>
+        <field name="xml_value">Sml - TRAKTSIA AD, Samuil</field>
+    </record>
+    <record id="workshop_code_sml" model="fsm.revision.workshop.code">
+        <field name="name">Sml</field>
+        <field name="workshop_id" ref="workshop_sml"/>
+    </record>
+    <record id="workshop_814" model="fsm.revision.workshop">
+        <field name="name">TS Hungaria Kft., Miskolc</field>
+        <field name="xml_value">814 - TS Hungaria Kft., Miskolc</field>
+    </record>
+    <record id="workshop_code_814" model="fsm.revision.workshop.code">
+        <field name="name">814</field>
+        <field name="workshop_id" ref="workshop_814"/>
+    </record>
+    <record id="workshop_lhbx" model="fsm.revision.workshop">
+        <field name="name">VIS - Verkehrs Industrie Systeme GmbH, Halberstadt</field>
+        <field name="xml_value">LHBX - VIS - Verkehrs Industrie Systeme GmbH, Halberstadt</field>
+    </record>
+    <record id="workshop_code_lhbx" model="fsm.revision.workshop.code">
+        <field name="name">LHBX</field>
+        <field name="workshop_id" ref="workshop_lhbx"/>
+    </record>
+    <record id="workshop_vps" model="fsm.revision.workshop">
+        <field name="name">VPSVerkehrsbetriebe Peine-Salzgitter GmbH, Salzgitter</field>
+        <field name="xml_value">VPS - VPSVerkehrsbetriebe Peine-Salzgitter GmbH, Salzgitter</field>
+    </record>
+    <record id="workshop_code_vps" model="fsm.revision.workshop.code">
+        <field name="name">VPS</field>
+        <field name="workshop_id" ref="workshop_vps"/>
+    </record>
+    <record id="workshop_kv" model="fsm.revision.workshop">
+        <field name="name">VRZ Karlovo PLC"Vagono-Remonten Zavod Karlovo", Karlovo</field>
+        <field name="xml_value">KV - VRZ Karlovo PLC"Vagono-Remonten Zavod Karlovo", Karlovo</field>
+    </record>
+    <record id="workshop_code_kv" model="fsm.revision.workshop.code">
+        <field name="name">KV</field>
+        <field name="workshop_id" ref="workshop_kv"/>
+    </record>
+    <record id="workshop_w24" model="fsm.revision.workshop">
+        <field name="name">Waggon24 GmbH, Berlin</field>
+        <field name="xml_value">W24 - Waggon24 GmbH, Berlin</field>
+    </record>
+    <record id="workshop_code_w24" model="fsm.revision.workshop.code">
+        <field name="name">W24</field>
+        <field name="workshop_id" ref="workshop_w24"/>
+    </record>
+    <record id="workshop_601" model="fsm.revision.workshop">
+        <field name="name">Waggonbau Altenburg GmbH, Altenburg</field>
+        <field name="xml_value">601 - Waggonbau Altenburg GmbH, Altenburg</field>
+    </record>
+    <record id="workshop_code_601" model="fsm.revision.workshop.code">
+        <field name="name">601</field>
+        <field name="workshop_id" ref="workshop_601"/>
+    </record>
+    <record id="workshop_101" model="fsm.revision.workshop">
+        <field name="name">Waggonbau Graaff GmbH, Elze</field>
+        <field name="xml_value">101 - Waggonbau Graaff GmbH, Elze</field>
+    </record>
+    <record id="workshop_code_101" model="fsm.revision.workshop.code">
+        <field name="name">101</field>
+        <field name="workshop_id" ref="workshop_101"/>
+    </record>
+    <record id="workshop_201" model="fsm.revision.workshop">
+        <field name="name">Waggonwerk Brühl GmbH, Wesseling</field>
+        <field name="xml_value">201 - Waggonwerk Brühl GmbH, Wesseling</field>
+    </record>
+    <record id="workshop_code_201" model="fsm.revision.workshop.code">
+        <field name="name">201</field>
+        <field name="workshop_id" ref="workshop_201"/>
+    </record>
+    <record id="workshop_dec" model="fsm.revision.workshop">
+        <field name="name">Wagon Service Ostroda Sp. z o.o., Ostroda</field>
+        <field name="xml_value">DEC - Wagon Service Ostroda Sp. z o.o., Ostroda</field>
+    </record>
+    <record id="workshop_code_dec" model="fsm.revision.workshop.code">
+        <field name="name">DEC</field>
+        <field name="workshop_id" ref="workshop_dec"/>
+    </record>
+    <record id="workshop_216" model="fsm.revision.workshop">
+        <field name="name">Westfälische-Lokomotiv-Fabrik Reuschling GmbH &amp; Co KG, Hattingen</field>
+        <field name="xml_value">216 - Westfälische-Lokomotiv-Fabrik Reuschling GmbH &amp; Co KG, Hattingen</field>
+    </record>
+    <record id="workshop_code_216" model="fsm.revision.workshop.code">
+        <field name="name">216</field>
+        <field name="workshop_id" ref="workshop_216"/>
+    </record>
+    <record id="workshop_888" model="fsm.revision.workshop">
+        <field name="name">ZELOS spol. s.r.o., Trnava</field>
+        <field name="xml_value">888 - ZELOS spol. s.r.o., Trnava</field>
+    </record>
+    <record id="workshop_code_888" model="fsm.revision.workshop.code">
+        <field name="name">888</field>
+        <field name="workshop_id" ref="workshop_888"/>
+    </record>
+    <record id="workshop_919" model="fsm.revision.workshop">
+        <field name="name">ZNTK "PATEREK" S.A., Naklo nad Notecia</field>
+        <field name="xml_value">919 - ZNTK "PATEREK" S.A., Naklo nad Notecia</field>
+    </record>
+    <record id="workshop_code_919" model="fsm.revision.workshop.code">
+        <field name="name">919</field>
+        <field name="workshop_id" ref="workshop_919"/>
+    </record>
+    <record id="workshop_918" model="fsm.revision.workshop">
+        <field name="name">ZNTK Olawa Sp.z.o.o., Olawa</field>
+        <field name="xml_value">918 - ZNTK Olawa Sp.z.o.o., Olawa</field>
+    </record>
+    <record id="workshop_code_918" model="fsm.revision.workshop.code">
+        <field name="name">918</field>
+        <field name="workshop_id" ref="workshop_918"/>
+    </record>
+    <record id="workshop_887" model="fsm.revision.workshop">
+        <field name="name">ZOS TRNAVA, a.s, Trnava</field>
+        <field name="xml_value">887 - ZOS TRNAVA, a.s, Trnava</field>
+    </record>
+    <record id="workshop_code_887" model="fsm.revision.workshop.code">
+        <field name="name">887</field>
+        <field name="workshop_id" ref="workshop_887"/>
+    </record>
+</odoo>

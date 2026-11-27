@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fsm_revision_workshop_user,fsm.revision.workshop user,model_fsm_revision_workshop,fieldservice.group_fsm_user,1,0,0,0
+access_fsm_revision_workshop_manager,fsm.revision.workshop manager,model_fsm_revision_workshop,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_revision_workshop_code_user,fsm.revision.workshop.code user,model_fsm_revision_workshop_code,fieldservice.group_fsm_user,1,0,0,0
+access_fsm_revision_workshop_code_manager,fsm.revision.workshop.code manager,model_fsm_revision_workshop_code,fieldservice.group_fsm_manager,1,1,1,1
