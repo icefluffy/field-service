@@ -8,7 +8,7 @@ class FSMCategory(models.Model):
     name = fields.Char(required=True)
     parent_id = fields.Many2one("fsm.category", string="Parent")
     color = fields.Integer("Color Index", default=10)
-    full_name = fields.Char(compute="_compute_full_name")
+    full_name = fields.Char(compute="_compute_full_name", recursive=True)
     description = fields.Char()
     company_id = fields.Many2one(
         "res.company",

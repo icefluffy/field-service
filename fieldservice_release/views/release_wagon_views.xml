@@ -10,7 +10,7 @@
  <field name="release_id" invisible="1"/>
  <field name="release_wagon_state" invisible="1"/>
  <field name="release_wagon_snapshots_taken" invisible="1"/>
- <div class="alert alert-info" invisible="release_id">
+ <div class="alert alert-info" role="status" invisible="release_id">
   Prepare the Release draft here. Equipment, contractor costs and timesheets
   are copied only when Release to Service is confirmed.
  </div>
@@ -23,7 +23,7 @@
    <button name="action_open_release_form" string="Open release form" type="object" class="btn-secondary"/>
    <button name="action_finalize_wagon_release" string="Release to Service" type="object" class="btn-primary" invisible="release_wagon_state != 'draft'" confirm="Capture the current equipment, contractor costs and timesheets and mark this release as released? Review the Release identification, checks, decision and signatures first."/>
   </group></group>
-  <div class="alert alert-warning" invisible="release_wagon_state != 'draft'">
+  <div class="alert alert-warning" role="status" invisible="release_wagon_state != 'draft'">
    Draft: snapshot lists are not finalized. Previewing or printing does not
    approve the vehicle. Check all manual information before final release.
   </div>
@@ -48,7 +48,7 @@
      <field name="snapshots_taken_at"/>
      <field name="snapshots_taken_by"/>
     </group>
-    <div class="alert alert-info" invisible="1">
+    <div class="alert alert-info" role="status" invisible="1">
      Under the new workflow, snapshots are taken on Release to Service,
      not during draft preparation, preview or printing.
     </div>

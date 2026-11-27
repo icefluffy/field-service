@@ -3,12 +3,19 @@
 {
     "name": "Field Service",
     "summary": "Manage Field Service Locations, Workers and Orders",
-    "version": "18.0.5.7.1",
+    "version": "18.0.5.7.2",
     "license": "AGPL-3",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "website": "https://github.com/icefluffy/field-service/",
-    "depends": ["base_territory", "base_geolocalize", "resource", "contacts"],
+    "depends": [
+        "base_territory",
+        "base_geolocalize",
+        "resource",
+        "contacts",
+        # fsm.person.employee_id (fsm_person_hr.py) links to hr.employee
+        "hr",
+    ],
     "data": [
         "data/ir_sequence.xml",
         "data/mail_message_subtype.xml",

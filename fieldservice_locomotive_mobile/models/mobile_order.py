@@ -104,8 +104,7 @@ class FsmOrder(models.Model):
 
     def _mobile_timestamp(self, stopping=False):
         self.ensure_one()
-        self.check_access_rights("write")
-        self.check_access_rule("write")
+        self.check_access("write")
         if not self._mobile_scroll_member():
             raise AccessError(_("This action is for members of a configured mobile team."))
         self.flush_recordset(["date_start", "date_end"])

@@ -35,20 +35,24 @@ class FSMEquipment(models.Model):
             )
         return team
 
-    @api.model
-    def create(self, vals):
-        maintenance_equipment_id = self.env["maintenance.equipment"].create(
-            {
-                "name": vals.get("name"),
-                "is_fsm_equipment": True,
-                "note": vals.get("notes", False),
-                "maintenance_team_id": vals.get("maintenance_team_id", False)
-                or self._default_maintenance_team().id,
-            }
-        )
-        if maintenance_equipment_id:
-            vals.update({"maintenance_equipment_id": maintenance_equipment_id.id})
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        default_team = False
+        for vals in vals_list:
+            if not vals.get("maintenance_team_id") and default_team is False:
+                default_team = self._default_maintenance_team()
+            maintenance_equipment_id = self.env["maintenance.equipment"].create(
+                {
+                    "name": vals.get("name"),
+                    "is_fsm_equipment": True,
+                    "note": vals.get("notes", False),
+                    "maintenance_team_id": vals.get("maintenance_team_id", False)
+                    or default_team.id,
+                }
+            )
+            if maintenance_equipment_id:
+                vals.update({"maintenance_equipment_id": maintenance_equipment_id.id})
+        return super().create(vals_list)
 
     def unlink(self):
         equipments = self.mapped("maintenance_equipment_id")

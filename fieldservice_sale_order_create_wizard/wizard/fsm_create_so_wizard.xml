@@ -20,7 +20,7 @@
                             <field name="quantity" />
                             <field
                                     name="discount"
-                                    groups="product.group_discount_per_so_line"
+                                    groups="sale.group_discount_per_so_line"
                                 />
                         </list>
                     </field>

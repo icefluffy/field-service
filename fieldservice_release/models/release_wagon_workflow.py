@@ -125,8 +125,7 @@ class FsmOrderReleaseWagon(models.Model):
     def action_create_release_form(self):
         """Replace immediate snapshots with creation of an empty draft."""
         self.ensure_one()
-        self.check_access_rights("write")
-        self.check_access_rule("write")
+        self.check_access("write")
         self.flush_recordset()
         self.env.cr.execute(
             "SELECT id FROM fsm_order WHERE id = %s FOR UPDATE", [self.id]
@@ -200,8 +199,7 @@ class FsmReleaseDeferredSnapshots(models.Model):
     def action_release(self):
         """Capture all three snapshots and release in the same transaction."""
         for release in self.sorted("id"):
-            release.check_access_rights("write")
-            release.check_access_rule("write")
+            release.check_access("write")
             release.flush_recordset()
             self.env.cr.execute(
                 "SELECT id FROM fsm_release WHERE id = %s FOR UPDATE",

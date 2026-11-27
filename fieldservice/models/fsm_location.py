@@ -20,7 +20,7 @@ class FSMLocation(models.Model):
     partner_id = fields.Many2one(
         "res.partner",
         string="Related Partner",
-        required=False,
+        required=True,
         ondelete="restrict",
         delegate=True,
         auto_join=True,

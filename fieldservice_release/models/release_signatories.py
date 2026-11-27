@@ -98,13 +98,13 @@ class FsmReleaseSignatories(models.Model):
         result = super()._autofill_vrijgave()
         if (self.env.context.get("skip_vrijgave_autofill")
                 or self.env.context.get("skip_signatory_defaults")
-                or not self.check_access_rights("write", raise_exception=False)):
+                or not self.browse().has_access("write")):
             return result
         for release in self:
             if not release.id or release.state != "draft":
                 continue
             try:
-                release.check_access_rule("write")
+                release.check_access("write")
             except AccessError:
                 continue
             vals = {}

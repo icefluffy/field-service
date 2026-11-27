@@ -74,10 +74,8 @@ class FsmReleaseWorkerSecurity(models.Model):
 
     def _worker_draft_check_order(self, order):
         order.ensure_one()
-        order.check_access_rights("read")
-        order.check_access_rule("read")
-        order.check_access_rights("write")
-        order.check_access_rule("write")
+        order.check_access("read")
+        order.check_access("write")
         if order.company_id.id not in self.env.companies.ids:
             raise AccessError(_("The order company is not among your allowed companies."))
         workers = order.person_id | order.person_ids
@@ -142,8 +140,7 @@ class FsmReleaseWorkerSecurity(models.Model):
 
     def write(self, vals):
         if is_draft_worker(self.env):
-            self.check_access_rights("write")
-            self.check_access_rule("write")
+            self.check_access("write")
             if set(vals) - self._worker_draft_fields():
                 raise AccessError(_("Workers may edit draft checks, remarks and signatures only; approval, links and snapshots are protected."))
             self.flush_recordset()
@@ -183,13 +180,11 @@ class FsmOrderReleaseWorkerSecurity(models.Model):
 
     def write(self, vals):
         if is_draft_worker(self.env) and "release_id" in vals:
-            self.check_access_rights("write")
-            self.check_access_rule("write")
+            self.check_access("write")
             release = self.env["fsm.release"].browse(vals["release_id"]).exists()
             if not release:
                 raise AccessError(_("Workers may not remove an order's release link."))
-            release.check_access_rights("read")
-            release.check_access_rule("read")
+            release.check_access("read")
             for order in self:
                 if release.fsm_order_id != order:
                     raise AccessError(_("A draft must remain linked to its original order."))

@@ -9,12 +9,14 @@ class FSMOrder(models.Model):
 
     request_id = fields.Many2one("maintenance.request", string="Maintenance Request")
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         # if FSM order with type maintenance is create then
         # create maintenance request
-        order = super(FSMOrder, self).create(vals)
-        if order.type.internal_type == "maintenance":
+        orders = super().create(vals_list)
+        for order in orders.filtered(
+            lambda o: o.type.internal_type == "maintenance"
+        ):
             equipment = order.equipment_ids[:1] if order.equipment_ids else False
             if equipment and not order.request_id:
                 maintenance_equipment_id = equipment.maintenance_equipment_id
@@ -38,4 +40,4 @@ class FSMOrder(models.Model):
                         )
                     )
                     order.request_id = request_id
-        return order
+        return orders

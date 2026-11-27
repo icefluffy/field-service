@@ -25,7 +25,7 @@ def run_checks(base_source, workflow_source, order_xml, release_xml):
             self.candidates = dict(candidates or {})
             self.writes = []
         def __getitem__(self, key): return self.data.get(key, False)
-        def check_access_rule(self, operation): pass
+        def check_access(self, operation): pass
         def _get_vrijgave_order_defaults(self): return self.candidates
         def flush_recordset(self): pass
         def invalidate_recordset(self): pass
@@ -37,7 +37,8 @@ def run_checks(base_source, workflow_source, order_xml, release_xml):
         def __init__(self, item, writable=True):
             self.item = item; self.writable = writable
             self.env = SimpleNamespace(context={}, cr=SimpleNamespace(execute=lambda *a: None))
-        def check_access_rights(self, *a, **kw): return self.writable
+        def browse(self): return self
+        def has_access(self, operation): return self.writable
         def sorted(self, key): return [self.item]
 
     candidate = {"vrijgave_customer_ref": "CLIENT-42", "vrijgave_order_ref": "FO049"}

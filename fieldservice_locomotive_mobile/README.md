@@ -64,17 +64,13 @@ If an installed custom controller overrides ORM.call or get_view, verify integra
 
 ## Test before production
 1. Full module install with fresh backend assets; no console/import errors.
-2. Member on actual Android phone and iPad/tablet, portrait and landscape:
-   no tabs, all six sections scroll, only ETA in Planning, wheelset history hidden.
+2. Member on actual Android phone and iPad/tablet, portrait and landscape: no tabs, all six sections scroll, only ETA in Planning, wheelset history hidden.
 3. Nonmember on the same mobile device: original tabs remain.
 4. Same member on desktop: original tabs remain.
 5. Member of Locomotive plus another team: scrolling layout still applies.
-6. Edit activity quantity, save, Complete, verify the existing timesheet quantity;
-   add a named activity and complete it. No unrelated billing fields change.
-7. Start and Stop: verify dates on desktop; double clicks preserve the first
-   timestamp; no stage change and no release/snapshot creation.
-8. Prepare/preview/edit/sign Release wagon and verify existing decision-dependent
-   remarks and signer selectors work. Finalize only a suitable test release.
+6. Edit activity quantity, save, Complete, verify the existing timesheet quantity; add a named activity and complete it. No unrelated billing fields change.
+7. Start and Stop: verify dates on desktop; double clicks preserve the first timestamp; no stage change and no release/snapshot creation.
+8. Prepare/preview/edit/sign Release wagon and verify existing decision-dependent remarks and signer selectors work. Finalize only a suitable test release.
 9. Users with restricted rights retain those restrictions, including read-only.
 10. Company switch and translated UI; restart/reload after team changes.
 
