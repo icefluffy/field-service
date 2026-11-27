@@ -112,11 +112,15 @@ class TestFSMActivity(TransactionCase):
         only completes an order of an employee that has a timesheet."""
         if "employee_timesheet_ids" not in order._fields:
             return
-        plan = self.env["account.analytic.plan"].create({"name": "FSM test"})
-        account = self.env["account.analytic.account"].create(
-            {"name": "FSM test", "plan_id": plan.id}
-        )
-        employee = self.env["hr.employee"].create({"name": "Ernest Employee"})
+        if not hasattr(self, "_timesheet_account"):
+            plan = self.env["account.analytic.plan"].create({"name": "FSM activity"})
+            self._timesheet_account = self.env["account.analytic.account"].create(
+                {"name": "FSM activity", "plan_id": plan.id}
+            )
+            self._timesheet_employee = self.env["hr.employee"].create(
+                {"name": "Ernest Employee"}
+            )
+        account, employee = self._timesheet_account, self._timesheet_employee
         self.env["account.analytic.line"].create(
             {
                 "name": "Work",
