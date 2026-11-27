@@ -5,7 +5,7 @@
     "name": "Field Service - Release to service",
     "summary": """Track analytic accounts on Field Service locations
                   and orders""",
-    "version": "18.0.1.1.19",
+    "version": "18.0.1.1.20",
     "category": "Field Service",
     "author": "Open Source Integrators, Odoo Community Association (OCA), Icefluffy, TI-Consulting",
     "license": "AGPL-3",
@@ -13,6 +13,9 @@
     "depends": [
         "fieldservice_isp_account",
         "fieldservice_equipment_stock",
+        # The order form hides fields of these modules.
+        "fieldservice_crm",
+        "fieldservice_size",
     ],
     "data": [
         "security/ir.model.access.csv",

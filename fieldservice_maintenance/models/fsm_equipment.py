@@ -18,6 +18,24 @@ class FSMEquipment(models.Model):
     )
 
     @api.model
+    def _default_maintenance_team(self):
+        """The standard maintenance team, or a team of the current company
+        when the standard team belongs to another company. Read with sudo:
+        users who create equipment (e.g. on a delivery) may not have
+        access to maintenance teams."""
+        teams = self.env["maintenance.team"].sudo()
+        team = self.env.ref(
+            "maintenance.equipment_team_maintenance", raise_if_not_found=False
+        )
+        team = teams.browse(team.id) if team else teams
+        company = self.env.company
+        if not team or (team.company_id and team.company_id != company):
+            team = teams.search(
+                [("company_id", "in", [company.id, False])], limit=1
+            )
+        return team
+
+    @api.model
     def create(self, vals):
         maintenance_equipment_id = self.env["maintenance.equipment"].create(
             {
@@ -25,7 +43,7 @@ class FSMEquipment(models.Model):
                 "is_fsm_equipment": True,
                 "note": vals.get("notes", False),
                 "maintenance_team_id": vals.get("maintenance_team_id", False)
-                or self.env.ref("maintenance.equipment_team_maintenance").id,
+                or self._default_maintenance_team().id,
             }
         )
         if maintenance_equipment_id:
