@@ -201,11 +201,11 @@
         <field name="wagon_intake_state" invisible="1"/>
         <div class="o_fsm_wagon_intake_button d-grid d-md-block mb-3" invisible="not has_wagon_intake">
             <button name="action_open_wagon_intake" type="object"
-                    string="Inbound inspection" icon="fa-clipboard"
+                    string="Fill in inbound inspection" icon="fa-clipboard"
                     class="btn btn-lg btn-warning"
                     invisible="wagon_intake_state == 'done'"/>
             <button name="action_open_wagon_intake" type="object"
-                    string="Inbound inspection" icon="fa-check"
+                    string="Inbound inspection done" icon="fa-check"
                     class="btn btn-lg btn-success"
                     invisible="wagon_intake_state != 'done'"/>
         </div>

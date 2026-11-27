@@ -284,7 +284,6 @@ msgstr "En cours"
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
 msgid "Inbound inspection"
 msgstr "Contrôle d'entrée"
 
@@ -1336,3 +1335,13 @@ msgid ""
 msgstr ""
 "Statut du rapport de contrôle d'entrée ; détermine la couleur du bouton sur "
 "l'ordre de travail."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
+msgid "Fill in inbound inspection"
+msgstr "Remplir le contrôle d'entrée"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
+msgid "Inbound inspection done"
+msgstr "Contrôle d'entrée terminé"

@@ -286,7 +286,6 @@ msgstr "In Bearbeitung"
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
 msgid "Inbound inspection"
 msgstr "Eingangsprüfung"
 
@@ -1343,3 +1342,13 @@ msgid ""
 msgstr ""
 "Status des Eingangsprüfungsberichts; bestimmt die Farbe der Schaltfläche auf"
 " dem Arbeitsauftrag."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
+msgid "Fill in inbound inspection"
+msgstr "Eingangsprüfung ausfüllen"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.order_form_intake
+msgid "Inbound inspection done"
+msgstr "Eingangsprüfung fertig"
