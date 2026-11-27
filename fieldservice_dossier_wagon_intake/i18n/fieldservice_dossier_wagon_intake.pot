@@ -6,14 +6,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-06 17:51+0000\n"
-"PO-Revision-Date: 2026-11-06 17:51+0000\n"
+"POT-Creation-Date: 2026-11-27 12:31+0000\n"
+"PO-Revision-Date: 2026-11-27 12:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "1. Wagon and inspection"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "120 km/h empty only"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "2. Brake and handbrake"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "3. Load limit raster"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "4. Inscriptions and labels"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "5. Findings"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "6. Result"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "90 (90 km/h)"
+msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_needaction
@@ -41,9 +83,29 @@ msgid "Activity Type Icon"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Add speed row"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "An intake report requires an Inbound inspection."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_mark
+msgid ""
+"As written in the wagon's revision frame, e.g. 9R-AP-29.06.20. Shared with "
+"the wagon and its other forms."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid ""
+"Assess every component: OK, Defect or Not applicable. For a defect, enter "
+"the finding and the quantity."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -52,13 +114,43 @@ msgid "Assessment"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
+msgid "Assessment buttons"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Axle plate"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Bogie"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Box"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__brake
 msgid "Brake (5)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Brake block"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -72,8 +164,32 @@ msgid "Brake inscription"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Brake regulator"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Buffer"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__coupling
 msgid "Buffing and draw gear (6)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Changeover"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Coil spring"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -83,8 +199,12 @@ msgid "Company"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Complete inspection"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
 msgid "Completed"
 msgstr ""
 
@@ -132,6 +252,24 @@ msgid "Display Name"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Distributor"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Done merging"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Door (box)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__dossier_id
 msgid "Dossier"
 msgstr ""
@@ -145,6 +283,24 @@ msgstr ""
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "Dossier is closed or cancelled."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Draw hook"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Earthing"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "End cock"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -175,10 +331,16 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#, python-format
 msgid ""
 "Fill in all fields before completing the inspection. Still missing:\n"
 "%s"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_date
+msgid ""
+"Filled in from the date in the revision frame. Shared with the wagon and its"
+" other forms."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -191,14 +353,25 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#, python-format
 msgid "Findings: %(count)s component(s) not assessed (%(names)s)"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "First link a work order to the %s line (use the + button)."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
 msgid "First link the dossier Inbound inspection line to this FSM order."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Flame plate"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -245,6 +418,17 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__has_message
 msgid "Has Message"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
+msgid "Has inbound inspection"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Hood"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -300,6 +484,12 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model,name:fieldservice_dossier_wagon_intake.model_fsm_wagon_intake
 msgid "Inbound wagon inspection"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Inscription plate"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -366,38 +556,148 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Leaf spring"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Letter box"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid
+msgid ""
+"Line categories (columns), speed rows and the maximum load in tonnes, as "
+"shown on the plate. Merged cells hold one value."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid_has_errors
+msgid "Load Grid Has Errors"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid
+msgid "Load limit raster"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid_summary
+msgid "Load limit raster (text)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_notes
-msgid "Load limit raster  - additions / remarks"
+msgid "Load limit raster - additions / remarks"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_a
-msgid "Load limit raster  A"
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid_issues
+msgid "Load limit raster checks"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_b
-msgid "Load limit raster  B"
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: %(col)s: row \"%(fast_row)s\" (%(fast)s) is higher than "
+"the slower row \"%(slow_row)s\" (%(slow)s). A higher speed cannot carry "
+"more."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_c
-msgid "Load limit raster  C"
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid "Load limit raster: add at least one speed row."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_d
-msgid "Load limit raster  D"
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: choose the line categories (A, B, C, ...) shown on the "
+"plate."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_e
-msgid "Load limit raster  E"
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid "Load limit raster: row \"%(row)s\" appears twice."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid "Load limit raster: row \"%(row)s\" has no value for %(cols)s."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: row \"%(row)s\" is not a valid speed (no letter, 90, S, "
+"SS or a number in km/h)."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: row \"%(row)s\", %(col)s: %(value)s is not a possible "
+"load (0 to 200 t)."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: row \"%(row)s\": %(high)s (%(hv)s) is lower than %(low)s "
+"(%(lv)s). A higher line category cannot carry less."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: the stars say the brake is not approved for %(kmh)s km/h,"
+" but row \"%(row)s\" allows a load at that speed. Check the stars and the "
+"rows."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Load-weighing valve"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid ""
+"Loads in tonnes. – = 80 km/h, 90 = 90 km/h, S = 100 km/h, SS = 120 km/h, "
+"other number = km/h. 0 t = empty only."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__maintenance
 msgid "Maintenance / overhaul (9)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Merge cells"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Merge with the next cell"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -416,13 +716,14 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__name
-msgid "Name"
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
+msgid "N/A"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__name
+msgid "Name"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -443,6 +744,17 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__revision_plates__no
 msgid "No"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "No load limit raster recorded."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__0
+msgid "No stars"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -492,14 +804,33 @@ msgid "Only one intake report per inspection."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Only use this if your procedure allows it; justify the result."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.dossier_form_intake
 #: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.inspection_form_intake
 msgid "Open Inbound inspection"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Open wagon body"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Open wagon door"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Open wagon slide"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "Other speed (km/h)"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -512,6 +843,17 @@ msgstr ""
 msgid ""
 "Paper: 320 / 250 mm; cast iron / C810 / J816 / J816M / J838 / Abex / Cobra /"
 " LL. Check transcription."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_photo
+msgid "Photo of the load limit raster"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Preventive maintenance / overhaul / painting / inscription / testing"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -546,8 +888,20 @@ msgid "Recorded By"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Release valve (operation)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__remarks
 msgid "Remarks"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Remove this row"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -578,11 +932,6 @@ msgid "Responsible User"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Result"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_date
 msgid "Revision date"
 msgstr ""
@@ -598,8 +947,26 @@ msgid "Running gear (2)"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "S (100 km/h)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__message_has_sms_error
 msgid "SMS Delivery error"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "SS (120 km/h)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Screw coupling"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -613,8 +980,73 @@ msgid "Sequence"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__uic
+msgid "Shared with the wagon's UIC code and its other forms."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
+msgid "Shared with the wagon's tare and its other forms."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding piece"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding plate"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding roof"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding roof / hood operation"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Sliding tilting roof"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__source_reference
 msgid "Source Reference"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Speed"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Split this cell"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_stars
+msgid ""
+"Stars after the raster: the wagon runs well enough for a higher speed, but "
+"its brake is not approved for it."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_stars
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Stars next to the raster"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -639,6 +1071,24 @@ msgstr ""
 #. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__keeper_id
 msgid "Synchronised with the wagon's Managed By field."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "T-piece"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Tap"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Tap the line categories shown on the plate:"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -670,6 +1120,24 @@ msgid "This report is not completed."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Tilting roof"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Towing hook"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
+msgid ""
+"True when the dossier Inbound inspection line is linked to this work order."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr ""
@@ -692,11 +1160,6 @@ msgid "Use the workflow buttons; the linked inspection cannot be changed."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Wagon data"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__frame
 msgid "Wagon frame (3)"
 msgstr ""
@@ -712,6 +1175,12 @@ msgid "Website communication history"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
+msgid "Wheelset"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__revision_plates__yes
 msgid "Yes"
 msgstr ""
@@ -723,158 +1192,27 @@ msgid "You cannot move findings to another report."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
-msgid "Has inbound inspection"
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "km/h"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__has_wagon_intake
-msgid ""
-"True when the dossier Inbound inspection line is linked to this work order."
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "t"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "First link a work order to the %s line (use the + button)."
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "to merge a cell with the next one,"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Wheelset"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "T-piece"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Coil spring"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Leaf spring"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Bogie"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Sliding piece"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Earthing"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Axle plate"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Flame plate"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Towing hook"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Inscription plate"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Letter box"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Box"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Door (box)"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Open wagon body"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Open wagon door"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Open wagon slide"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Sliding roof"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Hood"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Sliding roof / hood operation"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Tilting roof"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Sliding tilting roof"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Brake block"
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "to split it again."
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
@@ -884,145 +1222,25 @@ msgid "½ coupling"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Distributor"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Brake regulator"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Release valve (operation)"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Changeover"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "End cock"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Load-weighing valve"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Buffer"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Draw hook"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Screw coupling"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Sliding plate"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#. odoo-python
-#: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-msgid "Preventive maintenance / overhaul / painting / inscription / testing"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "1. Wagon and inspection"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "2. Brake and handbrake"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "3. Load limit raster"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "4. Inscriptions and labels"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "5. Findings"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "6. Result"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid "Complete inspection"
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
-msgid ""
-"Assess every component: OK, Defect or Not applicable. For a defect, enter "
-"the finding and the quantity."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
 #. odoo-javascript
-#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
-msgid "N/A"
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "– (80 km/h)"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#. odoo-javascript
-#: code:addons/fieldservice_dossier_wagon_intake/static/src/check_state_buttons/check_state_buttons.js:0
-msgid "Assessment buttons"
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__1
+msgid "★ Technically suitable for 100 km/h, brake not designed for S traffic"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_mark
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__2
 msgid ""
-"As written in the wagon's revision frame, e.g. 9R-AP-29.06.20. Shared with "
-"the wagon and its other forms."
+"★★ Technically suitable for 120 km/h, brake not designed for SS traffic"
 msgstr ""
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__revision_date
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__3
 msgid ""
-"Filled in from the date in the revision frame. Shared with the wagon and its"
-" other forms."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__uic
-msgid "Shared with the wagon's UIC code and its other forms."
-msgstr ""
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
-msgid "Shared with the wagon's tare and its other forms."
+"★★★ Technically suitable for 120 km/h, brake not designed for SS traffic; "
+"automatic load-dependent braking required"
 msgstr ""

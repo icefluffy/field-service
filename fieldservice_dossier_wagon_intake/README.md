@@ -20,7 +20,7 @@ the report moves from Niet gestart to In uitvoering (dossier line In progress).
 An inbound wagon always arrives damaged, so there is no Passed / Passed with
 remarks / Failed outcome. Clicking Voltooid checks the report; if anything
 is still empty, a pop-up lists what is missing. All fields must be filled in
-(numeric fields non-zero) and every component assessed (OK, defect or not
+(numeric fields non-zero; the load limit raster rules are below) and every component assessed (OK, defect or not
 applicable). Completing locks the report and sets the dossier inspection line to Completed with
 result Not applicable, so it does not block dossier approval. The required fields
 are listed in COMPLETION_FIELDS in models/inspection.py.
@@ -29,6 +29,23 @@ through the base module. Closed/cancelled dossiers cannot be edited.
 Upgrading to 18.0.1.1.0 converts existing Passed / Passed with remarks / Failed
 reports to Completed and their dossier line result to Not applicable.
 Attachments can be uploaded in the chatter. Chatter attachments are not immutable.
+
+### Load limit raster (section 3)
+The raster is drawn like the plate on the wagon. Tap the line categories shown
+on the plate: the old letters A-E or the EN 15528 categories (A, B1, B2, C2, C3,
+C4, D2, D3, D4, E4, E5); the two sets are not mixed. Add one row per speed:
+no letter = 80 km/h, 90, S = 100 km/h, SS = 120 km/h or another number in km/h.
+"120 km/h empty only" adds a 120 row with 0 t. Merge cells shows link and split
+buttons; a merged header cell (e.g. C3 C4) also merges the cells below it.
+Loads accept a comma or a point. Tap a star next to the raster (tap it again to
+clear); photo and remarks are optional.
+Checks shown live and on Voltooid: at least one category and one row, every
+cell filled (0 t is a value), valid and unique speeds, 0-200 t, a higher
+category never carries less than its neighbour, a faster row never carries
+more than the next slower row. Stars that contradict a loaded 100/120 km/h row
+give a warning only. The rules are in models/load_grid.py.
+Upgrading to 18.0.1.8.0 moves the old fields A-E into one row without a speed
+letter and adds a note to the remarks; check that row against the plate.
 
 ## Scope / limitations
 Digitisation of the supplied photograph, not an approved railway safety procedure.

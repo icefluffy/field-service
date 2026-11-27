@@ -5,12 +5,15 @@ import json
 from odoo import _, api, fields, models, Command
 from odoo.exceptions import UserError, ValidationError
 from odoo.osv import expression
+from odoo.tools import html_escape
 from odoo.tools.translate import LazyTranslate
 
 from odoo.addons.fieldservice_equipment_stock.models.wagon_properties import (
     convert_value,
     parse_revision_date,
 )
+
+from . import load_grid as lgr
 
 _lt = LazyTranslate(__name__)
 
@@ -112,11 +115,13 @@ COMPLETION_FIELDS = [
     'inspection_date', 'inspector_id', 'keeper_id', 'revision_mark',
     'revision_date', 'brake_inscription', 'uic', 'customer_type', 'tare_kg',
     'handbrake_t', 'handbrake_kn', 'handbrake_percent',
-    'load_a', 'load_b', 'load_c', 'load_d', 'load_e', 'load_notes',
     'extra', 'reason', 'maintenance_inscriptions', 'revision_plates',
     'brake_block_type', 'remarks', 'outcome_note',
 ]
-INPUT_FIELDS = set(COMPLETION_FIELDS) | {'line_ids', 'holder_mark'}
+# The load limit raster is checked on its own (see _get_load_grid_problems);
+# its remarks, stars and photo are optional (a plate without stars is normal).
+LOAD_GRID_FIELDS = {'load_grid', 'load_stars', 'load_photo', 'load_notes'}
+INPUT_FIELDS = set(COMPLETION_FIELDS) | LOAD_GRID_FIELDS | {'line_ids', 'holder_mark'}
 LINE_INPUT_FIELDS = {'check_state', 'defect', 'quantity', 'note'}
 OPEN_STATES = ('draft', 'progress')
 
@@ -240,12 +245,25 @@ class Intake(models.Model):
     handbrake_t = fields.Float(string='Handbrake (t)')
     handbrake_kn = fields.Float(string='Handbrake (kN)')
     handbrake_percent = fields.Float(string='Handbrake (%)')
-    load_a = fields.Char(string='Load limit raster  A')
-    load_b = fields.Char(string='Load limit raster  B')
-    load_c = fields.Char(string='Load limit raster  C')
-    load_d = fields.Char(string='Load limit raster  D')
-    load_e = fields.Char(string='Load limit raster  E')
-    load_notes = fields.Text(string='Load limit raster  - additions / remarks')
+    # Load limit raster: the plate on the side wall, see models/load_grid.py.
+    load_grid = fields.Json(
+        string='Load limit raster', copy=False,
+        help="Line categories (columns), speed rows and the maximum load in "
+        "tonnes, as shown on the plate. Merged cells hold one value.")
+    load_stars = fields.Selection(
+        lgr.STAR_SELECTION, string='Stars next to the raster', default='0',
+        help="Stars after the raster: the wagon runs well enough for a higher "
+        "speed, but its brake is not approved for it.")
+    load_photo = fields.Image(
+        string='Photo of the load limit raster', max_width=1920, max_height=1920,
+        attachment=True, copy=False)
+    load_notes = fields.Text(string='Load limit raster - additions / remarks')
+    load_grid_issues = fields.Html(
+        string='Load limit raster checks', compute='_compute_load_grid_issues',
+        sanitize=False)
+    load_grid_has_errors = fields.Boolean(compute='_compute_load_grid_issues')
+    load_grid_summary = fields.Text(
+        string='Load limit raster (text)', compute='_compute_load_grid_issues')
     extra = fields.Text(string='Extra')
     reason = fields.Text(string='Label information / probable cause')
     maintenance_inscriptions = fields.Text(string='Preventive maintenance signage (PMB, F24, VSP, ...)')
@@ -313,6 +331,35 @@ class Intake(models.Model):
             if revision_date:
                 r.revision_date = revision_date
 
+    @api.depends('load_grid', 'load_stars')
+    @api.depends_context('lang')
+    def _compute_load_grid_issues(self):
+        # Shown live under the raster while typing. Empty cells are not
+        # shown here; the Complete button lists them.
+        for r in self:
+            grid = lgr.normalize(r.load_grid)
+            if not grid or lgr.is_empty(grid):
+                r.load_grid_summary = False
+                r.load_grid_issues = False
+                r.load_grid_has_errors = False
+                continue
+            r.load_grid_summary = lgr.summary(grid, r.load_stars)
+            _incomplete, errors, warnings = lgr.check(grid, r.load_stars, r.env)
+            items = [('danger', e) for e in errors] + [('warning', w) for w in warnings]
+            r.load_grid_has_errors = bool(errors)
+            r.load_grid_issues = ''.join(
+                '<div class="alert alert-%s py-1 px-2 mb-1 small" role="alert">%s</div>'
+                % (kind, html_escape(message)) for kind, message in items) or False
+
+    def _get_load_grid_problems(self):
+        """Messages that block the completion of the inspection."""
+        self.ensure_one()
+        grid = lgr.normalize(self.load_grid)
+        if not grid or lgr.is_empty(grid):
+            return [self._fields['load_grid']._description_string(self.env)]
+        incomplete, errors, _warnings = lgr.check(grid, self.load_stars, self.env)
+        return incomplete + errors
+
     def _get_missing_info(self):
         """Return the labels of the fields and findings that are still empty."""
         self.ensure_one()
@@ -321,6 +368,7 @@ class Intake(models.Model):
             for fname in COMPLETION_FIELDS
             if not self[fname]
         ]
+        missing += self._get_load_grid_problems()
         pending = self.line_ids.filtered(lambda l: l.check_state == 'pending')
         if not self.line_ids:
             missing.append(_('Findings'))
@@ -365,6 +413,8 @@ class Intake(models.Model):
                 raise UserError(_('Dossier is closed or cancelled.'))
             if vals.get('state', 'draft') != 'draft' or vals.get('recorded_by') or vals.get('recorded_at'):
                 raise UserError(_('Use the workflow buttons.'))
+            if vals.get('load_grid'):
+                vals['load_grid'] = lgr.normalize(vals['load_grid'])
             vals['line_ids'] = [Command.create({'section': s, 'component': c._source, 'code': code, 'sequence': i * 10})
                                 for i, (s, c, code) in enumerate(ROWS, 1)]
         reports = super().create(vals_list)
@@ -384,6 +434,8 @@ class Intake(models.Model):
         if {'state', 'recorded_by', 'recorded_at', 'inspection_id'} & set(vals):
             raise UserError(_('Use the workflow buttons; the linked inspection cannot be changed.'))
         self._check_editable()
+        if vals.get('load_grid'):
+            vals = dict(vals, load_grid=lgr.normalize(vals['load_grid']))
         if INPUT_FIELDS & set(vals):
             self._mark_in_progress()
         res = super().write(vals)

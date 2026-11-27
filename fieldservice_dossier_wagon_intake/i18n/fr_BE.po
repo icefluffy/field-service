@@ -371,36 +371,6 @@ msgid "Last Updated on"
 msgstr "Mis à jour le"
 
 #. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_notes
-msgid "Load limit raster  - additions / remarks"
-msgstr "Grille de limites de charge - compléments / remarques"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_a
-msgid "Load limit raster  A"
-msgstr "Grille de limites de charge A"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_b
-msgid "Load limit raster  B"
-msgstr "Grille de limites de charge B"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_c
-msgid "Load limit raster  C"
-msgstr "Grille de limites de charge C"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_d
-msgid "Load limit raster  D"
-msgstr "Grille de limites de charge D"
-
-#. module: fieldservice_dossier_wagon_intake
-#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_e
-msgid "Load limit raster  E"
-msgstr "Grille de limites de charge E"
-
-#. module: fieldservice_dossier_wagon_intake
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake_line__section__maintenance
 msgid "Maintenance / overhaul (9)"
 msgstr "Entretien / révision (9)"
@@ -1055,3 +1025,300 @@ msgstr "Partagé avec le code UIC du wagon et ses autres formulaires."
 #: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__tare_kg
 msgid "Shared with the wagon's tare and its other forms."
 msgstr "Partagé avec la tare du wagon et ses autres formulaires."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "120 km/h empty only"
+msgstr "120 km/h à vide uniquement"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "90 (90 km/h)"
+msgstr "90 (90 km/h)"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Add speed row"
+msgstr "Ajouter une ligne de vitesse"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Done merging"
+msgstr "Fusion terminée"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid
+msgid ""
+"Line categories (columns), speed rows and the maximum load in tonnes, as "
+"shown on the plate. Merged cells hold one value."
+msgstr ""
+"Catégories de ligne (colonnes), lignes de vitesse et charge maximale en "
+"tonnes, comme sur la plaque. Les cellules fusionnées ont une seule valeur."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid_has_errors
+msgid "Load Grid Has Errors"
+msgstr "La grille de limites de charge contient des erreurs"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid
+msgid "Load limit raster"
+msgstr "Grille de limites de charge"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid_summary
+msgid "Load limit raster (text)"
+msgstr "Grille de limites de charge (texte)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_notes
+msgid "Load limit raster - additions / remarks"
+msgstr "Grille de limites de charge - compléments / remarques"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_grid_issues
+msgid "Load limit raster checks"
+msgstr "Contrôles de la grille de limites de charge"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: %(col)s: row \"%(fast_row)s\" (%(fast)s) is higher than "
+"the slower row \"%(slow_row)s\" (%(slow)s). A higher speed cannot carry "
+"more."
+msgstr ""
+"Grille de limites de charge : %(col)s : la ligne « %(fast_row)s » (%(fast)s)"
+" est plus élevée que la ligne plus lente « %(slow_row)s » (%(slow)s). Une "
+"vitesse plus élevée ne peut pas porter plus."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid "Load limit raster: add at least one speed row."
+msgstr "Grille de limites de charge : ajoutez au moins une ligne de vitesse."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: choose the line categories (A, B, C, ...) shown on the "
+"plate."
+msgstr ""
+"Grille de limites de charge : choisissez les catégories de ligne (A, B, C, "
+"...) indiquées sur la plaque."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid "Load limit raster: row \"%(row)s\" appears twice."
+msgstr ""
+"Grille de limites de charge : la ligne « %(row)s » apparaît deux fois."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid "Load limit raster: row \"%(row)s\" has no value for %(cols)s."
+msgstr ""
+"Grille de limites de charge : la ligne « %(row)s » n'a pas de valeur pour "
+"%(cols)s."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: row \"%(row)s\" is not a valid speed (no letter, 90, S, "
+"SS or a number in km/h)."
+msgstr ""
+"Grille de limites de charge : la ligne « %(row)s » n'est pas une vitesse "
+"valide (pas de lettre, 90, S, SS ou un nombre en km/h)."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: row \"%(row)s\", %(col)s: %(value)s is not a possible "
+"load (0 to 200 t)."
+msgstr ""
+"Grille de limites de charge : ligne « %(row)s », %(col)s : %(value)s n'est "
+"pas une charge possible (0 à 200 t)."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: row \"%(row)s\": %(high)s (%(hv)s) is lower than %(low)s "
+"(%(lv)s). A higher line category cannot carry less."
+msgstr ""
+"Grille de limites de charge : ligne « %(row)s » : %(high)s (%(hv)s) est "
+"inférieure à %(low)s (%(lv)s). Une catégorie de ligne plus élevée ne peut "
+"pas porter moins."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-python
+#: code:addons/fieldservice_dossier_wagon_intake/models/load_grid.py:0
+msgid ""
+"Load limit raster: the stars say the brake is not approved for %(kmh)s km/h,"
+" but row \"%(row)s\" allows a load at that speed. Check the stars and the "
+"rows."
+msgstr ""
+"Grille de limites de charge : selon les étoiles, le frein n'est pas "
+"homologué pour %(kmh)s km/h, mais la ligne « %(row)s » autorise une charge à"
+" cette vitesse. Vérifiez les étoiles et les lignes."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid ""
+"Loads in tonnes. – = 80 km/h, 90 = 90 km/h, S = 100 km/h, SS = 120 km/h, "
+"other number = km/h. 0 t = empty only."
+msgstr ""
+"Charges en tonnes. – = 80 km/h, 90 = 90 km/h, S = 100 km/h, SS = 120 km/h, "
+"autre nombre = km/h. 0 t = à vide uniquement."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Merge cells"
+msgstr "Fusionner des cellules"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Merge with the next cell"
+msgstr "Fusionner avec la cellule suivante"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "No load limit raster recorded."
+msgstr "Aucune grille de limites de charge saisie."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__0
+msgid "No stars"
+msgstr "Pas d'étoiles"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "Other speed (km/h)"
+msgstr "Autre vitesse (km/h)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_photo
+msgid "Photo of the load limit raster"
+msgstr "Photo de la grille de limites de charge"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Remove this row"
+msgstr "Supprimer cette ligne"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "S (100 km/h)"
+msgstr "S (100 km/h)"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "SS (120 km/h)"
+msgstr "SS (120 km/h)"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Speed"
+msgstr "Vitesse"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Split this cell"
+msgstr "Scinder cette cellule"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_stars
+msgid ""
+"Stars after the raster: the wagon runs well enough for a higher speed, but "
+"its brake is not approved for it."
+msgstr ""
+"Étoiles à côté de la grille : le wagon roule assez bien pour une vitesse "
+"plus élevée, mais son frein n'est pas homologué pour celle-ci."
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_wagon_intake__load_stars
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
+msgid "Stars next to the raster"
+msgstr "Étoiles à côté de la grille"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Tap"
+msgstr "Touchez"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "Tap the line categories shown on the plate:"
+msgstr "Touchez les catégories de ligne indiquées sur la plaque :"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "km/h"
+msgstr "km/h"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "t"
+msgstr "t"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "to merge a cell with the next one,"
+msgstr "pour fusionner une cellule avec la suivante,"
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.xml:0
+msgid "to split it again."
+msgstr "pour la scinder à nouveau."
+
+#. module: fieldservice_dossier_wagon_intake
+#. odoo-javascript
+#: code:addons/fieldservice_dossier_wagon_intake/static/src/load_grid/load_grid_field.js:0
+msgid "– (80 km/h)"
+msgstr "– (80 km/h)"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__1
+msgid "★ Technically suitable for 100 km/h, brake not designed for S traffic"
+msgstr "★ Techniquement apte à 100 km/h, frein non conçu pour le régime S"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__2
+msgid ""
+"★★ Technically suitable for 120 km/h, brake not designed for SS traffic"
+msgstr "★★ Techniquement apte à 120 km/h, frein non conçu pour le régime SS"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__load_stars__3
+msgid ""
+"★★★ Technically suitable for 120 km/h, brake not designed for SS traffic; "
+"automatic load-dependent braking required"
+msgstr ""
+"★★★ Techniquement apte à 120 km/h, frein non conçu pour le régime SS ; "
+"freinage automatique en fonction de la charge requis"

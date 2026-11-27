@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="fieldservice_dossier_wagon_intake.LoadGridField">
+        <div class="o_fsm_load_grid" t-att-class="{ 'o_fsm_lg_merge_mode': state.mergeMode }">
+            <!-- Line categories on the plate (columns). -->
+            <div t-if="!props.readonly" class="o_fsm_lg_categories mb-2">
+                <div class="small text-muted mb-1">Tap the line categories shown on the plate:</div>
+                <div class="d-flex flex-wrap gap-1 align-items-center">
+                    <t t-foreach="classicCategories" t-as="cat" t-key="cat">
+                        <button type="button" class="btn btn-sm o_fsm_lg_chip"
+                                t-att-class="isSelected(cat) ? 'btn-dark' : 'btn-outline-secondary'"
+                                t-att-aria-pressed="isSelected(cat) ? 'true' : 'false'"
+                                t-on-click="() => this.toggleCategory(cat)" t-esc="cat"/>
+                    </t>
+                    <span class="text-muted mx-1">|</span>
+                    <t t-foreach="enCategories" t-as="cat" t-key="cat">
+                        <button type="button" class="btn btn-sm o_fsm_lg_chip"
+                                t-att-class="isSelected(cat) ? 'btn-dark' : 'btn-outline-secondary'"
+                                t-att-aria-pressed="isSelected(cat) ? 'true' : 'false'"
+                                t-on-click="() => this.toggleCategory(cat)" t-esc="cat"/>
+                    </t>
+                </div>
+            </div>
+
+            <div t-if="isEmpty" class="text-muted fst-italic">
+                <t t-if="props.readonly">No load limit raster recorded.</t>
+            </div>
+
+            <!-- The plate itself. -->
+            <div t-else="" class="o_fsm_lg_scroll">
+                <table class="o_fsm_lg_plate">
+                    <thead>
+                        <tr>
+                            <th class="o_fsm_lg_corner"/>
+                            <t t-foreach="headerCells" t-as="cell" t-key="cell.start">
+                                <th t-att-colspan="cell.span" class="o_fsm_lg_head">
+                                    <span t-esc="cell.label"/>
+                                    <t t-if="state.mergeMode and !props.readonly">
+                                        <button t-if="cell.span > 1" type="button"
+                                                class="btn btn-sm btn-light o_fsm_lg_split"
+                                                title="Split this cell"
+                                                t-on-click="() => this.split('header', cell)">
+                                            <i class="fa fa-chain-broken"/>
+                                        </button>
+                                        <button t-if="cell.end &lt; grid.columns.length" type="button"
+                                                class="btn btn-sm btn-primary o_fsm_lg_join"
+                                                title="Merge with the next cell"
+                                                t-on-click="() => this.joinRight('header', cell.end)">
+                                            <i class="fa fa-link"/>
+                                        </button>
+                                    </t>
+                                </th>
+                            </t>
+                            <th t-if="!props.readonly" class="o_fsm_lg_actions"/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="rows" t-as="row" t-key="row.index">
+                            <th class="o_fsm_lg_speed">
+                                <t t-if="props.readonly"><span t-esc="speedLabel(row.speed)"/></t>
+                                <t t-else="">
+                                    <!-- Looks like the letter on the plate; tapping it opens
+                                         the list of speeds. -->
+                                    <div class="o_fsm_lg_speed_pick">
+                                        <span class="o_fsm_lg_speed_label" t-esc="row.isPreset ? (row.speed || '–') : 'km/h'"/>
+                                        <i class="fa fa-caret-down ms-1 text-muted"/>
+                                        <select t-on-change="(ev) => this.onSpeedSelect(row.index, ev)"
+                                                aria-label="Speed" title="Speed">
+                                            <t t-foreach="speedChoices" t-as="choice" t-key="choice.value">
+                                                <option t-att-value="choice.value"
+                                                        t-att-selected="row.isPreset ? choice.value === row.speed : choice.value === 'other'"
+                                                        t-esc="choice.label"/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <input t-if="!row.isPreset" type="number" inputmode="numeric" min="1" max="200"
+                                           class="form-control form-control-sm mt-1 o_fsm_lg_kmh"
+                                           t-att-value="row.speed" aria-label="km/h"
+                                           t-on-change="(ev) => this.onSpeedNumber(row.index, ev)"/>
+                                </t>
+                            </th>
+                            <t t-foreach="row.cells" t-as="cell" t-key="cell.start">
+                                <td t-att-colspan="cell.span" class="o_fsm_lg_cell">
+                                    <t t-if="props.readonly or state.mergeMode">
+                                        <span t-esc="displayValue(cell.value)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="o_fsm_lg_input_wrap">
+                                            <input type="text" inputmode="decimal"
+                                                   class="form-control form-control-sm text-center"
+                                                   t-att-value="formatValue(cell.value)"
+                                                   t-att-aria-label="grid.columns.slice(cell.start, cell.end).join(' ')"
+                                                   t-on-change="(ev) => this.onCellChange(row.index, cell, ev)"/>
+                                            <span class="o_fsm_lg_unit">t</span>
+                                        </div>
+                                    </t>
+                                    <t t-if="state.mergeMode and !props.readonly">
+                                        <button t-if="cell.span > 1" type="button"
+                                                class="btn btn-sm btn-light o_fsm_lg_split"
+                                                title="Split this cell"
+                                                t-on-click="() => this.split(row.index, cell)">
+                                            <i class="fa fa-chain-broken"/>
+                                        </button>
+                                        <button t-if="cell.end &lt; grid.columns.length" type="button"
+                                                class="btn btn-sm btn-primary o_fsm_lg_join"
+                                                title="Merge with the next cell"
+                                                t-on-click="() => this.joinRight(row.index, cell.end)">
+                                            <i class="fa fa-link"/>
+                                        </button>
+                                    </t>
+                                </td>
+                            </t>
+                            <td t-if="!props.readonly" class="o_fsm_lg_actions">
+                                <button type="button" class="btn btn-sm btn-link text-danger"
+                                        title="Remove this row"
+                                        t-on-click="() => this.removeRow(row.index)">
+                                    <i class="fa fa-trash"/>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div t-if="!isEmpty" class="small text-muted mt-1">
+                Loads in tonnes. – = 80 km/h, 90 = 90 km/h, S = 100 km/h, SS = 120 km/h, other number = km/h. 0 t = empty only.
+            </div>
+            <div t-if="!props.readonly and !isEmpty" class="d-flex flex-wrap gap-2 mt-2">
+                <button type="button" class="btn btn-sm btn-secondary" t-on-click="() => this.addRow()">
+                    <i class="fa fa-plus me-1"/>Add speed row
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary" t-on-click="() => this.addEmptyOnlyRow()">
+                    <i class="fa fa-plus me-1"/>120 km/h empty only
+                </button>
+                <button type="button" class="btn btn-sm"
+                        t-att-class="state.mergeMode ? 'btn-primary' : 'btn-outline-primary'"
+                        t-on-click="() => this.toggleMergeMode()">
+                    <i class="fa fa-link me-1"/>
+                    <t t-if="state.mergeMode">Done merging</t>
+                    <t t-else="">Merge cells</t>
+                </button>
+            </div>
+            <div t-if="state.mergeMode and !props.readonly" class="small text-muted mt-1">
+                Tap <i class="fa fa-link"/> to merge a cell with the next one, <i class="fa fa-chain-broken"/> to split it again.
+            </div>
+        </div>
+    </t>
+</templates>
