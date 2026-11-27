@@ -23,7 +23,8 @@ jobs:
             name: test with Odoo
     services:
       postgres:
-        image: postgres:12.0
+        # PostGIS for fieldservice_geoengine (same image as OCA/geospatial 18.0)
+        image: postgis/postgis:13-3.4
         env:
           POSTGRES_USER: odoo
           POSTGRES_PASSWORD: odoo
