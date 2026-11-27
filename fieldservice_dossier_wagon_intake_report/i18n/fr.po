@@ -1,0 +1,207 @@
+#
+msgid ""
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model:ir.actions.report,print_report_name:fieldservice_dossier_wagon_intake_report.action_report_wagon_intake
+msgid ""
+"'%s - %s' % (object.equipment_id.name or '', object.inspection_date or '')"
+msgstr ""
+"'%s - %s' % (object.equipment_id.name or '', object.inspection_date or '')"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid ""
+"(9): preventive maintenance / overhauls, painting, inscriptions, testing"
+msgstr ""
+"(9) : maintenance préventive / révisions, peinture, inscriptions, essais"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Brake (5): mechanical and pneumatic brake"
+msgstr "Frein (5) : frein mécanique et pneumatique"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Brake block type / size"
+msgstr "Type / dimension de sabot de frein"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Brake inscription"
+msgstr "Inscription de frein"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Buffing and draw gear (6): buffer, screw coupling, draw hook"
+msgstr ""
+"Organes de choc et de traction (6) : tampon, attelage à vis, crochet de "
+"traction"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Conclusion"
+msgstr "Conclusion"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Customer type"
+msgstr "Type de client"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Date"
+msgstr "Date"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "Defect"
+msgstr "Défaut"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Extra"
+msgstr "Extra"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Findings"
+msgstr "Constatations"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "Group / Code"
+msgstr "Groupe / code"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Handbrake"
+msgstr "Frein à main"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model:ir.actions.report,name:fieldservice_dossier_wagon_intake_report.action_report_wagon_intake
+msgid "Inbound inspection"
+msgstr "Contrôle d'entrée"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Inbound inspection - wagons with box, body, hood"
+msgstr "Contrôle d'entrée - wagons à caisse, tombereau, bâche"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model:ir.model,name:fieldservice_dossier_wagon_intake_report.model_fsm_wagon_intake
+msgid "Inbound wagon inspection"
+msgstr "Contrôle d'entrée du wagon"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Keeper"
+msgstr "Détenteur"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Label information / probable cause"
+msgstr "Informations de l'étiquette / cause probable"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Load limit raster"
+msgstr "Grille de limites de charge"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "N/A"
+msgstr "S.O."
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Not completed - empty fields are not filled in yet."
+msgstr "Non terminé - les champs vides ne sont pas encore remplis."
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "OK"
+msgstr "OK"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Overhaul wagon: VPI base plate / overhaul plates present?"
+msgstr "Wagon révisé : plaque de base VPI / plaques de révision présentes ?"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Performed by"
+msgstr "Exécutant"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Preventive maintenance signage (PMB, F24, VSP, ...)"
+msgstr "Marquages de maintenance préventive (PMB, F24, VSP, ...)"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.intake_form_print
+msgid "Print preview"
+msgstr "Aperçu avant impression"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "Quantity"
+msgstr "Nombre"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Remarks"
+msgstr "Remarques"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Revision frame / REV"
+msgstr "Cadre de révision / REV"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Revision: 02 - Date: 06/05/24"
+msgstr "Révision : 02 - Date : 06/05/24"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Running gear (2): wheelsets, suspension, bogies"
+msgstr "Organes de roulement (2) : essieux montés, suspension, bogies"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Superstructure (4): box, open wagon, sliding roof, hood, tilting roof"
+msgstr ""
+"Superstructure (4) : caisse, tombereau, toit coulissant, bâche, toit "
+"basculant"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Tare (kg)"
+msgstr "Tare (kg)"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "UIC"
+msgstr "UIC"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Wagon"
+msgstr "Wagon"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid ""
+"Wagon frame (3): frame, connection of bogies, load securing, footboards"
+msgstr "Châssis (3) : châssis, liaison des bogies, arrimage, marchepieds"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "kN"
+msgstr "kN"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "t"
+msgstr "t"

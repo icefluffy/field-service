@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="intake_form_print" model="ir.ui.view">
+        <field name="name">fsm.wagon.intake.form.print</field>
+        <field name="model">fsm.wagon.intake</field>
+        <field name="inherit_id" ref="fieldservice_dossier_wagon_intake.intake_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/field[@name='state']" position="before">
+                <button name="action_print_preview" string="Print preview" type="object" icon="fa-print"/>
+            </xpath>
+            <!-- Also at the bottom of the sheet: on phones Odoo moves header
+                 buttons into the gear menu. Available in every state. -->
+            <xpath expr="//sheet" position="inside">
+                <div class="mt-2 mb-2 d-grid d-md-block">
+                    <button name="action_print_preview" string="Print preview" type="object"
+                            icon="fa-print" class="btn btn-secondary"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

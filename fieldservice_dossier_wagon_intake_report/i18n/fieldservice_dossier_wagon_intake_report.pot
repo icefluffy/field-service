@@ -1,0 +1,214 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fieldservice_dossier_wagon_intake_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-27 16:37+0000\n"
+"PO-Revision-Date: 2026-11-27 16:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model:ir.actions.report,print_report_name:fieldservice_dossier_wagon_intake_report.action_report_wagon_intake
+msgid ""
+"'%s - %s' % (object.equipment_id.name or '', object.inspection_date or '')"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid ""
+"(9): preventive maintenance / overhauls, painting, inscriptions, testing"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Brake (5): mechanical and pneumatic brake"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Brake block type / size"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Brake inscription"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Buffing and draw gear (6): buffer, screw coupling, draw hook"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Conclusion"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Customer type"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Date"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "Defect"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Extra"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Findings"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "Group / Code"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Handbrake"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model:ir.actions.report,name:fieldservice_dossier_wagon_intake_report.action_report_wagon_intake
+msgid "Inbound inspection"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Inbound inspection - wagons with box, body, hood"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model:ir.model,name:fieldservice_dossier_wagon_intake_report.model_fsm_wagon_intake
+msgid "Inbound wagon inspection"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Keeper"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Label information / probable cause"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Load limit raster"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "N/A"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Not completed - empty fields are not filled in yet."
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "OK"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Overhaul wagon: VPI base plate / overhaul plates present?"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Performed by"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Preventive maintenance signage (PMB, F24, VSP, ...)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.intake_form_print
+msgid "Print preview"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_section
+msgid "Quantity"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Remarks"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Revision frame / REV"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Revision: 02 - Date: 06/05/24"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Running gear (2): wheelsets, suspension, bogies"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Superstructure (4): box, open wagon, sliding roof, hood, tilting roof"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Tare (kg)"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "UIC"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "Wagon"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid ""
+"Wagon frame (3): frame, connection of bogies, load securing, footboards"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "kN"
+msgstr ""
+
+#. module: fieldservice_dossier_wagon_intake_report
+#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake_report.report_wagon_intake_document
+msgid "t"
+msgstr ""

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- One section of findings, in two columns as on the paper form:
+         Group / Code, Defect, Quantity. Blank while not assessed. -->
+    <template id="report_wagon_intake_section">
+        <table class="mt">
+            <tr><td colspan="8" class="sec" t-out="title"/></tr>
+            <tr>
+                <th colspan="2" style="width: 24%;">Group / Code</th>
+                <th style="width: 20%;">Defect</th>
+                <th class="c" style="width: 6%;">Quantity</th>
+                <th colspan="2" style="width: 24%;">Group / Code</th>
+                <th style="width: 20%;">Defect</th>
+                <th class="c" style="width: 6%;">Quantity</th>
+            </tr>
+            <t t-foreach="o.report_section_rows(section)" t-as="pair">
+                <tr>
+                    <t t-foreach="pair" t-as="l">
+                        <t t-if="l">
+                            <td class="lbl comp" t-out="l.component"/>
+                            <td class="small code" t-out="l.code or ''"/>
+                            <td class="val">
+                                <t t-if="l.check_state == 'defect'"><b t-out="l.defect or ''"/></t>
+                                <t t-elif="l.check_state == 'ok'">OK</t>
+                                <t t-elif="l.check_state == 'na'">N/A</t>
+                                <t t-if="l.note"><br t-if="l.check_state != 'pending'"/><span class="small" t-out="l.note"/></t>
+                            </td>
+                            <td class="val c" t-out="l.quantity if l.check_state == 'defect' and l.quantity else ''"/>
+                        </t>
+                        <t t-else=""><td/><td/><td/><td/></t>
+                    </t>
+                </tr>
+            </t>
+            <t t-out="0"/>
+        </table>
+    </template>
+
+    <template id="report_wagon_intake_document">
+        <t t-set="o" t-value="o.with_context(lang=o.inspector_id.lang or o.env.user.lang)"/>
+        <t t-set="grid" t-value="o.report_load_grid()"/>
+        <div class="page o_wik">
+            <style>
+                .o_wik { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: #000; }
+                .o_wik table { width: 100%; border-collapse: collapse; page-break-inside: avoid; }
+                .o_wik td, .o_wik th { border: 1px solid #000; padding: 1px 3px; vertical-align: middle; }
+                .o_wik th { font-size: 7.5pt; font-weight: bold; text-align: left; background: #f2f2f2; }
+                .o_wik .lbl { font-weight: bold; }
+                .o_wik .val { font-family: "Courier New", monospace; font-size: 9pt; }
+                .o_wik .c { text-align: center; }
+                .o_wik .r { text-align: right; }
+                .o_wik .small { font-size: 7pt; }
+                .o_wik .title { font-size: 13pt; font-weight: bold; text-align: center; }
+                .o_wik .sec { font-weight: bold; text-align: center; background: #e6e6e6; font-size: 8pt; }
+                .o_wik .noborder td { border: none; }
+                .o_wik .mt { margin-top: 3px; }
+                .o_wik .grid td, .o_wik .grid th { text-align: center; min-width: 28px; }
+                .o_wik .draft { border: 2px solid #c60; color: #c60; padding: 3px 6px; margin-bottom: 4px; font-weight: bold; }
+                .o_wik .comp { width: 19%; font-size: 7.5pt; }
+                .o_wik .code { width: 5%; white-space: nowrap; }
+                .o_wik .box { min-height: 30px; white-space: pre-wrap; }
+                .o_wik tr { page-break-inside: avoid; }
+            </style>
+            <!-- Not completed: say so, the print may be partly empty. -->
+            <div class="draft" t-if="o.state != 'done'">
+                <div>Not completed - empty fields are not filled in yet.</div>
+                <div t-out="dict(o._fields['state']._description_selection(o.env)).get(o.state)"/>
+            </div>
+            <!-- Title block -->
+            <table>
+                <tr>
+                    <td class="c" style="width: 20%;">
+                        <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 30px; max-width: 120px;"/>
+                        <div t-else="" class="lbl" t-out="o.company_id.name"/>
+                    </td>
+                    <td class="title" style="width: 60%;">Inbound inspection - wagons with box, body, hood</td>
+                    <td class="c lbl" style="width: 20%;" t-out="'FG04-01_90-01.04'"/>
+                </tr>
+            </table>
+            <!-- Wagon header -->
+            <table class="mt">
+                <tr>
+                    <td class="lbl" style="width: 13%;">Date</td>
+                    <td class="val" style="width: 37%;" t-out="o.inspection_date" t-options="{'widget': 'date'}"/>
+                    <td class="lbl" style="width: 13%;">Performed by</td>
+                    <td class="val" style="width: 37%;" t-out="o.inspector_id.name or ''"/>
+                </tr>
+                <tr>
+                    <td class="lbl">Wagon</td>
+                    <td class="val" t-out="o.equipment_id.name or ''"/>
+                    <td class="lbl">Keeper</td>
+                    <td class="val" t-out="o.keeper_id.name or o.holder_mark or ''"/>
+                </tr>
+                <tr>
+                    <td class="lbl">Revision frame / REV</td>
+                    <td class="val">
+                        <t t-out="o.revision_mark or ''"/>
+                        <t t-if="o.revision_date"> (<t t-out="o.revision_date" t-options="{'widget': 'date'}"/>)</t>
+                    </td>
+                    <td class="lbl">Brake inscription</td>
+                    <td class="val" t-out="o.brake_inscription or ''"/>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="lbl" style="width: 6%;">UIC</td>
+                    <td class="val" style="width: 16%;" t-out="o.uic or ''"/>
+                    <td class="lbl" style="width: 11%;">Customer type</td>
+                    <td class="val" style="width: 14%;" t-out="o.customer_type or ''"/>
+                    <td class="lbl" style="width: 8%;">Tare (kg)</td>
+                    <td class="val r" style="width: 10%;" t-out="o.report_number('tare_kg')"/>
+                    <td class="lbl" style="width: 9%;">Handbrake</td>
+                    <td class="val r" style="width: 9%;"><t t-out="o.report_number('handbrake_t')"/> t</td>
+                    <td class="val r" style="width: 9%;"><t t-out="o.report_number('handbrake_kn')"/> kN</td>
+                    <td class="val r" style="width: 8%;"><t t-out="o.report_number('handbrake_percent')"/> %</td>
+                </tr>
+            </table>
+            <!-- Load limit raster, as on the plate, with Extra next to it -->
+            <table class="mt">
+                <tr>
+                    <td t-att-style="'width: %s; vertical-align: top;' % ('60%' if o.load_photo else '80%')">
+                        <div class="lbl">Load limit raster</div>
+                        <t t-if="grid">
+                            <table class="grid mt">
+                                <tr>
+                                    <th/>
+                                    <t t-foreach="grid['header']" t-as="h">
+                                        <th t-att-colspan="h[1]" t-out="h[0]"/>
+                                    </t>
+                                </tr>
+                                <tr t-foreach="grid['rows']" t-as="row">
+                                    <td class="lbl" t-out="row['speed']"/>
+                                    <t t-foreach="row['cells']" t-as="cell">
+                                        <td class="val" t-att-colspan="cell[1]" t-out="cell[0]"/>
+                                    </t>
+                                </tr>
+                            </table>
+                            <div t-if="grid['stars']" class="mt" t-out="grid['stars']"/>
+                        </t>
+                        <div t-else="" class="box"/>
+                        <div t-if="o.load_notes" class="mt small" style="white-space: pre-wrap;" t-out="o.load_notes"/>
+                    </td>
+                    <td t-if="o.load_photo" style="width: 20%; vertical-align: top;" class="c">
+                        <img t-att-src="image_data_uri(o.load_photo)" style="max-height: 110px; max-width: 100%;"/>
+                    </td>
+                    <td style="width: 20%; vertical-align: top;">
+                        <div class="lbl">Extra</div>
+                        <div class="val box" t-out="o.extra or ''"/>
+                    </td>
+                </tr>
+            </table>
+            <table class="mt">
+                <tr>
+                    <td class="lbl" style="width: 30%;">Label information / probable cause</td>
+                    <td class="val" style="width: 70%; white-space: pre-wrap;" t-out="o.reason or ''"/>
+                </tr>
+                <tr>
+                    <td class="lbl">Preventive maintenance signage (PMB, F24, VSP, ...)</td>
+                    <td class="val" style="white-space: pre-wrap;" t-out="o.maintenance_inscriptions or ''"/>
+                </tr>
+                <tr>
+                    <td class="lbl">Overhaul wagon: VPI base plate / overhaul plates present?</td>
+                    <td class="val" t-out="dict(o._fields['revision_plates']._description_selection(o.env)).get(o.revision_plates, '')"/>
+                </tr>
+            </table>
+            <div class="mt lbl">Findings</div>
+            <t t-call="fieldservice_dossier_wagon_intake_report.report_wagon_intake_section">
+                <t t-set="section" t-value="'running'"/>
+                <t t-set="title">Running gear (2): wheelsets, suspension, bogies</t>
+            </t>
+            <t t-call="fieldservice_dossier_wagon_intake_report.report_wagon_intake_section">
+                <t t-set="section" t-value="'frame'"/>
+                <t t-set="title">Wagon frame (3): frame, connection of bogies, load securing, footboards</t>
+            </t>
+            <t t-call="fieldservice_dossier_wagon_intake_report.report_wagon_intake_section">
+                <t t-set="section" t-value="'body'"/>
+                <t t-set="title">Superstructure (4): box, open wagon, sliding roof, hood, tilting roof</t>
+            </t>
+            <t t-call="fieldservice_dossier_wagon_intake_report.report_wagon_intake_section">
+                <t t-set="section" t-value="'brake'"/>
+                <t t-set="title">Brake (5): mechanical and pneumatic brake</t>
+                <tr>
+                    <td class="lbl" colspan="2">Brake block type / size</td>
+                    <td class="val" colspan="6" t-out="o.brake_block_type or ''"/>
+                </tr>
+            </t>
+            <t t-call="fieldservice_dossier_wagon_intake_report.report_wagon_intake_section">
+                <t t-set="section" t-value="'coupling'"/>
+                <t t-set="title">Buffing and draw gear (6): buffer, screw coupling, draw hook</t>
+            </t>
+            <t t-call="fieldservice_dossier_wagon_intake_report.report_wagon_intake_section">
+                <t t-set="section" t-value="'maintenance'"/>
+                <t t-set="title">(9): preventive maintenance / overhauls, painting, inscriptions, testing</t>
+            </t>
+            <!-- Remarks and conclusion -->
+            <table class="mt">
+                <tr>
+                    <td style="width: 50%; vertical-align: top;">
+                        <div class="lbl">Remarks</div>
+                        <div class="val box" t-out="o.remarks or ''"/>
+                    </td>
+                    <td style="width: 50%; vertical-align: top;">
+                        <div class="lbl">Conclusion</div>
+                        <div class="val box" t-out="o.outcome_note or ''"/>
+                    </td>
+                </tr>
+            </table>
+            <table class="mt noborder small">
+                <tr>
+                    <td style="width: 40%;">
+                        <t t-out="dict(o._fields['state']._description_selection(o.env)).get(o.state)"/>
+                        <t t-if="o.recorded_at"> - <t t-out="o.recorded_by.name"/>, <t t-out="o.recorded_at" t-options="{'widget': 'datetime'}"/></t>
+                    </td>
+                    <td style="width: 35%;">
+                        <t t-out="o.order_id.name or ''"/><t t-if="o.dossier_id"> / <t t-out="o.dossier_id.display_name"/></t>
+                    </td>
+                    <td class="r" style="width: 25%;">Revision: 02 - Date: 06/05/24</td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="report_wagon_intake">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-call="fieldservice_dossier_wagon_intake_report.report_wagon_intake_document"
+                       t-lang="o.inspector_id.lang or o.env.user.lang"/>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
