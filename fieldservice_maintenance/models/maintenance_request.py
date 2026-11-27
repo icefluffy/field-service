@@ -1,7 +1,7 @@
 # Copyright (C) 2018 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+from odoo import Command, _, api, fields, models
 
 
 class MaintenanceRequest(models.Model):
@@ -38,6 +38,9 @@ class MaintenanceRequest(models.Model):
                     {
                         "type": fsm_order_type.id,
                         "equipment_id": fsm_equipment.id,
+                        # Also fill the equipment list (as OCA 18.0 does);
+                        # equipment_id alone leaves it empty.
+                        "equipment_ids": [Command.set([fsm_equipment.id])],
                         "location_id": fsm_equipment.current_location_id.id,
                         "request_id": request.id,
                         "description": request.description,
