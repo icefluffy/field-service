@@ -59,14 +59,20 @@ class TestUsersHttp(HttpCase, TransactionCase):
             {"name": "Test Loc Partner", "phone": "ABC", "email": "tlp@email.com"}
         )
         # create FSM Location and assign it to different user other than Portal User
-        test_location = self.env["fsm.location"].create(
-            {
-                "name": "Test Location No Portal User",
-                "phone": "123",
-                "email": "tp@email.com",
-                "partner_id": test_loc_partner.id,
-                "owner_id": test_loc_partner.id,
-            }
+        # RSN: fieldservice_account_analytic makes the billed customer
+        # required; it defaults from the context, which is ignored without it.
+        test_location = (
+            self.env["fsm.location"]
+            .with_context(default_customer_id=test_loc_partner.id)
+            .create(
+                {
+                    "name": "Test Location No Portal User",
+                    "phone": "123",
+                    "email": "tp@email.com",
+                    "partner_id": test_loc_partner.id,
+                    "owner_id": test_loc_partner.id,
+                }
+            )
         )
         order = self.env["fsm.order"].create(
             {

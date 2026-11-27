@@ -67,7 +67,8 @@ class TestFSMVehicleStock(TransactionCase):
         cls.product = cls.env["product.product"].create(
             {
                 "name": "Product A",
-                "type": "product",
+                "type": "consu",
+                "is_storable": True,
                 "categ_id": cls.env.ref("product.product_category_all").id,
             }
         )
@@ -152,7 +153,8 @@ class TestFSMVehicleStock(TransactionCase):
         move_line = self.move_out.move_line_ids
         self.assertEqual(move_line.location_dest_id, self.veh_1_loc)
         # confirm the transfer
-        move_line.qty_done = 8.0
+        move_line.quantity = 8.0
+        move_line.picked = True
         self.picking_out._action_done()
         # test moves are done
         self.assertEqual(move_line.state, "done")
@@ -175,7 +177,8 @@ class TestFSMVehicleStock(TransactionCase):
         move_line = self.move_in.move_line_ids
         self.assertEqual(move_line.location_id, self.veh_1_loc)
         # confirm the transfer
-        move_line.qty_done = 8.0
+        move_line.quantity = 8.0
+        move_line.picked = True
         self.picking_in._action_done()
         # test moves are done
         self.assertEqual(move_line.state, "done")

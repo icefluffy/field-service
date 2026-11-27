@@ -99,17 +99,18 @@ class FSMISPAccountCase(TransactionCase):
 
         self.assertEqual(order.account_stage, "review")
 
-        if not order.person_id.partner_id.supplier_rank:
-            with self.assertRaises(ValidationError):
-                order.account_confirm()
-            order.person_id.partner_id.supplier_rank = True
+        # RSN: confirming no longer refuses a worker who is not a supplier
+        # (no vendor bill is made then); make the worker a supplier so the
+        # contractor costs are billed.
+        order.person_id.partner_id.supplier_rank = True
 
         order.account_confirm()
         self.assertEqual(order.account_stage, "confirmed")
 
         bill = self.AccountMove.search(
             [
-                ("fsm_order_ids", "in", order.id),
+                # account.move.fsm_order_ids is not stored (not searchable)
+                ("invoice_line_ids.fsm_order_ids", "in", order.ids),
                 ("move_type", "=", "in_invoice"),
             ]
         )

@@ -93,7 +93,7 @@ class FSMAccountAnalyticCase(TransactionCase):
         cls.product1 = cls.env["product.product"].create(
             {
                 "name": "Product A",
-                "detailed_type": "consu",
+                "type": "consu",
             }
         )
 
@@ -128,7 +128,8 @@ class FSMAccountAnalyticCase(TransactionCase):
         )
         self.assertEqual(
             line.analytic_distribution,
-            {self.test_analytic_account.id: 100},
+            # Odoo 18 stores the account ids as text keys
+            {str(self.test_analytic_account.id): 100.0},
         )
 
     def test_account_move_line_requires_location_analytic_account(self):
@@ -209,6 +210,9 @@ class FSMAccountAnalyticCase(TransactionCase):
 
     def test_partner_name_search_filtered_by_location(self):
         self.env.company.fsm_filter_location_by_contact = True
+        # The filter uses the contact's primary service location.
+        self.test_loc_partner2.service_location_id = self.test_location2
+        self.test_partner.service_location_id = self.test_location
         result = self.env["res.partner"].with_context(
             location_id=self.test_location2.id
         ).name_search(name="Test", operator="ilike", limit=20)

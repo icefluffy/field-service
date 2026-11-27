@@ -77,6 +77,7 @@ class TestFSMActivity(TransactionCase):
             self.get_activity_vals("Activity 3", True, "Ref 3", order_id)
         )
         order2.order_activity_ids.action_done()
+        self._add_timesheet(order2)
         order2.action_complete()
         # Test action_done()
         order.order_activity_ids[0].action_done()
@@ -100,9 +101,30 @@ class TestFSMActivity(TransactionCase):
             order.action_complete()
 
         order.order_activity_ids[2].action_done()
+        self._add_timesheet(order)
         order.action_complete()
         self.assertEqual(
             order.stage_id.id, self.env.ref("fieldservice.fsm_stage_completed").id
+        )
+
+    def _add_timesheet(self, order):
+        """RSN: fieldservice_isp_account (installed with this module on RSN)
+        only completes an order of an employee that has a timesheet."""
+        if "employee_timesheet_ids" not in order._fields:
+            return
+        plan = self.env["account.analytic.plan"].create({"name": "FSM test"})
+        account = self.env["account.analytic.account"].create(
+            {"name": "FSM test", "plan_id": plan.id}
+        )
+        employee = self.env["hr.employee"].create({"name": "Ernest Employee"})
+        self.env["account.analytic.line"].create(
+            {
+                "name": "Work",
+                "employee_id": employee.id,
+                "account_id": account.id,
+                "unit_amount": 1,
+                "fsm_order_id": order.id,
+            }
         )
 
     def get_activity_vals(self, name, required, ref, order_id):

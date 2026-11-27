@@ -5,7 +5,7 @@ from datetime import timedelta
 
 from odoo import Command, fields
 from odoo.exceptions import ValidationError
-from odoo.tests import Form, TransactionCase
+from odoo.tests import TransactionCase
 
 from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
 
@@ -125,17 +125,23 @@ class TestFSMRepairCommon(TransactionCase):
     def test_warning_is_shown_when_type_is_switched_to_not_repair(self):
         order_vals = self._prepare_fsm_order_vals(self.equipment_1)
         order = self.env["fsm.order"].create(order_vals)
-        with Form(order) as form:
-            with self.assertLogs("odoo.tests.form.onchange") as log_catcher:
-                form.type = self.fsm_type
-                self.assertIn(
-                    "The repair orders will be cancelled",
-                    log_catcher.output[0],
-                )
-            with self.assertNoLogs("odoo.tests.form.onchange"):
-                form.type = self.repair_type
+        # RSN: fieldservice_release hides the type on the order form, so the
+        # onchange is called on a draft copy of the order instead of a Form.
+        draft = self.env["fsm.order"].new({"type": self.fsm_type.id}, origin=order)
+        result = draft._onchange_internal_type()
+        self.assertIn(
+            "The repair orders will be cancelled", result["warning"]["message"]
+        )
+        draft.type = self.repair_type
+        self.assertFalse(draft._onchange_internal_type())
+
+    def _skip_if_single_equipment(self):
+        # RSN: fieldservice_activity allows only one equipment per order.
+        if hasattr(type(self.env["fsm.order"]), "_check_single_equipment"):
+            self.skipTest("RSN allows only one equipment per order")
 
     def test_fsm_repair_order_creates_multiple_repairs_for_multiple_equipments(self):
+        self._skip_if_single_equipment()
         order = self.env["fsm.order"].create(
             self._prepare_fsm_order_vals([self.equipment_1, self.equipment_2])
         )
@@ -155,6 +161,7 @@ class TestFSMRepairCommon(TransactionCase):
             self.assertEqual(repair.product_qty, 1)
 
     def test_cancel_all_repairs_when_switching_type_with_multiple_equipments(self):
+        self._skip_if_single_equipment()
         order = self.env["fsm.order"].create(
             self._prepare_fsm_order_vals([self.equipment_1, self.equipment_2])
         )
@@ -180,6 +187,7 @@ class TestFSMRepairCommon(TransactionCase):
         self.assertEqual(action["res_id"], order.repair_ids.id)
 
     def test_action_view_repairs_multiple(self):
+        self._skip_if_single_equipment()
         order = self.env["fsm.order"].create(
             self._prepare_fsm_order_vals([self.equipment_1, self.equipment_2])
         )

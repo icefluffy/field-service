@@ -24,14 +24,16 @@ class TestFSMStockRequest(TestFSMStockCommon):
         cls.product_1 = cls.Product.create(
             {
                 "name": "Product 1",
-                "type": "product",
+                "type": "consu",
+                "is_storable": True,
                 "categ_id": cls.env.ref("product.product_category_all").id,
             }
         )
         cls.product_2 = cls.Product.create(
             {
                 "name": "Product 2",
-                "type": "product",
+                "type": "consu",
+                "is_storable": True,
                 "categ_id": cls.env.ref("product.product_category_all").id,
             }
         )
@@ -314,7 +316,8 @@ class TestFSMStockRequest(TestFSMStockCommon):
         picking.with_user(self.stock_request_manager).action_confirm()
         picking.with_user(self.stock_request_manager).action_assign()
         packout1 = picking.move_line_ids[0]
-        packout1.qty_done = 5
+        packout1.quantity = 5
+        packout1.picked = True
         picking.with_user(self.stock_request_manager)._action_done()
 
     def test_08_stock_request(self):
