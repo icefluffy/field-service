@@ -16,8 +16,12 @@ class TestFSMMaintenance(TransactionCase):
                 "name": "Partner",
             }
         )
-        cls.fsm_loc = cls.env["fsm.location"].create(
-            {"name": "Test Maintenance Location", "owner_id": cls.partner.id}
+        # RSN: fieldservice_account_analytic makes the billed customer
+        # required; it defaults from the context, which is ignored without it.
+        cls.fsm_loc = (
+            cls.env["fsm.location"]
+            .with_context(default_customer_id=cls.partner.id)
+            .create({"name": "Test Maintenance Location", "owner_id": cls.partner.id})
         )
 
     def test_fsm_maintenance(self):
@@ -98,6 +102,10 @@ class TestFSMMaintenance(TransactionCase):
         )
 
         # Deleting the FSM Equipment
+        # RSN: an equipment that is on an order cannot be deleted
+        # (fsm.order.equipment_id is ondelete="restrict"), so the orders of
+        # this test are removed first.
+        (fsm_order_01 | fsm_order_02).unlink()
         fsm_equip_01.unlink()
 
         # Verify the maintenance equipment is no longer an FSM equipment

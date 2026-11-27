@@ -121,14 +121,12 @@ class TestFSMSkill(BaseCommon):
         )
 
         # Create a location for an order
-        cls.location_01 = cls.fsm_location.create(
-            {
-                "name": "Summer's House",
-                "owner_id": cls.env["res.partner"]
-                .create({"name": "Summer's Parents"})
-                .id,
-            }
-        )
+        owner = cls.env["res.partner"].create({"name": "Summer's Parents"})
+        # RSN: fieldservice_account_analytic makes the billed customer
+        # required; it defaults from the context, which is ignored without it.
+        cls.location_01 = cls.fsm_location.with_context(
+            default_customer_id=owner.id
+        ).create({"name": "Summer's House", "owner_id": owner.id})
 
         # Create a category that requires great skills
         cls.category_01_skills = [cls.skill_04.id, cls.skill_05.id, cls.skill_06.id]

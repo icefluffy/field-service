@@ -64,10 +64,22 @@ class TestFSMEquipment(TransactionCase):
             }
         )
 
-    def test_onchange_product(self):
-        equipment = self.equipment
-        equipment._onchange_product()
-        self.assertFalse(equipment.current_stock_location_id)
+    def test_onchange_equipment_serial_number(self):
+        # RSN replaced OCA's _onchange_product (current_stock_location_id is
+        # computed) with a check of the wagon and container numbers.
+        self.assertFalse(self.equipment._onchange_equipment_serial_number())
+        wagon = self.env["product.product"].create(
+            {"name": "Generic Wagon", "type": "consu", "tracking": "serial"}
+        )
+        bad_lot = self.env["stock.lot"].create(
+            {"name": "123", "product_id": wagon.id, "company_id": self.company1.id}
+        )
+        equipment = self.Equipment.new(
+            {"name": "Wagon", "product_id": wagon.id, "lot_id": bad_lot.id}
+        )
+        result = equipment._onchange_equipment_serial_number()
+        self.assertIn("warning", result)
+        self.assertIn("12 digits", result["warning"]["message"])
 
     def test_compute_current_stock_loc_id(self):
         equipment = self.equipment
@@ -80,9 +92,11 @@ class TestFSMEquipment(TransactionCase):
         with Form(self.Equipment, view=view_id) as f:
             f.name = "Test Equipment 1"
             f.current_location_id = self.current_location
-            f.location_id = self.test_location
             f.lot_id = self.lot1
             f.product_id = self.product1
         equipment = f.save()
+        # RSN: location_id is hidden on the equipment form (current location
+        # is used instead), so it is set on the record.
+        equipment.location_id = self.test_location
 
         self.assertEqual(f.id, equipment.lot_id.fsm_equipment_id.id)
