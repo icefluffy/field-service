@@ -1023,7 +1023,6 @@ msgstr "E-mail"
 #. module: fieldservice
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_location__employee
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee
-#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee_id
 msgid "Employee"
 msgstr "Employé"
 
@@ -4071,3 +4070,20 @@ msgstr ""
 #: model:ir.model.fields,field_description:fieldservice.field_fsm_person__invoice_edi_format
 msgid "eInvoice format"
 msgstr "Format de facture électronique"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__employee_id
+msgid "Linked employee"
+msgstr "Employé lié"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__plan_to_change_bike
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__plan_to_change_bike
+msgid "Plan To Change Bike"
+msgstr "Planifier pour changer de vélo"
+
+#. module: fieldservice
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_location__plan_to_change_car
+#: model:ir.model.fields,field_description:fieldservice.field_fsm_person__plan_to_change_car
+msgid "Plan To Change Car"
+msgstr "Planifier pour changer de voiture"

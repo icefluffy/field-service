@@ -1005,9 +1005,7 @@ msgid "Other information"
 msgstr "Autres informations"
 
 #. module: fieldservice_release
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_name
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_user_id
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_name
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_user_id
 msgid "Person responsible for release"
 msgstr "Responsable de la remise en service"
@@ -1428,9 +1426,7 @@ msgstr "Signatures"
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_id
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_name
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_id
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_name
 msgid "Signing technician"
 msgstr "Technicien signataire"
 
@@ -1841,3 +1837,15 @@ msgstr "rsnoperations@rsn.be"
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__smart_search
 msgid "Smart Search"
 msgstr "Recherche intelligente"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_name
+msgid "Person responsible for release (recorded name)"
+msgstr "Responsable de la remise en service (nom enregistré)"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_name
+msgid "Signing technician (recorded name)"
+msgstr "Technicien signataire (nom enregistré)"

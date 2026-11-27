@@ -1005,9 +1005,7 @@ msgid "Other information"
 msgstr "Sonstige Angaben"
 
 #. module: fieldservice_release
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_name
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_user_id
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_name
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_user_id
 msgid "Person responsible for release"
 msgstr "Verantwortliche Person für die Freigabe"
@@ -1427,9 +1425,7 @@ msgstr "Unterschriften"
 
 #. module: fieldservice_release
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_id
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_name
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_id
-#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_name
 msgid "Signing technician"
 msgstr "Unterzeichnender Techniker"
 
@@ -1837,3 +1833,15 @@ msgstr "rsnoperations@rsn.be"
 #: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release_timesheet__smart_search
 msgid "Smart Search"
 msgstr "Intelligente Suche"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_responsible_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_responsible_name
+msgid "Person responsible for release (recorded name)"
+msgstr "Verantwortliche Person für die Freigabe (erfasster Name)"
+
+#. module: fieldservice_release
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_order__release_vg_technician_name
+#: model:ir.model.fields,field_description:fieldservice_release.field_fsm_release__vrijgave_technician_name
+msgid "Signing technician (recorded name)"
+msgstr "Unterzeichnender Techniker (erfasster Name)"

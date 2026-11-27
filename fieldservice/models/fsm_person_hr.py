@@ -4,7 +4,7 @@ from odoo import api, fields, models
 class FSMPerson(models.Model):
     _inherit = 'fsm.person'
 
-    employee_id = fields.Many2one('hr.employee', string='Employee')
+    employee_id = fields.Many2one('hr.employee', string='Linked employee')
 
     @api.onchange('employee_id')
     def _onchange_employee_id(self):

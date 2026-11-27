@@ -49,11 +49,9 @@ class FSMActivity(models.Model):
 
     def _get_assigned_employee(self):
         self.ensure_one()
-        self.check_access_rights("write")
-        self.check_access_rule("write")
+        self.check_access("write")
         order = self.fsm_order_id
-        order.check_access_rights("read")
-        order.check_access_rule("read")
+        order.check_access("read")
         assigned_person = order.person_id
         if not assigned_person:
             raise ValidationError(

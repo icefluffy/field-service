@@ -210,8 +210,10 @@ class FsmRelease(models.Model):
         ('refused', 'No return to service'),
         ('work_only', 'Release limited to executed works'),
     ], string="Return-to-service decision", copy=False)
-    vrijgave_technician_name = fields.Char(string="Signing technician", copy=False)
-    vrijgave_responsible_name = fields.Char(string="Person responsible for release", copy=False)
+    vrijgave_technician_name = fields.Char(string="Signing technician (recorded name)", copy=False)
+    vrijgave_responsible_name = fields.Char(
+        string="Person responsible for release (recorded name)", copy=False
+    )
     vrijgave_technician_signature = fields.Binary(string="Technician signature", copy=False)
     vrijgave_responsible_signature = fields.Binary(string="Responsible person signature", copy=False)
     vrijgave_unrestricted_remarks = fields.Text(string="Unrestricted decision remarks", copy=False)
@@ -319,9 +321,7 @@ class FsmRelease(models.Model):
         if self.env.context.get("skip_vrijgave_autofill"):
             return
 
-        if not self.check_access_rights(
-            "write", raise_exception=False
-        ):
+        if not self.browse().has_access("write"):
             return
 
         for release in self.sorted("id"):
@@ -329,7 +329,7 @@ class FsmRelease(models.Model):
                 continue
 
             try:
-                release.check_access_rule("write")
+                release.check_access("write")
             except AccessError:
                 continue
 

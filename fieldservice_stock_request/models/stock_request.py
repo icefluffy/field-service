@@ -69,8 +69,16 @@ class StockRequest(models.Model):
             res.update({"fsm_order_id": vals["fsm_order_id"]})
         return res
 
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            self._prepare_fsm_stock_request_vals(vals)
+        return super().create(vals_list)
+
     @api.model
-    def create(self, vals):
+    def _prepare_fsm_stock_request_vals(self, vals):
+        """Link a stock request made from an FSM order to its stock
+        request order (found or created). Updates vals in place."""
         if "fsm_order_id" in vals and vals["fsm_order_id"]:
             fsm_order = self.env["fsm.order"].browse(vals["fsm_order_id"])
             fsm_order.request_stage = "draft"
@@ -135,7 +143,6 @@ class StockRequest(models.Model):
             elif len(order) == 1 and vals.get("fsm_order_id"):
                 vals["expected_date"] = order.expected_date
                 vals["order_id"] = order.id
-        return super().create(vals)
 
     def _prepare_procurement_values(self, group_id=False):
         res = super()._prepare_procurement_values(group_id=group_id)
