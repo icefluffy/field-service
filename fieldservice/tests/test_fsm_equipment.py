@@ -28,8 +28,10 @@ class FSMEquipment(TransactionCase):
         with Form(self.Equipment, view=view_id) as f:
             f.name = "Equipment 1"
             f.current_location_id = self.current_location
-            f.location_id = self.test_location
         equipment = f.save()
+        # RSN: location_id is hidden on the equipment form (current location
+        # is used instead), so it is set on the record.
+        equipment.location_id = self.test_location
         # Test onchange location
         self.assertEqual(self.test_territory, equipment.territory_id)
         self.assertEqual(self.test_branch, equipment.branch_id)

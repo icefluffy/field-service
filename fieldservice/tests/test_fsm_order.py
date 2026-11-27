@@ -172,9 +172,10 @@ class TestFSMOrder(TransactionCase):
         with Form(self.env["fsm.equipment"], view=view_id) as f:
             f.name = "Equipment 1"
             f.current_location_id = self.test_location
-            f.location_id = self.test_location
             f.notes = "test"
         equipment = f.save()
+        # RSN: location_id is hidden on the equipment form.
+        equipment.location_id = self.test_location
         order3 = self.Order.create(
             {
                 "location_id": self.test_location.id,
