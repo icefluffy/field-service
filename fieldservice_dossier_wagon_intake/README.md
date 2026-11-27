@@ -14,7 +14,9 @@ other inspection types reports that it is not applicable. Alternatively open
 Inspection Overview, open the Ingangskeuring record, then Open Ingangskeuring.
 Link that inspection to the appropriate FSM order; its Ingangskeuring button opens
 the same report. The work order button is only visible on the work order that is
-linked to the Ingangskeuring line. One report is allowed per dossier inspection.
+linked to the Ingangskeuring line. It sits at the top of the work order, above
+the title (also on phones, where Odoo hides header buttons in the gear menu): orange
+while the inspection is not completed, green once it is. One report is allowed per dossier inspection.
 There is no Start button: as soon as one field or finding is filled in and saved,
 the report moves from Niet gestart to In uitvoering (dossier line In progress).
 An inbound wagon always arrives damaged, so there is no Passed / Passed with

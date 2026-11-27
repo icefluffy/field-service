@@ -81,8 +81,8 @@ msgid "Company"
 msgstr "Unternehmen"
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_order__wagon_intake_state__done
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Completed"
 msgstr "Abgeschlossen"
 
@@ -173,7 +173,6 @@ msgstr "Field-Service-Auftrag"
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#, python-format
 msgid ""
 "Fill in all fields before completing the inspection. Still missing:\n"
 "%s"
@@ -191,7 +190,6 @@ msgstr "Befunde"
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#, python-format
 msgid "Findings: %(count)s component(s) not assessed (%(names)s)"
 msgstr "Befunde: %(count)s Bauteil(e) nicht bewertet (%(names)s)"
 
@@ -280,6 +278,7 @@ msgstr ""
 "Falls markiert, weisen einige Nachrichten einen Zustellungsfehler auf."
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_order__wagon_intake_state__progress
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__progress
 msgid "In progress"
 msgstr "In Bearbeitung"
@@ -434,6 +433,7 @@ msgid "Not assessed"
 msgstr "Nicht bewertet"
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_order__wagon_intake_state__draft
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__draft
 msgid "Not started"
 msgstr "Nicht gestartet"
@@ -1329,3 +1329,17 @@ msgid ""
 msgstr ""
 "★★★ Technisch geeignet für 120 km/h, Bremse nicht für SS-Verkehr ausgelegt; "
 "automatische lastabhängige Bremsung erforderlich"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_order__wagon_intake_state
+msgid "Inbound inspection status"
+msgstr "Status Eingangsprüfung"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__wagon_intake_state
+msgid ""
+"Status of the inbound inspection report; colours the button on the work "
+"order."
+msgstr ""
+"Status des Eingangsprüfungsberichts; bestimmt die Farbe der Schaltfläche auf"
+" dem Arbeitsauftrag."

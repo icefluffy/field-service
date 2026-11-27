@@ -193,5 +193,22 @@
     </field>
 </record>
  <record id="order_form_intake" model="ir.ui.view"><field name="name">fsm.order.form.intake</field><field name="model">fsm.order</field><field name="inherit_id" ref="fieldservice.fsm_order_form"/>
- <field name="arch" type="xml"><xpath expr="//header" position="inside"><field name="has_wagon_intake" invisible="1"/><button name="action_open_wagon_intake" string="Inbound inspection" type="object" invisible="not has_wagon_intake"/></xpath></field></record>
+ <field name="arch" type="xml">
+    <!-- At the top of the sheet, not in the header: on phones Odoo moves
+         header buttons into the gear menu. Orange while open, green when done. -->
+    <xpath expr="//sheet/div[hasclass('oe_title')]" position="before">
+        <field name="has_wagon_intake" invisible="1"/>
+        <field name="wagon_intake_state" invisible="1"/>
+        <div class="o_fsm_wagon_intake_button d-grid d-md-block mb-3" invisible="not has_wagon_intake">
+            <button name="action_open_wagon_intake" type="object"
+                    string="Inbound inspection" icon="fa-clipboard"
+                    class="btn btn-lg btn-warning"
+                    invisible="wagon_intake_state == 'done'"/>
+            <button name="action_open_wagon_intake" type="object"
+                    string="Inbound inspection" icon="fa-check"
+                    class="btn btn-lg btn-success"
+                    invisible="wagon_intake_state != 'done'"/>
+        </div>
+    </xpath>
+ </field></record>
 </odoo>

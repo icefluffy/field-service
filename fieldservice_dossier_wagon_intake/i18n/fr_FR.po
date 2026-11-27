@@ -81,8 +81,8 @@ msgid "Company"
 msgstr "Société"
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_order__wagon_intake_state__done
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__done
-#: model_terms:ir.ui.view,arch_db:fieldservice_dossier_wagon_intake.intake_form
 msgid "Completed"
 msgstr "Terminé"
 
@@ -173,7 +173,6 @@ msgstr "Ordre de service sur site"
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#, python-format
 msgid ""
 "Fill in all fields before completing the inspection. Still missing:\n"
 "%s"
@@ -191,7 +190,6 @@ msgstr "Constatations"
 #. module: fieldservice_dossier_wagon_intake
 #. odoo-python
 #: code:addons/fieldservice_dossier_wagon_intake/models/inspection.py:0
-#, python-format
 msgid "Findings: %(count)s component(s) not assessed (%(names)s)"
 msgstr "Constatations : %(count)s composant(s) non évalué(s) (%(names)s)"
 
@@ -278,6 +276,7 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si coché, certains messages ont une erreur de livraison."
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_order__wagon_intake_state__progress
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__progress
 msgid "In progress"
 msgstr "En cours"
@@ -432,6 +431,7 @@ msgid "Not assessed"
 msgstr "Non évalué"
 
 #. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_order__wagon_intake_state__draft
 #: model:ir.model.fields.selection,name:fieldservice_dossier_wagon_intake.selection__fsm_wagon_intake__state__draft
 msgid "Not started"
 msgstr "Non démarré"
@@ -1322,3 +1322,17 @@ msgid ""
 msgstr ""
 "★★★ Techniquement apte à 120 km/h, frein non conçu pour le régime SS ; "
 "freinage automatique en fonction de la charge requis"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,field_description:fieldservice_dossier_wagon_intake.field_fsm_order__wagon_intake_state
+msgid "Inbound inspection status"
+msgstr "Statut du contrôle d'entrée"
+
+#. module: fieldservice_dossier_wagon_intake
+#: model:ir.model.fields,help:fieldservice_dossier_wagon_intake.field_fsm_order__wagon_intake_state
+msgid ""
+"Status of the inbound inspection report; colours the button on the work "
+"order."
+msgstr ""
+"Statut du rapport de contrôle d'entrée ; détermine la couleur du bouton sur "
+"l'ordre de travail."

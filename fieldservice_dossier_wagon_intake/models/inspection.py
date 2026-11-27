@@ -177,15 +177,25 @@ class Order(models.Model):
         help="True when the dossier Inbound inspection line is linked to this work order.",
     )
 
-    @api.depends("inspection_ids.type_id")
+    wagon_intake_state = fields.Selection(
+        [('draft', 'Not started'), ('progress', 'In progress'), ('done', 'Completed')],
+        string="Inbound inspection status",
+        compute="_compute_has_wagon_intake",
+        help="Status of the inbound inspection report; colours the button on the work order.",
+    )
+
+    @api.depends("inspection_ids.type_id", "inspection_ids.intake_report_ids.state")
     def _compute_has_wagon_intake(self):
         intake_type = self.env.ref(
             "fieldservice_dossier.inspection_type_ik", raise_if_not_found=False,
         )
         for order in self:
-            order.has_wagon_intake = bool(intake_type) and any(
-                line.type_id == intake_type for line in order.inspection_ids
+            lines = order.inspection_ids.filtered(
+                lambda line: intake_type and line.type_id == intake_type
             )
+            order.has_wagon_intake = bool(lines)
+            report = lines.intake_report_ids[:1]
+            order.wagon_intake_state = report.state or ('draft' if lines else False)
 
     def action_open_wagon_intake(self):
         self.ensure_one()
